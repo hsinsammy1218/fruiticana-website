@@ -50,7 +50,7 @@ export function Navbar() {
                     href={item.href}
                     aria-current={isActive ? "page" : undefined}
                     className={cn(
-                      "relative rounded-md px-3 py-2 text-sm font-semibold transition-colors",
+                      "relative rounded-md px-2.5 py-2 text-sm font-semibold transition-colors lg:px-3",
                       isActive
                         ? "text-green-deep"
                         : "text-green-deep/70 hover:text-green-deep",
@@ -71,7 +71,7 @@ export function Navbar() {
         </nav>
 
         <div className="flex items-center gap-2">
-          <Button href="/flavors" className="hidden md:inline-flex">
+          <Button href="/flavors" className="hidden lg:inline-flex">
             Explore Flavors
           </Button>
 

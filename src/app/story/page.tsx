@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { Section } from "@/components/layout/Section";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { HistoricalNotice } from "@/components/ui/HistoricalNotice";
@@ -122,6 +123,18 @@ export default function StoryPage() {
               not current results, and past participation does not imply a
               current endorsement.
             </HistoricalNotice>
+            <p>
+              Teachers can use this chapter as a primary-source case study —
+              grant dates, taste tests vs. purchases, and what a 2004 letter does
+              and does not prove.{" "}
+              <Link
+                href="/learn#case-study"
+                className="font-semibold text-green-600 hover:text-green-700"
+              >
+                Open the classroom case study
+              </Link>
+              .
+            </p>
           </div>
           <dl className="grid grid-cols-2 gap-4">
             {pilotStats.map((stat) => (
@@ -174,7 +187,7 @@ export default function StoryPage() {
         title="The next chapter"
         description="Fruiticana's fruit-first idea is being reintroduced for a new generation. Explore the flavors, or get in touch to be part of what's next."
         primary={{ label: "Explore the Flavors", href: "/flavors" }}
-        secondary={{ label: "Get in Touch", href: "/contact" }}
+        secondary={{ label: "Classroom resource", href: "/learn" }}
       />
     </>
   );

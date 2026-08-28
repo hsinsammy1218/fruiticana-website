@@ -58,15 +58,20 @@ If unset, it falls back to a placeholder (`https://fruiticana.example.com`).
 
 ```
 src/
-  app/            Routes (home, flavors, story, nutrition, contact, legal) + SEO files
-  components/     Reusable UI (layout, ui, home, flavors, nutrition, story, contact, seo)
-  data/           Typed content: flavors, testimonials, timeline, formats, documents, navigation, site
+  app/            Routes (home, flavors, story, learn, nutrition, contact, legal) + SEO files
+  components/     Reusable UI (layout, ui, home, flavors, learn, nutrition, story, contact, seo)
+  data/           Typed content: flavors, learn, testimonials, timeline, formats, documents, navigation, site
   lib/            Small helpers (cn, nutrition formatting)
 public/images/flavors/  Replaceable flavor artwork (SVG placeholders)
 ```
 
 Content lives in typed modules under `src/data/` so copy changes don't require
 touching JSX. Adding a 13th flavor is a data change, not a redesign.
+
+**For schools.** `/learn` is a free classroom resource: fruit science for the
+original 12 flavors, frozen-dessert science, Nutrition Facts literacy using the
+historical 2008 panels, and a case study of the Connecticut Team Nutrition
+snack pilot. It is labeled as history and does not claim current school menus.
 
 ## Replacing placeholders
 

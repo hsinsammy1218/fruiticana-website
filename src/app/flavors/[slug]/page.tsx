@@ -15,6 +15,7 @@ import {
   getFlavor,
   getRelatedFlavors,
 } from "@/data/flavors";
+import { getFruitLesson } from "@/data/learn";
 
 type Params = { slug: string };
 
@@ -48,6 +49,7 @@ export default async function FlavorPage({
 
   const related = getRelatedFlavors(slug, 3);
   const n = flavor.nutrition;
+  const lesson = getFruitLesson(slug);
 
   const breadcrumbLd = {
     "@context": "https://schema.org",
@@ -80,6 +82,35 @@ export default async function FlavorPage({
     <>
       <JsonLd data={breadcrumbLd} />
       <FlavorHero flavor={flavor} />
+
+      {lesson ? (
+        <Section>
+          <div className="grid gap-8 lg:grid-cols-[1.1fr_1fr] lg:items-start lg:gap-12">
+            <SectionHeading
+              eyebrow="Classroom fruit fact"
+              title={`Learn about ${lesson.fruitName.toLowerCase()}`}
+              description={lesson.classroomFact}
+            />
+            <div className="space-y-3 rounded-xl2 border border-line bg-white p-6">
+              <p className="text-sm leading-relaxed text-muted">
+                <span className="font-semibold text-green-deep">Plant part: </span>
+                {lesson.plantPart}
+              </p>
+              <p className="text-sm leading-relaxed text-muted">
+                <span className="font-semibold text-green-deep">Typical origin: </span>
+                {lesson.typicalOrigin}
+              </p>
+              <p className="text-sm leading-relaxed text-muted">
+                <span className="font-semibold text-green-deep">Try this: </span>
+                {lesson.tryThis}
+              </p>
+              <Button href="/learn#fruits" variant="secondary">
+                All twelve fruit lessons
+              </Button>
+            </div>
+          </div>
+        </Section>
+      ) : null}
 
       <Section tone="cream-100">
         <div className="grid gap-8 lg:grid-cols-[1fr_1.1fr] lg:items-center lg:gap-14">

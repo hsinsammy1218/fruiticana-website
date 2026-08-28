@@ -5,6 +5,7 @@ import { SectionHeading } from "@/components/ui/SectionHeading";
 import { HistoricalNotice } from "@/components/ui/HistoricalNotice";
 import { NutritionSelector } from "@/components/nutrition/NutritionSelector";
 import { CTASection } from "@/components/ui/CTASection";
+import { Button } from "@/components/ui/Button";
 
 export const metadata: Metadata = {
   title: "Nutrition",
@@ -38,6 +39,28 @@ export default function NutritionPage() {
         </Suspense>
       </Section>
 
+      <Section tone="white">
+        <div className="grid gap-8 lg:grid-cols-2 lg:items-start lg:gap-12">
+          <SectionHeading
+            eyebrow="For classrooms"
+            title="Practice reading a Nutrition Facts panel"
+            description="These 2008 panels are dated laboratory examples. Students can use them to learn serving size, % Daily Value, and why a blank number is more honest than a guess."
+          />
+          <div className="space-y-4">
+            <p className="leading-relaxed text-muted">
+              Banana&rsquo;s calorie line was illegible on the original scan, so
+              it stays blank. Comparing two flavors only works when the serving
+              size matches — here, 1/2 cup (4 oz).
+            </p>
+            <p className="leading-relaxed text-muted">
+              The Learn page walks through label parts, discussion questions, and
+              a grocery-store fruit lab that does not require the frozen dessert.
+            </p>
+            <Button href="/learn#labels">Teach with these panels</Button>
+          </div>
+        </div>
+      </Section>
+
       <Section tone="cream-100">
         <div className="grid gap-8 lg:grid-cols-2 lg:gap-12">
           <div>
@@ -66,7 +89,7 @@ export default function NutritionPage() {
         title="Questions about nutrition or ingredients?"
         description="Reach out and we'll follow up as current product information becomes available."
         primary={{ label: "Get in Touch", href: "/contact" }}
-        secondary={{ label: "Explore the Flavors", href: "/flavors" }}
+        secondary={{ label: "Classroom resource", href: "/learn" }}
       />
     </>
   );

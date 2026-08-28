@@ -3,11 +3,12 @@ export type NavItem = {
   label: string;
 };
 
-/** Primary navigation (5 items). Home is represented by the logo on desktop. */
+/** Primary navigation. Home is represented by the logo on desktop. */
 export const mainNav: NavItem[] = [
   { href: "/", label: "Home" },
   { href: "/flavors", label: "Flavors" },
   { href: "/story", label: "Our Story" },
+  { href: "/learn", label: "Learn" },
   { href: "/nutrition", label: "Nutrition" },
   { href: "/contact", label: "Contact" },
 ];
