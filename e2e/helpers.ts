@@ -52,14 +52,32 @@ export const viewports = {
 } as const;
 
 export async function expectNoAxeViolations(page: Page) {
-  // Reveal animations start at opacity 0, which makes axe color-contrast
-  // flag text that is fully readable once on-screen. Analyze the settled UI.
+  // Scroll-reveal starts at opacity 0 (and animates for 600ms). Axe samples
+  // those pixels and reports false color-contrast failures. Analyze the
+  // fully visible, settled UI instead.
+  await page.emulateMedia({ reducedMotion: "reduce" });
+  await page.addStyleTag({
+    content: `
+      .reveal,
+      .js-reveal .reveal {
+        opacity: 1 !important;
+        transform: none !important;
+        transition: none !important;
+      }
+    `,
+  });
   await page.evaluate(() => {
     document.documentElement.classList.remove("js-reveal");
     document.querySelectorAll(".reveal").forEach((el) => {
-      el.classList.add("is-visible");
+      el.setAttribute("data-revealed", "true");
     });
   });
+  await page.evaluate(
+    () =>
+      new Promise<void>((resolve) => {
+        requestAnimationFrame(() => requestAnimationFrame(() => resolve()));
+      }),
+  );
 
   const results = await new AxeBuilder({ page })
     .withTags(["wcag2a", "wcag2aa", "wcag21a", "wcag21aa"])
