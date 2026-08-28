@@ -1,0 +1,139 @@
+@import "tailwindcss";
+
+/* ------------------------------------------------------------------ */
+/* Fruiticana design system                                            */
+/* Interface palette stays cream + green + dark neutral.               */
+/* Fruit accent colors are used contextually (flavor cards), never as  */
+/* the whole interface.                                                */
+/* ------------------------------------------------------------------ */
+@theme {
+  /* Fonts (wired to next/font CSS variables in layout.tsx) */
+  --font-display: var(--font-jakarta), ui-sans-serif, system-ui, sans-serif;
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+
+  /* Core interface colors */
+  --color-cream: #fff9ef;
+  --color-cream-100: #fdf3e1;
+  --color-cream-200: #f6ead3;
+  --color-green: #5faf45;
+  --color-green-600: #3c7a2b; /* 4.5:1+ on cream for small text (eyebrows, inline links) */
+  --color-green-700: #2f6a22;
+  --color-green-deep: #163d2a;
+  --color-green-deep-80: #234c37;
+  --color-ink: #1a1a1a;
+  --color-muted: #5c675f;
+  --color-line: #e7e0d1;
+
+  /* Fruit accents (contextual only) */
+  --color-mango: #f5b942;
+  --color-strawberry: #ef5b5b;
+  --color-blueberry: #5865a8;
+
+  /* Radii */
+  --radius-card: 1rem;
+  --radius-xl2: 1.5rem;
+  --radius-pill: 9999px;
+
+  /* Shadows (soft, used mostly on hover) */
+  --shadow-soft: 0 1px 2px rgba(22, 61, 42, 0.04), 0 8px 24px rgba(22, 61, 42, 0.06);
+  --shadow-hover: 0 6px 16px rgba(22, 61, 42, 0.1), 0 18px 40px rgba(22, 61, 42, 0.12);
+
+  /* Content container */
+  --container-page: 75rem; /* 1200px */
+}
+
+@layer base {
+  :root {
+    color-scheme: light;
+  }
+
+  * {
+    border-color: var(--color-line);
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+  }
+
+  body {
+    background-color: var(--color-cream);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    font-synthesis-weight: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    /* prevent horizontal overflow on small screens */
+    overflow-x: hidden;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-display);
+    color: var(--color-green-deep);
+    letter-spacing: -0.02em;
+    text-wrap: balance;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+
+  a {
+    color: inherit;
+  }
+
+  ::selection {
+    background-color: color-mix(in srgb, var(--color-green) 28%, transparent);
+    color: var(--color-green-deep);
+  }
+
+  /* Visible, consistent focus states for keyboard users */
+  :focus-visible {
+    outline: 3px solid var(--color-green-deep);
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+
+  /* Respect reduced-motion: disable smooth scroll + animations */
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.001ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.001ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
+
+@layer components {
+  /* Scroll-reveal helper (progressive enhancement).
+     Elements start hidden only when JS marks the root; otherwise visible. */
+  .js-reveal .reveal {
+    opacity: 0;
+    transform: translateY(16px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+    will-change: opacity, transform;
+  }
+  .js-reveal .reveal[data-revealed] {
+    opacity: 1;
+    transform: none;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .js-reveal .reveal {
+      opacity: 1;
+      transform: none;
+      transition: none;
+    }
+  }
+}

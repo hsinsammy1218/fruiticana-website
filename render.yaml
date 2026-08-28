@@ -1,0 +1,22 @@
+# Render Blueprint for the Fruiticana website (Next.js Web Service).
+# A Web Service (not a static site) is used so next/image and a future
+# contact-form API can be added without migrating platforms.
+#
+# NOTE: A brand homepage should not sit behind the free plan's 15-minute
+# spin-down. This uses the paid "starter" plan; adjust as needed.
+services:
+  - type: web
+    name: fruiticana-website
+    runtime: node
+    plan: starter
+    region: oregon
+    buildCommand: npm ci && npm run build
+    startCommand: npm run start
+    healthCheckPath: /
+    autoDeploy: true
+    envVars:
+      - key: NODE_VERSION
+        value: "22.20.0"
+      # Public site URL used for canonical/OG/sitemap. Set to the real domain.
+      - key: NEXT_PUBLIC_SITE_URL
+        sync: false
