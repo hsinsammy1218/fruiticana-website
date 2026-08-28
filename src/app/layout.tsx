@@ -50,6 +50,9 @@ export const metadata: Metadata = {
     "dairy-free frozen dessert",
     "lactose-free frozen dessert",
     "frozen fruit dessert",
+    "fruit classroom resource",
+    "nutrition facts for students",
+    "school snack program history",
   ],
 };
 

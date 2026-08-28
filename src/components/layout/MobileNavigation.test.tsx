@@ -20,6 +20,10 @@ describe("MobileNavigation", () => {
 
     expect(screen.getByRole("dialog", { name: "Site menu" })).toBeInTheDocument();
     expect(screen.getByRole("link", { name: "Home" })).toHaveAttribute("href", "/");
+    expect(screen.getByRole("link", { name: "Learn" })).toHaveAttribute(
+      "href",
+      "/learn",
+    );
     expect(screen.getByRole("link", { name: "Flavors" })).toHaveAttribute(
       "href",
       "/flavors",

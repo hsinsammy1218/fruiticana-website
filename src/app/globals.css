@@ -87,6 +87,16 @@
     color: inherit;
   }
 
+  /* Keep in-page Learn module jumps below the sticky header. */
+  section[id],
+  [id="fruits"],
+  [id="science"],
+  [id="labels"],
+  [id="case-study"],
+  [id="classroom"] {
+    scroll-margin-top: 5.5rem;
+  }
+
   ::selection {
     background-color: color-mix(in srgb, var(--color-green) 28%, transparent);
     color: var(--color-green-deep);

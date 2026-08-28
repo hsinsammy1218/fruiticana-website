@@ -19,7 +19,14 @@ const contactRows: { label: string; value: string | null }[] = [
   { label: "Address", value: site.contact.address },
 ];
 
-export default function ContactPage() {
+type Search = { inquiry?: string };
+
+export default async function ContactPage({
+  searchParams,
+}: {
+  searchParams: Promise<Search>;
+}) {
+  const { inquiry } = await searchParams;
   return (
     <>
       <Section>
@@ -32,7 +39,7 @@ export default function ContactPage() {
 
         <div className="mt-10 grid gap-10 lg:grid-cols-[1.5fr_1fr] lg:gap-14">
           <div>
-            <ContactForm />
+            <ContactForm key={inquiry ?? "general"} defaultInquiry={inquiry} />
           </div>
 
           <aside className="space-y-6">

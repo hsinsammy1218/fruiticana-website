@@ -24,7 +24,7 @@ test.describe("user flows", () => {
     await expect(page).toHaveURL(/\/story$/);
     await expect(page.getByText("Fruiticana Creamless Ice Cream")).toBeVisible();
 
-    await page.getByRole("link", { name: "Get in Touch" }).click();
+    await page.getByRole("navigation", { name: "Primary" }).getByRole("link", { name: "Contact" }).click();
     await expect(page).toHaveURL(/\/contact$/);
 
     await page.getByLabel(/name/i).fill("Jordan");
@@ -35,6 +35,20 @@ test.describe("user flows", () => {
     );
     await page.getByRole("button", { name: "Send message" }).click();
     await expect(page.getByRole("status").filter({ hasText: /thanks, jordan/i })).toBeVisible();
+  });
+
+  test("home to learn to school inquiry", async ({ page }) => {
+    await page.goto("/");
+    await page.getByRole("link", { name: "Open the classroom resource" }).click();
+    await expect(page).toHaveURL(/\/learn$/);
+    await expect(
+      page.getByRole("heading", { name: "Twelve fruits to know" }),
+    ).toBeVisible();
+
+    await page.getByRole("link", { name: "Contact for schools" }).click();
+    await expect(page.getByLabel(/inquiry type/i)).toHaveValue(
+      "Schools & Institutions",
+    );
   });
 
   test("skip link jumps to main content", async ({ page }) => {

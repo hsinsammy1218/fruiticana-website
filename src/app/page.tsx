@@ -4,6 +4,7 @@ import { FeaturedFlavors } from "@/components/home/FeaturedFlavors";
 import { Reimagined } from "@/components/home/Reimagined";
 import { Formats } from "@/components/home/Formats";
 import { StoryTeaser } from "@/components/home/StoryTeaser";
+import { LearnTeaser } from "@/components/home/LearnTeaser";
 import { PilotTeaser } from "@/components/home/PilotTeaser";
 import { HomeTestimonials } from "@/components/home/HomeTestimonials";
 import { CTASection } from "@/components/ui/CTASection";
@@ -17,6 +18,7 @@ export default function Home() {
       <Reimagined />
       <Formats />
       <StoryTeaser />
+      <LearnTeaser />
       <PilotTeaser />
       <HomeTestimonials />
       <CTASection

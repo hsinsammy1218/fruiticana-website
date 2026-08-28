@@ -29,7 +29,7 @@ export default function FlavorsPage() {
         title="Can't decide? Start with a favorite."
         description="Mango, strawberry, and blueberry are a great place to begin - then work your way through the lineup."
         primary={{ label: "Our Story", href: "/story" }}
-        secondary={{ label: "Nutrition & Ingredients", href: "/nutrition" }}
+        secondary={{ label: "Classroom fruit guide", href: "/learn#fruits" }}
       />
     </>
   );

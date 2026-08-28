@@ -9,6 +9,12 @@ test.describe("nutrition", () => {
     ).toBeVisible();
     await expect(page.getByText(/not a current product label/i).first()).toBeVisible();
     await expect(page.getByText(/historical \(2008\)/i)).toBeVisible();
+    await expect(
+      page.getByRole("heading", { name: /practice reading a nutrition facts panel/i }),
+    ).toBeVisible();
+    await expect(
+      page.getByRole("link", { name: "Teach with these panels" }),
+    ).toHaveAttribute("href", "/learn#labels");
   });
 
   test("switching flavors updates the panel", async ({ page }) => {

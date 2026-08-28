@@ -111,6 +111,57 @@ export function ArrowRightIcon(props: IconProps) {
   );
 }
 
+export function BookIcon(props: IconProps) {
+  return (
+    <svg {...base} {...props}>
+      <path d="M4 5a2 2 0 0 1 2-2h5v16H6a2 2 0 0 0-2 2V5Z" />
+      <path d="M20 5a2 2 0 0 0-2-2h-5v16h5a2 2 0 0 1 2 2V5Z" />
+    </svg>
+  );
+}
+
+export function FlaskIcon(props: IconProps) {
+  return (
+    <svg {...base} {...props}>
+      <path d="M10 3h4" />
+      <path d="M12 3v6l5 8a3 3 0 0 1-2.6 4.5H9.6A3 3 0 0 1 7 17l5-8" />
+      <path d="M8.5 15h7" />
+    </svg>
+  );
+}
+
+export function LabelIcon(props: IconProps) {
+  return (
+    <svg {...base} {...props}>
+      <path d="M4 7h12a1 1 0 0 1 1 1v11H5a1 1 0 0 1-1-1V7Z" />
+      <path d="M8 7V5h8a1 1 0 0 1 1 1v2" />
+      <path d="M8 12h8" />
+      <path d="M8 16h5" />
+    </svg>
+  );
+}
+
+export function SchoolIcon(props: IconProps) {
+  return (
+    <svg {...base} {...props}>
+      <path d="M3 10 12 4l9 6" />
+      <path d="M5 10v8h14v-8" />
+      <path d="M10 18v-4h4v4" />
+      <path d="M3 18h18" />
+    </svg>
+  );
+}
+
+export function ChatIcon(props: IconProps) {
+  return (
+    <svg {...base} {...props}>
+      <path d="M5 6h14v9H8l-3 3V6Z" />
+      <path d="M8 10h8" />
+      <path d="M8 13h5" />
+    </svg>
+  );
+}
+
 export const formatIcons = {
   cup: CupIcon,
   cone: ConeIcon,

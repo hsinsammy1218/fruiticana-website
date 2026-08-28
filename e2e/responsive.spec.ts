@@ -20,6 +20,8 @@ test.describe("responsive layout @mobile", () => {
       await expectNoHorizontalOverflow(page);
       await page.goto("/contact");
       await expectNoHorizontalOverflow(page);
+      await page.goto("/learn");
+      await expectNoHorizontalOverflow(page);
     }
   });
 

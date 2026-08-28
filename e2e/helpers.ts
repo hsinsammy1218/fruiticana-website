@@ -14,6 +14,11 @@ export const primaryRoutes = [
     title: /Our Story/,
   },
   {
+    path: "/learn",
+    heading: /classroom resource/i,
+    title: /Learn/,
+  },
+  {
     path: "/nutrition",
     heading: /fruit-forward, and honest/i,
     title: /Nutrition/,

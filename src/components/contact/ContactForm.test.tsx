@@ -53,6 +53,13 @@ describe("ContactForm", () => {
     expect(select).toHaveValue("Retailers");
   });
 
+  it("preselects a school inquiry when provided", () => {
+    render(<ContactForm defaultInquiry="Schools & Institutions" />);
+    expect(screen.getByLabelText(/inquiry type/i)).toHaveValue(
+      "Schools & Institutions",
+    );
+  });
+
   it("shows an honest success state that does not claim delivery", async () => {
     const user = userEvent.setup();
     render(<ContactForm />);

@@ -13,6 +13,7 @@ test.describe("navigation @cross-browser", () => {
     for (const item of [
       { name: "Flavors", url: /\/flavors$/ },
       { name: "Our Story", url: /\/story$/ },
+      { name: "Learn", url: /\/learn$/ },
       { name: "Nutrition", url: /\/nutrition$/ },
       { name: "Contact", url: /\/contact$/ },
     ]) {

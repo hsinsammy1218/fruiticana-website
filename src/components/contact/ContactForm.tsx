@@ -15,6 +15,14 @@ const inquiryTypes = [
   "Investment / Business Development",
 ] as const;
 
+type InquiryType = (typeof inquiryTypes)[number];
+
+export function resolveInquiryType(value?: string | null): InquiryType {
+  return inquiryTypes.includes(value as InquiryType)
+    ? (value as InquiryType)
+    : inquiryTypes[0];
+}
+
 type Fields = {
   name: string;
   email: string;
@@ -41,8 +49,12 @@ const emptyFields: Fields = {
 const fieldClasses =
   "mt-1.5 min-h-11 w-full rounded-xl border border-line bg-white px-3.5 py-2.5 text-sm text-ink placeholder:text-muted/60 focus-visible:border-green-deep";
 
-export function ContactForm() {
-  const [fields, setFields] = useState<Fields>(emptyFields);
+export function ContactForm({ defaultInquiry }: { defaultInquiry?: string }) {
+  const initialInquiry = resolveInquiryType(defaultInquiry);
+  const [fields, setFields] = useState<Fields>({
+    ...emptyFields,
+    inquiry: initialInquiry,
+  });
   const [errors, setErrors] = useState<Errors>({});
   const [submitted, setSubmitted] = useState(false);
   const formRef = useRef<HTMLFormElement>(null);
@@ -110,7 +122,7 @@ export function ContactForm() {
         <button
           type="button"
           onClick={() => {
-            setFields(emptyFields);
+            setFields({ ...emptyFields, inquiry: initialInquiry });
             setSubmitted(false);
           }}
           className="mt-4 inline-flex min-h-11 items-center rounded-pill border border-green-deep/25 bg-white px-5 text-sm font-semibold text-green-deep hover:border-green-deep/50"

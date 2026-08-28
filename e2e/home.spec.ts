@@ -42,6 +42,10 @@ test.describe("home @cross-browser", () => {
     await expect(page).toHaveURL(/\/flavors$/);
 
     await page.goto("/");
+    await page.getByRole("link", { name: "Open the classroom resource" }).click();
+    await expect(page).toHaveURL(/\/learn$/);
+
+    await page.goto("/");
     await page.getByRole("link", { name: "Get in Touch" }).click();
     await expect(page).toHaveURL(/\/contact$/);
   });
