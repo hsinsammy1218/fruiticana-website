@@ -160,9 +160,9 @@ export default function LearnPage() {
                     <p className="mt-4 text-xs font-semibold uppercase tracking-wide text-green-600">
                       Module {index + 1}
                     </p>
-                    <h3 className="mt-1 text-lg font-bold text-green-deep">
+                    <p className="mt-1 text-lg font-bold text-green-deep">
                       {module.title}
-                    </h3>
+                    </p>
                     <p className="mt-1.5 text-sm leading-relaxed text-muted">
                       {module.summary}
                     </p>
