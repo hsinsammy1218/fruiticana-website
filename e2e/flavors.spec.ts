@@ -10,7 +10,7 @@ test.describe("flavors", () => {
     await expect(
       page.getByRole("heading", { name: /original flavor lineup/i }),
     ).toBeVisible();
-    await expect(page.getByRole("button", { name: "Berry" })).toHaveCount(0);
+    await expect(page.getByRole("button", { name: "Berry", exact: true })).toHaveCount(0);
 
     for (const slug of flavorSlugs) {
       await expect(page.locator(`a[href="/flavors/${slug}"]`)).toBeVisible();

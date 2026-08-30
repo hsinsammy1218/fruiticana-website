@@ -26,7 +26,7 @@ test.describe("nutrition", () => {
     await page.getByRole("button", { name: "Strawberry" }).click();
     await expect(page).toHaveURL(/flavor=strawberry/);
     await expect(
-      page.getByRole("heading", { name: "Strawberry" }),
+      page.locator("#nutrition").getByRole("heading", { name: "Strawberry" }),
     ).toBeVisible();
     await expect(page.getByRole("button", { name: "Strawberry" })).toHaveAttribute(
       "aria-pressed",

@@ -51,7 +51,7 @@ test.describe("responsive layout @mobile", () => {
     await page.goto("/product");
     await expect(page.getByRole("button", { name: "Mango" })).toBeVisible();
     await expect(
-      page.getByRole("heading", { name: "Apricot" }),
+      page.locator("#nutrition").getByRole("heading", { name: "Apricot" }),
     ).toBeVisible();
     await expectNoHorizontalOverflow(page);
   });
