@@ -3,7 +3,7 @@
 import { useEffect, useRef } from "react";
 import Link from "next/link";
 import { cn } from "@/lib/cn";
-import { mainNav } from "@/data/navigation";
+import { mainNav, navCta } from "@/data/navigation";
 import { Button } from "@/components/ui/Button";
 
 type MobileNavigationProps = {
@@ -140,8 +140,8 @@ export function MobileNavigation({ open, onClose, activeHref }: MobileNavigation
         </nav>
 
         <div className="border-t border-line p-4">
-          <Button href="/flavors" size="lg" className="w-full" onClick={onClose}>
-            Explore Flavors
+          <Button href={navCta.href} size="lg" className="w-full" onClick={onClose}>
+            {navCta.label}
           </Button>
         </div>
       </div>

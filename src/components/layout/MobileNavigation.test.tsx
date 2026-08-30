@@ -15,27 +15,27 @@ describe("MobileNavigation", () => {
 
   it("exposes a labeled dialog with primary links when open", () => {
     render(
-      <MobileNavigation open onClose={() => undefined} activeHref="/flavors" />,
+      <MobileNavigation open onClose={() => undefined} activeHref="/schools" />,
     );
 
     expect(screen.getByRole("dialog", { name: "Site menu" })).toBeInTheDocument();
     expect(screen.getByRole("link", { name: "Home" })).toHaveAttribute("href", "/");
-    expect(screen.getByRole("link", { name: "Learn" })).toHaveAttribute(
+    expect(screen.getByRole("link", { name: "For Schools" })).toHaveAttribute(
       "href",
-      "/learn",
+      "/schools",
     );
-    expect(screen.getByRole("link", { name: "Flavors" })).toHaveAttribute(
-      "href",
-      "/flavors",
-    );
-    expect(screen.getByRole("link", { name: "Flavors" })).toHaveAttribute(
+    expect(screen.getByRole("link", { name: "For Schools" })).toHaveAttribute(
       "aria-current",
       "page",
     );
-    expect(screen.getByRole("link", { name: /explore flavors/i })).toHaveAttribute(
+    expect(screen.getByRole("link", { name: "Product & Nutrition" })).toHaveAttribute(
       "href",
-      "/flavors",
+      "/product",
     );
+    expect(
+      screen.getByRole("link", { name: /request school information/i }),
+    ).toHaveAttribute("href", "/contact");
+    expect(screen.queryByRole("link", { name: "Learn" })).not.toBeInTheDocument();
   });
 
   it("closes on Escape", async () => {

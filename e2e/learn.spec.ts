@@ -34,13 +34,13 @@ test.describe("learn", () => {
     await expect(page).toHaveURL(/\/learn#fruits/);
 
     await page.getByRole("link", { name: "Open the historical nutrition panels" }).click();
-    await expect(page).toHaveURL(/\/nutrition$/);
+    await expect(page).toHaveURL(/\/product$/);
 
     await page.goto("/learn");
     await page.getByRole("link", { name: "Contact for schools" }).click();
-    await expect(page).toHaveURL(/\/contact\?inquiry=/);
-    await expect(page.getByLabel(/inquiry type/i)).toHaveValue(
-      "Schools & Institutions",
+    await expect(page).toHaveURL(/\/contact\?interest=/);
+    await expect(page.getByLabel(/interest type/i)).toHaveValue(
+      "Healthy Snack Program",
     );
   });
 });

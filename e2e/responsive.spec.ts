@@ -16,11 +16,11 @@ test.describe("responsive layout @mobile", () => {
       ).toBeHidden();
       await expectNoHorizontalOverflow(page);
 
-      await page.goto("/flavors");
+      await page.goto("/product");
       await expectNoHorizontalOverflow(page);
       await page.goto("/contact");
       await expectNoHorizontalOverflow(page);
-      await page.goto("/learn");
+      await page.goto("/schools");
       await expectNoHorizontalOverflow(page);
     }
   });
@@ -32,7 +32,7 @@ test.describe("responsive layout @mobile", () => {
       await expect(page.getByRole("button", { name: "Open menu" })).toBeHidden();
       await expect(
         page.getByRole("navigation", { name: "Primary" }).getByRole("link", {
-          name: "Flavors",
+          name: "For Schools",
         }),
       ).toBeVisible();
       await expectNoHorizontalOverflow(page);
@@ -43,12 +43,12 @@ test.describe("responsive layout @mobile", () => {
     page,
   }) => {
     await page.setViewportSize(viewports.phone390);
-    await page.goto("/nutrition");
+    await page.goto("/product");
     await expect(page.getByRole("button", { name: "Mango" })).toBeVisible();
     await expectNoHorizontalOverflow(page);
 
     await page.setViewportSize(viewports.laptop1024);
-    await page.goto("/nutrition");
+    await page.goto("/product");
     await expect(page.getByRole("button", { name: "Mango" })).toBeVisible();
     await expect(
       page.getByRole("heading", { name: "Apricot" }),

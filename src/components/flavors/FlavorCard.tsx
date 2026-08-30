@@ -46,7 +46,7 @@ export function FlavorCard({ flavor, priority, className }: FlavorCardProps) {
           {flavor.description}
         </p>
         <span className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-green-600">
-          View flavor
+          View product sheet
           <ArrowRightIcon
             width={16}
             height={16}

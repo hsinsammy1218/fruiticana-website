@@ -10,7 +10,7 @@ const { replace, searchParams } = vi.hoisted(() => ({
 
 vi.mock("next/navigation", () => ({
   useRouter: () => ({ replace }),
-  usePathname: () => "/nutrition",
+  usePathname: () => "/product",
   useSearchParams: () => searchParams,
 }));
 
@@ -51,7 +51,7 @@ describe("NutritionSelector", () => {
 
     await user.click(screen.getByRole("button", { name: "Banana" }));
 
-    expect(replace).toHaveBeenCalledWith("/nutrition?flavor=banana", {
+    expect(replace).toHaveBeenCalledWith("/product?flavor=banana", {
       scroll: false,
     });
     expect(screen.getByRole("heading", { name: "Banana" })).toBeInTheDocument();

@@ -56,7 +56,7 @@ export default function OpengraphImage() {
             maxWidth: 900,
           }}
         >
-          An exciting new way to eat fruit.
+          {site.tagline}
         </div>
 
         <div
@@ -68,7 +68,7 @@ export default function OpengraphImage() {
             maxWidth: 820,
           }}
         >
-          A smooth, fruit-based frozen dessert.
+          Information for school food programs.
         </div>
       </div>
     ),

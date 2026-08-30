@@ -4,10 +4,9 @@ module.exports = {
     collect: {
       url: [
         "http://localhost:3001/",
-        "http://localhost:3001/flavors",
+        "http://localhost:3001/schools",
+        "http://localhost:3001/product",
         "http://localhost:3001/story",
-        "http://localhost:3001/learn",
-        "http://localhost:3001/nutrition",
         "http://localhost:3001/contact",
       ],
       startServerCommand: "npx next start --hostname localhost --port 3001",

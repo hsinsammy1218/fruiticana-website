@@ -1,8 +1,8 @@
 import Link from "next/link";
 import { Container } from "@/components/layout/Container";
 import { Logo } from "@/components/ui/Logo";
-import { NewsletterForm } from "@/components/layout/NewsletterForm";
-import { mainNav, legalNav } from "@/data/navigation";
+import { Button } from "@/components/ui/Button";
+import { mainNav, legalNav, resourceNav, navCta } from "@/data/navigation";
 import { site } from "@/data/site";
 
 export function Footer() {
@@ -17,6 +17,14 @@ export function Footer() {
             <p className="mt-4 max-w-sm text-sm leading-relaxed text-cream/70">
               {site.shortDescription}
             </p>
+            <div className="mt-6">
+              <Button
+                href={navCta.href}
+                className="bg-cream text-green-deep hover:bg-cream-100"
+              >
+                {navCta.label}
+              </Button>
+            </div>
           </div>
 
           <nav aria-label="Footer">
@@ -37,12 +45,23 @@ export function Footer() {
             </ul>
           </nav>
 
-          <div>
+          <nav aria-label="Resources">
             <h2 className="text-sm font-semibold uppercase tracking-wider text-cream/60">
-              Keep in touch
+              Resources
             </h2>
-            <NewsletterForm />
-          </div>
+            <ul className="mt-4 space-y-2.5 text-sm">
+              {resourceNav.map((item) => (
+                <li key={item.href}>
+                  <Link
+                    href={item.href}
+                    className="text-cream/85 transition-colors hover:text-cream"
+                  >
+                    {item.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </nav>
         </div>
 
         <div className="mt-12 flex flex-col gap-4 border-t border-cream/15 pt-6 text-sm text-cream/70 sm:flex-row sm:items-center sm:justify-between">

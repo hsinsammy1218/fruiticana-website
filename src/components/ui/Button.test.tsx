@@ -13,10 +13,10 @@ describe("Button", () => {
   });
 
   it("renders a link when given an href", () => {
-    render(<Button href="/flavors">Explore the Flavors</Button>);
+    render(<Button href="/contact">Request School Information</Button>);
     expect(
-      screen.getByRole("link", { name: "Explore the Flavors" }),
-    ).toHaveAttribute("href", "/flavors");
+      screen.getByRole("link", { name: "Request School Information" }),
+    ).toHaveAttribute("href", "/contact");
   });
 });
 

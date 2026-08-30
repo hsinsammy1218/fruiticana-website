@@ -1,15 +1,15 @@
 # Fruiticana Website
 
-A modern marketing site for **Fruiticana**, a fruit-based frozen dessert with a
-smooth, ice-cream-like texture. Built with Next.js (App Router), TypeScript, and
-Tailwind CSS.
+An informational site for **Fruiticana**, a fruit-based frozen dessert, built
+for **school decision-makers** — administrators, food-service directors,
+nutrition staff, private-school leaders, and distribution partners. Stack:
+Next.js (App Router), TypeScript, and Tailwind CSS.
 
-> **Important — voice of this site.** Until the business verifies current facts
-> (see the checklist below), the site intentionally speaks in **concept +
-> history** language, not **"buy it today / certified today"** language. Some
-> content (timeline, testimonials, documentation, nutrition panels) is
-> **historical** and is labeled as such throughout. Do not turn historical
-> records into present-tense marketing or regulatory claims.
+> **Important — voice of this site.** This is not a consumer shop. The main
+> conversion is a **school inquiry**. Until the business verifies current facts
+> (see the checklist below), the site speaks in **concept + history** language,
+> not **"on menus today / certified today"** language. Timeline, testimonials,
+> documentation, and nutrition panels are **historical** and labeled as such.
 
 ## Tech stack
 
@@ -34,7 +34,7 @@ npm run typecheck
 npm test               # Vitest unit + component tests
 npm run test:e2e       # Playwright end-to-end (Chromium)
 npm run test:a11y      # axe-core accessibility sweep
-npm run test:lighthouse  # Lighthouse CI (Home, Flavors, Story, Nutrition, Contact)
+npm run test:lighthouse  # Lighthouse CI (Home, For Schools, Product, Story, Contact)
 npm run test:all         # unit + Playwright Chromium
 ```
 
@@ -58,20 +58,25 @@ If unset, it falls back to a placeholder (`https://fruiticana.example.com`).
 
 ```
 src/
-  app/            Routes (home, flavors, story, learn, nutrition, contact, legal) + SEO files
+  app/            Routes (home, schools, product, story, contact, learn, flavor sheets, legal) + SEO files
   components/     Reusable UI (layout, ui, home, flavors, learn, nutrition, story, contact, seo)
-  data/           Typed content: flavors, learn, testimonials, timeline, formats, documents, navigation, site
+  data/           Typed content: flavors, schools, inquiry, learn, testimonials, timeline, formats, documents, navigation, site
   lib/            Small helpers (cn, nutrition formatting)
 public/images/flavors/  Replaceable flavor artwork (SVG placeholders)
 ```
 
 Content lives in typed modules under `src/data/` so copy changes don't require
-touching JSX. Adding a 13th flavor is a data change, not a redesign.
+touching JSX.
 
-**For schools.** `/learn` is a free classroom resource: fruit science for the
-original 12 flavors, frozen-dessert science, Nutrition Facts literacy using the
-historical 2008 panels, and a case study of the Connecticut Team Nutrition
-snack pilot. It is labeled as history and does not claim current school menus.
+**Primary pages.** Home, For Schools (`/schools`), Product & Nutrition
+(`/product`), Our Story (`/story`), School Inquiry (`/contact`).
+
+**Classroom resource.** `/learn` is a free teaching resource (fruit science,
+Nutrition Facts literacy, Connecticut snack-pilot case study). It is not in
+primary nav. It does not claim current school menus.
+
+**Redirects.** `/flavors` and `/nutrition` go to `/product` (query string such
+as `?flavor=` is preserved). Individual `/flavors/[slug]` product sheets remain.
 
 ## Replacing placeholders
 
@@ -83,6 +88,8 @@ snack pilot. It is labeled as history and does not claim current school menus.
   swapped for a supplied vector logo.
 - **Contact details / social** are `null` in `src/data/site.ts` and render as
   "coming soon". Fill them in only with verified, current information.
+- **Historical scans** are summarized on-site. Do not add fake “Download PDF”
+  buttons until rights-cleared files exist.
 
 ### Historical nutrition data
 
@@ -102,11 +109,12 @@ plan's spin-down; the blueprint uses the paid `starter` plan. Set
 
 ## Owner verification checklist
 
-Confirm before switching any content to present-tense marketing:
+Confirm before switching any content to present-tense school-program marketing:
 
-- [ ] Current production/sale status and markets
+- [ ] Current production/sale status and whether Fruiticana is available to schools
 - [ ] Current formulation claims (lactose-free, fat-free, cholesterol-free, dairy-free, vegan, "100% fruit", added sugar, additives)
 - [ ] Current nutrition panels vs. the 2008 lab values
+- [ ] Current institutional serving sizes vs. historical 3 oz / 4 oz cups
 - [ ] Shelf life
 - [ ] Which flavors/formats exist now
 - [ ] FDA registration vs. "certification"; AHA status and logo rights
@@ -132,9 +140,9 @@ statically generated with minimal client JavaScript.
 
 | Tool | What it covers |
 | --- | --- |
-| **Playwright** | Navigation, buttons, forms, mobile menu, links, responsive layout, error states, and full user flows (`e2e/`). Default run is Chromium; `npm run test:e2e:browsers` also runs tagged smoke tests in Firefox, WebKit, Pixel 7, and iPhone 13. |
-| **Vitest** | Unit tests for helpers and flavor data (`src/**/*.test.ts`). |
-| **React Testing Library** | Component behavior: contact form validation, newsletter, flavor filters, nutrition selector, mobile menu, buttons. |
+| **Playwright** | Navigation, school inquiry form, documentation, nutrition tables, redirects, mobile menu, links, responsive layout, error states (`e2e/`). Default run is Chromium; `npm run test:e2e:browsers` also runs tagged smoke tests in Firefox, WebKit, Pixel 7, and iPhone 13. |
+| **Vitest** | Unit tests for helpers and content data (`src/**/*.test.ts`). |
+| **React Testing Library** | Component behavior: school inquiry validation, flavor filters, nutrition selector, mobile menu, buttons. |
 | **axe-core** (`@axe-core/playwright`) | WCAG 2 A/AA checks on primary, flavor-detail, and legal routes (`e2e/a11y.spec.ts`). |
 | **Lighthouse CI** | Performance (warn &lt; 90), accessibility / best-practices / SEO (fail &lt; 95) on Home and the other primary pages. Requires a production build and a local Chrome. |
 | **BrowserStack** (optional) | Real Safari-on-iPhone, Chrome-on-Android, Edge, and desktop browsers before launch. Set `BROWSERSTACK_USERNAME`, `BROWSERSTACK_ACCESS_KEY`, and `PLAYWRIGHT_BASE_URL` (a public preview URL), then `npm run test:browserstack`. |

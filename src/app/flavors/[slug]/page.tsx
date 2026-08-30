@@ -32,8 +32,8 @@ export async function generateMetadata({
   const flavor = getFlavor(slug);
   if (!flavor) return {};
   return {
-    title: `${flavor.name} Flavor`,
-    description: `${flavor.name} Fruiticana - ${flavor.description} A fruit-based frozen dessert from the original lineup.`,
+    title: `${flavor.name} product information`,
+    description: `${flavor.name} Fruiticana — ${flavor.description} Historical product sheet from the original fruit-based frozen dessert lineup.`,
     alternates: { canonical: `/flavors/${flavor.slug}` },
   };
 }
@@ -59,8 +59,8 @@ export default async function FlavorPage({
       {
         "@type": "ListItem",
         position: 2,
-        name: "Flavors",
-        item: `${site.url}/flavors`,
+        name: "Product & Nutrition",
+        item: `${site.url}/product`,
       },
       {
         "@type": "ListItem",
@@ -116,8 +116,8 @@ export default async function FlavorPage({
         <div className="grid gap-8 lg:grid-cols-[1fr_1.1fr] lg:items-center lg:gap-14">
           <SectionHeading
             eyebrow="Historical nutrition"
-            title="A look at the numbers"
-            description="A few highlights from Fruiticana's historical laboratory analysis for this flavor. See the full panel and important context on the Nutrition page."
+            title="Laboratory panel highlights"
+            description="A few values from Fruiticana's historical laboratory analysis for this flavor. See the full panel and important context on Product & Nutrition."
           />
           <div>
             <dl className="grid grid-cols-2 gap-4 sm:grid-cols-4">
@@ -139,7 +139,7 @@ export default async function FlavorPage({
               Per {n.servingSize} ({n.servingGrams} g) serving.
             </p>
             <div className="mt-5">
-              <Button href={`/nutrition?flavor=${flavor.slug}`}>
+              <Button href={`/product?flavor=${flavor.slug}#nutrition`}>
                 See full nutrition facts
               </Button>
             </div>
@@ -156,9 +156,9 @@ export default async function FlavorPage({
       {related.length > 0 ? (
         <Section>
           <div className="flex items-end justify-between gap-4">
-            <SectionHeading eyebrow="Keep tasting" title="More flavors" />
+            <SectionHeading eyebrow="Original lineup" title="Related flavors" />
             <Link
-              href="/flavors"
+              href="/product#flavors"
               className="hidden text-sm font-semibold text-green-600 hover:text-green-700 sm:inline"
             >
               View all

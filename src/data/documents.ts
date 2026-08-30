@@ -16,6 +16,9 @@ export type HistoricalDocument = {
   /** Plain-language clarification of what the document is and is not. */
   clarification: string;
   image: string | null;
+  /** Optional in-site destination when there is no downloadable file. */
+  href?: string;
+  hrefLabel?: string;
 };
 
 export const documents: HistoricalDocument[] = [
@@ -56,7 +59,45 @@ export const documents: HistoricalDocument[] = [
     summary:
       "Independent Nutrition Facts panels for all 12 flavors from Northeast Laboratories, Inc. (report #20080318F).",
     clarification:
-      "These historical lab results are shown on the Nutrition page, clearly labeled. They must be re-verified against the current formulation before use as a product label.",
+      "These historical lab results are shown on the Product & Nutrition page, clearly labeled. They must be re-verified against the current formulation before use as a product label.",
     image: null,
+    href: "/product#nutrition",
+    hrefLabel: "View historical nutrition panels",
+  },
+  {
+    slug: "product-information",
+    title: "Product information sheet",
+    period: "Historical lineup",
+    summary:
+      "A summary of what Fruiticana is, the original flavor lineup, and how it was described as a fruit-based frozen dessert.",
+    clarification:
+      "This is an on-site briefing drawn from the historical business record, not a current spec sheet from a live production run.",
+    image: null,
+    href: "/product",
+    hrefLabel: "Open product & nutrition",
+  },
+  {
+    slug: "flavor-list",
+    title: "Original flavor list",
+    period: "Original 12 flavors",
+    summary:
+      "Apricot, Mango, Pineapple, Banana, Raisin, Strawberry, Lemonade, Blueberry, Grapefruit, Apple, Orange, and Cantaloupe.",
+    clarification:
+      "These are the original documented flavors. Which flavors exist in any current production run still needs confirmation.",
+    image: null,
+    href: "/product#flavors",
+    hrefLabel: "View the flavor list",
+  },
+  {
+    slug: "institutional-serving",
+    title: "Institutional serving information",
+    period: "Historical",
+    summary:
+      "School-oriented serving notes from the business record, including single-serve cups and a 3 oz institutional portion alongside the 4 oz (1/2 cup) lab serving.",
+    clarification:
+      "Portion sizes are historical. Current food-service pack sizes must be confirmed before menu planning.",
+    image: null,
+    href: "/product#servings",
+    hrefLabel: "View serving formats",
   },
 ];

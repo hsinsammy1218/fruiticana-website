@@ -1,31 +1,26 @@
 import { Hero } from "@/components/home/Hero";
-import { ValueProps } from "@/components/home/ValueProps";
-import { FeaturedFlavors } from "@/components/home/FeaturedFlavors";
-import { Reimagined } from "@/components/home/Reimagined";
-import { Formats } from "@/components/home/Formats";
-import { StoryTeaser } from "@/components/home/StoryTeaser";
-import { LearnTeaser } from "@/components/home/LearnTeaser";
-import { PilotTeaser } from "@/components/home/PilotTeaser";
-import { HomeTestimonials } from "@/components/home/HomeTestimonials";
+import { DesignedForSchools } from "@/components/home/DesignedForSchools";
+import { WhatIsFruiticana } from "@/components/home/WhatIsFruiticana";
+import { ProductNutritionTeaser } from "@/components/home/ProductNutritionTeaser";
+import { ConnecticutSchools } from "@/components/home/ConnecticutSchools";
+import { SupportingDocs } from "@/components/home/SupportingDocs";
 import { CTASection } from "@/components/ui/CTASection";
+import { navCta } from "@/data/navigation";
 
 export default function Home() {
   return (
     <>
       <Hero />
-      <ValueProps />
-      <FeaturedFlavors />
-      <Reimagined />
-      <Formats />
-      <StoryTeaser />
-      <LearnTeaser />
-      <PilotTeaser />
-      <HomeTestimonials />
+      <DesignedForSchools />
+      <WhatIsFruiticana />
+      <ProductNutritionTeaser />
+      <ConnecticutSchools />
+      <SupportingDocs />
       <CTASection
-        title="Ready for something refreshingly different?"
-        description="Explore the flavors or get in touch to bring Fruiticana to your shelves, menu, or program."
-        primary={{ label: "Explore the Flavors", href: "/flavors" }}
-        secondary={{ label: "Get in Touch", href: "/contact" }}
+        title="Interested in Fruiticana for Your School?"
+        description="Learn more about product availability, institutional servings, nutrition information, and potential food-service partnerships."
+        primary={{ label: navCta.label, href: navCta.href }}
+        secondary={{ label: "For Schools", href: "/schools" }}
       />
     </>
   );

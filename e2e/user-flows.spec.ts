@@ -1,44 +1,43 @@
 import { test, expect } from "@playwright/test";
+import { fillSchoolInquiry } from "./helpers";
 
 test.describe("user flows", () => {
-  test("home to flavor to nutrition", async ({ page }) => {
+  test("home to product nutrition to flavor sheet", async ({ page }) => {
     await page.goto("/");
-    await page.getByRole("link", { name: "Explore the Flavors" }).first().click();
-    await expect(page).toHaveURL(/\/flavors$/);
+    await page.getByRole("link", { name: /view nutrition & product details/i }).click();
+    await expect(page).toHaveURL(/\/product$/);
 
     await page.locator('a[href="/flavors/mango"]').click();
     await expect(page).toHaveURL(/\/flavors\/mango$/);
     await expect(page.getByRole("heading", { level: 1, name: "Mango" })).toBeVisible();
 
     await page.getByRole("link", { name: "See full nutrition facts" }).click();
-    await expect(page).toHaveURL(/\/nutrition\?flavor=mango/);
+    await expect(page).toHaveURL(/\/product\?flavor=mango/);
     await expect(page.getByRole("button", { name: "Mango" })).toHaveAttribute(
       "aria-pressed",
       "true",
     );
   });
 
-  test("story to contact inquiry", async ({ page }) => {
-    await page.goto("/");
-    await page.getByRole("link", { name: "Discover Fruiticana" }).click();
-    await expect(page).toHaveURL(/\/story$/);
+  test("story to school inquiry", async ({ page }) => {
+    await page.goto("/story");
     await expect(page.getByText("Fruiticana Creamless Ice Cream")).toBeVisible();
+    await expect(
+      page.getByRole("heading", { name: "Fruiticana in Connecticut Schools" }),
+    ).toBeVisible();
 
-    await page.getByRole("navigation", { name: "Primary" }).getByRole("link", { name: "Contact" }).click();
+    await page.getByRole("navigation", { name: "Primary" }).getByRole("link", { name: "School Inquiry" }).click();
     await expect(page).toHaveURL(/\/contact$/);
 
-    await page.getByLabel(/name/i).fill("Jordan");
-    await page.getByLabel(/email/i).fill("jordan@example.com");
-    await page.getByLabel(/inquiry type/i).selectOption("Partnerships");
-    await page.getByLabel(/message/i).fill(
-      "Interested in a partnership around the original Fruiticana flavors.",
-    );
-    await page.getByRole("button", { name: "Send message" }).click();
+    await fillSchoolInquiry(page, { name: "Jordan", interest: "District-Level Inquiry" });
+    await page.getByRole("button", { name: "Submit school inquiry" }).click();
     await expect(page.getByRole("status").filter({ hasText: /thanks, jordan/i })).toBeVisible();
   });
 
-  test("home to learn to school inquiry", async ({ page }) => {
-    await page.goto("/");
+  test("for schools to classroom resource to snack-program inquiry", async ({
+    page,
+  }) => {
+    await page.goto("/schools");
     await page.getByRole("link", { name: "Open the classroom resource" }).click();
     await expect(page).toHaveURL(/\/learn$/);
     await expect(
@@ -46,8 +45,8 @@ test.describe("user flows", () => {
     ).toBeVisible();
 
     await page.getByRole("link", { name: "Contact for schools" }).click();
-    await expect(page.getByLabel(/inquiry type/i)).toHaveValue(
-      "Schools & Institutions",
+    await expect(page.getByLabel(/interest type/i)).toHaveValue(
+      "Healthy Snack Program",
     );
   });
 

@@ -10,40 +10,54 @@ export type ProductFormat = {
   description: string;
   /** Icon key handled by ProductFormatCard. */
   icon: "cup" | "cone" | "smoothie" | "pop" | "takehome";
+  /** When true, this format is especially relevant to school/food-service. */
+  institutional?: boolean;
 };
 
 export const formats: ProductFormat[] = [
   {
-    slug: "cup",
-    name: "Cup",
-    description: "A simple, single-serve scoop.",
+    slug: "institutional-cup",
+    name: "Institutional cup (3 oz)",
+    description:
+      "The business record lists a 3 oz institutional serving used with moderate single-serve portions in school settings.",
     icon: "cup",
+    institutional: true,
+  },
+  {
+    slug: "cup",
+    name: "Single-serve cup (4 oz)",
+    description:
+      "A 4 oz (1/2 cup) cup matching the historical laboratory Nutrition Facts serving size.",
+    icon: "cup",
+    institutional: true,
   },
   {
     slug: "cone",
     name: "Cone",
-    description: "The classic frozen-dessert experience.",
+    description:
+      "Offered during the historical Connecticut parlor pilot alongside school distribution.",
     icon: "cone",
   },
   {
     slug: "smoothie",
     name: "Smoothie",
-    description: "Fruiticana blended into a refreshing drink.",
+    description: "Fruiticana blended into a drink during the historical parlor pilot.",
     icon: "smoothie",
   },
   {
     slug: "frozen-pop",
-    name: "Frozen Pop",
-    description: "A portable frozen fruit treat.",
+    name: "Frozen pop",
+    description: "A portable frozen-fruit format recorded as a historical serving idea.",
     icon: "pop",
   },
   {
     slug: "take-home",
-    name: "Take Home",
-    description: "Larger containers to enjoy at home.",
+    name: "Take-home pint (16 oz)",
+    description:
+      "Larger containers from the historical parlor/wholesale lineup — not a current school-menu claim.",
     icon: "takehome",
   },
 ];
 
 export const formatsNote =
-  "These formats reflect how Fruiticana has been served historically. Current availability by format is to be confirmed.";
+  "Serving sizes and formats above are historical (approximately 2003–2011). Current institutional availability by format is to be confirmed.";
