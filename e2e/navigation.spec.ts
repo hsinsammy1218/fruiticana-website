@@ -93,7 +93,7 @@ test.describe("navigation @cross-browser", () => {
       }),
     ).toBeFocused();
 
-    for (let i = 0; i < 4; i += 1) {
+    for (let i = 0; i < 5; i += 1) {
       await page.keyboard.press("Tab");
     }
     await expect(

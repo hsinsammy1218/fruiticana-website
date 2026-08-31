@@ -59,6 +59,13 @@ describe("ContactForm", () => {
     ).toBeInTheDocument();
   });
 
+  it("defaults interest to School Food Service", () => {
+    render(<ContactForm />);
+    expect(screen.getByLabelText(/interest type/i)).toHaveValue(
+      "School Food Service",
+    );
+  });
+
   it("lets the visitor pick an interest type", async () => {
     const user = userEvent.setup();
     render(<ContactForm />);

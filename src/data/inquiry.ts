@@ -56,6 +56,7 @@ export const studentRanges = [
 export type StudentRange = (typeof studentRanges)[number];
 
 export function resolveInterestType(value?: string | null): InterestType {
+  if (value == null || value === "") return "School Food Service";
   return interestTypes.includes(value as InterestType)
     ? (value as InterestType)
     : "Other";

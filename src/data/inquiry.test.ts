@@ -6,9 +6,10 @@ describe("inquiry data", () => {
     expect(resolveInterestType("Cafeteria")).toBe("Cafeteria");
   });
 
-  it("falls back to Other", () => {
+  it("defaults missing values to School Food Service and unknown values to Other", () => {
+    expect(resolveInterestType(undefined)).toBe("School Food Service");
+    expect(resolveInterestType("")).toBe("School Food Service");
     expect(resolveInterestType("Retailers")).toBe("Other");
-    expect(resolveInterestType(undefined)).toBe("Other");
   });
 
   it("lists the institutional interest types", () => {

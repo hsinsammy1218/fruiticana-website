@@ -19,8 +19,10 @@ test.describe("nutrition", () => {
     await expect(page.getByText("Calories per 4 oz")).toBeVisible();
     await expect(page.getByText("0g").first()).toBeVisible();
     await expect(page.getByText("100–150").first()).toBeVisible();
-    await expect(page.getByText("Wheat protein", { exact: true })).toBeVisible();
-    await expect(page.getByText("Mar/az", { exact: true })).toBeVisible();
+    await expect(
+      page.locator("#ingredients").getByText("Wheat protein"),
+    ).toBeVisible();
+    await expect(page.locator("#ingredients").getByText("Mar/az")).toBeVisible();
     await expect(page.getByText(/gluten as a historical allergen flag/i)).toBeVisible();
   });
 
