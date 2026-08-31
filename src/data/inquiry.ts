@@ -4,23 +4,25 @@
  */
 
 export const interestTypes = [
-  "School Cafeteria",
+  "School Food Service",
   "Healthy Snack Program",
-  "Private School",
-  "District-Level Inquiry",
-  "Food-Service Distribution",
+  "Cafeteria",
   "Events",
-  "General Information",
+  "Distribution",
+  "Product Information",
+  "Nutrition Information",
+  "Other",
 ] as const;
 
 export type InterestType = (typeof interestTypes)[number];
 
 export const schoolTypes = [
-  "Public school",
-  "Private school",
-  "Charter school",
-  "District office",
-  "Food-service company",
+  "Private School",
+  "Public School",
+  "Charter School",
+  "School District",
+  "College / University",
+  "Food-Service Provider",
   "Distributor",
   "Other",
 ] as const;
@@ -56,5 +58,5 @@ export type StudentRange = (typeof studentRanges)[number];
 export function resolveInterestType(value?: string | null): InterestType {
   return interestTypes.includes(value as InterestType)
     ? (value as InterestType)
-    : "General Information";
+    : "Other";
 }

@@ -11,6 +11,8 @@ describe("schools data", () => {
       "district",
       "events",
       "distribution",
+      "summer",
+      "campus",
     ]);
   });
 

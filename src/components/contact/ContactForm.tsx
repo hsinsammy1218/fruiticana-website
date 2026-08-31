@@ -39,7 +39,7 @@ const emptyFields: Fields = {
   phone: "",
   role: "",
   studentCount: "",
-  interest: "General Information",
+  interest: "School Food Service",
   message: "",
   website: "",
 };
@@ -266,7 +266,7 @@ export function ContactForm({ defaultInterest }: { defaultInterest?: string }) {
           type="submit"
           className="inline-flex min-h-11 items-center justify-center rounded-pill bg-green-deep px-6 text-sm font-semibold text-cream transition-colors hover:bg-green-deep-80"
         >
-          Submit school inquiry
+          Request Information
         </button>
         <p className="text-xs text-muted">
           <span className="text-strawberry">*</span> Required

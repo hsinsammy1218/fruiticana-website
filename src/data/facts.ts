@@ -59,7 +59,7 @@ export const connecticutProgramStats: FactStat[] = [
   },
 ];
 
-/** Story-only: includes the historical pilot sales figure from the business PDF. */
+/** About-only: includes the historical pilot sales figure from the business PDF. */
 export const storyPilotStats: FactStat[] = [
   {
     value: "2003–05",
@@ -129,18 +129,24 @@ export const learnGlanceStats: FactStat[] = [
   },
 ];
 
-export const schoolDesignBenefits: {
-  icon: "fruit" | "leaf" | "cup" | "flavors";
-  figure: string;
+export const productConceptBenefits: {
+  icon: "fruit" | "scoop" | "leaf" | "cup";
+  figure?: string;
   title: string;
   description: string;
 }[] = [
   {
     icon: "fruit",
     figure: "12",
-    title: "Fruit-Based",
+    title: "Fruit Based",
     description:
       "Twelve original fruit flavors, built around fruit rather than a traditional dairy ice-cream base with fruit mixed in.",
+  },
+  {
+    icon: "scoop",
+    title: "Smooth Frozen Texture",
+    description:
+      "Developed as a fruit-based frozen dessert with a smooth, ice-cream-like experience — cups, cones, and smoothies in the historical parlor record.",
   },
   {
     icon: "leaf",
@@ -152,15 +158,47 @@ export const schoolDesignBenefits: {
   {
     icon: "cup",
     figure: "3 oz",
-    title: "Individual Portions",
+    title: "Individual Serving Options",
     description:
       "The historical school program used single-serving cups, including a recorded institutional 3 oz size and a 4 oz (½ cup) lab serving.",
   },
+];
+
+/** @deprecated Use productConceptBenefits; kept as an alias for existing tests. */
+export const schoolDesignBenefits = productConceptBenefits;
+
+export const schoolHomeBenefits: {
+  icon: "cup" | "flavors" | "school" | "leaf";
+  figure: string;
+  title: string;
+  description: string;
+}[] = [
+  {
+    icon: "cup",
+    figure: "3 oz",
+    title: "Student-Friendly Portions",
+    description:
+      "Historical institutional cups were sized for individual service rather than a parlor scoop — a format schools typically evaluate first.",
+  },
   {
     icon: "flavors",
-    figure: "5",
-    title: "Multiple Flavors",
+    figure: "12",
+    title: "Multiple Fruit Flavors",
     description:
-      "The original 12-flavor line spans five fruit families — tropical, berry, citrus, orchard, and melon — so programs can offer variety without a dairy scoop.",
+      "The original lineup spans tropical, berry, citrus, orchard, and melon flavors, so programs can offer variety without a dairy base.",
+  },
+  {
+    icon: "school",
+    figure: "2005–06",
+    title: "School Food-Service Potential",
+    description:
+      "After consumer testing, Fruiticana moved into production for local Connecticut school distribution. Current availability is confirmed through inquiry.",
+  },
+  {
+    icon: "leaf",
+    figure: "2003–05",
+    title: "Historical School Program Experience",
+    description:
+      "Fruiticana participated in Connecticut’s Team Nutrition Healthy Snack pilot. That chapter is history, not a current menu listing.",
   },
 ];

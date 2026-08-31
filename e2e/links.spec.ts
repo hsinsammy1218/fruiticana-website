@@ -24,10 +24,11 @@ test.describe("links and seo", () => {
     const sitemap = await request.get("/sitemap.xml");
     expect(sitemap.ok()).toBeTruthy();
     const xml = await sitemap.text();
-    for (const path of ["/schools", "/product", "/story", "/learn", "/contact"]) {
+    for (const path of ["/schools", "/product", "/about", "/resources", "/learn", "/contact"]) {
       expect(xml).toContain(path);
     }
     expect(xml).not.toContain("/nutrition");
+    expect(xml).not.toContain("/story");
     for (const slug of flavorSlugs) {
       expect(xml).toContain(`/flavors/${slug}`);
     }

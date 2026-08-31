@@ -28,9 +28,17 @@ describe("MobileNavigation", () => {
       "aria-current",
       "page",
     );
-    expect(screen.getByRole("link", { name: "Product & Nutrition" })).toHaveAttribute(
+    expect(screen.getByRole("link", { name: "Flavors & Nutrition" })).toHaveAttribute(
       "href",
       "/product",
+    );
+    expect(screen.getByRole("link", { name: "About Fruiticana" })).toHaveAttribute(
+      "href",
+      "/about",
+    );
+    expect(screen.getByRole("link", { name: "Resources" })).toHaveAttribute(
+      "href",
+      "/resources",
     );
     expect(
       screen.getByRole("link", { name: /request school information/i }),

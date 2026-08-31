@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { cn } from "@/lib/cn";
 import { HistoricalNotice } from "@/components/ui/HistoricalNotice";
+import { HistoricalBadge } from "@/components/ui/HistoricalBadge";
 import type { HistoricalDocument } from "@/data/documents";
 
 function DocIcon() {
@@ -41,7 +42,10 @@ export function TrustDocumentCard({
         <span className="inline-flex h-11 w-11 items-center justify-center rounded-full bg-green/12 text-green-600">
           <DocIcon />
         </span>
-        <HistoricalNotice variant="inline" label={document.period} />
+        <div className="flex flex-col items-end gap-1.5">
+          <HistoricalBadge />
+          <HistoricalNotice variant="inline" label={document.period} />
+        </div>
       </div>
       <h3 className="mt-4 text-lg font-bold text-green-deep">{document.title}</h3>
       <p className="info-copy mt-2">{document.summary}</p>
@@ -55,6 +59,13 @@ export function TrustDocumentCard({
           className="mt-auto pt-4 text-sm font-semibold text-green-600 hover:text-green-700"
         >
           {document.hrefLabel ?? "View details"}
+        </Link>
+      ) : document.file && document.canDownload ? (
+        <Link
+          href={document.file}
+          className="mt-auto pt-4 text-sm font-semibold text-green-600 hover:text-green-700"
+        >
+          Download
         </Link>
       ) : (
         <p className="mt-auto pt-4 text-xs leading-relaxed text-muted">

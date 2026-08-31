@@ -64,7 +64,7 @@ export function MobileNavigation({ open, onClose, activeHref }: MobileNavigation
   return (
     <div
       className={cn(
-        "fixed inset-0 z-50 md:hidden",
+          "fixed inset-0 z-50 lg:hidden",
         open ? "pointer-events-auto" : "pointer-events-none",
       )}
       aria-hidden={!open}

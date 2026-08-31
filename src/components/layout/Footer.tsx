@@ -2,6 +2,7 @@ import Link from "next/link";
 import { Container } from "@/components/layout/Container";
 import { Logo } from "@/components/ui/Logo";
 import { Button } from "@/components/ui/Button";
+import { BrandBar } from "@/components/brand/OriginalBrandMotif";
 import { mainNav, legalNav, resourceNav, navCta } from "@/data/navigation";
 import { site } from "@/data/site";
 
@@ -9,7 +10,8 @@ export function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="mt-24 bg-green-deep text-cream">
+    <footer className="mt-20 bg-green-deep text-cream">
+      <BrandBar />
       <Container className="py-14">
         <div className="grid gap-10 md:grid-cols-[1.4fr_1fr_1fr] lg:gap-16">
           <div>

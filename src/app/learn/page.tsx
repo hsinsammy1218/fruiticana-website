@@ -277,8 +277,8 @@ export default function LearnPage() {
               After the grant window, Fruiticana also ran a localized 2005–2006
               Connecticut pilot that included distribution to local schools. Read
               the timeline on{" "}
-              <Link href="/story" className="font-semibold text-green-600 hover:text-green-700">
-                Our Story
+              <Link href="/about" className="font-semibold text-green-600 hover:text-green-700">
+                About Fruiticana
               </Link>
               .
             </p>
@@ -407,7 +407,7 @@ export default function LearnPage() {
           label: "Contact for schools",
           href: "/contact?interest=Healthy%20Snack%20Program",
         }}
-        secondary={{ label: "Read the historical story", href: "/story" }}
+        secondary={{ label: "Read the historical story", href: "/about" }}
       />
     </>
   );

@@ -6,10 +6,12 @@ nutrition staff, private-school leaders, and distribution partners. Stack:
 Next.js (App Router), TypeScript, and Tailwind CSS.
 
 > **Important — voice of this site.** This is not a consumer shop. The main
-> conversion is a **school inquiry**. Until the business verifies current facts
-> (see the checklist below), the site speaks in **concept + history** language,
-> not **"on menus today / certified today"** language. Timeline, testimonials,
-> documentation, and nutrition panels are **historical** and labeled as such.
+> conversion is a **school inquiry**. The original Fruiticana identity (Creamless
+> Ice Cream, fruit-forward greens and yellows, “An exciting new way to eat fruit.”)
+> is preserved. Until the business verifies current facts (see the checklist
+> below), the site speaks in **concept + history** language, not **"on menus today
+> / certified today"** language. Timeline, testimonials, documentation, and
+> nutrition panels are **historical** and labeled as such.
 
 ## Tech stack
 
@@ -68,15 +70,15 @@ public/images/flavors/  Replaceable flavor artwork (SVG placeholders)
 Content lives in typed modules under `src/data/` so copy changes don't require
 touching JSX.
 
-**Primary pages.** Home, For Schools (`/schools`), Product & Nutrition
-(`/product`), Our Story (`/story`), School Inquiry (`/contact`).
+**Primary pages.** Home, About Fruiticana (`/about`), For Schools (`/schools`), Flavors & Nutrition (`/product`), Resources (`/resources`), School Inquiry (`/contact`).
 
 **Classroom resource.** `/learn` is a free teaching resource (fruit science,
 Nutrition Facts literacy, Connecticut snack-pilot case study). It is not in
 primary nav. It does not claim current school menus.
 
 **Redirects.** `/flavors` and `/nutrition` go to `/product` (query string such
-as `?flavor=` is preserved). Individual `/flavors/[slug]` product sheets remain.
+as `?flavor=` is preserved). `/story` redirects to `/about`. Individual
+`/flavors/[slug]` product sheets remain.
 
 ## Replacing placeholders
 
@@ -84,8 +86,11 @@ as `?flavor=` is preserved). Individual `/flavors/[slug]` product sheets remain.
   placeholder artwork. Drop in real product photography (WebP) and update
   `image`/`imageAlt` in `src/data/flavors.ts`. When you switch to raster photos,
   change `FlavorImage` to use `next/image`.
-- **Logo** is a temporary wordmark (`src/components/ui/Logo.tsx`) designed to be
-  swapped for a supplied vector logo.
+- **Logo** is a Fruiticana lockup with strawberry i-dots inspired by the 2007
+  myfruiticana.com wordmark (`src/components/ui/Logo.tsx`). A rights-cleared
+  vector file from the owner can still replace it.
+- **Archived 2007 JPEGs** are stored in `docs/archive-reference/` as visual
+  reference only. They are not served on the live site.
 - **Contact details / social** are `null` in `src/data/site.ts` and render as
   "coming soon". Fill them in only with verified, current information.
 - **Historical scans** are summarized on-site. Do not add fake “Download PDF”

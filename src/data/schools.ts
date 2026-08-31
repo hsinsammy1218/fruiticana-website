@@ -5,9 +5,9 @@
 
 export const schoolsIntro = {
   eyebrow: "For schools",
-  title: "How Fruiticana could fit a school food program",
+  title: "Fruiticana for Schools",
   description:
-    "Fruiticana is a fruit-based frozen dessert originally developed as a refreshing alternative to traditional dairy ice cream. This page is for administrators, food-service directors, nutrition staff, and partners evaluating whether it belongs in a cafeteria, snack program, or district conversation.",
+    "A refreshing frozen dessert option worth exploring. This page is for administrators, food-service directors, nutrition staff, private-school leaders, and partners evaluating whether Fruiticana could fit a cafeteria, snack program, or district conversation.",
 } as const;
 
 export const schoolAudiences = [
@@ -74,6 +74,22 @@ export const schoolUses: SchoolUse[] = [
     figureLabel: "Documented formats",
     description:
       "Distributors and food-service partners can inquire about six recorded formats (including 3 oz and 4 oz cups), the flavor lineup, and documentation needed to evaluate Fruiticana for school accounts.",
+  },
+  {
+    slug: "summer",
+    title: "Summer and after-school programs",
+    figure: "4 oz",
+    figureLabel: "Single-serve idea",
+    description:
+      "Possible applications include summer feeding and after-school snacks. These are program conversations — not a claim that those programs currently serve Fruiticana.",
+  },
+  {
+    slug: "campus",
+    title: "Campus food service",
+    figure: "12",
+    figureLabel: "Flavor options",
+    description:
+      "Private-school dining halls and campus food service can review the same flavor sheets, historical portions, and nutrition documentation used by K–12 evaluators.",
   },
 ];
 

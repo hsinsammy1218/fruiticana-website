@@ -57,6 +57,12 @@ describe("flavor catalog", () => {
     expect(getFlavor("banana")?.nutrition.calories).toBeNull();
   });
 
+  it("labels every flavor’s nutrition as historical analysis", () => {
+    expect(flavors.every((flavor) => flavor.nutritionStatus === "historical-analysis")).toBe(
+      true,
+    );
+  });
+
   it("prefers same-category flavors for related picks", () => {
     const related = getRelatedFlavors("mango", 3);
     expect(related.map((flavor) => flavor.slug)).toEqual([
