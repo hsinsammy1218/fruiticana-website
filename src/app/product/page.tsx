@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import { Suspense } from "react";
 import { Section } from "@/components/layout/Section";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { HistoricalNotice } from "@/components/ui/HistoricalNotice";
@@ -9,7 +8,7 @@ import { ProductFormatCard } from "@/components/ui/ProductFormatCard";
 import { CTASection } from "@/components/ui/CTASection";
 import { Button } from "@/components/ui/Button";
 import { JsonLd } from "@/components/seo/JsonLd";
-import { flavors } from "@/data/flavors";
+import { flavors, getFlavor } from "@/data/flavors";
 import { formats, formatsNote } from "@/data/formats";
 import {
   historicalIngredients,
@@ -29,7 +28,13 @@ export const metadata: Metadata = {
   alternates: { canonical: "/product" },
 };
 
-export default function ProductPage() {
+export default async function ProductPage({
+  searchParams,
+}: {
+  searchParams: Promise<{ flavor?: string }>;
+}) {
+  const { flavor: flavorParam } = await searchParams;
+  const selectedSlug = getFlavor(flavorParam ?? "")?.slug ?? flavors[0].slug;
   const glance = getNutritionGlanceStats();
   const snapshot = getNutritionSnapshot();
   const breadcrumbLd = {
@@ -111,9 +116,7 @@ export default function ProductPage() {
           description="Select a flavor to view its transcribed 2008 Nutrition Facts panel. Banana calories stay blank because the source scan was illegible."
         />
         <div className="mt-10">
-          <Suspense fallback={<p className="text-muted">Loading nutrition...</p>}>
-            <NutritionSelector />
-          </Suspense>
+          <NutritionSelector selectedSlug={selectedSlug} />
         </div>
         <p className="info-copy mt-8 max-w-3xl">
           Teachers can also use these dated panels for Nutrition Facts literacy

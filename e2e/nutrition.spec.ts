@@ -33,15 +33,14 @@ test.describe("nutrition", () => {
   }) => {
     await page.goto("/product#nutrition");
 
-    await page.getByRole("button", { name: "Strawberry" }).click();
+    await page.locator("#nutrition").getByRole("link", { name: "Strawberry", exact: true }).click();
     await expect(page).toHaveURL(/flavor=strawberry/);
     await expect(
       page.locator("#nutrition").getByRole("heading", { name: "Strawberry" }),
     ).toBeVisible();
-    await expect(page.getByRole("button", { name: "Strawberry" })).toHaveAttribute(
-      "aria-pressed",
-      "true",
-    );
+    await expect(
+      page.locator("#nutrition").getByRole("link", { name: "Strawberry", exact: true }),
+    ).toHaveAttribute("aria-current", "true");
   });
 
   test("preserves flavor deep links through the nutrition redirect", async ({
@@ -49,9 +48,8 @@ test.describe("nutrition", () => {
   }) => {
     await page.goto("/nutrition?flavor=mango");
     await expect(page).toHaveURL(/\/product\?flavor=mango/);
-    await expect(page.getByRole("button", { name: "Mango" })).toHaveAttribute(
-      "aria-pressed",
-      "true",
-    );
+    await expect(
+      page.locator("#nutrition").getByRole("link", { name: "Mango", exact: true }),
+    ).toHaveAttribute("aria-current", "true");
   });
 });

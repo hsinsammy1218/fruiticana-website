@@ -159,10 +159,12 @@
     transform: translateY(16px);
     transition: opacity 0.6s ease, transform 0.6s ease;
     will-change: opacity, transform;
+    pointer-events: none;
   }
   .js-reveal .reveal[data-revealed] {
     opacity: 1;
     transform: none;
+    pointer-events: auto;
   }
 
   @media (prefers-reduced-motion: reduce) {
