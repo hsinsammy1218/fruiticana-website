@@ -46,9 +46,9 @@ export default function ProductPage() {
       <Section className="pb-6">
         <SectionHeading
           as="h1"
-          eyebrow="Product & nutrition"
+          eyebrow={site.productLine}
           title="Flavors, servings, and historical nutrition"
-          description="A factual briefing for food-service and school nutrition staff: the original 12-flavor lineup, documented serving formats, and dated laboratory panels."
+          description={`${site.tagline} Review the original 12 fruit flavors from the myfruiticana.com lineup, documented serving formats, and dated laboratory panels — for schools and food-service staff.`}
         />
         <HistoricalNotice className="mt-6 max-w-3xl">
           Nutrition values come from an independent laboratory analysis dated
@@ -78,8 +78,8 @@ export default function ProductPage() {
 
       <Section id="flavors" className="scroll-mt-24 pt-4">
         <SectionHeading
-          title="Original flavor lineup"
-          description="Twelve fruit flavors from the historical product line. Open a flavor for a shareable product sheet. Which flavors exist in any current production run still needs confirmation."
+          title="Twelve original fruit flavors"
+          description="The same Cream-Less Ice Crème lineup from the original Fruiticana store: Apple, Apricot, Banana, Blueberry, Cantaloupe, Grapefruit, Lemonade, Mango, Orange, Pineapple, Raisin, and Strawberry. Open a flavor for a shareable product sheet."
         />
         <FlavorGrid className="mt-10" flavors={flavors} />
       </Section>
