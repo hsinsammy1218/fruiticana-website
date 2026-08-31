@@ -21,7 +21,8 @@
   --color-green-deep: #163d2a;
   --color-green-deep-80: #234c37;
   --color-ink: #1a1a1a;
-  --color-muted: #5c675f;
+  /* Dark enough on cream for comfortable long-form reading (WCAG AA+). */
+  --color-muted: #3f4d45;
   --color-line: #e7e0d1;
 
   /* Fruit accents (contextual only) */
@@ -61,6 +62,8 @@
     background-color: var(--color-cream);
     color: var(--color-ink);
     font-family: var(--font-sans);
+    font-size: 1.0625rem;
+    line-height: 1.7;
     font-synthesis-weight: none;
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
@@ -81,6 +84,7 @@
 
   p {
     text-wrap: pretty;
+    line-height: 1.75;
   }
 
   a {
@@ -126,6 +130,13 @@
 }
 
 @layer components {
+  /* Longer informational copy: comfortable size, spacing, and contrast. */
+  .info-copy {
+    font-size: 1rem;
+    line-height: 1.75;
+    color: var(--color-muted);
+  }
+
   /* Scroll-reveal helper (progressive enhancement).
      Elements start hidden only when JS marks the root; otherwise visible. */
   .js-reveal .reveal {

@@ -17,6 +17,9 @@ test.describe("for schools", () => {
     await expect(
       page.getByRole("heading", { name: "Food-service distribution" }),
     ).toBeVisible();
+    await expect(page.getByText("Institutional serving")).toBeVisible();
+    await expect(page.getByText("3 oz").first()).toBeVisible();
+    await expect(page.getByText("2003–05").first()).toBeVisible();
   });
 
   test("links documentation and inquiry without fake PDF downloads", async ({

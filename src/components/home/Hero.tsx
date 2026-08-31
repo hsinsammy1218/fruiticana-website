@@ -1,7 +1,9 @@
 import { Container } from "@/components/layout/Container";
 import { Button } from "@/components/ui/Button";
 import { HeroVisual } from "@/components/home/HeroVisual";
+import { StatGrid } from "@/components/ui/StatGrid";
 import { navCta } from "@/data/navigation";
+import { homeGlanceStats } from "@/data/facts";
 
 export function Hero() {
   return (
@@ -23,7 +25,7 @@ export function Hero() {
           <h1 className="mt-4 text-3xl font-extrabold leading-[1.12] sm:text-4xl lg:text-5xl">
             A Healthier Frozen Dessert Option for Schools
           </h1>
-          <p className="mt-5 max-w-xl text-lg leading-relaxed text-muted">
+          <p className="mt-5 max-w-xl text-lg leading-[1.75] text-muted sm:text-xl">
             Fruiticana is a fruit-based frozen dessert originally developed to
             provide students and families with a refreshing alternative to
             traditional dairy ice cream.
@@ -46,6 +48,12 @@ export function Hero() {
         <div className="reveal" data-revealed="true">
           <HeroVisual />
         </div>
+      </Container>
+      <Container className="pb-12 sm:pb-16">
+        <StatGrid
+          items={homeGlanceStats}
+          aria-label="Fruiticana figures at a glance"
+        />
       </Container>
     </section>
   );

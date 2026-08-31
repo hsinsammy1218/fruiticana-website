@@ -1,33 +1,28 @@
 import { Section } from "@/components/layout/Section";
 import { Button } from "@/components/ui/Button";
 import { HistoricalNotice } from "@/components/ui/HistoricalNotice";
-
-const stats = [
-  { label: "Team Nutrition pilot", value: "2003–05" },
-  { label: "Local school pilot", value: "2005–06" },
-  { label: "Consumers sampled", value: "~30,000" },
-  { label: "Original flavors", value: "12" },
-];
+import { StatGrid } from "@/components/ui/StatGrid";
+import { connecticutProgramStats } from "@/data/facts";
 
 export function ConnecticutSchools() {
   return (
     <Section tone="deep">
-      <div className="reveal grid items-start gap-8 lg:grid-cols-[1.5fr_1fr]">
+      <div className="reveal grid items-start gap-8 lg:grid-cols-[1.5fr_1fr] lg:gap-12">
         <div>
-          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-cream/60">
+          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-cream/70">
             Historical Fruiticana school program
           </p>
           <h2 className="mt-2 text-3xl font-extrabold text-cream sm:text-4xl">
             Fruiticana in Connecticut Schools
           </h2>
-          <p className="mt-4 max-w-xl text-lg leading-relaxed text-cream/80">
+          <p className="mt-4 max-w-xl text-lg leading-[1.75] text-cream/90">
             Fruiticana participated from 2003–2005 in the Connecticut Team
             Nutrition Healthy Snack pilot — a USDA-funded grant program to the
             Connecticut State Department of Education. After consumer testing,
             the product later went into broader production for local Connecticut
             schools.
           </p>
-          <p className="mt-3 max-w-xl leading-relaxed text-cream/75">
+          <p className="mt-3 max-w-xl leading-[1.75] text-cream/85">
             For a school administrator, that documented chapter is more useful
             than consumer marketing. It is still history: past participation is
             not a current menu listing or a state endorsement.
@@ -50,16 +45,12 @@ export function ConnecticutSchools() {
           </div>
         </div>
 
-        <dl className="grid grid-cols-2 gap-4">
-          {stats.map((stat) => (
-            <div key={stat.label} className="rounded-xl2 bg-green-deep-80 p-5">
-              <dt className="text-sm text-cream/70">{stat.label}</dt>
-              <dd className="mt-1 font-display text-2xl font-extrabold text-cream sm:text-3xl">
-                {stat.value}
-              </dd>
-            </div>
-          ))}
-        </dl>
+        <StatGrid
+          items={connecticutProgramStats}
+          tone="deep"
+          columns={2}
+          aria-label="Connecticut school program figures"
+        />
       </div>
     </Section>
   );

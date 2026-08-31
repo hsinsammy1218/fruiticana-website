@@ -54,7 +54,7 @@ export function HistoricalNotice({
   return (
     <div
       className={cn(
-        "flex gap-2.5 rounded-card border border-line bg-cream-100 px-4 py-3 text-sm leading-relaxed text-muted",
+        "flex gap-2.5 rounded-card border border-line bg-cream-100 px-4 py-3.5 text-base leading-[1.75] text-muted",
         className,
       )}
     >

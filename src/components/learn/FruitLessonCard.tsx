@@ -22,7 +22,7 @@ export function FruitLessonCard({ lesson }: { lesson: FruitLesson }) {
           {lesson.family}
         </p>
         <h3 className="mt-1 text-lg font-bold text-green-deep">{lesson.fruitName}</h3>
-        <dl className="mt-3 space-y-2 text-sm leading-relaxed">
+        <dl className="info-copy mt-3 space-y-2">
           <div>
             <dt className="font-semibold text-green-deep">Plant part</dt>
             <dd className="text-muted">{lesson.plantPart}</dd>

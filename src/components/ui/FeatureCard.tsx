@@ -5,10 +5,18 @@ type FeatureCardProps = {
   icon: keyof typeof valueIcons;
   title: string;
   description: string;
+  /** Large scannable figure (e.g. "12" or "3 oz"). */
+  figure?: string;
   className?: string;
 };
 
-export function FeatureCard({ icon, title, description, className }: FeatureCardProps) {
+export function FeatureCard({
+  icon,
+  title,
+  description,
+  figure,
+  className,
+}: FeatureCardProps) {
   const Icon = valueIcons[icon];
   return (
     <div
@@ -17,11 +25,18 @@ export function FeatureCard({ icon, title, description, className }: FeatureCard
         className,
       )}
     >
-      <span className="inline-flex h-11 w-11 items-center justify-center rounded-full bg-green/12 text-green-600">
-        <Icon width={22} height={22} />
-      </span>
+      <div className="flex items-start justify-between gap-3">
+        <span className="inline-flex h-11 w-11 items-center justify-center rounded-full bg-green/12 text-green-600">
+          <Icon width={22} height={22} />
+        </span>
+        {figure ? (
+          <p className="font-display text-3xl font-extrabold tabular-nums leading-none tracking-tight text-green-deep">
+            {figure}
+          </p>
+        ) : null}
+      </div>
       <h3 className="mt-4 text-lg font-bold text-green-deep">{title}</h3>
-      <p className="mt-1.5 text-sm leading-relaxed text-muted">{description}</p>
+      <p className="info-copy mt-2">{description}</p>
     </div>
   );
 }

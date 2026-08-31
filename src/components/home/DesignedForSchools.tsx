@@ -2,36 +2,7 @@ import { Section } from "@/components/layout/Section";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { FeatureCard } from "@/components/ui/FeatureCard";
 import { HistoricalNotice } from "@/components/ui/HistoricalNotice";
-import { valueIcons } from "@/components/ui/icons";
-
-const benefits: {
-  icon: keyof typeof valueIcons;
-  title: string;
-  description: string;
-}[] = [
-  {
-    icon: "fruit",
-    title: "Fruit-Based",
-    description: "Built around fruit rather than a traditional dairy ice-cream base.",
-  },
-  {
-    icon: "leaf",
-    title: "Lactose-Free Concept",
-    description:
-      "Originally designed as an option for people avoiding lactose. Current formulation still needs verification.",
-  },
-  {
-    icon: "cup",
-    title: "Individual Portions",
-    description:
-      "The historical school program used single-serving cups, including a recorded institutional 3 oz size.",
-  },
-  {
-    icon: "flavors",
-    title: "Multiple Flavors",
-    description: "The original Fruiticana product line included 12 fruit flavors.",
-  },
-];
+import { schoolDesignBenefits } from "@/data/facts";
 
 export function DesignedForSchools() {
   return (
@@ -47,10 +18,11 @@ export function DesignedForSchools() {
         participation is not a current endorsement.
       </HistoricalNotice>
       <ul className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
-        {benefits.map((benefit) => (
+        {schoolDesignBenefits.map((benefit) => (
           <li key={benefit.title} className="reveal">
             <FeatureCard
               icon={benefit.icon}
+              figure={benefit.figure}
               title={benefit.title}
               description={benefit.description}
             />

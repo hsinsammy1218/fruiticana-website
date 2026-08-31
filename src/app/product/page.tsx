@@ -13,6 +13,8 @@ import { flavors } from "@/data/flavors";
 import { formats, formatsNote } from "@/data/formats";
 import { navCta } from "@/data/navigation";
 import { site } from "@/data/site";
+import { getNutritionGlanceStats, getNutritionSnapshot } from "@/lib/nutrition";
+import { StatGrid } from "@/components/ui/StatGrid";
 
 export const metadata: Metadata = {
   title: "Product & Nutrition",
@@ -22,6 +24,8 @@ export const metadata: Metadata = {
 };
 
 export default function ProductPage() {
+  const glance = getNutritionGlanceStats();
+  const snapshot = getNutritionSnapshot();
   const breadcrumbLd = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
@@ -53,6 +57,23 @@ export default function ProductPage() {
           historical. Current ingredients, allergens, and pack sizes must be
           re-verified before menu use.
         </HistoricalNotice>
+        <StatGrid
+          className="mt-10"
+          items={glance}
+          aria-label="Historical 2008 nutrition snapshot"
+        />
+        <p className="info-copy mt-6 max-w-3xl">
+          Every 2008 panel recorded {snapshot.allZeroFat ? "0 g total fat" : "see panels"},{" "}
+          {snapshot.allZeroSaturatedFat ? "0 g saturated fat" : "see panels"},{" "}
+          {snapshot.allZeroTransFat ? "0 g trans fat" : "see panels"}, and{" "}
+          {snapshot.allZeroCholesterol ? "0 mg cholesterol" : "see panels"} per{" "}
+          {snapshot.servingSize} ({snapshot.servingGrams} g). Calories ranged from{" "}
+          {snapshot.calorieMin} to {snapshot.calorieMax}
+          {snapshot.flavorsMissingCalories.length > 0
+            ? ` (${snapshot.flavorsMissingCalories.join(", ")} left blank because the scan was illegible)`
+            : ""}
+          . Sodium ranged from {snapshot.sodiumMin}–{snapshot.sodiumMax} mg.
+        </p>
       </Section>
 
       <Section id="flavors" className="scroll-mt-24 pt-4">
@@ -88,7 +109,7 @@ export default function ProductPage() {
             <NutritionSelector />
           </Suspense>
         </div>
-        <p className="mt-8 max-w-3xl text-sm leading-relaxed text-muted">
+        <p className="info-copy mt-8 max-w-3xl">
           Teachers can also use these dated panels for Nutrition Facts literacy
           on the classroom resource. Food-service readers should treat them as
           historical reference only.
@@ -110,7 +131,7 @@ export default function ProductPage() {
             />
           </div>
           <div className="space-y-4">
-            <p className="leading-relaxed text-muted">
+            <p className="info-copy">
               We would rather show nothing than publish an ingredient or allergen
               list we cannot currently verify. High-level language (fruit-based;
               originally a lactose-free concept) is not a substitute for a

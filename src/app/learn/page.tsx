@@ -9,6 +9,8 @@ import { JsonLd } from "@/components/seo/JsonLd";
 import { FruitLessonCard } from "@/components/learn/FruitLessonCard";
 import { BookIcon, FlaskIcon, LabelIcon, SchoolIcon, ChatIcon } from "@/components/ui/icons";
 import { site } from "@/data/site";
+import { learnGlanceStats } from "@/data/facts";
+import { StatGrid } from "@/components/ui/StatGrid";
 import {
   caseStudy,
   classroomActivities,
@@ -109,6 +111,11 @@ export default function LearnPage() {
           <strong>not</strong> claim Fruiticana is on school menus today, and it
           is not a USDA, state, or district endorsement.
         </HistoricalNotice>
+        <StatGrid
+          className="mt-10"
+          items={learnGlanceStats}
+          aria-label="Classroom resource figures"
+        />
         <div className="mt-8 flex flex-col gap-3 sm:flex-row">
           <Button href="/learn#fruits">Start with the twelve fruits</Button>
           <Button href="/learn#classroom" variant="secondary">
@@ -131,7 +138,7 @@ export default function LearnPage() {
               className="reveal rounded-xl2 border border-line bg-white p-6"
             >
               <h3 className="text-lg font-bold text-green-deep">{item.title}</h3>
-              <p className="mt-2 text-sm leading-relaxed text-muted">{item.body}</p>
+              <p className="info-copy mt-2">{item.body}</p>
             </li>
           ))}
         </ul>
@@ -163,7 +170,7 @@ export default function LearnPage() {
                     <p className="mt-1 text-lg font-bold text-green-deep">
                       {module.title}
                     </p>
-                    <p className="mt-1.5 text-sm leading-relaxed text-muted">
+                    <p className="info-copy mt-1.5">
                       {module.summary}
                     </p>
                   </a>
@@ -204,7 +211,7 @@ export default function LearnPage() {
               className="reveal rounded-xl2 border border-line bg-white p-6"
             >
               <h3 className="text-lg font-bold text-green-deep">{card.title}</h3>
-              <p className="mt-2 text-sm leading-relaxed text-muted">{card.body}</p>
+              <p className="info-copy mt-2">{card.body}</p>
             </li>
           ))}
         </ul>
@@ -225,7 +232,7 @@ export default function LearnPage() {
                 className="rounded-xl2 border border-line bg-white p-5"
               >
                 <dt className="font-bold text-green-deep">{item.term}</dt>
-                <dd className="mt-1.5 text-sm leading-relaxed text-muted">
+                <dd className="info-copy mt-1.5">
                   {item.meaning}
                 </dd>
               </div>
@@ -239,7 +246,7 @@ export default function LearnPage() {
               {labelLiteracyNotes.map((note) => (
                 <li
                   key={note}
-                  className="rounded-xl2 border border-line bg-cream-100 p-4 text-sm leading-relaxed text-muted"
+                  className="info-copy rounded-xl2 border border-line bg-cream-100 p-4"
                 >
                   {note}
                 </li>
@@ -258,7 +265,7 @@ export default function LearnPage() {
           description={`${caseStudy.period}. A documented school tasting — shared so students can practice reading history, not so anyone assumes it is happening now.`}
         />
         <div className="mt-10 grid gap-10 lg:grid-cols-[1.2fr_1fr] lg:gap-14">
-          <div className="space-y-4 leading-relaxed text-muted">
+          <div className="info-copy space-y-4">
             <p>{caseStudy.summary}</p>
             <HistoricalNotice>
               These details come from Fruiticana&rsquo;s 2003–2011 business
@@ -284,7 +291,7 @@ export default function LearnPage() {
               {caseStudy.whatStudentsShouldNotice.map((item) => (
                 <li
                   key={item}
-                  className="rounded-xl2 border border-line bg-white p-4 text-sm leading-relaxed text-muted"
+                  className="info-copy rounded-xl2 border border-line bg-white p-4"
                 >
                   {item}
                 </li>
@@ -296,7 +303,7 @@ export default function LearnPage() {
           <h3 className="text-lg font-bold text-green-deep">
             Source questions for the 2004 letter
           </h3>
-          <ol className="mt-4 list-decimal space-y-2 pl-5 text-sm leading-relaxed text-muted">
+          <ol className="info-copy mt-4 list-decimal space-y-2 pl-5">
             {caseStudy.sourceQuestions.map((question) => (
               <li key={question}>{question}</li>
             ))}
@@ -324,7 +331,7 @@ export default function LearnPage() {
               <h3 className="mt-2 text-lg font-bold text-green-deep">
                 {prompt.audience}
               </h3>
-              <ol className="mt-4 flex-1 list-decimal space-y-2 pl-5 text-sm leading-relaxed text-muted">
+              <ol className="info-copy mt-4 flex-1 list-decimal space-y-2 pl-5">
                 {prompt.questions.map((question) => (
                   <li key={question}>{question}</li>
                 ))}
@@ -348,16 +355,16 @@ export default function LearnPage() {
                   {activity.duration}
                 </p>
               </div>
-              <p className="mt-2 text-sm text-muted">
+              <p className="info-copy mt-2">
                 <span className="font-semibold text-green-deep">Materials: </span>
                 {activity.materials}
               </p>
-              <ol className="mt-3 list-decimal space-y-1.5 pl-5 text-sm leading-relaxed text-muted">
+              <ol className="info-copy mt-3 list-decimal space-y-1.5 pl-5">
                 {activity.steps.map((step) => (
                   <li key={step}>{step}</li>
                 ))}
               </ol>
-              <p className="mt-3 text-sm text-muted">
+              <p className="info-copy mt-3">
                 <span className="font-semibold text-green-deep">Why it works: </span>
                 {activity.why}
               </p>
@@ -380,7 +387,7 @@ export default function LearnPage() {
               className="rounded-xl2 border border-line bg-cream-100 p-6"
             >
               <h3 className="text-lg font-bold text-green-deep">{goal.title}</h3>
-              <p className="mt-2 text-sm leading-relaxed text-muted">{goal.body}</p>
+              <p className="info-copy mt-2">{goal.body}</p>
             </li>
           ))}
         </ul>

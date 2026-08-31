@@ -15,6 +15,8 @@ import {
   schoolUses,
   schoolsIntro,
 } from "@/data/schools";
+import { schoolGlanceStats } from "@/data/facts";
+import { StatGrid } from "@/components/ui/StatGrid";
 
 export const metadata: Metadata = {
   title: "For Schools",
@@ -51,6 +53,11 @@ export default function SchoolsPage() {
         <HistoricalNotice className="mt-6 max-w-3xl">
           {schoolAvailabilityNote}
         </HistoricalNotice>
+        <StatGrid
+          className="mt-10"
+          items={schoolGlanceStats}
+          aria-label="School program figures"
+        />
         <ul className="mt-8 flex flex-wrap gap-2">
           {schoolAudiences.map((audience) => (
             <li
@@ -75,10 +82,14 @@ export default function SchoolsPage() {
               id={use.slug}
               className="reveal rounded-xl2 border border-line bg-white p-6"
             >
-              <h2 className="text-lg font-bold text-green-deep">{use.title}</h2>
-              <p className="mt-2 text-sm leading-relaxed text-muted">
-                {use.description}
+              <p className="font-display text-3xl font-extrabold tabular-nums tracking-tight text-green-deep">
+                {use.figure}
               </p>
+              <p className="mt-1 text-xs font-semibold uppercase tracking-wide text-green-600">
+                {use.figureLabel}
+              </p>
+              <h2 className="mt-3 text-lg font-bold text-green-deep">{use.title}</h2>
+              <p className="info-copy mt-2">{use.description}</p>
             </li>
           ))}
         </ul>
@@ -93,8 +104,11 @@ export default function SchoolsPage() {
           {schoolFitPoints.map((point) => (
             <li key={point.title} className="reveal">
               <div className="h-full rounded-xl2 border border-line bg-cream-100 p-6">
-                <h3 className="text-lg font-bold text-green-deep">{point.title}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-muted">{point.body}</p>
+                <p className="font-display text-3xl font-extrabold tabular-nums tracking-tight text-green-deep">
+                  {point.figure}
+                </p>
+                <h3 className="mt-3 text-lg font-bold text-green-deep">{point.title}</h3>
+                <p className="info-copy mt-2">{point.body}</p>
               </div>
             </li>
           ))}
@@ -105,6 +119,7 @@ export default function SchoolsPage() {
         <div className="grid gap-8 lg:grid-cols-3">
           <FeatureCard
             icon="school"
+            figure="2003–05"
             title="Connecticut school chapter"
             description="Team Nutrition Healthy Snack pilot (2003–2005) and later distribution to local Connecticut schools after consumer testing."
           />
@@ -112,7 +127,7 @@ export default function SchoolsPage() {
             <h2 className="text-lg font-bold text-green-deep">
               Review the documentation
             </h2>
-            <p className="mt-2 text-sm leading-relaxed text-muted">
+            <p className="info-copy mt-2">
               Nutrition panels, serving sizes, ingredients honesty, and
               historical letters are on Product & Nutrition and Our Story.
             </p>
@@ -127,7 +142,7 @@ export default function SchoolsPage() {
             <h2 className="text-lg font-bold text-green-deep">
               Classroom resource
             </h2>
-            <p className="mt-2 text-sm leading-relaxed text-muted">
+            <p className="info-copy mt-2">
               Teachers can use a separate free resource on fruit science,
               Nutrition Facts literacy, and the Connecticut snack-pilot case
               study. It is not a food-service sales page.

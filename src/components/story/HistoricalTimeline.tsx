@@ -21,7 +21,7 @@ export function HistoricalTimeline() {
             ) : null}
           </div>
           <h3 className="mt-1 text-xl font-bold text-green-deep">{entry.title}</h3>
-          <p className="mt-2 max-w-2xl leading-relaxed text-muted">
+          <p className="info-copy mt-2 max-w-2xl">
             {entry.description}
           </p>
         </li>

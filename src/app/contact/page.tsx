@@ -50,7 +50,7 @@ export default async function ContactPage({
           <aside className="space-y-6">
             <div className="rounded-xl2 border border-line bg-white p-6">
               <h2 className="text-lg font-bold text-green-deep">What happens next</h2>
-              <ol className="mt-4 list-decimal space-y-2 pl-5 text-sm leading-relaxed text-muted">
+              <ol className="info-copy mt-4 list-decimal space-y-2 pl-5">
                 <li>Share your school, role, and program interest.</li>
                 <li>
                   Include enrollment and any nutrition or serving-size questions
@@ -85,7 +85,7 @@ export default async function ContactPage({
 
             <div className="rounded-xl2 border border-line bg-cream-100 p-6">
               <h2 className="text-lg font-bold text-green-deep">Response times</h2>
-              <p className="mt-2 text-sm leading-relaxed text-muted">
+              <p className="info-copy mt-2">
                 Message delivery isn&rsquo;t active yet, so we can&rsquo;t promise
                 a reply at the moment. Once a verified business inbox is
                 connected, school inquiries submitted here will be routed to the
