@@ -16,7 +16,7 @@ export function Footer() {
         <div className="grid gap-10 md:grid-cols-[1.4fr_1fr_1fr] lg:gap-16">
           <div>
             <Logo className="text-cream" />
-            <p className="mt-3 font-display text-sm font-bold uppercase tracking-[0.14em] text-berry">
+            <p className="mt-3 font-display text-sm font-bold uppercase tracking-[0.14em] text-yellow">
               {site.tagline.replace(/\.$/, "")}
             </p>
             <p className="mt-4 max-w-sm text-base leading-[1.75] text-cream/85">
