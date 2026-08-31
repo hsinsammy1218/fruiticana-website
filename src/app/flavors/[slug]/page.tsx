@@ -131,7 +131,7 @@ export default async function FlavorPage({
                   <dt className="text-xs font-semibold uppercase tracking-wide text-muted">
                     {item.label}
                   </dt>
-                  <dd className="mt-1 font-display text-2xl font-extrabold tabular-nums text-green-deep sm:text-3xl">
+                  <dd className="mt-1 font-sans text-2xl font-extrabold tabular-nums text-green-deep sm:text-3xl">
                     {item.value}
                   </dd>
                 </div>

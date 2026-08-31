@@ -86,7 +86,7 @@ export default function SchoolsPage() {
               id={use.slug}
               className="reveal rounded-xl2 border border-line bg-white p-6"
             >
-              <p className="font-display text-3xl font-extrabold tabular-nums tracking-tight text-green-deep">
+              <p className="font-sans text-3xl font-extrabold tabular-nums tracking-tight text-green-deep">
                 {use.figure}
               </p>
               <p className="mt-1 text-xs font-semibold uppercase tracking-wide text-green-600">
@@ -108,7 +108,7 @@ export default function SchoolsPage() {
           {schoolFitPoints.map((point) => (
             <li key={point.title} className="reveal">
               <div className="h-full rounded-xl2 border border-line bg-cream-100 p-6">
-                <p className="font-display text-3xl font-extrabold tabular-nums tracking-tight text-green-deep">
+                <p className="font-sans text-3xl font-extrabold tabular-nums tracking-tight text-green-deep">
                   {point.figure}
                 </p>
                 <h3 className="mt-3 text-lg font-bold text-green-deep">{point.title}</h3>

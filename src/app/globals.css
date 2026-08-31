@@ -75,7 +75,7 @@
   h2,
   h3,
   h4 {
-    font-family: var(--font-display);
+    font-family: var(--font-sans);
     color: var(--color-green-deep);
     letter-spacing: -0.02em;
     text-wrap: balance;

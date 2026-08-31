@@ -86,7 +86,7 @@ export function MobileNavigation({ open, onClose, activeHref }: MobileNavigation
         )}
       >
         <div className="flex items-center justify-between border-b border-line px-5 py-4">
-          <span className="font-display text-lg font-bold text-green-deep">
+          <span className="font-sans text-lg font-bold text-green-deep">
             Menu
           </span>
           <button

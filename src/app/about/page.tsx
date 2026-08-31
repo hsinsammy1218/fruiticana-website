@@ -145,7 +145,7 @@ export default function AboutPage() {
                 className="flex items-center gap-4 rounded-xl2 border border-line bg-cream-100 p-5"
               >
                 <span
-                  className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-green/15 font-display text-base font-bold text-green-700"
+                  className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-green/15 font-sans text-base font-bold text-green-700"
                   aria-hidden="true"
                 >
                   {initials}

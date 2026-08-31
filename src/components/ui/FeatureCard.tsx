@@ -30,7 +30,7 @@ export function FeatureCard({
           <Icon width={22} height={22} />
         </span>
         {figure ? (
-          <p className="font-display text-3xl font-extrabold tabular-nums leading-none tracking-tight text-green-deep">
+          <p className="font-sans text-3xl font-extrabold tabular-nums leading-none tracking-tight text-green-deep">
             {figure}
           </p>
         ) : null}
