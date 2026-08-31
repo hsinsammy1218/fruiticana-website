@@ -12,6 +12,7 @@ import { founders } from "@/data/timeline";
 import { storyPilotStats } from "@/data/facts";
 import { testimonials, testimonialsIntro } from "@/data/testimonials";
 import { documents } from "@/data/documents";
+import { historicalRecord } from "@/data/record";
 import { navCta } from "@/data/navigation";
 import { site } from "@/data/site";
 
@@ -59,10 +60,11 @@ export default function StoryPage() {
               From September 30, 2003 to September 30, 2005, Fruiticana
               participated in the Connecticut Team Nutrition Healthy Snack Pilot
               — a program funded by a USDA Team Nutrition grant to the
-              Connecticut State Department of Education. The program facilitated
-              student taste tests and samplings. Participating vendors had to
-              meet the program’s nutrition standards and use moderate
-              single-serving portions.
+              Connecticut State Department of Education. The business record
+              lists Fruiticana as one of 11 vendors, and one of 3 frozen-dessert
+              vendors. The program facilitated student taste tests and
+              samplings. Participating vendors had to meet the program’s
+              nutrition standards and use moderate single-serving portions.
             </p>
             <p>
               After consumer testing, Fruiticana later went into broader
@@ -147,7 +149,7 @@ export default function StoryPage() {
         <SectionHeading
           eyebrow="Supporting documentation"
           title="Historical records, not current badges"
-          description="Fruiticana's business record includes documents from roughly 2004-2008. We share them as historical records - not as current certifications or endorsements. Scans are not offered as downloads."
+          description={`${historicalRecord.citation} Materials below are summarized for school review — not as current certifications or endorsements. Scans are not offered as downloads.`}
         />
         <ul className="mt-10 grid grid-cols-1 gap-5 md:grid-cols-2">
           {documents.map((document) => (

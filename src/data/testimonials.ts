@@ -23,19 +23,19 @@ export const testimonials: Testimonial[] = [
     quote: "Great stuff.",
     author: "Frank",
     location: "Waterbury, CT",
-    dateLabel: "July 2007",
+    dateLabel: "July 19, 2007",
   },
   {
     quote: "Great. Simply awesome.",
     author: "Latonja",
     location: "Waterbury, CT",
-    dateLabel: "July 2007",
+    dateLabel: "July 19, 2007",
   },
   {
     quote: "Like nothing I ever tasted before.",
     author: "Shawn",
     location: "Waterbury, CT",
-    dateLabel: "July 2007",
+    dateLabel: "July 18, 2007",
   },
   {
     quote:

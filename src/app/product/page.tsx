@@ -15,6 +15,7 @@ import { navCta } from "@/data/navigation";
 import { site } from "@/data/site";
 import { getNutritionGlanceStats, getNutritionSnapshot } from "@/lib/nutrition";
 import { StatGrid } from "@/components/ui/StatGrid";
+import { historicalRecord } from "@/data/record";
 
 export const metadata: Metadata = {
   title: "Product & Nutrition",
@@ -51,9 +52,10 @@ export default function ProductPage() {
           description="A factual briefing for food-service and school nutrition staff: the original 12-flavor lineup, documented serving formats, and dated laboratory panels."
         />
         <HistoricalNotice className="mt-6 max-w-3xl">
-          Nutrition values come from an independent laboratory analysis dated
-          2008 (Northeast Laboratories, Inc., report #20080318F). They are{" "}
-          <strong>not a current product label</strong>. Serving formats are
+          Nutrition values are transcribed from appendix pages{" "}
+          {historicalRecord.nutritionPages} of the 2003–2011 business record
+          (Northeast Laboratories, Inc., report #20080318F, March 18, 2008). They
+          are <strong>not a current product label</strong>. Serving formats are
           historical. Current ingredients, allergens, and pack sizes must be
           re-verified before menu use.
         </HistoricalNotice>

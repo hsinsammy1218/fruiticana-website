@@ -18,9 +18,10 @@ export function ConnecticutSchools() {
           <p className="mt-4 max-w-xl text-lg leading-[1.75] text-cream/90">
             Fruiticana participated from 2003–2005 in the Connecticut Team
             Nutrition Healthy Snack pilot — a USDA-funded grant program to the
-            Connecticut State Department of Education. After consumer testing,
-            the product later went into broader production for local Connecticut
-            schools.
+            Connecticut State Department of Education. The business record lists
+            Fruiticana as one of 11 vendors in that pilot, and one of 3
+            frozen-dessert vendors. After consumer testing, the product later
+            went into broader production for local Connecticut schools.
           </p>
           <p className="mt-3 max-w-xl leading-[1.75] text-cream/85">
             For a school administrator, that documented chapter is more useful

@@ -23,7 +23,7 @@ export const timeline: TimelineEntry[] = [
     period: "2003 - 2005",
     title: "Connecticut Team Nutrition Healthy Snack Pilot",
     description:
-      "Fruiticana was included in student taste tests and samplings for the Connecticut Team Nutrition Healthy Snack Pilot - a program run through a USDA-funded Team Nutrition grant to the Connecticut State Department of Education (September 30, 2003 - September 30, 2005).",
+      "Fruiticana was included in student taste tests and samplings for the Connecticut Team Nutrition Healthy Snack Pilot - a program run through a USDA-funded Team Nutrition grant to the Connecticut State Department of Education (September 30, 2003 - September 30, 2005). The business record lists Fruiticana as one of 11 vendors and one of 3 frozen-dessert vendors in that pilot.",
     historical: true,
   },
   {

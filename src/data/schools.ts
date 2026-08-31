@@ -41,7 +41,7 @@ export const schoolUses: SchoolUse[] = [
     figure: "2003–05",
     figureLabel: "Team Nutrition pilot",
     description:
-      "Fruiticana participated in Connecticut’s two-year Team Nutrition Healthy Snack pilot. That program required vendors to meet nutrition standards and use moderate single-serving portions.",
+      "Fruiticana participated in Connecticut’s two-year Team Nutrition Healthy Snack pilot as one of 11 vendors (3 frozen-dessert vendors). That program required vendors to meet nutrition standards and use moderate single-serving portions.",
   },
   {
     slug: "private",
@@ -89,9 +89,9 @@ export const schoolFitPoints = [
     body: "The historical school program used single-serving cups, including an institutional 3 oz size and a 4 oz (½ cup) laboratory serving.",
   },
   {
-    figure: "2003–05",
+    figure: "1 of 11",
     title: "Documented school chapter",
-    body: "Connecticut Team Nutrition participation (2003–2005) and later distribution to local Connecticut schools after consumer testing in 2005–2006.",
+    body: "Connecticut Team Nutrition participation (2003–2005) as one of 11 vendors and 3 frozen-dessert vendors, then distribution to local Connecticut schools after consumer testing in 2005–2006.",
   },
   {
     figure: "2003",
