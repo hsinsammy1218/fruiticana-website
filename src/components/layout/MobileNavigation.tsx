@@ -61,19 +61,15 @@ export function MobileNavigation({ open, onClose, activeHref }: MobileNavigation
     return () => document.removeEventListener("keydown", onKeyDown);
   }, [open, onClose]);
 
+  if (!open) return null;
+
   return (
-    <div
-      className={cn(
-        "fixed inset-0 z-50 md:hidden",
-        open ? "pointer-events-auto" : "pointer-events-none",
-      )}
-      aria-hidden={!open}
-    >
+    <div className="fixed inset-0 z-50 lg:hidden">
       {/* Backdrop */}
       <div
         className={cn(
           "absolute inset-0 bg-green-deep/40 transition-opacity duration-300",
-          open ? "opacity-100" : "opacity-0",
+          "opacity-100",
         )}
         onClick={onClose}
       />
@@ -86,7 +82,7 @@ export function MobileNavigation({ open, onClose, activeHref }: MobileNavigation
         aria-label="Site menu"
         className={cn(
           "absolute inset-y-0 right-0 flex w-[min(20rem,86vw)] flex-col bg-cream shadow-hover transition-transform duration-300",
-          open ? "translate-x-0" : "translate-x-full",
+          "translate-x-0",
         )}
       >
         <div className="flex items-center justify-between border-b border-line px-5 py-4">
@@ -128,7 +124,7 @@ export function MobileNavigation({ open, onClose, activeHref }: MobileNavigation
                       "block rounded-xl px-4 py-3 text-lg font-semibold",
                       isActive
                         ? "bg-green-deep/8 text-green-deep"
-                        : "text-green-deep/80 hover:bg-green-deep/5",
+                        : "text-green-deep hover:bg-green-deep/5",
                     )}
                   >
                     {item.label}

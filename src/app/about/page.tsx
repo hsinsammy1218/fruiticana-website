@@ -14,25 +14,41 @@ import { testimonials, testimonialsIntro } from "@/data/testimonials";
 import { documents } from "@/data/documents";
 import { navCta } from "@/data/navigation";
 import { site } from "@/data/site";
+import { JsonLd } from "@/components/seo/JsonLd";
 
 export const metadata: Metadata = {
-  title: "Our Story & Pilot Program",
+  title: "About Fruiticana",
   description:
     "Fruiticana’s origin as a fruit-based frozen dessert, its 2003–2005 Connecticut Team Nutrition Healthy Snack pilot, later school distribution, founding team, and historical documentation.",
-  alternates: { canonical: "/story" },
+  alternates: { canonical: "/about" },
 };
 
-export default function StoryPage() {
+export default function AboutPage() {
+  const breadcrumbLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: site.url },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "About Fruiticana",
+        item: `${site.url}/about`,
+      },
+    ],
+  };
+
   return (
     <>
+      <JsonLd data={breadcrumbLd} />
       <Section>
         <SectionHeading
           as="h1"
-          eyebrow="Our story & pilot program"
+          eyebrow="About Fruiticana"
           title="A fruit-based dessert with a documented school chapter"
           description="Fruiticana began in 2003 as a fruit-based frozen dessert — a refreshing alternative to traditional dairy ice cream — and was evaluated in Connecticut schools through a Team Nutrition Healthy Snack pilot."
         />
-        <div className="mt-6 max-w-2xl space-y-4 text-base leading-[1.75] text-muted">
+        <div className="mt-6 max-w-2xl space-y-4 text-base leading-[1.7] text-muted">
           <p>
             Originally introduced as{" "}
             <strong className="font-semibold text-green-deep">
@@ -49,13 +65,13 @@ export default function StoryPage() {
 
       <Section tone="cream-100">
         <p className="text-xs font-semibold uppercase tracking-[0.18em] text-green-600">
-          Historical Fruiticana school program
+          Historical Fruiticana Pilot Program
         </p>
         <h2 className="mt-2 text-3xl font-extrabold sm:text-4xl">
           Fruiticana in Connecticut Schools
         </h2>
         <div className="mt-5 grid gap-8 lg:grid-cols-[1.3fr_1fr] lg:items-start lg:gap-12">
-          <div className="max-w-2xl space-y-4 text-base leading-[1.75] text-muted">
+          <div className="max-w-2xl space-y-4 text-base leading-[1.7] text-muted">
             <p>
               From September 30, 2003 to September 30, 2005, Fruiticana
               participated in the Connecticut Team Nutrition Healthy Snack Pilot
@@ -179,7 +195,7 @@ export default function StoryPage() {
         title="Interested in Fruiticana for Your School?"
         description="Request school information to discuss availability, institutional servings, nutrition documentation, and food-service partnerships."
         primary={{ label: navCta.label, href: navCta.href }}
-        secondary={{ label: "Product & Nutrition", href: "/product" }}
+        secondary={{ label: "Flavors & Nutrition", href: "/product" }}
       />
     </>
   );

@@ -17,6 +17,10 @@ import {
 } from "@/data/schools";
 import { schoolGlanceStats } from "@/data/facts";
 import { StatGrid } from "@/components/ui/StatGrid";
+import { formats } from "@/data/formats";
+import { featuredFlavors } from "@/data/flavors";
+import { ProductFormatCard } from "@/components/ui/ProductFormatCard";
+import { FlavorGrid } from "@/components/flavors/FlavorGrid";
 
 export const metadata: Metadata = {
   title: "For Schools",
@@ -115,6 +119,33 @@ export default function SchoolsPage() {
         </ul>
       </Section>
 
+      <Section tone="cream-100">
+        <SectionHeading
+          title="Serving formats for school review"
+          description="Single-serve cups, smoothies, and frozen novelties are the formats most relevant to food-service conversations. Other formats appear in the historical parlor record."
+        />
+        <ul className="mt-10 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-6">
+          {formats.map((format) => (
+            <li key={format.slug}>
+              <ProductFormatCard format={format} />
+            </li>
+          ))}
+        </ul>
+      </Section>
+
+      <Section>
+        <SectionHeading
+          title="Flavor options"
+          description="Six of the original twelve flavors. Every flavor has a shareable product sheet and a historical 2008 nutrition panel."
+        />
+        <FlavorGrid className="mt-10" flavors={featuredFlavors} />
+        <div className="mt-8">
+          <Button href="/product#flavors" variant="secondary">
+            View all 12 flavors
+          </Button>
+        </div>
+      </Section>
+
       <Section>
         <div className="grid gap-8 lg:grid-cols-3">
           <FeatureCard
@@ -125,16 +156,16 @@ export default function SchoolsPage() {
           />
           <div className="rounded-xl2 border border-line bg-white p-6">
             <h2 className="text-lg font-bold text-green-deep">
-              Review the documentation
+              Nutrition & documentation
             </h2>
             <p className="info-copy mt-2">
-              Nutrition panels, serving sizes, ingredients honesty, and
-              historical letters are on Product & Nutrition and Our Story.
+              Nutrition panels, serving sizes, historical ingredients, and
+              supporting letters are on Flavors & Nutrition and Resources.
             </p>
             <div className="mt-5 flex flex-col gap-3 sm:flex-row">
-              <Button href="/product">Product & Nutrition</Button>
-              <Button href="/story" variant="secondary">
-                Our Story & Pilot
+              <Button href="/product">Flavors & Nutrition</Button>
+              <Button href="/resources" variant="secondary">
+                View resources
               </Button>
             </div>
           </div>

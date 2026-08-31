@@ -26,7 +26,10 @@ test.describe("home @cross-browser", () => {
     await expect(page).toHaveURL(/\/product$/);
 
     await page.goto("/");
-    await page.getByRole("banner").getByRole("link", { name: "Request School Information" }).click();
+    await page
+      .getByRole("banner")
+      .getByRole("link", { name: "Request School Information" })
+      .click();
     await expect(page).toHaveURL(/\/contact$/);
   });
 
@@ -36,24 +39,21 @@ test.describe("home @cross-browser", () => {
     await page.goto("/");
 
     await expect(
-      page.getByRole("heading", { name: /what is fruiticana/i }),
+      page.getByRole("heading", { name: "A Different Kind of Frozen Dessert" }),
     ).toBeVisible();
+    await expect(page.getByRole("heading", { name: "Fruit Based" })).toBeVisible();
     await expect(
-      page.getByRole("heading", { name: "Twelve Original Fruit Flavors" }),
-    ).toBeVisible();
-    await expect(
-      page.getByRole("heading", { name: "Designed With Schools in Mind" }),
+      page.getByRole("heading", { name: "Fruiticana for Schools" }),
     ).toBeVisible();
     await expect(page.getByText(/team nutrition healthy snack/i).first()).toBeVisible();
-    await expect(page.getByRole("heading", { name: "Fruit-Based" })).toBeVisible();
     await expect(
-      page.getByRole("heading", { name: "Product & Nutrition Information" }),
+      page.getByRole("heading", { name: "Twelve fruit flavors" }),
     ).toBeVisible();
     await expect(
-      page.getByRole("heading", { name: "Fruiticana in Connecticut Schools" }),
+      page.getByRole("heading", { name: "Fruiticana Has Been Here Before" }),
     ).toBeVisible();
     await expect(
-      page.getByRole("heading", { name: "Supporting Documentation" }),
+      page.getByRole("heading", { name: /historical documentation/i }),
     ).toBeVisible();
     await expect(page.getByText("~30,000").first()).toBeVisible();
     await expect(page.getByText("3 oz").first()).toBeVisible();
@@ -63,8 +63,8 @@ test.describe("home @cross-browser", () => {
       page.getByText(/downloadable scan is not published/i).first(),
     ).toBeVisible();
 
-    await page.getByRole("link", { name: "Read the pilot program story" }).click();
-    await expect(page).toHaveURL(/\/story$/);
+    await page.getByRole("link", { name: "Explore Our History" }).click();
+    await expect(page).toHaveURL(/\/about$/);
 
     await page.goto("/");
     await page.getByRole("link", { name: "Request School Information" }).last().click();

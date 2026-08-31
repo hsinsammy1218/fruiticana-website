@@ -24,6 +24,8 @@ export type FlavorCategory =
 
 export type FlavorStatus = "original";
 
+export type NutritionStatus = "historical-analysis";
+
 /** A single Nutrition Facts panel value that may be missing in the source. */
 export type Amount = number | "<1" | null;
 
@@ -70,6 +72,7 @@ export type Flavor = {
   imageAlt: string;
   featured: boolean;
   status: FlavorStatus;
+  nutritionStatus: NutritionStatus;
   nutrition: NutritionFacts;
 };
 
@@ -82,7 +85,7 @@ const LAB = {
   servingGrams: 90,
 } as const;
 
-export const flavors: Flavor[] = [
+const flavorCatalog: Omit<Flavor, "nutritionStatus">[] = [
   {
     slug: "apricot",
     name: "Apricot",
@@ -541,6 +544,11 @@ export const flavors: Flavor[] = [
     },
   },
 ];
+
+export const flavors: Flavor[] = flavorCatalog.map((flavor) => ({
+  ...flavor,
+  nutritionStatus: "historical-analysis",
+}));
 
 export const flavorSlugs = flavors.map((f) => f.slug);
 

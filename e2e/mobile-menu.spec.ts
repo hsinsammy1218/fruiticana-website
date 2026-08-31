@@ -23,9 +23,9 @@ test.describe("mobile menu @mobile", () => {
   test("navigates from a menu link and closes the drawer", async ({ page }) => {
     await page.goto("/");
     await page.getByRole("button", { name: "Open menu" }).click();
-    await page.getByRole("dialog").getByRole("link", { name: "Our Story" }).click();
+    await page.getByRole("dialog").getByRole("link", { name: "About Fruiticana" }).click();
 
-    await expect(page).toHaveURL(/\/story$/);
+    await expect(page).toHaveURL(/\/about$/);
     await expect(page.getByRole("dialog", { name: "Site menu" })).toBeHidden();
     await expect(
       page.getByRole("heading", { level: 1, name: /documented school chapter/i }),

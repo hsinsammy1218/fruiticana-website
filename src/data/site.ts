@@ -29,6 +29,8 @@ export const site = {
   tagline: "The new way to eat fruit.",
   /** Alternate consumer phrasing from the business PDF — used on Story. */
   legacyTagline: "An exciting new way to eat fruit.",
+  heroSupport:
+    "A fruit-based creamless frozen dessert for schools and families.",
   /** Short brand promise used in closing sections. */
   promise: "Fruit-based frozen dessert — information for schools and families.",
   shortDescription:

@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import { Suspense } from "react";
 import { Section } from "@/components/layout/Section";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { HistoricalNotice } from "@/components/ui/HistoricalNotice";
@@ -9,21 +8,33 @@ import { ProductFormatCard } from "@/components/ui/ProductFormatCard";
 import { CTASection } from "@/components/ui/CTASection";
 import { Button } from "@/components/ui/Button";
 import { JsonLd } from "@/components/seo/JsonLd";
-import { flavors } from "@/data/flavors";
+import { flavors, getFlavor } from "@/data/flavors";
 import { formats, formatsNote } from "@/data/formats";
+import {
+  historicalIngredients,
+  historicalIngredientsNotice,
+  historicalIngredientsSource,
+  wheatProteinFlag,
+} from "@/data/ingredients";
 import { navCta } from "@/data/navigation";
 import { site } from "@/data/site";
 import { getNutritionGlanceStats, getNutritionSnapshot } from "@/lib/nutrition";
 import { StatGrid } from "@/components/ui/StatGrid";
 
 export const metadata: Metadata = {
-  title: "Product & Nutrition",
+  title: "Flavors & Nutrition",
   description:
     "Fruiticana flavors, historical institutional serving sizes, 2008 laboratory Nutrition Facts panels, and honest ingredient notes for school and food-service review.",
   alternates: { canonical: "/product" },
 };
 
-export default function ProductPage() {
+export default async function ProductPage({
+  searchParams,
+}: {
+  searchParams: Promise<{ flavor?: string }>;
+}) {
+  const { flavor: flavorParam } = await searchParams;
+  const selectedSlug = getFlavor(flavorParam ?? "")?.slug ?? flavors[0].slug;
   const glance = getNutritionGlanceStats();
   const snapshot = getNutritionSnapshot();
   const breadcrumbLd = {
@@ -34,7 +45,7 @@ export default function ProductPage() {
       {
         "@type": "ListItem",
         position: 2,
-        name: "Product & Nutrition",
+        name: "Flavors & Nutrition",
         item: `${site.url}/product`,
       },
     ],
@@ -53,9 +64,9 @@ export default function ProductPage() {
         <HistoricalNotice className="mt-6 max-w-3xl">
           Nutrition values come from an independent laboratory analysis dated
           2008 (Northeast Laboratories, Inc., report #20080318F). They are{" "}
-          <strong>not a current product label</strong>. Serving formats are
-          historical. Current ingredients, allergens, and pack sizes must be
-          re-verified before menu use.
+          <strong>not a current product label</strong>. Historical nutrition
+          information should be verified against any current Fruiticana
+          formulation before commercial use. Serving formats are historical.
         </HistoricalNotice>
         <StatGrid
           className="mt-10"
@@ -79,7 +90,7 @@ export default function ProductPage() {
       <Section id="flavors" className="scroll-mt-24 pt-4">
         <SectionHeading
           title="Twelve original fruit flavors"
-          description="The same Cream-Less Ice Crème lineup from the original Fruiticana store: Apple, Apricot, Banana, Blueberry, Cantaloupe, Grapefruit, Lemonade, Mango, Orange, Pineapple, Raisin, and Strawberry. Open a flavor for a shareable product sheet."
+          description="The same Cream-Less Ice Crème lineup from the original Fruiticana store: Apple, Apricot, Banana, Blueberry, Cantaloupe, Grapefruit, Lemonade, Mango, Orange, Pineapple, Raisin, and Strawberry. Open a flavor for a shareable product sheet. Which flavors exist in any current production run still needs confirmation."
         />
         <FlavorGrid className="mt-10" flavors={flavors} />
       </Section>
@@ -105,9 +116,7 @@ export default function ProductPage() {
           description="Select a flavor to view its transcribed 2008 Nutrition Facts panel. Banana calories stay blank because the source scan was illegible."
         />
         <div className="mt-10">
-          <Suspense fallback={<p className="text-muted">Loading nutrition...</p>}>
-            <NutritionSelector />
-          </Suspense>
+          <NutritionSelector selectedSlug={selectedSlug} />
         </div>
         <p className="info-copy mt-8 max-w-3xl">
           Teachers can also use these dated panels for Nutrition Facts literacy
@@ -122,30 +131,40 @@ export default function ProductPage() {
       </Section>
 
       <Section id="ingredients" tone="white" className="scroll-mt-24">
-        <div className="grid gap-8 lg:grid-cols-2 lg:gap-12">
-          <div>
-            <SectionHeading
-              eyebrow="Ingredients & allergens"
-              title="What's inside"
-              description="Fruiticana has historically been described as a fruit-based frozen dessert. A complete, current ingredient statement is not published here yet."
-            />
-          </div>
-          <div className="space-y-4">
-            <p className="info-copy">
-              We would rather show nothing than publish an ingredient or allergen
-              list we cannot currently verify. High-level language (fruit-based;
-              originally a lactose-free concept) is not a substitute for a
-              current specification sheet.
-            </p>
-            <HistoricalNotice label="To be confirmed">
-              Current ingredients, allergens, and formulation claims (such as
-              dairy-free, lactose-free, or added-sugar statements) will be added
-              once verified with the business.
-            </HistoricalNotice>
-            <Button href="/contact?interest=School%20Cafeteria">
-              Ask about current specifications
-            </Button>
-          </div>
+        <SectionHeading
+          eyebrow="Ingredients & allergens"
+          title="What's inside"
+          description="A complete, current ingredient statement is not published here yet. The 2007 myfruiticana.com product pages listed the historical formulation below."
+        />
+        <HistoricalNotice className="mt-6 max-w-3xl">
+          {historicalIngredientsNotice}
+        </HistoricalNotice>
+        <ol className="mt-8 max-w-xl space-y-3">
+          {historicalIngredients.map((item, index) => (
+            <li
+              key={item.name}
+              className="rounded-xl2 border border-line bg-cream-100 px-4 py-3"
+            >
+              <p className="font-semibold text-green-deep">
+                {index + 1}. {item.name}
+              </p>
+              {item.note ? <p className="info-copy mt-1 text-sm">{item.note}</p> : null}
+            </li>
+          ))}
+        </ol>
+        <p className="info-copy mt-6 max-w-3xl">{wheatProteinFlag}</p>
+        <p className="mt-3 text-sm text-muted">{historicalIngredientsSource}</p>
+        <HistoricalNotice label="To be confirmed" className="mt-6 max-w-3xl">
+          Current ingredients, allergens, and formulation claims (such as
+          dairy-free, lactose-free, or added-sugar statements) will be added
+          once verified with the business. 2007 website nutrition numbers are
+          not shown here because they disagree with the 2008 laboratory panels
+          used on this page.
+        </HistoricalNotice>
+        <div className="mt-6">
+          <Button href="/contact?interest=Nutrition%20Information">
+            Ask about current specifications
+          </Button>
         </div>
       </Section>
 

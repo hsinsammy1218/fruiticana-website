@@ -9,7 +9,7 @@ describe("MobileNavigation", () => {
       <MobileNavigation open={false} onClose={() => undefined} activeHref="/" />,
     );
 
-    expect(container.firstChild).toHaveAttribute("aria-hidden", "true");
+    expect(container.firstChild).toBeNull();
     expect(screen.queryByRole("dialog")).not.toBeInTheDocument();
   });
 
@@ -28,9 +28,17 @@ describe("MobileNavigation", () => {
       "aria-current",
       "page",
     );
-    expect(screen.getByRole("link", { name: "Product & Nutrition" })).toHaveAttribute(
+    expect(screen.getByRole("link", { name: "Flavors & Nutrition" })).toHaveAttribute(
       "href",
       "/product",
+    );
+    expect(screen.getByRole("link", { name: "About Fruiticana" })).toHaveAttribute(
+      "href",
+      "/about",
+    );
+    expect(screen.getByRole("link", { name: "Resources" })).toHaveAttribute(
+      "href",
+      "/resources",
     );
     expect(
       screen.getByRole("link", { name: /request school information/i }),

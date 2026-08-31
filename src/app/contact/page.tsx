@@ -7,7 +7,7 @@ import { site } from "@/data/site";
 import { resolveInterestType } from "@/data/inquiry";
 
 export const metadata: Metadata = {
-  title: "School Inquiry",
+  title: "Bring Fruiticana to Your School",
   description:
     "Request Fruiticana school information: product availability, institutional servings, nutrition documentation, and food-service partnerships for cafeterias, snack programs, private schools, and distributors.",
   alternates: { canonical: "/contact" },
@@ -35,7 +35,7 @@ export default async function ContactPage({
         <SectionHeading
           as="h1"
           eyebrow="School inquiry"
-          title="Request School Information"
+          title="Bring Fruiticana to Your School"
           description="Tell us about your school or organization. This form is for administrators, food-service staff, nutrition coordinators, purchasing teams, and distribution partners."
         />
 

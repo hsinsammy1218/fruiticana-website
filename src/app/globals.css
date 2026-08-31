@@ -2,48 +2,45 @@
 
 /* ------------------------------------------------------------------ */
 /* Fruiticana design system                                            */
-/* Modern recreation of the myfruiticana.com brand: leaf green script, */
-/* berry-red slogan accent, orchard light — not flat cream alone.      */
-/* Fruit accents stay contextual (flavor cards / hero fruit).          */
+/* Modern recreation of myfruiticana.com: original greens/yellows plus  */
+/* berry slogan accent. Fruit accents stay contextual.                 */
 /* ------------------------------------------------------------------ */
 @theme {
-  /* Fonts (wired to next/font CSS variables in layout.tsx) */
   --font-display: var(--font-fraunces), ui-serif, Georgia, serif;
   --font-sans: var(--font-nunito), ui-sans-serif, system-ui, sans-serif;
   --font-brand: var(--font-brand-script), cursive;
 
-  /* Core interface colors — orchard light + leaf green + berry */
-  --color-cream: #fffdf8;
-  --color-cream-100: #fff6e8;
-  --color-cream-200: #f3e6cf;
-  --color-green: #5faf45;
-  --color-green-600: #3c7a2b;
+  --color-cream: #fffbef;
+  --color-cream-100: #fdf6e3;
+  --color-cream-200: #f4ead0;
+  --color-green: #65a844;
+  --color-green-600: #3d7a28;
   --color-green-700: #2f6a22;
-  --color-green-deep: #163d2a;
-  --color-green-deep-80: #234c37;
+  --color-green-deep: #244b2a;
+  --color-green-deep-80: #2f5c36;
+  --color-lime: #98c93c;
+  --color-yellow: #f6d64a;
   --color-berry: #d62828;
   --color-berry-deep: #9b1c1c;
   --color-gold: #f0c94a;
-  --color-ink: #1a1a1a;
+  --color-ink: #263128;
   --color-muted: #3f4d45;
   --color-line: #e4dccb;
 
-  /* Fruit accents (contextual only) */
-  --color-mango: #f5b942;
-  --color-strawberry: #ef5b5b;
-  --color-blueberry: #5865a8;
+  --color-mango: #f3a62a;
+  --color-strawberry: #e95858;
+  --color-blueberry: #5966a8;
+  --color-orange: #f28c35;
+  --color-cantaloupe: #f4a36c;
 
-  /* Radii */
   --radius-card: 1rem;
   --radius-xl2: 1.5rem;
   --radius-pill: 9999px;
 
-  /* Shadows */
-  --shadow-soft: 0 1px 2px rgba(22, 61, 42, 0.04), 0 8px 24px rgba(22, 61, 42, 0.06);
-  --shadow-hover: 0 6px 16px rgba(22, 61, 42, 0.1), 0 18px 40px rgba(22, 61, 42, 0.12);
+  --shadow-soft: 0 1px 2px rgba(36, 75, 42, 0.04), 0 8px 24px rgba(36, 75, 42, 0.06);
+  --shadow-hover: 0 6px 16px rgba(36, 75, 42, 0.1), 0 18px 40px rgba(36, 75, 42, 0.12);
 
-  /* Content container */
-  --container-page: 75rem;
+  --container-page: 80rem;
 }
 
 @layer base {
@@ -65,8 +62,8 @@
     background-color: var(--color-cream);
     color: var(--color-ink);
     font-family: var(--font-sans);
-    font-size: 1.0625rem;
-    line-height: 1.7;
+    font-size: 1rem;
+    line-height: 1.65;
     font-synthesis-weight: none;
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
@@ -86,7 +83,7 @@
 
   p {
     text-wrap: pretty;
-    line-height: 1.75;
+    line-height: 1.7;
   }
 
   a {
@@ -131,7 +128,7 @@
 @layer components {
   .info-copy {
     font-size: 1rem;
-    line-height: 1.75;
+    line-height: 1.7;
     color: var(--color-muted);
   }
 
@@ -142,12 +139,18 @@
     line-height: 1;
   }
 
-  .hero-float {
-    animation: hero-float 7s ease-in-out infinite;
+  .brand-bar {
+    height: 0.4rem;
+    background: linear-gradient(
+      90deg,
+      var(--color-green) 0%,
+      var(--color-lime) 42%,
+      var(--color-yellow) 100%
+    );
   }
 
-  .hero-float-delayed {
-    animation: hero-float 8.5s ease-in-out 0.8s infinite;
+  .hero-float {
+    animation: hero-float 7s ease-in-out infinite;
   }
 
   .hero-rise {
@@ -180,15 +183,16 @@
     transform: translateY(16px);
     transition: opacity 0.6s ease, transform 0.6s ease;
     will-change: opacity, transform;
+    pointer-events: none;
   }
   .js-reveal .reveal[data-revealed] {
     opacity: 1;
     transform: none;
+    pointer-events: auto;
   }
 
   @media (prefers-reduced-motion: reduce) {
     .hero-float,
-    .hero-float-delayed,
     .hero-rise {
       animation: none;
     }

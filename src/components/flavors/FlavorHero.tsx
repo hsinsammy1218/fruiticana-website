@@ -2,6 +2,7 @@ import Link from "next/link";
 import { Container } from "@/components/layout/Container";
 import { FlavorImage } from "@/components/flavors/FlavorImage";
 import { ArrowRightIcon } from "@/components/ui/icons";
+import { HistoricalBadge } from "@/components/ui/HistoricalBadge";
 import type { Flavor } from "@/data/flavors";
 
 export function FlavorHero({ flavor }: { flavor: Flavor }) {
@@ -46,6 +47,10 @@ export function FlavorHero({ flavor }: { flavor: Flavor }) {
             <p className="mt-5 text-sm text-muted">
               From Fruiticana&rsquo;s original 12-flavor lineup.
             </p>
+            <HistoricalBadge
+              label="Historical nutrition analysis"
+              className="mt-4"
+            />
           </div>
 
           <div

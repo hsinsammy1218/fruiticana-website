@@ -19,6 +19,11 @@ const nextConfig: NextConfig = {
         destination: "/product",
         permanent: false,
       },
+      {
+        source: "/story",
+        destination: "/about",
+        permanent: true,
+      },
     ];
   },
 };

@@ -8,24 +8,29 @@ export const primaryRoutes = [
     title: /Fruiticana/,
   },
   {
+    path: "/about",
+    heading: /fruit-based dessert with a documented school chapter/i,
+    title: /About Fruiticana/,
+  },
+  {
     path: "/schools",
-    heading: /how fruiticana could fit a school food program/i,
+    heading: /fruiticana for schools/i,
     title: /For Schools/,
   },
   {
     path: "/product",
     heading: /flavors, servings, and historical nutrition/i,
-    title: /Product & Nutrition/,
+    title: /Flavors & Nutrition/,
   },
   {
-    path: "/story",
-    heading: /documented school chapter/i,
-    title: /Our Story/,
+    path: "/resources",
+    heading: /documentation for school review/i,
+    title: /Resources/,
   },
   {
     path: "/contact",
-    heading: /request school information/i,
-    title: /School Inquiry/,
+    heading: /bring fruiticana to your school/i,
+    title: /Bring Fruiticana to Your School/,
   },
 ] as const;
 
@@ -60,11 +65,13 @@ export const flavorSlugs = [
 
 export const viewports = {
   phone320: { width: 320, height: 568 },
+  phone375: { width: 375, height: 812 },
   phone390: { width: 390, height: 844 },
   phone430: { width: 430, height: 932 },
   tablet768: { width: 768, height: 1024 },
   laptop1024: { width: 1024, height: 768 },
   desktop1280: { width: 1280, height: 800 },
+  desktop1440: { width: 1440, height: 900 },
 } as const;
 
 export async function fillSchoolInquiry(
@@ -84,9 +91,6 @@ export async function fillSchoolInquiry(
 }
 
 export async function expectNoAxeViolations(page: Page) {
-  // Scroll-reveal starts at opacity 0 (and animates for 600ms). Axe samples
-  // those pixels and reports false color-contrast failures. Analyze the
-  // fully visible, settled UI instead.
   await page.emulateMedia({ reducedMotion: "reduce" });
   await page.addStyleTag({
     content: `
@@ -138,4 +142,21 @@ export async function expectNoHorizontalOverflow(page: Page) {
     overflow.scrollWidth,
     `horizontal overflow: scrollWidth ${overflow.scrollWidth} > clientWidth ${overflow.clientWidth}`,
   ).toBeLessThanOrEqual(overflow.clientWidth + 1);
+}
+
+export async function expectNoBrokenImages(page: Page) {
+  const broken = await page.locator("img").evaluateAll((images) =>
+    images
+      .map((image) => {
+        const el = image as HTMLImageElement;
+        return {
+          src: el.currentSrc || el.src,
+          naturalWidth: el.naturalWidth,
+          complete: el.complete,
+        };
+      })
+      .filter((image) => image.complete && image.naturalWidth === 0)
+      .map((image) => image.src),
+  );
+  expect(broken, `broken images: ${broken.join(", ")}`).toEqual([]);
 }

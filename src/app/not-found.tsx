@@ -12,7 +12,7 @@ export default function NotFound() {
           Page not found
         </h1>
         <p className="mx-auto mt-4 max-w-md text-lg text-muted">
-          We couldn&rsquo;t find that page. Return home or open product and
+          We couldn&rsquo;t find that page. Return home or open flavors and
           nutrition information for schools.
         </p>
         <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
@@ -20,7 +20,7 @@ export default function NotFound() {
             Back home
           </Button>
           <Button href="/product" size="lg" variant="secondary">
-            Product & Nutrition
+            Flavors & Nutrition
           </Button>
         </div>
       </div>

@@ -53,17 +53,20 @@ export const metadata: Metadata = {
   robots: { index: true, follow: true },
   keywords: [
     "Fruiticana",
+    "Fruiticana Creamless Ice Cream",
     "creamless ice cream",
     "fruit-based frozen dessert",
     "the new way to eat fruit",
-    "school food service frozen dessert",
+    "frozen dessert for schools",
+    "school cafeteria frozen dessert",
+    "healthy snack program dessert",
     "Connecticut Team Nutrition",
     "lactose-free frozen dessert concept",
   ],
 };
 
 export const viewport: Viewport = {
-  themeColor: "#163d2a",
+  themeColor: "#244b2a",
   colorScheme: "light",
 };
 
