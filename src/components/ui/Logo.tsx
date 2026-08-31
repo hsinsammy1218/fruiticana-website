@@ -51,7 +51,7 @@ function FruitMark() {
 
 /**
  * Fruiticana lockup inspired by the 2007 myfruiticana.com wordmark:
- * green name, yellow emphasis, strawberry dots on the i's, Creamless subtitle.
+ * green name, strawberry dots on the i's, Cream-Less subtitle.
  */
 export function Logo({
   className,
@@ -77,7 +77,7 @@ export function Logo({
         </span>
         {showSubtitle ? (
           <span className="mt-1 text-[0.62rem] font-semibold uppercase tracking-[0.16em] text-current/80">
-            Creamless Ice Cream
+            {site.productLine}
           </span>
         ) : null}
       </span>

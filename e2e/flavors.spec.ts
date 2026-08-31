@@ -8,7 +8,7 @@ test.describe("flavors", () => {
     await page.goto("/product");
 
     await expect(
-      page.getByRole("heading", { name: /original flavor lineup/i }),
+      page.getByRole("heading", { name: /twelve original fruit flavors/i }),
     ).toBeVisible();
     await expect(page.getByRole("button", { name: "Berry", exact: true })).toHaveCount(0);
 

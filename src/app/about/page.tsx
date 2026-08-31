@@ -56,7 +56,8 @@ export default function AboutPage() {
             </strong>
             , the concept was developed by a multidisciplinary team — a chemist
             and several physicians — drawn together by a shared interest in
-            fruit, nutrition, and flavor. The original consumer line was “
+            fruit, nutrition, and flavor. The original myfruiticana.com banner
+            proclaimed “{site.tagline}” — also remembered as “
             {site.legacyTagline}”
           </p>
         </div>

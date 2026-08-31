@@ -1,38 +1,39 @@
 import { test, expect } from "@playwright/test";
 
 test.describe("home @cross-browser", () => {
-  test("renders the original tagline and primary CTAs", async ({ page }) => {
+  test("renders the brand promise and primary CTAs", async ({ page }) => {
     await page.goto("/");
 
     await expect(
-      page.getByRole("heading", { level: 1, name: /^Fruiticana$/i }),
+      page.getByRole("heading", {
+        level: 1,
+        name: /the new way\s+to eat fruit/i,
+      }),
     ).toBeVisible();
+    await expect(page.getByText(/cream-less ice crème/i).first()).toBeVisible();
     await expect(
-      page.getByText(/an exciting new way to eat fruit/i).first(),
-    ).toBeVisible();
-    await expect(
-      page.getByRole("link", { name: "Learn About Fruiticana", exact: true }),
-    ).toBeVisible();
-    await expect(
-      page.getByRole("main").getByRole("link", { name: "For Schools" }).first(),
+      page.getByRole("link", { name: "Explore Flavors" }).first(),
     ).toBeVisible();
     await expect(
       page.getByRole("link", { name: "Request School Information" }).first(),
     ).toBeVisible();
   });
 
-  test("hero CTAs navigate to about and schools pages", async ({ page }) => {
+  test("hero CTAs navigate to product and inquiry pages", async ({ page }) => {
     await page.goto("/");
 
-    await page.getByRole("link", { name: "Learn About Fruiticana", exact: true }).click();
-    await expect(page).toHaveURL(/\/about$/);
+    await page.getByRole("link", { name: "Explore Flavors" }).first().click();
+    await expect(page).toHaveURL(/\/product$/);
 
     await page.goto("/");
-    await page.getByRole("main").getByRole("link", { name: "For Schools" }).first().click();
-    await expect(page).toHaveURL(/\/schools$/);
+    await page
+      .getByRole("banner")
+      .getByRole("link", { name: "Request School Information" })
+      .click();
+    await expect(page).toHaveURL(/\/contact$/);
   });
 
-  test("establishes school relevance, flavors, documentation, and closing inquiry", async ({
+  test("establishes brand, flavors, school relevance, and closing inquiry", async ({
     page,
   }) => {
     await page.goto("/");

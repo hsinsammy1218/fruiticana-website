@@ -10,7 +10,7 @@ export function WhatIsFruiticana() {
       <SectionHeading
         eyebrow="What is Fruiticana?"
         title="A Different Kind of Frozen Dessert"
-        description="Fruiticana was developed as a fruit-based alternative to traditional ice cream. Originally introduced as Fruiticana Creamless Ice Cream, it was created for people who wanted the refreshing taste of fruit in a smooth frozen dessert."
+        description={`The Fruiticana idea began with a simple promise: ${site.tagline} A creamless frozen dessert with the delight of ice cream.`}
       />
       <p className="info-copy mt-4 max-w-3xl">
         {site.shortDescription} The original consumer line was “{site.legacyTagline}”

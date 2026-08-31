@@ -24,7 +24,7 @@ export default function Home() {
         title="Interested in Fruiticana for Your School?"
         description="Learn more about Fruiticana, product formats, nutrition information, and potential school food-service opportunities."
         primary={{ label: navCta.label, href: navCta.href }}
-        secondary={{ label: "Contact Fruiticana", href: "/contact" }}
+        secondary={{ label: "Explore Flavors", href: "/product" }}
       />
     </>
   );

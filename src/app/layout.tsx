@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Plus_Jakarta_Sans, Inter } from "next/font/google";
+import { Fraunces, Nunito_Sans, Great_Vibes } from "next/font/google";
 import "./globals.css";
 import { site } from "@/data/site";
 import { SkipLink } from "@/components/layout/SkipLink";
@@ -8,18 +8,25 @@ import { Footer } from "@/components/layout/Footer";
 import { ScrollReveal } from "@/components/ui/ScrollReveal";
 import { JsonLd } from "@/components/seo/JsonLd";
 
-const jakarta = Plus_Jakarta_Sans({
+const fraunces = Fraunces({
   subsets: ["latin"],
   display: "swap",
   weight: ["500", "600", "700", "800"],
-  variable: "--font-jakarta",
+  variable: "--font-fraunces",
 });
 
-const inter = Inter({
+const nunito = Nunito_Sans({
   subsets: ["latin"],
   display: "swap",
-  weight: ["400", "500", "600", "700"],
-  variable: "--font-inter",
+  weight: ["400", "500", "600", "700", "800"],
+  variable: "--font-nunito",
+});
+
+const brandScript = Great_Vibes({
+  subsets: ["latin"],
+  display: "swap",
+  weight: ["400"],
+  variable: "--font-brand-script",
 });
 
 export const metadata: Metadata = {
@@ -47,7 +54,9 @@ export const metadata: Metadata = {
   keywords: [
     "Fruiticana",
     "Fruiticana Creamless Ice Cream",
+    "creamless ice cream",
     "fruit-based frozen dessert",
+    "the new way to eat fruit",
     "frozen dessert for schools",
     "school cafeteria frozen dessert",
     "healthy snack program dessert",
@@ -71,7 +80,7 @@ export default function RootLayout({
     url: site.url,
     description: site.shortDescription,
     logo: `${site.url}/icon.svg`,
-    slogan: site.legacyTagline,
+    slogan: site.tagline,
   };
 
   const websiteLd = {
@@ -85,7 +94,7 @@ export default function RootLayout({
     <html
       lang="en"
       data-scroll-behavior="smooth"
-      className={`${jakarta.variable} ${inter.variable}`}
+      className={`${fraunces.variable} ${nunito.variable} ${brandScript.variable}`}
     >
       <body>
         <SkipLink />
