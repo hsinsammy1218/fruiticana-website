@@ -8,6 +8,8 @@ export type ProductFormat = {
   slug: string;
   name: string;
   description: string;
+  /** Large scannable size when the format has a documented portion. */
+  amount?: string;
   /** Icon key handled by ProductFormatCard. */
   icon: "cup" | "cone" | "smoothie" | "pop" | "takehome";
   /** When true, this format is especially relevant to school/food-service. */
@@ -18,6 +20,7 @@ export const formats: ProductFormat[] = [
   {
     slug: "institutional-cup",
     name: "Institutional cup (3 oz)",
+    amount: "3 oz",
     description:
       "The business record lists a 3 oz institutional serving used with moderate single-serve portions in school settings.",
     icon: "cup",
@@ -26,6 +29,7 @@ export const formats: ProductFormat[] = [
   {
     slug: "cup",
     name: "Single-serve cup (4 oz)",
+    amount: "4 oz",
     description:
       "A 4 oz (1/2 cup) cup matching the historical laboratory Nutrition Facts serving size.",
     icon: "cup",
@@ -53,6 +57,7 @@ export const formats: ProductFormat[] = [
   {
     slug: "take-home",
     name: "Take-home pint (16 oz)",
+    amount: "16 oz",
     description:
       "Larger containers from the historical parlor/wholesale lineup — not a current school-menu claim.",
     icon: "takehome",

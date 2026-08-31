@@ -16,11 +16,17 @@ export function ProductFormatCard({ format, className }: ProductFormatCardProps)
         className,
       )}
     >
-      <span className="inline-flex h-12 w-12 items-center justify-center rounded-full bg-green/12 text-green-600">
-        <Icon width={24} height={24} />
-      </span>
+      {format.amount ? (
+        <p className="font-display text-3xl font-extrabold tabular-nums tracking-tight text-green-deep">
+          {format.amount}
+        </p>
+      ) : (
+        <span className="inline-flex h-12 w-12 items-center justify-center rounded-full bg-green/12 text-green-600">
+          <Icon width={24} height={24} />
+        </span>
+      )}
       <h3 className="mt-3 text-base font-bold text-green-deep">{format.name}</h3>
-      <p className="mt-1 text-sm leading-relaxed text-muted">{format.description}</p>
+      <p className="info-copy mt-1.5">{format.description}</p>
     </div>
   );
 }

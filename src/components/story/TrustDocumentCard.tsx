@@ -44,8 +44,8 @@ export function TrustDocumentCard({
         <HistoricalNotice variant="inline" label={document.period} />
       </div>
       <h3 className="mt-4 text-lg font-bold text-green-deep">{document.title}</h3>
-      <p className="mt-2 text-sm leading-relaxed text-muted">{document.summary}</p>
-      <p className="mt-3 border-t border-line pt-3 text-sm leading-relaxed text-muted">
+      <p className="info-copy mt-2">{document.summary}</p>
+      <p className="info-copy mt-3 border-t border-line pt-3">
         <span className="font-semibold text-green-deep">Context: </span>
         {document.clarification}
       </p>

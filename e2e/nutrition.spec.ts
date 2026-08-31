@@ -16,6 +16,9 @@ test.describe("nutrition", () => {
       page.getByRole("heading", { name: /institutional serving information/i }),
     ).toBeVisible();
     await expect(page.getByText(/institutional cup \(3 oz\)/i)).toBeVisible();
+    await expect(page.getByText("Calories per 4 oz")).toBeVisible();
+    await expect(page.getByText("0g").first()).toBeVisible();
+    await expect(page.getByText("100–150").first()).toBeVisible();
   });
 
   test("switching flavors updates the panel and shareable URL", async ({

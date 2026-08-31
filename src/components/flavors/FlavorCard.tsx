@@ -42,7 +42,7 @@ export function FlavorCard({ flavor, priority, className }: FlavorCardProps) {
           />
           <h3 className="text-lg font-bold text-green-deep">{flavor.name}</h3>
         </div>
-        <p className="mt-1.5 flex-1 text-sm leading-relaxed text-muted">
+        <p className="info-copy mt-1.5 flex-1">
           {flavor.description}
         </p>
         <span className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-green-600">

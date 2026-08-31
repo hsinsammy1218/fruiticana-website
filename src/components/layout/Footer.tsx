@@ -14,7 +14,7 @@ export function Footer() {
         <div className="grid gap-10 md:grid-cols-[1.4fr_1fr_1fr] lg:gap-16">
           <div>
             <Logo className="text-cream" />
-            <p className="mt-4 max-w-sm text-sm leading-relaxed text-cream/70">
+            <p className="mt-4 max-w-sm text-base leading-[1.75] text-cream/85">
               {site.shortDescription}
             </p>
             <div className="mt-6">

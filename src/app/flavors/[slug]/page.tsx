@@ -73,9 +73,11 @@ export default async function FlavorPage({
 
   const highlights = [
     { label: "Calories", value: fmtAmount(n.calories) },
-    { label: "Total carbs", value: fmtAmount(n.totalCarbG, "g") },
-    { label: "Dietary fiber", value: fmtAmount(n.dietaryFiberG, "g") },
-    { label: "Vitamin C", value: fmtAmount(n.vitaminCDv, "%") },
+    { label: "Total fat", value: fmtAmount(n.totalFatG, "g") },
+    { label: "Cholesterol", value: fmtAmount(n.cholesterolMg, "mg") },
+    { label: "Sodium", value: fmtAmount(n.sodiumMg, "mg") },
+    { label: "Sugars", value: fmtAmount(n.sugarsG, "g") },
+    { label: "Vitamin C", value: fmtAmount(n.vitaminCDv, "% DV") },
   ];
 
   return (
@@ -92,15 +94,15 @@ export default async function FlavorPage({
               description={lesson.classroomFact}
             />
             <div className="space-y-3 rounded-xl2 border border-line bg-white p-6">
-              <p className="text-sm leading-relaxed text-muted">
+              <p className="info-copy">
                 <span className="font-semibold text-green-deep">Plant part: </span>
                 {lesson.plantPart}
               </p>
-              <p className="text-sm leading-relaxed text-muted">
+              <p className="info-copy">
                 <span className="font-semibold text-green-deep">Typical origin: </span>
                 {lesson.typicalOrigin}
               </p>
-              <p className="text-sm leading-relaxed text-muted">
+              <p className="info-copy">
                 <span className="font-semibold text-green-deep">Try this: </span>
                 {lesson.tryThis}
               </p>
@@ -120,23 +122,24 @@ export default async function FlavorPage({
             description="A few values from Fruiticana's historical laboratory analysis for this flavor. See the full panel and important context on Product & Nutrition."
           />
           <div>
-            <dl className="grid grid-cols-2 gap-4 sm:grid-cols-4">
+            <dl className="grid grid-cols-2 gap-4 sm:grid-cols-3">
               {highlights.map((item) => (
                 <div
                   key={item.label}
                   className="rounded-xl2 border border-line bg-white p-4 text-center"
                 >
-                  <dt className="text-xs font-medium uppercase tracking-wide text-muted">
+                  <dt className="text-xs font-semibold uppercase tracking-wide text-muted">
                     {item.label}
                   </dt>
-                  <dd className="mt-1 font-display text-2xl font-extrabold text-green-deep">
+                  <dd className="mt-1 font-display text-2xl font-extrabold tabular-nums text-green-deep sm:text-3xl">
                     {item.value}
                   </dd>
                 </div>
               ))}
             </dl>
-            <p className="mt-3 text-sm text-muted">
-              Per {n.servingSize} ({n.servingGrams} g) serving.
+            <p className="info-copy mt-3">
+              Per {n.servingSize} ({n.servingGrams} g) serving. Historical 2008
+              laboratory values — not a current product label.
             </p>
             <div className="mt-5">
               <Button href={`/product?flavor=${flavor.slug}#nutrition`}>

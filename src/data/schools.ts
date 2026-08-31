@@ -21,6 +21,8 @@ export const schoolAudiences = [
 export type SchoolUse = {
   slug: string;
   title: string;
+  figure: string;
+  figureLabel: string;
   description: string;
 };
 
@@ -28,57 +30,73 @@ export const schoolUses: SchoolUse[] = [
   {
     slug: "cafeteria",
     title: "School cafeteria",
+    figure: "3 oz",
+    figureLabel: "Institutional cup",
     description:
-      "A fruit-based frozen dessert option for meal service or à la carte, historically offered in individual cups rather than a dairy ice-cream scoop.",
+      "A fruit-based frozen dessert option for meal service or à la carte, historically offered in individual 3 oz institutional cups rather than a dairy ice-cream scoop.",
   },
   {
     slug: "snack",
     title: "Healthy snack program",
+    figure: "2003–05",
+    figureLabel: "Team Nutrition pilot",
     description:
-      "Fruiticana participated in Connecticut’s Team Nutrition Healthy Snack pilot. That program required vendors to meet nutrition standards and use moderate single-serving portions.",
+      "Fruiticana participated in Connecticut’s two-year Team Nutrition Healthy Snack pilot. That program required vendors to meet nutrition standards and use moderate single-serving portions.",
   },
   {
     slug: "private",
     title: "Private school",
+    figure: "12",
+    figureLabel: "Original flavors",
     description:
-      "Independent and private schools evaluating a fruit-forward dessert for dining halls, snack windows, or special events can review the same nutrition and program documentation.",
+      "Independent and private schools evaluating a fruit-forward dessert for dining halls, snack windows, or special events can review the same 12 flavor sheets and nutrition documentation.",
   },
   {
     slug: "district",
     title: "District-level evaluation",
+    figure: "2008",
+    figureLabel: "Lab panels on file",
     description:
-      "Nutrition, procurement, and leadership teams can share product sheets, historical lab panels, and Connecticut program records internally before a tasting or bid conversation.",
+      "Nutrition, procurement, and leadership teams can share product sheets, 2008 laboratory panels, and Connecticut program records internally before a tasting or bid conversation.",
   },
   {
     slug: "events",
     title: "School events",
+    figure: "4 oz",
+    figureLabel: "Single-serve cup",
     description:
-      "Historical serving ideas included cups and other single-serve formats that can be discussed for fairs, family nights, or limited-time service — availability is to be confirmed.",
+      "Historical serving ideas included 4 oz cups and other single-serve formats that can be discussed for fairs, family nights, or limited-time service — availability is to be confirmed.",
   },
   {
     slug: "distribution",
     title: "Food-service distribution",
+    figure: "6",
+    figureLabel: "Documented formats",
     description:
-      "Distributors and food-service partners can inquire about institutional servings, flavor lineup, and documentation needed to evaluate Fruiticana for school accounts.",
+      "Distributors and food-service partners can inquire about six recorded formats (including 3 oz and 4 oz cups), the flavor lineup, and documentation needed to evaluate Fruiticana for school accounts.",
   },
 ];
 
 export const schoolFitPoints = [
   {
+    figure: "12",
     title: "Fruit-based",
-    body: "Built around fruit rather than a traditional dairy ice-cream base.",
+    body: "Built around fruit rather than a traditional dairy ice-cream base, with 12 original flavors spanning five fruit families.",
   },
   {
-    title: "Lactose-free concept",
-    body: "Originally designed as an option for people avoiding lactose. Current formulation still needs verification.",
-  },
-  {
+    figure: "3 oz",
     title: "Individual portions",
-    body: "The historical school program used single-serving cups, including an institutional 3 oz size recorded in the business documents.",
+    body: "The historical school program used single-serving cups, including an institutional 3 oz size and a 4 oz (½ cup) laboratory serving.",
   },
   {
+    figure: "2003–05",
     title: "Documented school chapter",
-    body: "Connecticut Team Nutrition participation (2003–2005) and later distribution to local Connecticut schools after consumer testing.",
+    body: "Connecticut Team Nutrition participation (2003–2005) and later distribution to local Connecticut schools after consumer testing in 2005–2006.",
+  },
+  {
+    figure: "2003",
+    title: "Lactose-free concept",
+    body: "Originally designed in 2003 as an option for people avoiding lactose. Current formulation still needs verification.",
   },
 ] as const;
 

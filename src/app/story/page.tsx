@@ -7,7 +7,9 @@ import { HistoricalTimeline } from "@/components/story/HistoricalTimeline";
 import { TrustDocumentCard } from "@/components/story/TrustDocumentCard";
 import { TestimonialCard } from "@/components/ui/TestimonialCard";
 import { CTASection } from "@/components/ui/CTASection";
+import { StatGrid } from "@/components/ui/StatGrid";
 import { founders } from "@/data/timeline";
+import { storyPilotStats } from "@/data/facts";
 import { testimonials, testimonialsIntro } from "@/data/testimonials";
 import { documents } from "@/data/documents";
 import { navCta } from "@/data/navigation";
@@ -20,13 +22,6 @@ export const metadata: Metadata = {
   alternates: { canonical: "/story" },
 };
 
-const pilotStats = [
-  { label: "Team Nutrition pilot", value: "2003–05" },
-  { label: "Local school production", value: "2005–06" },
-  { label: "Consumers sampled", value: "~30,000" },
-  { label: "Historical pilot sales", value: "~$1M" },
-];
-
 export default function StoryPage() {
   return (
     <>
@@ -37,7 +32,7 @@ export default function StoryPage() {
           title="A fruit-based dessert with a documented school chapter"
           description="Fruiticana began in 2003 as a fruit-based frozen dessert — a refreshing alternative to traditional dairy ice cream — and was evaluated in Connecticut schools through a Team Nutrition Healthy Snack pilot."
         />
-        <div className="mt-6 max-w-2xl space-y-4 leading-relaxed text-muted">
+        <div className="mt-6 max-w-2xl space-y-4 text-base leading-[1.75] text-muted">
           <p>
             Originally introduced as{" "}
             <strong className="font-semibold text-green-deep">
@@ -59,7 +54,7 @@ export default function StoryPage() {
           Fruiticana in Connecticut Schools
         </h2>
         <div className="mt-5 grid gap-8 lg:grid-cols-[1.3fr_1fr] lg:items-start lg:gap-12">
-          <div className="max-w-2xl space-y-4 leading-relaxed text-muted">
+          <div className="max-w-2xl space-y-4 text-base leading-[1.75] text-muted">
             <p>
               From September 30, 2003 to September 30, 2005, Fruiticana
               participated in the Connecticut Team Nutrition Healthy Snack Pilot
@@ -94,19 +89,11 @@ export default function StoryPage() {
               .
             </p>
           </div>
-          <dl className="grid grid-cols-2 gap-4">
-            {pilotStats.map((stat) => (
-              <div
-                key={stat.label}
-                className="rounded-xl2 border border-line bg-white p-5"
-              >
-                <dt className="text-sm text-muted">{stat.label}</dt>
-                <dd className="mt-1 font-display text-2xl font-extrabold text-green-deep">
-                  {stat.value}
-                </dd>
-              </div>
-            ))}
-          </dl>
+          <StatGrid
+            items={storyPilotStats}
+            columns={2}
+            aria-label="Historical Connecticut pilot figures"
+          />
         </div>
       </Section>
 
@@ -125,7 +112,7 @@ export default function StoryPage() {
         <SectionHeading
           eyebrow="The founding team"
           title="The people behind the idea"
-          description="Fruiticana was established in 2003 by the following team, listed with the roles documented at the time."
+          description="Fruiticana was established in 2003 by a five-person team — a chemist and four physicians — listed with the roles documented at the time."
         />
         <ul className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {founders.map((founder) => {

@@ -16,7 +16,7 @@ export function CTASection({ title, description, primary, secondary }: CTASectio
       <div className="reveal mx-auto max-w-2xl">
         <h2 className="text-3xl font-extrabold text-cream sm:text-4xl">{title}</h2>
         {description ? (
-          <p className="mx-auto mt-4 max-w-xl text-lg text-cream/80">{description}</p>
+          <p className="mx-auto mt-4 max-w-xl text-lg leading-[1.75] text-cream/90">{description}</p>
         ) : null}
         <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
           <Button

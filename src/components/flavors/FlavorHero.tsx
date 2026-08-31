@@ -40,7 +40,7 @@ export function FlavorHero({ flavor }: { flavor: Flavor }) {
             <p className="mt-3 text-xl font-medium text-green-deep-80">
               {flavor.tagline}
             </p>
-            <p className="mt-4 max-w-xl text-lg leading-relaxed text-muted">
+            <p className="mt-4 max-w-xl text-lg leading-[1.75] text-muted">
               {flavor.detail}
             </p>
             <p className="mt-5 text-sm text-muted">
