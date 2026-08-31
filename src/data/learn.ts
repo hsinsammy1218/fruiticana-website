@@ -293,10 +293,10 @@ export const caseStudy = {
   title: "Connecticut Team Nutrition Healthy Snack Pilot",
   period: "September 30, 2003 – September 30, 2005",
   summary:
-    "Fruiticana was included in student taste tests and samplings for a Connecticut school snack pilot. The program ran through a USDA-funded Team Nutrition grant to the Connecticut State Department of Education. A December 2004 letter in Fruiticana's historical file describes that participation.",
+    "Fruiticana was included in student taste tests and samplings for a Connecticut school snack pilot. The program ran through a USDA-funded Team Nutrition grant to the Connecticut State Department of Education. The historical business record lists Fruiticana as one of 11 vendors — and one of 3 frozen-dessert vendors — in that pilot. A December 2004 letter in Fruiticana's file describes that participation.",
   whatStudentsShouldNotice: [
     "The dates are specific. A grant with a start and end date is easier to check than a vague 'used in schools' claim.",
-    "USDA Team Nutrition funded nutrition education and healthier school-food efforts. Inclusion in a tasting is not the same as a current USDA endorsement of a brand.",
+    "The business record names 11 vendors and 3 frozen-dessert vendors. Being on a vendor list for a tasting is not the same as winning a statewide contract.",
     "Each pilot school — not the state — chose which products to purchase. Taste tests and buying decisions are different events.",
     "A later 2005–2006 localized Connecticut pilot included distribution to local schools and an independently owned parlor. That is a separate chapter from the Team Nutrition grant window.",
     "Past participation does not mean Fruiticana is in school cafeterias today. This site does not claim current school availability.",

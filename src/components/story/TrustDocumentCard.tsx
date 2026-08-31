@@ -45,6 +45,7 @@ export function TrustDocumentCard({
       </div>
       <h3 className="mt-4 text-lg font-bold text-green-deep">{document.title}</h3>
       <p className="info-copy mt-2">{document.summary}</p>
+      <p className="mt-2 text-sm font-medium text-green-600">{document.recordLocation}</p>
       <p className="info-copy mt-3 border-t border-line pt-3">
         <span className="font-semibold text-green-deep">Context: </span>
         {document.clarification}

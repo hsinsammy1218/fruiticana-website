@@ -17,6 +17,7 @@ import {
 } from "@/data/schools";
 import { schoolGlanceStats } from "@/data/facts";
 import { StatGrid } from "@/components/ui/StatGrid";
+import { RecordBriefing } from "@/components/story/RecordBriefing";
 
 export const metadata: Metadata = {
   title: "For Schools",
@@ -115,13 +116,17 @@ export default function SchoolsPage() {
         </ul>
       </Section>
 
+      <Section tone="cream-100" id="record">
+        <RecordBriefing />
+      </Section>
+
       <Section>
         <div className="grid gap-8 lg:grid-cols-3">
           <FeatureCard
             icon="school"
             figure="2003–05"
             title="Connecticut school chapter"
-            description="Team Nutrition Healthy Snack pilot (2003–2005) and later distribution to local Connecticut schools after consumer testing."
+            description="Team Nutrition Healthy Snack pilot (2003–2005): one of 11 vendors and 3 frozen-dessert vendors, then local Connecticut school distribution after consumer testing."
           />
           <div className="rounded-xl2 border border-line bg-white p-6">
             <h2 className="text-lg font-bold text-green-deep">
@@ -129,7 +134,8 @@ export default function SchoolsPage() {
             </h2>
             <p className="info-copy mt-2">
               Nutrition panels, serving sizes, ingredients honesty, and
-              historical letters are on Product & Nutrition and Our Story.
+              historical letters are transcribed from the 2003–2011 business
+              record on Product & Nutrition and Our Story.
             </p>
             <div className="mt-5 flex flex-col gap-3 sm:flex-row">
               <Button href="/product">Product & Nutrition</Button>

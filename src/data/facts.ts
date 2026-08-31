@@ -53,9 +53,9 @@ export const connecticutProgramStats: FactStat[] = [
     note: "Connecticut-area historical figure",
   },
   {
-    value: "12",
-    label: "Original flavors",
-    note: "Fruit lineup from the record",
+    value: "1 of 11",
+    label: "Team Nutrition vendors",
+    note: "3 were frozen-dessert vendors",
   },
 ];
 
@@ -100,9 +100,9 @@ export const schoolGlanceStats: FactStat[] = [
     note: "½ cup (90 g) on 2008 Nutrition Facts",
   },
   {
-    value: "12",
-    label: "Original flavors",
-    note: "Shareable product sheets for each",
+    value: "1 of 11",
+    label: "Team Nutrition vendors",
+    note: "3 frozen-dessert vendors in the pilot",
   },
 ];
 
@@ -140,7 +140,7 @@ export const schoolDesignBenefits: {
     figure: "12",
     title: "Fruit-Based",
     description:
-      "Twelve original fruit flavors, built around fruit rather than a traditional dairy ice-cream base with fruit mixed in.",
+      "Twelve original fruit flavors, built around fruit rather than a traditional dairy ice-cream base. Historical consumer language described a smooth scoop with no fruit chunks or seeds.",
   },
   {
     icon: "leaf",

@@ -28,6 +28,13 @@ describe("snapshot facts", () => {
     expect(storyPilotStats.some((stat) => stat.value === "~$1M")).toBe(true);
   });
 
+  it("surfaces the Team Nutrition vendor count from the business record", () => {
+    expect(connecticutProgramStats.some((stat) => stat.value === "1 of 11")).toBe(
+      true,
+    );
+    expect(schoolGlanceStats.some((stat) => stat.value === "1 of 11")).toBe(true);
+  });
+
   it("covers the classroom resource with countable modules", () => {
     expect(learnGlanceStats.map((stat) => stat.value)).toEqual([
       "12",

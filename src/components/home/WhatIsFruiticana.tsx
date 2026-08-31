@@ -5,7 +5,7 @@ import { site } from "@/data/site";
 const points = [
   {
     title: "Fruit at the center",
-    body: "A frozen dessert built around fruit flavor and a smooth, ice-cream-like texture — not a dairy ice-cream base with fruit mixed in. The original line had 12 fruit flavors in five families.",
+    body: "A frozen dessert built around fruit flavor and a smooth, ice-cream-like texture — not a dairy ice-cream base with fruit mixed in. The original line had 12 fruit flavors in five families. Historical consumer language described a scoop with no fruit chunks or seeds.",
   },
   {
     title: "Developed as an alternative",
