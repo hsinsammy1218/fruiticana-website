@@ -62,14 +62,14 @@ export function StatGrid({
             {item.value}
           </dd>
           {item.note ? (
-            <p
+            <dd
               className={cn(
                 "order-3 mt-1.5 text-sm leading-snug",
                 deep ? "text-cream/70" : "text-muted",
               )}
             >
               {item.note}
-            </p>
+            </dd>
           ) : null}
         </div>
       ))}

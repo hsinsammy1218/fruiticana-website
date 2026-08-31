@@ -41,7 +41,7 @@ export function WhatIsFruiticana() {
               className="flex gap-4 rounded-xl2 border border-line bg-cream-100 p-5 sm:p-6"
             >
               <span
-                className="mt-0.5 inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-green/15 font-display text-sm font-extrabold tabular-nums text-green-600"
+                className="mt-0.5 inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-green-deep font-display text-sm font-extrabold tabular-nums text-cream"
                 aria-hidden="true"
               >
                 {String(index + 1).padStart(2, "0")}

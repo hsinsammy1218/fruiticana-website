@@ -25,7 +25,7 @@ test.describe("learn", () => {
     await expect(
       page.getByRole("heading", { name: "Discussion questions and activities" }),
     ).toBeVisible();
-    await expect(page.getByText("Teaching modules")).toBeVisible();
+    await expect(page.getByText("Teaching modules", { exact: true })).toBeVisible();
     await expect(page.getByText("12").first()).toBeVisible();
   });
 
