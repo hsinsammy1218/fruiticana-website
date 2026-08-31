@@ -5,40 +5,45 @@ import { site } from "@/data/site";
 const points = [
   {
     title: "Fruit at the center",
-    body: "A frozen dessert built around fruit flavor and a smooth, ice-cream-like texture — not a dairy ice-cream base with fruit mixed in. The original line had 12 fruit flavors in five families.",
+    body: "A frozen dessert built around fruit flavor and a smooth, ice-cream-like texture — not a dairy ice-cream base with fruit mixed in. The original line had 12 fruit flavors.",
   },
   {
-    title: "Developed as an alternative",
-    body: "Originally introduced in 2003 as Fruiticana Creamless Ice Cream: a lactose-free concept for people looking beyond traditional dairy ice cream.",
+    title: "Cream-Less by design",
+    body: `Originally introduced as ${site.legacyProductName}: a lactose-free concept for people looking beyond traditional dairy ice cream.`,
   },
   {
-    title: "Documented, not oversold",
-    body: "This site shares 2008 laboratory Nutrition Facts, 2003–2006 school-program records, and product facts so administrators can evaluate Fruiticana on the evidence.",
+    title: "Documented history",
+    body: "This site shares 2008 laboratory Nutrition Facts, 2003–2006 Connecticut school-program records, and product facts so administrators can evaluate Fruiticana on the evidence.",
   },
 ];
 
 export function WhatIsFruiticana() {
   return (
-    <Section tone="white">
+    <Section tone="cream-100">
       <div className="grid items-start gap-10 lg:grid-cols-2 lg:gap-14">
         <div className="reveal">
           <SectionHeading
-            eyebrow="What is Fruiticana?"
+            eyebrow="The fruit way"
             title="What Is Fruiticana?"
-            description={site.shortDescription}
+            description="The Fruiticana idea began with a simple promise: enjoy fruit in a new way — as a creamless frozen dessert with the delight of ice cream."
           />
           <p className="info-copy mt-4 max-w-xl">
-            Originally marketed as {site.legacyProductName}, with the consumer
-            line “{site.legacyTagline}” That history belongs on this site as
-            context — the pages here are written for school and food-service
-            readers.
+            After research and development by a multidisciplinary team,{" "}
+            {site.name} became a line of fruit-based dessert for people who
+            value taste, freshness, and a dairy-free concept. The original
+            consumer banner said it plainly: “{site.tagline}”
+          </p>
+          <p className="info-copy mt-3 max-w-xl">
+            Today’s site keeps that brand alive for school decision-makers and
+            food-service partners — with historical documentation clearly
+            labeled, and no overselling of current certifications.
           </p>
         </div>
         <ol className="reveal grid gap-4">
           {points.map((point, index) => (
             <li
               key={point.title}
-              className="flex gap-4 rounded-xl2 border border-line bg-cream-100 p-5 sm:p-6"
+              className="flex gap-4 rounded-xl2 border border-line bg-cream p-5 sm:p-6"
             >
               <span
                 className="mt-0.5 inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-green-deep font-display text-sm font-extrabold tabular-nums text-cream"

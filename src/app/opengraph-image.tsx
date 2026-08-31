@@ -15,60 +15,58 @@ export default function OpengraphImage() {
           display: "flex",
           flexDirection: "column",
           justifyContent: "center",
-          padding: "80px",
-          background: "linear-gradient(135deg, #fff9ef 0%, #f6ead3 100%)",
+          padding: "72px",
+          background:
+            "radial-gradient(circle at 80% 30%, rgba(214,40,40,0.18), transparent 45%), radial-gradient(circle at 15% 20%, rgba(95,175,69,0.28), transparent 50%), linear-gradient(145deg, #fffdf8 0%, #fff1d8 50%, #e8f5df 100%)",
         }}
       >
-        <div style={{ display: "flex", alignItems: "center", gap: 24 }}>
-          <div
-            style={{
-              display: "flex",
-              width: 84,
-              height: 84,
-              borderRadius: 24,
-              background: "#163d2a",
-              alignItems: "center",
-              justifyContent: "center",
-            }}
-          >
-            <div
-              style={{
-                width: 40,
-                height: 40,
-                borderRadius: 999,
-                background: "#5faf45",
-              }}
-            />
-          </div>
-          <div style={{ fontSize: 44, fontWeight: 800, color: "#163d2a" }}>
-            {site.name}
-          </div>
-        </div>
-
         <div
           style={{
             display: "flex",
-            marginTop: 48,
-            fontSize: 76,
-            fontWeight: 800,
-            lineHeight: 1.05,
-            color: "#163d2a",
-            maxWidth: 900,
+            fontSize: 72,
+            color: "#5faf45",
+            fontStyle: "italic",
+            fontWeight: 400,
           }}
         >
-          {site.tagline}
+          {site.name}
         </div>
-
+        <div
+          style={{
+            display: "flex",
+            marginTop: 12,
+            fontSize: 28,
+            color: "#2f6a22",
+            fontStyle: "italic",
+          }}
+        >
+          {site.productLine}
+        </div>
+        <div
+          style={{
+            display: "flex",
+            marginTop: 40,
+            fontSize: 64,
+            fontWeight: 800,
+            lineHeight: 1.05,
+            color: "#d62828",
+            textTransform: "uppercase",
+            letterSpacing: "0.04em",
+            maxWidth: 920,
+          }}
+        >
+          The New Way to Eat Fruit
+        </div>
         <div
           style={{
             display: "flex",
             marginTop: 28,
-            fontSize: 32,
-            color: "#5c675f",
+            fontSize: 28,
+            color: "#3f4d45",
             maxWidth: 820,
           }}
         >
-          Information for school food programs.
+          Fruit-based creamless frozen dessert for schools and families.
         </div>
       </div>
     ),

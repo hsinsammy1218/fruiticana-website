@@ -1,27 +1,28 @@
 import { test, expect } from "@playwright/test";
 
 test.describe("home @cross-browser", () => {
-  test("renders the school promise and primary CTAs", async ({ page }) => {
+  test("renders the brand promise and primary CTAs", async ({ page }) => {
     await page.goto("/");
 
     await expect(
       page.getByRole("heading", {
         level: 1,
-        name: /healthier frozen dessert option for schools/i,
+        name: /the new way\s+to eat fruit/i,
       }),
+    ).toBeVisible();
+    await expect(page.getByText(/cream-less ice crème/i).first()).toBeVisible();
+    await expect(
+      page.getByRole("link", { name: "Explore Flavors" }).first(),
     ).toBeVisible();
     await expect(
       page.getByRole("link", { name: "Request School Information" }).first(),
     ).toBeVisible();
-    await expect(
-      page.getByRole("link", { name: /view nutrition & product details/i }),
-    ).toBeVisible();
   });
 
-  test("hero CTAs navigate to inquiry and product pages", async ({ page }) => {
+  test("hero CTAs navigate to product and inquiry pages", async ({ page }) => {
     await page.goto("/");
 
-    await page.getByRole("link", { name: /view nutrition & product details/i }).click();
+    await page.getByRole("link", { name: "Explore Flavors" }).first().click();
     await expect(page).toHaveURL(/\/product$/);
 
     await page.goto("/");
@@ -29,19 +30,22 @@ test.describe("home @cross-browser", () => {
     await expect(page).toHaveURL(/\/contact$/);
   });
 
-  test("establishes school relevance, documentation, and closing inquiry", async ({
+  test("establishes brand, flavors, school relevance, and closing inquiry", async ({
     page,
   }) => {
     await page.goto("/");
 
     await expect(
+      page.getByRole("heading", { name: /what is fruiticana/i }),
+    ).toBeVisible();
+    await expect(
+      page.getByRole("heading", { name: "Twelve Original Fruit Flavors" }),
+    ).toBeVisible();
+    await expect(
       page.getByRole("heading", { name: "Designed With Schools in Mind" }),
     ).toBeVisible();
     await expect(page.getByText(/team nutrition healthy snack/i).first()).toBeVisible();
     await expect(page.getByRole("heading", { name: "Fruit-Based" })).toBeVisible();
-    await expect(
-      page.getByRole("heading", { name: /what is fruiticana/i }),
-    ).toBeVisible();
     await expect(
       page.getByRole("heading", { name: "Product & Nutrition Information" }),
     ).toBeVisible();

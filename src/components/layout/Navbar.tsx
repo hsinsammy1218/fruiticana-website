@@ -38,7 +38,7 @@ export function Navbar() {
       )}
     >
       <Container className="flex h-16 items-center justify-between gap-4">
-        <Logo className="text-green-deep" />
+        <Logo className="text-green" />
 
         <nav aria-label="Primary" className="hidden md:block">
           <ul className="flex items-center gap-1">

@@ -2,28 +2,31 @@
 
 /* ------------------------------------------------------------------ */
 /* Fruiticana design system                                            */
-/* Interface palette stays cream + green + dark neutral.               */
-/* Fruit accent colors are used contextually (flavor cards), never as  */
-/* the whole interface.                                                */
+/* Modern recreation of the myfruiticana.com brand: leaf green script, */
+/* berry-red slogan accent, orchard light — not flat cream alone.      */
+/* Fruit accents stay contextual (flavor cards / hero fruit).          */
 /* ------------------------------------------------------------------ */
 @theme {
   /* Fonts (wired to next/font CSS variables in layout.tsx) */
-  --font-display: var(--font-jakarta), ui-sans-serif, system-ui, sans-serif;
-  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-fraunces), ui-serif, Georgia, serif;
+  --font-sans: var(--font-nunito), ui-sans-serif, system-ui, sans-serif;
+  --font-brand: var(--font-brand-script), cursive;
 
-  /* Core interface colors */
-  --color-cream: #fff9ef;
-  --color-cream-100: #fdf3e1;
-  --color-cream-200: #f6ead3;
+  /* Core interface colors — orchard light + leaf green + berry */
+  --color-cream: #fffdf8;
+  --color-cream-100: #fff6e8;
+  --color-cream-200: #f3e6cf;
   --color-green: #5faf45;
-  --color-green-600: #3c7a2b; /* 4.5:1+ on cream for small text (eyebrows, inline links) */
+  --color-green-600: #3c7a2b;
   --color-green-700: #2f6a22;
   --color-green-deep: #163d2a;
   --color-green-deep-80: #234c37;
+  --color-berry: #d62828;
+  --color-berry-deep: #9b1c1c;
+  --color-gold: #f0c94a;
   --color-ink: #1a1a1a;
-  /* Dark enough on cream for comfortable long-form reading (WCAG AA+). */
   --color-muted: #3f4d45;
-  --color-line: #e7e0d1;
+  --color-line: #e4dccb;
 
   /* Fruit accents (contextual only) */
   --color-mango: #f5b942;
@@ -35,12 +38,12 @@
   --radius-xl2: 1.5rem;
   --radius-pill: 9999px;
 
-  /* Shadows (soft, used mostly on hover) */
+  /* Shadows */
   --shadow-soft: 0 1px 2px rgba(22, 61, 42, 0.04), 0 8px 24px rgba(22, 61, 42, 0.06);
   --shadow-hover: 0 6px 16px rgba(22, 61, 42, 0.1), 0 18px 40px rgba(22, 61, 42, 0.12);
 
   /* Content container */
-  --container-page: 75rem; /* 1200px */
+  --container-page: 75rem;
 }
 
 @layer base {
@@ -68,7 +71,6 @@
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    /* prevent horizontal overflow on small screens */
     overflow-x: hidden;
   }
 
@@ -91,7 +93,6 @@
     color: inherit;
   }
 
-  /* Keep in-page Learn module jumps below the sticky header. */
   section[id],
   [id="fruits"],
   [id="science"],
@@ -106,14 +107,12 @@
     color: var(--color-green-deep);
   }
 
-  /* Visible, consistent focus states for keyboard users */
   :focus-visible {
     outline: 3px solid var(--color-green-deep);
     outline-offset: 2px;
     border-radius: 4px;
   }
 
-  /* Respect reduced-motion: disable smooth scroll + animations */
   @media (prefers-reduced-motion: reduce) {
     html {
       scroll-behavior: auto;
@@ -130,15 +129,52 @@
 }
 
 @layer components {
-  /* Longer informational copy: comfortable size, spacing, and contrast. */
   .info-copy {
     font-size: 1rem;
     line-height: 1.75;
     color: var(--color-muted);
   }
 
-  /* Scroll-reveal helper (progressive enhancement).
-     Elements start hidden only when JS marks the root; otherwise visible. */
+  .brand-script {
+    font-family: var(--font-brand);
+    font-weight: 400;
+    letter-spacing: 0.01em;
+    line-height: 1;
+  }
+
+  .hero-float {
+    animation: hero-float 7s ease-in-out infinite;
+  }
+
+  .hero-float-delayed {
+    animation: hero-float 8.5s ease-in-out 0.8s infinite;
+  }
+
+  .hero-rise {
+    animation: hero-rise 0.9s ease-out both;
+  }
+
+  @keyframes hero-float {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+
+  @keyframes hero-rise {
+    from {
+      opacity: 0;
+      transform: translateY(18px);
+    }
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
+
   .js-reveal .reveal {
     opacity: 0;
     transform: translateY(16px);
@@ -151,6 +187,11 @@
   }
 
   @media (prefers-reduced-motion: reduce) {
+    .hero-float,
+    .hero-float-delayed,
+    .hero-rise {
+      animation: none;
+    }
     .js-reveal .reveal {
       opacity: 1;
       transform: none;

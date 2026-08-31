@@ -6,34 +6,73 @@ type LogoProps = {
   className?: string;
   /** Whether to link to the homepage (default true). */
   asLink?: boolean;
+  /** Larger script lockup for hero / marketing moments. */
+  size?: "nav" | "hero";
 };
 
 /**
- * Temporary Fruiticana wordmark + scoop mark.
- * Intentionally an inline SVG/text lockup so it can be swapped for a supplied
- * vector logo later without touching layout (see PLAN.md asset requirements).
+ * Fruiticana wordmark inspired by the original myfruiticana.com script logo:
+ * green script with strawberry marks over the i’s (dotless ı + berry diamonds).
  */
-export function Logo({ className, asLink = true }: LogoProps) {
+export function Logo({ className, asLink = true, size = "nav" }: LogoProps) {
+  const isHero = size === "hero";
+
   const mark = (
-    <span className={cn("inline-flex items-center gap-2", className)}>
-      <svg
-        width="30"
-        height="30"
-        viewBox="0 0 64 64"
-        aria-hidden="true"
-        className="shrink-0"
+    <span
+      className={cn(
+        "inline-flex flex-col items-start leading-none",
+        className,
+      )}
+    >
+      <span
+        className={cn(
+          "brand-script relative",
+          isHero
+            ? "text-6xl text-green sm:text-7xl lg:text-8xl"
+            : "text-[1.85rem] sm:text-3xl",
+        )}
+        style={
+          isHero
+            ? {
+                textShadow:
+                  "0 1px 0 #f0c94a, 0 2px 0 #f0c94a, 0 12px 28px rgba(22,61,42,0.14)",
+              }
+            : undefined
+        }
       >
-        <circle cx="32" cy="36" r="20" fill="currentColor" opacity="0.14" />
-        <circle cx="32" cy="36" r="20" fill="currentColor" opacity="0.9" />
-        <circle cx="32" cy="36" r="7" fill="var(--color-cream)" />
-        <path
-          d="M44 14c6-3 12-1 13 4-5 1-11 1-13-4z"
-          fill="var(--color-green)"
-        />
-      </svg>
-      <span className="font-display text-xl font-extrabold tracking-tight">
-        Fruiticana
+        Fru
+        <span className="relative inline-block">
+          ı
+          <span
+            aria-hidden="true"
+            className={cn(
+              "absolute left-1/2 -translate-x-1/2 rotate-45 bg-berry",
+              isHero
+                ? "top-[0.12em] h-2.5 w-2.5 rounded-[2px]"
+                : "top-[0.14em] h-1.5 w-1.5 rounded-[1px]",
+            )}
+          />
+        </span>
+        t
+        <span className="relative inline-block">
+          ı
+          <span
+            aria-hidden="true"
+            className={cn(
+              "absolute left-1/2 -translate-x-1/2 rotate-45 bg-berry",
+              isHero
+                ? "top-[0.12em] h-2.5 w-2.5 rounded-[2px]"
+                : "top-[0.14em] h-1.5 w-1.5 rounded-[1px]",
+            )}
+          />
+        </span>
+        cana
       </span>
+      {isHero ? (
+        <span className="brand-script mt-3 text-2xl text-green-700 sm:text-3xl">
+          {site.productLine}
+        </span>
+      ) : null}
     </span>
   );
 
