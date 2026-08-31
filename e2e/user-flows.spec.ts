@@ -13,10 +13,9 @@ test.describe("user flows", () => {
 
     await page.getByRole("link", { name: "See full nutrition facts" }).click();
     await expect(page).toHaveURL(/\/product\?flavor=mango/);
-    await expect(page.getByRole("button", { name: "Mango" })).toHaveAttribute(
-      "aria-pressed",
-      "true",
-    );
+    await expect(
+      page.locator("#nutrition").getByRole("link", { name: "Mango", exact: true }),
+    ).toHaveAttribute("aria-current", "true");
   });
 
   test("about to school inquiry", async ({ page }) => {

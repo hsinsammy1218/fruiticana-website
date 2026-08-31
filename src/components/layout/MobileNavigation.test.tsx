@@ -9,7 +9,7 @@ describe("MobileNavigation", () => {
       <MobileNavigation open={false} onClose={() => undefined} activeHref="/" />,
     );
 
-    expect(container.firstChild).toHaveAttribute("aria-hidden", "true");
+    expect(container.firstChild).toBeNull();
     expect(screen.queryByRole("dialog")).not.toBeInTheDocument();
   });
 
