@@ -19,6 +19,13 @@ test.describe("nutrition", () => {
     await expect(page.getByText("Calories per 4 oz")).toBeVisible();
     await expect(page.getByText("0g").first()).toBeVisible();
     await expect(page.getByText("100–150").first()).toBeVisible();
+    await expect(
+      page.locator("#ingredients li").filter({ hasText: "Wheat protein" }),
+    ).toBeVisible();
+    await expect(
+      page.locator("#ingredients li").filter({ hasText: "Mar/az" }),
+    ).toBeVisible();
+    await expect(page.getByText(/gluten as a historical allergen flag/i)).toBeVisible();
   });
 
   test("switching flavors updates the panel and shareable URL", async ({

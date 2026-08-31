@@ -59,7 +59,7 @@ export default async function FlavorPage({
       {
         "@type": "ListItem",
         position: 2,
-        name: "Product & Nutrition",
+        name: "Flavors & Nutrition",
         item: `${site.url}/product`,
       },
       {
@@ -119,7 +119,7 @@ export default async function FlavorPage({
           <SectionHeading
             eyebrow="Historical nutrition"
             title="Laboratory panel highlights"
-            description="A few values from Fruiticana's historical laboratory analysis for this flavor. See the full panel and important context on Product & Nutrition."
+            description="A few values from Fruiticana's historical laboratory analysis for this flavor. See the full panel and important context on Flavors & Nutrition."
           />
           <div>
             <dl className="grid grid-cols-2 gap-4 sm:grid-cols-3">

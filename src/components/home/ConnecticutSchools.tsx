@@ -1,6 +1,7 @@
 import { Section } from "@/components/layout/Section";
 import { Button } from "@/components/ui/Button";
 import { HistoricalNotice } from "@/components/ui/HistoricalNotice";
+import { HistoricalBadge } from "@/components/ui/HistoricalBadge";
 import { StatGrid } from "@/components/ui/StatGrid";
 import { connecticutProgramStats } from "@/data/facts";
 
@@ -9,23 +10,24 @@ export function ConnecticutSchools() {
     <Section tone="deep">
       <div className="reveal grid items-start gap-8 lg:grid-cols-[1.5fr_1fr] lg:gap-12">
         <div>
-          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-cream/70">
-            Historical Fruiticana school program
-          </p>
-          <h2 className="mt-2 text-3xl font-extrabold text-cream sm:text-4xl">
-            Fruiticana in Connecticut Schools
+          <HistoricalBadge
+            label="Historical Fruiticana Pilot Program"
+            className="bg-cream/15 text-cream"
+          />
+          <h2 className="mt-3 text-3xl font-extrabold text-cream sm:text-4xl">
+            Fruiticana Has Been Here Before
           </h2>
-          <p className="mt-4 max-w-xl text-lg leading-[1.75] text-cream/90">
-            Fruiticana participated from 2003–2005 in the Connecticut Team
-            Nutrition Healthy Snack pilot — a USDA-funded grant program to the
-            Connecticut State Department of Education. After consumer testing,
-            the product later went into broader production for local Connecticut
-            schools.
+          <p className="mt-4 max-w-xl text-lg leading-[1.7] text-cream/90">
+            Research and development began around 2003. Product sampling reached
+            approximately 30,000 consumers according to historical company
+            documentation. Fruiticana participated in the Connecticut Team
+            Nutrition Healthy Snack pilot and was later distributed to local
+            Connecticut schools, including institutional single-serving cups.
           </p>
-          <p className="mt-3 max-w-xl leading-[1.75] text-cream/85">
-            For a school administrator, that documented chapter is more useful
-            than consumer marketing. It is still history: past participation is
-            not a current menu listing or a state endorsement.
+          <p className="mt-3 max-w-xl leading-[1.7] text-cream/85">
+            That documented chapter is useful for a school administrator. It is
+            still history: past participation is not a current menu listing or a
+            state endorsement.
           </p>
           <div className="mt-6 max-w-xl">
             <HistoricalNotice>
@@ -35,12 +37,12 @@ export function ConnecticutSchools() {
           </div>
           <div className="mt-7">
             <Button
-              href="/story"
+              href="/about"
               size="lg"
               variant="secondary"
               className="border-cream/30 bg-transparent text-cream hover:border-cream/60 hover:bg-cream/10"
             >
-              Read the pilot program story
+              Explore Our History
             </Button>
           </div>
         </div>

@@ -16,7 +16,7 @@ test.describe("error states", () => {
     const response = await page.goto("/flavors/not-a-real-flavor");
     expect(response?.status()).toBe(404);
     await expect(
-      page.getByRole("main").getByRole("link", { name: "Product & Nutrition" }),
+      page.getByRole("main").getByRole("link", { name: "Flavors & Nutrition" }),
     ).toBeVisible();
   });
 });

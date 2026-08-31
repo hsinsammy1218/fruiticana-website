@@ -11,10 +11,11 @@ test.describe("navigation @cross-browser", () => {
     await expect(page.getByRole("button", { name: "Open menu" })).toBeHidden();
 
     for (const item of [
+      { name: "About Fruiticana", url: /\/about$/ },
       { name: "For Schools", url: /\/schools$/ },
-      { name: "Product & Nutrition", url: /\/product$/ },
-      { name: "Our Story", url: /\/story$/ },
-      { name: "School Inquiry", url: /\/contact$/ },
+      { name: "Flavors & Nutrition", url: /\/product$/ },
+      { name: "Resources", url: /\/resources$/ },
+      { name: "Contact", url: /\/contact$/ },
     ]) {
       await page.goto("/");
       await primary.getByRole("link", { name: item.name }).click();
@@ -25,8 +26,8 @@ test.describe("navigation @cross-browser", () => {
   test("logo returns home and the nav CTA opens school inquiry", async ({
     page,
   }) => {
-    await page.setViewportSize({ width: 1280, height: 800 });
-    await page.goto("/story");
+    await page.setViewportSize({ width: 1440, height: 900 });
+    await page.goto("/about");
 
     await page.getByRole("banner").getByRole("link", { name: /fruiticana - home/i }).click();
     await expect(page).toHaveURL("/");
@@ -39,7 +40,7 @@ test.describe("navigation @cross-browser", () => {
     await page.goto("/");
     const footer = page.getByRole("contentinfo");
 
-    await footer.getByRole("link", { name: "Product & Nutrition" }).click();
+    await footer.getByRole("link", { name: "Flavors & Nutrition" }).click();
     await expect(page).toHaveURL(/\/product$/);
 
     await page.goto("/");
@@ -66,5 +67,39 @@ test.describe("navigation @cross-browser", () => {
         route.heading,
       );
     }
+  });
+
+  test("legacy story URL redirects to about", async ({ page }) => {
+    await page.goto("/story");
+    await expect(page).toHaveURL(/\/about$/);
+  });
+
+  test("keyboard can move through the desktop header", async ({ page }) => {
+    await page.setViewportSize({ width: 1440, height: 900 });
+    await page.goto("/");
+
+    await page.keyboard.press("Tab");
+    await expect(page.getByRole("link", { name: "Skip to main content" })).toBeFocused();
+
+    await page.keyboard.press("Tab");
+    await expect(
+      page.getByRole("banner").getByRole("link", { name: /fruiticana - home/i }),
+    ).toBeFocused();
+
+    await page.keyboard.press("Tab");
+    await expect(
+      page.getByRole("navigation", { name: "Primary" }).getByRole("link", {
+        name: "About Fruiticana",
+      }),
+    ).toBeFocused();
+
+    for (let i = 0; i < 5; i += 1) {
+      await page.keyboard.press("Tab");
+    }
+    await expect(
+      page.getByRole("banner").getByRole("link", {
+        name: "Request School Information",
+      }),
+    ).toBeFocused();
   });
 });

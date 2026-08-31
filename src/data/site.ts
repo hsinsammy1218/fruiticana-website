@@ -16,9 +16,11 @@ export const site = {
   name: "Fruiticana",
   /** Historical product name from the 2003-2011 business document. */
   legacyProductName: "Fruiticana Creamless Ice Cream",
-  /** Original consumer tagline — Story only, not the site-wide promise. */
+  /** Original consumer tagline — used prominently on the homepage hero. */
   legacyTagline: "An exciting new way to eat fruit.",
-  tagline: "A healthier frozen dessert option for schools.",
+  tagline: "A fruit-based frozen dessert created with schools and families in mind.",
+  heroSupport:
+    "A Fruit-Based Frozen Dessert Created With Schools and Families in Mind",
   /** Short brand promise used in closing sections. */
   promise: "Fruit-based frozen dessert information for school food programs.",
   shortDescription:

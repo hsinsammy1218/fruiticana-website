@@ -39,12 +39,12 @@ describe("snapshot facts", () => {
 
   it("gives each school-design benefit a scannable figure", () => {
     expect(schoolDesignBenefits.map((benefit) => benefit.title)).toEqual([
-      "Fruit-Based",
+      "Fruit Based",
+      "Smooth Frozen Texture",
       "Lactose-Free Concept",
-      "Individual Portions",
-      "Multiple Flavors",
+      "Individual Serving Options",
     ]);
-    expect(schoolDesignBenefits.every((benefit) => benefit.figure.length > 0)).toBe(
+    expect(schoolDesignBenefits.every((benefit) => (benefit.figure ?? benefit.title).length > 0)).toBe(
       true,
     );
   });

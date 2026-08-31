@@ -7,7 +7,7 @@ test.describe("for schools", () => {
     await expect(
       page.getByRole("heading", {
         level: 1,
-        name: /how fruiticana could fit a school food program/i,
+        name: /fruiticana for schools/i,
       }),
     ).toBeVisible();
     await expect(page.getByText(/not listing current school-menu/i)).toBeVisible();
@@ -17,7 +17,7 @@ test.describe("for schools", () => {
     await expect(
       page.getByRole("heading", { name: "Food-service distribution" }),
     ).toBeVisible();
-    await expect(page.getByText("Institutional serving")).toBeVisible();
+    await expect(page.getByText("Institutional serving", { exact: true })).toBeVisible();
     await expect(page.getByText("3 oz").first()).toBeVisible();
     await expect(page.getByText("2003–05").first()).toBeVisible();
   });
@@ -29,7 +29,7 @@ test.describe("for schools", () => {
 
     await expect(page.getByRole("link", { name: /download pdf/i })).toHaveCount(0);
     await expect(
-      page.getByRole("main").getByRole("link", { name: "Product & Nutrition" }),
+      page.getByRole("main").getByRole("link", { name: "Flavors & Nutrition" }),
     ).toHaveAttribute("href", "/product");
     await page.getByRole("link", { name: "Request School Information" }).last().click();
     await expect(page).toHaveURL(/\/contact$/);

@@ -24,10 +24,11 @@ test.describe("links and seo", () => {
     const sitemap = await request.get("/sitemap.xml");
     expect(sitemap.ok()).toBeTruthy();
     const xml = await sitemap.text();
-    for (const path of ["/schools", "/product", "/story", "/learn", "/contact"]) {
+    for (const path of ["/schools", "/product", "/about", "/resources", "/learn", "/contact"]) {
       expect(xml).toContain(path);
     }
     expect(xml).not.toContain("/nutrition");
+    expect(xml).not.toContain("/story");
     for (const slug of flavorSlugs) {
       expect(xml).toContain(`/flavors/${slug}`);
     }
@@ -47,6 +48,30 @@ test.describe("links and seo", () => {
       const response = await request.get(path);
       expect(response.status(), path).toBeLessThan(400);
     }
+  });
+
+  test("resources labels historical documents and has no PDF downloads", async ({
+    page,
+  }) => {
+    await page.goto("/resources");
+    await expect(
+      page.getByRole("heading", { name: /documentation for school review/i }),
+    ).toBeVisible();
+    await expect(
+      page.getByText("Historical document — provided for background/reference.").first(),
+    ).toBeVisible();
+    await expect(page.getByRole("link", { name: /download/i })).toHaveCount(0);
+    await expect(
+      page.getByText(/downloadable or printable scan is not published/i).first(),
+    ).toBeVisible();
+  });
+
+  test("home has no page errors", async ({ page }) => {
+    const errors: string[] = [];
+    page.on("pageerror", (error) => errors.push(error.message));
+    await page.goto("/");
+    await expect(page.getByRole("heading", { level: 1 })).toBeVisible();
+    expect(errors).toEqual([]);
   });
 
   test("legal pages are linked and render", async ({ page }) => {

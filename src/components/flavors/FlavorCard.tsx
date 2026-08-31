@@ -3,6 +3,7 @@ import { cn } from "@/lib/cn";
 import type { Flavor } from "@/data/flavors";
 import { FlavorImage } from "@/components/flavors/FlavorImage";
 import { ArrowRightIcon } from "@/components/ui/icons";
+import { HistoricalBadge } from "@/components/ui/HistoricalBadge";
 
 type FlavorCardProps = {
   flavor: Flavor;
@@ -31,6 +32,10 @@ export function FlavorCard({ flavor, priority, className }: FlavorCardProps) {
         >
           {flavor.category}
         </span>
+        <HistoricalBadge
+          label="Historical nutrition analysis"
+          className="absolute bottom-3 left-3 bg-white/90"
+        />
       </div>
 
       <div className="flex flex-1 flex-col p-5">

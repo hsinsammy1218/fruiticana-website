@@ -45,18 +45,19 @@ export const metadata: Metadata = {
   },
   robots: { index: true, follow: true },
   keywords: [
-    "fruit-based frozen dessert for schools",
-    "school food service frozen dessert",
+    "Fruiticana",
+    "Fruiticana Creamless Ice Cream",
+    "fruit-based frozen dessert",
+    "frozen dessert for schools",
+    "school cafeteria frozen dessert",
     "healthy snack program dessert",
     "Connecticut Team Nutrition",
-    "fruit frozen dessert nutrition",
     "lactose-free frozen dessert concept",
-    "school cafeteria dessert option",
   ],
 };
 
 export const viewport: Viewport = {
-  themeColor: "#163d2a",
+  themeColor: "#244b2a",
   colorScheme: "light",
 };
 
@@ -70,7 +71,7 @@ export default function RootLayout({
     url: site.url,
     description: site.shortDescription,
     logo: `${site.url}/icon.svg`,
-    slogan: site.tagline,
+    slogan: site.legacyTagline,
   };
 
   const websiteLd = {

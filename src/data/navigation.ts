@@ -6,10 +6,11 @@ export type NavItem = {
 /** Primary navigation. Home is represented by the logo on desktop. */
 export const mainNav: NavItem[] = [
   { href: "/", label: "Home" },
+  { href: "/about", label: "About Fruiticana" },
   { href: "/schools", label: "For Schools" },
-  { href: "/product", label: "Product & Nutrition" },
-  { href: "/story", label: "Our Story" },
-  { href: "/contact", label: "School Inquiry" },
+  { href: "/product", label: "Flavors & Nutrition" },
+  { href: "/resources", label: "Resources" },
+  { href: "/contact", label: "Contact" },
 ];
 
 /** Desktop nav omits Home because the wordmark links home. */
@@ -19,7 +20,7 @@ export const desktopNav: NavItem[] = mainNav.filter((i) => i.href !== "/");
 export const resourceNav: NavItem[] = [
   { href: "/learn", label: "Classroom resource" },
   { href: "/product#nutrition", label: "Nutrition panels" },
-  { href: "/story#documentation", label: "Documentation" },
+  { href: "/resources", label: "Documentation" },
 ];
 
 export const legalNav: NavItem[] = [
