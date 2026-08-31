@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { cn } from "@/lib/cn";
 import { HistoricalNotice } from "@/components/ui/HistoricalNotice";
 import type { HistoricalDocument } from "@/data/documents";
@@ -48,6 +49,18 @@ export function TrustDocumentCard({
         <span className="font-semibold text-green-deep">Context: </span>
         {document.clarification}
       </p>
+      {document.href ? (
+        <Link
+          href={document.href}
+          className="mt-auto pt-4 text-sm font-semibold text-green-600 hover:text-green-700"
+        >
+          {document.hrefLabel ?? "View details"}
+        </Link>
+      ) : (
+        <p className="mt-auto pt-4 text-xs leading-relaxed text-muted">
+          Historical record — a downloadable scan is not published here.
+        </p>
+      )}
     </article>
   );
 }

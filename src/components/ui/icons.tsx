@@ -175,4 +175,6 @@ export const valueIcons = {
   scoop: ScoopIcon,
   leaf: LeafIcon,
   flavors: FlavorsIcon,
+  cup: CupIcon,
+  school: SchoolIcon,
 } as const;

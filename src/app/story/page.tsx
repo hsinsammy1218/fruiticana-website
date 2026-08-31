@@ -10,20 +10,21 @@ import { CTASection } from "@/components/ui/CTASection";
 import { founders } from "@/data/timeline";
 import { testimonials, testimonialsIntro } from "@/data/testimonials";
 import { documents } from "@/data/documents";
+import { navCta } from "@/data/navigation";
 import { site } from "@/data/site";
 
 export const metadata: Metadata = {
-  title: "Our Story",
+  title: "Our Story & Pilot Program",
   description:
-    "How Fruiticana began: a fruit-based frozen dessert developed from 2003, its founding team, and its historical Connecticut pilot - told with clear historical context.",
+    "Fruiticana’s origin as a fruit-based frozen dessert, its 2003–2005 Connecticut Team Nutrition Healthy Snack pilot, later school distribution, founding team, and historical documentation.",
   alternates: { canonical: "/story" },
 };
 
 const pilotStats = [
+  { label: "Team Nutrition pilot", value: "2003–05" },
+  { label: "Local school production", value: "2005–06" },
   { label: "Consumers sampled", value: "~30,000" },
-  { label: "Pilot period", value: "2005-06" },
-  { label: "Pilot sales", value: "~$1M" },
-  { label: "Fruit flavors", value: "12" },
+  { label: "Historical pilot sales", value: "~$1M" },
 ];
 
 export default function StoryPage() {
@@ -32,9 +33,9 @@ export default function StoryPage() {
       <Section>
         <SectionHeading
           as="h1"
-          eyebrow="Our story"
-          title="A frozen dessert built around fruit"
-          description="Fruiticana began with a simple idea: create a smooth, satisfying frozen dessert with real fruit at the center - a refreshing alternative to traditional dairy ice cream."
+          eyebrow="Our story & pilot program"
+          title="A fruit-based dessert with a documented school chapter"
+          description="Fruiticana began in 2003 as a fruit-based frozen dessert — a refreshing alternative to traditional dairy ice cream — and was evaluated in Connecticut schools through a Team Nutrition Healthy Snack pilot."
         />
         <div className="mt-6 max-w-2xl space-y-4 leading-relaxed text-muted">
           <p>
@@ -42,25 +43,85 @@ export default function StoryPage() {
             <strong className="font-semibold text-green-deep">
               {site.legacyProductName}
             </strong>
-            , the concept was developed beginning in 2003 by a multidisciplinary
-            team - a chemist and several physicians - drawn together by a shared
-            interest in fruit, nutrition, and flavor.
+            , the concept was developed by a multidisciplinary team — a chemist
+            and several physicians — drawn together by a shared interest in
+            fruit, nutrition, and flavor. The original consumer line was “
+            {site.legacyTagline}”
           </p>
         </div>
       </Section>
 
       <Section tone="cream-100">
+        <p className="text-xs font-semibold uppercase tracking-[0.18em] text-green-600">
+          Historical Fruiticana school program
+        </p>
+        <h2 className="mt-2 text-3xl font-extrabold sm:text-4xl">
+          Fruiticana in Connecticut Schools
+        </h2>
+        <div className="mt-5 grid gap-8 lg:grid-cols-[1.3fr_1fr] lg:items-start lg:gap-12">
+          <div className="max-w-2xl space-y-4 leading-relaxed text-muted">
+            <p>
+              From September 30, 2003 to September 30, 2005, Fruiticana
+              participated in the Connecticut Team Nutrition Healthy Snack Pilot
+              — a program funded by a USDA Team Nutrition grant to the
+              Connecticut State Department of Education. The program facilitated
+              student taste tests and samplings. Participating vendors had to
+              meet the program’s nutrition standards and use moderate
+              single-serving portions.
+            </p>
+            <p>
+              After consumer testing, Fruiticana later went into broader
+              production for local Connecticut schools. From 2005 to 2006 it
+              also ran a localized parlor pilot (cups, cones, smoothies, and
+              to-go pints) alongside school distribution.
+            </p>
+            <HistoricalNotice>
+              These figures and programs describe Fruiticana’s 2003–2006
+              Connecticut record. They are not current results, and past
+              participation does not imply a current government or school
+              endorsement.
+            </HistoricalNotice>
+            <p>
+              Teachers can use this chapter as a primary-source case study —
+              grant dates, taste tests vs. purchases, and what a 2004 letter does
+              and does not prove.{" "}
+              <Link
+                href="/learn#case-study"
+                className="font-semibold text-green-600 hover:text-green-700"
+              >
+                Open the classroom case study
+              </Link>
+              .
+            </p>
+          </div>
+          <dl className="grid grid-cols-2 gap-4">
+            {pilotStats.map((stat) => (
+              <div
+                key={stat.label}
+                className="rounded-xl2 border border-line bg-white p-5"
+              >
+                <dt className="text-sm text-muted">{stat.label}</dt>
+                <dd className="mt-1 font-display text-2xl font-extrabold text-green-deep">
+                  {stat.value}
+                </dd>
+              </div>
+            ))}
+          </dl>
+        </div>
+      </Section>
+
+      <Section tone="white">
         <SectionHeading
           eyebrow="How it started"
-          title="A timeline"
-          description="The milestones below are drawn from Fruiticana's historical business record."
+          title="Product development timeline"
+          description="The milestones below are drawn from Fruiticana's historical business record. Nothing is invented for years the document does not cover."
         />
         <div className="mt-10">
           <HistoricalTimeline />
         </div>
       </Section>
 
-      <Section tone="white">
+      <Section>
         <SectionHeading
           eyebrow="The founding team"
           title="The people behind the idea"
@@ -95,84 +156,11 @@ export default function StoryPage() {
         </ul>
       </Section>
 
-      <Section tone="cream-100">
-        <p className="text-xs font-semibold uppercase tracking-[0.18em] text-green-600">
-          Historical Fruiticana pilot program
-        </p>
-        <h2 className="mt-2 text-3xl font-extrabold sm:text-4xl">
-          Proven in Connecticut
-        </h2>
-        <div className="mt-5 grid gap-8 lg:grid-cols-[1.3fr_1fr] lg:items-start lg:gap-12">
-          <div className="max-w-2xl space-y-4 leading-relaxed text-muted">
-            <p>
-              From 2005 to 2006, Fruiticana ran a localized pilot in Connecticut.
-              It was sold through an independently owned and operated parlor and
-              distributed to local schools, offered as cups, cones, smoothies,
-              and to-go pints.
-            </p>
-            <p>
-              Earlier, from September 2003 to September 2005, Fruiticana was
-              included in the Connecticut Team Nutrition Healthy Snack Pilot - a
-              program funded by a USDA Team Nutrition grant to the Connecticut
-              State Department of Education, which facilitated student taste tests
-              and samplings.
-            </p>
-            <HistoricalNotice>
-              These figures and programs describe Fruiticana&rsquo;s 2003-2006
-              Connecticut pilot and are shared as historical background. They are
-              not current results, and past participation does not imply a
-              current endorsement.
-            </HistoricalNotice>
-            <p>
-              Teachers can use this chapter as a primary-source case study —
-              grant dates, taste tests vs. purchases, and what a 2004 letter does
-              and does not prove.{" "}
-              <Link
-                href="/learn#case-study"
-                className="font-semibold text-green-600 hover:text-green-700"
-              >
-                Open the classroom case study
-              </Link>
-              .
-            </p>
-          </div>
-          <dl className="grid grid-cols-2 gap-4">
-            {pilotStats.map((stat) => (
-              <div
-                key={stat.label}
-                className="rounded-xl2 border border-line bg-white p-5"
-              >
-                <dt className="text-sm text-muted">{stat.label}</dt>
-                <dd className="mt-1 font-display text-2xl font-extrabold text-green-deep">
-                  {stat.value}
-                </dd>
-              </div>
-            ))}
-          </dl>
-        </div>
-      </Section>
-
-      <Section tone="white">
+      <Section id="documentation" tone="white" className="scroll-mt-24">
         <SectionHeading
-          align="center"
-          eyebrow="Testimonials"
-          title="From the original Connecticut pilot"
-          description={testimonialsIntro + "."}
-        />
-        <ul className="mx-auto mt-10 grid max-w-5xl grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
-          {testimonials.map((testimonial) => (
-            <li key={testimonial.author + testimonial.quote} className="reveal">
-              <TestimonialCard testimonial={testimonial} />
-            </li>
-          ))}
-        </ul>
-      </Section>
-
-      <Section>
-        <SectionHeading
-          eyebrow="Receipts, not badges"
-          title="Our history & documentation"
-          description="Fruiticana's business record includes several documents from roughly 2004-2008. We share them as historical records - not as current certifications or endorsements."
+          eyebrow="Supporting documentation"
+          title="Historical records, not current badges"
+          description="Fruiticana's business record includes documents from roughly 2004-2008. We share them as historical records - not as current certifications or endorsements. Scans are not offered as downloads."
         />
         <ul className="mt-10 grid grid-cols-1 gap-5 md:grid-cols-2">
           {documents.map((document) => (
@@ -183,11 +171,27 @@ export default function StoryPage() {
         </ul>
       </Section>
 
+      <Section tone="cream-100">
+        <SectionHeading
+          align="center"
+          eyebrow="Historical sampling notes"
+          title="From the original Connecticut pilot"
+          description={testimonialsIntro + ". These are taste comments from 2007, not current reviews."}
+        />
+        <ul className="mx-auto mt-10 grid max-w-5xl grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
+          {testimonials.map((testimonial) => (
+            <li key={testimonial.author + testimonial.quote} className="reveal">
+              <TestimonialCard testimonial={testimonial} />
+            </li>
+          ))}
+        </ul>
+      </Section>
+
       <CTASection
-        title="The next chapter"
-        description="Fruiticana's fruit-first idea is being reintroduced for a new generation. Explore the flavors, or get in touch to be part of what's next."
-        primary={{ label: "Explore the Flavors", href: "/flavors" }}
-        secondary={{ label: "Classroom resource", href: "/learn" }}
+        title="Interested in Fruiticana for Your School?"
+        description="Request school information to discuss availability, institutional servings, nutrition documentation, and food-service partnerships."
+        primary={{ label: navCta.label, href: navCta.href }}
+        secondary={{ label: "Product & Nutrition", href: "/product" }}
       />
     </>
   );

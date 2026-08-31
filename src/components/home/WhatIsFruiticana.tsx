@@ -1,18 +1,19 @@
 import { Section } from "@/components/layout/Section";
 import { SectionHeading } from "@/components/ui/SectionHeading";
+import { site } from "@/data/site";
 
 const points = [
   {
-    title: "Fruit is the star",
-    body: "Built around the taste of real fruit - bright, natural, and refreshing.",
+    title: "Fruit at the center",
+    body: "A frozen dessert built around fruit flavor and a smooth, ice-cream-like texture — not a dairy ice-cream base with fruit mixed in.",
   },
   {
-    title: "A smooth, frozen scoop",
-    body: "Designed for the creamy texture people love in a frozen dessert.",
+    title: "Developed as an alternative",
+    body: "Originally introduced as Fruiticana Creamless Ice Cream: a lactose-free concept for people looking beyond traditional dairy ice cream.",
   },
   {
-    title: "A different kind of dessert",
-    body: "Historically developed as a lactose-free alternative to traditional dairy ice cream.",
+    title: "Documented, not oversold",
+    body: "This site shares historical nutrition panels, school-program records, and product facts so administrators can evaluate Fruiticana on the evidence.",
   },
 ];
 
@@ -34,16 +35,22 @@ function CheckIcon() {
   );
 }
 
-export function Reimagined() {
+export function WhatIsFruiticana() {
   return (
     <Section tone="white">
-      <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-14">
+      <div className="grid items-start gap-10 lg:grid-cols-2 lg:gap-14">
         <div className="reveal">
           <SectionHeading
-            eyebrow="Why Fruiticana"
-            title="Ice cream, reimagined through fruit"
-            description="Fruiticana began with a simple question: what if the frozen dessert you love could be built around fruit? The result is a smooth, refreshing scoop with fruit at the center - a different way to enjoy something cold and sweet."
+            eyebrow="What is Fruiticana?"
+            title="What Is Fruiticana?"
+            description={site.shortDescription}
           />
+          <p className="mt-4 max-w-xl text-sm leading-relaxed text-muted">
+            Originally marketed as {site.legacyProductName}, with the consumer
+            line “{site.legacyTagline}” That history belongs on this site as
+            context — the pages here are written for school and food-service
+            readers.
+          </p>
         </div>
         <ul className="reveal grid gap-4">
           {points.map((point) => (

@@ -1,0 +1,155 @@
+import type { Metadata } from "next";
+import { Section } from "@/components/layout/Section";
+import { SectionHeading } from "@/components/ui/SectionHeading";
+import { HistoricalNotice } from "@/components/ui/HistoricalNotice";
+import { FeatureCard } from "@/components/ui/FeatureCard";
+import { CTASection } from "@/components/ui/CTASection";
+import { Button } from "@/components/ui/Button";
+import { JsonLd } from "@/components/seo/JsonLd";
+import { navCta } from "@/data/navigation";
+import { site } from "@/data/site";
+import {
+  schoolAudiences,
+  schoolAvailabilityNote,
+  schoolFitPoints,
+  schoolUses,
+  schoolsIntro,
+} from "@/data/schools";
+
+export const metadata: Metadata = {
+  title: "For Schools",
+  description:
+    "How Fruiticana, a fruit-based frozen dessert, could fit school cafeterias, healthy snack programs, private schools, events, and food-service distribution — with historical Connecticut program context.",
+  alternates: { canonical: "/schools" },
+};
+
+export default function SchoolsPage() {
+  const breadcrumbLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: site.url },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "For Schools",
+        item: `${site.url}/schools`,
+      },
+    ],
+  };
+
+  return (
+    <>
+      <JsonLd data={breadcrumbLd} />
+      <Section>
+        <SectionHeading
+          as="h1"
+          eyebrow={schoolsIntro.eyebrow}
+          title={schoolsIntro.title}
+          description={schoolsIntro.description}
+        />
+        <HistoricalNotice className="mt-6 max-w-3xl">
+          {schoolAvailabilityNote}
+        </HistoricalNotice>
+        <ul className="mt-8 flex flex-wrap gap-2">
+          {schoolAudiences.map((audience) => (
+            <li
+              key={audience}
+              className="rounded-pill border border-line bg-white px-3 py-1.5 text-sm text-green-deep"
+            >
+              {audience}
+            </li>
+          ))}
+        </ul>
+      </Section>
+
+      <Section tone="cream-100">
+        <SectionHeading
+          title="Where Fruiticana could fit"
+          description="Use cases a food-service director or administrator typically evaluates. These are program conversations, not a current menu claim."
+        />
+        <ul className="mt-10 grid gap-4 sm:grid-cols-2">
+          {schoolUses.map((use) => (
+            <li
+              key={use.slug}
+              id={use.slug}
+              className="reveal rounded-xl2 border border-line bg-white p-6"
+            >
+              <h2 className="text-lg font-bold text-green-deep">{use.title}</h2>
+              <p className="mt-2 text-sm leading-relaxed text-muted">
+                {use.description}
+              </p>
+            </li>
+          ))}
+        </ul>
+      </Section>
+
+      <Section tone="white">
+        <SectionHeading
+          title="Why schools reviewed it historically"
+          description="The Connecticut record emphasizes fruit-based composition, moderate portions, and snack-program nutrition standards — not parlor marketing."
+        />
+        <ul className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-2">
+          {schoolFitPoints.map((point) => (
+            <li key={point.title} className="reveal">
+              <div className="h-full rounded-xl2 border border-line bg-cream-100 p-6">
+                <h3 className="text-lg font-bold text-green-deep">{point.title}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-muted">{point.body}</p>
+              </div>
+            </li>
+          ))}
+        </ul>
+      </Section>
+
+      <Section>
+        <div className="grid gap-8 lg:grid-cols-3">
+          <FeatureCard
+            icon="school"
+            title="Connecticut school chapter"
+            description="Team Nutrition Healthy Snack pilot (2003–2005) and later distribution to local Connecticut schools after consumer testing."
+          />
+          <div className="rounded-xl2 border border-line bg-white p-6">
+            <h2 className="text-lg font-bold text-green-deep">
+              Review the documentation
+            </h2>
+            <p className="mt-2 text-sm leading-relaxed text-muted">
+              Nutrition panels, serving sizes, ingredients honesty, and
+              historical letters are on Product & Nutrition and Our Story.
+            </p>
+            <div className="mt-5 flex flex-col gap-3 sm:flex-row">
+              <Button href="/product">Product & Nutrition</Button>
+              <Button href="/story" variant="secondary">
+                Our Story & Pilot
+              </Button>
+            </div>
+          </div>
+          <div className="rounded-xl2 border border-line bg-white p-6">
+            <h2 className="text-lg font-bold text-green-deep">
+              Classroom resource
+            </h2>
+            <p className="mt-2 text-sm leading-relaxed text-muted">
+              Teachers can use a separate free resource on fruit science,
+              Nutrition Facts literacy, and the Connecticut snack-pilot case
+              study. It is not a food-service sales page.
+            </p>
+            <div className="mt-5">
+              <Button href="/learn" variant="secondary">
+                Open the classroom resource
+              </Button>
+            </div>
+          </div>
+        </div>
+      </Section>
+
+      <CTASection
+        title="Bring Fruiticana to Your School"
+        description="Share your school or organization details, program interest, and any nutrition questions. Inquiry delivery is not connected yet; the form is ready for when a verified inbox is in place."
+        primary={{ label: navCta.label, href: navCta.href }}
+        secondary={{
+          label: "View nutrition details",
+          href: "/product#nutrition",
+        }}
+      />
+    </>
+  );
+}

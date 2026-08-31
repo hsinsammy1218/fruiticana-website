@@ -2,28 +2,39 @@ import AxeBuilder from "@axe-core/playwright";
 import { expect, type Page } from "@playwright/test";
 
 export const primaryRoutes = [
-  { path: "/", heading: /exciting new way to eat fruit/i, title: /Fruiticana/ },
   {
-    path: "/flavors",
-    heading: /flavor for every kind of fruit lover/i,
-    title: /Flavors/,
+    path: "/",
+    heading: /healthier frozen dessert option for schools/i,
+    title: /Fruiticana/,
+  },
+  {
+    path: "/schools",
+    heading: /how fruiticana could fit a school food program/i,
+    title: /For Schools/,
+  },
+  {
+    path: "/product",
+    heading: /flavors, servings, and historical nutrition/i,
+    title: /Product & Nutrition/,
   },
   {
     path: "/story",
-    heading: /frozen dessert built around fruit/i,
+    heading: /documented school chapter/i,
     title: /Our Story/,
   },
+  {
+    path: "/contact",
+    heading: /request school information/i,
+    title: /School Inquiry/,
+  },
+] as const;
+
+export const secondaryRoutes = [
   {
     path: "/learn",
     heading: /classroom resource/i,
     title: /Learn/,
   },
-  {
-    path: "/nutrition",
-    heading: /fruit-forward, and honest/i,
-    title: /Nutrition/,
-  },
-  { path: "/contact", heading: /get in touch/i, title: /Contact/ },
 ] as const;
 
 export const legalRoutes = [
@@ -55,6 +66,22 @@ export const viewports = {
   laptop1024: { width: 1024, height: 768 },
   desktop1280: { width: 1280, height: 800 },
 } as const;
+
+export async function fillSchoolInquiry(
+  page: Page,
+  options?: { interest?: string; name?: string },
+) {
+  const name = options?.name ?? "Sam";
+  await page.getByLabel(/^name/i).fill(name);
+  await page.getByLabel(/school \/ organization/i).fill("Lincoln Elementary");
+  await page.getByLabel(/email/i).fill("sam@example.com");
+  if (options?.interest) {
+    await page.getByLabel(/interest type/i).selectOption(options.interest);
+  }
+  await page.getByLabel(/message/i).fill(
+    "We would like nutrition sheets for a cafeteria review at our school.",
+  );
+}
 
 export async function expectNoAxeViolations(page: Page) {
   // Scroll-reveal starts at opacity 0 (and animates for 600ms). Axe samples

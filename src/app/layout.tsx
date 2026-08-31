@@ -45,14 +45,13 @@ export const metadata: Metadata = {
   },
   robots: { index: true, follow: true },
   keywords: [
-    "fruit frozen dessert",
-    "fruit-based frozen dessert",
-    "dairy-free frozen dessert",
-    "lactose-free frozen dessert",
-    "frozen fruit dessert",
-    "fruit classroom resource",
-    "nutrition facts for students",
-    "school snack program history",
+    "fruit-based frozen dessert for schools",
+    "school food service frozen dessert",
+    "healthy snack program dessert",
+    "Connecticut Team Nutrition",
+    "fruit frozen dessert nutrition",
+    "lactose-free frozen dessert concept",
+    "school cafeteria dessert option",
   ],
 };
 

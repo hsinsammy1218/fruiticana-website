@@ -7,6 +7,20 @@ const nextConfig: NextConfig = {
     // upstream libheif issue addressed in the Aug 2026 release is fully clear.
     formats: ["image/webp"],
   },
+  async redirects() {
+    return [
+      {
+        source: "/flavors",
+        destination: "/product",
+        permanent: false,
+      },
+      {
+        source: "/nutrition",
+        destination: "/product",
+        permanent: false,
+      },
+    ];
+  },
 };
 
 export default nextConfig;

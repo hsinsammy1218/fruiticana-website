@@ -37,7 +37,7 @@ export default function PrivacyPage() {
         </p>
         <h2>When this changes</h2>
         <p>
-          Before enabling contact-form delivery, newsletter sign-ups, analytics,
+          Before enabling contact-form delivery, analytics,
           or any data collection, this policy will be updated to explain what is
           collected, why, how it is stored, and your choices.
         </p>

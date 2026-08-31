@@ -245,7 +245,7 @@ export default function LearnPage() {
                 </li>
               ))}
             </ul>
-            <Button href="/nutrition">Open the historical nutrition panels</Button>
+            <Button href="/product#nutrition">Open the historical nutrition panels</Button>
           </div>
         </div>
       </Section>
@@ -394,11 +394,11 @@ export default function LearnPage() {
       </Section>
 
       <CTASection
-        title="Using this with a class or a school program?"
-        description="Choose Schools & Institutions on the contact form. Delivery is not live yet, but the inquiry type helps us route future messages."
+        title="Using this with a class or a school food program?"
+        description="Teachers can keep using this classroom resource. Food-service and administrative questions belong on the school inquiry form."
         primary={{
           label: "Contact for schools",
-          href: "/contact?inquiry=Schools%20%26%20Institutions",
+          href: "/contact?interest=Healthy%20Snack%20Program",
         }}
         secondary={{ label: "Read the historical story", href: "/story" }}
       />

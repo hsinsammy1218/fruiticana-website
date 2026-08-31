@@ -42,9 +42,9 @@ export const timeline: TimelineEntry[] = [
   },
   {
     period: "Today",
-    title: "A fruit-first idea, reintroduced",
+    title: "Information for school decision-makers",
     description:
-      "The vision remains simple: bring Fruiticana's fruit-based frozen dessert to a new generation who want something refreshingly different.",
+      "Fruiticana is sharing this history with schools, food-service directors, and partners who want to understand the product, its nutrition documentation, and its Connecticut school chapter.",
   },
 ];
 

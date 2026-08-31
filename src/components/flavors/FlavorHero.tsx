@@ -17,7 +17,7 @@ export function FlavorHero({ flavor }: { flavor: Flavor }) {
       />
       <Container className="py-10 sm:py-14 lg:py-16">
         <Link
-          href="/flavors"
+          href="/product#flavors"
           className="inline-flex items-center gap-1.5 rounded-md text-sm font-semibold text-green-600 hover:text-green-700"
         >
           <ArrowRightIcon width={16} height={16} className="rotate-180" />

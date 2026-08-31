@@ -2,29 +2,27 @@ import { test, expect } from "@playwright/test";
 import { flavorSlugs } from "./helpers";
 
 test.describe("flavors", () => {
-  test("lists twelve flavors and filters by family", async ({ page }) => {
-    await page.goto("/flavors");
+  test("product page lists twelve flavors without a parlor explorer", async ({
+    page,
+  }) => {
+    await page.goto("/product");
 
     await expect(
-      page.getByRole("heading", { level: 1, name: /flavor for every kind/i }),
+      page.getByRole("heading", { name: /original flavor lineup/i }),
     ).toBeVisible();
-    await expect(page.getByText("Showing 12 flavors.")).toBeVisible();
+    await expect(page.getByRole("button", { name: "Berry", exact: true })).toHaveCount(0);
 
     for (const slug of flavorSlugs) {
       await expect(page.locator(`a[href="/flavors/${slug}"]`)).toBeVisible();
     }
-
-    await page.getByRole("button", { name: "Berry" }).click();
-    await expect(page.getByText("Showing 2 flavors in Berry.")).toBeVisible();
-    await expect(page.locator('a[href="/flavors/strawberry"]')).toBeVisible();
-    await expect(page.locator('a[href="/flavors/blueberry"]')).toBeVisible();
-    await expect(page.locator('a[href="/flavors/mango"]')).toHaveCount(0);
-
-    await page.getByRole("button", { name: "All" }).click();
-    await expect(page.getByText("Showing 12 flavors.")).toBeVisible();
   });
 
-  test("flavor detail shows related flavors and a nutrition deep link", async ({
+  test("flavor listing redirects to product", async ({ page }) => {
+    await page.goto("/flavors");
+    await expect(page).toHaveURL(/\/product$/);
+  });
+
+  test("flavor detail shows a product sheet and nutrition deep link", async ({
     page,
   }) => {
     await page.goto("/flavors/mango");
@@ -36,10 +34,10 @@ test.describe("flavors", () => {
     await expect(page.getByRole("link", { name: "All flavors" })).toBeVisible();
     await expect(
       page.getByRole("link", { name: "See full nutrition facts" }),
-    ).toHaveAttribute("href", "/nutrition?flavor=mango");
+    ).toHaveAttribute("href", "/product?flavor=mango#nutrition");
 
     await page.getByRole("link", { name: "See full nutrition facts" }).click();
-    await expect(page).toHaveURL(/\/nutrition\?flavor=mango/);
+    await expect(page).toHaveURL(/\/product\?flavor=mango/);
     await expect(page.getByRole("button", { name: "Mango" })).toHaveAttribute(
       "aria-pressed",
       "true",

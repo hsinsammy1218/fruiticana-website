@@ -7,15 +7,14 @@ test.describe("navigation @cross-browser", () => {
     await page.goto("/");
 
     const primary = page.getByRole("navigation", { name: "Primary" });
-    await expect(primary.getByRole("link", { name: "Flavors" })).toBeVisible();
+    await expect(primary.getByRole("link", { name: "For Schools" })).toBeVisible();
     await expect(page.getByRole("button", { name: "Open menu" })).toBeHidden();
 
     for (const item of [
-      { name: "Flavors", url: /\/flavors$/ },
+      { name: "For Schools", url: /\/schools$/ },
+      { name: "Product & Nutrition", url: /\/product$/ },
       { name: "Our Story", url: /\/story$/ },
-      { name: "Learn", url: /\/learn$/ },
-      { name: "Nutrition", url: /\/nutrition$/ },
-      { name: "Contact", url: /\/contact$/ },
+      { name: "School Inquiry", url: /\/contact$/ },
     ]) {
       await page.goto("/");
       await primary.getByRole("link", { name: item.name }).click();
@@ -23,7 +22,7 @@ test.describe("navigation @cross-browser", () => {
     }
   });
 
-  test("logo returns home and Explore Flavors goes to the grid", async ({
+  test("logo returns home and the nav CTA opens school inquiry", async ({
     page,
   }) => {
     await page.setViewportSize({ width: 1280, height: 800 });
@@ -32,16 +31,20 @@ test.describe("navigation @cross-browser", () => {
     await page.getByRole("banner").getByRole("link", { name: /fruiticana - home/i }).click();
     await expect(page).toHaveURL("/");
 
-    await page.getByRole("link", { name: "Explore Flavors" }).click();
-    await expect(page).toHaveURL(/\/flavors$/);
+    await page.getByRole("banner").getByRole("link", { name: "Request School Information" }).click();
+    await expect(page).toHaveURL(/\/contact$/);
   });
 
-  test("footer explore and legal links work", async ({ page }) => {
+  test("footer explore, resources, and legal links work", async ({ page }) => {
     await page.goto("/");
     const footer = page.getByRole("contentinfo");
 
-    await footer.getByRole("link", { name: "Nutrition" }).click();
-    await expect(page).toHaveURL(/\/nutrition$/);
+    await footer.getByRole("link", { name: "Product & Nutrition" }).click();
+    await expect(page).toHaveURL(/\/product$/);
+
+    await page.goto("/");
+    await footer.getByRole("link", { name: "Classroom resource" }).click();
+    await expect(page).toHaveURL(/\/learn$/);
 
     await page.goto("/");
     await footer.getByRole("link", { name: "Privacy Policy" }).click();

@@ -18,7 +18,7 @@ export default function AccessibilityPage() {
         as="h1"
         eyebrow="Legal"
         title="Accessibility"
-        description="We want everyone to be able to explore Fruiticana comfortably."
+        description="We want school decision-makers and every visitor to be able to use this site comfortably."
       />
       <Prose className="mt-8">
         <h2>Our approach</h2>

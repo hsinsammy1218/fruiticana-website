@@ -16,11 +16,13 @@ export const site = {
   name: "Fruiticana",
   /** Historical product name from the 2003-2011 business document. */
   legacyProductName: "Fruiticana Creamless Ice Cream",
-  tagline: "An exciting new way to eat fruit.",
+  /** Original consumer tagline — Story only, not the site-wide promise. */
+  legacyTagline: "An exciting new way to eat fruit.",
+  tagline: "A healthier frozen dessert option for schools.",
   /** Short brand promise used in closing sections. */
-  promise: "Fruit. Frozen differently.",
+  promise: "Fruit-based frozen dessert information for school food programs.",
   shortDescription:
-    "Fruiticana is a fruit-based frozen dessert with a smooth, ice-cream-like texture, created as a refreshing alternative to traditional dairy ice cream.",
+    "Fruiticana is a fruit-based frozen dessert originally developed to provide students and families with a refreshing alternative to traditional dairy ice cream. This site helps school decision-makers review the product, nutrition documentation, and historical Connecticut school program.",
   url: siteUrl,
 
   /**
