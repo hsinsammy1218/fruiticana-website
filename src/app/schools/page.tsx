@@ -122,9 +122,9 @@ export default function SchoolsPage() {
       <Section tone="cream-100">
         <SectionHeading
           title="Serving formats for school review"
-          description="Single-serve cups, smoothies, and frozen novelties are the formats most relevant to food-service conversations. Other formats appear in the historical parlor record."
+          description="The historical school program used institutional single-serve cups — a 3 oz portion and a 4 oz (1/2 cup) size matching the laboratory Nutrition Facts panels."
         />
-        <ul className="mt-10 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-6">
+        <ul className="mt-10 grid gap-4 sm:grid-cols-2 lg:max-w-3xl">
           {formats.map((format) => (
             <li key={format.slug}>
               <ProductFormatCard format={format} />

@@ -70,10 +70,10 @@ export const schoolUses: SchoolUse[] = [
   {
     slug: "distribution",
     title: "Food-service distribution",
-    figure: "6",
-    figureLabel: "Documented formats",
+    figure: "2",
+    figureLabel: "Cup sizes",
     description:
-      "Distributors and food-service partners can inquire about six recorded formats (including 3 oz and 4 oz cups), the flavor lineup, and documentation needed to evaluate Fruiticana for school accounts.",
+      "Distributors and food-service partners can inquire about the 3 oz and 4 oz institutional cup sizes, the flavor lineup, and documentation needed to evaluate Fruiticana for school accounts.",
   },
   {
     slug: "summer",

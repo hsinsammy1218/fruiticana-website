@@ -1,7 +1,7 @@
 /**
- * Ways Fruiticana has historically been served. These come from the business
- * PDF and describe historical / potential formats - NOT a confirmation that
- * every format is commercially available today.
+ * Institutional cup formats from the historical school program.
+ * These describe historical / potential formats — NOT a confirmation that
+ * every size is commercially available today.
  */
 
 export type ProductFormat = {
@@ -11,7 +11,7 @@ export type ProductFormat = {
   /** Large scannable size when the format has a documented portion. */
   amount?: string;
   /** Icon key handled by ProductFormatCard. */
-  icon: "cup" | "cone" | "smoothie" | "pop" | "takehome";
+  icon: "cup";
   /** When true, this format is especially relevant to school/food-service. */
   institutional?: boolean;
 };
@@ -35,34 +35,7 @@ export const formats: ProductFormat[] = [
     icon: "cup",
     institutional: true,
   },
-  {
-    slug: "cone",
-    name: "Cone",
-    description:
-      "Offered during the historical Connecticut parlor pilot alongside school distribution.",
-    icon: "cone",
-  },
-  {
-    slug: "smoothie",
-    name: "Smoothie",
-    description: "Fruiticana blended into a drink during the historical parlor pilot.",
-    icon: "smoothie",
-  },
-  {
-    slug: "frozen-pop",
-    name: "Frozen pop",
-    description: "A portable frozen-fruit format recorded as a historical serving idea.",
-    icon: "pop",
-  },
-  {
-    slug: "take-home",
-    name: "Take-home pint (16 oz)",
-    amount: "16 oz",
-    description:
-      "Larger containers from the historical parlor/wholesale lineup — not a current school-menu claim.",
-    icon: "takehome",
-  },
 ];
 
 export const formatsNote =
-  "Serving sizes and formats above are historical (approximately 2003–2011). Current institutional availability by format is to be confirmed.";
+  "Serving sizes above are historical (approximately 2003–2011). Current institutional availability by cup size is to be confirmed.";

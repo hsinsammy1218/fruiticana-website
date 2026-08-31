@@ -100,7 +100,7 @@ export default async function ProductPage({
           title="Institutional serving information"
           description="The historical school program emphasized moderate single-serving portions. The business record lists a 3 oz institutional cup alongside the 4 oz (1/2 cup) size used on the laboratory panels."
         />
-        <ul className="mt-10 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-6">
+        <ul className="mt-10 grid gap-4 sm:grid-cols-2 lg:max-w-3xl">
           {formats.map((format) => (
             <li key={format.slug} className="reveal">
               <ProductFormatCard format={format} />
