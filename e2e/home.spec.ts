@@ -11,7 +11,7 @@ test.describe("home @cross-browser", () => {
       page.getByText(/an exciting new way to eat fruit/i).first(),
     ).toBeVisible();
     await expect(
-      page.getByRole("link", { name: "Learn About Fruiticana" }),
+      page.getByRole("link", { name: "Learn About Fruiticana", exact: true }),
     ).toBeVisible();
     await expect(
       page.getByRole("main").getByRole("link", { name: "For Schools" }).first(),
@@ -24,7 +24,7 @@ test.describe("home @cross-browser", () => {
   test("hero CTAs navigate to about and schools pages", async ({ page }) => {
     await page.goto("/");
 
-    await page.getByRole("link", { name: "Learn About Fruiticana" }).click();
+    await page.getByRole("link", { name: "Learn About Fruiticana", exact: true }).click();
     await expect(page).toHaveURL(/\/about$/);
 
     await page.goto("/");

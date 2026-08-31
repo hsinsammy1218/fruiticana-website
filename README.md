@@ -36,7 +36,7 @@ npm run typecheck
 npm test               # Vitest unit + component tests
 npm run test:e2e       # Playwright end-to-end (Chromium)
 npm run test:a11y      # axe-core accessibility sweep
-npm run test:lighthouse  # Lighthouse CI (Home, For Schools, Product, Story, Contact)
+npm run test:lighthouse  # Lighthouse CI (Home, For Schools, Product, About, Resources, Contact)
 npm run test:all         # unit + Playwright Chromium
 ```
 
@@ -60,7 +60,7 @@ If unset, it falls back to a placeholder (`https://fruiticana.example.com`).
 
 ```
 src/
-  app/            Routes (home, schools, product, story, contact, learn, flavor sheets, legal) + SEO files
+  app/            Routes (home, about, schools, product, resources, contact, learn, flavor sheets, legal) + SEO files
   components/     Reusable UI (layout, ui, home, flavors, learn, nutrition, story, contact, seo)
   data/           Typed content: flavors, schools, inquiry, learn, testimonials, timeline, formats, documents, navigation, site
   lib/            Small helpers (cn, nutrition formatting)

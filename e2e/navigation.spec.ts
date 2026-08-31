@@ -73,4 +73,33 @@ test.describe("navigation @cross-browser", () => {
     await page.goto("/story");
     await expect(page).toHaveURL(/\/about$/);
   });
+
+  test("keyboard can move through the desktop header", async ({ page }) => {
+    await page.setViewportSize({ width: 1440, height: 900 });
+    await page.goto("/");
+
+    await page.keyboard.press("Tab");
+    await expect(page.getByRole("link", { name: "Skip to main content" })).toBeFocused();
+
+    await page.keyboard.press("Tab");
+    await expect(
+      page.getByRole("banner").getByRole("link", { name: /fruiticana - home/i }),
+    ).toBeFocused();
+
+    await page.keyboard.press("Tab");
+    await expect(
+      page.getByRole("navigation", { name: "Primary" }).getByRole("link", {
+        name: "About Fruiticana",
+      }),
+    ).toBeFocused();
+
+    for (let i = 0; i < 4; i += 1) {
+      await page.keyboard.press("Tab");
+    }
+    await expect(
+      page.getByRole("banner").getByRole("link", {
+        name: "Request School Information",
+      }),
+    ).toBeFocused();
+  });
 });

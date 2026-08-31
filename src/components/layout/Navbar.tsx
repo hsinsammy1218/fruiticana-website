@@ -55,7 +55,7 @@ export function Navbar() {
                       "relative whitespace-nowrap rounded-md px-2 py-2 text-xs font-semibold transition-colors xl:px-2.5 xl:text-sm",
                       isActive
                         ? "text-green-deep"
-                        : "text-green-deep/70 hover:text-green-deep",
+                        : "text-muted hover:text-green-deep",
                     )}
                   >
                     {item.label}

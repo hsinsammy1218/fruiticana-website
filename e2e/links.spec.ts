@@ -50,6 +50,30 @@ test.describe("links and seo", () => {
     }
   });
 
+  test("resources labels historical documents and has no PDF downloads", async ({
+    page,
+  }) => {
+    await page.goto("/resources");
+    await expect(
+      page.getByRole("heading", { name: /documentation for school review/i }),
+    ).toBeVisible();
+    await expect(
+      page.getByText("Historical document — provided for background/reference.").first(),
+    ).toBeVisible();
+    await expect(page.getByRole("link", { name: /download/i })).toHaveCount(0);
+    await expect(
+      page.getByText(/downloadable or printable scan is not published/i).first(),
+    ).toBeVisible();
+  });
+
+  test("home has no page errors", async ({ page }) => {
+    const errors: string[] = [];
+    page.on("pageerror", (error) => errors.push(error.message));
+    await page.goto("/");
+    await expect(page.getByRole("heading", { level: 1 })).toBeVisible();
+    expect(errors).toEqual([]);
+  });
+
   test("legal pages are linked and render", async ({ page }) => {
     for (const route of legalRoutes) {
       await page.goto(route.path);

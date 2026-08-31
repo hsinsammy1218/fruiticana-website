@@ -22,7 +22,7 @@ export function Hero() {
             <span className="h-2 w-2 rounded-full bg-green" aria-hidden="true" />
             Information for schools and food-service programs
           </p>
-          <p className="mt-5 font-display text-sm font-bold uppercase tracking-[0.22em] text-green">
+          <p className="mt-5 font-display text-sm font-bold uppercase tracking-[0.22em] text-green-600">
             {site.legacyProductName}
           </p>
           <h1 className="mt-2 font-display text-4xl font-extrabold leading-[1.08] sm:text-5xl lg:text-6xl">

@@ -128,7 +128,7 @@ export function MobileNavigation({ open, onClose, activeHref }: MobileNavigation
                       "block rounded-xl px-4 py-3 text-lg font-semibold",
                       isActive
                         ? "bg-green-deep/8 text-green-deep"
-                        : "text-green-deep/80 hover:bg-green-deep/5",
+                        : "text-green-deep hover:bg-green-deep/5",
                     )}
                   >
                     {item.label}

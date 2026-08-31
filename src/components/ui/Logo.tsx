@@ -76,7 +76,7 @@ export function Logo({
           cana
         </span>
         {showSubtitle ? (
-          <span className="mt-1 text-[0.62rem] font-semibold uppercase tracking-[0.16em] text-green">
+          <span className="mt-1 text-[0.62rem] font-semibold uppercase tracking-[0.16em] text-current/80">
             Creamless Ice Cream
           </span>
         ) : null}

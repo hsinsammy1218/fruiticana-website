@@ -44,6 +44,23 @@ test.describe("contact form", () => {
     await expect(status).toContainText(/doesn.?t deliver messages/i);
   });
 
+  test("defaults interest to School Food Service", async ({ page }) => {
+    await page.goto("/contact");
+    await expect(page.getByLabel(/interest type/i)).toHaveValue(
+      "School Food Service",
+    );
+  });
+
+  test("honeypot submissions show success without validating empty fields", async ({
+    page,
+  }) => {
+    await page.goto("/contact");
+    await page.locator("#website").fill("https://spam.example", { force: true });
+    await page.getByRole("button", { name: "Request Information" }).click();
+    await expect(page.getByRole("status")).toBeVisible();
+    await expect(page.getByText("Please enter your name.")).toHaveCount(0);
+  });
+
   test("preselects interest from the query string", async ({ page }) => {
     await page.goto("/contact?interest=Healthy%20Snack%20Program");
     await expect(page.getByLabel(/interest type/i)).toHaveValue(
