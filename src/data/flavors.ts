@@ -10,9 +10,8 @@
  * They are labeled HISTORICAL everywhere in the UI and MUST be re-verified
  * against the current formulation before being published as a product label.
  *
- * Images are intentionally replaceable placeholder artwork
- * (`/images/flavors/<slug>.svg`). TODO: replace with real product photography
- * (WebP) once available; then set alt text from `imageAlt`.
+ * Images are high-quality fruit photography in WebP
+ * (`/images/flavors/<slug>.webp`) representing each flavor.
  */
 
 export type FlavorCategory =
@@ -95,8 +94,8 @@ const flavorCatalog: Omit<Flavor, "nutritionStatus">[] = [
     description: "Mellow, honeyed apricot with a gentle tang.",
     detail:
       "A smooth scoop built around the soft, sun-ripened sweetness of apricot - delicate, golden, and never heavy.",
-    image: "/images/flavors/apricot.svg",
-    imageAlt: "Apricot Fruiticana frozen dessert",
+    image: "/images/flavors/apricot.webp",
+    imageAlt: "Fresh ripe apricots",
     featured: false,
     status: "original",
     nutrition: {
@@ -133,8 +132,8 @@ const flavorCatalog: Omit<Flavor, "nutritionStatus">[] = [
     description: "Ripe, juicy mango with a velvety finish.",
     detail:
       "Peak-season mango blended into a silky frozen scoop - bright, tropical, and endlessly refreshing.",
-    image: "/images/flavors/mango.svg",
-    imageAlt: "Mango Fruiticana frozen dessert",
+    image: "/images/flavors/mango.webp",
+    imageAlt: "Fresh ripe mango fruit",
     featured: true,
     status: "original",
     nutrition: {
@@ -171,8 +170,8 @@ const flavorCatalog: Omit<Flavor, "nutritionStatus">[] = [
     description: "Sun-ripe pineapple with a lively snap.",
     detail:
       "Juicy pineapple turns tart-sweet and creamy - a tropical scoop with a refreshing edge.",
-    image: "/images/flavors/pineapple.svg",
-    imageAlt: "Pineapple Fruiticana frozen dessert",
+    image: "/images/flavors/pineapple.webp",
+    imageAlt: "Fresh pineapple fruit",
     featured: true,
     status: "original",
     nutrition: {
@@ -209,8 +208,8 @@ const flavorCatalog: Omit<Flavor, "nutritionStatus">[] = [
     description: "Creamy banana, naturally sweet.",
     detail:
       "Ripe banana gives this scoop a naturally smooth, mellow sweetness - comforting and easy to love.",
-    image: "/images/flavors/banana.svg",
-    imageAlt: "Banana Fruiticana frozen dessert",
+    image: "/images/flavors/banana.webp",
+    imageAlt: "Fresh ripe bananas",
     featured: false,
     status: "original",
     nutrition: {
@@ -248,8 +247,8 @@ const flavorCatalog: Omit<Flavor, "nutritionStatus">[] = [
     description: "Rich, mellow sweetness from the vine.",
     detail:
       "An unexpected favorite - the deep, caramel-like sweetness of raisin in a smooth frozen scoop.",
-    image: "/images/flavors/raisin.svg",
-    imageAlt: "Raisin Fruiticana frozen dessert",
+    image: "/images/flavors/raisin.webp",
+    imageAlt: "Plump raisins",
     featured: false,
     status: "original",
     nutrition: {
@@ -286,8 +285,8 @@ const flavorCatalog: Omit<Flavor, "nutritionStatus">[] = [
     description: "Bright, ripe strawberry - a timeless favorite.",
     detail:
       "Ripe strawberries make a bright, fragrant scoop that tastes like the best of summer.",
-    image: "/images/flavors/strawberry.svg",
-    imageAlt: "Strawberry Fruiticana frozen dessert",
+    image: "/images/flavors/strawberry.webp",
+    imageAlt: "Fresh ripe strawberries",
     featured: true,
     status: "original",
     nutrition: {
@@ -324,8 +323,8 @@ const flavorCatalog: Omit<Flavor, "nutritionStatus">[] = [
     description: "Zesty lemonade with a refreshing bite.",
     detail:
       "All the zip of a cold glass of lemonade, frozen into a bright, palate-cleansing scoop.",
-    image: "/images/flavors/lemonade.svg",
-    imageAlt: "Lemonade Fruiticana frozen dessert",
+    image: "/images/flavors/lemonade.webp",
+    imageAlt: "Fresh lemons",
     featured: false,
     status: "original",
     nutrition: {
@@ -362,8 +361,8 @@ const flavorCatalog: Omit<Flavor, "nutritionStatus">[] = [
     description: "Plump blueberries, cool and mellow.",
     detail:
       "Sweet-tart blueberries fold into a smooth, deep-purple scoop with a mellow berry finish.",
-    image: "/images/flavors/blueberry.svg",
-    imageAlt: "Blueberry Fruiticana frozen dessert",
+    image: "/images/flavors/blueberry.webp",
+    imageAlt: "Fresh blueberries",
     featured: true,
     status: "original",
     nutrition: {
@@ -400,8 +399,8 @@ const flavorCatalog: Omit<Flavor, "nutritionStatus">[] = [
     description: "Bittersweet grapefruit, bright and clean.",
     detail:
       "Ruby grapefruit brings a crisp, bittersweet brightness - refreshing and grown-up.",
-    image: "/images/flavors/grapefruit.svg",
-    imageAlt: "Grapefruit Fruiticana frozen dessert",
+    image: "/images/flavors/grapefruit.webp",
+    imageAlt: "Fresh pink grapefruit",
     featured: false,
     status: "original",
     nutrition: {
@@ -438,8 +437,8 @@ const flavorCatalog: Omit<Flavor, "nutritionStatus">[] = [
     description: "Cool, crisp apple - clean and simple.",
     detail:
       "Crisp orchard apple in a clean, refreshing scoop - simple and satisfying.",
-    image: "/images/flavors/apple.svg",
-    imageAlt: "Apple Fruiticana frozen dessert",
+    image: "/images/flavors/apple.webp",
+    imageAlt: "Fresh red apples",
     featured: false,
     status: "original",
     nutrition: {
@@ -476,8 +475,8 @@ const flavorCatalog: Omit<Flavor, "nutritionStatus">[] = [
     description: "Juicy orange, sweet and sunny.",
     detail:
       "Sweet, juicy orange delivers a sunny citrus scoop that's bright from the first bite.",
-    image: "/images/flavors/orange.svg",
-    imageAlt: "Orange Fruiticana frozen dessert",
+    image: "/images/flavors/orange.webp",
+    imageAlt: "Fresh ripe oranges",
     featured: true,
     status: "original",
     nutrition: {
@@ -514,8 +513,8 @@ const flavorCatalog: Omit<Flavor, "nutritionStatus">[] = [
     description: "Ripe cantaloupe, mellow and juicy.",
     detail:
       "Ripe cantaloupe makes a softly sweet, juicy melon scoop - cool and unexpectedly elegant.",
-    image: "/images/flavors/cantaloupe.svg",
-    imageAlt: "Cantaloupe Fruiticana frozen dessert",
+    image: "/images/flavors/cantaloupe.webp",
+    imageAlt: "Fresh ripe cantaloupe",
     featured: true,
     status: "original",
     nutrition: {
