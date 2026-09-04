@@ -3,7 +3,7 @@ import { describe, expect, it } from "vitest";
 import { NutritionSelector } from "@/components/nutrition/NutritionSelector";
 
 describe("NutritionSelector", () => {
-  it("defaults to the first flavor and shows historical facts", () => {
+  it("defaults to the first flavor and shows nutrition facts", () => {
     render(<NutritionSelector />);
 
     expect(screen.getByRole("link", { name: "Apricot" })).toHaveAttribute(
@@ -11,7 +11,7 @@ describe("NutritionSelector", () => {
       "true",
     );
     expect(screen.getByRole("heading", { name: "Apricot" })).toBeInTheDocument();
-    expect(screen.getByText("Historical (2008)")).toBeInTheDocument();
+    expect(screen.getByText("Lab analysis (2008)")).toBeInTheDocument();
     expect(screen.getByText(/northeast laboratories/i)).toBeInTheDocument();
   });
 

@@ -2,7 +2,7 @@ import { describe, expect, it } from "vitest";
 import { schoolUses, schoolAudiences, schoolFitPoints } from "@/data/schools";
 
 describe("schools data", () => {
-  it("covers cafeteria, snack, private, district, events, and distribution", () => {
+  it("covers cafeteria, snack, private, district, events, summer, and dining hall — school student uses only", () => {
     const slugs = schoolUses.map((use) => use.slug);
     expect(slugs).toEqual([
       "cafeteria",
@@ -10,15 +10,18 @@ describe("schools data", () => {
       "private",
       "district",
       "events",
-      "distribution",
       "summer",
       "campus",
     ]);
+    expect(schoolUses.find((use) => use.slug === "campus")?.title).toMatch(/dining hall/i);
+    expect(slugs).not.toContain("distribution");
   });
 
-  it("names the institutional audiences", () => {
+  it("names school and student audiences", () => {
     expect(schoolAudiences.length).toBeGreaterThanOrEqual(5);
+    expect(schoolAudiences.join(" ")).toMatch(/students/i);
     expect(schoolAudiences.join(" ")).toMatch(/food-service/i);
+    expect(schoolAudiences.join(" ")).not.toMatch(/distributor/i);
   });
 
   it("pairs each use case and fit point with a scannable figure", () => {
@@ -29,7 +32,8 @@ describe("schools data", () => {
       "12",
       "4 oz",
       "2003–05",
-      "2003",
+      "In-house",
     ]);
+    expect(schoolFitPoints.some((point) => /in-house/i.test(point.body))).toBe(true);
   });
 });

@@ -27,7 +27,7 @@ import {
 } from "@/data/learn";
 
 const learnDescription =
-  "A free Fruiticana classroom resource: twelve fruits to study, frozen-dessert science, Nutrition Facts literacy, and a historical Connecticut school snack-pilot case study.";
+  "A free Fruiticana classroom resource: twelve fruits to study, frozen-dessert science, Nutrition Facts literacy, and a Connecticut school snack-pilot case study.";
 
 export const metadata: Metadata = {
   title: "Learn — classroom resource for schools",
@@ -36,7 +36,7 @@ export const metadata: Metadata = {
   keywords: [
     "fruit classroom resource",
     "nutrition facts lesson",
-    "school snack program history",
+    "school snack program case study",
     "fruit science for students",
     "Connecticut Team Nutrition",
   ],
@@ -107,9 +107,8 @@ export default function LearnPage() {
         />
         <HistoricalNotice className="mt-6 max-w-3xl">
           Fruiticana was included in a Connecticut school snack tasting in
-          2003–2005. That is documented history. This page does{" "}
-          <strong>not</strong> claim Fruiticana is on school menus today, and it
-          is not a USDA, state, or district endorsement.
+          2003–2005. This classroom page uses that chapter as a case study for
+          students — it is not a USDA, state, or district endorsement.
         </HistoricalNotice>
         <StatGrid
           className="mt-10"
@@ -252,7 +251,7 @@ export default function LearnPage() {
                 </li>
               ))}
             </ul>
-            <Button href="/product#nutrition">Open the historical nutrition panels</Button>
+            <Button href="/product#nutrition">Open the nutrition panels</Button>
           </div>
         </div>
       </Section>
@@ -262,7 +261,7 @@ export default function LearnPage() {
           id="case-study-heading"
           eyebrow="Module 4"
           title={caseStudy.title}
-          description={`${caseStudy.period}. A documented school tasting — shared so students can practice reading history, not so anyone assumes it is happening now.`}
+          description={`${caseStudy.period}. A documented school tasting — shared so students can practice reading primary sources.`}
         />
         <div className="mt-10 grid gap-10 lg:grid-cols-[1.2fr_1fr] lg:gap-14">
           <div className="info-copy space-y-4">
@@ -270,8 +269,7 @@ export default function LearnPage() {
             <HistoricalNotice>
               These details come from Fruiticana&rsquo;s 2003–2011 business
               record, including a December 2004 Connecticut State Department of
-              Education letter. They describe a grant-funded pilot. They are not
-              a current government endorsement.
+              Education letter describing a grant-funded pilot.
             </HistoricalNotice>
             <p>
               After the grant window, Fruiticana also ran a localized 2005–2006
@@ -407,7 +405,7 @@ export default function LearnPage() {
           label: "Contact for schools",
           href: "/contact?interest=Healthy%20Snack%20Program",
         }}
-        secondary={{ label: "Read the historical story", href: "/about" }}
+        secondary={{ label: "Read Our Story", href: "/about" }}
       />
     </>
   );

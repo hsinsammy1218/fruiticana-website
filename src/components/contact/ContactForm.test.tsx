@@ -8,7 +8,7 @@ async function fillRequired(
   extras?: { message?: string; email?: string },
 ) {
   await user.type(screen.getByLabelText(/^name/i), "Sam");
-  await user.type(screen.getByLabelText(/school \/ organization/i), "Lincoln Elementary");
+  await user.type(screen.getByLabelText(/school or district/i), "Lincoln Elementary");
   await user.type(
     screen.getByLabelText(/email/i),
     extras?.email ?? "sam@example.com",
@@ -28,7 +28,7 @@ describe("ContactForm", () => {
 
     expect(screen.getByText("Please enter your name.")).toBeInTheDocument();
     expect(
-      screen.getByText("Please enter your school or organization."),
+      screen.getByText("Please enter your school or district."),
     ).toBeInTheDocument();
     expect(screen.getByText("Please enter your email.")).toBeInTheDocument();
     expect(screen.getByText("Please enter a message.")).toBeInTheDocument();

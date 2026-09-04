@@ -2,8 +2,10 @@
  * Global site configuration and brand-safe copy.
  *
  * Brand voice is rooted in the historical myfruiticana.com consumer site
- * (Fruiticana Cream-Less Ice Crème / “The New Way to Eat Fruit”), updated for
- * today’s school and food-service readers.
+ * (Fruiticana Cream-Less Ice Crème / “The New Way to Eat Fruit”), rewritten
+ * so schools and their students can understand the vision: what, why, and how.
+ *
+ * For now, this website is only for schools and their students.
  *
  * IMPORTANT (see PLAN.md content audit): current business contact details are
  * NOT known. Do not invent an email, phone number, address, or social account.
@@ -27,14 +29,15 @@ export const site = {
    * (“THE NEW WAY TO EAT FRUIT”), kept in sentence case for the modern site.
    */
   tagline: "The new way to eat fruit.",
-  /** Alternate consumer phrasing from the business PDF — used on Story. */
+  /** Alternate consumer phrasing from the business PDF — used on About. */
   legacyTagline: "An exciting new way to eat fruit.",
   heroSupport:
-    "A fruit-based creamless frozen dessert for schools and families.",
+    "A fruit-based creamless frozen dessert for schools and their students. The vision is simple: give students a new way to eat fruit.",
   /** Short brand promise used in closing sections. */
-  promise: "Fruit-based frozen dessert — information for schools and families.",
+  promise:
+    "Fruit-based frozen dessert for schools and their students — what it is, why it exists, and how it can be made in-house.",
   shortDescription:
-    "Fruiticana is a fruit-based creamless frozen dessert — the new way to eat fruit. Originally developed as a smooth, ice-cream-like alternative built from fruit flavors, this site helps schools and families review the product, nutrition documentation, and Connecticut school history.",
+    "Fruiticana is a fruit-based creamless frozen dessert — the new way to eat fruit. For now, this site is only for schools and their students: it explains the Fruiticana vision (what, why, and how), nutrition documentation, and how it fits school programs.",
   url: siteUrl,
 
   /**

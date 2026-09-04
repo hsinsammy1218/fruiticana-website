@@ -17,7 +17,7 @@ export function HistoricalTimeline() {
               {entry.period}
             </p>
             {entry.historical ? (
-              <HistoricalNotice variant="inline" />
+              <HistoricalNotice variant="inline" label="Documented" />
             ) : null}
           </div>
           <h3 className="mt-1 text-xl font-bold text-green-deep">{entry.title}</h3>

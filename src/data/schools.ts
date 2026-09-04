@@ -1,21 +1,21 @@
 /**
- * Copy for the For Schools page. Historical school-program facts are labeled
- * in the UI; nothing here claims Fruiticana is on menus today.
+ * Copy for the For Schools page.
+ * For now, the audience is only schools and their students.
  */
 
 export const schoolsIntro = {
   eyebrow: "For schools",
   title: "Fruiticana for Schools",
   description:
-    "A refreshing frozen dessert option worth exploring. This page is for administrators, food-service directors, nutrition staff, private-school leaders, and partners evaluating whether Fruiticana could fit a cafeteria, snack program, or district conversation.",
+    "For now, this page is only for schools and their students. Principals, food-service directors, nutrition staff, and administrators can review the vision — what Fruiticana is, why it exists, and how it can work in a cafeteria or snack program for students.",
 } as const;
 
 export const schoolAudiences = [
-  "School administrators and principals",
-  "Superintendents and private-school directors",
+  "Schools and the students they serve",
+  "Principals and school administrators",
   "Food-service directors and cafeteria managers",
-  "Nutrition coordinators and purchasing staff",
-  "District decision-makers and distributors",
+  "Nutrition coordinators and wellness staff",
+  "Teachers and classroom programs",
 ] as const;
 
 export type SchoolUse = {
@@ -33,7 +33,7 @@ export const schoolUses: SchoolUse[] = [
     figure: "4 oz",
     figureLabel: "Single-serve cup",
     description:
-      "A fruit-based frozen dessert option for meal service or à la carte, historically offered in individual 4 oz single-serve cups rather than a dairy ice-cream scoop.",
+      "A fruit-based frozen dessert option for meal service or à la carte, offered in individual 4 oz single-serve cups rather than a dairy ice-cream scoop.",
   },
   {
     slug: "snack",
@@ -57,7 +57,7 @@ export const schoolUses: SchoolUse[] = [
     figure: "2008",
     figureLabel: "Lab panels on file",
     description:
-      "Nutrition, procurement, and leadership teams can share product sheets, 2008 laboratory panels, and Connecticut program records internally before a tasting or bid conversation.",
+      "Nutrition, procurement, and leadership teams can share product sheets, 2008 laboratory panels, and Connecticut program records internally before a tasting or program conversation.",
   },
   {
     slug: "events",
@@ -65,15 +65,7 @@ export const schoolUses: SchoolUse[] = [
     figure: "4 oz",
     figureLabel: "Single-serve cup",
     description:
-      "Historical serving ideas included 4 oz cups and other single-serve formats that can be discussed for fairs, family nights, or limited-time service — availability is to be confirmed.",
-  },
-  {
-    slug: "distribution",
-    title: "Food-service distribution",
-    figure: "4 oz",
-    figureLabel: "Cup size",
-    description:
-      "Distributors and food-service partners can inquire about the 4 oz single-serve cup size, the flavor lineup, and documentation needed to evaluate Fruiticana for school accounts.",
+      "Serve 4 oz cups at fairs, family nights, or limited-time service — confirm availability for your school calendar.",
   },
   {
     slug: "summer",
@@ -81,15 +73,15 @@ export const schoolUses: SchoolUse[] = [
     figure: "4 oz",
     figureLabel: "Single-serve idea",
     description:
-      "Possible applications include summer feeding and after-school snacks. These are program conversations — not a claim that those programs currently serve Fruiticana.",
+      "Possible applications include summer feeding and after-school snacks. Reach out to discuss how Fruiticana can fit your program.",
   },
   {
     slug: "campus",
-    title: "Campus food service",
+    title: "School dining hall",
     figure: "12",
     figureLabel: "Flavor options",
     description:
-      "Private-school dining halls and campus food service can review the same flavor sheets, historical portions, and nutrition documentation used by K–12 evaluators.",
+      "Private-school dining halls and student meal programs can review the same flavor sheets, portions, and nutrition documentation used by K–12 evaluators.",
   },
 ];
 
@@ -102,19 +94,19 @@ export const schoolFitPoints = [
   {
     figure: "4 oz",
     title: "Individual portions",
-    body: "The historical school program used single-serving cups, including a recorded 4 oz (½ cup) laboratory serving.",
+    body: "Schools use single-serving cups, including a recorded 4 oz (½ cup) laboratory serving — a simple format for in-house school service.",
   },
   {
     figure: "2003–05",
     title: "Documented school chapter",
-    body: "Connecticut Team Nutrition participation (2003–2005) and later distribution to local Connecticut schools after consumer testing in 2005–2006.",
+    body: "Connecticut Team Nutrition participation (2003–2005) and later service in local Connecticut schools after consumer testing in 2005–2006.",
   },
   {
-    figure: "2003",
-    title: "Lactose-free concept",
-    body: "Originally designed in 2003 as an option for people avoiding lactose. Current formulation still needs verification.",
+    figure: "In-house",
+    title: "Built for school kitchens",
+    body: "The vision is an easy in-house preparation path, so schools can offer a fruit-based frozen dessert without carrying specialty outside-dessert cost.",
   },
 ] as const;
 
 export const schoolAvailabilityNote =
-  "Fruiticana is not listing current school-menu placements on this site. Historical Connecticut participation is shared so decision-makers can evaluate fit. Product availability, current nutrition, and food-service partnerships are confirmed through a school inquiry.";
+  "Fruiticana is for schools and their students. Connecticut program experience is shared so school teams can evaluate fit. Confirm product availability and nutrition details through a school inquiry.";

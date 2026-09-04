@@ -1,8 +1,8 @@
 # Fruiticana Website Implementation Plan
 
-Next.js 16 informational website for **school decision-makers**. The 2003–2011 business PDF and the 2007 myfruiticana.com archive are historical source material with strict claim qualification. There is no consumer shop, cart, or “buy now” path.
+Next.js 16 informational website for **schools and their students**. The 2003–2011 business PDF and the 2007 myfruiticana.com materials are source material for dates and documentation. There is no consumer shop, cart, or “buy now” path. **For now, this site is only for schools and the students they serve.**
 
-**Core goal:** Recreate the recognizable Fruiticana identity from the original website, modernized for 2026, so a principal or food-service director can evaluate Fruiticana and request information.
+**Core goal:** Recreate the recognizable Fruiticana identity from the original website, modernized for 2026, so a school team can understand the Fruiticana vision — the what, why, and how — and request information for students.
 
 **Primary conversion:** School inquiry — **Request School Information** / **Bring Fruiticana to Your School**.
 
@@ -12,7 +12,11 @@ Next.js 16 informational website for **school decision-makers**. The 2003–2011
 
 **What it is:** Fruiticana is a fruit-based frozen dessert originally developed as a refreshing alternative to traditional dairy ice cream. Original line name: **Fruiticana Creamless Ice Cream**. Original tagline (homepage hero): **“An exciting new way to eat fruit.”**
 
-Until current facts are verified, the site speaks in **concept + history** language, not **on menus today / certified today**.
+**Why it exists:** So students have a new way to eat fruit — a frozen dessert built from fruit flavors that can belong in a cafeteria or snack program, including for students avoiding lactose (original design intent).
+
+**How it works for schools:** Designed to be made **in-house**, so schools are not carrying specialty outside-dessert cost. Schools serve individual single-serve cups (4 oz / ½ cup laboratory serving), with 12 original flavors, nutrition documentation for school review, and a documented Connecticut Team Nutrition chapter.
+
+The site speaks in **present-day school** language for schools and their students.
 
 ---
 
@@ -63,15 +67,16 @@ Redirects: `/flavors` and `/nutrition` → `/product`; `/story` → `/about`.
 
 ## 4. Homepage order
 
-1. Hero — Fruiticana + original tagline + school-minded support line
-2. What Is Fruiticana?
-3. Fruiticana for Schools
-4. Featured flavors (6)
-5. How it can be served
-6. Fruiticana Has Been Here Before
-7. Nutrition information
-8. Historical documentation
-9. Closing school CTA
+1. Hero — Fruiticana + original tagline + school-only support line
+2. The Fruiticana vision — What / Why / How
+3. What Is Fruiticana? (product concept)
+4. Why Fruiticana was made for schools
+5. How it can be served in school
+6. Featured flavors (6)
+7. Built for schools — proven with students
+8. Nutrition information
+9. School documentation
+10. Closing school CTA
 
 ---
 

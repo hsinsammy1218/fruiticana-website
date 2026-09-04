@@ -15,7 +15,7 @@ export function NutritionSelector({ selectedSlug }: { selectedSlug?: string }) {
         <div
           className="mt-3 flex flex-wrap gap-2 lg:flex-col"
           role="list"
-          aria-label="Choose a flavor to view its historical nutrition"
+          aria-label="Choose a flavor to view its nutrition facts"
         >
           {flavors.map((item) => {
             const active = item.slug === flavor.slug;

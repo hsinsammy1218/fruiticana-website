@@ -1,7 +1,5 @@
 /**
- * Institutional cup format from the historical school program.
- * Describes a historical / potential format — NOT a confirmation of
- * current commercial availability.
+ * Institutional cup format for school service.
  */
 
 export type ProductFormat = {
@@ -22,11 +20,11 @@ export const formats: ProductFormat[] = [
     name: "Single-serve cup (4 oz)",
     amount: "4 oz",
     description:
-      "A 4 oz (1/2 cup) cup matching the historical laboratory Nutrition Facts serving size — the institutional single-serve format for school food-service review.",
+      "A 4 oz (1/2 cup) cup matching the laboratory Nutrition Facts serving size — a simple single-serve format for in-house school kitchen service.",
     icon: "cup",
     institutional: true,
   },
 ];
 
 export const formatsNote =
-  "Serving size above is historical (approximately 2003–2011). Current institutional availability is to be confirmed.";
+  "Confirm institutional pack sizes and availability with Fruiticana before menu planning.";

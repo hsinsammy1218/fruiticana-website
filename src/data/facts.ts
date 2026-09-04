@@ -21,17 +21,17 @@ export const homeGlanceStats: FactStat[] = [
   {
     value: "4 oz",
     label: "Single-serve cup",
-    note: "Historical school / lab serving size",
+    note: "School / lab serving size",
   },
   {
     value: "0g",
     label: "Total fat on 2008 panels",
-    note: "All 12 flavors, historical lab only",
+    note: "All 12 flavors, laboratory analysis",
   },
   {
     value: "~30,000",
     label: "Consumers sampled",
-    note: "Connecticut-area historical figure",
+    note: "Connecticut school sampling figure",
   },
 ];
 
@@ -50,7 +50,7 @@ export const connecticutProgramStats: FactStat[] = [
   {
     value: "~30,000",
     label: "Consumers sampled",
-    note: "Connecticut-area historical figure",
+    note: "Connecticut school sampling figure",
   },
   {
     value: "12",
@@ -59,7 +59,7 @@ export const connecticutProgramStats: FactStat[] = [
   },
 ];
 
-/** About-only: includes the historical pilot sales figure from the business PDF. */
+/** About-only: includes the pilot sales figure from the business PDF. */
 export const storyPilotStats: FactStat[] = [
   {
     value: "2003–05",
@@ -74,12 +74,12 @@ export const storyPilotStats: FactStat[] = [
   {
     value: "~30,000",
     label: "Consumers sampled",
-    note: "Connecticut-area historical figure",
+    note: "Connecticut school sampling figure",
   },
   {
     value: "~$1M",
-    label: "Historical pilot sales",
-    note: "Business record; not a current result",
+    label: "Pilot sales",
+    note: "From the business record",
   },
 ];
 
@@ -133,29 +133,26 @@ export const productConceptBenefits: {
   {
     icon: "fruit",
     figure: "12",
-    title: "Fruit Based",
-    description:
-      "Twelve original fruit flavors, built around fruit rather than a traditional dairy ice-cream base with fruit mixed in.",
+    title: "Fruit based",
+    description: "Original fruit flavors — built from fruit, not dairy ice cream with fruit mixed in.",
   },
   {
     icon: "scoop",
-    title: "Smooth Frozen Texture",
-    description:
-      "Developed as a fruit-based frozen dessert with a smooth, ice-cream-like experience — served in institutional single-serve cups for the historical school program.",
+    figure: "Smooth",
+    title: "Ice-cream feel",
+    description: "A creamless frozen dessert with a smooth scoop students recognize.",
   },
   {
     icon: "leaf",
     figure: "2003",
-    title: "Lactose-Free Concept",
-    description:
-      "Originally designed in 2003 as an option for people avoiding lactose. Current formulation still needs verification.",
+    title: "Lactose-free concept",
+    description: "Designed for people avoiding lactose. Current formulation still to be confirmed.",
   },
   {
     icon: "cup",
     figure: "4 oz",
-    title: "Individual Serving Options",
-    description:
-      "The historical school program used single-serving cups, including a recorded 4 oz (½ cup) laboratory serving.",
+    title: "Single-serve cups",
+    description: "Individual portions sized for a cafeteria or snack line.",
   },
 ];
 
@@ -171,29 +168,25 @@ export const schoolHomeBenefits: {
   {
     icon: "cup",
     figure: "4 oz",
-    title: "Student-Friendly Portions",
-    description:
-      "Historical single-serve cups were sized for individual service rather than a parlor scoop — a 4 oz format schools typically evaluate first.",
+    title: "Student portions",
+    description: "Individual cups for meal or snack service — not a parlor scoop.",
   },
   {
     icon: "flavors",
     figure: "12",
-    title: "Multiple Fruit Flavors",
-    description:
-      "The original lineup spans tropical, berry, citrus, orchard, and melon flavors, so programs can offer variety without a dairy base.",
+    title: "Fruit flavors",
+    description: "Tropical, berry, citrus, orchard, and melon options without a dairy base.",
   },
   {
     icon: "school",
     figure: "2005–06",
-    title: "School Food-Service Potential",
-    description:
-      "After consumer testing, Fruiticana moved into production for local Connecticut school distribution. Current availability is confirmed through inquiry.",
+    title: "School chapter",
+    description: "Produced for local Connecticut schools after consumer testing.",
   },
   {
     icon: "leaf",
     figure: "2003–05",
-    title: "Historical School Program Experience",
-    description:
-      "Fruiticana participated in Connecticut’s Team Nutrition Healthy Snack pilot. That chapter is history, not a current menu listing.",
+    title: "Snack pilot",
+    description: "Included in Connecticut’s Team Nutrition Healthy Snack pilot.",
   },
 ];

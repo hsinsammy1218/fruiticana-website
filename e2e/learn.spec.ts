@@ -1,7 +1,7 @@
 import { test, expect } from "@playwright/test";
 
 test.describe("learn", () => {
-  test("presents classroom modules and keeps history labeled", async ({
+  test("presents classroom modules for students", async ({
     page,
   }) => {
     await page.goto("/learn");
@@ -13,7 +13,7 @@ test.describe("learn", () => {
       }),
     ).toBeVisible();
     await expect(
-      page.getByText(/does not claim Fruiticana is on school menus today/i),
+      page.getByText(/Fruiticana was included in a Connecticut school snack tasting/i),
     ).toBeVisible();
 
     await expect(page.getByRole("heading", { name: "Twelve fruits to know" })).toBeVisible();
@@ -35,7 +35,7 @@ test.describe("learn", () => {
     await page.getByRole("link", { name: "Start with the twelve fruits" }).click();
     await expect(page).toHaveURL(/\/learn#fruits/);
 
-    await page.getByRole("link", { name: "Open the historical nutrition panels" }).click();
+    await page.getByRole("link", { name: "Open the nutrition panels" }).click();
     await expect(page).toHaveURL(/\/product#nutrition/);
 
     await page.goto("/learn");

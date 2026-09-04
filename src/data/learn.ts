@@ -2,9 +2,9 @@
  * Classroom learning content for /learn.
  *
  * This is educational material for schools: fruit science, nutrition-label
- * literacy, and a historical case study of Connecticut's Team Nutrition snack
+ * literacy, and a case study of Connecticut's Team Nutrition snack
  * pilot. It is NOT a current school-sales pitch, a lesson-plan product, or a
- * nutrition/medical claim. Historical program facts stay labeled as history.
+ * nutrition/medical claim. Program facts stay dated and documented.
  */
 
 export type GradeBand = "elementary" | "middle" | "high";
@@ -59,7 +59,7 @@ export const learnAudience = [
   },
   {
     title: "Middle school",
-    body: "Map where fruits grow, compare historical labels, and model how freezing changes texture.",
+    body: "Map where fruits grow, compare nutrition labels, and model how freezing changes texture.",
   },
   {
     title: "High school",
@@ -86,7 +86,7 @@ export const learnModules = [
   {
     id: "case-study",
     title: "Connecticut snack-pilot case study",
-    summary: "A historical USDA Team Nutrition tasting, and how to read it as a source.",
+    summary: "A USDA Team Nutrition tasting from 2003–2005, and how to read it as a source.",
   },
   {
     id: "classroom",
@@ -241,7 +241,7 @@ export const scienceCards: ScienceCard[] = [
   },
   {
     title: "Fruit vs. dairy ice cream (as a concept)",
-    body: "Traditional ice cream is built around milk fat and milk proteins. A fruit-based frozen dessert starts from fruit. The two can look similar in a cup and still be different food systems. Fruiticana was historically created as a lactose-free alternative — a design choice, not a medical recommendation.",
+    body: "Traditional ice cream is built around milk fat and milk proteins. A fruit-based frozen dessert starts from fruit. The two can look similar in a cup and still be different food systems. Fruiticana was created as a lactose-free alternative — a design choice, not a medical recommendation.",
   },
   {
     title: "Water, sugar, and freezing point",
@@ -278,14 +278,14 @@ export const labelTerms: LabelTerm[] = [
   {
     term: "Source and date",
     meaning:
-      "Scientists always ask when data was collected and by whom. Fruiticana's panels are from Northeast Laboratories, Inc., report #20080318F (March 18, 2008). They are historical examples, not a current product label.",
+      "Scientists always ask when data was collected and by whom. Fruiticana's panels are from Northeast Laboratories, Inc., report #20080318F (March 18, 2008). Use them as classroom examples for reading Nutrition Facts panels.",
   },
 ];
 
 export const labelLiteracyNotes = [
   "A Nutrition Facts panel is a primary source with a method and a date. Treat it like a lab report, not a slogan.",
   "Banana's calorie line was illegible on the 2008 scan, so this site leaves it blank. That is scientific honesty: do not invent a number to make a chart look complete.",
-  "Comparing two flavors is fair only when the serving size matches. These historical panels use a 1/2 cup (4 oz / 90 g) serving.",
+  "Comparing two flavors is fair only when the serving size matches. These panels use a 1/2 cup (4 oz / 90 g) serving.",
   "Reading a label is not the same as judging a whole diet. One food is one data point.",
 ] as const;
 
@@ -293,7 +293,7 @@ export const caseStudy = {
   title: "Connecticut Team Nutrition Healthy Snack Pilot",
   period: "September 30, 2003 – September 30, 2005",
   summary:
-    "Fruiticana was included in student taste tests and samplings for a Connecticut school snack pilot. The program ran through a USDA-funded Team Nutrition grant to the Connecticut State Department of Education. A December 2004 letter in Fruiticana's historical file describes that participation.",
+    "Fruiticana was included in student taste tests and samplings for a Connecticut school snack pilot. The program ran through a USDA-funded Team Nutrition grant to the Connecticut State Department of Education. A December 2004 letter in Fruiticana's documentation describes that participation.",
   whatStudentsShouldNotice: [
     "The dates are specific. A grant with a start and end date is easier to check than a vague 'used in schools' claim.",
     "USDA Team Nutrition funded nutrition education and healthier school-food efforts. Inclusion in a tasting is not the same as a current USDA endorsement of a brand.",
@@ -328,7 +328,7 @@ export const discussionPrompts: DiscussionPrompt[] = [
     questions: [
       "A strawberry's 'seeds' are on the outside. How does that change what we mean by 'fruit'?",
       "Why do mango, pineapple, and banana prefer different climates than apple?",
-      "Using two historical Nutrition Facts panels, which nutrients change the most between flavors? What might explain that?",
+      "Using two Nutrition Facts panels, which nutrients change the most between flavors? What might explain that?",
       "Design a school snack taste test: how many students, how do you hide brand names, and how do you record results?",
     ],
   },
@@ -337,7 +337,7 @@ export const discussionPrompts: DiscussionPrompt[] = [
     label: "High school (about grades 9–12)",
     audience: "Practice source evaluation and food-system thinking.",
     questions: [
-      "The business PDF is both a historical record and a marketing document. How can both be true?",
+      "The business PDF is both a business record and a marketing document. How can both be true?",
       "What is the difference between a facility registration, a certification, and an endorsement?",
       "How should a school nutrition director weigh student taste, cost, storage, and evidence?",
       "If a company shares old lab data, what questions should journalists or students ask before repeating the numbers as current facts?",
@@ -374,7 +374,7 @@ export const classroomActivities: ClassroomActivity[] = [
     duration: "30 minutes",
     materials: "This site's Nutrition page (or printed panels), two flavor names assigned per pair",
     steps: [
-      "Find serving size, calories, total carbohydrate, and vitamin C on each historical panel.",
+      "Find serving size, calories, total carbohydrate, and vitamin C on each panel.",
       "Note the lab name, report number, and year. Write one sentence: 'This data is from ___ in ___.'",
       "Record any blank values. Discuss why a blank is more trustworthy than a guess.",
       "Share whether the two flavors differ more in vitamins or in calories.",
@@ -391,7 +391,7 @@ export const classroomActivities: ClassroomActivity[] = [
       "Write a protocol: sample size, how samples are labeled, how votes are counted, who is excluded (allergies).",
       "Optional: actually taste two fruits using that protocol.",
     ],
-    why: "Turns a historical snack pilot into a lesson on experimental design.",
+    why: "Turns a snack-pilot case study into a lesson on experimental design.",
   },
 ];
 
@@ -405,7 +405,7 @@ export const educatorGoals = [
     body: "Read a Nutrition Facts panel as a document with a serving size, a date, and limits.",
   },
   {
-    title: "History and civics",
+    title: "Civics and sources",
     body: "See how a USDA-funded state grant, local schools, and a small company interacted in 2003–2006.",
   },
   {

@@ -4,10 +4,12 @@ import { Section } from "@/components/layout/Section";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { HistoricalNotice } from "@/components/ui/HistoricalNotice";
 import { HistoricalTimeline } from "@/components/story/HistoricalTimeline";
+import { TimelineForeground } from "@/components/story/TimelineForeground";
 import { TrustDocumentCard } from "@/components/story/TrustDocumentCard";
 import { TestimonialCard } from "@/components/ui/TestimonialCard";
 import { CTASection } from "@/components/ui/CTASection";
 import { StatGrid } from "@/components/ui/StatGrid";
+import { Vision } from "@/components/home/Vision";
 import { founders } from "@/data/timeline";
 import { storyPilotStats } from "@/data/facts";
 import { testimonials, testimonialsIntro } from "@/data/testimonials";
@@ -19,7 +21,7 @@ import { JsonLd } from "@/components/seo/JsonLd";
 export const metadata: Metadata = {
   title: "About Fruiticana",
   description:
-    "Fruiticana’s origin as a fruit-based frozen dessert, its 2003–2005 Connecticut Team Nutrition Healthy Snack pilot, later school distribution, founding team, and historical documentation.",
+    "The Fruiticana vision — what it is, why it exists, and how it was developed for schools — plus its 2003–2005 Connecticut Team Nutrition Healthy Snack pilot, founding team, and school documentation.",
   alternates: { canonical: "/about" },
 };
 
@@ -45,8 +47,8 @@ export default function AboutPage() {
         <SectionHeading
           as="h1"
           eyebrow="About Fruiticana"
-          title="A fruit-based dessert with a documented school chapter"
-          description="Fruiticana began in 2003 as a fruit-based frozen dessert — a refreshing alternative to traditional dairy ice cream — and was evaluated in Connecticut schools through a Team Nutrition Healthy Snack pilot."
+          title="A new way to eat fruit — built for schools"
+          description="Fruiticana began in 2003 as a fruit-based frozen dessert — a refreshing alternative to traditional dairy ice cream. The vision is the what, why, and how: fruit-first, so students have a treat they want to eat, served in school programs."
         />
         <div className="mt-6 max-w-2xl space-y-4 text-base leading-[1.7] text-muted">
           <p>
@@ -63,9 +65,11 @@ export default function AboutPage() {
         </div>
       </Section>
 
+      <Vision showHeading={false} />
+
       <Section tone="cream-100">
         <p className="text-xs font-semibold uppercase tracking-[0.18em] text-green-600">
-          Historical Fruiticana Pilot Program
+          Connecticut school programs
         </p>
         <h2 className="mt-2 text-3xl font-extrabold sm:text-4xl">
           Fruiticana in Connecticut Schools
@@ -89,9 +93,8 @@ export default function AboutPage() {
             </p>
             <HistoricalNotice>
               These figures and programs describe Fruiticana’s 2003–2006
-              Connecticut record. They are not current results, and past
-              participation does not imply a current government or school
-              endorsement.
+              Connecticut record and how the school vision was first put in front
+              of students.
             </HistoricalNotice>
             <p>
               Teachers can use this chapter as a primary-source case study —
@@ -109,7 +112,7 @@ export default function AboutPage() {
           <StatGrid
             items={storyPilotStats}
             columns={2}
-            aria-label="Historical Connecticut pilot figures"
+            aria-label="Connecticut pilot figures"
           />
         </div>
       </Section>
@@ -118,10 +121,11 @@ export default function AboutPage() {
         <SectionHeading
           eyebrow="How it started"
           title="Product development timeline"
-          description="The milestones below are drawn from Fruiticana's historical business record. Nothing is invented for years the document does not cover."
+          description="The milestones below are drawn from Fruiticana's business record. Nothing is invented for years the document does not cover."
         />
-        <div className="mt-10">
+        <div className="mt-10 grid items-start gap-10 lg:grid-cols-[minmax(0,1.15fr)_minmax(17rem,0.85fr)] lg:gap-14">
           <HistoricalTimeline />
+          <TimelineForeground />
         </div>
       </Section>
 
@@ -163,8 +167,8 @@ export default function AboutPage() {
       <Section id="documentation" tone="white" className="scroll-mt-24">
         <SectionHeading
           eyebrow="Supporting documentation"
-          title="Historical records, not current badges"
-          description="Fruiticana's business record includes documents from roughly 2004-2008. We share them as historical records - not as current certifications or endorsements. Scans are not offered as downloads."
+          title="School documentation"
+          description="Fruiticana's business record includes documents from roughly 2004-2008. Document images are shown for school review. Original PDF downloads are not published."
         />
         <ul className="mt-10 grid grid-cols-1 gap-5 md:grid-cols-2">
           {documents.map((document) => (
@@ -178,9 +182,9 @@ export default function AboutPage() {
       <Section tone="cream-100">
         <SectionHeading
           align="center"
-          eyebrow="Historical sampling notes"
+          eyebrow="Sampling notes"
           title="From the original Connecticut pilot"
-          description={testimonialsIntro + ". These are taste comments from 2007, not current reviews."}
+          description={testimonialsIntro + ". These are taste comments from 2007."}
         />
         <ul className="mx-auto mt-10 grid max-w-5xl grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {testimonials.map((testimonial) => (
@@ -193,7 +197,7 @@ export default function AboutPage() {
 
       <CTASection
         title="Interested in Fruiticana for Your School?"
-        description="Request school information to discuss availability, institutional servings, nutrition documentation, and food-service partnerships."
+        description="Request school information to discuss the Fruiticana vision, availability, institutional servings, and nutrition documentation for your school."
         primary={{ label: navCta.label, href: navCta.href }}
         secondary={{ label: "Flavors & Nutrition", href: "/product" }}
       />

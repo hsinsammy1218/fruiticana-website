@@ -28,14 +28,13 @@ function InfoIcon() {
 }
 
 /**
- * Reusable "historical" qualifier. Used to clearly separate documented history
- * from current claims (see PLAN.md content audit).
+ * Reusable info callout for school-facing notes.
  */
 export function HistoricalNotice({
   children,
   className,
   variant = "block",
-  label = "Historical",
+  label = "Note",
 }: HistoricalNoticeProps) {
   if (variant === "inline") {
     return (

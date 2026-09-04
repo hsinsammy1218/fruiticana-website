@@ -9,7 +9,7 @@ export const primaryRoutes = [
   },
   {
     path: "/about",
-    heading: /fruit-based dessert with a documented school chapter/i,
+    heading: /a new way to eat fruit — built for schools/i,
     title: /About Fruiticana/,
   },
   {
@@ -19,7 +19,7 @@ export const primaryRoutes = [
   },
   {
     path: "/product",
-    heading: /flavors, servings, and historical nutrition/i,
+    heading: /flavors, servings, and nutrition/i,
     title: /Flavors & Nutrition/,
   },
   {
@@ -80,7 +80,7 @@ export async function fillSchoolInquiry(
 ) {
   const name = options?.name ?? "Sam";
   await page.getByLabel(/^name/i).fill(name);
-  await page.getByLabel(/school \/ organization/i).fill("Lincoln Elementary");
+  await page.getByLabel(/school or district/i).fill("Lincoln Elementary");
   await page.getByLabel(/email/i).fill("sam@example.com");
   if (options?.interest) {
     await page.getByLabel(/interest type/i).selectOption(options.interest);

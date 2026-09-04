@@ -3,6 +3,7 @@ import { Section } from "@/components/layout/Section";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { HistoricalNotice } from "@/components/ui/HistoricalNotice";
 import { FeatureCard } from "@/components/ui/FeatureCard";
+import { Vision } from "@/components/home/Vision";
 import { CTASection } from "@/components/ui/CTASection";
 import { Button } from "@/components/ui/Button";
 import { JsonLd } from "@/components/seo/JsonLd";
@@ -25,7 +26,7 @@ import { FlavorGrid } from "@/components/flavors/FlavorGrid";
 export const metadata: Metadata = {
   title: "For Schools",
   description:
-    "How Fruiticana, a fruit-based frozen dessert, could fit school cafeterias, healthy snack programs, private schools, events, and food-service distribution — with historical Connecticut program context.",
+    "The Fruiticana vision for schools and their students — what it is, why it exists, and how a fruit-based frozen dessert can fit cafeterias, snack programs, and school events.",
   alternates: { canonical: "/schools" },
 };
 
@@ -74,10 +75,12 @@ export default function SchoolsPage() {
         </ul>
       </Section>
 
+      <Vision showHeading />
+
       <Section tone="cream-100">
         <SectionHeading
           title="Where Fruiticana could fit"
-          description="Use cases a food-service director or administrator typically evaluates. These are program conversations, not a current menu claim."
+          description="Use cases a principal or food-service director typically evaluates for students."
         />
         <ul className="mt-10 grid gap-4 sm:grid-cols-2">
           {schoolUses.map((use) => (
@@ -101,8 +104,8 @@ export default function SchoolsPage() {
 
       <Section tone="white">
         <SectionHeading
-          title="Why schools reviewed it historically"
-          description="The Connecticut record emphasizes fruit-based composition, moderate portions, and snack-program nutrition standards — not parlor marketing."
+          title="Why schools choose Fruiticana"
+          description="The Connecticut record emphasizes fruit-based composition, moderate portions, and snack-program nutrition standards — the same ideas behind the Fruiticana vision."
         />
         <ul className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-2">
           {schoolFitPoints.map((point) => (
@@ -122,7 +125,7 @@ export default function SchoolsPage() {
       <Section tone="cream-100">
         <SectionHeading
           title="Serving formats for school review"
-          description="The historical school program used institutional single-serve cups — a 4 oz (1/2 cup) size matching the laboratory Nutrition Facts panels."
+          description="Schools serve single-serve cups — a 4 oz (1/2 cup) size matching the laboratory Nutrition Facts panels. The Fruiticana how for schools is in-house preparation, without specialty outside-dessert cost."
         />
         <ul className="mt-10 grid gap-5 sm:grid-cols-1 lg:max-w-md">
           {formats.map((format) => (
@@ -136,7 +139,7 @@ export default function SchoolsPage() {
       <Section>
         <SectionHeading
           title="Flavor options"
-          description="Six of the original twelve flavors. Every flavor has a shareable product sheet and a historical 2008 nutrition panel."
+          description="Six of the original twelve flavors. Every flavor has a shareable product sheet and a 2008 nutrition panel."
         />
         <FlavorGrid className="mt-10" flavors={featuredFlavors} />
         <div className="mt-8">
@@ -159,7 +162,7 @@ export default function SchoolsPage() {
               Nutrition & documentation
             </h2>
             <p className="info-copy mt-2">
-              Nutrition panels, serving sizes, historical ingredients, and
+              Nutrition panels, serving sizes, ingredients, and
               supporting letters are on Flavors & Nutrition and Resources.
             </p>
             <div className="mt-5 flex flex-col gap-3 sm:flex-row">
@@ -189,7 +192,7 @@ export default function SchoolsPage() {
 
       <CTASection
         title="Bring Fruiticana to Your School"
-        description="Share your school or organization details, program interest, and any nutrition questions. Inquiry delivery is not connected yet; the form is ready for when a verified inbox is in place."
+        description="Share your school details, program interest, and any nutrition questions. Inquiry delivery is not connected yet; the form is ready for when a verified inbox is in place."
         primary={{ label: navCta.label, href: navCta.href }}
         secondary={{
           label: "View nutrition details",

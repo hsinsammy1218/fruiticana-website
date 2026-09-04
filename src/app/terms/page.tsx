@@ -28,13 +28,13 @@ export default function TermsPage() {
           This website is provided for general information about the Fruiticana
           brand. No products are sold through this site at this time.
         </p>
-        <h2>Historical content</h2>
+        <h2>Content on this site</h2>
         <p>
           Some content - including the timeline, testimonials, documentation
-          references, and nutrition panels - is <strong>historical</strong> and
-          drawn from the brand&rsquo;s earlier business record. It is presented
-          as history and should not be read as a current offer, certification,
-          or endorsement.
+          references, and nutrition panels - is drawn from Fruiticana&rsquo;s
+          business record and school program experience. It is presented for
+          school information and should not be read as a third-party
+          certification or endorsement.
         </p>
         <h2>Intellectual property</h2>
         <p>

@@ -3,18 +3,18 @@ import { describe, expect, it } from "vitest";
 import { FeatureCard } from "@/components/ui/FeatureCard";
 
 describe("FeatureCard", () => {
-  it("renders a scannable figure next to the title", () => {
+  it("keeps the figure and title in a compact readable stack", () => {
     render(
       <FeatureCard
         icon="cup"
         figure="4 oz"
-        title="Individual Portions"
-        description="Historical school cups."
+        title="Student portions"
+        description="Individual cups for meal or snack service."
       />,
     );
 
     expect(screen.getByText("4 oz")).toBeVisible();
-    expect(screen.getByRole("heading", { name: "Individual Portions" })).toBeVisible();
-    expect(screen.getByText("Historical school cups.")).toBeVisible();
+    expect(screen.getByRole("heading", { name: "Student portions" })).toBeVisible();
+    expect(screen.getByText("Individual cups for meal or snack service.")).toBeVisible();
   });
 });

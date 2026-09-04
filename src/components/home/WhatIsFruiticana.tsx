@@ -6,16 +6,13 @@ import { site } from "@/data/site";
 
 export function WhatIsFruiticana() {
   return (
-    <Section tone="white">
+    <Section tone="cream-100">
       <SectionHeading
-        eyebrow="What is Fruiticana?"
-        title="A Different Kind of Frozen Dessert"
-        description={`The Fruiticana idea began with a simple promise: ${site.tagline} A creamless frozen dessert with the delight of ice cream.`}
+        eyebrow="What"
+        title="A different kind of frozen dessert"
+        description={`${site.tagline} A creamless frozen dessert with the delight of ice cream — made so students can eat fruit in a form they enjoy.`}
       />
-      <p className="info-copy mt-4 max-w-4xl">
-        {site.shortDescription} The original consumer line was “{site.legacyTagline}”
-      </p>
-      <ul className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
+      <ul className="mt-8 grid grid-cols-1 items-stretch gap-4 sm:grid-cols-2 xl:grid-cols-4">
         {productConceptBenefits.map((benefit) => (
           <li key={benefit.title} className="reveal">
             <FeatureCard

@@ -11,7 +11,7 @@ import { site } from "@/data/site";
 export const metadata: Metadata = {
   title: "Resources",
   description:
-    "Historical Fruiticana documentation for school administrators: product information, nutrition analyses, Connecticut Team Nutrition records, and historical credentials.",
+    "Fruiticana documentation for school administrators: product information, nutrition analyses, Connecticut Team Nutrition records, and credentials.",
   alternates: { canonical: "/resources" },
 };
 
@@ -38,7 +38,7 @@ export default function ResourcesPage() {
           as="h1"
           eyebrow="Resources"
           title="Documentation for school review"
-          description="School administrators often want supporting material. Every item below is labeled as historical documentation provided for background and reference — not as a current certification."
+          description="School administrators often want supporting material. Every item below is provided for school review and program conversations."
         />
       </Section>
 

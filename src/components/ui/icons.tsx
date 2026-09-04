@@ -152,6 +152,14 @@ export function SchoolIcon(props: IconProps) {
   );
 }
 
+export function HeartIcon(props: IconProps) {
+  return (
+    <svg {...base} {...props}>
+      <path d="M12 19s-7-4.4-7-9.2C5 7 6.8 5.5 8.8 5.5c1.3 0 2.4.7 3.2 1.8.8-1.1 1.9-1.8 3.2-1.8 2 0 3.8 1.5 3.8 4.3C19 14.6 12 19 12 19Z" />
+    </svg>
+  );
+}
+
 export function ChatIcon(props: IconProps) {
   return (
     <svg {...base} {...props}>
@@ -177,4 +185,5 @@ export const valueIcons = {
   flavors: FlavorsIcon,
   cup: CupIcon,
   school: SchoolIcon,
+  heart: HeartIcon,
 } as const;
