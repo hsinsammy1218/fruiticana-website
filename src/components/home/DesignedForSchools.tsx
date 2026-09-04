@@ -18,7 +18,7 @@ export function DesignedForSchools() {
         not a claim that Fruiticana is on school menus today, and past pilot
         participation is not a current endorsement.
       </HistoricalNotice>
-      <ul className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-4">
+      <ul className="mt-8 grid grid-cols-1 items-stretch gap-4 sm:grid-cols-2 xl:grid-cols-4">
         {schoolHomeBenefits.map((benefit) => (
           <li key={benefit.title} className="reveal">
             <FeatureCard

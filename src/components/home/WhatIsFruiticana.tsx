@@ -12,7 +12,7 @@ export function WhatIsFruiticana() {
         title="A different kind of frozen dessert"
         description={`${site.tagline} A creamless frozen dessert with the delight of ice cream — made so students can eat fruit in a form they enjoy.`}
       />
-      <ul className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-4">
+      <ul className="mt-8 grid grid-cols-1 items-stretch gap-4 sm:grid-cols-2 xl:grid-cols-4">
         {productConceptBenefits.map((benefit) => (
           <li key={benefit.title} className="reveal">
             <FeatureCard
