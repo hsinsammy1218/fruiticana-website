@@ -10,6 +10,10 @@ type FeatureCardProps = {
   className?: string;
 };
 
+/**
+ * Compact benefit tile. Reading order is intentional for dense grids:
+ * icon → figure → title → one short supporting line.
+ */
 export function FeatureCard({
   icon,
   title,
@@ -21,22 +25,24 @@ export function FeatureCard({
   return (
     <div
       className={cn(
-        "flex h-full flex-col rounded-xl2 border border-line bg-white p-6 transition-shadow duration-300 hover:shadow-soft",
+        "flex h-full flex-col rounded-xl2 border border-line bg-white px-5 py-5 sm:px-6 sm:py-6",
         className,
       )}
     >
-      <div className="flex items-start justify-between gap-3">
-        <span className="inline-flex h-11 w-11 items-center justify-center rounded-full bg-green/12 text-green-600">
-          <Icon width={22} height={22} />
-        </span>
-        {figure ? (
-          <p className="font-sans text-3xl font-extrabold tabular-nums leading-none tracking-tight text-green-deep">
-            {figure}
-          </p>
-        ) : null}
-      </div>
-      <h3 className="mt-4 text-lg font-bold text-green-deep">{title}</h3>
-      <p className="info-copy mt-2">{description}</p>
+      <span className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-green/12 text-green-600">
+        <Icon width={20} height={20} />
+      </span>
+      {figure ? (
+        <p className="mt-5 font-sans text-3xl font-extrabold tabular-nums leading-none tracking-tight text-green-deep">
+          {figure}
+        </p>
+      ) : (
+        <span className="mt-5 block h-8" aria-hidden="true" />
+      )}
+      <h3 className="mt-3 text-base font-bold leading-snug text-green-deep sm:text-lg">
+        {title}
+      </h3>
+      <p className="mt-2 text-sm leading-relaxed text-muted">{description}</p>
     </div>
   );
 }

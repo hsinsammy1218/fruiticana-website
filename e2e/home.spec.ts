@@ -60,9 +60,11 @@ test.describe("home @cross-browser", () => {
     ).toBeVisible();
     await expect(page.getByText(/not wholesale/i).first()).toBeVisible();
     await expect(
-      page.getByRole("heading", { name: "A Different Kind of Frozen Dessert" }),
+      page.getByRole("heading", { name: "A different kind of frozen dessert" }),
     ).toBeVisible();
-    await expect(page.getByRole("heading", { name: "Fruit Based" })).toBeVisible();
+    await expect(page.getByRole("heading", { name: "Fruit based" })).toBeVisible();
+    await expect(page.getByRole("heading", { name: "Ice-cream feel" })).toBeVisible();
+    await expect(page.getByRole("heading", { name: "Single-serve cups" })).toBeVisible();
     await expect(
       page.getByRole("heading", { name: "Why Fruiticana was made for schools" }),
     ).toBeVisible();
