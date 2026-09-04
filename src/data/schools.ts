@@ -96,7 +96,7 @@ export const schoolFitPoints = [
   {
     figure: "4 oz",
     title: "Individual portions",
-    body: "The historical school program used single-serving cups, including a recorded 4 oz (½ cup) laboratory serving.",
+    body: "The historical school program used single-serving cups, including a recorded 4 oz (½ cup) laboratory serving — a simple format for in-house school service.",
   },
   {
     figure: "2003–05",
@@ -104,9 +104,9 @@ export const schoolFitPoints = [
     body: "Connecticut Team Nutrition participation (2003–2005) and later service in local Connecticut schools after consumer testing in 2005–2006.",
   },
   {
-    figure: "2003",
-    title: "Lactose-free concept",
-    body: "Originally designed in 2003 as an option for people avoiding lactose. Current formulation still needs verification.",
+    figure: "In-house",
+    title: "Built for school kitchens",
+    body: "The vision is an easy in-house preparation path, so schools can offer a fruit-based frozen dessert without carrying specialty outside-dessert cost.",
   },
 ] as const;
 

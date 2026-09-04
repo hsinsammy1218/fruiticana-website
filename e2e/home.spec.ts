@@ -56,8 +56,11 @@ test.describe("home @cross-browser", () => {
       page.getByRole("heading", { name: "So students have a new way to eat fruit" }),
     ).toBeVisible();
     await expect(
-      page.getByRole("heading", { name: "Serve it in school — one cup at a time" }),
+      page.getByRole("heading", {
+        name: /make it in-house — without the extra cost/i,
+      }),
     ).toBeVisible();
+    await expect(page.getByText(/easy for school kitchens/i).first()).toBeVisible();
     await expect(page.getByText(/not wholesale/i).first()).toBeVisible();
     await expect(
       page.getByRole("heading", { name: "A different kind of frozen dessert" }),

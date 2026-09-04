@@ -9,8 +9,8 @@ export function ServingFormats() {
     <Section tone="white">
       <SectionHeading
         eyebrow="How"
-        title="How it can be served in school"
-        description="For school cafeteria and snack-program review, the historical program emphasized a moderate single-serve cup portion — 4 oz (1/2 cup), matching the laboratory Nutrition Facts serving."
+        title="How it works in school kitchens"
+        description="Fruiticana is designed to be made in-house — a practical school option without the extra cost of bringing in a specialty outside dessert. Historical school service used a moderate single-serve cup: 4 oz (1/2 cup), matching the laboratory Nutrition Facts serving."
       />
       <ul className="mt-10 grid gap-5 sm:grid-cols-1 lg:max-w-md">
         {formats.map((format) => (

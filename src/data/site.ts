@@ -35,7 +35,7 @@ export const site = {
     "A fruit-based creamless frozen dessert for schools. The vision is simple: give students a new way to eat fruit.",
   /** Short brand promise used in closing sections. */
   promise:
-    "Fruit-based frozen dessert — a school vision for what it is, why it exists, and how it can be served.",
+    "Fruit-based frozen dessert — a school vision for what it is, why it exists, and how it can be made in-house without specialty extra cost.",
   shortDescription:
     "Fruiticana is a fruit-based creamless frozen dessert — the new way to eat fruit. This site is for schools: it explains the Fruiticana vision (what, why, and how), nutrition documentation, and Connecticut school history.",
   url: siteUrl,

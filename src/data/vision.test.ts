@@ -24,9 +24,12 @@ describe("vision data", () => {
     expect(copy).not.toMatch(/for wholesale/i);
   });
 
-  it("keeps the how pillar on the documented 4 oz school serving", () => {
+  it("keeps the how pillar on in-house school prep without specialty cost", () => {
     const how = visionPillars.find((pillar) => pillar.key === "how");
-    expect(how?.figure).toBe("4 oz");
+    expect(how?.figure).toBe("In-house");
+    expect(how?.title).toMatch(/in-house/i);
+    expect(how?.body).toMatch(/in-house/i);
+    expect(how?.body).toMatch(/cost/i);
     expect(how?.body).toMatch(/4 oz/);
   });
 });

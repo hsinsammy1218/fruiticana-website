@@ -31,7 +31,8 @@ describe("schools data", () => {
       "12",
       "4 oz",
       "2003–05",
-      "2003",
+      "In-house",
     ]);
+    expect(schoolFitPoints.some((point) => /in-house/i.test(point.body))).toBe(true);
   });
 });

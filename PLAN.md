@@ -14,7 +14,7 @@ Next.js 16 informational website for **school decision-makers**. The 2003–2011
 
 **Why it exists:** So students have a new way to eat fruit — a frozen dessert built from fruit flavors that can belong in a cafeteria or snack program, including for students avoiding lactose (original design intent).
 
-**How it works for schools:** Individual single-serve cups (historical 4 oz / ½ cup laboratory serving), 12 original flavors, nutrition documentation for school review, and a documented Connecticut Team Nutrition chapter.
+**How it works for schools:** Designed to be made **in-house**, so schools are not carrying specialty outside-dessert cost. Historical service used individual single-serve cups (4 oz / ½ cup laboratory serving), with 12 original flavors, nutrition documentation for school review, and a documented Connecticut Team Nutrition chapter.
 
 Until current facts are verified, the site speaks in **concept + history** language, not **on menus today / certified today**.
 

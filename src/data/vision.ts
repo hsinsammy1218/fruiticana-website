@@ -9,7 +9,7 @@ export const visionIntro = {
   eyebrow: "The Fruiticana vision",
   title: "What it is. Why it exists. How it works for schools.",
   description:
-    "This website is for schools — principals, food-service directors, nutrition staff, and administrators — not wholesale buyers. Fruiticana’s vision is a fruit-based frozen dessert students will actually want to eat, served in a cafeteria or snack program.",
+    "This website is for schools — principals, food-service directors, nutrition staff, and administrators — not wholesale buyers. Fruiticana’s vision is a fruit-based frozen dessert students will actually want to eat — made in-house for school programs, without the extra cost of a specialty outside dessert.",
 } as const;
 
 export type VisionPillar = {
@@ -48,10 +48,10 @@ export const visionPillars: VisionPillar[] = [
     key: "how",
     step: "03",
     label: "How",
-    title: "Serve it in school — one cup at a time",
-    body: "The historical school program used individual single-serve cups: a 4 oz (½ cup) portion matching the 2008 laboratory Nutrition Facts panels. Schools can review the 12 flavor sheets, dated nutrition records, and Connecticut chapter, then request information to discuss cafeteria, snack-program, or event use.",
-    figure: "4 oz",
-    figureLabel: "Single-serve cup",
+    title: "Make it in-house — without the extra cost",
+    body: "The Fruiticana how for schools is practical: a fruit-based frozen dessert designed to be made in-house, so food-service teams are not taking on specialty outside-dessert cost. Serve it simply — historically in individual 4 oz (½ cup) cups — in a cafeteria or snack program.",
+    figure: "In-house",
+    figureLabel: "Easy for school kitchens",
     icon: "cup",
   },
 ];
