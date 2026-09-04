@@ -21,7 +21,7 @@ test.describe("user flows", () => {
   test("about to school inquiry", async ({ page }) => {
     await page.setViewportSize({ width: 1280, height: 800 });
     await page.goto("/about");
-    await expect(page.getByText("Fruiticana Creamless Ice Cream")).toBeVisible();
+    await expect(page.getByText("Fruiticana Creamless Ice Cream", { exact: true })).toBeVisible();
     await expect(
       page.getByRole("heading", { name: "Fruiticana in Connecticut Schools" }),
     ).toBeVisible();

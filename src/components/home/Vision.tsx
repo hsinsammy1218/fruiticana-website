@@ -48,7 +48,7 @@ export function Vision({ showHeading = true, cta }: VisionProps) {
                   {pillar.label}
                 </span>
                 <span
-                  className="font-sans text-2xl font-extrabold tabular-nums leading-none text-green/35"
+                  className="font-sans text-2xl font-extrabold tabular-nums leading-none text-green-600"
                   aria-hidden="true"
                 >
                   {pillar.step}

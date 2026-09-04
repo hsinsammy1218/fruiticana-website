@@ -78,7 +78,7 @@ test.describe("home @cross-browser", () => {
     ).toBeVisible();
     await expect(page.getByText("~30,000").first()).toBeVisible();
     await expect(page.getByText("4 oz").first()).toBeVisible();
-    await expect(page.getByText("Original fruit flavors", { exact: true })).toBeVisible();
+    await expect(page.getByText("Original fruit flavors", { exact: true }).first()).toBeVisible();
     await expect(page.getByText("Total fat on 2008 panels", { exact: true })).toBeVisible();
     await expect(
       page.getByText(/downloadable scan is not published/i).first(),
