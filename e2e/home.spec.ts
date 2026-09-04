@@ -56,7 +56,7 @@ test.describe("home @cross-browser", () => {
       page.getByRole("heading", { name: /historical documentation/i }),
     ).toBeVisible();
     await expect(page.getByText("~30,000").first()).toBeVisible();
-    await expect(page.getByText("3 oz").first()).toBeVisible();
+    await expect(page.getByText("4 oz").first()).toBeVisible();
     await expect(page.getByText("Original fruit flavors", { exact: true })).toBeVisible();
     await expect(page.getByText("Total fat on 2008 panels", { exact: true })).toBeVisible();
     await expect(

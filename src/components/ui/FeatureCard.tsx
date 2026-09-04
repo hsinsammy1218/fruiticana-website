@@ -5,7 +5,7 @@ type FeatureCardProps = {
   icon: keyof typeof valueIcons;
   title: string;
   description: string;
-  /** Large scannable figure (e.g. "12" or "3 oz"). */
+  /** Large scannable figure (e.g. "12" or "4 oz"). */
   figure?: string;
   className?: string;
 };

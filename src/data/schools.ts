@@ -30,10 +30,10 @@ export const schoolUses: SchoolUse[] = [
   {
     slug: "cafeteria",
     title: "School cafeteria",
-    figure: "3 oz",
-    figureLabel: "Institutional cup",
+    figure: "4 oz",
+    figureLabel: "Single-serve cup",
     description:
-      "A fruit-based frozen dessert option for meal service or à la carte, historically offered in individual 3 oz institutional cups rather than a dairy ice-cream scoop.",
+      "A fruit-based frozen dessert option for meal service or à la carte, historically offered in individual 4 oz single-serve cups rather than a dairy ice-cream scoop.",
   },
   {
     slug: "snack",
@@ -70,10 +70,10 @@ export const schoolUses: SchoolUse[] = [
   {
     slug: "distribution",
     title: "Food-service distribution",
-    figure: "2",
-    figureLabel: "Cup sizes",
+    figure: "4 oz",
+    figureLabel: "Cup size",
     description:
-      "Distributors and food-service partners can inquire about the 3 oz and 4 oz institutional cup sizes, the flavor lineup, and documentation needed to evaluate Fruiticana for school accounts.",
+      "Distributors and food-service partners can inquire about the 4 oz single-serve cup size, the flavor lineup, and documentation needed to evaluate Fruiticana for school accounts.",
   },
   {
     slug: "summer",
@@ -100,9 +100,9 @@ export const schoolFitPoints = [
     body: "Built around fruit rather than a traditional dairy ice-cream base, with 12 original flavors spanning five fruit families.",
   },
   {
-    figure: "3 oz",
+    figure: "4 oz",
     title: "Individual portions",
-    body: "The historical school program used single-serving cups, including an institutional 3 oz size and a 4 oz (½ cup) laboratory serving.",
+    body: "The historical school program used single-serving cups, including a recorded 4 oz (½ cup) laboratory serving.",
   },
   {
     figure: "2003–05",

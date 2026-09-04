@@ -10,9 +10,9 @@ export function ServingFormats() {
       <SectionHeading
         eyebrow="How it can be served"
         title="Institutional single-serve cups"
-        description="For school food-service review, the historical program emphasized moderate single-serve cup portions — a 3 oz institutional size and a 4 oz (1/2 cup) laboratory serving."
+        description="For school food-service review, the historical program emphasized a moderate single-serve cup portion — 4 oz (1/2 cup), matching the laboratory Nutrition Facts serving."
       />
-      <ul className="mt-10 grid gap-5 sm:grid-cols-2">
+      <ul className="mt-10 grid gap-5 sm:grid-cols-1 lg:max-w-md">
         {formats.map((format) => (
           <li key={format.slug} className="reveal">
             <ProductFormatCard format={format} />

@@ -27,7 +27,7 @@ describe("schools data", () => {
     );
     expect(schoolFitPoints.map((point) => point.figure)).toEqual([
       "12",
-      "3 oz",
+      "4 oz",
       "2003–05",
       "2003",
     ]);

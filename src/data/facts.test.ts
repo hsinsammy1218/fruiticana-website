@@ -11,7 +11,7 @@ import {
 describe("snapshot facts", () => {
   it("keeps homepage figures inside the documented record", () => {
     const values = homeGlanceStats.map((stat) => stat.value);
-    expect(values).toEqual(["12", "3 oz", "0g", "~30,000"]);
+    expect(values).toEqual(["12", "4 oz", "0g", "~30,000"]);
     expect(homeGlanceStats.every((stat) => /historical|documented|lab|school/i.test(`${stat.label} ${stat.note}`))).toBe(
       true,
     );

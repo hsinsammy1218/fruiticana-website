@@ -121,7 +121,7 @@ export const documents: HistoricalDocument[] = [
     title: "Institutional serving information",
     period: "Historical",
     summary:
-      "School-oriented serving notes from the business record, including single-serve cups and a 3 oz institutional portion alongside the 4 oz (1/2 cup) lab serving.",
+      "School-oriented serving notes from the business record, focused on the 4 oz (1/2 cup) single-serve cup that matches the laboratory Nutrition Facts panels.",
     clarification:
       "Portion sizes are historical. Current food-service pack sizes must be confirmed before menu planning.",
     category: "product-information",

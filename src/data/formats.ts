@@ -1,7 +1,7 @@
 /**
- * Institutional cup formats from the historical school program.
- * These describe historical / potential formats — NOT a confirmation that
- * every size is commercially available today.
+ * Institutional cup format from the historical school program.
+ * Describes a historical / potential format — NOT a confirmation of
+ * current commercial availability.
  */
 
 export type ProductFormat = {
@@ -18,24 +18,15 @@ export type ProductFormat = {
 
 export const formats: ProductFormat[] = [
   {
-    slug: "institutional-cup",
-    name: "Institutional cup (3 oz)",
-    amount: "3 oz",
-    description:
-      "The business record lists a 3 oz institutional serving used with moderate single-serve portions in school settings.",
-    icon: "cup",
-    institutional: true,
-  },
-  {
     slug: "cup",
     name: "Single-serve cup (4 oz)",
     amount: "4 oz",
     description:
-      "A 4 oz (1/2 cup) cup matching the historical laboratory Nutrition Facts serving size.",
+      "A 4 oz (1/2 cup) cup matching the historical laboratory Nutrition Facts serving size — the institutional single-serve format for school food-service review.",
     icon: "cup",
     institutional: true,
   },
 ];
 
 export const formatsNote =
-  "Serving sizes above are historical (approximately 2003–2011). Current institutional availability by cup size is to be confirmed.";
+  "Serving size above is historical (approximately 2003–2011). Current institutional availability is to be confirmed.";
