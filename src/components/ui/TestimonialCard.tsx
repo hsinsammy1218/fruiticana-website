@@ -8,20 +8,22 @@ type TestimonialCardProps = {
 
 function StarRating({ count }: { count: 5 }) {
   return (
-    <p className="flex items-center gap-0.5" aria-label={`${count} out of 5 stars`}>
-      {Array.from({ length: count }, (_, index) => (
-        <svg
-          key={index}
-          width="16"
-          height="16"
-          viewBox="0 0 24 24"
-          aria-hidden="true"
-          className="fill-yellow text-yellow"
-        >
-          <path d="M12 3.2 14.6 8.8l6.2.7-4.6 4.2 1.3 6.1L12 16.8 6.5 19.8l1.3-6.1L3.2 9.5l6.2-.7L12 3.2Z" />
-        </svg>
-      ))}
-    </p>
+    <div>
+      <p className="sr-only">{count} out of 5 stars</p>
+      <p className="flex items-center gap-0.5" aria-hidden="true">
+        {Array.from({ length: count }, (_, index) => (
+          <svg
+            key={index}
+            width="16"
+            height="16"
+            viewBox="0 0 24 24"
+            className="fill-yellow text-yellow"
+          >
+            <path d="M12 3.2 14.6 8.8l6.2.7-4.6 4.2 1.3 6.1L12 16.8 6.5 19.8l1.3-6.1L3.2 9.5l6.2-.7L12 3.2Z" />
+          </svg>
+        ))}
+      </p>
+    </div>
   );
 }
 
