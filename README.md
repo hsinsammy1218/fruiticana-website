@@ -18,7 +18,7 @@ Next.js (App Router), TypeScript, and Tailwind CSS.
 - [Next.js 16](https://nextjs.org) (App Router, Server Components, SSG)
 - React 19 + TypeScript
 - Tailwind CSS v4 (design tokens in `src/app/globals.css`)
-- `next/font` (Plus Jakarta Sans + Inter)
+- `next/font` (Fraunces + Nunito Sans + Great Vibes)
 
 ## Getting started
 
@@ -105,12 +105,36 @@ everywhere. The **Banana** calorie value was illegible in the source scan and is
 intentionally left blank rather than guessed. Re-verify all values against the
 current formulation before publishing them as a product label.
 
-## Deployment (Render)
+## Deployment (Vercel)
 
-`render.yaml` defines a Node **Web Service** (so `next/image` and a future
-contact API work without migrating). A brand homepage should not use the free
-plan's spin-down; the blueprint uses the paid `starter` plan. Set
-`NEXT_PUBLIC_SITE_URL` to the real domain in the Render dashboard.
+Vercel is the production host. This is a standard Next.js App Router app — no
+special adapter is required.
+
+### One-time setup
+
+1. Open [vercel.com/new](https://vercel.com/new) and import
+   `hsinsammy1218/fruiticana-website`.
+2. Framework preset: **Next.js** (auto-detected).
+3. Set the production environment variable:
+   - `NEXT_PUBLIC_SITE_URL` → your Vercel domain (e.g. `https://fruiticana-website.vercel.app`) or custom domain.
+4. Deploy. After the first deploy, push to `main` for production and open PRs for preview URLs.
+
+### CLI (optional)
+
+```bash
+npm i -g vercel
+vercel login
+vercel link          # link this repo to the Vercel project
+vercel --prod        # production deploy
+```
+
+Or with a token (CI / agents):
+
+```bash
+vercel --prod --token "$VERCEL_TOKEN"
+```
+
+`vercel.json` pins the Next.js framework and build/install commands.
 
 ## Owner verification checklist
 
