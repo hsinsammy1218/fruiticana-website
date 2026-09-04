@@ -1,7 +1,6 @@
 import { Section } from "@/components/layout/Section";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { FeatureCard } from "@/components/ui/FeatureCard";
-import { HistoricalNotice } from "@/components/ui/HistoricalNotice";
 import { Button } from "@/components/ui/Button";
 import { schoolHomeBenefits } from "@/data/facts";
 
@@ -13,11 +12,6 @@ export function DesignedForSchools() {
         title="Why Fruiticana was made for schools"
         description="For now, Fruiticana is only for schools and their students. The idea is a fruit-based frozen dessert that belongs in a school cafeteria or snack program — a new way for students to eat fruit."
       />
-      <HistoricalNotice className="mt-6 max-w-3xl">
-        This describes Fruiticana’s 2003–2006 Connecticut school chapter. It is
-        not a claim that Fruiticana is on school menus today, and past pilot
-        participation is not a current endorsement.
-      </HistoricalNotice>
       <ul className="mt-8 grid grid-cols-1 items-stretch gap-4 sm:grid-cols-2 xl:grid-cols-4">
         {schoolHomeBenefits.map((benefit) => (
           <li key={benefit.title} className="reveal">

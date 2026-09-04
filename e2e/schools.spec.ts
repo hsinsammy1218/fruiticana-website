@@ -1,7 +1,7 @@
 import { test, expect } from "@playwright/test";
 
 test.describe("for schools", () => {
-  test("explains program fit and keeps history labeled", async ({ page }) => {
+  test("explains program fit for schools", async ({ page }) => {
     await page.goto("/schools");
 
     await expect(
@@ -10,7 +10,7 @@ test.describe("for schools", () => {
         name: /fruiticana for schools/i,
       }),
     ).toBeVisible();
-    await expect(page.getByText(/not listing current school-menu/i)).toBeVisible();
+    await expect(page.getByText(/for schools and their students/i).first()).toBeVisible();
     await expect(page.getByRole("heading", { name: "School cafeteria" })).toBeVisible();
     await expect(page.getByRole("heading", { name: "Healthy snack program" })).toBeVisible();
     await expect(page.getByRole("heading", { name: "Private school" })).toBeVisible();

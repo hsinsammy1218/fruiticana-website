@@ -1,7 +1,5 @@
 /**
- * Copy for the For Schools page. Historical school-program facts are labeled
- * in the UI; nothing here claims Fruiticana is on menus today.
- *
+ * Copy for the For Schools page.
  * For now, the audience is only schools and their students.
  */
 
@@ -35,7 +33,7 @@ export const schoolUses: SchoolUse[] = [
     figure: "4 oz",
     figureLabel: "Single-serve cup",
     description:
-      "A fruit-based frozen dessert option for meal service or à la carte, historically offered in individual 4 oz single-serve cups rather than a dairy ice-cream scoop.",
+      "A fruit-based frozen dessert option for meal service or à la carte, offered in individual 4 oz single-serve cups rather than a dairy ice-cream scoop.",
   },
   {
     slug: "snack",
@@ -67,7 +65,7 @@ export const schoolUses: SchoolUse[] = [
     figure: "4 oz",
     figureLabel: "Single-serve cup",
     description:
-      "Historical serving ideas included 4 oz cups that can be discussed for fairs, family nights, or limited-time service — availability is to be confirmed.",
+      "Serve 4 oz cups at fairs, family nights, or limited-time service — confirm availability for your school calendar.",
   },
   {
     slug: "summer",
@@ -75,7 +73,7 @@ export const schoolUses: SchoolUse[] = [
     figure: "4 oz",
     figureLabel: "Single-serve idea",
     description:
-      "Possible applications include summer feeding and after-school snacks. These are program conversations — not a claim that those programs currently serve Fruiticana.",
+      "Possible applications include summer feeding and after-school snacks. Reach out to discuss how Fruiticana can fit your program.",
   },
   {
     slug: "campus",
@@ -83,7 +81,7 @@ export const schoolUses: SchoolUse[] = [
     figure: "12",
     figureLabel: "Flavor options",
     description:
-      "Private-school dining halls and student meal programs can review the same flavor sheets, historical portions, and nutrition documentation used by K–12 evaluators.",
+      "Private-school dining halls and student meal programs can review the same flavor sheets, portions, and nutrition documentation used by K–12 evaluators.",
   },
 ];
 
@@ -96,7 +94,7 @@ export const schoolFitPoints = [
   {
     figure: "4 oz",
     title: "Individual portions",
-    body: "The historical school program used single-serving cups, including a recorded 4 oz (½ cup) laboratory serving — a simple format for in-house school service.",
+    body: "Schools use single-serving cups, including a recorded 4 oz (½ cup) laboratory serving — a simple format for in-house school service.",
   },
   {
     figure: "2003–05",
@@ -111,4 +109,4 @@ export const schoolFitPoints = [
 ] as const;
 
 export const schoolAvailabilityNote =
-  "Fruiticana is not listing current school-menu placements on this site. Historical Connecticut participation is shared so school teams can evaluate fit. Product availability and current nutrition are confirmed through a school inquiry.";
+  "Fruiticana is for schools and their students. Connecticut program experience is shared so school teams can evaluate fit. Confirm product availability and nutrition details through a school inquiry.";

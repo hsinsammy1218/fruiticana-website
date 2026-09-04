@@ -33,7 +33,7 @@ export async function generateMetadata({
   if (!flavor) return {};
   return {
     title: `${flavor.name} product information`,
-    description: `${flavor.name} Fruiticana — ${flavor.description} Historical product sheet from the original fruit-based frozen dessert lineup.`,
+    description: `${flavor.name} Fruiticana — ${flavor.description} Product sheet from the original fruit-based frozen dessert lineup.`,
     alternates: { canonical: `/flavors/${flavor.slug}` },
   };
 }
@@ -117,9 +117,9 @@ export default async function FlavorPage({
       <Section tone="cream-100">
         <div className="grid gap-8 lg:grid-cols-[1fr_1.1fr] lg:items-center lg:gap-14">
           <SectionHeading
-            eyebrow="Historical nutrition"
+            eyebrow="Nutrition"
             title="Laboratory panel highlights"
-            description="A few values from Fruiticana's historical laboratory analysis for this flavor. See the full panel and important context on Flavors & Nutrition."
+            description="A few values from Fruiticana's laboratory analysis for this flavor. See the full panel on Flavors & Nutrition."
           />
           <div>
             <dl className="grid grid-cols-2 gap-4 sm:grid-cols-3">
@@ -138,8 +138,8 @@ export default async function FlavorPage({
               ))}
             </dl>
             <p className="info-copy mt-3">
-              Per {n.servingSize} ({n.servingGrams} g) serving. Historical 2008
-              laboratory values — not a current product label.
+              Per {n.servingSize} ({n.servingGrams} g) serving. Values from the
+              2008 laboratory analysis.
             </p>
             <div className="mt-5">
               <Button href={`/product?flavor=${flavor.slug}#nutrition`}>
@@ -148,9 +148,8 @@ export default async function FlavorPage({
             </div>
             <HistoricalNotice className="mt-5">
               Values come from an independent laboratory analysis (Northeast
-              Laboratories, 2008) and are shown as historical reference only -
-              not a current product label. Verify against the current
-              formulation before relying on them.
+              Laboratories, 2008). Confirm them against your current formulation
+              before menu planning.
             </HistoricalNotice>
           </div>
         </div>

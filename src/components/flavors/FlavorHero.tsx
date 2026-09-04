@@ -48,7 +48,7 @@ export function FlavorHero({ flavor }: { flavor: Flavor }) {
               From Fruiticana&rsquo;s original 12-flavor lineup.
             </p>
             <HistoricalBadge
-              label="Historical nutrition analysis"
+              label="Nutrition analysis"
               className="mt-4"
             />
           </div>

@@ -50,7 +50,7 @@ test.describe("links and seo", () => {
     }
   });
 
-  test("resources labels historical documents and has no PDF downloads", async ({
+  test("resources labels school documents and has no PDF downloads", async ({
     page,
   }) => {
     await page.goto("/resources");
@@ -58,7 +58,7 @@ test.describe("links and seo", () => {
       page.getByRole("heading", { name: /documentation for school review/i }),
     ).toBeVisible();
     await expect(
-      page.getByText("Historical document — provided for background/reference.").first(),
+      page.getByText("School documentation").first(),
     ).toBeVisible();
     await expect(
       page.getByRole("img", {

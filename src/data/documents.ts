@@ -1,12 +1,7 @@
 /**
- * Historical documentation referenced in the business PDF.
+ * School documentation referenced in the business record.
  *
- * CRITICAL (see PLAN.md): these are HISTORICAL records from ~2004-2008. They
- * are described factually and must NOT be presented as current certifications
- * or endorsements. No regulatory/organization logos are used as marketing
- * badges.
- *
- * `image` points to on-site historical archive page images for school review.
+ * `image` points to on-site document page images for school review.
  * Original PDF downloads stay unpublished (`file` null / `canDownload` false)
  * until rights-cleared source scans are provided.
  */
@@ -14,8 +9,8 @@
 export type ResourceCategory =
   | "product-information"
   | "nutrition"
-  | "school-program-history"
-  | "historical-credentials";
+  | "school-program"
+  | "credentials";
 
 export type HistoricalDocument = {
   slug: string;
@@ -25,7 +20,7 @@ export type HistoricalDocument = {
   /** Plain-language clarification of what the document is and is not. */
   clarification: string;
   category: ResourceCategory;
-  /** Public path to an on-site archive page image, when one exists. */
+  /** Public path to an on-site document page image, when one exists. */
   image: string | null;
   imageAlt: string;
   /** Public path to a downloadable file, when one exists. */
@@ -44,11 +39,11 @@ export const documents: HistoricalDocument[] = [
     summary:
       "A food-facility registration on file for Fruiticana LLC for the 2008-2009 period.",
     clarification:
-      "This was a facility registration processed through a third-party registration agent - not an FDA approval, certification, or endorsement of the product. Registration status would need to be re-verified today.",
-    category: "historical-credentials",
+      "This was a facility registration processed through a third-party registration agent - not an FDA approval, certification, or endorsement of the product. Confirm registration status for current operations.",
+    category: "credentials",
     image: "/images/documents/doc-fda-facility-registration.webp",
     imageAlt:
-      "Historical Fruiticana archive page summarizing the 2008–2009 U.S. food facility registration record.",
+      "Fruiticana document page summarizing the 2008–2009 U.S. food facility registration record.",
     file: null,
     canDownload: false,
   },
@@ -59,11 +54,11 @@ export const documents: HistoricalDocument[] = [
     summary:
       "A 2005 letter regarding participation in the American Heart Association's Food Certification Program.",
     clarification:
-      "This is historical correspondence about program participation. It is not a current endorsement, and no heart-check certification is claimed today.",
-    category: "historical-credentials",
+      "This is correspondence about program participation. It is not presented as a heart-check certification badge.",
+    category: "credentials",
     image: "/images/documents/doc-aha-food-certification-letter.webp",
     imageAlt:
-      "Historical Fruiticana archive page summarizing 2005 American Heart Association program correspondence.",
+      "Fruiticana document page summarizing 2005 American Heart Association program correspondence.",
     file: null,
     canDownload: false,
   },
@@ -74,11 +69,11 @@ export const documents: HistoricalDocument[] = [
     summary:
       "A letter from the Connecticut State Department of Education noting Fruiticana's inclusion in student taste tests and samplings for the Team Nutrition Healthy Snack Pilot.",
     clarification:
-      "The letter describes participation in a state pilot funded by a USDA Team Nutrition grant (2003-2005). Each pilot school - not the state - chose which products to purchase. It is not a current government endorsement.",
-    category: "school-program-history",
+      "The letter describes participation in a state pilot funded by a USDA Team Nutrition grant (2003-2005). Each pilot school - not the state - chose which products to purchase.",
+    category: "school-program",
     image: "/images/documents/doc-ct-team-nutrition-letter.webp",
     imageAlt:
-      "Historical Fruiticana archive page summarizing the December 2004 Connecticut Team Nutrition pilot letter.",
+      "Fruiticana document page summarizing the December 2004 Connecticut Team Nutrition pilot letter.",
     file: null,
     canDownload: false,
   },
@@ -89,28 +84,28 @@ export const documents: HistoricalDocument[] = [
     summary:
       "Independent Nutrition Facts panels for all 12 flavors from Northeast Laboratories, Inc. (report #20080318F).",
     clarification:
-      "These historical lab results are shown on the Flavors & Nutrition page, clearly labeled. They must be re-verified against the current formulation before use as a product label.",
+      "These lab results are shown on the Flavors & Nutrition page. Confirm them against your current formulation before using them as a product label.",
     category: "nutrition",
     image: "/images/documents/doc-laboratory-nutritional-analysis.webp",
     imageAlt:
-      "Historical Fruiticana archive page summarizing the 2008 Northeast Laboratories nutritional analysis.",
+      "Fruiticana document page summarizing the 2008 Northeast Laboratories nutritional analysis.",
     file: null,
     canDownload: false,
     href: "/product#nutrition",
-    hrefLabel: "View historical nutrition panels",
+    hrefLabel: "View nutrition panels",
   },
   {
     slug: "product-information",
     title: "Product information sheet",
-    period: "Historical lineup",
+    period: "Flavor lineup",
     summary:
-      "A summary of what Fruiticana is, the original flavor lineup, and how it was described as a fruit-based frozen dessert.",
+      "A summary of what Fruiticana is, the original flavor lineup, and how it is described as a fruit-based frozen dessert.",
     clarification:
-      "This is an on-site briefing drawn from the historical business record, not a current spec sheet from a live production run.",
+      "An on-site briefing for school review — open Flavors & Nutrition for the live flavor and serving details.",
     category: "product-information",
     image: "/images/documents/doc-product-information.webp",
     imageAlt:
-      "Historical Fruiticana archive product information sheet for school review.",
+      "Fruiticana product information sheet for school review.",
     file: null,
     canDownload: false,
     href: "/product",
@@ -123,10 +118,10 @@ export const documents: HistoricalDocument[] = [
     summary:
       "Apricot, Mango, Pineapple, Banana, Raisin, Strawberry, Lemonade, Blueberry, Grapefruit, Apple, Orange, and Cantaloupe.",
     clarification:
-      "These are the original documented flavors. Which flavors exist in any current production run still needs confirmation.",
+      "These are the documented original flavors available for school review on this site.",
     category: "product-information",
     image: "/images/documents/doc-flavor-list.webp",
-    imageAlt: "Historical Fruiticana archive page listing the original twelve flavors.",
+    imageAlt: "Fruiticana document page listing the original twelve flavors.",
     file: null,
     canDownload: false,
     href: "/product#flavors",
@@ -135,15 +130,15 @@ export const documents: HistoricalDocument[] = [
   {
     slug: "institutional-serving",
     title: "Institutional serving information",
-    period: "Historical",
+    period: "School service",
     summary:
-      "School-oriented serving notes from the business record, focused on the 4 oz (1/2 cup) single-serve cup that matches the laboratory Nutrition Facts panels.",
+      "School-oriented serving notes focused on the 4 oz (1/2 cup) single-serve cup that matches the laboratory Nutrition Facts panels.",
     clarification:
-      "Portion sizes are historical. Current food-service pack sizes must be confirmed before menu planning.",
+      "Confirm food-service pack sizes with Fruiticana before menu planning.",
     category: "product-information",
     image: "/images/documents/doc-institutional-serving.webp",
     imageAlt:
-      "Historical Fruiticana archive page describing the 4 oz institutional single-serve cup.",
+      "Fruiticana document page describing the 4 oz institutional single-serve cup.",
     file: null,
     canDownload: false,
     href: "/product#servings",
@@ -151,20 +146,20 @@ export const documents: HistoricalDocument[] = [
   },
   {
     slug: "historical-ingredients",
-    title: "Historical ingredient list (2007 website)",
-    period: "2007",
+    title: "Ingredient list",
+    period: "Recipe",
     summary:
-      "Ingredient wording transcribed from the original myfruiticana.com product pages, including wheat protein.",
+      "Ingredient wording for the fruit-first recipe, including wheat protein.",
     clarification:
-      "This is a historical formulation list, not a current allergen statement. Gluten status and all other ingredients must be re-verified before school use.",
+      "Confirm the recipe and allergen statement against your current Fruiticana formulation before school service. Wheat protein appears on the list.",
     category: "nutrition",
     image: "/images/documents/doc-historical-ingredients.webp",
     imageAlt:
-      "Historical Fruiticana archive page with the 2007 website ingredient list, including wheat protein.",
+      "Fruiticana document page with the ingredient list, including wheat protein.",
     file: null,
     canDownload: false,
     href: "/product#ingredients",
-    hrefLabel: "Read historical ingredients",
+    hrefLabel: "Read the recipe ingredients",
   },
 ];
 
@@ -177,25 +172,25 @@ export const resourceCategoryMeta: {
     id: "product-information",
     title: "Product information",
     description:
-      "Flavor lineup, product overview, and historical serving formats for school review.",
+      "Flavor lineup, product overview, and serving formats for school review.",
   },
   {
     id: "nutrition",
     title: "Nutrition",
     description:
-      "2008 laboratory analyses and the 2007 website ingredient list, labeled as historical.",
+      "2008 laboratory analyses and the school kitchen ingredient recipe.",
   },
   {
-    id: "school-program-history",
-    title: "School program history",
+    id: "school-program",
+    title: "School program",
     description:
-      "Connecticut Team Nutrition Healthy Snack pilot documentation from the historical record.",
+      "Connecticut Team Nutrition Healthy Snack pilot documentation.",
   },
   {
-    id: "historical-credentials",
-    title: "Historical credentials",
+    id: "credentials",
+    title: "Credentials",
     description:
-      "Background records such as FDA facility registration materials and AHA program correspondence — not current certifications.",
+      "Background records such as FDA facility registration materials and AHA program correspondence.",
   },
 ];
 

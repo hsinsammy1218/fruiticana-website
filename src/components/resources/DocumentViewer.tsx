@@ -32,7 +32,7 @@ export function DocumentViewer({ document }: { document: HistoricalDocument }) {
 
       <div className="p-6">
         <div className="flex flex-wrap items-center gap-2">
-          <HistoricalBadge label="Historical document — provided for background/reference." />
+          <HistoricalBadge label="School documentation" />
           <span className="text-xs font-semibold text-muted">{document.period}</span>
         </div>
         <h3 className="mt-4 text-lg font-bold text-green-deep">{document.title}</h3>
@@ -56,7 +56,7 @@ export function DocumentViewer({ document }: { document: HistoricalDocument }) {
           ) : (
             <p className="text-xs leading-relaxed text-muted">
               {document.image
-                ? "Archive image shown above. A downloadable original PDF is not published on this site."
+                ? "Document image shown above. A downloadable original PDF is not published on this site."
                 : "A downloadable or printable scan is not published on this site."}
             </p>
           )}

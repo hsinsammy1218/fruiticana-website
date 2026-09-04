@@ -76,10 +76,10 @@ test.describe("home @cross-browser", () => {
       page.getByRole("heading", { name: "Twelve fruit flavors" }),
     ).toBeVisible();
     await expect(
-      page.getByRole("heading", { name: "Fruiticana Has Been Here Before" }),
+      page.getByRole("heading", { name: "Built for schools — proven with students" }),
     ).toBeVisible();
     await expect(
-      page.getByRole("heading", { name: /historical documentation/i }),
+      page.getByRole("heading", { name: /school documentation/i }),
     ).toBeVisible();
     await expect(page.getByText("~30,000").first()).toBeVisible();
     await expect(page.getByText("4 oz").first()).toBeVisible();
@@ -91,10 +91,10 @@ test.describe("home @cross-browser", () => {
       }).first(),
     ).toBeVisible();
     await expect(
-      page.getByText(/archive image shown above|view document image|downloadable original pdf is not published/i).first(),
+      page.getByText(/document image shown above|view document image|downloadable original pdf is not published/i).first(),
     ).toBeVisible();
 
-    await page.getByRole("link", { name: "Explore Our History" }).click();
+    await page.getByRole("link", { name: "Read Our Story" }).click();
     await expect(page).toHaveURL(/\/about$/);
 
     await page.goto("/");

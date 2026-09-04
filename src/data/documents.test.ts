@@ -2,7 +2,7 @@ import { describe, expect, it } from "vitest";
 import { documents } from "@/data/documents";
 
 describe("documents data", () => {
-  it("gives every historical document an on-site archive image", () => {
+  it("gives every document an on-site image", () => {
     expect(documents.length).toBeGreaterThanOrEqual(8);
     expect(documents.every((document) => Boolean(document.image))).toBe(true);
     expect(documents.every((document) => document.image?.endsWith(".webp"))).toBe(true);

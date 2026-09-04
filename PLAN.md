@@ -1,6 +1,6 @@
 # Fruiticana Website Implementation Plan
 
-Next.js 16 informational website for **schools and their students**. The 2003–2011 business PDF and the 2007 myfruiticana.com archive are historical source material with strict claim qualification. There is no consumer shop, cart, or “buy now” path. **For now, this site is only for schools and the students they serve.**
+Next.js 16 informational website for **schools and their students**. The 2003–2011 business PDF and the 2007 myfruiticana.com materials are source material for dates and documentation. There is no consumer shop, cart, or “buy now” path. **For now, this site is only for schools and the students they serve.**
 
 **Core goal:** Recreate the recognizable Fruiticana identity from the original website, modernized for 2026, so a school team can understand the Fruiticana vision — the what, why, and how — and request information for students.
 
@@ -14,9 +14,9 @@ Next.js 16 informational website for **schools and their students**. The 2003–
 
 **Why it exists:** So students have a new way to eat fruit — a frozen dessert built from fruit flavors that can belong in a cafeteria or snack program, including for students avoiding lactose (original design intent).
 
-**How it works for schools:** Designed to be made **in-house**, so schools are not carrying specialty outside-dessert cost. Historical service used individual single-serve cups (4 oz / ½ cup laboratory serving), with 12 original flavors, nutrition documentation for school review, and a documented Connecticut Team Nutrition chapter.
+**How it works for schools:** Designed to be made **in-house**, so schools are not carrying specialty outside-dessert cost. Schools serve individual single-serve cups (4 oz / ½ cup laboratory serving), with 12 original flavors, nutrition documentation for school review, and a documented Connecticut Team Nutrition chapter.
 
-Until current facts are verified, the site speaks in **concept + history** language, not **on menus today / certified today**.
+The site speaks in **present-day school** language for schools and their students.
 
 ---
 

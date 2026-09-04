@@ -13,17 +13,17 @@ export function ProductNutritionTeaser() {
       <SectionHeading
         eyebrow="Nutrition information"
         title="Nutrition testing and flavor information"
-        description="Independent laboratory Nutrition Facts panels for all 12 original flavors were recorded in 2008 (Northeast Laboratories, Inc., report #20080318F). They are historical reference — not a current product label."
+        description="Independent laboratory Nutrition Facts panels for all 12 original flavors were recorded in 2008 (Northeast Laboratories, Inc., report #20080318F)."
       />
       <StatGrid
         className="mt-10"
         items={glance}
-        aria-label="Historical 2008 nutrition snapshot"
+        aria-label="2008 nutrition snapshot"
       />
       <HistoricalNotice className="mt-6 max-w-3xl">
-        Historical nutrition information should be verified against any current
-        Fruiticana formulation before commercial use. 0 g total fat and 0 mg
-        cholesterol were recorded on every 2008 panel.
+        Confirm nutrition information against your current Fruiticana formulation
+        before menu planning. 0 g total fat and 0 mg cholesterol were recorded on
+        every 2008 panel.
       </HistoricalNotice>
       <div className="mt-8">
         <Button href="/product#nutrition" size="lg">

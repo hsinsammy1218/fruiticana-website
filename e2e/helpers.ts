@@ -19,7 +19,7 @@ export const primaryRoutes = [
   },
   {
     path: "/product",
-    heading: /flavors, servings, and historical nutrition/i,
+    heading: /flavors, servings, and nutrition/i,
     title: /Flavors & Nutrition/,
   },
   {

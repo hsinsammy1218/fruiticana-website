@@ -3,7 +3,7 @@
  * exists, and how it can work in a school. For now, this site is only for
  * schools and the students they serve.
  *
- * Copy stays in concept + history language (see PLAN.md).
+ * Present-day school voice: what, why, and how for schools and students.
  */
 
 export const visionIntro = {
@@ -50,7 +50,7 @@ export const visionPillars: VisionPillar[] = [
     step: "03",
     label: "How",
     title: "Make it in-house — without the extra cost",
-    body: "The Fruiticana how for schools is practical: a fruit-based frozen dessert designed to be made in-house, so school kitchens can serve students without taking on specialty outside-dessert cost. Serve it simply — historically in individual 4 oz (½ cup) cups — in a cafeteria or snack program.",
+    body: "The Fruiticana how for schools is practical: a fruit-based frozen dessert designed to be made in-house, so school kitchens can serve students without taking on specialty outside-dessert cost. Serve it simply — in individual 4 oz (½ cup) cups — in a cafeteria or snack program.",
     figure: "In-house",
     figureLabel: "Easy for school kitchens",
     icon: "cup",

@@ -45,7 +45,7 @@ export function NutritionPanel({ flavor }: { flavor: Flavor }) {
           />
           <h3 className="text-lg font-bold text-green-deep">{flavor.name}</h3>
         </div>
-        <HistoricalNotice variant="inline" label="Historical (2008)" />
+        <HistoricalNotice variant="inline" label="Lab analysis (2008)" />
       </div>
 
       <div className="mt-4 border-t-4 border-green-deep pt-2">
@@ -131,7 +131,7 @@ export function NutritionPanel({ flavor }: { flavor: Flavor }) {
             : ""}
         </p>
         <p className="mt-1 text-xs text-muted">
-          Source: {n.lab}, report #{n.reportNumber} (2008). Historical analysis.
+          Source: {n.lab}, report #{n.reportNumber} (2008).
         </p>
       </div>
     </div>

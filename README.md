@@ -9,10 +9,9 @@ An informational site for **Fruiticana**, a fruit-based frozen dessert.
 > leave understanding the Fruiticana **vision**: what it is, why it exists, and
 > how it can be made in-house for students. The original Fruiticana identity
 > (Creamless Ice Cream, fruit-forward greens and yellows, “An exciting new way
-> to eat fruit.”) is preserved. Until the business verifies current facts (see
-> the checklist below), the site speaks in **concept + history** language, not
-> **"on menus today / certified today"** language. Timeline, testimonials,
-> documentation, and nutrition panels are **historical** and labeled as such.
+> to eat fruit.”) is preserved. The site speaks in **present-day school**
+> language for schools and their students. Timeline dates, testimonials,
+> documentation, and nutrition panels are shared for school review.
 
 ## Tech stack
 
@@ -89,22 +88,22 @@ as `?flavor=` is preserved). `/story` redirects to `/about`. Individual
 - **Logo** is a Fruiticana lockup with strawberry i-dots inspired by the 2007
   myfruiticana.com wordmark (`src/components/ui/Logo.tsx`). A rights-cleared
   vector file from the owner can still replace it.
-- **Archived 2007 JPEGs** are stored in `docs/archive-reference/` as visual
+- **2007 reference JPEGs** are stored in `docs/archive-reference/` as visual
   reference only. They are not served on the live site.
 - **Contact details / social** are `null` in `src/data/site.ts` and render as
   "coming soon". Fill them in only with verified, current information.
-- **Historical scans** are shown on Resources and documentation cards as
-  on-site archive page images for school background. Original PDF downloads
-  stay unpublished until rights-cleared source files exist.
+- **Document images** are shown on Resources and documentation cards for school
+  review. Original PDF downloads stay unpublished until rights-cleared source
+  files exist.
 
-### Historical nutrition data
+### Nutrition data
 
 Nutrition Facts panels in `src/data/flavors.ts` are transcribed from an
 independent laboratory analysis in the business PDF (Northeast Laboratories,
-Inc., report #20080318F, dated 2008-03-18) and are labeled **historical**
-everywhere. The **Banana** calorie value was illegible in the source scan and is
-intentionally left blank rather than guessed. Re-verify all values against the
-current formulation before publishing them as a product label.
+Inc., report #20080318F, dated 2008-03-18) and shown for school review. The
+**Banana** calorie value was illegible in the source scan and is intentionally
+left blank rather than guessed. Confirm values against the current formulation
+before publishing them as a product label.
 
 ## Deployment (Vercel)
 

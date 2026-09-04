@@ -62,13 +62,13 @@ export function getNutritionSnapshot(list: Flavor[] = flavors): NutritionSnapsho
   };
 }
 
-/** Scannable historical nutrition figures for product and homepage teasers. */
+/** Scannable nutrition figures for product and homepage teasers. */
 export function getNutritionGlanceStats(list: Flavor[] = flavors): FactStat[] {
   const snapshot = getNutritionSnapshot(list);
   const missing =
     snapshot.flavorsMissingCalories.length > 0
       ? `${snapshot.flavorsMissingCalories.join(", ")} left blank`
-      : "Historical lab range";
+      : "Laboratory range";
 
   return [
     {

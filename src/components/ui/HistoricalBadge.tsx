@@ -6,10 +6,10 @@ type HistoricalBadgeProps = {
 };
 
 /**
- * Visible, not color-only, qualifier for 2003–2011 material.
+ * Visible qualifier for school documentation cards and flavor sheets.
  */
 export function HistoricalBadge({
-  label = "Historical Documentation",
+  label = "School documentation",
   className,
 }: HistoricalBadgeProps) {
   return (

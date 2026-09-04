@@ -19,8 +19,8 @@ export function SupportingDocs() {
       <div className="flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
         <SectionHeading
           eyebrow="Documentation"
-          title="Historical documentation"
-          description="Organized records from Fruiticana’s historical business file, with archive page images for school review. Materials from 2003–2011 are marked historical until their current validity is confirmed."
+          title="School documentation"
+          description="Organized records for school review — product information, nutrition panels, and Connecticut program materials."
         />
         <Button href="/resources" variant="secondary">
           View all resources

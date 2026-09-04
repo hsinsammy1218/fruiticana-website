@@ -1,17 +1,17 @@
 import { test, expect } from "@playwright/test";
 
 test.describe("nutrition", () => {
-  test("keeps the historical disclaimer visible on product", async ({ page }) => {
+  test("keeps the nutrition note visible on product", async ({ page }) => {
     await page.goto("/product");
 
     await expect(
       page.getByRole("heading", {
         level: 1,
-        name: /flavors, servings, and historical nutrition/i,
+        name: /flavors, servings, and nutrition/i,
       }),
     ).toBeVisible();
-    await expect(page.getByText(/not a current product label/i).first()).toBeVisible();
-    await expect(page.getByText(/historical \(2008\)/i)).toBeVisible();
+    await expect(page.getByText(/confirm these figures against your current/i).first()).toBeVisible();
+    await expect(page.getByText(/lab analysis \(2008\)/i)).toBeVisible();
     await expect(
       page.getByRole("heading", { name: /institutional serving information/i }),
     ).toBeVisible();

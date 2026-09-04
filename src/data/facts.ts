@@ -21,17 +21,17 @@ export const homeGlanceStats: FactStat[] = [
   {
     value: "4 oz",
     label: "Single-serve cup",
-    note: "Historical school / lab serving size",
+    note: "School / lab serving size",
   },
   {
     value: "0g",
     label: "Total fat on 2008 panels",
-    note: "All 12 flavors, historical lab only",
+    note: "All 12 flavors, laboratory analysis",
   },
   {
     value: "~30,000",
     label: "Consumers sampled",
-    note: "Connecticut-area historical figure",
+    note: "Connecticut school sampling figure",
   },
 ];
 
@@ -50,7 +50,7 @@ export const connecticutProgramStats: FactStat[] = [
   {
     value: "~30,000",
     label: "Consumers sampled",
-    note: "Connecticut-area historical figure",
+    note: "Connecticut school sampling figure",
   },
   {
     value: "12",
@@ -59,7 +59,7 @@ export const connecticutProgramStats: FactStat[] = [
   },
 ];
 
-/** About-only: includes the historical pilot sales figure from the business PDF. */
+/** About-only: includes the pilot sales figure from the business PDF. */
 export const storyPilotStats: FactStat[] = [
   {
     value: "2003–05",
@@ -74,12 +74,12 @@ export const storyPilotStats: FactStat[] = [
   {
     value: "~30,000",
     label: "Consumers sampled",
-    note: "Connecticut-area historical figure",
+    note: "Connecticut school sampling figure",
   },
   {
     value: "~$1M",
-    label: "Historical pilot sales",
-    note: "Business record; not a current result",
+    label: "Pilot sales",
+    note: "From the business record",
   },
 ];
 

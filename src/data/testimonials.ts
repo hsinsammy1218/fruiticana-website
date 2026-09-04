@@ -1,8 +1,8 @@
 /**
- * Historical testimonials from Fruiticana's original Connecticut pilot
+ * Testimonials from Fruiticana's original Connecticut pilot
  * (Waterbury, CT, 2007), transcribed from the business PDF.
  *
- * These are presented ONLY as historical pilot feedback and are always labeled
+ * These are presented as pilot feedback from 2007 and are always labeled
  * as such. Excerpts are limited to taste/texture/enjoyment; medical or
  * diabetes-related statements from the source are intentionally excluded.
  */

@@ -91,7 +91,7 @@ export function TrustDocumentCard({
           </Link>
         ) : (
           <p className="mt-auto pt-4 text-xs leading-relaxed text-muted">
-            Historical record — a downloadable scan is not published here.
+            A downloadable scan is not published here.
           </p>
         )}
       </div>

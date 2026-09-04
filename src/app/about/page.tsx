@@ -21,7 +21,7 @@ import { JsonLd } from "@/components/seo/JsonLd";
 export const metadata: Metadata = {
   title: "About Fruiticana",
   description:
-    "The Fruiticana vision — what it is, why it exists, and how it was developed for schools — plus its 2003–2005 Connecticut Team Nutrition Healthy Snack pilot, founding team, and historical documentation.",
+    "The Fruiticana vision — what it is, why it exists, and how it was developed for schools — plus its 2003–2005 Connecticut Team Nutrition Healthy Snack pilot, founding team, and school documentation.",
   alternates: { canonical: "/about" },
 };
 
@@ -69,7 +69,7 @@ export default function AboutPage() {
 
       <Section tone="cream-100">
         <p className="text-xs font-semibold uppercase tracking-[0.18em] text-green-600">
-          Historical Fruiticana Pilot Program
+          Connecticut school programs
         </p>
         <h2 className="mt-2 text-3xl font-extrabold sm:text-4xl">
           Fruiticana in Connecticut Schools
@@ -93,9 +93,8 @@ export default function AboutPage() {
             </p>
             <HistoricalNotice>
               These figures and programs describe Fruiticana’s 2003–2006
-              Connecticut record. They are not current results, and past
-              participation does not imply a current government or school
-              endorsement.
+              Connecticut record and how the school vision was first put in front
+              of students.
             </HistoricalNotice>
             <p>
               Teachers can use this chapter as a primary-source case study —
@@ -113,7 +112,7 @@ export default function AboutPage() {
           <StatGrid
             items={storyPilotStats}
             columns={2}
-            aria-label="Historical Connecticut pilot figures"
+            aria-label="Connecticut pilot figures"
           />
         </div>
       </Section>
@@ -122,7 +121,7 @@ export default function AboutPage() {
         <SectionHeading
           eyebrow="How it started"
           title="Product development timeline"
-          description="The milestones below are drawn from Fruiticana's historical business record. Nothing is invented for years the document does not cover."
+          description="The milestones below are drawn from Fruiticana's business record. Nothing is invented for years the document does not cover."
         />
         <div className="mt-10 grid items-start gap-10 lg:grid-cols-[minmax(0,1.15fr)_minmax(17rem,0.85fr)] lg:gap-14">
           <HistoricalTimeline />
@@ -168,8 +167,8 @@ export default function AboutPage() {
       <Section id="documentation" tone="white" className="scroll-mt-24">
         <SectionHeading
           eyebrow="Supporting documentation"
-          title="Historical records, not current badges"
-          description="Fruiticana's business record includes documents from roughly 2004-2008. Archive images are shown for school background — not as current certifications or endorsements. Original PDF downloads are not published."
+          title="School documentation"
+          description="Fruiticana's business record includes documents from roughly 2004-2008. Document images are shown for school review. Original PDF downloads are not published."
         />
         <ul className="mt-10 grid grid-cols-1 gap-5 md:grid-cols-2">
           {documents.map((document) => (
@@ -183,9 +182,9 @@ export default function AboutPage() {
       <Section tone="cream-100">
         <SectionHeading
           align="center"
-          eyebrow="Historical sampling notes"
+          eyebrow="Sampling notes"
           title="From the original Connecticut pilot"
-          description={testimonialsIntro + ". These are taste comments from 2007, not current reviews."}
+          description={testimonialsIntro + ". These are taste comments from 2007."}
         />
         <ul className="mx-auto mt-10 grid max-w-5xl grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {testimonials.map((testimonial) => (

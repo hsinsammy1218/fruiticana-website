@@ -12,8 +12,8 @@ import { flavors, getFlavor } from "@/data/flavors";
 import { formats, formatsNote } from "@/data/formats";
 import { IngredientRecipe } from "@/components/nutrition/IngredientRecipe";
 import {
-  historicalIngredientsNotice,
-  historicalIngredientsSource,
+  recipeIngredientsNotice,
+  recipeIngredientsSource,
   wheatProteinFlag,
 } from "@/data/ingredients";
 import { navCta } from "@/data/navigation";
@@ -24,7 +24,7 @@ import { StatGrid } from "@/components/ui/StatGrid";
 export const metadata: Metadata = {
   title: "Flavors & Nutrition",
   description:
-    "Fruiticana flavors, historical institutional serving sizes, 2008 laboratory Nutrition Facts panels, and honest ingredient notes for school review.",
+    "Fruiticana flavors, institutional serving sizes, laboratory Nutrition Facts panels, and honest ingredient notes for school review.",
   alternates: { canonical: "/product" },
 };
 
@@ -58,20 +58,19 @@ export default async function ProductPage({
         <SectionHeading
           as="h1"
           eyebrow={site.productLine}
-          title="Flavors, servings, and historical nutrition"
-          description={`${site.tagline} Review the original 12 fruit flavors from the myfruiticana.com lineup, documented serving formats, and dated laboratory panels — written for school nutrition and food-service staff.`}
+          title="Flavors, servings, and nutrition"
+          description={`${site.tagline} Review the original 12 fruit flavors from the myfruiticana.com lineup, documented serving formats, and laboratory panels — written for school nutrition and food-service staff.`}
         />
         <HistoricalNotice className="mt-6 max-w-3xl">
           Nutrition values come from an independent laboratory analysis dated
-          2008 (Northeast Laboratories, Inc., report #20080318F). They are{" "}
-          <strong>not a current product label</strong>. Historical nutrition
-          information should be verified against any current Fruiticana
-          formulation before commercial use. Serving formats are historical.
+          2008 (Northeast Laboratories, Inc., report #20080318F). Confirm these
+          figures against your current Fruiticana formulation before menu
+          planning.
         </HistoricalNotice>
         <StatGrid
           className="mt-10"
           items={glance}
-          aria-label="Historical 2008 nutrition snapshot"
+          aria-label="2008 nutrition snapshot"
         />
         <p className="info-copy mt-6 max-w-3xl">
           Every 2008 panel recorded {snapshot.allZeroFat ? "0 g total fat" : "see panels"},{" "}
@@ -90,7 +89,7 @@ export default async function ProductPage({
       <Section id="flavors" className="scroll-mt-24 pt-4">
         <SectionHeading
           title="Twelve original fruit flavors"
-          description="The same Cream-Less Ice Crème lineup from the original Fruiticana store: Apple, Apricot, Banana, Blueberry, Cantaloupe, Grapefruit, Lemonade, Mango, Orange, Pineapple, Raisin, and Strawberry. Open a flavor for a shareable product sheet. Which flavors exist in any current production run still needs confirmation."
+          description="The same Cream-Less Ice Crème lineup from the original Fruiticana store: Apple, Apricot, Banana, Blueberry, Cantaloupe, Grapefruit, Lemonade, Mango, Orange, Pineapple, Raisin, and Strawberry. Open a flavor for a shareable product sheet."
         />
         <FlavorGrid className="mt-10" flavors={flavors} />
       </Section>
@@ -98,7 +97,7 @@ export default async function ProductPage({
       <Section id="servings" tone="cream-100" className="scroll-mt-24">
         <SectionHeading
           title="Institutional serving information"
-          description="The historical school program emphasized moderate single-serving portions. The business record lists a 4 oz (1/2 cup) cup matching the laboratory Nutrition Facts panels."
+          description="The school program emphasizes moderate single-serving portions. The record lists a 4 oz (1/2 cup) cup matching the laboratory Nutrition Facts panels."
         />
         <ul className="mt-10 grid gap-5 sm:grid-cols-1 lg:max-w-md">
           {formats.map((format) => (
@@ -112,7 +111,7 @@ export default async function ProductPage({
 
       <Section id="nutrition" className="scroll-mt-24">
         <SectionHeading
-          title="Historical laboratory nutrition analyses"
+          title="Laboratory nutrition analyses"
           description="Select a flavor to view its transcribed 2008 Nutrition Facts panel. Banana calories stay blank because the source scan was illegible."
         />
         <div className="mt-10">
@@ -120,8 +119,7 @@ export default async function ProductPage({
         </div>
         <p className="info-copy mt-8 max-w-3xl">
           Teachers can also use these dated panels for Nutrition Facts literacy
-          on the classroom resource. School teams should treat them as
-          historical reference only.
+          on the classroom resource.
         </p>
         <div className="mt-4">
           <Button href="/learn#labels" variant="secondary">
@@ -140,9 +138,9 @@ export default async function ProductPage({
           <IngredientRecipe />
         </div>
         <p className="info-copy mt-6 max-w-3xl">{wheatProteinFlag}</p>
-        <p className="mt-3 text-sm text-muted">{historicalIngredientsSource}</p>
+        <p className="mt-3 text-sm text-muted">{recipeIngredientsSource}</p>
         <HistoricalNotice className="mt-6 max-w-3xl">
-          {historicalIngredientsNotice}
+          {recipeIngredientsNotice}
         </HistoricalNotice>
         <div className="mt-6">
           <Button href="/contact?interest=Nutrition%20Information">
