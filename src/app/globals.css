@@ -40,7 +40,7 @@
   --shadow-soft: 0 1px 2px rgba(36, 75, 42, 0.04), 0 8px 24px rgba(36, 75, 42, 0.06);
   --shadow-hover: 0 6px 16px rgba(36, 75, 42, 0.1), 0 18px 40px rgba(36, 75, 42, 0.12);
 
-  --container-page: 80rem;
+  --container-page: 96rem;
 }
 
 @layer base {

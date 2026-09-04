@@ -39,7 +39,7 @@ export function Navbar() {
       )}
     >
       <BrandBar />
-      <Container className="flex h-16 items-center justify-between gap-3">
+      <Container className="flex h-18 items-center justify-between gap-3 sm:h-20">
         <Logo className="text-green-deep" />
 
         <nav aria-label="Primary" className="hidden lg:block">

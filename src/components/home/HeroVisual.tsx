@@ -8,18 +8,18 @@ import Image from "next/image";
  */
 export function HeroVisual() {
   return (
-    <div className="relative mx-auto aspect-square w-full max-w-lg">
+    <div className="relative mx-auto aspect-square w-full">
       <div
         aria-hidden="true"
-        className="absolute inset-6 rounded-full bg-[radial-gradient(circle,rgba(255,255,255,0.7),transparent_70%)]"
+        className="absolute inset-4 rounded-full bg-[radial-gradient(circle,rgba(255,255,255,0.7),transparent_70%)] sm:inset-6"
       />
       <Image
         src="/images/brand/heart.jpg"
         alt=""
-        width={480}
-        height={480}
+        width={640}
+        height={640}
         priority
-        className="hero-float relative mx-auto h-auto w-[88%] drop-shadow-[0_28px_50px_rgba(22,61,42,0.18)]"
+        className="hero-float relative mx-auto h-auto w-[92%] drop-shadow-[0_28px_50px_rgba(22,61,42,0.18)]"
       />
     </div>
   );

@@ -8,7 +8,7 @@ export function Container({ as: Tag = "div", className, ...props }: ContainerPro
   return (
     <Tag
       className={cn(
-        "mx-auto w-full max-w-[var(--container-page)] px-5 sm:px-6 lg:px-8",
+        "mx-auto w-full max-w-[var(--container-page)] px-5 sm:px-8 lg:px-10 xl:px-12",
         className,
       )}
       {...props}
