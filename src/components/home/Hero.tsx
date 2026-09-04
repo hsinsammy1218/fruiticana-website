@@ -13,7 +13,7 @@ import { homeGlanceStats } from "@/data/facts";
  */
 export function Hero() {
   return (
-    <section className="relative isolate min-h-[min(92vh,56rem)] overflow-hidden">
+    <section className="relative isolate overflow-hidden">
       <div
         aria-hidden="true"
         className="absolute inset-0 -z-20"
@@ -26,20 +26,9 @@ export function Hero() {
           `,
         }}
       />
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute inset-y-0 right-0 -z-10 w-full max-w-3xl opacity-90 lg:w-[55%]"
-      >
-        <div className="absolute inset-0 bg-gradient-to-r from-cream via-transparent to-transparent lg:from-[color-mix(in_srgb,var(--color-cream)_88%,transparent)]" />
-        <div className="flex h-full items-center justify-center px-6 pt-24 lg:justify-end lg:pr-10 lg:pt-8">
-          <div className="w-full max-w-md lg:max-w-lg">
-            <HeroVisual />
-          </div>
-        </div>
-      </div>
 
-      <Container className="relative grid min-h-[min(92vh,56rem)] items-center py-16 sm:py-20 lg:py-24">
-        <div className="hero-rise max-w-xl lg:max-w-[32rem]">
+      <Container className="relative grid min-h-[min(88vh,52rem)] items-center gap-10 py-14 sm:py-18 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,0.95fr)] lg:gap-12 lg:py-20 xl:gap-16">
+        <div className="hero-rise max-w-2xl lg:max-w-none">
           <p className="inline-flex items-center gap-2 rounded-pill bg-white/70 px-3 py-1 text-sm font-semibold text-green-deep ring-1 ring-green-deep/10">
             <span className="h-2 w-2 rounded-full bg-green" aria-hidden="true" />
             Information for schools and food-service programs
@@ -47,14 +36,14 @@ export function Hero() {
           <p className="mt-5 font-display text-sm font-bold uppercase tracking-[0.22em] text-green-600">
             {site.productLine}
           </p>
-          <h1 className="mt-4 font-display text-4xl font-bold uppercase tracking-[0.04em] text-berry sm:text-5xl lg:text-[3.35rem] lg:leading-[1.08]">
+          <h1 className="mt-4 font-display text-4xl font-bold uppercase tracking-[0.04em] text-berry sm:text-5xl lg:text-[3.75rem] lg:leading-[1.06] xl:text-[4.25rem]">
             The New Way{" "}
             <span className="block">to Eat Fruit</span>
           </h1>
-          <p className="mt-5 max-w-lg text-lg leading-[1.75] text-muted sm:text-xl">
+          <p className="mt-5 max-w-xl text-lg leading-[1.75] text-muted sm:text-xl">
             {site.heroSupport} Smooth like ice cream, built from fruit flavors.
           </p>
-          <p className="mt-3 max-w-lg text-base leading-[1.7] text-muted">
+          <p className="mt-3 max-w-xl text-base leading-[1.7] text-muted">
             Originally introduced as {site.legacyProductName}. The original
             consumer line was “{site.legacyTagline}”
           </p>
@@ -72,9 +61,15 @@ export function Hero() {
             </Button>
           </div>
         </div>
+
+        <div className="flex justify-center lg:justify-end">
+          <div className="w-full max-w-xl xl:max-w-2xl">
+            <HeroVisual />
+          </div>
+        </div>
       </Container>
 
-      <Container className="pb-10 sm:pb-14">
+      <Container className="pb-12 sm:pb-16">
         <StatGrid
           items={homeGlanceStats}
           aria-label="Fruiticana figures at a glance"

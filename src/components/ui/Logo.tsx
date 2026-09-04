@@ -62,7 +62,7 @@ export function Logo({
     <span className={cn("inline-flex items-center gap-2", className)}>
       <FruitMark />
       <span className="flex flex-col leading-none">
-        <span className="font-display text-[1.35rem] font-extrabold tracking-tight">
+        <span className="font-sans text-[1.35rem] font-extrabold tracking-tight">
           Fru
           <span className="relative inline-block">
             ı

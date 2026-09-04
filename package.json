@@ -16,7 +16,9 @@
     "test:a11y": "playwright test e2e/a11y.spec.ts --project=chromium",
     "test:lighthouse": "npm run build && lhci autorun --config=lighthouserc.cjs",
     "test:browserstack": "playwright test --config=playwright.browserstack.config.ts",
-    "test:all": "npm run test && npm run test:e2e"
+    "test:all": "npm run test && npm run test:e2e",
+    "deploy": "vercel --prod",
+    "deploy:preview": "vercel"
   },
   "dependencies": {
     "clsx": "^2.1.1",

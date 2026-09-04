@@ -56,7 +56,7 @@ export function NutritionPanel({ flavor }: { flavor: Flavor }) {
 
         <div className="mt-2 flex items-end justify-between border-b-4 border-green-deep pb-1">
           <span className="text-sm font-bold text-green-deep">Calories</span>
-          <span className="font-display text-4xl font-extrabold text-green-deep">
+          <span className="font-sans text-4xl font-extrabold text-green-deep">
             {fmtAmount(n.calories)}
           </span>
         </div>

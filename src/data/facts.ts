@@ -146,7 +146,7 @@ export const productConceptBenefits: {
     icon: "scoop",
     title: "Smooth Frozen Texture",
     description:
-      "Developed as a fruit-based frozen dessert with a smooth, ice-cream-like experience — cups, cones, and smoothies in the historical parlor record.",
+      "Developed as a fruit-based frozen dessert with a smooth, ice-cream-like experience — served in institutional single-serve cups for the historical school program.",
   },
   {
     icon: "leaf",

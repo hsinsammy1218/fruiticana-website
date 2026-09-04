@@ -55,7 +55,7 @@ export function StatGrid({
           </dt>
           <dd
             className={cn(
-              "order-1 font-display text-3xl font-extrabold tabular-nums tracking-tight sm:text-4xl",
+              "order-1 font-sans text-3xl font-extrabold tabular-nums tracking-tight sm:text-4xl",
               deep ? "text-cream" : "text-green-deep",
             )}
           >

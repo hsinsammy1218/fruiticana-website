@@ -4,23 +4,16 @@ import { ProductFormatCard } from "@/components/ui/ProductFormatCard";
 import { HistoricalNotice } from "@/components/ui/HistoricalNotice";
 import { formats, formatsNote } from "@/data/formats";
 
-const schoolFirst = ["institutional-cup", "cup", "smoothie", "frozen-pop"];
-
 export function ServingFormats() {
-  const ordered = [
-    ...formats.filter((format) => schoolFirst.includes(format.slug)),
-    ...formats.filter((format) => !schoolFirst.includes(format.slug)),
-  ];
-
   return (
     <Section>
       <SectionHeading
         eyebrow="How it can be served"
-        title="Cups, smoothies, and frozen novelties"
-        description="For school-oriented review, single-serve cups, smoothies, and frozen novelties are the formats to start with. Cone and take-home containers appear in the historical parlor record."
+        title="Institutional single-serve cups"
+        description="For school food-service review, the historical program emphasized moderate single-serve cup portions — a 3 oz institutional size and a 4 oz (1/2 cup) laboratory serving."
       />
-      <ul className="mt-10 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-6">
-        {ordered.map((format) => (
+      <ul className="mt-10 grid gap-5 sm:grid-cols-2">
+        {formats.map((format) => (
           <li key={format.slug} className="reveal">
             <ProductFormatCard format={format} />
           </li>

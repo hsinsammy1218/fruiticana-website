@@ -86,7 +86,7 @@ export default function SchoolsPage() {
               id={use.slug}
               className="reveal rounded-xl2 border border-line bg-white p-6"
             >
-              <p className="font-display text-3xl font-extrabold tabular-nums tracking-tight text-green-deep">
+              <p className="font-sans text-3xl font-extrabold tabular-nums tracking-tight text-green-deep">
                 {use.figure}
               </p>
               <p className="mt-1 text-xs font-semibold uppercase tracking-wide text-green-600">
@@ -108,7 +108,7 @@ export default function SchoolsPage() {
           {schoolFitPoints.map((point) => (
             <li key={point.title} className="reveal">
               <div className="h-full rounded-xl2 border border-line bg-cream-100 p-6">
-                <p className="font-display text-3xl font-extrabold tabular-nums tracking-tight text-green-deep">
+                <p className="font-sans text-3xl font-extrabold tabular-nums tracking-tight text-green-deep">
                   {point.figure}
                 </p>
                 <h3 className="mt-3 text-lg font-bold text-green-deep">{point.title}</h3>
@@ -122,9 +122,9 @@ export default function SchoolsPage() {
       <Section tone="cream-100">
         <SectionHeading
           title="Serving formats for school review"
-          description="Single-serve cups, smoothies, and frozen novelties are the formats most relevant to food-service conversations. Other formats appear in the historical parlor record."
+          description="The historical school program used institutional single-serve cups — a 3 oz portion and a 4 oz (1/2 cup) size matching the laboratory Nutrition Facts panels."
         />
-        <ul className="mt-10 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-6">
+        <ul className="mt-10 grid gap-5 sm:grid-cols-2">
           {formats.map((format) => (
             <li key={format.slug}>
               <ProductFormatCard format={format} />

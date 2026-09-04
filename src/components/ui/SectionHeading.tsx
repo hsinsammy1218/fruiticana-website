@@ -22,7 +22,7 @@ export function SectionHeading({
   return (
     <div
       className={cn(
-        "max-w-2xl",
+        "max-w-4xl",
         align === "center" && "mx-auto text-center",
         className,
       )}
@@ -35,14 +35,14 @@ export function SectionHeading({
       <Heading
         id={id}
         className={cn(
-          "text-3xl font-extrabold sm:text-4xl",
+          "text-3xl font-extrabold sm:text-4xl lg:text-5xl",
           eyebrow && "mt-2",
         )}
       >
         {title}
       </Heading>
       {description ? (
-        <p className="mt-3 text-base leading-[1.75] text-muted sm:text-lg">
+        <p className="mt-4 max-w-3xl text-base leading-[1.75] text-muted sm:text-lg">
           {description}
         </p>
       ) : null}

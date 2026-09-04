@@ -17,7 +17,7 @@ export function ProductFormatCard({ format, className }: ProductFormatCardProps)
       )}
     >
       {format.amount ? (
-        <p className="font-display text-3xl font-extrabold tabular-nums tracking-tight text-green-deep">
+        <p className="font-sans text-3xl font-extrabold tabular-nums tracking-tight text-green-deep">
           {format.amount}
         </p>
       ) : (
