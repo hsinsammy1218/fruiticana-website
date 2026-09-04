@@ -73,9 +73,9 @@ Redirects: `/flavors` and `/nutrition` → `/product`; `/story` → `/about`.
 4. Why Fruiticana was made for schools
 5. How it can be served in school
 6. Featured flavors (6)
-7. Fruiticana Has Been Here Before
+7. Built for schools — proven with students
 8. Nutrition information
-9. Historical documentation
+9. School documentation
 10. Closing school CTA
 
 ---

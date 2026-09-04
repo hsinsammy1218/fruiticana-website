@@ -13,7 +13,7 @@ test.describe("learn", () => {
       }),
     ).toBeVisible();
     await expect(
-      page.getByText(/connecticut school snack tasting/i),
+      page.getByText(/Fruiticana was included in a Connecticut school snack tasting/i),
     ).toBeVisible();
 
     await expect(page.getByRole("heading", { name: "Twelve fruits to know" })).toBeVisible();
