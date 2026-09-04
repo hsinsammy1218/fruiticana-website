@@ -122,9 +122,9 @@ export default function SchoolsPage() {
       <Section tone="cream-100">
         <SectionHeading
           title="Serving formats for school review"
-          description="The historical school program used institutional single-serve cups — a 3 oz portion and a 4 oz (1/2 cup) size matching the laboratory Nutrition Facts panels."
+          description="The historical school program used institutional single-serve cups — a 4 oz (1/2 cup) size matching the laboratory Nutrition Facts panels."
         />
-        <ul className="mt-10 grid gap-5 sm:grid-cols-2">
+        <ul className="mt-10 grid gap-5 sm:grid-cols-1 lg:max-w-md">
           {formats.map((format) => (
             <li key={format.slug}>
               <ProductFormatCard format={format} />

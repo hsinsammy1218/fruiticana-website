@@ -98,9 +98,9 @@ export default async function ProductPage({
       <Section id="servings" tone="cream-100" className="scroll-mt-24">
         <SectionHeading
           title="Institutional serving information"
-          description="The historical school program emphasized moderate single-serving portions. The business record lists a 3 oz institutional cup alongside the 4 oz (1/2 cup) size used on the laboratory panels."
+          description="The historical school program emphasized moderate single-serving portions. The business record lists a 4 oz (1/2 cup) cup matching the laboratory Nutrition Facts panels."
         />
-        <ul className="mt-10 grid gap-5 sm:grid-cols-2">
+        <ul className="mt-10 grid gap-5 sm:grid-cols-1 lg:max-w-md">
           {formats.map((format) => (
             <li key={format.slug} className="reveal">
               <ProductFormatCard format={format} />

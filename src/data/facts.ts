@@ -19,9 +19,9 @@ export const homeGlanceStats: FactStat[] = [
     note: "Documented lineup for school review",
   },
   {
-    value: "3 oz",
-    label: "Institutional cup",
-    note: "Historical school single-serve size",
+    value: "4 oz",
+    label: "Single-serve cup",
+    note: "Historical school / lab serving size",
   },
   {
     value: "0g",
@@ -90,13 +90,8 @@ export const schoolGlanceStats: FactStat[] = [
     note: "Healthy Snack program in Connecticut",
   },
   {
-    value: "3 oz",
-    label: "Institutional serving",
-    note: "Moderate single-serve cup in the record",
-  },
-  {
     value: "4 oz",
-    label: "Lab panel serving",
+    label: "Single-serve cup",
     note: "½ cup (90 g) on 2008 Nutrition Facts",
   },
   {
@@ -157,10 +152,10 @@ export const productConceptBenefits: {
   },
   {
     icon: "cup",
-    figure: "3 oz",
+    figure: "4 oz",
     title: "Individual Serving Options",
     description:
-      "The historical school program used single-serving cups, including a recorded institutional 3 oz size and a 4 oz (½ cup) lab serving.",
+      "The historical school program used single-serving cups, including a recorded 4 oz (½ cup) laboratory serving.",
   },
 ];
 
@@ -175,10 +170,10 @@ export const schoolHomeBenefits: {
 }[] = [
   {
     icon: "cup",
-    figure: "3 oz",
+    figure: "4 oz",
     title: "Student-Friendly Portions",
     description:
-      "Historical institutional cups were sized for individual service rather than a parlor scoop — a format schools typically evaluate first.",
+      "Historical single-serve cups were sized for individual service rather than a parlor scoop — a 4 oz format schools typically evaluate first.",
   },
   {
     icon: "flavors",

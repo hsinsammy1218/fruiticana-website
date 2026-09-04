@@ -7,13 +7,13 @@ describe("FeatureCard", () => {
     render(
       <FeatureCard
         icon="cup"
-        figure="3 oz"
+        figure="4 oz"
         title="Individual Portions"
         description="Historical school cups."
       />,
     );
 
-    expect(screen.getByText("3 oz")).toBeVisible();
+    expect(screen.getByText("4 oz")).toBeVisible();
     expect(screen.getByRole("heading", { name: "Individual Portions" })).toBeVisible();
     expect(screen.getByText("Historical school cups.")).toBeVisible();
   });
