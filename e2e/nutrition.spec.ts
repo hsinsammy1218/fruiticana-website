@@ -25,11 +25,16 @@ test.describe("nutrition", () => {
     await expect(
       page.locator("#ingredients li").filter({ hasText: "Mar/az" }),
     ).toBeVisible();
-    await expect(page.getByText(/school kitchen recipe/i)).toBeVisible();
+    await expect(
+      page.getByRole("heading", { name: "School kitchen recipe" }),
+    ).toBeVisible();
     await expect(
       page.getByRole("heading", { name: /fruiticana creamless ice cream/i }),
     ).toBeVisible();
+    await expect(page.getByRole("heading", { name: "Ingredients" })).toBeVisible();
+    await expect(page.getByRole("heading", { name: "Method" })).toBeVisible();
     await expect(page.getByText(/confirm gluten status/i)).toBeVisible();
+    await expect(page.getByText(/historical/i)).toHaveCount(0);
   });
 
   test("switching flavors updates the panel and shareable URL", async ({
