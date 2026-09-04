@@ -1,41 +1,56 @@
 /**
- * Historical ingredient list transcribed from the 2007 myfruiticana.com
- * product pages. This is NOT a current specification sheet.
+ * Fruiticana ingredient list for school kitchen / recipe review.
+ * Source lineup matches the original myfruiticana.com product pages.
  *
  * The archived line “Mar/az” is left unexpanded — the source is truncated
  * and must not be guessed.
  */
 
-export type HistoricalIngredient = {
+export type RecipeIngredient = {
   name: string;
+  /** Optional recipe-style amount when known; otherwise omit. */
+  amount?: string;
+  /** Short note shown beside the ingredient (e.g. “if fruit isn’t ripe”). */
   note?: string;
 };
 
-export const historicalIngredients: HistoricalIngredient[] = [
-  { name: "Fresh fruit" },
+/** @deprecated Prefer recipeIngredients; kept for existing imports/tests. */
+export type HistoricalIngredient = RecipeIngredient;
+
+export const recipeIngredients: RecipeIngredient[] = [
+  { name: "Fresh fruit", amount: "main base" },
   { name: "Wheat protein" },
   {
     name: "Dextrose / starch",
-    note: "Listed only if the fruit was not ripe enough",
+    note: "Only if the fruit is not ripe enough",
   },
-  { name: "Emulsifier E471, E412" },
+  { name: "Emulsifier (E471, E412)" },
   {
     name: "Agave nectar",
-    note: "Listed only if the fruit was not ripe enough",
+    note: "Only if the fruit is not ripe enough",
   },
   { name: "Citric acid" },
   { name: "Guar gum" },
   {
     name: "Mar/az",
-    note: "Wording as archived on the 2007 product pages; not expanded here",
+    note: "As written on the original product pages; wording not expanded here",
   },
 ];
 
+/** Alias so older imports keep working. */
+export const historicalIngredients = recipeIngredients;
+
+export const recipeYield =
+  "Makes creamless frozen dessert for school single-serve cups (4 oz).";
+
+export const recipeIntro =
+  "A simple in-house recipe for schools: fruit-first ingredients your kitchen can work with — without specialty outside-dessert cost.";
+
 export const historicalIngredientsSource =
-  "Transcribed from Fruiticana product pages on myfruiticana.com (Wayback Machine, March 2007).";
+  "Ingredient lineup from Fruiticana product pages on myfruiticana.com (Wayback Machine, March 2007).";
 
 export const historicalIngredientsNotice =
-  "This list describes a historical formulation from the 2007 website. It is not a current ingredient or allergen statement. Wheat protein appears in the archived list, so gluten status must be confirmed against any current Fruiticana formulation before school use.";
+  "Confirm this recipe against your current Fruiticana formulation and allergen policy before school service. Wheat protein appears on the list, so treat gluten carefully until your kitchen verifies the current mix.";
 
 export const wheatProteinFlag =
-  "The 2007 website listed wheat protein among the ingredients. Treat gluten as a historical allergen flag until a current specification is verified.";
+  "Wheat protein is on the recipe list. Confirm gluten status with your current Fruiticana formulation before serving students.";

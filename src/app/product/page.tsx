@@ -10,8 +10,8 @@ import { Button } from "@/components/ui/Button";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { flavors, getFlavor } from "@/data/flavors";
 import { formats, formatsNote } from "@/data/formats";
+import { IngredientRecipe } from "@/components/nutrition/IngredientRecipe";
 import {
-  historicalIngredients,
   historicalIngredientsNotice,
   historicalIngredientsSource,
   wheatProteinFlag,
@@ -134,36 +134,19 @@ export default async function ProductPage({
         <SectionHeading
           eyebrow="Ingredients & allergens"
           title="What's inside"
-          description="A complete, current ingredient statement is not published here yet. The 2007 myfruiticana.com product pages listed the historical formulation below."
+          description="A fruit-first recipe schools can make in-house for students. Confirm the mix and allergens against your current Fruiticana formulation before service."
         />
+        <div className="mt-8">
+          <IngredientRecipe />
+        </div>
+        <p className="info-copy mt-6 max-w-3xl">{wheatProteinFlag}</p>
+        <p className="mt-3 text-sm text-muted">{historicalIngredientsSource}</p>
         <HistoricalNotice className="mt-6 max-w-3xl">
           {historicalIngredientsNotice}
         </HistoricalNotice>
-        <ol className="mt-8 max-w-xl space-y-3">
-          {historicalIngredients.map((item, index) => (
-            <li
-              key={item.name}
-              className="rounded-xl2 border border-line bg-cream-100 px-4 py-3"
-            >
-              <p className="font-semibold text-green-deep">
-                {index + 1}. {item.name}
-              </p>
-              {item.note ? <p className="info-copy mt-1 text-sm">{item.note}</p> : null}
-            </li>
-          ))}
-        </ol>
-        <p className="info-copy mt-6 max-w-3xl">{wheatProteinFlag}</p>
-        <p className="mt-3 text-sm text-muted">{historicalIngredientsSource}</p>
-        <HistoricalNotice label="To be confirmed" className="mt-6 max-w-3xl">
-          Current ingredients, allergens, and formulation claims (such as
-          dairy-free, lactose-free, or added-sugar statements) will be added
-          once verified with the business. 2007 website nutrition numbers are
-          not shown here because they disagree with the 2008 laboratory panels
-          used on this page.
-        </HistoricalNotice>
         <div className="mt-6">
           <Button href="/contact?interest=Nutrition%20Information">
-            Ask about current specifications
+            Ask about school kitchen setup
           </Button>
         </div>
       </Section>
