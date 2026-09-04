@@ -1,8 +1,8 @@
 /**
- * Fruiticana ingredient list for school kitchen / recipe review.
+ * Fruiticana school kitchen recipe ingredients.
  * Source lineup matches the original myfruiticana.com product pages.
  *
- * The archived line “Mar/az” is left unexpanded — the source is truncated
+ * The line “Mar/az” is left unexpanded — the source is truncated
  * and must not be guessed.
  */
 
@@ -19,38 +19,51 @@ export type HistoricalIngredient = RecipeIngredient;
 
 export const recipeIngredients: RecipeIngredient[] = [
   { name: "Fresh fruit", amount: "main base" },
-  { name: "Wheat protein" },
+  { name: "Wheat protein", amount: "as needed" },
   {
     name: "Dextrose / starch",
+    amount: "as needed",
     note: "Only if the fruit is not ripe enough",
   },
-  { name: "Emulsifier (E471, E412)" },
+  { name: "Emulsifier (E471, E412)", amount: "as needed" },
   {
     name: "Agave nectar",
+    amount: "as needed",
     note: "Only if the fruit is not ripe enough",
   },
-  { name: "Citric acid" },
-  { name: "Guar gum" },
+  { name: "Citric acid", amount: "as needed" },
+  { name: "Guar gum", amount: "as needed" },
   {
     name: "Mar/az",
-    note: "As written on the original product pages; wording not expanded here",
+    amount: "as needed",
+    note: "As written on the product pages; wording not expanded here",
   },
 ];
 
 /** Alias so older imports keep working. */
 export const historicalIngredients = recipeIngredients;
 
-export const recipeYield =
-  "Makes creamless frozen dessert for school single-serve cups (4 oz).";
+export const recipeYield = "School single-serve cups (4 oz / ½ cup each)";
+
+export const recipeServings = "Serves students in cafeteria or snack service";
+
+export const recipePrep = "In-house school kitchen";
 
 export const recipeIntro =
   "A simple in-house recipe for schools: fruit-first ingredients your kitchen can work with — without specialty outside-dessert cost.";
 
+export const recipeMethod = [
+  "Start with fresh fruit as the base of the mix.",
+  "Blend with the remaining ingredients until smooth.",
+  "Freeze, then portion into student single-serve cups (4 oz).",
+  "Serve in the cafeteria or snack program — made in-house, without specialty outside-dessert cost.",
+] as const;
+
 export const recipeIngredientsSource =
-  "Ingredient lineup from Fruiticana product pages on myfruiticana.com (Wayback Machine, March 2007).";
+  "Ingredient lineup from Fruiticana product pages.";
 
 export const recipeIngredientsNotice =
-  "Confirm this recipe against your current Fruiticana formulation and allergen policy before school service. Wheat protein appears on the list, so treat gluten carefully until your kitchen verifies the current mix.";
+  "Confirm this recipe and allergen policy before school service. Wheat protein appears on the list — treat gluten carefully until your kitchen verifies the mix.";
 
 /** @deprecated Prefer recipeIngredientsSource */
 export const historicalIngredientsSource = recipeIngredientsSource;
@@ -59,4 +72,4 @@ export const historicalIngredientsSource = recipeIngredientsSource;
 export const historicalIngredientsNotice = recipeIngredientsNotice;
 
 export const wheatProteinFlag =
-  "Wheat protein is on the recipe list. Confirm gluten status with your current Fruiticana formulation before serving students.";
+  "Allergen note: wheat protein is on the recipe list. Confirm gluten status before serving students.";
