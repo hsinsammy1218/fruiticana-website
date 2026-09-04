@@ -58,6 +58,7 @@ export const metadata: Metadata = {
     "fruit-based frozen dessert",
     "the new way to eat fruit",
     "frozen dessert for schools",
+    "Fruiticana vision for schools",
     "school cafeteria frozen dessert",
     "healthy snack program dessert",
     "Connecticut Team Nutrition",

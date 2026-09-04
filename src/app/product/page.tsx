@@ -24,7 +24,7 @@ import { StatGrid } from "@/components/ui/StatGrid";
 export const metadata: Metadata = {
   title: "Flavors & Nutrition",
   description:
-    "Fruiticana flavors, historical institutional serving sizes, 2008 laboratory Nutrition Facts panels, and honest ingredient notes for school and food-service review.",
+    "Fruiticana flavors, historical institutional serving sizes, 2008 laboratory Nutrition Facts panels, and honest ingredient notes for school review.",
   alternates: { canonical: "/product" },
 };
 
@@ -59,7 +59,7 @@ export default async function ProductPage({
           as="h1"
           eyebrow={site.productLine}
           title="Flavors, servings, and historical nutrition"
-          description={`${site.tagline} Review the original 12 fruit flavors from the myfruiticana.com lineup, documented serving formats, and dated laboratory panels — for schools and food-service staff.`}
+          description={`${site.tagline} Review the original 12 fruit flavors from the myfruiticana.com lineup, documented serving formats, and dated laboratory panels — written for school nutrition and food-service staff.`}
         />
         <HistoricalNotice className="mt-6 max-w-3xl">
           Nutrition values come from an independent laboratory analysis dated
@@ -170,7 +170,7 @@ export default async function ProductPage({
 
       <CTASection
         title="Need this information for a school program?"
-        description="Request school information and include your role, estimated enrollment, and whether you are evaluating cafeteria, snack, or distribution use."
+        description="Request school information and include your role, estimated enrollment, and whether you are evaluating cafeteria or snack-program use."
         primary={{ label: navCta.label, href: navCta.href }}
         secondary={{ label: "For Schools", href: "/schools" }}
       />

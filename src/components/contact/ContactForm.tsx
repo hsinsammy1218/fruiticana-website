@@ -66,7 +66,7 @@ export function ContactForm({ defaultInterest }: { defaultInterest?: string }) {
     const next: Errors = {};
     if (!values.name.trim()) next.name = "Please enter your name.";
     if (!values.organization.trim()) {
-      next.organization = "Please enter your school or organization.";
+      next.organization = "Please enter your school or district.";
     }
     if (!values.email.trim()) {
       next.email = "Please enter your email.";
@@ -149,7 +149,7 @@ export function ContactForm({ defaultInterest }: { defaultInterest?: string }) {
         />
         <Field
           id="organization"
-          label="School / Organization"
+          label="School or district"
           required
           error={errors.organization}
           value={fields.organization}

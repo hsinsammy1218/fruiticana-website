@@ -1,6 +1,8 @@
 /**
  * Structured school-inquiry options. Kept in data so the form, deep links,
  * and tests share one source of truth.
+ *
+ * Options are school-facing only — no wholesale or distributor paths.
  */
 
 export const interestTypes = [
@@ -8,7 +10,7 @@ export const interestTypes = [
   "Healthy Snack Program",
   "Cafeteria",
   "Events",
-  "Distribution",
+  "Classroom / Teaching",
   "Product Information",
   "Nutrition Information",
   "Other",
@@ -22,8 +24,7 @@ export const schoolTypes = [
   "Charter School",
   "School District",
   "College / University",
-  "Food-Service Provider",
-  "Distributor",
+  "School food-service operator",
   "Other",
 ] as const;
 
@@ -37,7 +38,7 @@ export const roles = [
   "Cafeteria manager",
   "Nutrition coordinator",
   "Purchasing",
-  "Distributor",
+  "Teacher",
   "Other",
 ] as const;
 

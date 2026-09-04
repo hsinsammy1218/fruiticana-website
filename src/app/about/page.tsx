@@ -8,6 +8,7 @@ import { TrustDocumentCard } from "@/components/story/TrustDocumentCard";
 import { TestimonialCard } from "@/components/ui/TestimonialCard";
 import { CTASection } from "@/components/ui/CTASection";
 import { StatGrid } from "@/components/ui/StatGrid";
+import { Vision } from "@/components/home/Vision";
 import { founders } from "@/data/timeline";
 import { storyPilotStats } from "@/data/facts";
 import { testimonials, testimonialsIntro } from "@/data/testimonials";
@@ -19,7 +20,7 @@ import { JsonLd } from "@/components/seo/JsonLd";
 export const metadata: Metadata = {
   title: "About Fruiticana",
   description:
-    "Fruiticana’s origin as a fruit-based frozen dessert, its 2003–2005 Connecticut Team Nutrition Healthy Snack pilot, later school distribution, founding team, and historical documentation.",
+    "The Fruiticana vision — what it is, why it exists, and how it was developed for schools — plus its 2003–2005 Connecticut Team Nutrition Healthy Snack pilot, founding team, and historical documentation.",
   alternates: { canonical: "/about" },
 };
 
@@ -45,8 +46,8 @@ export default function AboutPage() {
         <SectionHeading
           as="h1"
           eyebrow="About Fruiticana"
-          title="A fruit-based dessert with a documented school chapter"
-          description="Fruiticana began in 2003 as a fruit-based frozen dessert — a refreshing alternative to traditional dairy ice cream — and was evaluated in Connecticut schools through a Team Nutrition Healthy Snack pilot."
+          title="A new way to eat fruit — built for schools"
+          description="Fruiticana began in 2003 as a fruit-based frozen dessert — a refreshing alternative to traditional dairy ice cream. The vision is the what, why, and how: fruit-first, so students have a treat they want to eat, served in school programs."
         />
         <div className="mt-6 max-w-2xl space-y-4 text-base leading-[1.7] text-muted">
           <p>
@@ -62,6 +63,8 @@ export default function AboutPage() {
           </p>
         </div>
       </Section>
+
+      <Vision showHeading={false} />
 
       <Section tone="cream-100">
         <p className="text-xs font-semibold uppercase tracking-[0.18em] text-green-600">
@@ -193,7 +196,7 @@ export default function AboutPage() {
 
       <CTASection
         title="Interested in Fruiticana for Your School?"
-        description="Request school information to discuss availability, institutional servings, nutrition documentation, and food-service partnerships."
+        description="Request school information to discuss the Fruiticana vision, availability, institutional servings, and nutrition documentation for your school."
         primary={{ label: navCta.label, href: navCta.href }}
         secondary={{ label: "Flavors & Nutrition", href: "/product" }}
       />

@@ -44,7 +44,7 @@ export const timeline: TimelineEntry[] = [
     period: "Today",
     title: "Information for school decision-makers",
     description:
-      "Fruiticana is sharing this history with schools, food-service directors, and partners who want to understand the product, its nutrition documentation, and its Connecticut school chapter.",
+      "Fruiticana is sharing this vision with schools — so a principal or food-service director can understand what Fruiticana is, why it was created, and how it could work in a student program.",
   },
 ];
 

@@ -1,21 +1,23 @@
 /**
  * Copy for the For Schools page. Historical school-program facts are labeled
  * in the UI; nothing here claims Fruiticana is on menus today.
+ *
+ * Audience is school decision-makers only — not wholesale or distributors.
  */
 
 export const schoolsIntro = {
   eyebrow: "For schools",
   title: "Fruiticana for Schools",
   description:
-    "A refreshing frozen dessert option worth exploring. This page is for administrators, food-service directors, nutrition staff, private-school leaders, and partners evaluating whether Fruiticana could fit a cafeteria, snack program, or district conversation.",
+    "This page is for school decision-makers — principals, food-service directors, nutrition staff, and administrators — who want to understand Fruiticana’s vision: what it is, why it exists, and how it could work in a cafeteria or snack program.",
 } as const;
 
 export const schoolAudiences = [
-  "School administrators and principals",
+  "Principals and school administrators",
   "Superintendents and private-school directors",
   "Food-service directors and cafeteria managers",
-  "Nutrition coordinators and purchasing staff",
-  "District decision-makers and distributors",
+  "Nutrition coordinators and wellness staff",
+  "District leadership and purchasing teams",
 ] as const;
 
 export type SchoolUse = {
@@ -57,7 +59,7 @@ export const schoolUses: SchoolUse[] = [
     figure: "2008",
     figureLabel: "Lab panels on file",
     description:
-      "Nutrition, procurement, and leadership teams can share product sheets, 2008 laboratory panels, and Connecticut program records internally before a tasting or bid conversation.",
+      "Nutrition, procurement, and leadership teams can share product sheets, 2008 laboratory panels, and Connecticut program records internally before a tasting or program conversation.",
   },
   {
     slug: "events",
@@ -65,15 +67,7 @@ export const schoolUses: SchoolUse[] = [
     figure: "4 oz",
     figureLabel: "Single-serve cup",
     description:
-      "Historical serving ideas included 4 oz cups and other single-serve formats that can be discussed for fairs, family nights, or limited-time service — availability is to be confirmed.",
-  },
-  {
-    slug: "distribution",
-    title: "Food-service distribution",
-    figure: "4 oz",
-    figureLabel: "Cup size",
-    description:
-      "Distributors and food-service partners can inquire about the 4 oz single-serve cup size, the flavor lineup, and documentation needed to evaluate Fruiticana for school accounts.",
+      "Historical serving ideas included 4 oz cups that can be discussed for fairs, family nights, or limited-time service — availability is to be confirmed.",
   },
   {
     slug: "summer",
@@ -85,11 +79,11 @@ export const schoolUses: SchoolUse[] = [
   },
   {
     slug: "campus",
-    title: "Campus food service",
+    title: "Campus dining",
     figure: "12",
     figureLabel: "Flavor options",
     description:
-      "Private-school dining halls and campus food service can review the same flavor sheets, historical portions, and nutrition documentation used by K–12 evaluators.",
+      "Private-school dining halls and campus programs can review the same flavor sheets, historical portions, and nutrition documentation used by K–12 evaluators.",
   },
 ];
 
@@ -107,7 +101,7 @@ export const schoolFitPoints = [
   {
     figure: "2003–05",
     title: "Documented school chapter",
-    body: "Connecticut Team Nutrition participation (2003–2005) and later distribution to local Connecticut schools after consumer testing in 2005–2006.",
+    body: "Connecticut Team Nutrition participation (2003–2005) and later service in local Connecticut schools after consumer testing in 2005–2006.",
   },
   {
     figure: "2003",
@@ -117,4 +111,4 @@ export const schoolFitPoints = [
 ] as const;
 
 export const schoolAvailabilityNote =
-  "Fruiticana is not listing current school-menu placements on this site. Historical Connecticut participation is shared so decision-makers can evaluate fit. Product availability, current nutrition, and food-service partnerships are confirmed through a school inquiry.";
+  "Fruiticana is not listing current school-menu placements on this site. Historical Connecticut participation is shared so school teams can evaluate fit. Product availability and current nutrition are confirmed through a school inquiry.";

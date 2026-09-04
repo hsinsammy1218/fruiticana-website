@@ -185,9 +185,9 @@ export const schoolHomeBenefits: {
   {
     icon: "school",
     figure: "2005–06",
-    title: "School Food-Service Potential",
+    title: "A documented school chapter",
     description:
-      "After consumer testing, Fruiticana moved into production for local Connecticut school distribution. Current availability is confirmed through inquiry.",
+      "After consumer testing, Fruiticana moved into production for local Connecticut schools. Current availability is confirmed through a school inquiry.",
   },
   {
     icon: "leaf",

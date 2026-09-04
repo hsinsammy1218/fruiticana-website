@@ -6,11 +6,11 @@ import { formats, formatsNote } from "@/data/formats";
 
 export function ServingFormats() {
   return (
-    <Section>
+    <Section tone="white">
       <SectionHeading
-        eyebrow="How it can be served"
-        title="Institutional single-serve cups"
-        description="For school food-service review, the historical program emphasized a moderate single-serve cup portion — 4 oz (1/2 cup), matching the laboratory Nutrition Facts serving."
+        eyebrow="How"
+        title="How it can be served in school"
+        description="For school cafeteria and snack-program review, the historical program emphasized a moderate single-serve cup portion — 4 oz (1/2 cup), matching the laboratory Nutrition Facts serving."
       />
       <ul className="mt-10 grid gap-5 sm:grid-cols-1 lg:max-w-md">
         {formats.map((format) => (

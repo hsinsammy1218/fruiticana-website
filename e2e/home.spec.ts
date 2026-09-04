@@ -11,19 +11,25 @@ test.describe("home @cross-browser", () => {
       }),
     ).toBeVisible();
     await expect(page.getByText(/cream-less ice crème/i).first()).toBeVisible();
+    await expect(page.getByText(/for school decision-makers/i).first()).toBeVisible();
     await expect(
-      page.getByRole("link", { name: "Explore Flavors" }).first(),
+      page.getByRole("link", { name: "See the vision" }).first(),
     ).toBeVisible();
     await expect(
       page.getByRole("link", { name: "Request School Information" }).first(),
     ).toBeVisible();
   });
 
-  test("hero CTAs navigate to product and inquiry pages", async ({ page }) => {
+  test("hero CTAs open the vision and the school inquiry", async ({ page }) => {
     await page.goto("/");
 
-    await page.getByRole("link", { name: "Explore Flavors" }).first().click();
-    await expect(page).toHaveURL(/\/product$/);
+    await page.getByRole("link", { name: "See the vision" }).first().click();
+    await expect(page).toHaveURL(/#vision/);
+    await expect(
+      page.getByRole("heading", {
+        name: /what it is\. why it exists\. how it works for schools/i,
+      }),
+    ).toBeVisible();
 
     await page.goto("/");
     await page
@@ -33,17 +39,32 @@ test.describe("home @cross-browser", () => {
     await expect(page).toHaveURL(/\/contact$/);
   });
 
-  test("establishes brand, flavors, school relevance, and closing inquiry", async ({
+  test("establishes vision, flavors, school relevance, and closing inquiry", async ({
     page,
   }) => {
     await page.goto("/");
 
     await expect(
+      page.getByRole("heading", {
+        name: /what it is\. why it exists\. how it works for schools/i,
+      }),
+    ).toBeVisible();
+    await expect(
+      page.getByRole("heading", { name: "A fruit-based creamless frozen dessert" }),
+    ).toBeVisible();
+    await expect(
+      page.getByRole("heading", { name: "So students have a new way to eat fruit" }),
+    ).toBeVisible();
+    await expect(
+      page.getByRole("heading", { name: "Serve it in school — one cup at a time" }),
+    ).toBeVisible();
+    await expect(page.getByText(/not wholesale/i).first()).toBeVisible();
+    await expect(
       page.getByRole("heading", { name: "A Different Kind of Frozen Dessert" }),
     ).toBeVisible();
     await expect(page.getByRole("heading", { name: "Fruit Based" })).toBeVisible();
     await expect(
-      page.getByRole("heading", { name: "Fruiticana for Schools" }),
+      page.getByRole("heading", { name: "Why Fruiticana was made for schools" }),
     ).toBeVisible();
     await expect(page.getByText(/team nutrition healthy snack/i).first()).toBeVisible();
     await expect(

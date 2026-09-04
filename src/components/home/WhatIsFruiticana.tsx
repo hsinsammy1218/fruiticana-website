@@ -6,11 +6,11 @@ import { site } from "@/data/site";
 
 export function WhatIsFruiticana() {
   return (
-    <Section tone="white">
+    <Section tone="cream-100">
       <SectionHeading
-        eyebrow="What is Fruiticana?"
+        eyebrow="What"
         title="A Different Kind of Frozen Dessert"
-        description={`The Fruiticana idea began with a simple promise: ${site.tagline} A creamless frozen dessert with the delight of ice cream.`}
+        description={`The Fruiticana idea began with a simple promise: ${site.tagline} A creamless frozen dessert with the delight of ice cream — made so students can eat fruit in a form they enjoy.`}
       />
       <p className="info-copy mt-4 max-w-4xl">
         {site.shortDescription} The original consumer line was “{site.legacyTagline}”

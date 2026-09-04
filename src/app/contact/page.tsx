@@ -9,7 +9,7 @@ import { resolveInterestType } from "@/data/inquiry";
 export const metadata: Metadata = {
   title: "Bring Fruiticana to Your School",
   description:
-    "Request Fruiticana school information: product availability, institutional servings, nutrition documentation, and food-service partnerships for cafeterias, snack programs, private schools, and distributors.",
+    "Request Fruiticana school information: product availability, institutional servings, nutrition documentation, and how the fruit-based dessert could fit a cafeteria or snack program.",
   alternates: { canonical: "/contact" },
 };
 
@@ -36,7 +36,7 @@ export default async function ContactPage({
           as="h1"
           eyebrow="School inquiry"
           title="Bring Fruiticana to Your School"
-          description="Tell us about your school or organization. This form is for administrators, food-service staff, nutrition coordinators, purchasing teams, and distribution partners."
+          description="Tell us about your school. This form is for principals, food-service directors, nutrition coordinators, and other school staff — not wholesale buyers."
         />
 
         <div className="mt-10 grid gap-10 lg:grid-cols-[1.5fr_1fr] lg:gap-14">

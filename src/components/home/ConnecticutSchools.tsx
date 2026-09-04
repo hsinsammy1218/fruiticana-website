@@ -20,9 +20,10 @@ export function ConnecticutSchools() {
           <p className="mt-4 max-w-3xl text-lg leading-[1.7] text-cream/90">
             Research and development began around 2003. Product sampling reached
             approximately 30,000 consumers according to historical company
-            documentation. Fruiticana participated in the Connecticut Team
-            Nutrition Healthy Snack pilot and was later distributed to local
-            Connecticut schools, including institutional single-serving cups.
+            documentation. That chapter is how the vision was first tested in
+            schools: Fruiticana participated in the Connecticut Team Nutrition
+            Healthy Snack pilot and was later served in local Connecticut
+            schools, including individual single-serving cups.
           </p>
           <p className="mt-3 max-w-3xl leading-[1.7] text-cream/85">
             That documented chapter is useful for a school administrator. It is

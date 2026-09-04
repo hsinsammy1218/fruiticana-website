@@ -9,9 +9,9 @@ export function DesignedForSchools() {
   return (
     <Section>
       <SectionHeading
-        eyebrow="School programs"
-        title="Fruiticana for Schools"
-        description="The original Fruiticana program included school distribution and participation in Connecticut’s Team Nutrition Healthy Snack pilot. That history is shared so administrators can evaluate fit — not as a current menu claim."
+        eyebrow="Why"
+        title="Why Fruiticana was made for schools"
+        description="Fruiticana was not built as a wholesale parlor brand. The idea was a fruit-based frozen dessert that could belong in a school cafeteria or snack program — a new way for students to eat fruit."
       />
       <HistoricalNotice className="mt-6 max-w-3xl">
         This describes Fruiticana’s 2003–2006 Connecticut school chapter. It is

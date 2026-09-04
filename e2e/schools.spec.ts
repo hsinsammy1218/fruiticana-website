@@ -15,8 +15,12 @@ test.describe("for schools", () => {
     await expect(page.getByRole("heading", { name: "Healthy snack program" })).toBeVisible();
     await expect(page.getByRole("heading", { name: "Private school" })).toBeVisible();
     await expect(
-      page.getByRole("heading", { name: "Food-service distribution" }),
+      page.getByRole("heading", { name: "A fruit-based creamless frozen dessert" }),
     ).toBeVisible();
+    await expect(page.getByText(/not wholesale/i).first()).toBeVisible();
+    await expect(
+      page.getByRole("heading", { name: "Food-service distribution" }),
+    ).toHaveCount(0);
     await expect(page.getByText("Single-serve cup", { exact: true }).first()).toBeVisible();
     await expect(page.getByText("4 oz").first()).toBeVisible();
     await expect(page.getByText("2003–05").first()).toBeVisible();

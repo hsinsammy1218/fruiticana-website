@@ -29,7 +29,7 @@ test.describe("user flows", () => {
     await page.getByRole("navigation", { name: "Primary" }).getByRole("link", { name: "Contact" }).click();
     await expect(page).toHaveURL(/\/contact$/);
 
-    await fillSchoolInquiry(page, { name: "Jordan", interest: "Distribution" });
+    await fillSchoolInquiry(page, { name: "Jordan", interest: "Cafeteria" });
     await page.getByRole("button", { name: "Request Information" }).click();
     await expect(page.getByRole("status").filter({ hasText: /thanks, jordan/i })).toBeVisible();
   });

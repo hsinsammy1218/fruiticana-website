@@ -8,7 +8,7 @@ test.describe("contact form", () => {
 
     await expect(page.getByText("Please enter your name.")).toBeVisible();
     await expect(
-      page.getByText("Please enter your school or organization."),
+      page.getByText("Please enter your school or district."),
     ).toBeVisible();
     await expect(page.getByText("Please enter your email.")).toBeVisible();
     await expect(page.getByText("Please enter a message.")).toBeVisible();
@@ -18,7 +18,7 @@ test.describe("contact form", () => {
   test("rejects an invalid email and a short message", async ({ page }) => {
     await page.goto("/contact");
     await page.getByLabel(/^name/i).fill("Sam");
-    await page.getByLabel(/school \/ organization/i).fill("Lincoln Elementary");
+    await page.getByLabel(/school or district/i).fill("Lincoln Elementary");
     await page.getByLabel(/email/i).fill("not-an-email");
     await page.getByLabel(/message/i).fill("Hi there");
     await page.getByRole("button", { name: "Request Information" }).click();

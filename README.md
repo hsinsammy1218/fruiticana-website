@@ -2,16 +2,18 @@
 
 An informational site for **Fruiticana**, a fruit-based frozen dessert, built
 for **school decision-makers** — administrators, food-service directors,
-nutrition staff, private-school leaders, and distribution partners. Stack:
-Next.js (App Router), TypeScript, and Tailwind CSS.
+nutrition staff, and private-school leaders. This website is for schools, not
+wholesale. Stack: Next.js (App Router), TypeScript, and Tailwind CSS.
 
-> **Important — voice of this site.** This is not a consumer shop. The main
-> conversion is a **school inquiry**. The original Fruiticana identity (Creamless
-> Ice Cream, fruit-forward greens and yellows, “An exciting new way to eat fruit.”)
-> is preserved. Until the business verifies current facts (see the checklist
-> below), the site speaks in **concept + history** language, not **"on menus today
-> / certified today"** language. Timeline, testimonials, documentation, and
-> nutrition panels are **historical** and labeled as such.
+> **Important — voice of this site.** This is not a consumer shop or a wholesale
+> catalog. The main conversion is a **school inquiry**. Schools should leave
+> understanding the Fruiticana **vision**: what it is, why it exists, and how it
+> can work in a cafeteria or snack program. The original Fruiticana identity
+> (Creamless Ice Cream, fruit-forward greens and yellows, “An exciting new way
+> to eat fruit.”) is preserved. Until the business verifies current facts (see
+> the checklist below), the site speaks in **concept + history** language, not
+> **"on menus today / certified today"** language. Timeline, testimonials,
+> documentation, and nutrition panels are **historical** and labeled as such.
 
 ## Tech stack
 
