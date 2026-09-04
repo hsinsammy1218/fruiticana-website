@@ -25,6 +25,12 @@ test.describe("user flows", () => {
     await expect(
       page.getByRole("heading", { name: "Fruiticana in Connecticut Schools" }),
     ).toBeVisible();
+    await expect(
+      page.getByRole("heading", { name: /from the original connecticut sampling/i }),
+    ).toBeVisible();
+    await expect(page.getByText(/like nothing I have ever tasted/i)).toBeVisible();
+    await expect(page.getByText("Shawn", { exact: true })).toBeVisible();
+    await expect(page.getByText(/great stuff/i).first()).toBeVisible();
 
     await page.getByRole("navigation", { name: "Primary" }).getByRole("link", { name: "Contact" }).click();
     await expect(page).toHaveURL(/\/contact$/);

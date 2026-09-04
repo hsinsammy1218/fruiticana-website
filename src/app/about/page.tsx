@@ -12,7 +12,7 @@ import { StatGrid } from "@/components/ui/StatGrid";
 import { Vision } from "@/components/home/Vision";
 import { founders } from "@/data/timeline";
 import { storyPilotStats } from "@/data/facts";
-import { testimonials, testimonialsIntro } from "@/data/testimonials";
+import { testimonials, testimonialsIntro, testimonialsNote } from "@/data/testimonials";
 import { documents } from "@/data/documents";
 import { navCta } from "@/data/navigation";
 import { site } from "@/data/site";
@@ -179,16 +179,17 @@ export default function AboutPage() {
         </ul>
       </Section>
 
-      <Section tone="cream-100">
+      <Section tone="cream-100" id="feedback">
         <SectionHeading
           align="center"
-          eyebrow="Sampling notes"
-          title="From the original Connecticut pilot"
-          description={testimonialsIntro + ". These are taste comments from 2007."}
+          eyebrow="Customer comments"
+          title="From the original Connecticut sampling"
+          description={testimonialsIntro + "."}
         />
-        <ul className="mx-auto mt-10 grid max-w-5xl grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
+        <HistoricalNotice className="mx-auto mt-6 max-w-3xl">{testimonialsNote}</HistoricalNotice>
+        <ul className="mx-auto mt-10 grid max-w-5xl grid-cols-1 gap-5 sm:grid-cols-2">
           {testimonials.map((testimonial) => (
-            <li key={testimonial.author + testimonial.quote} className="reveal">
+            <li key={testimonial.author + testimonial.dateLabel + testimonial.headline} className="reveal">
               <TestimonialCard testimonial={testimonial} />
             </li>
           ))}
