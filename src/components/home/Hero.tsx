@@ -8,7 +8,8 @@ import { homeGlanceStats } from "@/data/facts";
 
 /**
  * Brand-first hero recreating the myfruiticana.com promise:
- * Cream-Less Ice Crème + “The New Way to Eat Fruit”, written for schools.
+ * Cream-Less Ice Crème + “The New Way to Eat Fruit”, written for school
+ * decision-makers.
  */
 export function Hero() {
   return (
@@ -30,7 +31,7 @@ export function Hero() {
         <div className="hero-rise max-w-2xl lg:max-w-none">
           <p className="inline-flex items-center gap-2 rounded-pill bg-white/70 px-3 py-1 text-sm font-semibold text-green-deep ring-1 ring-green-deep/10">
             <span className="h-2 w-2 rounded-full bg-green" aria-hidden="true" />
-            For schools and their students
+            For school administrators, principals, and food-service directors
           </p>
           <p className="mt-5 font-display text-sm font-bold uppercase tracking-[0.22em] text-green-600">
             {site.productLine}
@@ -44,8 +45,8 @@ export function Hero() {
           </p>
           <p className="mt-3 max-w-xl text-base leading-[1.7] text-muted">
             Originally introduced as {site.legacyProductName}. Smooth like ice
-            cream, built from fruit flavors — for schools and the students they
-            serve.
+            cream, built from fruit flavors — a school-program alternative to
+            traditional dairy ice cream.
           </p>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
             <Button href={navCta.href} size="lg" className="w-full sm:w-auto">

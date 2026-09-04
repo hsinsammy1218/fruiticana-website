@@ -3,9 +3,11 @@
  *
  * Brand voice is rooted in the historical myfruiticana.com consumer site
  * (Fruiticana Cream-Less Ice Crème / “The New Way to Eat Fruit”), rewritten
- * so schools and their students can understand the vision: what, why, and how.
+ * so school decision-makers can evaluate Fruiticana as a healthier frozen
+ * treat option for school programs.
  *
- * For now, this website is only for schools and their students.
+ * Primary audience: administrators, principals, food-service directors, and
+ * other school decision-makers. Primary conversion: school inquiry.
  *
  * IMPORTANT (see PLAN.md content audit): current business contact details are
  * NOT known. Do not invent an email, phone number, address, or social account.
@@ -32,12 +34,12 @@ export const site = {
   /** Alternate consumer phrasing from the business PDF — used on About. */
   legacyTagline: "An exciting new way to eat fruit.",
   heroSupport:
-    "A fruit-based creamless frozen dessert for schools and their students. The vision is simple: give students a new way to eat fruit.",
+    "A healthier frozen treat option for schools. Fruit-based and creamless — written for administrators, principals, and food-service directors.",
   /** Short brand promise used in closing sections. */
   promise:
-    "Fruit-based frozen dessert for schools and their students — what it is, why it exists, and how it can be made in-house.",
+    "A healthier frozen treat option for schools — fruit-based, creamless, and made for cafeteria and snack programs.",
   shortDescription:
-    "Fruiticana is a fruit-based creamless frozen dessert — the new way to eat fruit. For now, this site is only for schools and their students: it explains the Fruiticana vision (what, why, and how), nutrition documentation, and how it fits school programs.",
+    "Fruiticana is a healthier frozen treat option for schools: a fruit-based creamless frozen dessert. This informational site is for administrators, principals, and food-service directors evaluating cafeteria and snack programs. The next step is a school inquiry.",
   url: siteUrl,
 
   /**

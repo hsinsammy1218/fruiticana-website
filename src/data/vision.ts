@@ -1,16 +1,13 @@
 /**
- * The Fruiticana vision for schools and their students: what it is, why it
- * exists, and how it can work in a school. For now, this site is only for
- * schools and the students they serve.
- *
- * Present-day school voice: what, why, and how for schools and students.
+ * The Fruiticana vision for school decision-makers: what it is, why it
+ * exists, and how it can work as a healthier frozen treat in a school program.
  */
 
 export const visionIntro = {
   eyebrow: "The Fruiticana vision",
   title: "What it is. Why it exists. How it works for schools.",
   description:
-    "For now, this website is only for schools and their students. Fruiticana’s vision is a fruit-based frozen dessert students will actually want to eat — made in-house for school programs, without the extra cost of a specialty outside dessert.",
+    "This site is for school decision-makers — administrators, principals, and food-service directors. Fruiticana is a healthier frozen treat option for school programs: fruit-based, made in-house, without the extra cost of a specialty outside dessert.",
 } as const;
 
 export type VisionPillar = {
@@ -30,7 +27,7 @@ export const visionPillars: VisionPillar[] = [
     step: "01",
     label: "What",
     title: "A fruit-based creamless frozen dessert",
-    body: "Fruiticana is the new way to eat fruit. Originally introduced as Fruiticana Creamless Ice Cream, it was developed as a smooth, ice-cream-like frozen dessert built from fruit flavors — not traditional dairy ice cream with fruit mixed in. Twelve original flavors make that idea concrete for students.",
+    body: "Fruiticana is a healthier frozen treat option for schools — the new way to eat fruit. Originally introduced as Fruiticana Creamless Ice Cream, it was developed as a smooth, ice-cream-like frozen dessert built from fruit flavors — not traditional dairy ice cream with fruit mixed in. Twelve original flavors make that idea concrete for students.",
     figure: "12",
     figureLabel: "Original fruit flavors",
     icon: "fruit",

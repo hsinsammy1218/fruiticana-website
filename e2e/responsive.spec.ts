@@ -1,9 +1,14 @@
-import { test, expect } from "@playwright/test";
+import { test, expect, type Page } from "@playwright/test";
 import {
   expectNoBrokenImages,
   expectNoHorizontalOverflow,
   viewports,
 } from "./helpers";
+
+/** Avoid waiting on `load` — Next can leave that event pending after viewport changes. */
+async function visit(page: Page, path: string) {
+  await page.goto(path, { waitUntil: "domcontentloaded" });
+}
 
 test.describe("responsive layout @mobile", () => {
   test("phones show the hamburger and do not overflow", async ({ page }) => {
@@ -14,22 +19,22 @@ test.describe("responsive layout @mobile", () => {
       viewports.phone430,
     ]) {
       await page.setViewportSize(viewport);
-      await page.goto("/");
+      await visit(page, "/");
       await expect(page.getByRole("button", { name: "Open menu" })).toBeVisible();
       await expect(
         page.getByRole("navigation", { name: "Primary" }),
       ).toBeHidden();
       await expectNoHorizontalOverflow(page);
 
-      await page.goto("/product");
+      await visit(page, "/product");
       await expectNoHorizontalOverflow(page);
-      await page.goto("/contact");
+      await visit(page, "/contact");
       await expectNoHorizontalOverflow(page);
-      await page.goto("/schools");
+      await visit(page, "/schools");
       await expectNoHorizontalOverflow(page);
-      await page.goto("/about");
+      await visit(page, "/about");
       await expectNoHorizontalOverflow(page);
-      await page.goto("/resources");
+      await visit(page, "/resources");
       await expectNoHorizontalOverflow(page);
     }
   });
@@ -38,7 +43,7 @@ test.describe("responsive layout @mobile", () => {
     page,
   }) => {
     await page.setViewportSize(viewports.tablet768);
-    await page.goto("/");
+    await visit(page, "/");
     await expect(page.getByRole("button", { name: "Open menu" })).toBeVisible();
     await expectNoHorizontalOverflow(page);
 
@@ -48,7 +53,6 @@ test.describe("responsive layout @mobile", () => {
       viewports.desktop1440,
     ]) {
       await page.setViewportSize(viewport);
-      await page.goto("/");
       await expect(page.getByRole("button", { name: "Open menu" })).toBeHidden();
       await expect(
         page.getByRole("navigation", { name: "Primary" }).getByRole("link", {
@@ -63,14 +67,14 @@ test.describe("responsive layout @mobile", () => {
     page,
   }) => {
     await page.setViewportSize(viewports.phone390);
-    await page.goto("/product");
+    await visit(page, "/product");
     await expect(
       page.locator("#nutrition").getByRole("link", { name: "Mango", exact: true }),
     ).toBeVisible();
     await expectNoHorizontalOverflow(page);
 
     await page.setViewportSize(viewports.laptop1024);
-    await page.goto("/product");
+    await visit(page, "/product");
     await expect(
       page.locator("#nutrition").getByRole("link", { name: "Mango", exact: true }),
     ).toBeVisible();
@@ -82,7 +86,8 @@ test.describe("responsive layout @mobile", () => {
 
   test("home has no broken images at a phone viewport", async ({ page }) => {
     await page.setViewportSize(viewports.phone375);
-    await page.goto("/");
+    await visit(page, "/");
+    await expect(page.locator("img").first()).toBeVisible();
     await expectNoBrokenImages(page);
   });
 });

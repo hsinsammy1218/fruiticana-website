@@ -134,7 +134,7 @@ export const productConceptBenefits: {
     icon: "fruit",
     figure: "12",
     title: "Fruit based",
-    description: "Original fruit flavors — built from fruit, not dairy ice cream with fruit mixed in.",
+    description: "A healthier fruit-based treat — not dairy ice cream with fruit mixed in.",
   },
   {
     icon: "scoop",

@@ -26,9 +26,8 @@ export function ConnecticutSchools() {
             including individual single-serving cups.
           </p>
           <p className="mt-3 max-w-3xl leading-[1.7] text-cream/85">
-            Today Fruiticana is focused on schools and their students — a
-            fruit-based frozen dessert designed for cafeteria and snack-program
-            use.
+            Today Fruiticana is a healthier frozen treat option for school
+            programs — designed for cafeteria and snack-program service.
           </p>
           <div className="mt-6 max-w-3xl">
             <HistoricalNotice label="Note" className="border-cream/20 bg-cream/10 text-cream/90 [&_span]:text-cream">
