@@ -30,7 +30,7 @@ export function Hero() {
         <div className="hero-rise max-w-2xl lg:max-w-none">
           <p className="inline-flex items-center gap-2 rounded-pill bg-white/70 px-3 py-1 text-sm font-semibold text-green-deep ring-1 ring-green-deep/10">
             <span className="h-2 w-2 rounded-full bg-green" aria-hidden="true" />
-            For school decision-makers
+            For schools and their students
           </p>
           <p className="mt-5 font-display text-sm font-bold uppercase tracking-[0.22em] text-green-600">
             {site.productLine}
@@ -44,8 +44,8 @@ export function Hero() {
           </p>
           <p className="mt-3 max-w-xl text-base leading-[1.7] text-muted">
             Originally introduced as {site.legacyProductName}. Smooth like ice
-            cream, built from fruit flavors — for cafeterias and snack programs,
-            not wholesale.
+            cream, built from fruit flavors — for schools and the students they
+            serve.
           </p>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
             <Button href={navCta.href} size="lg" className="w-full sm:w-auto">

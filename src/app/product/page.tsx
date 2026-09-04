@@ -120,7 +120,7 @@ export default async function ProductPage({
         </div>
         <p className="info-copy mt-8 max-w-3xl">
           Teachers can also use these dated panels for Nutrition Facts literacy
-          on the classroom resource. Food-service readers should treat them as
+          on the classroom resource. School teams should treat them as
           historical reference only.
         </p>
         <div className="mt-4">

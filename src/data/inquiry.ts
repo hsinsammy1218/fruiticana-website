@@ -2,7 +2,7 @@
  * Structured school-inquiry options. Kept in data so the form, deep links,
  * and tests share one source of truth.
  *
- * Options are school-facing only — no wholesale or distributor paths.
+ * Options are for schools and their students only — for now.
  */
 
 export const interestTypes = [
@@ -23,9 +23,7 @@ export const schoolTypes = [
   "Public School",
   "Charter School",
   "School District",
-  "College / University",
-  "School food-service operator",
-  "Other",
+  "Other school program",
 ] as const;
 
 export type SchoolType = (typeof schoolTypes)[number];

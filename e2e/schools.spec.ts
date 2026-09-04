@@ -17,7 +17,7 @@ test.describe("for schools", () => {
     await expect(
       page.getByRole("heading", { name: "A fruit-based creamless frozen dessert" }),
     ).toBeVisible();
-    await expect(page.getByText(/not wholesale/i).first()).toBeVisible();
+    await expect(page.getByText(/only for schools and their students/i).first()).toBeVisible();
     await expect(
       page.getByRole("heading", { name: "Food-service distribution" }),
     ).toHaveCount(0);

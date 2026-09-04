@@ -1,8 +1,8 @@
 # Fruiticana Website Implementation Plan
 
-Next.js 16 informational website for **school decision-makers**. The 2003–2011 business PDF and the 2007 myfruiticana.com archive are historical source material with strict claim qualification. There is no consumer shop, cart, or “buy now” path. **This site is for schools, not wholesale.**
+Next.js 16 informational website for **schools and their students**. The 2003–2011 business PDF and the 2007 myfruiticana.com archive are historical source material with strict claim qualification. There is no consumer shop, cart, or “buy now” path. **For now, this site is only for schools and the students they serve.**
 
-**Core goal:** Recreate the recognizable Fruiticana identity from the original website, modernized for 2026, so a principal or food-service director can understand the Fruiticana vision — the what, why, and how — and request information.
+**Core goal:** Recreate the recognizable Fruiticana identity from the original website, modernized for 2026, so a school team can understand the Fruiticana vision — the what, why, and how — and request information for students.
 
 **Primary conversion:** School inquiry — **Request School Information** / **Bring Fruiticana to Your School**.
 

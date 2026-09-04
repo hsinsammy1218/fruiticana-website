@@ -13,15 +13,14 @@ describe("vision data", () => {
     expect(visionIntro.title).toMatch(/how/i);
   });
 
-  it("positions the site for schools rather than wholesale", () => {
+  it("positions the site for schools and their students only", () => {
     const copy = [
       visionIntro.description,
       ...visionPillars.map((pillar) => `${pillar.title} ${pillar.body}`),
     ].join(" ");
     expect(copy).toMatch(/schools/i);
-    expect(copy).toMatch(/not wholesale/i);
-    expect(copy).not.toMatch(/distributor/i);
-    expect(copy).not.toMatch(/for wholesale/i);
+    expect(copy).toMatch(/students/i);
+    expect(visionIntro.description).toMatch(/only for schools and their students/i);
   });
 
   it("keeps the how pillar on in-house school prep without specialty cost", () => {

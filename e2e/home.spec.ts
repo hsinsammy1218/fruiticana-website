@@ -11,7 +11,7 @@ test.describe("home @cross-browser", () => {
       }),
     ).toBeVisible();
     await expect(page.getByText(/cream-less ice crème/i).first()).toBeVisible();
-    await expect(page.getByText(/for school decision-makers/i).first()).toBeVisible();
+    await expect(page.getByText(/for schools and their students/i).first()).toBeVisible();
     await expect(
       page.getByRole("link", { name: "See the vision" }).first(),
     ).toBeVisible();
@@ -61,7 +61,7 @@ test.describe("home @cross-browser", () => {
       }),
     ).toBeVisible();
     await expect(page.getByText(/easy for school kitchens/i).first()).toBeVisible();
-    await expect(page.getByText(/not wholesale/i).first()).toBeVisible();
+    await expect(page.getByText(/only for schools and their students/i).first()).toBeVisible();
     await expect(
       page.getByRole("heading", { name: "A different kind of frozen dessert" }),
     ).toBeVisible();

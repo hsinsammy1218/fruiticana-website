@@ -32,7 +32,7 @@ export function TimelineForeground() {
           Fruiticana from the start
         </p>
         <p className="mt-2 max-w-[15rem] font-sans text-2xl font-extrabold leading-tight text-green-deep">
-          A fruit-first idea for schools.
+          A fruit-first idea for schools and students.
         </p>
 
         <div className="relative mx-auto mt-4 aspect-square w-full max-w-[24rem]">

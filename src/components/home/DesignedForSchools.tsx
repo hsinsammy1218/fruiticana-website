@@ -11,7 +11,7 @@ export function DesignedForSchools() {
       <SectionHeading
         eyebrow="Why"
         title="Why Fruiticana was made for schools"
-        description="Fruiticana was not built as a wholesale parlor brand. The idea was a fruit-based frozen dessert that could belong in a school cafeteria or snack program — a new way for students to eat fruit."
+        description="For now, Fruiticana is only for schools and their students. The idea is a fruit-based frozen dessert that belongs in a school cafeteria or snack program — a new way for students to eat fruit."
       />
       <HistoricalNotice className="mt-6 max-w-3xl">
         This describes Fruiticana’s 2003–2006 Connecticut school chapter. It is

@@ -26,7 +26,7 @@ import { FlavorGrid } from "@/components/flavors/FlavorGrid";
 export const metadata: Metadata = {
   title: "For Schools",
   description:
-    "The Fruiticana vision for schools — what it is, why it exists, and how a fruit-based frozen dessert could fit cafeterias, snack programs, private schools, and events — with historical Connecticut program context.",
+    "The Fruiticana vision for schools and their students — what it is, why it exists, and how a fruit-based frozen dessert could fit cafeterias, snack programs, and school events — with historical Connecticut program context.",
   alternates: { canonical: "/schools" },
 };
 

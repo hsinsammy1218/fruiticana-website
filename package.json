@@ -2,7 +2,7 @@
   "name": "fruiticana-website",
   "version": "0.1.0",
   "private": true,
-  "description": "Fruiticana - an informational school website for a fruit-based frozen dessert (Next.js App Router).",
+  "description": "Fruiticana - informational site for schools and their students about a fruit-based frozen dessert (Next.js App Router).",
   "scripts": {
     "dev": "next dev",
     "build": "next build",

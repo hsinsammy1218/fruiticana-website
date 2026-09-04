@@ -2,22 +2,22 @@
  * Copy for the For Schools page. Historical school-program facts are labeled
  * in the UI; nothing here claims Fruiticana is on menus today.
  *
- * Audience is school decision-makers only — not wholesale or distributors.
+ * For now, the audience is only schools and their students.
  */
 
 export const schoolsIntro = {
   eyebrow: "For schools",
   title: "Fruiticana for Schools",
   description:
-    "This page is for school decision-makers — principals, food-service directors, nutrition staff, and administrators — who want to understand Fruiticana’s vision: what it is, why it exists, and how it could work in a cafeteria or snack program.",
+    "For now, this page is only for schools and their students. Principals, food-service directors, nutrition staff, and administrators can review the vision — what Fruiticana is, why it exists, and how it can work in a cafeteria or snack program for students.",
 } as const;
 
 export const schoolAudiences = [
+  "Schools and the students they serve",
   "Principals and school administrators",
-  "Superintendents and private-school directors",
   "Food-service directors and cafeteria managers",
   "Nutrition coordinators and wellness staff",
-  "District leadership and purchasing teams",
+  "Teachers and classroom programs",
 ] as const;
 
 export type SchoolUse = {
@@ -79,11 +79,11 @@ export const schoolUses: SchoolUse[] = [
   },
   {
     slug: "campus",
-    title: "Campus dining",
+    title: "School dining hall",
     figure: "12",
     figureLabel: "Flavor options",
     description:
-      "Private-school dining halls and campus programs can review the same flavor sheets, historical portions, and nutrition documentation used by K–12 evaluators.",
+      "Private-school dining halls and student meal programs can review the same flavor sheets, historical portions, and nutrition documentation used by K–12 evaluators.",
   },
 ];
 
