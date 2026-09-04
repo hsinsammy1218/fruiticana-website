@@ -4,6 +4,7 @@ import { Section } from "@/components/layout/Section";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { HistoricalNotice } from "@/components/ui/HistoricalNotice";
 import { HistoricalTimeline } from "@/components/story/HistoricalTimeline";
+import { TimelineForeground } from "@/components/story/TimelineForeground";
 import { TrustDocumentCard } from "@/components/story/TrustDocumentCard";
 import { TestimonialCard } from "@/components/ui/TestimonialCard";
 import { CTASection } from "@/components/ui/CTASection";
@@ -123,8 +124,9 @@ export default function AboutPage() {
           title="Product development timeline"
           description="The milestones below are drawn from Fruiticana's historical business record. Nothing is invented for years the document does not cover."
         />
-        <div className="mt-10">
+        <div className="mt-10 grid items-start gap-10 lg:grid-cols-[minmax(0,1.15fr)_minmax(17rem,0.85fr)] lg:gap-14">
           <HistoricalTimeline />
+          <TimelineForeground />
         </div>
       </Section>
 
