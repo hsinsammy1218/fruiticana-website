@@ -29,7 +29,7 @@ export default function Home() {
       <SupportingDocs />
       <CTASection
         title="Interested in Fruiticana for Your School?"
-        description="Request school information to discuss the Fruiticana vision, product formats, nutrition documentation, and how a cafeteria or snack program conversation could start."
+        description="Request school information to evaluate Fruiticana as a healthier frozen treat for cafeteria or snack service — flavors, nutrition documentation, and program fit."
         primary={{ label: navCta.label, href: navCta.href }}
         secondary={{ label: "Explore Flavors", href: "/product" }}
       />

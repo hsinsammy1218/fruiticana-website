@@ -10,7 +10,7 @@ export function DesignedForSchools() {
       <SectionHeading
         eyebrow="Why"
         title="Why Fruiticana was made for schools"
-        description="For now, Fruiticana is only for schools and their students. The idea is a fruit-based frozen dessert that belongs in a school cafeteria or snack program — a new way for students to eat fruit."
+        description="For administrators, principals, and food-service directors. Fruiticana is a fruit-based frozen treat meant for school kitchens, cafeterias, and snack programs."
       />
       <ul className="mt-8 grid grid-cols-1 items-stretch gap-4 sm:grid-cols-2 xl:grid-cols-4">
         {schoolHomeBenefits.map((benefit) => (
