@@ -94,8 +94,9 @@ as `?flavor=` is preserved). `/story` redirects to `/about`. Individual
   reference only. They are not served on the live site.
 - **Contact details / social** are `null` in `src/data/site.ts` and render as
   "coming soon". Fill them in only with verified, current information.
-- **Historical scans** are summarized on-site. Do not add fake “Download PDF”
-  buttons until rights-cleared files exist.
+- **Historical scans** are shown on Resources and documentation cards as
+  on-site archive page images for school background. Original PDF downloads
+  stay unpublished until rights-cleared source files exist.
 
 ### Historical nutrition data
 

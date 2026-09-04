@@ -83,7 +83,12 @@ test.describe("home @cross-browser", () => {
     await expect(page.getByText("Original fruit flavors", { exact: true }).first()).toBeVisible();
     await expect(page.getByText("Total fat on 2008 panels", { exact: true })).toBeVisible();
     await expect(
-      page.getByText(/downloadable scan is not published/i).first(),
+      page.getByRole("img", {
+        name: /connecticut team nutrition pilot letter/i,
+      }).first(),
+    ).toBeVisible();
+    await expect(
+      page.getByText(/archive image shown above|view document image|downloadable original pdf is not published/i).first(),
     ).toBeVisible();
 
     await page.getByRole("link", { name: "Explore Our History" }).click();

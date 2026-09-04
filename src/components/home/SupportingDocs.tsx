@@ -20,7 +20,7 @@ export function SupportingDocs() {
         <SectionHeading
           eyebrow="Documentation"
           title="Historical documentation"
-          description="Organized records from Fruiticana’s historical business file. Materials from 2003–2011 are marked historical until their current validity is confirmed."
+          description="Organized records from Fruiticana’s historical business file, with archive page images for school review. Materials from 2003–2011 are marked historical until their current validity is confirmed."
         />
         <Button href="/resources" variant="secondary">
           View all resources

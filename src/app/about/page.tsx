@@ -169,7 +169,7 @@ export default function AboutPage() {
         <SectionHeading
           eyebrow="Supporting documentation"
           title="Historical records, not current badges"
-          description="Fruiticana's business record includes documents from roughly 2004-2008. We share them as historical records - not as current certifications or endorsements. Scans are not offered as downloads."
+          description="Fruiticana's business record includes documents from roughly 2004-2008. Archive images are shown for school background — not as current certifications or endorsements. Original PDF downloads are not published."
         />
         <ul className="mt-10 grid grid-cols-1 gap-5 md:grid-cols-2">
           {documents.map((document) => (

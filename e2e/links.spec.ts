@@ -60,9 +60,14 @@ test.describe("links and seo", () => {
     await expect(
       page.getByText("Historical document — provided for background/reference.").first(),
     ).toBeVisible();
+    await expect(
+      page.getByRole("img", {
+        name: /connecticut team nutrition pilot letter/i,
+      }).first(),
+    ).toBeVisible();
     await expect(page.getByRole("link", { name: /download/i })).toHaveCount(0);
     await expect(
-      page.getByText(/downloadable or printable scan is not published/i).first(),
+      page.getByText(/downloadable original pdf is not published/i).first(),
     ).toBeVisible();
   });
 
