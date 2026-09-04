@@ -82,10 +82,9 @@ as `?flavor=` is preserved). `/story` redirects to `/about`. Individual
 
 ## Replacing placeholders
 
-- **Flavor images** (`public/images/flavors/*.svg`) are clearly-replaceable
-  placeholder artwork. Drop in real product photography (WebP) and update
-  `image`/`imageAlt` in `src/data/flavors.ts`. When you switch to raster photos,
-  change `FlavorImage` to use `next/image`.
+- **Flavor images** (`public/images/flavors/*.webp`) are fruit photography
+  representing each flavor. Replace with rights-cleared product photography
+  when available and keep `image` / `imageAlt` in `src/data/flavors.ts` in sync.
 - **Logo** is a Fruiticana lockup with strawberry i-dots inspired by the 2007
   myfruiticana.com wordmark (`src/components/ui/Logo.tsx`). A rights-cleared
   vector file from the owner can still replace it.

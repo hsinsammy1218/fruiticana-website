@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { cn } from "@/lib/cn";
 import type { Flavor } from "@/data/flavors";
 
@@ -8,24 +9,18 @@ type FlavorImageProps = {
 };
 
 /**
- * Renders the flavor's placeholder artwork.
- *
- * The current art is decorative (the flavor name is always shown as adjacent
- * text), so alt="" is correct for screen readers. When real product
- * photography (WebP) replaces the SVGs, switch this to next/image and use
- * `flavor.imageAlt` for meaningful alt text.
+ * Fruit photography for each flavor. Alt is empty because the flavor name
+ * is always rendered as adjacent text (card title or detail hero).
  */
 export function FlavorImage({ flavor, className, priority }: FlavorImageProps) {
   return (
-    // eslint-disable-next-line @next/next/no-img-element
-    <img
+    <Image
       src={flavor.image}
       alt=""
-      aria-hidden="true"
       width={1200}
       height={800}
-      loading={priority ? "eager" : "lazy"}
-      decoding="async"
+      priority={priority}
+      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
       className={cn("h-full w-full object-cover", className)}
     />
   );
