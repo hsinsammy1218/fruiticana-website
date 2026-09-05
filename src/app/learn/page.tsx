@@ -185,7 +185,7 @@ export default function LearnPage() {
           id="fruits-heading"
           eyebrow="Module 1"
           title="Twelve fruits to know"
-          description="Each original Fruiticana flavor is inspired by a real fruit (Lemonade starts with lemon; Raisin is a dried grape). These cards are botany and geography — not nutrition claims."
+          description="Each original Fruiticana flavor is inspired by a real fruit (Lemonade starts with lemon; Raisin is a dried grape). These cards are botany, geography, and fruit-reference notes — not Fruiticana nutrition claims."
         />
         <ul className="mt-10 grid grid-cols-1 gap-5 sm:grid-cols-2 xl:grid-cols-3">
           {fruitLessons.map((lesson) => (

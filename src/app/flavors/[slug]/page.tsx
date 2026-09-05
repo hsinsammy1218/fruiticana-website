@@ -16,6 +16,7 @@ import {
   getRelatedFlavors,
 } from "@/data/flavors";
 import { getFruitLesson } from "@/data/learn";
+import { FruitReferenceNotesList } from "@/components/learn/FruitLessonCard";
 
 type Params = { slug: string };
 
@@ -106,6 +107,17 @@ export default async function FlavorPage({
                 <span className="font-semibold text-green-deep">Try this: </span>
                 {lesson.tryThis}
               </p>
+              {lesson.referenceNotes ? (
+                <>
+                  <p className="text-xs font-semibold uppercase tracking-wide text-green-600">
+                    Fruit-reference notes
+                  </p>
+                  <p className="text-sm text-muted">
+                    About this fruit — not Fruiticana nutrition claims.
+                  </p>
+                  <FruitReferenceNotesList notes={lesson.referenceNotes} />
+                </>
+              ) : null}
               <Button href="/learn#fruits" variant="secondary">
                 All twelve fruit lessons
               </Button>
