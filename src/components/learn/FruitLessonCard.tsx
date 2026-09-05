@@ -1,8 +1,31 @@
 import Link from "next/link";
 import { getFlavor } from "@/data/flavors";
-import type { FruitLesson } from "@/data/learn";
+import type { FruitLesson, FruitReferenceNotes } from "@/data/learn";
 import { FlavorImage } from "@/components/flavors/FlavorImage";
 import { ArrowRightIcon } from "@/components/ui/icons";
+
+const referenceNoteLabels: {
+  key: keyof FruitReferenceNotes;
+  label: string;
+}[] = [
+  { key: "strengths", label: "Strengths" },
+  { key: "eatWith", label: "Eat with" },
+  { key: "caution", label: "Caution" },
+  { key: "curiosity", label: "Curiosity" },
+];
+
+export function FruitReferenceNotesList({ notes }: { notes: FruitReferenceNotes }) {
+  return (
+    <dl className="info-copy mt-3 space-y-2">
+      {referenceNoteLabels.map(({ key, label }) => (
+        <div key={key}>
+          <dt className="font-semibold text-green-deep">{label}</dt>
+          <dd className="text-muted">{notes[key]}</dd>
+        </div>
+      ))}
+    </dl>
+  );
+}
 
 export function FruitLessonCard({ lesson }: { lesson: FruitLesson }) {
   const flavor = getFlavor(lesson.slug);
@@ -40,6 +63,14 @@ export function FruitLessonCard({ lesson }: { lesson: FruitLesson }) {
             <dd className="text-muted">{lesson.tryThis}</dd>
           </div>
         </dl>
+        {lesson.referenceNotes ? (
+          <>
+            <p className="mt-4 text-xs font-semibold uppercase tracking-wide text-green-600">
+              Fruit-reference notes
+            </p>
+            <FruitReferenceNotesList notes={lesson.referenceNotes} />
+          </>
+        ) : null}
         {flavor ? (
           <Link
             href={`/flavors/${flavor.slug}`}

@@ -18,6 +18,11 @@ test.describe("learn", () => {
 
     await expect(page.getByRole("heading", { name: "Twelve fruits to know" })).toBeVisible();
     await expect(page.getByRole("heading", { name: "Apricot" })).toBeVisible();
+    await expect(page.getByText("Strengths", { exact: true })).toBeVisible();
+    await expect(page.getByText("Eat with", { exact: true })).toBeVisible();
+    await expect(page.getByText("Caution", { exact: true })).toBeVisible();
+    await expect(page.getByText("Curiosity", { exact: true })).toBeVisible();
+    await expect(page.getByText(/only 4 varieties of grapes/i)).toBeVisible();
     await expect(page.getByRole("heading", { name: "How to read a Nutrition Facts panel" })).toBeVisible();
     await expect(
       page.getByRole("heading", { name: "Connecticut Team Nutrition Healthy Snack Pilot" }),

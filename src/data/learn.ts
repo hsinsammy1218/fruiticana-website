@@ -9,6 +9,13 @@
 
 export type GradeBand = "elementary" | "middle" | "high";
 
+export type FruitReferenceNotes = {
+  strengths: string;
+  eatWith: string;
+  caution: string;
+  curiosity: string;
+};
+
 export type FruitLesson = {
   slug: string;
   fruitName: string;
@@ -18,6 +25,11 @@ export type FruitLesson = {
   typicalOrigin: string;
   classroomFact: string;
   tryThis: string;
+  /**
+   * Optional fruit-reference notes about the ingredient fruit itself —
+   * not Fruiticana nutrition claims.
+   */
+  referenceNotes?: FruitReferenceNotes;
 };
 
 export type ScienceCard = {
@@ -150,6 +162,16 @@ export const fruitLessons: FruitLesson[] = [
       "Drying is a food-preservation method. Removing water slows spoilage and changes texture, sweetness, and shelf life.",
     tryThis:
       "Weigh grapes, then raisins. Why does a smaller handful of raisins taste sweeter?",
+    referenceNotes: {
+      strengths:
+        "Low in fat, with no cholesterol, raisins are high in potassium but low in sodium to benefit those with sodium-related high blood pressure. A good source of iron. Lots of fiber, a good portion of which is the soluble form that can help lower cholesterol. Dark raisins are among the few fruits that can be dried and stored without sulfuring.",
+      eatWith:
+        "Foods high in vitamin C to help the iron be absorbed better. Raisins are good in rice and poultry dishes, and they add natural sweetness to baked goods, chutneys, and stuffings.",
+      caution:
+        "Pediatricians warn that children under 4 could easily choke on raisins. Dried fruit often leaves a sticky residue on teeth, possibly leading to cavities; brush after eating. Allergy alert: those allergic to aspirin may react to the natural salicylate in raisins.",
+      curiosity:
+        "Only 4 varieties of grapes are suitable for drying into raisins.",
+    },
   },
   {
     slug: "strawberry",

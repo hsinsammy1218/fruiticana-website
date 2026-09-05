@@ -19,6 +19,14 @@ describe("classroom learn content", () => {
     }
   });
 
+  it("includes raisin fruit-reference notes for strengths, eat with, caution, and curiosity", () => {
+    const raisin = getFruitLesson("raisin");
+    expect(raisin?.referenceNotes?.strengths).toMatch(/potassium/i);
+    expect(raisin?.referenceNotes?.eatWith).toMatch(/vitamin C/i);
+    expect(raisin?.referenceNotes?.caution).toMatch(/choke/i);
+    expect(raisin?.referenceNotes?.curiosity).toMatch(/4 varieties/i);
+  });
+
   it("does not invent a lesson for unknown slugs", () => {
     expect(getFruitLesson("not-a-fruit")).toBeUndefined();
   });

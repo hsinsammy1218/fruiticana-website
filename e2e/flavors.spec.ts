@@ -43,6 +43,16 @@ test.describe("flavors", () => {
     ).toHaveAttribute("aria-current", "true");
   });
 
+  test("raisin flavor sheet includes fruit-reference notes", async ({ page }) => {
+    await page.goto("/flavors/raisin");
+    await expect(page.getByRole("heading", { level: 1, name: "Raisin" })).toBeVisible();
+    await expect(page.getByText("Strengths", { exact: true })).toBeVisible();
+    await expect(page.getByText("Eat with", { exact: true })).toBeVisible();
+    await expect(page.getByText("Caution", { exact: true })).toBeVisible();
+    await expect(page.getByText("Curiosity", { exact: true })).toBeVisible();
+    await expect(page.getByText(/children under 4/i)).toBeVisible();
+  });
+
   test("all flavor slugs render a heading", async ({ page }) => {
     for (const slug of flavorSlugs) {
       await page.goto(`/flavors/${slug}`);
