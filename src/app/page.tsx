@@ -1,4 +1,5 @@
 import { Hero } from "@/components/home/Hero";
+import { HealthierChoice } from "@/components/home/HealthierChoice";
 import { WhatIsFruiticana } from "@/components/home/WhatIsFruiticana";
 import { FeaturedFlavors } from "@/components/home/FeaturedFlavors";
 import { DesignedForSchools } from "@/components/home/DesignedForSchools";
@@ -12,6 +13,7 @@ export default function Home() {
   return (
     <>
       <Hero />
+      <HealthierChoice />
       <WhatIsFruiticana />
       <FeaturedFlavors />
       <DesignedForSchools />

@@ -23,6 +23,32 @@ test.describe("home @cross-browser", () => {
     ).toBeVisible();
   });
 
+  test("leads with the healthier core benefit before taste and flavors", async ({
+    page,
+  }) => {
+    await page.goto("/");
+
+    await expect(
+      page.getByRole("heading", { name: "A healthier way to eat fruit" }),
+    ).toBeVisible();
+    await expect(
+      page.getByRole("heading", { name: "Fruit, not dairy" }),
+    ).toBeVisible();
+    await expect(
+      page.getByRole("heading", { name: "0 g fat on 2008 panels" }),
+    ).toBeVisible();
+    await expect(
+      page.getByRole("heading", { name: "Healthy Snack pilot" }),
+    ).toBeVisible();
+    // The health beat stays qualified by the 2008 laboratory source.
+    await expect(
+      page.getByText(/2008 laboratory analysis/i).first(),
+    ).toBeVisible();
+    await expect(
+      page.getByRole("link", { name: "See the Nutrition Information" }),
+    ).toHaveAttribute("href", "/product#nutrition");
+  });
+
   test("hero CTAs open the flavors and the school inquiry", async ({ page }) => {
     await page.goto("/");
 
