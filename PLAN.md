@@ -67,16 +67,16 @@ Redirects: `/flavors` and `/nutrition` → `/product`; `/story` → `/about`.
 
 ## 4. Homepage order
 
-1. Hero — Fruiticana + original tagline + school-only support line
-2. The Fruiticana vision — What / Why / How
-3. What Is Fruiticana? (product concept)
+1. Hero — Fruiticana + tagline, the frozen-treat / better-for-schools dual message, and the school inquiry CTA
+2. What Is Fruiticana? (product concept — taste-forward)
+3. Featured flavors (6)
 4. Why Fruiticana was made for schools
-5. How it can be served in school
-6. Featured flavors (6)
-7. Built for schools — proven with students
-8. Nutrition information
-9. School documentation
-10. Closing school CTA
+5. How it can be served in school (4 oz single-serve)
+6. Built for schools, taste-tested with students (Connecticut record)
+7. Credibility & documentation band (high-level; links to Resources and Flavors & Nutrition)
+8. Closing school CTA
+
+The standalone What / Why / How vision block now lives on About and For Schools; the homepage keeps the same what/why/how narrative through the section eyebrows. Detailed nutrition panels and regulatory/document cards live on Flavors & Nutrition and Resources — not the homepage.
 
 ---
 

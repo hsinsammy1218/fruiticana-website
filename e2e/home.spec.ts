@@ -10,25 +10,26 @@ test.describe("home @cross-browser", () => {
         name: /the new way\s+to eat fruit/i,
       }),
     ).toBeVisible();
+    await expect(
+      page.getByText(/the frozen treat students want/i).first(),
+    ).toBeVisible();
     await expect(page.getByText(/cream-less ice crème/i).first()).toBeVisible();
     await expect(page.getByText(/for schools and their students/i).first()).toBeVisible();
     await expect(
-      page.getByRole("link", { name: "See the vision" }).first(),
+      page.getByRole("link", { name: "Explore the Flavors" }).first(),
     ).toBeVisible();
     await expect(
       page.getByRole("link", { name: "Request School Information" }).first(),
     ).toBeVisible();
   });
 
-  test("hero CTAs open the vision and the school inquiry", async ({ page }) => {
+  test("hero CTAs open the flavors and the school inquiry", async ({ page }) => {
     await page.goto("/");
 
-    await page.getByRole("link", { name: "See the vision" }).first().click();
-    await expect(page).toHaveURL(/#vision/);
+    await page.getByRole("link", { name: "Explore the Flavors" }).first().click();
+    await expect(page).toHaveURL(/\/product/);
     await expect(
-      page.getByRole("heading", {
-        name: /what it is\. why it exists\. how it works for schools/i,
-      }),
+      page.getByRole("heading", { name: /twelve original fruit flavors/i }),
     ).toBeVisible();
 
     await page.goto("/");
@@ -39,29 +40,11 @@ test.describe("home @cross-browser", () => {
     await expect(page).toHaveURL(/\/contact$/);
   });
 
-  test("establishes vision, flavors, school relevance, and closing inquiry", async ({
+  test("establishes product taste, flavors, school relevance, and closing inquiry", async ({
     page,
   }) => {
     await page.goto("/");
 
-    await expect(
-      page.getByRole("heading", {
-        name: /what it is\. why it exists\. how it works for schools/i,
-      }),
-    ).toBeVisible();
-    await expect(
-      page.getByRole("heading", { name: "A fruit-based creamless frozen dessert" }),
-    ).toBeVisible();
-    await expect(
-      page.getByRole("heading", { name: "So students have a new way to eat fruit" }),
-    ).toBeVisible();
-    await expect(
-      page.getByRole("heading", {
-        name: /make it in-house — without the extra cost/i,
-      }),
-    ).toBeVisible();
-    await expect(page.getByText(/easy for school kitchens/i).first()).toBeVisible();
-    await expect(page.getByText(/only for schools and their students/i).first()).toBeVisible();
     await expect(
       page.getByRole("heading", { name: "A different kind of frozen dessert" }),
     ).toBeVisible();
@@ -69,30 +52,28 @@ test.describe("home @cross-browser", () => {
     await expect(page.getByRole("heading", { name: "Ice-cream feel" })).toBeVisible();
     await expect(page.getByRole("heading", { name: "Single-serve cups" })).toBeVisible();
     await expect(
+      page.getByRole("heading", { name: "Twelve fruit flavors" }),
+    ).toBeVisible();
+    await expect(
       page.getByRole("heading", { name: "Why Fruiticana was made for schools" }),
     ).toBeVisible();
     await expect(page.getByText(/team nutrition healthy snack/i).first()).toBeVisible();
     await expect(
-      page.getByRole("heading", { name: "Twelve fruit flavors" }),
+      page.getByRole("heading", {
+        name: "Built for schools, taste-tested with students",
+      }),
     ).toBeVisible();
     await expect(
-      page.getByRole("heading", { name: "Built for schools — proven with students" }),
-    ).toBeVisible();
-    await expect(
-      page.getByRole("heading", { name: /school documentation/i }),
+      page.getByRole("heading", { name: /backed by a documented school record/i }),
     ).toBeVisible();
     await expect(page.getByText("~30,000").first()).toBeVisible();
     await expect(page.getByText("4 oz").first()).toBeVisible();
     await expect(page.getByText("Original fruit flavors", { exact: true }).first()).toBeVisible();
     await expect(page.getByText("Total fat on 2008 panels", { exact: true })).toBeVisible();
+
     await expect(
-      page.getByRole("img", {
-        name: /connecticut team nutrition pilot letter/i,
-      }).first(),
-    ).toBeVisible();
-    await expect(
-      page.getByText(/document image shown above|view document image|downloadable original pdf is not published/i).first(),
-    ).toBeVisible();
+      page.getByRole("main").getByRole("link", { name: "View Documentation" }),
+    ).toHaveAttribute("href", "/resources");
 
     await page.getByRole("link", { name: "Read Our Story" }).click();
     await expect(page).toHaveURL(/\/about$/);

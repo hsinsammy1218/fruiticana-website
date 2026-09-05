@@ -59,31 +59,8 @@ export default async function ProductPage({
           as="h1"
           eyebrow={site.productLine}
           title="Flavors, servings, and nutrition"
-          description={`${site.tagline} Review the original 12 fruit flavors from the myfruiticana.com lineup, documented serving formats, and laboratory panels — written for school nutrition and food-service staff.`}
+          description={`${site.tagline} Start with the original 12 fruit flavors, then explore the 4 oz single-serve format and the laboratory nutrition panels — all written for school review.`}
         />
-        <HistoricalNotice className="mt-6 max-w-3xl">
-          Nutrition values come from an independent laboratory analysis dated
-          2008 (Northeast Laboratories, Inc., report #20080318F). Confirm these
-          figures against your current Fruiticana formulation before menu
-          planning.
-        </HistoricalNotice>
-        <StatGrid
-          className="mt-10"
-          items={glance}
-          aria-label="2008 nutrition snapshot"
-        />
-        <p className="info-copy mt-6 max-w-3xl">
-          Every 2008 panel recorded {snapshot.allZeroFat ? "0 g total fat" : "see panels"},{" "}
-          {snapshot.allZeroSaturatedFat ? "0 g saturated fat" : "see panels"},{" "}
-          {snapshot.allZeroTransFat ? "0 g trans fat" : "see panels"}, and{" "}
-          {snapshot.allZeroCholesterol ? "0 mg cholesterol" : "see panels"} per{" "}
-          {snapshot.servingSize} ({snapshot.servingGrams} g). Calories ranged from{" "}
-          {snapshot.calorieMin} to {snapshot.calorieMax}
-          {snapshot.flavorsMissingCalories.length > 0
-            ? ` (${snapshot.flavorsMissingCalories.join(", ")} left blank because the scan was illegible)`
-            : ""}
-          . Sodium ranged from {snapshot.sodiumMin}–{snapshot.sodiumMax} mg.
-        </p>
       </Section>
 
       <Section id="flavors" className="scroll-mt-24 pt-4">
@@ -114,6 +91,29 @@ export default async function ProductPage({
           title="Laboratory nutrition analyses"
           description="Select a flavor to view its transcribed 2008 Nutrition Facts panel. Banana calories stay blank because the source scan was illegible."
         />
+        <HistoricalNotice className="mt-6 max-w-3xl">
+          Nutrition values come from an independent laboratory analysis dated
+          2008 (Northeast Laboratories, Inc., report #20080318F). Confirm these
+          figures against your current Fruiticana formulation before menu
+          planning.
+        </HistoricalNotice>
+        <StatGrid
+          className="mt-10"
+          items={glance}
+          aria-label="2008 nutrition snapshot"
+        />
+        <p className="info-copy mt-6 max-w-3xl">
+          Every 2008 panel recorded {snapshot.allZeroFat ? "0 g total fat" : "see panels"},{" "}
+          {snapshot.allZeroSaturatedFat ? "0 g saturated fat" : "see panels"},{" "}
+          {snapshot.allZeroTransFat ? "0 g trans fat" : "see panels"}, and{" "}
+          {snapshot.allZeroCholesterol ? "0 mg cholesterol" : "see panels"} per{" "}
+          {snapshot.servingSize} ({snapshot.servingGrams} g). Calories ranged from{" "}
+          {snapshot.calorieMin} to {snapshot.calorieMax}
+          {snapshot.flavorsMissingCalories.length > 0
+            ? ` (${snapshot.flavorsMissingCalories.join(", ")} left blank because the scan was illegible)`
+            : ""}
+          . Sodium ranged from {snapshot.sodiumMin}–{snapshot.sodiumMax} mg.
+        </p>
         <div className="mt-10">
           <NutritionSelector selectedSlug={selectedSlug} />
         </div>

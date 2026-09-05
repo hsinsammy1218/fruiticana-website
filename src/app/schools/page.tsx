@@ -15,6 +15,8 @@ import {
   schoolFitPoints,
   schoolUses,
   schoolsIntro,
+  studentAppeal,
+  studentAppealIntro,
 } from "@/data/schools";
 import { schoolGlanceStats } from "@/data/facts";
 import { StatGrid } from "@/components/ui/StatGrid";
@@ -55,9 +57,6 @@ export default function SchoolsPage() {
           title={schoolsIntro.title}
           description={schoolsIntro.description}
         />
-        <HistoricalNotice className="mt-6 max-w-3xl">
-          {schoolAvailabilityNote}
-        </HistoricalNotice>
         <StatGrid
           className="mt-10"
           items={schoolGlanceStats}
@@ -73,6 +72,34 @@ export default function SchoolsPage() {
             </li>
           ))}
         </ul>
+        <HistoricalNotice className="mt-8 max-w-3xl">
+          {schoolAvailabilityNote}
+        </HistoricalNotice>
+      </Section>
+
+      <Section tone="cream-100">
+        <SectionHeading
+          eyebrow={studentAppealIntro.eyebrow}
+          title={studentAppealIntro.title}
+          description={studentAppealIntro.description}
+        />
+        <ul className="mt-8 grid grid-cols-1 items-stretch gap-4 sm:grid-cols-2 xl:grid-cols-4">
+          {studentAppeal.map((point) => (
+            <li key={point.title} className="reveal">
+              <FeatureCard
+                icon={point.icon}
+                figure={point.figure}
+                title={point.title}
+                description={point.description}
+              />
+            </li>
+          ))}
+        </ul>
+        <div className="mt-8">
+          <Button href="/product#flavors" variant="secondary">
+            Explore the Flavors
+          </Button>
+        </div>
       </Section>
 
       <Vision showHeading />

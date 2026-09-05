@@ -157,6 +157,8 @@ Confirm before switching any content to present-tense school-program marketing:
 - [ ] Contact, domain, social, locations
 - [ ] Logo file and trademark presentation
 - [ ] Whether "Creamless Ice Cream" is still the product name
+- [ ] Product photography of the actual frozen dessert (a 4 oz cup) — owner-provided asset needed. The site currently uses fruit photography and the fruit-cone hero artwork only; do not fabricate product shots.
+- [ ] Heart-health language — the legacy "A Gift For Your Heart" hero slogan was replaced with the tagline "An exciting new way to eat fruit" to avoid implying a cardiovascular benefit. Restore only with owner sign-off and substantiation.
 
 ## Accessibility & performance
 

@@ -32,7 +32,7 @@ export const site = {
   /** Alternate consumer phrasing from the business PDF — used on About. */
   legacyTagline: "An exciting new way to eat fruit.",
   heroSupport:
-    "A fruit-based creamless frozen dessert for schools and their students. The vision is simple: give students a new way to eat fruit.",
+    "A smooth, fruit-based frozen dessert — an exciting new way for students to enjoy fruit, and a better frozen-treat option for schools.",
   /** Short brand promise used in closing sections. */
   promise:
     "Fruit-based frozen dessert for schools and their students — what it is, why it exists, and how it can be made in-house.",
