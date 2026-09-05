@@ -110,3 +110,49 @@ export const schoolFitPoints = [
 
 export const schoolAvailabilityNote =
   "Fruiticana is for schools and their students. Connecticut program experience is shared so school teams can evaluate fit. Confirm product availability and nutrition details through a school inquiry.";
+
+/**
+ * The student side of the school decision. Language stays defensible — how the
+ * product is designed and what it is — never "students love it / approved /
+ * prefer it."
+ */
+export const studentAppealIntro = {
+  eyebrow: "For students",
+  title: "Why students want it",
+  description:
+    "The other half of the decision is the student. Fruiticana is made to look and taste like a treat students actually want — so a fruit-based option is one they are glad to eat.",
+} as const;
+
+export const studentAppeal: {
+  icon: "scoop" | "fruit" | "cup" | "heart";
+  figure?: string;
+  title: string;
+  description: string;
+}[] = [
+  {
+    icon: "scoop",
+    title: "Smooth and creamy",
+    description:
+      "A creamless frozen dessert with the smooth, scoopable feel students know from ice cream.",
+  },
+  {
+    icon: "fruit",
+    figure: "12",
+    title: "Real fruit flavors",
+    description:
+      "Twelve fruit flavors across tropical, berry, citrus, orchard, and melon — built from fruit, not a dairy base.",
+  },
+  {
+    icon: "cup",
+    figure: "4 oz",
+    title: "Fun single-serve cups",
+    description:
+      "Individual 4 oz cups that drop straight onto a cafeteria tray or snack line.",
+  },
+  {
+    icon: "heart",
+    title: "A treat to look forward to",
+    description:
+      "Designed with students in mind — a frozen treat they can get excited about at lunch or snack time.",
+  },
+];

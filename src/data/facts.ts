@@ -159,6 +159,47 @@ export const productConceptBenefits: {
 /** @deprecated Use productConceptBenefits; kept as an alias for existing tests. */
 export const schoolDesignBenefits = productConceptBenefits;
 
+/**
+ * Homepage priority #2 — the "healthier" core benefit, kept defensible.
+ * Every point is either structural (fruit-based, not dairy), historical
+ * (the Team Nutrition Healthy Snack pilot), or a 2008 laboratory figure that
+ * carries its own qualification. No new nutrient/medical claim is made.
+ */
+export const healthierBenefits: {
+  icon: "fruit" | "leaf" | "heart" | "cup";
+  figure: string;
+  title: string;
+  description: string;
+}[] = [
+  {
+    icon: "fruit",
+    figure: "12",
+    title: "Fruit, not dairy",
+    description: "Built from 12 fruit flavors instead of a dairy ice-cream base.",
+  },
+  {
+    icon: "leaf",
+    figure: "0g",
+    title: "0 g fat on 2008 panels",
+    description:
+      "Every flavor's 2008 laboratory panel logged 0 g fat and 0 mg cholesterol per 4 oz serving.",
+  },
+  {
+    icon: "heart",
+    figure: "2003–05",
+    title: "Healthy Snack pilot",
+    description:
+      "Chosen for Connecticut's Team Nutrition Healthy Snack pilot, which held products to nutrition standards.",
+  },
+  {
+    icon: "cup",
+    figure: "2003",
+    title: "Lactose-free concept",
+    description:
+      "Originally created for students avoiding lactose; confirm the current recipe and allergens.",
+  },
+];
+
 export const schoolHomeBenefits: {
   icon: "cup" | "flavors" | "school" | "leaf";
   figure: string;
