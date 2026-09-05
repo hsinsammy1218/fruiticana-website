@@ -25,7 +25,7 @@ export function HeroVisual() {
         aria-hidden="true"
         className="pointer-events-none absolute bottom-[14%] left-1/2 z-10 w-[78%] max-w-[22rem] -translate-x-1/2 text-center"
       >
-        <span className="inline-block rounded-pill bg-berry px-4 py-2 font-brand text-[clamp(1rem,2.2vw,1.4rem)] leading-tight text-yellow shadow-[0_8px_20px_rgba(36,75,42,0.18)] ring-2 ring-yellow/70 sm:px-5 sm:py-2.5">
+        <span className="inline-block rounded-pill bg-berry-deep px-4 py-2 font-brand text-[clamp(1rem,2.2vw,1.4rem)] leading-tight text-yellow shadow-[0_8px_20px_rgba(36,75,42,0.18)] ring-2 ring-yellow/70 sm:px-5 sm:py-2.5">
           An exciting new way to eat fruit
         </span>
       </p>
