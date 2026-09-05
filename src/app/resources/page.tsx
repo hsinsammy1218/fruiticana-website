@@ -38,7 +38,7 @@ export default function ResourcesPage() {
           as="h1"
           eyebrow="Resources"
           title="Documentation for school review"
-          description="School administrators often want supporting material. Every item below is provided for school review and program conversations."
+          description="School administrators often want supporting material. Open any document below to read it on its own page for school review and program conversations."
         />
       </Section>
 

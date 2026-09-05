@@ -19,6 +19,8 @@ test.describe("accessibility @cross-browser", () => {
     for (const path of [
       "/flavors/mango",
       "/flavors/banana",
+      "/resources/fda-facility-registration",
+      "/resources/laboratory-nutritional-analysis",
       "/privacy",
       "/terms",
       "/accessibility",
