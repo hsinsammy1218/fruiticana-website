@@ -144,6 +144,19 @@ export async function expectNoHorizontalOverflow(page: Page) {
   ).toBeLessThanOrEqual(overflow.clientWidth + 1);
 }
 
+/**
+ * Navigate for layout/overflow/nav assertions without blocking on the full
+ * "load" event. These viewport sweeps re-navigate the same routes rapidly,
+ * which can deadlock the `next start` on-demand image optimizer (each
+ * navigation aborts the previous page's in-flight image optimizations). Images
+ * are irrelevant to these checks, so wait only for the DOM plus the styled
+ * header — that guarantees CSS/layout is applied before we measure overflow.
+ */
+export async function gotoForLayout(page: Page, path: string) {
+  await page.goto(path, { waitUntil: "domcontentloaded" });
+  await page.getByRole("banner").waitFor({ state: "visible" });
+}
+
 export async function expectNoBrokenImages(page: Page) {
   const broken = await page.locator("img").evaluateAll((images) =>
     images
