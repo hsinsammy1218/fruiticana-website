@@ -13,7 +13,7 @@ screenshots or low-resolution JPEGs as the logo or hero.
 | `fruiti_logo.jpg` | Script wordmark (green fill, yellow outline, strawberry i-dots) | Traced as SVG/HTML lockup with strawberry tittles |
 | `slogan.jpg` | “THE NEW WAY TO EAT FRUIT” (red serif) | Modernized as “An exciting new way to eat fruit.” in type |
 | `creamless.jpg` | “Cream-Less Ice Crème” script | Subtitle on the logo: Creamless Ice Cream |
-| `left_column_bak.jpg` | Vertical fruit-scoop photo column | Inspiration for `OriginalBrandMotif`; cropped/enhanced as `public/images/brand/school-scoops.webp` for the homepage school-kitchens section |
+| `left_column_bak.jpg` | Vertical fruit-scoop photo column | Inspiration for `OriginalBrandMotif` fruit cluster |
 | `top_row_bak.jpg` | Yellow–green header strip | CSS gradient brand bar |
 | `bottom_row_bak.jpg` | Yellow–green footer strip | CSS gradient brand bar |
 | `greenline_footer.jpg` | Green footer rule | Footer/nav accent |

@@ -85,12 +85,12 @@ test.describe("home @cross-browser", () => {
     ).toBeVisible();
     await expect(
       page.getByRole("complementary", {
-        name: "Fruiticana fruit scoop product imagery",
+        name: "Illustrative ice cream serving photo",
       }),
     ).toBeVisible();
     await expect(
       page.getByRole("img", {
-        name: /colorful fruiticana fruit scoops/i,
+        name: /colorful gelato and ice cream in a serving display/i,
       }),
     ).toBeVisible();
     await expect(
