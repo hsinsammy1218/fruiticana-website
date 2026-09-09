@@ -3,7 +3,7 @@ export type NavItem = {
   label: string;
 };
 
-/** Primary navigation. Home is represented by the logo on desktop. */
+/** Primary navigation for desktop and mobile menus. */
 export const mainNav: NavItem[] = [
   { href: "/", label: "Home" },
   { href: "/about", label: "About Fruiticana" },
@@ -13,8 +13,8 @@ export const mainNav: NavItem[] = [
   { href: "/contact", label: "Contact" },
 ];
 
-/** Desktop nav omits Home because the wordmark links home. */
-export const desktopNav: NavItem[] = mainNav.filter((i) => i.href !== "/");
+/** Desktop header uses the same primary links, including an explicit Home button. */
+export const desktopNav: NavItem[] = mainNav;
 
 /** Secondary resources kept out of the primary conversion path. */
 export const resourceNav: NavItem[] = [

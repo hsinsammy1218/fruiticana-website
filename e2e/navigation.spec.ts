@@ -7,10 +7,12 @@ test.describe("navigation @cross-browser", () => {
     await page.goto("/");
 
     const primary = page.getByRole("navigation", { name: "Primary" });
+    await expect(primary.getByRole("link", { name: "Home" })).toBeVisible();
     await expect(primary.getByRole("link", { name: "For Schools" })).toBeVisible();
     await expect(page.getByRole("button", { name: "Open menu" })).toBeHidden();
 
     for (const item of [
+      { name: "Home", url: /\/$/ },
       { name: "About Fruiticana", url: /\/about$/ },
       { name: "For Schools", url: /\/schools$/ },
       { name: "Flavors & Nutrition", url: /\/product$/ },
@@ -84,6 +86,13 @@ test.describe("navigation @cross-browser", () => {
     await page.keyboard.press("Tab");
     await expect(
       page.getByRole("banner").getByRole("link", { name: /fruiticana - home/i }),
+    ).toBeFocused();
+
+    await page.keyboard.press("Tab");
+    await expect(
+      page.getByRole("navigation", { name: "Primary" }).getByRole("link", {
+        name: "Home",
+      }),
     ).toBeFocused();
 
     await page.keyboard.press("Tab");
