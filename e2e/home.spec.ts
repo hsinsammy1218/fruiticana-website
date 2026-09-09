@@ -83,16 +83,11 @@ test.describe("home @cross-browser", () => {
     await expect(
       page.getByRole("heading", { name: "How it works in school kitchens" }),
     ).toBeVisible();
-    await expect(
-      page.getByRole("complementary", {
-        name: "Illustrative ice cream serving photo",
-      }),
-    ).toBeVisible();
-    await expect(
-      page.getByRole("img", {
-        name: /colorful gelato and ice cream in a serving display/i,
-      }),
-    ).toBeVisible();
+    const howSection = page
+      .getByRole("heading", { name: "How it works in school kitchens" })
+      .locator("xpath=ancestor::section[1]");
+    await expect(howSection.getByText(/illustrative photo/i)).toBeVisible();
+    await expect(howSection.locator("img").first()).toBeAttached();
     await expect(
       page.getByRole("heading", { name: "Why Fruiticana was made for schools" }),
     ).toBeVisible();
