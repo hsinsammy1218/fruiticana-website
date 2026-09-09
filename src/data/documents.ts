@@ -197,3 +197,14 @@ export const resourceCategoryMeta: {
 export function documentsByCategory(category: ResourceCategory) {
   return documents.filter((document) => document.category === category);
 }
+
+export const documentSlugs = documents.map((document) => document.slug);
+
+export function getDocument(slug: string): HistoricalDocument | undefined {
+  return documents.find((document) => document.slug === slug);
+}
+
+/** Canonical in-site path to a document's readable page. */
+export function documentPath(slug: string) {
+  return `/resources/${slug}`;
+}

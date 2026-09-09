@@ -17,7 +17,7 @@ screenshots or low-resolution JPEGs as the logo or hero.
 | `top_row_bak.jpg` | Yellow–green header strip | CSS gradient brand bar |
 | `bottom_row_bak.jpg` | Yellow–green footer strip | CSS gradient brand bar |
 | `greenline_footer.jpg` | Green footer rule | Footer/nav accent |
-| `heart.jpg` | Heart graphic with fruit cones / “A Gift For Your Heart” | Recreated at high resolution as `public/images/brand/heart.webp` for the homepage hero |
+| `heart.jpg` | Heart graphic with fruit cones / “A Gift For Your Heart” | Recreated at high resolution as `public/images/brand/heart.webp` for the homepage hero. The live ribbon now reads “An exciting new way to eat fruit” (the legacy heart slogan was dropped to avoid a cardiovascular implication) |
 
 ## Missing from the archive (do not invent)
 

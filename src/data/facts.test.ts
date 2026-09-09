@@ -1,6 +1,7 @@
 import { describe, expect, it } from "vitest";
 import {
   connecticutProgramStats,
+  healthierBenefits,
   homeGlanceStats,
   learnGlanceStats,
   schoolDesignBenefits,
@@ -53,6 +54,26 @@ describe("snapshot facts", () => {
     expect(schoolDesignBenefits.every((benefit) => (benefit.figure ?? "").length > 0)).toBe(true);
     expect(
       schoolDesignBenefits.every((benefit) => benefit.description.split(" ").length <= 18),
+    ).toBe(true);
+  });
+
+  it("keeps the healthier core benefit defensible and scannable", () => {
+    expect(healthierBenefits.map((benefit) => benefit.title)).toEqual([
+      "Fruit, not dairy",
+      "0 g fat on 2008 panels",
+      "Healthy Snack pilot",
+      "Lactose-free concept",
+    ]);
+    // Each point is structural (fruit vs. dairy), historical (the Healthy Snack
+    // pilot), or a 2008 laboratory figure — never a bald present-tense claim.
+    const copy = healthierBenefits
+      .map((benefit) => `${benefit.title} ${benefit.description}`)
+      .join(" ");
+    expect(copy).toMatch(/2008/);
+    expect(copy).toMatch(/Healthy Snack pilot/i);
+    expect(healthierBenefits.every((benefit) => benefit.figure.length > 0)).toBe(true);
+    expect(
+      healthierBenefits.every((benefit) => benefit.description.split(" ").length <= 18),
     ).toBe(true);
   });
 });

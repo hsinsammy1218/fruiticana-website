@@ -2,6 +2,7 @@ import { test, expect } from "@playwright/test";
 import {
   expectNoBrokenImages,
   expectNoHorizontalOverflow,
+  gotoForLayout,
   viewports,
 } from "./helpers";
 
@@ -14,22 +15,22 @@ test.describe("responsive layout @mobile", () => {
       viewports.phone430,
     ]) {
       await page.setViewportSize(viewport);
-      await page.goto("/");
+      await gotoForLayout(page, "/");
       await expect(page.getByRole("button", { name: "Open menu" })).toBeVisible();
       await expect(
         page.getByRole("navigation", { name: "Primary" }),
       ).toBeHidden();
       await expectNoHorizontalOverflow(page);
 
-      await page.goto("/product");
+      await gotoForLayout(page, "/product");
       await expectNoHorizontalOverflow(page);
-      await page.goto("/contact");
+      await gotoForLayout(page, "/contact");
       await expectNoHorizontalOverflow(page);
-      await page.goto("/schools");
+      await gotoForLayout(page, "/schools");
       await expectNoHorizontalOverflow(page);
-      await page.goto("/about");
+      await gotoForLayout(page, "/about");
       await expectNoHorizontalOverflow(page);
-      await page.goto("/resources");
+      await gotoForLayout(page, "/resources");
       await expectNoHorizontalOverflow(page);
     }
   });
@@ -38,7 +39,7 @@ test.describe("responsive layout @mobile", () => {
     page,
   }) => {
     await page.setViewportSize(viewports.tablet768);
-    await page.goto("/");
+    await gotoForLayout(page, "/");
     await expect(page.getByRole("button", { name: "Open menu" })).toBeVisible();
     await expectNoHorizontalOverflow(page);
 
@@ -48,7 +49,7 @@ test.describe("responsive layout @mobile", () => {
       viewports.desktop1440,
     ]) {
       await page.setViewportSize(viewport);
-      await page.goto("/");
+      await gotoForLayout(page, "/");
       await expect(page.getByRole("button", { name: "Open menu" })).toBeHidden();
       await expect(
         page.getByRole("navigation", { name: "Primary" }).getByRole("link", {
@@ -63,14 +64,14 @@ test.describe("responsive layout @mobile", () => {
     page,
   }) => {
     await page.setViewportSize(viewports.phone390);
-    await page.goto("/product");
+    await gotoForLayout(page, "/product");
     await expect(
       page.locator("#nutrition").getByRole("link", { name: "Mango", exact: true }),
     ).toBeVisible();
     await expectNoHorizontalOverflow(page);
 
     await page.setViewportSize(viewports.laptop1024);
-    await page.goto("/product");
+    await gotoForLayout(page, "/product");
     await expect(
       page.locator("#nutrition").getByRole("link", { name: "Mango", exact: true }),
     ).toBeVisible();

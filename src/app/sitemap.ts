@@ -1,6 +1,7 @@
 import type { MetadataRoute } from "next";
 import { site } from "@/data/site";
 import { flavorSlugs } from "@/data/flavors";
+import { documentSlugs } from "@/data/documents";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const base = site.url;
@@ -31,5 +32,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.5,
   }));
 
-  return [...staticEntries, ...flavorEntries];
+  const documentEntries: MetadataRoute.Sitemap = documentSlugs.map((slug) => ({
+    url: `${base}/resources/${slug}`,
+    lastModified: now,
+    changeFrequency: "yearly",
+    priority: 0.4,
+  }));
+
+  return [...staticEntries, ...flavorEntries, ...documentEntries];
 }

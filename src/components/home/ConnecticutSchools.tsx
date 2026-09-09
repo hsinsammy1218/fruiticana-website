@@ -15,7 +15,7 @@ export function ConnecticutSchools() {
             className="bg-cream/15 text-cream"
           />
           <h2 className="mt-3 text-3xl font-extrabold text-cream sm:text-4xl lg:text-5xl">
-            Built for schools — proven with students
+            Built for schools, taste-tested with students
           </h2>
           <p className="mt-4 max-w-3xl text-lg leading-[1.7] text-cream/90">
             Research and development began around 2003. Product sampling reached

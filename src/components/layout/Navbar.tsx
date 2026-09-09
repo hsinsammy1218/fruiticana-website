@@ -73,7 +73,7 @@ export function Navbar() {
         </nav>
 
         <div className="flex items-center gap-2">
-          <Button href={navCta.href} className="hidden xl:inline-flex">
+          <Button href={navCta.href} className="hidden lg:inline-flex">
             {navCta.label}
           </Button>
 

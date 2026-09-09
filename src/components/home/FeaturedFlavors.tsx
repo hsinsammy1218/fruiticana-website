@@ -6,7 +6,7 @@ import { featuredFlavors } from "@/data/flavors";
 
 export function FeaturedFlavors() {
   return (
-    <Section tone="cream-100">
+    <Section tone="white">
       <div className="flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
         <SectionHeading
           eyebrow="Original lineup"

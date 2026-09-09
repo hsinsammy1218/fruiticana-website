@@ -39,25 +39,27 @@ export function Hero() {
             The New Way{" "}
             <span className="block">to Eat Fruit</span>
           </h1>
-          <p className="mt-5 max-w-xl text-lg leading-[1.75] text-muted sm:text-xl">
+          <p className="mt-5 max-w-xl font-display text-xl font-semibold leading-snug text-green-deep sm:text-2xl">
+            The frozen treat students want — a better option for schools.
+          </p>
+          <p className="mt-4 max-w-xl text-lg leading-[1.75] text-muted sm:text-xl">
             {site.heroSupport}
           </p>
           <p className="mt-3 max-w-xl text-base leading-[1.7] text-muted">
-            Originally introduced as {site.legacyProductName}. Smooth like ice
-            cream, built from fruit flavors — for schools and the students they
-            serve.
+            Originally introduced as {site.legacyProductName} — smooth like ice
+            cream, built from real fruit.
           </p>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
             <Button href={navCta.href} size="lg" className="w-full sm:w-auto">
               {navCta.label}
             </Button>
             <Button
-              href="#vision"
+              href="/product#flavors"
               size="lg"
               variant="secondary"
               className="w-full sm:w-auto"
             >
-              See the vision
+              Explore the Flavors
             </Button>
           </div>
         </div>
