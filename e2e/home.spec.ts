@@ -81,6 +81,14 @@ test.describe("home @cross-browser", () => {
       page.getByRole("heading", { name: "Twelve fruit flavors" }),
     ).toBeVisible();
     await expect(
+      page.getByRole("heading", { name: "How it works in school kitchens" }),
+    ).toBeVisible();
+    await expect(
+      page.getByRole("complementary", {
+        name: "Fruiticana creamless frozen dessert artwork",
+      }),
+    ).toBeVisible();
+    await expect(
       page.getByRole("heading", { name: "Why Fruiticana was made for schools" }),
     ).toBeVisible();
     await expect(page.getByText(/team nutrition healthy snack/i).first()).toBeVisible();
