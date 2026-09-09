@@ -13,7 +13,6 @@ import { formats, formatsNote } from "@/data/formats";
 import { IngredientRecipe } from "@/components/nutrition/IngredientRecipe";
 import {
   recipeIngredientsNotice,
-  recipeIngredientsSource,
   wheatProteinFlag,
 } from "@/data/ingredients";
 import { navCta } from "@/data/navigation";
@@ -131,17 +130,14 @@ export default async function ProductPage({
       <Section id="ingredients" tone="white" className="scroll-mt-24">
         <SectionHeading
           eyebrow="Ingredients & allergens"
-          title="What's inside"
-          description="A fruit-first recipe schools can make in-house for students. Confirm the mix and allergens against your current Fruiticana formulation before service."
+          title="School kitchen recipe"
+          description="A fruit-first recipe schools can make in-house for students — without specialty outside-dessert cost."
         />
         <div className="mt-8">
           <IngredientRecipe />
         </div>
         <p className="info-copy mt-6 max-w-3xl">{wheatProteinFlag}</p>
-        <p className="mt-3 text-sm text-muted">{recipeIngredientsSource}</p>
-        <HistoricalNotice className="mt-6 max-w-3xl">
-          {recipeIngredientsNotice}
-        </HistoricalNotice>
+        <p className="mt-3 text-sm text-muted">{recipeIngredientsNotice}</p>
         <div className="mt-6">
           <Button href="/contact?interest=Nutrition%20Information">
             Ask about school kitchen setup
