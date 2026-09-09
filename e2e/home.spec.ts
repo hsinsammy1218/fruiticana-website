@@ -84,6 +84,11 @@ test.describe("home @cross-browser", () => {
       page.getByRole("heading", { name: "How it works in school kitchens" }),
     ).toBeVisible();
     await expect(
+      page.getByRole("complementary", {
+        name: "Illustrative ice cream serving photo",
+      }),
+    ).toBeVisible();
+    await expect(
       page.getByRole("img", {
         name: /colorful gelato and ice cream in a serving display/i,
       }),
