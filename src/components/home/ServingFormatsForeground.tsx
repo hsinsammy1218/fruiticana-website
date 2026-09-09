@@ -2,15 +2,15 @@ import Image from "next/image";
 import { site } from "@/data/site";
 
 /**
- * Photo-style brand foreground for the school-kitchens section — the same
- * fruit-cone artwork used on the hero, read as a frozen treat students want.
- * Decorative only; not product photography of a 4 oz cup.
+ * Historical product imagery for the school-kitchens section — cropped from
+ * the 2007 myfruiticana.com scoop column (left_column_bak.jpg). Not a current
+ * 4 oz cup product photo; owner-provided cup photography can replace it later.
  */
 export function ServingFormatsForeground() {
   return (
     <aside
       className="reveal relative isolate overflow-hidden lg:sticky lg:top-24"
-      aria-label="Fruiticana fruit-cone frozen dessert artwork"
+      aria-label="Fruiticana fruit scoop product imagery"
     >
       <div
         aria-hidden="true"
@@ -34,27 +34,23 @@ export function ServingFormatsForeground() {
           {site.productLine}
         </p>
         <p className="mt-2 max-w-[16rem] font-sans text-2xl font-extrabold leading-tight text-green-deep">
-          The frozen treat students want
+          Colorful scoops, smooth texture
         </p>
 
-        <div className="relative mx-auto mt-4 aspect-square w-full max-w-[26rem]">
-          <div
-            aria-hidden="true"
-            className="absolute inset-4 rounded-full bg-[radial-gradient(circle,rgba(255,255,255,0.82),transparent_72%)]"
-          />
+        <figure className="relative mx-auto mt-4 w-full max-w-[22rem] overflow-hidden rounded-[1.25rem] bg-white shadow-[0_24px_44px_rgba(22,61,42,0.14)] ring-1 ring-green-deep/10">
           <Image
-            src="/images/brand/heart.webp"
-            alt="Three waffle cones filled with colorful fresh fruit — Fruiticana brand artwork showing a fruit-based frozen dessert."
-            width={960}
-            height={960}
+            src="/images/brand/school-scoops.webp"
+            alt="Colorful Fruiticana fruit scoops from the original brand imagery — a smooth, ice-cream-like frozen dessert."
+            width={720}
+            height={900}
             sizes="(max-width: 1024px) 90vw, 40vw"
-            className="relative mx-auto h-auto w-[94%] drop-shadow-[0_24px_44px_rgba(22,61,42,0.16)]"
+            className="h-auto w-full object-cover"
           />
-        </div>
+        </figure>
 
-        <p className="mx-auto mt-2 max-w-xs text-center text-sm leading-relaxed text-muted">
-          A fruit-based frozen dessert with an ice-cream feel — portioned for
-          school kitchens in a simple 4&nbsp;oz single-serve cup.
+        <p className="mx-auto mt-3 max-w-xs text-center text-sm leading-relaxed text-muted">
+          Historical brand imagery of Fruiticana&rsquo;s fruit scoops — portioned
+          for school kitchens in a simple 4&nbsp;oz single-serve cup.
         </p>
       </div>
     </aside>
