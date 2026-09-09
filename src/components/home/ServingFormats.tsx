@@ -1,8 +1,8 @@
-import Image from "next/image";
 import { Section } from "@/components/layout/Section";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { ProductFormatCard } from "@/components/ui/ProductFormatCard";
 import { HistoricalNotice } from "@/components/ui/HistoricalNotice";
+import { ServingFormatsForeground } from "@/components/home/ServingFormatsForeground";
 import { formats, formatsNote } from "@/data/formats";
 
 export function ServingFormats() {
@@ -25,20 +25,7 @@ export function ServingFormats() {
           <HistoricalNotice className="mt-8">{formatsNote}</HistoricalNotice>
         </div>
 
-        <figure className="overflow-hidden rounded-xl2 border border-line bg-cream-100 shadow-[0_18px_40px_rgba(22,61,42,0.10)]">
-          <Image
-            src="/images/sections/serving-foreground.webp"
-            alt="Colorful gelato and ice cream in a serving display — illustrative photo for school kitchen service."
-            width={900}
-            height={1100}
-            sizes="(max-width: 768px) 100vw, 45vw"
-            className="h-auto w-full object-cover"
-          />
-          <figcaption className="border-t border-line bg-white px-4 py-3 text-center text-sm leading-relaxed text-muted">
-            Illustrative photo — a frozen treat portioned for school kitchens in
-            a 4&nbsp;oz single-serve cup.
-          </figcaption>
-        </figure>
+        <ServingFormatsForeground />
       </div>
     </Section>
   );
