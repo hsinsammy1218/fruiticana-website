@@ -1,15 +1,16 @@
-import { OriginalBrandMotif } from "@/components/brand/OriginalBrandMotif";
+import Image from "next/image";
 import { site } from "@/data/site";
 
 /**
- * Visual foreground for the school-kitchens section — the historical
- * Fruiticana scoop-stack identity, not product photography.
+ * Photo-style brand foreground for the school-kitchens section — the same
+ * fruit-cone artwork used on the hero, read as a frozen treat students want.
+ * Decorative only; not product photography of a 4 oz cup.
  */
 export function ServingFormatsForeground() {
   return (
     <aside
-      className="relative isolate overflow-hidden lg:sticky lg:top-24"
-      aria-label="Fruiticana creamless frozen dessert artwork"
+      className="reveal relative isolate overflow-hidden lg:sticky lg:top-24"
+      aria-label="Fruiticana fruit-cone frozen dessert artwork"
     >
       <div
         aria-hidden="true"
@@ -33,10 +34,23 @@ export function ServingFormatsForeground() {
           {site.productLine}
         </p>
         <p className="mt-2 max-w-[16rem] font-sans text-2xl font-extrabold leading-tight text-green-deep">
-          Smooth scoops students recognize
+          The frozen treat students want
         </p>
 
-        <OriginalBrandMotif className="mt-4 max-w-[22rem]" />
+        <div className="relative mx-auto mt-4 aspect-square w-full max-w-[26rem]">
+          <div
+            aria-hidden="true"
+            className="absolute inset-4 rounded-full bg-[radial-gradient(circle,rgba(255,255,255,0.82),transparent_72%)]"
+          />
+          <Image
+            src="/images/brand/heart.webp"
+            alt="Three waffle cones filled with colorful fresh fruit — Fruiticana brand artwork showing a fruit-based frozen dessert."
+            width={960}
+            height={960}
+            sizes="(max-width: 1024px) 90vw, 40vw"
+            className="relative mx-auto h-auto w-[94%] drop-shadow-[0_24px_44px_rgba(22,61,42,0.16)]"
+          />
+        </div>
 
         <p className="mx-auto mt-2 max-w-xs text-center text-sm leading-relaxed text-muted">
           A fruit-based frozen dessert with an ice-cream feel — portioned for
