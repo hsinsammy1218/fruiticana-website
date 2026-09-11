@@ -14,9 +14,16 @@ describe("documents data", () => {
     expect(documents.every((document) => document.imageAlt.length > 20)).toBe(true);
   });
 
-  it("does not publish downloadable original PDFs yet", () => {
-    expect(documents.every((document) => document.file == null)).toBe(true);
-    expect(documents.every((document) => document.canDownload === false)).toBe(true);
+  it("publishes the FDA facility registration PDF and keeps other originals unpublished", () => {
+    const fda = getDocument("fda-facility-registration");
+    expect(fda?.file).toBe("/documents/fda-facility-registration.pdf");
+    expect(fda?.canDownload).toBe(true);
+
+    const others = documents.filter(
+      (document) => document.slug !== "fda-facility-registration",
+    );
+    expect(others.every((document) => document.file == null)).toBe(true);
+    expect(others.every((document) => document.canDownload === false)).toBe(true);
   });
 
   it("exposes a unique slug and a lookup for every document", () => {

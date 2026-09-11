@@ -41,6 +41,11 @@ export function DocumentViewer({ document }: { document: HistoricalDocument }) {
           <Button href={readHref} variant="secondary">
             Read the document
           </Button>
+          {document.canDownload && document.file ? (
+            <Button href={document.file} variant="ghost" download>
+              Download PDF
+            </Button>
+          ) : null}
           {document.href ? (
             <Button href={document.href} variant="ghost">
               {document.hrefLabel ?? "View"}
@@ -48,8 +53,9 @@ export function DocumentViewer({ document }: { document: HistoricalDocument }) {
           ) : null}
         </div>
         <p className="mt-3 text-xs leading-relaxed text-muted">
-          Shown for school review. A downloadable original PDF is not published
-          on this site.
+          {document.canDownload && document.file
+            ? "Shown for school review. A PDF of this document is available to download."
+            : "Shown for school review. A downloadable original PDF is not published on this site."}
         </p>
       </div>
     </article>

@@ -124,9 +124,27 @@ export default async function DocumentPage({
                   className="font-semibold text-green-600 hover:text-green-700"
                 >
                   Open the full-size document image
-                </a>{" "}
-                &mdash; shown for school review. A downloadable original PDF is
-                not published on this site.
+                </a>
+                {document.canDownload && document.file ? (
+                  <>
+                    {" "}
+                    &mdash; shown for school review.{" "}
+                    <a
+                      href={document.file}
+                      download
+                      className="font-semibold text-green-600 hover:text-green-700"
+                    >
+                      Download the PDF
+                    </a>
+                    .
+                  </>
+                ) : (
+                  <>
+                    {" "}
+                    &mdash; shown for school review. A downloadable original PDF
+                    is not published on this site.
+                  </>
+                )}
               </figcaption>
             </figure>
           ) : null}
@@ -141,6 +159,11 @@ export default async function DocumentPage({
               school inquiry before relying on it for procurement.
             </p>
             <div className="flex flex-wrap gap-3">
+              {document.canDownload && document.file ? (
+                <Button href={document.file} download>
+                  Download PDF
+                </Button>
+              ) : null}
               {document.href ? (
                 <Button href={document.href}>
                   {document.hrefLabel ?? "View details"}

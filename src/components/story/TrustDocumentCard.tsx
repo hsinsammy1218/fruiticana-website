@@ -77,13 +77,24 @@ export function TrustDocumentCard({
           <span className="font-semibold text-green-deep">Context: </span>
           {document.clarification}
         </p>
-        <Link
-          href={readHref}
-          className="mt-auto inline-flex items-center gap-1 pt-4 text-sm font-semibold text-green-600 hover:text-green-700"
-        >
-          Read the document
-          <span aria-hidden="true">&rarr;</span>
-        </Link>
+        <div className="mt-auto flex flex-wrap items-center gap-x-4 gap-y-2 pt-4">
+          <Link
+            href={readHref}
+            className="inline-flex items-center gap-1 text-sm font-semibold text-green-600 hover:text-green-700"
+          >
+            Read the document
+            <span aria-hidden="true">&rarr;</span>
+          </Link>
+          {document.canDownload && document.file ? (
+            <a
+              href={document.file}
+              download
+              className="inline-flex items-center gap-1 text-sm font-semibold text-green-600 hover:text-green-700"
+            >
+              Download PDF
+            </a>
+          ) : null}
+        </div>
       </div>
     </article>
   );
