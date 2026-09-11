@@ -11,7 +11,7 @@ test.describe("nutrition", () => {
       }),
     ).toBeVisible();
     await expect(page.getByText(/confirm these figures against your current/i).first()).toBeVisible();
-    await expect(page.getByText(/lab analysis \(2008\)/i)).toBeVisible();
+    await expect(page.getByText(/nutrition analysis \(2008\)/i)).toBeVisible();
     await expect(
       page.getByRole("heading", { name: /institutional serving information/i }),
     ).toBeVisible();

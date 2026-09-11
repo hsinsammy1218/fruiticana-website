@@ -13,7 +13,9 @@ test.describe("flavors", () => {
     await expect(page.getByRole("button", { name: "Berry", exact: true })).toHaveCount(0);
 
     for (const slug of flavorSlugs) {
-      await expect(page.locator(`a[href="/flavors/${slug}"]`)).toBeVisible();
+      await expect(
+        page.locator(`a[href="/flavors/${slug}#nutrition"]`),
+      ).toBeVisible();
     }
   });
 
@@ -33,7 +35,7 @@ test.describe("flavors", () => {
     ).toBeVisible();
     await expect(page.getByRole("link", { name: "All flavors" })).toBeVisible();
     await expect(
-      page.getByRole("heading", { name: /full laboratory panel/i }),
+      page.getByRole("heading", { name: "Nutrition Facts" }),
     ).toBeVisible();
     await expect(page.getByText("Calories", { exact: true })).toBeVisible();
     await expect(page.getByText("Calories from Fat 0")).toBeVisible();
@@ -50,7 +52,7 @@ test.describe("flavors", () => {
     await expect(page.getByText("Vitamin C")).toBeVisible();
     await expect(page.getByText("Calcium")).toBeVisible();
     await expect(page.getByText("Iron")).toBeVisible();
-    await expect(page.getByText(/source: northeast laboratories/i)).toBeVisible();
+    await expect(page.getByText(/source: independent 2008 analysis/i)).toBeVisible();
     await expect(
       page.getByRole("link", { name: "Compare all flavor panels" }),
     ).toHaveAttribute("href", "/product?flavor=mango#nutrition");

@@ -10,7 +10,7 @@ describe("FlavorExplorer", () => {
     expect(screen.getByText("Showing 12 flavors.")).toBeInTheDocument();
     expect(screen.getByRole("link", { name: /mango/i })).toHaveAttribute(
       "href",
-      "/flavors/mango",
+      "/flavors/mango#nutrition",
     );
     expect(screen.getByRole("button", { name: "All" })).toHaveAttribute(
       "aria-pressed",

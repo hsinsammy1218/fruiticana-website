@@ -21,12 +21,12 @@ export const homeGlanceStats: FactStat[] = [
   {
     value: "4 oz",
     label: "Single-serve cup",
-    note: "School / lab serving size",
+    note: "School serving size",
   },
   {
     value: "0g",
     label: "Total fat on 2008 panels",
-    note: "All 12 flavors, laboratory analysis",
+    note: "All 12 flavors, documented 2008 analysis",
   },
   {
     value: "~30,000",
@@ -182,7 +182,7 @@ export const healthierBenefits: {
     figure: "0g",
     title: "0 g fat on 2008 panels",
     description:
-      "Every flavor's 2008 laboratory panel logged 0 g fat and 0 mg cholesterol per 4 oz serving.",
+      "Every flavor's 2008 Nutrition Facts panel logged 0 g fat and 0 mg cholesterol per 4 oz serving.",
   },
   {
     icon: "heart",

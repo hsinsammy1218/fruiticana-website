@@ -11,7 +11,7 @@ describe("NutritionPanel", () => {
     render(<NutritionPanel flavor={mango} />);
 
     expect(screen.getByRole("heading", { name: "Mango" })).toBeInTheDocument();
-    expect(screen.getByText("Lab analysis (2008)")).toBeInTheDocument();
+    expect(screen.getByText("Nutrition analysis (2008)")).toBeInTheDocument();
     expect(screen.getByText(/1\/2 cup \(4 oz\)/)).toBeInTheDocument();
     expect(screen.getByText("Calories")).toBeInTheDocument();
     expect(screen.getByText("150")).toBeInTheDocument();
@@ -29,7 +29,7 @@ describe("NutritionPanel", () => {
     expect(screen.getByText("Vitamin C")).toBeInTheDocument();
     expect(screen.getByText("Calcium")).toBeInTheDocument();
     expect(screen.getByText("Iron")).toBeInTheDocument();
-    expect(screen.getByText(/northeast laboratories/i)).toBeInTheDocument();
+    expect(screen.getByText(/independent 2008 analysis/i)).toBeInTheDocument();
   });
 
   it("leaves Banana calories blank rather than guessing", () => {

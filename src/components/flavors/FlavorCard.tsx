@@ -14,7 +14,7 @@ type FlavorCardProps = {
 export function FlavorCard({ flavor, priority, className }: FlavorCardProps) {
   return (
     <Link
-      href={`/flavors/${flavor.slug}`}
+      href={`/flavors/${flavor.slug}#nutrition`}
       className={cn(
         "group flex flex-col overflow-hidden rounded-xl2 border border-line bg-white transition-all duration-300 hover:-translate-y-1 hover:shadow-hover focus-visible:-translate-y-1 focus-visible:shadow-hover",
         className,

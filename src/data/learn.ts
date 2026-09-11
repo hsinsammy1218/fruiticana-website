@@ -81,7 +81,7 @@ export const learnModules = [
   {
     id: "labels",
     title: "How to read a Nutrition Facts panel",
-    summary: "Label literacy using Fruiticana's 2008 laboratory panels as dated examples.",
+    summary: "Label literacy using Fruiticana's 2008 Nutrition Facts panels as dated examples.",
   },
   {
     id: "case-study",
@@ -278,7 +278,7 @@ export const labelTerms: LabelTerm[] = [
   {
     term: "Source and date",
     meaning:
-      "Scientists always ask when data was collected and by whom. Fruiticana's panels are from Northeast Laboratories, Inc., report #20080318F (March 18, 2008). Use them as classroom examples for reading Nutrition Facts panels.",
+      "Scientists always ask when data was collected and by whom. Fruiticana's panels are from report #20080318F (March 18, 2008). Use them as classroom examples for reading Nutrition Facts panels.",
   },
 ];
 
@@ -375,7 +375,7 @@ export const classroomActivities: ClassroomActivity[] = [
     materials: "This site's Nutrition page (or printed panels), two flavor names assigned per pair",
     steps: [
       "Find serving size, calories, total carbohydrate, and vitamin C on each panel.",
-      "Note the lab name, report number, and year. Write one sentence: 'This data is from ___ in ___.'",
+      "Note the report number and year. Write one sentence: 'This data is from report ___ in ___.'",
       "Record any blank values. Discuss why a blank is more trustworthy than a guess.",
       "Share whether the two flavors differ more in vitamins or in calories.",
     ],

@@ -24,6 +24,11 @@ const nextConfig: NextConfig = {
         destination: "/about",
         permanent: true,
       },
+      {
+        source: "/resources/laboratory-nutritional-analysis",
+        destination: "/resources/nutritional-analysis",
+        permanent: true,
+      },
     ];
   },
 };

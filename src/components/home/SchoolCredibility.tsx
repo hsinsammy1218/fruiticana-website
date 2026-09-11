@@ -15,7 +15,7 @@ export function SchoolCredibility() {
         <SectionHeading
           eyebrow="Credibility & documentation"
           title="Backed by a documented school record"
-          description="Fruiticana's fit for schools is grounded in real history: a 2003–2005 Connecticut Team Nutrition Healthy Snack pilot, later service in local Connecticut schools, and independent 2008 laboratory Nutrition Facts panels for all 12 flavors. The detailed records are on Resources for school food-service review."
+          description="Fruiticana's fit for schools is grounded in real history: a 2003–2005 Connecticut Team Nutrition Healthy Snack pilot, later service in local Connecticut schools, and independent 2008 Nutrition Facts panels for all 12 flavors. The detailed records are on Resources for school food-service review."
         />
         <div className="flex flex-col gap-3 sm:flex-row lg:flex-col">
           <Button href="/resources" size="lg">

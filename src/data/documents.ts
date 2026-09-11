@@ -2,9 +2,8 @@
  * School documentation referenced in the business record.
  *
  * `image` points to on-site document page images for school review.
- * `file` / `canDownload` publish a PDF only when a rights-cleared source
- * scan is available (currently: FDA facility registration, AHA program letter,
- * and Connecticut Team Nutrition pilot letter).
+ * Original PDF downloads stay unpublished (`file` null / `canDownload` false)
+ * until rights-cleared source scans are provided.
  */
 
 export type ResourceCategory =
@@ -38,58 +37,58 @@ export const documents: HistoricalDocument[] = [
     title: "U.S. FDA facility registration",
     period: "2008 - 2009",
     summary:
-      "A food-facility registration certificate on file for Fruiticana LLC for the 2008-2009 period (FDA Registrar Corp.).",
+      "A food-facility registration on file for Fruiticana LLC for the 2008-2009 period.",
     clarification:
-      "This was a facility registration processed through a third-party registration agent (FDA Registrar Corp.) — not an FDA approval, certification, or endorsement of the product. Confirm registration status for current operations.",
+      "This was a facility registration processed through a third-party registration agent - not an FDA approval, certification, or endorsement of the product. Confirm registration status for current operations.",
     category: "credentials",
     image: "/images/documents/doc-fda-facility-registration.webp",
     imageAlt:
-      "2008–2009 Certificate of Registration for Fruiticana LLC issued by FDA Registrar Corp., showing U.S. FDA facility registration No. 17333677680.",
-    file: "/documents/fda-facility-registration.pdf",
-    canDownload: true,
+      "Fruiticana document page summarizing the 2008–2009 U.S. food facility registration record.",
+    file: null,
+    canDownload: false,
   },
   {
     slug: "aha-food-certification-letter",
     title: "American Heart Association program letter",
     period: "2005",
     summary:
-      "A November 15, 2005 letter thanking Fruiticana for participating in the American Heart Association's Food Certification Program.",
+      "A 2005 letter regarding participation in the American Heart Association's Food Certification Program.",
     clarification:
-      "This is correspondence about program participation. It is not presented as a heart-check certification badge or a current product endorsement.",
+      "This is correspondence about program participation. It is not presented as a heart-check certification badge.",
     category: "credentials",
     image: "/images/documents/doc-aha-food-certification-letter.webp",
     imageAlt:
-      "November 15, 2005 American Heart Association letter to Fruiticana regarding participation in the Food Certification Program.",
-    file: "/documents/aha-food-certification-letter.pdf",
-    canDownload: true,
+      "Fruiticana document page summarizing 2005 American Heart Association program correspondence.",
+    file: null,
+    canDownload: false,
   },
   {
     slug: "ct-team-nutrition-letter",
     title: "Connecticut Team Nutrition pilot letter",
     period: "December 2004",
     summary:
-      "A December 20, 2004 letter from the Connecticut State Department of Education noting Fruiticana's inclusion in student taste tests and samplings for the Team Nutrition Healthy Snack Pilot.",
+      "A letter from the Connecticut State Department of Education noting Fruiticana's inclusion in student taste tests and samplings for the Team Nutrition Healthy Snack Pilot.",
     clarification:
-      "The letter describes participation in a state pilot funded by a USDA Team Nutrition grant (2003-2005). Each pilot school — not the state — chose which products to purchase.",
+      "The letter describes participation in a state pilot funded by a USDA Team Nutrition grant (2003-2005). Each pilot school - not the state - chose which products to purchase.",
     category: "school-program",
     image: "/images/documents/doc-ct-team-nutrition-letter.webp",
     imageAlt:
-      "December 20, 2004 Connecticut State Department of Education letter on Fruiticana's inclusion in the Team Nutrition Healthy Snack Pilot.",
-    file: "/documents/ct-team-nutrition-letter.pdf",
-    canDownload: true,
+      "Fruiticana document page summarizing the December 2004 Connecticut Team Nutrition pilot letter.",
+    file: null,
+    canDownload: false,
   },
   {
-    slug: "laboratory-nutritional-analysis",
-    title: "Laboratory nutritional analysis",
+    slug: "nutritional-analysis",
+    title: "Nutritional analysis",
     period: "2008",
     summary:
-      "Independent Nutrition Facts panels for all 12 flavors from Northeast Laboratories, Inc. (report #20080318F).",
+      "Independent Nutrition Facts panels for all 12 flavors (report #20080318F).",
     clarification:
-      "These lab results are shown on the Flavors & Nutrition page. Confirm them against your current formulation before using them as a product label.",
+      "These nutrition results are shown on the Flavors & Nutrition page. Confirm them against your current formulation before using them as a product label.",
     category: "nutrition",
     image: "/images/documents/doc-laboratory-nutritional-analysis.webp",
     imageAlt:
-      "Fruiticana document page summarizing the 2008 Northeast Laboratories nutritional analysis.",
+      "Fruiticana document page summarizing the 2008 nutritional analysis.",
     file: null,
     canDownload: false,
     href: "/product#nutrition",
@@ -133,7 +132,7 @@ export const documents: HistoricalDocument[] = [
     title: "Institutional serving information",
     period: "School service",
     summary:
-      "School-oriented serving notes focused on the 4 oz (1/2 cup) single-serve cup that matches the laboratory Nutrition Facts panels.",
+      "School-oriented serving notes focused on the 4 oz (1/2 cup) single-serve cup that matches the Nutrition Facts panels.",
     clarification:
       "Confirm food-service pack sizes with Fruiticana before menu planning.",
     category: "product-information",
@@ -179,7 +178,7 @@ export const resourceCategoryMeta: {
     id: "nutrition",
     title: "Nutrition",
     description:
-      "2008 laboratory analyses and the school kitchen ingredient recipe.",
+      "2008 Nutrition Facts panels and the school kitchen ingredient recipe.",
   },
   {
     id: "school-program",

@@ -55,9 +55,9 @@ export const schoolUses: SchoolUse[] = [
     slug: "district",
     title: "District-level evaluation",
     figure: "2008",
-    figureLabel: "Lab panels on file",
+    figureLabel: "Nutrition panels on file",
     description:
-      "Nutrition, procurement, and leadership teams can share product sheets, 2008 laboratory panels, and Connecticut program records internally before a tasting or program conversation.",
+      "Nutrition, procurement, and leadership teams can share product sheets, 2008 Nutrition Facts panels, and Connecticut program records internally before a tasting or program conversation.",
   },
   {
     slug: "events",
@@ -94,7 +94,7 @@ export const schoolFitPoints = [
   {
     figure: "4 oz",
     title: "Individual portions",
-    body: "Schools use single-serving cups, including a recorded 4 oz (½ cup) laboratory serving — a simple format for in-house school service.",
+    body: "Schools use single-serving cups, including a recorded 4 oz (½ cup) serving — a simple format for in-house school service.",
   },
   {
     figure: "2003–05",

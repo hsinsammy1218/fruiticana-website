@@ -8,7 +8,7 @@ import { healthierBenefits } from "@/data/facts";
 /**
  * Priority #2 — the "healthier" core benefit. Framing stays defensible:
  * fruit-first (not dairy), the documented Team Nutrition Healthy Snack pilot,
- * and 2008 laboratory panels that carry their own historical qualification.
+ * and 2008 Nutrition Facts panels that carry their own historical qualification.
  * No new nutrient/medical claim is introduced; the caveat routes school staff
  * to the full nutrition documentation.
  */
@@ -33,8 +33,8 @@ export function HealthierChoice() {
         ))}
       </ul>
       <HistoricalNotice className="mt-8 max-w-3xl">
-        Nutrition figures come from an independent 2008 laboratory analysis
-        (Northeast Laboratories). Confirm them against the current Fruiticana
+        Nutrition figures come from an independent 2008 nutrition analysis
+        (report #20080318F). Confirm them against the current Fruiticana
         formulation before relying on them.
       </HistoricalNotice>
       <div className="mt-6">
