@@ -3,7 +3,8 @@
  *
  * `image` points to on-site document page images for school review.
  * `file` / `canDownload` publish a PDF only when a rights-cleared source
- * scan is available (currently: FDA facility registration and AHA program letter).
+ * scan is available (currently: FDA facility registration, AHA program letter,
+ * and Connecticut Team Nutrition pilot letter).
  */
 
 export type ResourceCategory =
@@ -67,15 +68,15 @@ export const documents: HistoricalDocument[] = [
     title: "Connecticut Team Nutrition pilot letter",
     period: "December 2004",
     summary:
-      "A letter from the Connecticut State Department of Education noting Fruiticana's inclusion in student taste tests and samplings for the Team Nutrition Healthy Snack Pilot.",
+      "A December 20, 2004 letter from the Connecticut State Department of Education noting Fruiticana's inclusion in student taste tests and samplings for the Team Nutrition Healthy Snack Pilot.",
     clarification:
-      "The letter describes participation in a state pilot funded by a USDA Team Nutrition grant (2003-2005). Each pilot school - not the state - chose which products to purchase.",
+      "The letter describes participation in a state pilot funded by a USDA Team Nutrition grant (2003-2005). Each pilot school — not the state — chose which products to purchase.",
     category: "school-program",
     image: "/images/documents/doc-ct-team-nutrition-letter.webp",
     imageAlt:
-      "Fruiticana document page summarizing the December 2004 Connecticut Team Nutrition pilot letter.",
-    file: null,
-    canDownload: false,
+      "December 20, 2004 Connecticut State Department of Education letter on Fruiticana's inclusion in the Team Nutrition Healthy Snack Pilot.",
+    file: "/documents/ct-team-nutrition-letter.pdf",
+    canDownload: true,
   },
   {
     slug: "laboratory-nutritional-analysis",

@@ -168,7 +168,7 @@ export default function AboutPage() {
         <SectionHeading
           eyebrow="Supporting documentation"
           title="School documentation"
-          description="Fruiticana's business record includes documents from roughly 2004-2008. Open any document to read it on its own page for school review. The U.S. FDA facility registration and American Heart Association program letter PDFs are available to download; other original PDF downloads are not published."
+          description="Fruiticana's business record includes documents from roughly 2004-2008. Open any document to read it on its own page for school review. The U.S. FDA facility registration, American Heart Association program letter, and Connecticut Team Nutrition pilot letter PDFs are available to download; other original PDF downloads are not published."
         />
         <ul className="mt-10 grid grid-cols-1 gap-5 md:grid-cols-2">
           {documents.map((document) => (

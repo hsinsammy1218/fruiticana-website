@@ -54,7 +54,8 @@ test.describe("resources documentation", () => {
 
       if (
         doc.slug === "fda-facility-registration" ||
-        doc.slug === "aha-food-certification-letter"
+        doc.slug === "aha-food-certification-letter" ||
+        doc.slug === "ct-team-nutrition-letter"
       ) {
         const download = page.getByRole("link", { name: /download pdf/i }).first();
         await expect(download).toBeVisible();

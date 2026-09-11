@@ -14,19 +14,21 @@ describe("documents data", () => {
     expect(documents.every((document) => document.imageAlt.length > 20)).toBe(true);
   });
 
-  it("publishes the FDA and AHA PDFs and keeps other originals unpublished", () => {
-    const fda = getDocument("fda-facility-registration");
-    expect(fda?.file).toBe("/documents/fda-facility-registration.pdf");
-    expect(fda?.canDownload).toBe(true);
+  it("publishes the FDA, AHA, and CT Team Nutrition PDFs and keeps other originals unpublished", () => {
+    const downloadable = [
+      "fda-facility-registration",
+      "aha-food-certification-letter",
+      "ct-team-nutrition-letter",
+    ] as const;
 
-    const aha = getDocument("aha-food-certification-letter");
-    expect(aha?.file).toBe("/documents/aha-food-certification-letter.pdf");
-    expect(aha?.canDownload).toBe(true);
+    for (const slug of downloadable) {
+      const document = getDocument(slug);
+      expect(document?.file).toBe(`/documents/${slug}.pdf`);
+      expect(document?.canDownload).toBe(true);
+    }
 
     const others = documents.filter(
-      (document) =>
-        document.slug !== "fda-facility-registration" &&
-        document.slug !== "aha-food-certification-letter",
+      (document) => !downloadable.includes(document.slug as (typeof downloadable)[number]),
     );
     expect(others.every((document) => document.file == null)).toBe(true);
     expect(others.every((document) => document.canDownload === false)).toBe(true);
