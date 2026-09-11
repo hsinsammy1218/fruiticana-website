@@ -166,7 +166,7 @@ export default function SchoolsPage() {
       <Section>
         <SectionHeading
           title="Flavor options"
-          description="Six of the original twelve flavors. Every flavor has a shareable product sheet and a 2008 nutrition panel."
+          description="Six of the original twelve flavors. Every flavor has a shareable product sheet and the full 2008 Nutrition Facts panel."
         />
         <FlavorGrid className="mt-10" flavors={featuredFlavors} />
         <div className="mt-8">

@@ -13,6 +13,8 @@ describe("NutritionSelector", () => {
     expect(screen.getByRole("heading", { name: "Apricot" })).toBeInTheDocument();
     expect(screen.getByText("Lab analysis (2008)")).toBeInTheDocument();
     expect(screen.getByText(/northeast laboratories/i)).toBeInTheDocument();
+    expect(screen.getByText("Total Carbohydrate")).toBeInTheDocument();
+    expect(screen.getByText(/calories from fat/i)).toBeInTheDocument();
   });
 
   it("deep-links a flavor from the selected slug", () => {

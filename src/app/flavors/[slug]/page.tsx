@@ -7,8 +7,8 @@ import { Button } from "@/components/ui/Button";
 import { HistoricalNotice } from "@/components/ui/HistoricalNotice";
 import { FlavorHero } from "@/components/flavors/FlavorHero";
 import { FlavorGrid } from "@/components/flavors/FlavorGrid";
+import { NutritionPanel } from "@/components/nutrition/NutritionPanel";
 import { JsonLd } from "@/components/seo/JsonLd";
-import { fmtAmount } from "@/lib/nutrition";
 import { site } from "@/data/site";
 import {
   flavorSlugs,
@@ -33,7 +33,7 @@ export async function generateMetadata({
   if (!flavor) return {};
   return {
     title: `${flavor.name} product information`,
-    description: `${flavor.name} Fruiticana — ${flavor.description} Product sheet from the original fruit-based frozen dessert lineup.`,
+    description: `${flavor.name} Fruiticana — ${flavor.description} Product sheet and full 2008 Nutrition Facts panel from the original fruit-based frozen dessert lineup.`,
     alternates: { canonical: `/flavors/${flavor.slug}` },
   };
 }
@@ -48,7 +48,6 @@ export default async function FlavorPage({
   if (!flavor) notFound();
 
   const related = getRelatedFlavors(slug, 3);
-  const n = flavor.nutrition;
   const lesson = getFruitLesson(slug);
 
   const breadcrumbLd = {
@@ -70,15 +69,6 @@ export default async function FlavorPage({
       },
     ],
   };
-
-  const highlights = [
-    { label: "Calories", value: fmtAmount(n.calories) },
-    { label: "Total fat", value: fmtAmount(n.totalFatG, "g") },
-    { label: "Cholesterol", value: fmtAmount(n.cholesterolMg, "mg") },
-    { label: "Sodium", value: fmtAmount(n.sodiumMg, "mg") },
-    { label: "Sugars", value: fmtAmount(n.sugarsG, "g") },
-    { label: "Vitamin C", value: fmtAmount(n.vitaminCDv, "% DV") },
-  ];
 
   return (
     <>
@@ -114,36 +104,17 @@ export default async function FlavorPage({
         </Section>
       ) : null}
 
-      <Section tone="cream-100">
-        <div className="grid gap-8 lg:grid-cols-[1fr_1.1fr] lg:items-center lg:gap-14">
-          <SectionHeading
-            eyebrow="Nutrition"
-            title="Laboratory panel highlights"
-            description="A few values from Fruiticana's laboratory analysis for this flavor. See the full panel on Flavors & Nutrition."
-          />
+      <Section id="nutrition" tone="cream-100" className="scroll-mt-24">
+        <div className="grid gap-8 lg:grid-cols-[1fr_minmax(0,28rem)] lg:items-start lg:gap-14">
           <div>
-            <dl className="grid grid-cols-2 gap-4 sm:grid-cols-3">
-              {highlights.map((item) => (
-                <div
-                  key={item.label}
-                  className="rounded-xl2 border border-line bg-white p-4 text-center"
-                >
-                  <dt className="text-xs font-semibold uppercase tracking-wide text-muted">
-                    {item.label}
-                  </dt>
-                  <dd className="mt-1 font-sans text-2xl font-extrabold tabular-nums text-green-deep sm:text-3xl">
-                    {item.value}
-                  </dd>
-                </div>
-              ))}
-            </dl>
-            <p className="info-copy mt-3">
-              Per {n.servingSize} ({n.servingGrams} g) serving. Values from the
-              2008 laboratory analysis.
-            </p>
+            <SectionHeading
+              eyebrow="Nutrition Facts"
+              title="Full laboratory panel"
+              description="The complete 2008 Nutrition Facts panel for this flavor. Compare other flavors on Flavors & Nutrition."
+            />
             <div className="mt-5">
               <Button href={`/product?flavor=${flavor.slug}#nutrition`}>
-                See full nutrition facts
+                Compare all flavor panels
               </Button>
             </div>
             <HistoricalNotice className="mt-5">
@@ -152,6 +123,7 @@ export default async function FlavorPage({
               before menu planning.
             </HistoricalNotice>
           </div>
+          <NutritionPanel flavor={flavor} />
         </div>
       </Section>
 
