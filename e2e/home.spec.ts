@@ -14,7 +14,7 @@ test.describe("home @cross-browser", () => {
       page.getByText(/the frozen treat students want/i).first(),
     ).toBeVisible();
     await expect(page.getByText(/cream-less ice crème/i).first()).toBeVisible();
-    await expect(page.getByText(/for schools and their students/i).first()).toBeVisible();
+    await expect(page.getByText(/cafeteria & snack programs/i).first()).toBeVisible();
     await expect(
       page.getByRole("link", { name: "Explore the Flavors" }).first(),
     ).toBeVisible();
@@ -29,7 +29,7 @@ test.describe("home @cross-browser", () => {
     await page.goto("/");
 
     const schoolHighlights = page.getByRole("heading", {
-      name: "Why Fruiticana was made for schools",
+      name: "Why Fruiticana belongs in the cafeteria",
     });
     const flavors = page.getByRole("heading", { name: "Twelve fruit flavors" });
 
@@ -87,12 +87,12 @@ test.describe("home @cross-browser", () => {
     await expect(howSection.getByText(/illustrative photo/i)).toBeVisible();
     await expect(howSection.locator("img").first()).toBeAttached();
     await expect(
-      page.getByRole("heading", { name: "Why Fruiticana was made for schools" }),
+      page.getByRole("heading", { name: "Why Fruiticana belongs in the cafeteria" }),
     ).toBeVisible();
     await expect(page.getByText(/team nutrition healthy snack/i).first()).toBeVisible();
     await expect(
       page.getByRole("heading", {
-        name: "Built for schools, taste-tested with students",
+        name: "Built in Connecticut, taste-tested with students",
       }),
     ).toBeVisible();
     await expect(

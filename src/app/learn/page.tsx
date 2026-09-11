@@ -29,14 +29,14 @@ const learnDescription =
   "A free Fruiticana classroom resource: twelve fruits to study, frozen-dessert science, Nutrition Facts literacy, and a Connecticut school snack-pilot case study.";
 
 export const metadata: Metadata = {
-  title: "Learn — classroom resource for schools",
+  title: "Learn — classroom resource",
   description: learnDescription,
   alternates: { canonical: "/learn" },
   keywords: [
     "fruit classroom resource",
     "nutrition facts lesson",
     "school snack program case study",
-    "fruit science for students",
+    "fruit science classroom",
     "Connecticut Team Nutrition",
   ],
 };
@@ -401,7 +401,7 @@ export default function LearnPage() {
         title="Using this with a class or a school food program?"
         description="Teachers can keep using this classroom resource. Food-service and administrative questions belong on the school inquiry form."
         primary={{
-          label: "Contact for schools",
+          label: "Request School Information",
           href: "/contact?interest=Healthy%20Snack%20Program",
         }}
         secondary={{ label: "Read Our Story", href: "/about" }}

@@ -3,9 +3,7 @@
  *
  * Brand voice is rooted in the historical myfruiticana.com consumer site
  * (Fruiticana Cream-Less Ice Crème / “The New Way to Eat Fruit”), rewritten
- * so schools and their students can understand the vision: what, why, and how.
- *
- * The audience is schools and students.
+ * so the vision is easy to follow: what, why, and how.
  *
  * IMPORTANT (see PLAN.md content audit): current business contact details are
  * NOT known. Do not invent an email, phone number, address, or social account.
@@ -32,12 +30,12 @@ export const site = {
   /** Alternate consumer phrasing from the business PDF — used on About. */
   legacyTagline: "An exciting new way to eat fruit.",
   heroSupport:
-    "A fruit-based frozen treat, built to be a healthier way for students to enjoy fruit — with the taste and feel of a frozen dessert, made for schools.",
+    "A fruit-based frozen treat, built to be a healthier way to enjoy fruit — with the taste and feel of a frozen dessert, made for the cafeteria and snack line.",
   /** Short brand promise used in closing sections. */
   promise:
-    "Fruit-based frozen dessert for schools and their students — what it is, why it exists, and how it can be made in-house.",
+    "Fruit-based frozen dessert — what it is, why it exists, and how it can be made in-house.",
   shortDescription:
-    "Fruiticana is a fruit-based creamless frozen dessert — the new way to eat fruit. This site is for schools and students: it explains the Fruiticana vision (what, why, and how), nutrition documentation, and how it fits school programs.",
+    "Fruiticana is a fruit-based creamless frozen dessert — the new way to eat fruit. This site explains the Fruiticana vision (what, why, and how), nutrition documentation, and how it fits cafeteria and snack programs.",
   url: siteUrl,
 
   /**

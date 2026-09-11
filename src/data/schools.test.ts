@@ -17,11 +17,13 @@ describe("schools data", () => {
     expect(slugs).not.toContain("distribution");
   });
 
-  it("names school and student audiences", () => {
-    expect(schoolAudiences.length).toBeGreaterThanOrEqual(5);
-    expect(schoolAudiences.join(" ")).toMatch(/students/i);
+  it("names school-team roles without announcing the audience", () => {
+    expect(schoolAudiences.length).toBeGreaterThanOrEqual(4);
+    expect(schoolAudiences.join(" ")).toMatch(/principals/i);
     expect(schoolAudiences.join(" ")).toMatch(/food-service/i);
     expect(schoolAudiences.join(" ")).not.toMatch(/distributor/i);
+    expect(schoolAudiences.join(" ")).not.toMatch(/for schools/i);
+    expect(schoolAudiences.join(" ")).not.toMatch(/for students/i);
   });
 
   it("pairs each use case and fit point with a scannable figure", () => {

@@ -47,7 +47,10 @@ test.describe("user flows", () => {
       page.getByRole("heading", { name: "Twelve fruits to know" }),
     ).toBeVisible();
 
-    await page.getByRole("link", { name: "Contact for schools" }).click();
+    await page
+      .getByRole("main")
+      .getByRole("link", { name: "Request School Information" })
+      .click();
     await expect(page.getByLabel(/interest type/i)).toHaveValue(
       "Healthy Snack Program",
     );

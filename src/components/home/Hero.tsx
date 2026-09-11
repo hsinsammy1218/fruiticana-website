@@ -30,7 +30,7 @@ export function Hero() {
         <div className="hero-rise max-w-2xl lg:max-w-none">
           <p className="inline-flex items-center gap-2 rounded-pill bg-white/70 px-3 py-1 text-sm font-semibold text-green-deep ring-1 ring-green-deep/10">
             <span className="h-2 w-2 rounded-full bg-green" aria-hidden="true" />
-            For schools and their students
+            Cafeteria & snack programs
           </p>
           <p className="mt-5 font-display text-sm font-bold uppercase tracking-[0.22em] text-green-600">
             {site.productLine}
@@ -40,7 +40,7 @@ export function Hero() {
             <span className="block">to Eat Fruit</span>
           </h1>
           <p className="mt-5 max-w-xl font-display text-xl font-semibold leading-snug text-green-deep sm:text-2xl">
-            The frozen treat students want — a better option for schools.
+            The frozen treat students want — a better cafeteria option.
           </p>
           <p className="mt-4 max-w-xl text-lg leading-[1.75] text-muted sm:text-xl">
             {site.heroSupport}

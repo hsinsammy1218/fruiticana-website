@@ -13,14 +13,15 @@ describe("vision data", () => {
     expect(visionIntro.title).toMatch(/how/i);
   });
 
-  it("positions the site for schools and students", () => {
+  it("explains the vision without announcing the audience", () => {
     const copy = [
       visionIntro.description,
       ...visionPillars.map((pillar) => `${pillar.title} ${pillar.body}`),
     ].join(" ");
-    expect(copy).toMatch(/schools/i);
     expect(copy).toMatch(/students/i);
-    expect(visionIntro.description).toMatch(/for schools and students/i);
+    expect(copy).toMatch(/cafeteria/i);
+    expect(copy).not.toMatch(/for schools/i);
+    expect(copy).not.toMatch(/this website is for/i);
     expect(visionIntro.description).not.toMatch(/only for/i);
   });
 

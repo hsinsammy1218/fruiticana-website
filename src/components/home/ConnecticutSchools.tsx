@@ -14,7 +14,7 @@ export function ConnecticutSchools() {
             className="bg-cream/15 text-cream"
           />
           <h2 className="mt-3 text-3xl font-extrabold text-cream sm:text-4xl lg:text-5xl">
-            Built for schools, taste-tested with students
+            Built in Connecticut, taste-tested with students
           </h2>
           <p className="mt-4 max-w-3xl text-lg leading-[1.7] text-cream/90">
             Research and development began around 2003. Product sampling reached
@@ -25,9 +25,8 @@ export function ConnecticutSchools() {
             including individual single-serving cups.
           </p>
           <p className="mt-3 max-w-3xl leading-[1.7] text-cream/85">
-            Today Fruiticana is focused on schools and their students — a
-            fruit-based frozen dessert designed for cafeteria and snack-program
-            use.
+            Today Fruiticana is a fruit-based frozen dessert designed for
+            cafeteria and snack-program use.
           </p>
           <div className="mt-7">
             <Button

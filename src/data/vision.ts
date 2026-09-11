@@ -1,15 +1,13 @@
 /**
- * The Fruiticana vision for schools and students: what it is, why it
- * exists, and how it can work in a school.
- *
- * Present-day school voice: what, why, and how for schools and students.
+ * The Fruiticana vision: what it is, why it exists, and how it can work
+ * in a cafeteria or snack program.
  */
 
 export const visionIntro = {
   eyebrow: "The Fruiticana vision",
-  title: "What it is. Why it exists. How it works for schools.",
+  title: "What it is. Why it exists. How it works.",
   description:
-    "This website is for schools and students. Fruiticana’s vision is a fruit-based frozen dessert students will actually want to eat — made in-house for school programs, without the extra cost of a specialty outside dessert.",
+    "Fruiticana’s vision is a fruit-based frozen dessert students will actually want to eat — made in-house, without the extra cost of a specialty outside dessert.",
 } as const;
 
 export type VisionPillar = {
@@ -29,7 +27,7 @@ export const visionPillars: VisionPillar[] = [
     step: "01",
     label: "What",
     title: "A fruit-based creamless frozen dessert",
-    body: "Fruiticana is the new way to eat fruit. Originally introduced as Fruiticana Creamless Ice Cream, it was developed as a smooth, ice-cream-like frozen dessert built from fruit flavors — not traditional dairy ice cream with fruit mixed in. Twelve original flavors make that idea concrete for students.",
+    body: "Fruiticana is the new way to eat fruit. Originally introduced as Fruiticana Creamless Ice Cream, it was developed as a smooth, ice-cream-like frozen dessert built from fruit flavors — not traditional dairy ice cream with fruit mixed in. Twelve original flavors make that idea concrete.",
     figure: "12",
     figureLabel: "Original fruit flavors",
     icon: "fruit",
@@ -49,7 +47,7 @@ export const visionPillars: VisionPillar[] = [
     step: "03",
     label: "How",
     title: "Make it in-house — without the extra cost",
-    body: "The Fruiticana how for schools is practical: a fruit-based frozen dessert designed to be made in-house, so school kitchens can serve students without taking on specialty outside-dessert cost. Serve it simply — in individual 4 oz (½ cup) cups — in a cafeteria or snack program.",
+    body: "The Fruiticana how is practical: a fruit-based frozen dessert designed to be made in-house, so kitchens can serve it without taking on specialty outside-dessert cost. Serve it simply — in individual 4 oz (½ cup) cups — in a cafeteria or snack program.",
     figure: "In-house",
     figureLabel: "Easy for school kitchens",
     icon: "cup",

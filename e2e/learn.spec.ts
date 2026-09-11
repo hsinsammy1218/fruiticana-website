@@ -39,7 +39,7 @@ test.describe("learn", () => {
     await expect(page).toHaveURL(/\/product#nutrition/);
 
     await page.goto("/learn");
-    await page.getByRole("link", { name: "Contact for schools" }).click();
+    await page.getByRole("main").getByRole("link", { name: "Request School Information" }).click();
     await expect(page).toHaveURL(/\/contact\?interest=/);
     await expect(page.getByLabel(/interest type/i)).toHaveValue(
       "Healthy Snack Program",

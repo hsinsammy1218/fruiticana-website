@@ -7,10 +7,12 @@ test.describe("for schools", () => {
     await expect(
       page.getByRole("heading", {
         level: 1,
-        name: /fruiticana for schools/i,
+        name: /the fruiticana vision/i,
       }),
     ).toBeVisible();
-    await expect(page.getByText(/this page is for schools and students/i).first()).toBeVisible();
+    await expect(
+      page.getByText(/principals, food-service directors, nutrition staff, and administrators/i).first(),
+    ).toBeVisible();
     await expect(page.getByRole("heading", { name: "School cafeteria" })).toBeVisible();
     await expect(page.getByRole("heading", { name: "Healthy snack program" })).toBeVisible();
     await expect(page.getByRole("heading", { name: "Private school" })).toBeVisible();

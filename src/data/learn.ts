@@ -46,7 +46,7 @@ export type ClassroomActivity = {
 };
 
 export const learnIntro = {
-  eyebrow: "For schools",
+  eyebrow: "Classroom resource",
   title: "A free classroom resource about fruit, frozen desserts, and a real snack-pilot story",
   description:
     "Teachers and students can use this page to study fruit science, practice reading Nutrition Facts panels, and examine a documented Connecticut school snack tasting as a primary-source case study. Nothing here requires buying a product.",

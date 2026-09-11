@@ -1,17 +1,14 @@
 /**
- * Copy for the For Schools page.
- * The audience is schools and students.
+ * Copy for the schools page.
  */
 
 export const schoolsIntro = {
-  eyebrow: "For schools",
-  title: "Fruiticana for Schools",
+  title: "The Fruiticana vision",
   description:
-    "This page is for schools and students. Principals, food-service directors, nutrition staff, and administrators can review the vision — what Fruiticana is, why it exists, and how it can work in a cafeteria or snack program for students.",
+    "Principals, food-service directors, nutrition staff, and administrators can review what Fruiticana is, why it exists, and how it can work in a cafeteria or snack program.",
 } as const;
 
 export const schoolAudiences = [
-  "Schools and the students they serve",
   "Principals and school administrators",
   "Food-service directors and cafeteria managers",
   "Nutrition coordinators and wellness staff",
@@ -114,10 +111,9 @@ export const schoolFitPoints = [
  * prefer it."
  */
 export const studentAppealIntro = {
-  eyebrow: "For students",
-  title: "Why students want it",
+  title: "A treat they'll want",
   description:
-    "The other half of the decision is the student. Fruiticana is made to look and taste like a treat students actually want — so a fruit-based option is one they are glad to eat.",
+    "Fruiticana is made to look and taste like a treat — a fruit-based option people are glad to eat.",
 } as const;
 
 export const studentAppeal: {

@@ -20,7 +20,7 @@ import { JsonLd } from "@/components/seo/JsonLd";
 export const metadata: Metadata = {
   title: "About Fruiticana",
   description:
-    "The Fruiticana vision — what it is, why it exists, and how it was developed for schools — plus its 2003–2005 Connecticut Team Nutrition Healthy Snack pilot, founding team, and school documentation.",
+    "The Fruiticana vision — what it is, why it exists, and how it was developed — plus its 2003–2005 Connecticut Team Nutrition Healthy Snack pilot, founding team, and school documentation.",
   alternates: { canonical: "/about" },
 };
 
@@ -46,7 +46,7 @@ export default function AboutPage() {
         <SectionHeading
           as="h1"
           eyebrow="About Fruiticana"
-          title="A new way to eat fruit — built for schools"
+          title="A new way to eat fruit"
           description="Fruiticana began in 2003 as a fruit-based frozen dessert — a refreshing alternative to traditional dairy ice cream. The vision is the what, why, and how: fruit-first, so students have a treat they want to eat, served in school programs."
         />
         <div className="mt-6 max-w-2xl space-y-4 text-base leading-[1.7] text-muted">

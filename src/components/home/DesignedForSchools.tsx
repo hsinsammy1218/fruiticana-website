@@ -9,8 +9,8 @@ export function DesignedForSchools() {
     <Section>
       <SectionHeading
         eyebrow="Why"
-        title="Why Fruiticana was made for schools"
-        description="Fruiticana is made for schools and students. The idea is a fruit-based frozen dessert that belongs in a school cafeteria or snack program — a new way for students to eat fruit."
+        title="Why Fruiticana belongs in the cafeteria"
+        description="A fruit-based frozen dessert that belongs in a cafeteria or snack program — a new way to eat fruit."
       />
       <ul className="mt-8 grid grid-cols-1 items-stretch gap-4 sm:grid-cols-2 xl:grid-cols-4">
         {schoolHomeBenefits.map((benefit) => (
@@ -26,7 +26,7 @@ export function DesignedForSchools() {
       </ul>
       <div className="mt-8">
         <Button href="/schools" size="lg">
-          Learn About Fruiticana for Schools
+          Learn more
         </Button>
       </div>
     </Section>

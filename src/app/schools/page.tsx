@@ -26,7 +26,7 @@ import { FlavorGrid } from "@/components/flavors/FlavorGrid";
 export const metadata: Metadata = {
   title: "For Schools",
   description:
-    "The Fruiticana vision for schools and their students — what it is, why it exists, and how a fruit-based frozen dessert can fit cafeterias, snack programs, and school events.",
+    "The Fruiticana vision — what it is, why it exists, and how a fruit-based frozen dessert can fit cafeterias, snack programs, and school events.",
   alternates: { canonical: "/schools" },
 };
 
@@ -51,7 +51,6 @@ export default function SchoolsPage() {
       <Section>
         <SectionHeading
           as="h1"
-          eyebrow={schoolsIntro.eyebrow}
           title={schoolsIntro.title}
           description={schoolsIntro.description}
         />
@@ -74,7 +73,6 @@ export default function SchoolsPage() {
 
       <Section tone="cream-100">
         <SectionHeading
-          eyebrow={studentAppealIntro.eyebrow}
           title={studentAppealIntro.title}
           description={studentAppealIntro.description}
         />
@@ -102,7 +100,7 @@ export default function SchoolsPage() {
       <Section tone="cream-100">
         <SectionHeading
           title="Where Fruiticana could fit"
-          description="Use cases a principal or food-service director typically evaluates for students."
+          description="Use cases a principal or food-service director typically evaluates."
         />
         <ul className="mt-10 grid gap-4 sm:grid-cols-2">
           {schoolUses.map((use) => (
@@ -147,7 +145,7 @@ export default function SchoolsPage() {
       <Section tone="cream-100">
         <SectionHeading
           title="Serving formats for school review"
-          description="Schools serve single-serve cups — a 4 oz (1/2 cup) size matching the Nutrition Facts panels. The Fruiticana how for schools is in-house preparation, without specialty outside-dessert cost."
+          description="Single-serve cups — a 4 oz (1/2 cup) size matching the Nutrition Facts panels. Fruiticana is designed for in-house preparation, without specialty outside-dessert cost."
         />
         <ul className="mt-10 grid gap-5 sm:grid-cols-1 lg:max-w-md">
           {formats.map((format) => (

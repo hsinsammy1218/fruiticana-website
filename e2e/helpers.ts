@@ -9,12 +9,12 @@ export const primaryRoutes = [
   },
   {
     path: "/about",
-    heading: /a new way to eat fruit — built for schools/i,
+    heading: /a new way to eat fruit/i,
     title: /About Fruiticana/,
   },
   {
     path: "/schools",
-    heading: /fruiticana for schools/i,
+    heading: /the fruiticana vision/i,
     title: /For Schools/,
   },
   {

@@ -122,7 +122,7 @@ export default async function ProductPage({
         <SectionHeading
           eyebrow="Ingredients & allergens"
           title="What's inside"
-          description="A fruit-first recipe schools can make in-house for students. Confirm the mix and allergens against your current Fruiticana formulation before service."
+          description="A fruit-first recipe kitchens can make in-house. Confirm the mix and allergens against your current Fruiticana formulation before service."
         />
         <div className="mt-8">
           <IngredientRecipe />

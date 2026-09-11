@@ -44,7 +44,7 @@ export const recipeYield =
   "Makes creamless frozen dessert for school single-serve cups (4 oz).";
 
 export const recipeIntro =
-  "A simple in-house recipe for schools: fruit-first ingredients your kitchen can work with — without specialty outside-dessert cost.";
+  "A simple in-house recipe: fruit-first ingredients your kitchen can work with — without specialty outside-dessert cost.";
 
 export const recipeIngredientsSource =
   "Ingredient lineup from Fruiticana product pages on myfruiticana.com (Wayback Machine, March 2007).";

@@ -196,7 +196,7 @@ export const healthierBenefits: {
     figure: "2003",
     title: "Lactose-free concept",
     description:
-      "Originally created for students avoiding lactose; confirm the current recipe and allergens.",
+      "Originally created with lactose-avoiding eaters in mind; confirm the current recipe and allergens.",
   },
 ];
 
