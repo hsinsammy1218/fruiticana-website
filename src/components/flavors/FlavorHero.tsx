@@ -47,14 +47,17 @@ export function FlavorHero({ flavor }: { flavor: Flavor }) {
           {flavor.detail}
         </p>
 
-        <div className="mt-8 grid items-start gap-8 lg:grid-cols-2 lg:gap-10">
+        <div className="mt-8 grid grid-cols-1 gap-8 lg:grid-cols-2 lg:items-stretch lg:gap-x-10 lg:gap-y-4">
           <div
-            className="reveal overflow-hidden rounded-xl2 border border-line bg-white shadow-soft"
+            className="reveal relative min-h-0 aspect-[4/3] overflow-hidden rounded-xl2 border border-line bg-white shadow-soft lg:aspect-auto lg:h-full lg:min-h-full"
             data-revealed="true"
           >
-            <div className="aspect-[4/3]">
-              <FlavorImage flavor={flavor} priority />
-            </div>
+            <FlavorImage
+              flavor={flavor}
+              priority
+              fill
+              className="object-center"
+            />
           </div>
 
           <div id="nutrition" className="scroll-mt-24">
@@ -67,12 +70,15 @@ export function FlavorHero({ flavor }: { flavor: Flavor }) {
             <div className="mt-4">
               <NutritionPanel flavor={flavor} />
             </div>
-            <div className="mt-4">
+          </div>
+
+          <div className="flex flex-col gap-4 lg:col-start-2">
+            <div>
               <Button href={`/product?flavor=${flavor.slug}#nutrition`}>
                 Compare all flavor panels
               </Button>
             </div>
-            <HistoricalNotice className="mt-4">
+            <HistoricalNotice>
               Values come from an independent 2008 analysis (report
               #20080318F). Confirm them against your current formulation
               before menu planning.
