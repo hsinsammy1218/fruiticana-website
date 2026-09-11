@@ -52,7 +52,7 @@ test.describe("flavors", () => {
     await expect(page.getByText("Vitamin C")).toBeVisible();
     await expect(page.getByText("Calcium")).toBeVisible();
     await expect(page.getByText("Iron")).toBeVisible();
-    await expect(page.getByText(/source: northeast laboratories/i)).toBeVisible();
+    await expect(page.getByText(/source: independent 2008 analysis/i)).toBeVisible();
     await expect(
       page.getByRole("link", { name: "Compare all flavor panels" }),
     ).toHaveAttribute("href", "/product?flavor=mango#nutrition");

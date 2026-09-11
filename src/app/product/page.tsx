@@ -93,7 +93,7 @@ export default async function ProductPage({
         />
         <HistoricalNotice className="mt-6 max-w-3xl">
           Nutrition values come from an independent 2008 analysis
-          (Northeast Laboratories, Inc., report #20080318F). Confirm these
+          (report #20080318F). Confirm these
           figures against your current Fruiticana formulation before menu
           planning.
         </HistoricalNotice>

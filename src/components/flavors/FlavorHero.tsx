@@ -73,8 +73,8 @@ export function FlavorHero({ flavor }: { flavor: Flavor }) {
               </Button>
             </div>
             <HistoricalNotice className="mt-4">
-              Values come from an independent 2008 analysis (Northeast
-              Laboratories). Confirm them against your current formulation
+              Values come from an independent 2008 analysis (report
+              #20080318F). Confirm them against your current formulation
               before menu planning.
             </HistoricalNotice>
           </div>

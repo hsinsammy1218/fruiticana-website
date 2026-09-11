@@ -78,17 +78,17 @@ export const documents: HistoricalDocument[] = [
     canDownload: false,
   },
   {
-    slug: "laboratory-nutritional-analysis",
+    slug: "nutritional-analysis",
     title: "Nutritional analysis",
     period: "2008",
     summary:
-      "Independent Nutrition Facts panels for all 12 flavors from Northeast Laboratories, Inc. (report #20080318F).",
+      "Independent Nutrition Facts panels for all 12 flavors (report #20080318F).",
     clarification:
       "These nutrition results are shown on the Flavors & Nutrition page. Confirm them against your current formulation before using them as a product label.",
     category: "nutrition",
     image: "/images/documents/doc-laboratory-nutritional-analysis.webp",
     imageAlt:
-      "Fruiticana document page summarizing the 2008 Northeast Laboratories nutritional analysis.",
+      "Fruiticana document page summarizing the 2008 nutritional analysis.",
     file: null,
     canDownload: false,
     href: "/product#nutrition",

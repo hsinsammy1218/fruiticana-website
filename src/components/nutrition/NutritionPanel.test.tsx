@@ -29,7 +29,7 @@ describe("NutritionPanel", () => {
     expect(screen.getByText("Vitamin C")).toBeInTheDocument();
     expect(screen.getByText("Calcium")).toBeInTheDocument();
     expect(screen.getByText("Iron")).toBeInTheDocument();
-    expect(screen.getByText(/northeast laboratories/i)).toBeInTheDocument();
+    expect(screen.getByText(/independent 2008 analysis/i)).toBeInTheDocument();
   });
 
   it("leaves Banana calories blank rather than guessing", () => {

@@ -34,7 +34,7 @@ export function HealthierChoice() {
       </ul>
       <HistoricalNotice className="mt-8 max-w-3xl">
         Nutrition figures come from an independent 2008 nutrition analysis
-        (Northeast Laboratories). Confirm them against the current Fruiticana
+        (report #20080318F). Confirm them against the current Fruiticana
         formulation before relying on them.
       </HistoricalNotice>
       <div className="mt-6">

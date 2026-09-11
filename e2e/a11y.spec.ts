@@ -20,7 +20,7 @@ test.describe("accessibility @cross-browser", () => {
       "/flavors/mango",
       "/flavors/banana",
       "/resources/fda-facility-registration",
-      "/resources/laboratory-nutritional-analysis",
+      "/resources/nutritional-analysis",
       "/privacy",
       "/terms",
       "/accessibility",

@@ -11,7 +11,7 @@ const documentPages = [
     title: /connecticut team nutrition pilot letter/i,
   },
   {
-    slug: "laboratory-nutritional-analysis",
+    slug: "nutritional-analysis",
     title: /nutritional analysis/i,
   },
 ];
@@ -61,7 +61,7 @@ test.describe("resources documentation", () => {
   test("the nutrition analysis page offers the live nutrition panels", async ({
     page,
   }) => {
-    await page.goto("/resources/laboratory-nutritional-analysis");
+    await page.goto("/resources/nutritional-analysis");
     await expect(
       page.getByRole("link", { name: /view nutrition panels/i }),
     ).toHaveAttribute("href", /\/product#nutrition/);

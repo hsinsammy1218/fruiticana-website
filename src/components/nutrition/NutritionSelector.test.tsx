@@ -12,7 +12,7 @@ describe("NutritionSelector", () => {
     );
     expect(screen.getByRole("heading", { name: "Apricot" })).toBeInTheDocument();
     expect(screen.getByText("Nutrition analysis (2008)")).toBeInTheDocument();
-    expect(screen.getByText(/northeast laboratories/i)).toBeInTheDocument();
+    expect(screen.getByText(/independent 2008 analysis/i)).toBeInTheDocument();
     expect(screen.getByText("Total Carbohydrate")).toBeInTheDocument();
     expect(screen.getByText(/calories from fat/i)).toBeInTheDocument();
   });
