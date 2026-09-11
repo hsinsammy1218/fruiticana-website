@@ -68,18 +68,18 @@ export function getNutritionGlanceStats(list: Flavor[] = flavors): FactStat[] {
   const missing =
     snapshot.flavorsMissingCalories.length > 0
       ? `${snapshot.flavorsMissingCalories.join(", ")} left blank`
-      : "Laboratory range";
+      : "Nutrition range";
 
   return [
     {
       value: snapshot.allZeroFat ? "0g" : "See panels",
       label: "Total fat",
-      note: `All ${snapshot.flavorCount} flavors, 2008 lab`,
+      note: `All ${snapshot.flavorCount} flavors, 2008 analysis`,
     },
     {
       value: snapshot.allZeroCholesterol ? "0mg" : "See panels",
       label: "Cholesterol",
-      note: `All ${snapshot.flavorCount} flavors, 2008 lab`,
+      note: `All ${snapshot.flavorCount} flavors, 2008 analysis`,
     },
     {
       value: `${snapshot.calorieMin}–${snapshot.calorieMax}`,

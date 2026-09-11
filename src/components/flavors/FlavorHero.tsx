@@ -62,7 +62,7 @@ export function FlavorHero({ flavor }: { flavor: Flavor }) {
               Nutrition Facts
             </h2>
             <p className="mt-2 text-sm text-muted">
-              Full 2008 laboratory panel for {flavor.name}.
+              Full 2008 Nutrition Facts panel for {flavor.name}.
             </p>
             <div className="mt-4">
               <NutritionPanel flavor={flavor} />
@@ -73,8 +73,8 @@ export function FlavorHero({ flavor }: { flavor: Flavor }) {
               </Button>
             </div>
             <HistoricalNotice className="mt-4">
-              Values come from an independent laboratory analysis (Northeast
-              Laboratories, 2008). Confirm them against your current formulation
+              Values come from an independent 2008 analysis (Northeast
+              Laboratories). Confirm them against your current formulation
               before menu planning.
             </HistoricalNotice>
           </div>

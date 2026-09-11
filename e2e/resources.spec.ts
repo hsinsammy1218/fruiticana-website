@@ -12,7 +12,7 @@ const documentPages = [
   },
   {
     slug: "laboratory-nutritional-analysis",
-    title: /laboratory nutritional analysis/i,
+    title: /nutritional analysis/i,
   },
 ];
 

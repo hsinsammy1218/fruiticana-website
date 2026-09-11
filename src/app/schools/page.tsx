@@ -152,7 +152,7 @@ export default function SchoolsPage() {
       <Section tone="cream-100">
         <SectionHeading
           title="Serving formats for school review"
-          description="Schools serve single-serve cups — a 4 oz (1/2 cup) size matching the laboratory Nutrition Facts panels. The Fruiticana how for schools is in-house preparation, without specialty outside-dessert cost."
+          description="Schools serve single-serve cups — a 4 oz (1/2 cup) size matching the Nutrition Facts panels. The Fruiticana how for schools is in-house preparation, without specialty outside-dessert cost."
         />
         <ul className="mt-10 grid gap-5 sm:grid-cols-1 lg:max-w-md">
           {formats.map((format) => (

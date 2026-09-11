@@ -27,7 +27,7 @@ export function ServingFormats() {
             <SectionHeading
               eyebrow="How"
               title="How it works in school kitchens"
-              description="Fruiticana is designed to be made in-house — a practical school option without the extra cost of bringing in a specialty outside dessert. Schools serve a moderate single-serve cup: 4 oz (1/2 cup), matching the laboratory Nutrition Facts serving."
+              description="Fruiticana is designed to be made in-house — a practical school option without the extra cost of bringing in a specialty outside dessert. Schools serve a moderate single-serve cup: 4 oz (1/2 cup), matching the Nutrition Facts serving."
             />
             <p className="mt-4 text-sm leading-relaxed text-muted">
               Illustrative photo — a frozen treat portioned for school kitchens

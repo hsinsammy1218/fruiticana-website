@@ -20,7 +20,7 @@ export const formats: ProductFormat[] = [
     name: "Single-serve cup (4 oz)",
     amount: "4 oz",
     description:
-      "A 4 oz (1/2 cup) cup matching the laboratory Nutrition Facts serving size — a simple single-serve format for in-house school kitchen service.",
+      "A 4 oz (1/2 cup) cup matching the Nutrition Facts serving size — a simple single-serve format for in-house school kitchen service.",
     icon: "cup",
     institutional: true,
   },

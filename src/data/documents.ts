@@ -79,12 +79,12 @@ export const documents: HistoricalDocument[] = [
   },
   {
     slug: "laboratory-nutritional-analysis",
-    title: "Laboratory nutritional analysis",
+    title: "Nutritional analysis",
     period: "2008",
     summary:
       "Independent Nutrition Facts panels for all 12 flavors from Northeast Laboratories, Inc. (report #20080318F).",
     clarification:
-      "These lab results are shown on the Flavors & Nutrition page. Confirm them against your current formulation before using them as a product label.",
+      "These nutrition results are shown on the Flavors & Nutrition page. Confirm them against your current formulation before using them as a product label.",
     category: "nutrition",
     image: "/images/documents/doc-laboratory-nutritional-analysis.webp",
     imageAlt:
@@ -132,7 +132,7 @@ export const documents: HistoricalDocument[] = [
     title: "Institutional serving information",
     period: "School service",
     summary:
-      "School-oriented serving notes focused on the 4 oz (1/2 cup) single-serve cup that matches the laboratory Nutrition Facts panels.",
+      "School-oriented serving notes focused on the 4 oz (1/2 cup) single-serve cup that matches the Nutrition Facts panels.",
     clarification:
       "Confirm food-service pack sizes with Fruiticana before menu planning.",
     category: "product-information",
@@ -178,7 +178,7 @@ export const resourceCategoryMeta: {
     id: "nutrition",
     title: "Nutrition",
     description:
-      "2008 laboratory analyses and the school kitchen ingredient recipe.",
+      "2008 Nutrition Facts panels and the school kitchen ingredient recipe.",
   },
   {
     id: "school-program",

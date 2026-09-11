@@ -81,7 +81,7 @@ export const learnModules = [
   {
     id: "labels",
     title: "How to read a Nutrition Facts panel",
-    summary: "Label literacy using Fruiticana's 2008 laboratory panels as dated examples.",
+    summary: "Label literacy using Fruiticana's 2008 Nutrition Facts panels as dated examples.",
   },
   {
     id: "case-study",

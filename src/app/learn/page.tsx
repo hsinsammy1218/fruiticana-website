@@ -221,7 +221,7 @@ export default function LearnPage() {
           id="labels-heading"
           eyebrow="Module 3"
           title="How to read a Nutrition Facts panel"
-          description="Use Fruiticana's 2008 laboratory panels as dated examples. The skill is reading a label — not deciding that a dessert is 'healthy.'"
+          description="Use Fruiticana's 2008 Nutrition Facts panels as dated examples. The skill is reading a label — not deciding that a dessert is 'healthy.'"
         />
         <div className="mt-10 grid gap-8 lg:grid-cols-[1.1fr_1fr] lg:gap-12">
           <dl className="space-y-4">
