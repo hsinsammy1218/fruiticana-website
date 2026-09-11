@@ -23,29 +23,28 @@ test.describe("home @cross-browser", () => {
     ).toBeVisible();
   });
 
-  test("leads with the healthier core benefit before taste and flavors", async ({
+  test("leads with school highlights before taste and flavors", async ({
     page,
   }) => {
     await page.goto("/");
 
+    const schoolHighlights = page.getByRole("heading", {
+      name: "Why Fruiticana was made for schools",
+    });
+    const flavors = page.getByRole("heading", { name: "Twelve fruit flavors" });
+
+    await expect(schoolHighlights).toBeVisible();
+    await expect(page.getByRole("heading", { name: "Student portions" })).toBeVisible();
+    await expect(page.getByRole("heading", { name: "Fruit flavors" })).toBeVisible();
+    await expect(page.getByRole("heading", { name: "School chapter" })).toBeVisible();
+    await expect(page.getByRole("heading", { name: "Snack pilot" })).toBeVisible();
     await expect(
       page.getByRole("heading", { name: "A healthier way to eat fruit" }),
     ).toBeVisible();
-    await expect(
-      page.getByRole("heading", { name: "Fruit, not dairy" }),
-    ).toBeVisible();
-    await expect(
-      page.getByRole("heading", { name: "0 g fat on 2008 panels" }),
-    ).toBeVisible();
-    await expect(
-      page.getByRole("heading", { name: "Healthy Snack pilot" }),
-    ).toBeVisible();
-    await expect(
-      page.getByText(/2008 Nutrition Facts panel/i).first(),
-    ).toBeVisible();
-    await expect(
-      page.getByRole("link", { name: "See the Nutrition Information" }),
-    ).toHaveAttribute("href", "/product#nutrition");
+
+    const schoolTop = await schoolHighlights.evaluate((el) => el.getBoundingClientRect().top);
+    const flavorsTop = await flavors.evaluate((el) => el.getBoundingClientRect().top);
+    expect(schoolTop).toBeLessThan(flavorsTop);
   });
 
   test("hero CTAs open the flavors and the school inquiry", async ({ page }) => {

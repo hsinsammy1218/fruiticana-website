@@ -13,10 +13,10 @@ export default function Home() {
   return (
     <>
       <Hero />
+      <DesignedForSchools />
       <HealthierChoice />
       <WhatIsFruiticana />
       <FeaturedFlavors />
-      <DesignedForSchools />
       <ServingFormats />
       <ConnecticutSchools />
       <SchoolCredibility />
