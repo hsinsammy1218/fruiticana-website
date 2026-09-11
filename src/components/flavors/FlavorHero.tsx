@@ -1,8 +1,10 @@
 import Link from "next/link";
 import { Container } from "@/components/layout/Container";
 import { FlavorImage } from "@/components/flavors/FlavorImage";
+import { NutritionPanel } from "@/components/nutrition/NutritionPanel";
 import { ArrowRightIcon } from "@/components/ui/icons";
-import { HistoricalBadge } from "@/components/ui/HistoricalBadge";
+import { Button } from "@/components/ui/Button";
+import { HistoricalNotice } from "@/components/ui/HistoricalNotice";
 import type { Flavor } from "@/data/flavors";
 
 export function FlavorHero({ flavor }: { flavor: Flavor }) {
@@ -16,7 +18,7 @@ export function FlavorHero({ flavor }: { flavor: Flavor }) {
         className="pointer-events-none absolute inset-0 -z-10 opacity-[0.10]"
         style={{ backgroundColor: "var(--accent)" }}
       />
-      <Container className="py-10 sm:py-14 lg:py-16">
+      <Container className="py-8 sm:py-10 lg:py-12">
         <Link
           href="/product#flavors"
           className="inline-flex items-center gap-1.5 rounded-md text-sm font-semibold text-green-600 hover:text-green-700"
@@ -25,34 +27,27 @@ export function FlavorHero({ flavor }: { flavor: Flavor }) {
           All flavors
         </Link>
 
-        <div className="mt-6 grid items-center gap-8 lg:grid-cols-2 lg:gap-12">
-          <div>
+        <div className="mt-6 flex flex-wrap items-center gap-3">
+          <span
+            className="inline-flex items-center gap-2 rounded-pill px-3 py-1 text-xs font-semibold text-green-deep"
+            style={{ backgroundColor: "color-mix(in srgb, var(--accent) 22%, white)" }}
+          >
             <span
-              className="inline-flex items-center gap-2 rounded-pill px-3 py-1 text-xs font-semibold text-green-deep"
-              style={{ backgroundColor: "color-mix(in srgb, var(--accent) 22%, white)" }}
-            >
-              <span
-                className="h-2 w-2 rounded-full"
-                style={{ backgroundColor: "var(--accent)" }}
-              />
-              {flavor.category}
-            </span>
-            <h1 className="mt-4 text-4xl font-extrabold sm:text-5xl">{flavor.name}</h1>
-            <p className="mt-3 text-xl font-medium text-green-deep-80">
-              {flavor.tagline}
-            </p>
-            <p className="mt-4 max-w-xl text-lg leading-[1.75] text-muted">
-              {flavor.detail}
-            </p>
-            <p className="mt-5 text-sm text-muted">
-              From Fruiticana&rsquo;s original 12-flavor lineup.
-            </p>
-            <HistoricalBadge
-              label="Nutrition analysis"
-              className="mt-4"
+              className="h-2 w-2 rounded-full"
+              style={{ backgroundColor: "var(--accent)" }}
             />
-          </div>
+            {flavor.category}
+          </span>
+        </div>
+        <h1 className="mt-3 text-4xl font-extrabold sm:text-5xl">{flavor.name}</h1>
+        <p className="mt-2 text-xl font-medium text-green-deep-80">
+          {flavor.tagline}
+        </p>
+        <p className="mt-3 max-w-3xl text-lg leading-[1.75] text-muted">
+          {flavor.detail}
+        </p>
 
+        <div className="mt-8 grid items-start gap-8 lg:grid-cols-2 lg:gap-10">
           <div
             className="reveal overflow-hidden rounded-xl2 border border-line bg-white shadow-soft"
             data-revealed="true"
@@ -60,6 +55,28 @@ export function FlavorHero({ flavor }: { flavor: Flavor }) {
             <div className="aspect-[4/3]">
               <FlavorImage flavor={flavor} priority />
             </div>
+          </div>
+
+          <div id="nutrition" className="scroll-mt-24">
+            <h2 className="text-2xl font-extrabold text-green-deep sm:text-3xl">
+              Nutrition Facts
+            </h2>
+            <p className="mt-2 text-sm text-muted">
+              Full 2008 laboratory panel for {flavor.name}.
+            </p>
+            <div className="mt-4">
+              <NutritionPanel flavor={flavor} />
+            </div>
+            <div className="mt-4">
+              <Button href={`/product?flavor=${flavor.slug}#nutrition`}>
+                Compare all flavor panels
+              </Button>
+            </div>
+            <HistoricalNotice className="mt-4">
+              Values come from an independent laboratory analysis (Northeast
+              Laboratories, 2008). Confirm them against your current formulation
+              before menu planning.
+            </HistoricalNotice>
           </div>
         </div>
       </Container>

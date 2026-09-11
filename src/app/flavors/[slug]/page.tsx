@@ -4,10 +4,8 @@ import { notFound } from "next/navigation";
 import { Section } from "@/components/layout/Section";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Button } from "@/components/ui/Button";
-import { HistoricalNotice } from "@/components/ui/HistoricalNotice";
 import { FlavorHero } from "@/components/flavors/FlavorHero";
 import { FlavorGrid } from "@/components/flavors/FlavorGrid";
-import { NutritionPanel } from "@/components/nutrition/NutritionPanel";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { site } from "@/data/site";
 import {
@@ -103,29 +101,6 @@ export default async function FlavorPage({
           </div>
         </Section>
       ) : null}
-
-      <Section id="nutrition" tone="cream-100" className="scroll-mt-24">
-        <div className="grid gap-8 lg:grid-cols-[1fr_minmax(0,28rem)] lg:items-start lg:gap-14">
-          <div>
-            <SectionHeading
-              eyebrow="Nutrition Facts"
-              title="Full laboratory panel"
-              description="The complete 2008 Nutrition Facts panel for this flavor. Compare other flavors on Flavors & Nutrition."
-            />
-            <div className="mt-5">
-              <Button href={`/product?flavor=${flavor.slug}#nutrition`}>
-                Compare all flavor panels
-              </Button>
-            </div>
-            <HistoricalNotice className="mt-5">
-              Values come from an independent laboratory analysis (Northeast
-              Laboratories, 2008). Confirm them against your current formulation
-              before menu planning.
-            </HistoricalNotice>
-          </div>
-          <NutritionPanel flavor={flavor} />
-        </div>
-      </Section>
 
       {related.length > 0 ? (
         <Section>

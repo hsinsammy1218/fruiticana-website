@@ -7,7 +7,7 @@ test.describe("user flows", () => {
     await page.getByRole("link", { name: "View All Flavors" }).click();
     await expect(page).toHaveURL(/\/product/);
 
-    await page.locator('a[href="/flavors/mango"]').click();
+    await page.locator('a[href="/flavors/mango#nutrition"]').click();
     await expect(page).toHaveURL(/\/flavors\/mango$/);
     await expect(page.getByRole("heading", { level: 1, name: "Mango" })).toBeVisible();
     await expect(page.getByText("Calories", { exact: true })).toBeVisible();
