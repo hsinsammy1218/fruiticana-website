@@ -34,10 +34,18 @@ test.describe("home @cross-browser", () => {
     const flavors = page.getByRole("heading", { name: "Twelve fruit flavors" });
 
     await expect(schoolHighlights).toBeVisible();
-    await expect(page.getByRole("heading", { name: "Student portions" })).toBeVisible();
-    await expect(page.getByRole("heading", { name: "Fruit flavors", exact: true })).toBeVisible();
-    await expect(page.getByRole("heading", { name: "School chapter" })).toBeVisible();
-    await expect(page.getByRole("heading", { name: "Snack pilot" })).toBeVisible();
+    await expect(
+      page.getByRole("heading", { name: "Student portions", exact: true }),
+    ).toBeVisible();
+    await expect(
+      page.getByRole("heading", { name: "Fruit flavors", exact: true }),
+    ).toBeVisible();
+    await expect(
+      page.getByRole("heading", { name: "School chapter", exact: true }),
+    ).toBeVisible();
+    await expect(
+      page.getByRole("heading", { name: "Snack pilot", exact: true }),
+    ).toBeVisible();
     await expect(
       page.getByRole("heading", { name: "A healthier way to eat fruit" }),
     ).toBeVisible();
