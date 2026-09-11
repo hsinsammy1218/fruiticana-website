@@ -110,7 +110,7 @@ export default async function FlavorPage({
             <SectionHeading
               eyebrow="Nutrition Facts"
               title="Full laboratory panel"
-              description="The complete 2008 Nutrition Facts panel for this flavor, transcribed from Northeast Laboratories report #20080318F. Compare other flavors on Flavors & Nutrition."
+              description="The complete 2008 Nutrition Facts panel for this flavor. Compare other flavors on Flavors & Nutrition."
             />
             <div className="mt-5">
               <Button href={`/product?flavor=${flavor.slug}#nutrition`}>
