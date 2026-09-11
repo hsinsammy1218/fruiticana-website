@@ -35,7 +35,7 @@ test.describe("flavors", () => {
     await expect(
       page.getByRole("heading", { name: /full laboratory panel/i }),
     ).toBeVisible();
-    await expect(page.getByText("Calories")).toBeVisible();
+    await expect(page.getByText("Calories", { exact: true })).toBeVisible();
     await expect(page.getByText("Calories from Fat 0")).toBeVisible();
     await expect(page.getByText("Total Fat")).toBeVisible();
     await expect(page.getByText("Saturated Fat")).toBeVisible();

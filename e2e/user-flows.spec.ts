@@ -10,7 +10,7 @@ test.describe("user flows", () => {
     await page.locator('a[href="/flavors/mango"]').click();
     await expect(page).toHaveURL(/\/flavors\/mango$/);
     await expect(page.getByRole("heading", { level: 1, name: "Mango" })).toBeVisible();
-    await expect(page.getByText("Calories")).toBeVisible();
+    await expect(page.getByText("Calories", { exact: true })).toBeVisible();
     await expect(page.getByText("Total Carbohydrate")).toBeVisible();
     await expect(page.getByText(/northeast laboratories/i)).toBeVisible();
 
