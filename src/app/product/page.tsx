@@ -66,7 +66,7 @@ export default async function ProductPage({
       <Section id="flavors" className="scroll-mt-24 pt-4">
         <SectionHeading
           title="Twelve original fruit flavors"
-          description="The same Cream-Less Ice Crème lineup from the original Fruiticana store: Apple, Apricot, Banana, Blueberry, Cantaloupe, Grapefruit, Lemonade, Mango, Orange, Pineapple, Raisin, and Strawberry. Open a flavor for a shareable product sheet."
+          description="The same Cream-Less Ice Crème lineup from the original Fruiticana store: Apple, Apricot, Banana, Blueberry, Cantaloupe, Grapefruit, Lemonade, Mango, Orange, Pineapple, Raisin, and Strawberry. Open a flavor for its product sheet and the full 2008 Nutrition Facts panel."
         />
         <FlavorGrid className="mt-10" flavors={flavors} />
       </Section>

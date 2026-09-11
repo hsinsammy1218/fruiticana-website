@@ -22,7 +22,7 @@ test.describe("flavors", () => {
     await expect(page).toHaveURL(/\/product$/);
   });
 
-  test("flavor detail shows a product sheet and nutrition deep link", async ({
+  test("flavor detail shows a product sheet and full nutrition facts", async ({
     page,
   }) => {
     await page.goto("/flavors/mango");
@@ -33,10 +33,29 @@ test.describe("flavors", () => {
     ).toBeVisible();
     await expect(page.getByRole("link", { name: "All flavors" })).toBeVisible();
     await expect(
-      page.getByRole("link", { name: "See full nutrition facts" }),
+      page.getByRole("heading", { name: /full laboratory panel/i }),
+    ).toBeVisible();
+    await expect(page.getByText("Calories")).toBeVisible();
+    await expect(page.getByText("Calories from Fat 0")).toBeVisible();
+    await expect(page.getByText("Total Fat")).toBeVisible();
+    await expect(page.getByText("Saturated Fat")).toBeVisible();
+    await expect(page.getByText("Trans Fat")).toBeVisible();
+    await expect(page.getByText("Cholesterol")).toBeVisible();
+    await expect(page.getByText("Sodium")).toBeVisible();
+    await expect(page.getByText("Total Carbohydrate")).toBeVisible();
+    await expect(page.getByText("Dietary Fiber")).toBeVisible();
+    await expect(page.getByText("Sugars")).toBeVisible();
+    await expect(page.getByText("Protein")).toBeVisible();
+    await expect(page.getByText("Vitamin A")).toBeVisible();
+    await expect(page.getByText("Vitamin C")).toBeVisible();
+    await expect(page.getByText("Calcium")).toBeVisible();
+    await expect(page.getByText("Iron")).toBeVisible();
+    await expect(page.getByText(/northeast laboratories/i)).toBeVisible();
+    await expect(
+      page.getByRole("link", { name: "Compare all flavor panels" }),
     ).toHaveAttribute("href", "/product?flavor=mango#nutrition");
 
-    await page.getByRole("link", { name: "See full nutrition facts" }).click();
+    await page.getByRole("link", { name: "Compare all flavor panels" }).click();
     await expect(page).toHaveURL(/\/product\?flavor=mango/);
     await expect(
       page.locator("#nutrition").getByRole("link", { name: "Mango", exact: true }),

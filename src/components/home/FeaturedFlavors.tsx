@@ -11,7 +11,7 @@ export function FeaturedFlavors() {
         <SectionHeading
           eyebrow="Original lineup"
           title="Twelve fruit flavors"
-          description="The original Fruiticana lineup is fruit-first. Six flavors are featured here; all twelve have shareable product sheets and nutrition notes."
+          description="The original Fruiticana lineup is fruit-first. Six flavors are featured here; all twelve have shareable product sheets and full Nutrition Facts panels."
         />
         <Button href="/product#flavors" variant="secondary">
           View All Flavors

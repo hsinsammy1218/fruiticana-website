@@ -54,11 +54,16 @@ export function NutritionPanel({ flavor }: { flavor: Flavor }) {
           ({n.servingGrams} g)
         </p>
 
-        <div className="mt-2 flex items-end justify-between border-b-4 border-green-deep pb-1">
-          <span className="text-sm font-bold text-green-deep">Calories</span>
-          <span className="font-sans text-4xl font-extrabold text-green-deep">
-            {fmtAmount(n.calories)}
-          </span>
+        <div className="mt-2 border-b-4 border-green-deep pb-1">
+          <div className="flex items-end justify-between">
+            <span className="text-sm font-bold text-green-deep">Calories</span>
+            <span className="font-sans text-4xl font-extrabold text-green-deep">
+              {fmtAmount(n.calories)}
+            </span>
+          </div>
+          <p className="mt-0.5 text-right text-xs text-muted">
+            Calories from Fat {fmtAmount(n.caloriesFromFat)}
+          </p>
         </div>
 
         <p className="mt-1 text-right text-xs text-muted">% Daily Value*</p>
