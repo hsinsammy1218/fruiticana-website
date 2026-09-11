@@ -27,8 +27,8 @@ test.describe("links and seo", () => {
     for (const path of ["/schools", "/product", "/about", "/resources", "/learn", "/contact"]) {
       expect(xml).toContain(path);
     }
-    expect(xml).not.toContain("/nutrition");
-    expect(xml).not.toContain("/story");
+    expect(xml).not.toMatch(/<loc>[^<]*\/nutrition<\/loc>/);
+    expect(xml).not.toMatch(/<loc>[^<]*\/story<\/loc>/);
     for (const slug of flavorSlugs) {
       expect(xml).toContain(`/flavors/${slug}`);
     }
@@ -50,7 +50,7 @@ test.describe("links and seo", () => {
     }
   });
 
-  test("resources labels school documents and has no PDF downloads", async ({
+  test("resources labels school documents and publishes cleared PDFs", async ({
     page,
   }) => {
     await page.goto("/resources");
@@ -61,11 +61,16 @@ test.describe("links and seo", () => {
       page.getByText("School documentation").first(),
     ).toBeVisible();
     await expect(
-      page.getByRole("img", {
+      page.getByRole("heading", {
         name: /connecticut team nutrition pilot letter/i,
+      }),
+    ).toBeVisible();
+    await expect(
+      page.getByRole("img", {
+        name: /connecticut state department of education letter/i,
       }).first(),
     ).toBeVisible();
-    await expect(page.getByRole("link", { name: /download/i })).toHaveCount(0);
+    await expect(page.getByRole("link", { name: /download pdf/i })).toHaveCount(3);
     await expect(
       page.getByText(/downloadable original pdf is not published/i).first(),
     ).toBeVisible();

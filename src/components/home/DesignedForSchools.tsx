@@ -26,7 +26,7 @@ export function DesignedForSchools() {
       </ul>
       <div className="mt-8">
         <Button href="/schools" size="lg">
-          Learn more
+          See the Fruiticana vision
         </Button>
       </div>
     </Section>
