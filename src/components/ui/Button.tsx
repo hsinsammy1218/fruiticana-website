@@ -48,8 +48,19 @@ export function Button({
   const classes = cn(base, variants[variant], sizes[size], className);
 
   if ("href" in props && props.href !== undefined) {
+    const linkProps = props as ButtonAsLink;
+    // Native <a> for downloads so the browser saves the file instead of
+    // client-navigating through the App Router.
+    if ("download" in linkProps && linkProps.download !== undefined) {
+      const { href, download, ...rest } = linkProps;
+      return (
+        <a href={href} download={download} className={classes} {...rest}>
+          {children}
+        </a>
+      );
+    }
     return (
-      <Link className={classes} {...(props as ButtonAsLink)}>
+      <Link className={classes} {...linkProps}>
         {children}
       </Link>
     );
