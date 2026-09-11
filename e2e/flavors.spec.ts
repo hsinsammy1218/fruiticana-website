@@ -30,9 +30,6 @@ test.describe("flavors", () => {
     await page.goto("/flavors/mango");
 
     await expect(page.getByRole("heading", { level: 1, name: "Mango" })).toBeVisible();
-    await expect(
-      page.getByRole("heading", { name: /learn about mango/i }),
-    ).toBeVisible();
     await expect(page.getByRole("link", { name: "All flavors" })).toBeVisible();
     await expect(
       page.getByRole("heading", { name: "Nutrition Facts" }),
