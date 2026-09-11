@@ -3,7 +3,7 @@
  *
  * `image` points to on-site document page images for school review.
  * `file` / `canDownload` publish a PDF only when a rights-cleared source
- * scan is available (currently: FDA facility registration).
+ * scan is available (currently: FDA facility registration and AHA program letter).
  */
 
 export type ResourceCategory =
@@ -52,15 +52,15 @@ export const documents: HistoricalDocument[] = [
     title: "American Heart Association program letter",
     period: "2005",
     summary:
-      "A 2005 letter regarding participation in the American Heart Association's Food Certification Program.",
+      "A November 15, 2005 letter thanking Fruiticana for participating in the American Heart Association's Food Certification Program.",
     clarification:
-      "This is correspondence about program participation. It is not presented as a heart-check certification badge.",
+      "This is correspondence about program participation. It is not presented as a heart-check certification badge or a current product endorsement.",
     category: "credentials",
     image: "/images/documents/doc-aha-food-certification-letter.webp",
     imageAlt:
-      "Fruiticana document page summarizing 2005 American Heart Association program correspondence.",
-    file: null,
-    canDownload: false,
+      "November 15, 2005 American Heart Association letter to Fruiticana regarding participation in the Food Certification Program.",
+    file: "/documents/aha-food-certification-letter.pdf",
+    canDownload: true,
   },
   {
     slug: "ct-team-nutrition-letter",

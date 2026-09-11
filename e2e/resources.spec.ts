@@ -52,12 +52,15 @@ test.describe("resources documentation", () => {
         page.getByRole("link", { name: /open the full-size document image/i }),
       ).toBeVisible();
 
-      if (doc.slug === "fda-facility-registration") {
+      if (
+        doc.slug === "fda-facility-registration" ||
+        doc.slug === "aha-food-certification-letter"
+      ) {
         const download = page.getByRole("link", { name: /download pdf/i }).first();
         await expect(download).toBeVisible();
         await expect(download).toHaveAttribute(
           "href",
-          "/documents/fda-facility-registration.pdf",
+          `/documents/${doc.slug}.pdf`,
         );
       } else {
         await expect(
