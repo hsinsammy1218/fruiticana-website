@@ -44,10 +44,6 @@ test.describe("resources documentation", () => {
       ).toBeVisible();
       // The document image is the readable artifact.
       await expect(page.getByRole("img").first()).toBeVisible();
-      // Honest, unchanged framing.
-      await expect(
-        page.getByText(/downloadable original pdf is not published/i),
-      ).toBeVisible();
       // A way back to the listing, and a full-size view.
       await expect(
         page.getByRole("link", { name: /back to all documentation/i }),
@@ -55,6 +51,23 @@ test.describe("resources documentation", () => {
       await expect(
         page.getByRole("link", { name: /open the full-size document image/i }),
       ).toBeVisible();
+
+      if (
+        doc.slug === "fda-facility-registration" ||
+        doc.slug === "aha-food-certification-letter" ||
+        doc.slug === "ct-team-nutrition-letter"
+      ) {
+        const download = page.getByRole("link", { name: /download pdf/i }).first();
+        await expect(download).toBeVisible();
+        await expect(download).toHaveAttribute(
+          "href",
+          `/documents/${doc.slug}.pdf`,
+        );
+      } else {
+        await expect(
+          page.getByText(/downloadable original pdf is not published/i),
+        ).toBeVisible();
+      }
     });
   }
 
