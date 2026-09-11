@@ -10,14 +10,13 @@ test.describe("for schools", () => {
         name: /fruiticana for schools/i,
       }),
     ).toBeVisible();
-    await expect(page.getByText(/for schools and their students/i).first()).toBeVisible();
+    await expect(page.getByText(/this page is for schools and students/i).first()).toBeVisible();
     await expect(page.getByRole("heading", { name: "School cafeteria" })).toBeVisible();
     await expect(page.getByRole("heading", { name: "Healthy snack program" })).toBeVisible();
     await expect(page.getByRole("heading", { name: "Private school" })).toBeVisible();
     await expect(
       page.getByRole("heading", { name: "A fruit-based creamless frozen dessert" }),
     ).toBeVisible();
-    await expect(page.getByText(/only for schools and their students/i).first()).toBeVisible();
     await expect(
       page.getByRole("heading", { name: "Food-service distribution" }),
     ).toHaveCount(0);

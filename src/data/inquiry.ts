@@ -2,7 +2,7 @@
  * Structured school-inquiry options. Kept in data so the form, deep links,
  * and tests share one source of truth.
  *
- * Options are for schools and their students only — for now.
+ * Options are for schools and students.
  */
 
 export const interestTypes = [

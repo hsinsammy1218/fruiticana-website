@@ -44,7 +44,7 @@ export const timeline: TimelineEntry[] = [
     period: "Today",
     title: "For schools and their students",
     description:
-      "For now, Fruiticana is sharing this vision only with schools and their students — so a school team can understand what Fruiticana is, why it was created, and how it can be made in-house for students.",
+      "Fruiticana shares this vision with schools and students — so a school team can understand what Fruiticana is, why it was created, and how it can be made in-house for students.",
   },
 ];
 

@@ -1,7 +1,6 @@
 /**
- * The Fruiticana vision for schools and their students: what it is, why it
- * exists, and how it can work in a school. For now, this site is only for
- * schools and the students they serve.
+ * The Fruiticana vision for schools and students: what it is, why it
+ * exists, and how it can work in a school.
  *
  * Present-day school voice: what, why, and how for schools and students.
  */
@@ -10,7 +9,7 @@ export const visionIntro = {
   eyebrow: "The Fruiticana vision",
   title: "What it is. Why it exists. How it works for schools.",
   description:
-    "For now, this website is only for schools and their students. Fruiticana’s vision is a fruit-based frozen dessert students will actually want to eat — made in-house for school programs, without the extra cost of a specialty outside dessert.",
+    "This website is for schools and students. Fruiticana’s vision is a fruit-based frozen dessert students will actually want to eat — made in-house for school programs, without the extra cost of a specialty outside dessert.",
 } as const;
 
 export type VisionPillar = {

@@ -5,7 +5,7 @@
  * (Fruiticana Cream-Less Ice Crème / “The New Way to Eat Fruit”), rewritten
  * so schools and their students can understand the vision: what, why, and how.
  *
- * For now, this website is only for schools and their students.
+ * The audience is schools and students.
  *
  * IMPORTANT (see PLAN.md content audit): current business contact details are
  * NOT known. Do not invent an email, phone number, address, or social account.
@@ -37,7 +37,7 @@ export const site = {
   promise:
     "Fruit-based frozen dessert for schools and their students — what it is, why it exists, and how it can be made in-house.",
   shortDescription:
-    "Fruiticana is a fruit-based creamless frozen dessert — the new way to eat fruit. For now, this site is only for schools and their students: it explains the Fruiticana vision (what, why, and how), nutrition documentation, and how it fits school programs.",
+    "Fruiticana is a fruit-based creamless frozen dessert — the new way to eat fruit. This site is for schools and students: it explains the Fruiticana vision (what, why, and how), nutrition documentation, and how it fits school programs.",
   url: siteUrl,
 
   /**

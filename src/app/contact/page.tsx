@@ -35,7 +35,7 @@ export default async function ContactPage({
           as="h1"
           eyebrow="School inquiry"
           title="Bring Fruiticana to Your School"
-          description="Tell us about your school and the students you serve. For now, this form is only for schools — principals, food-service directors, nutrition staff, teachers, and other school teams."
+          description="Tell us about your school and the students you serve. This form is for school teams — principals, food-service directors, nutrition staff, teachers, and other school teams."
         />
 
         <div className="mt-10 grid gap-10 lg:grid-cols-[1.5fr_1fr] lg:gap-14">

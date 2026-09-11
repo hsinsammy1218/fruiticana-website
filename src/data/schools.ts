@@ -1,13 +1,13 @@
 /**
  * Copy for the For Schools page.
- * For now, the audience is only schools and their students.
+ * The audience is schools and students.
  */
 
 export const schoolsIntro = {
   eyebrow: "For schools",
   title: "Fruiticana for Schools",
   description:
-    "For now, this page is only for schools and their students. Principals, food-service directors, nutrition staff, and administrators can review the vision — what Fruiticana is, why it exists, and how it can work in a cafeteria or snack program for students.",
+    "This page is for schools and students. Principals, food-service directors, nutrition staff, and administrators can review the vision — what Fruiticana is, why it exists, and how it can work in a cafeteria or snack program for students.",
 } as const;
 
 export const schoolAudiences = [
