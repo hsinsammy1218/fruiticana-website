@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Section } from "@/components/layout/Section";
 import { SectionHeading } from "@/components/ui/SectionHeading";
-import { HistoricalNotice } from "@/components/ui/HistoricalNotice";
 import { CTASection } from "@/components/ui/CTASection";
 import { Button } from "@/components/ui/Button";
 import { JsonLd } from "@/components/seo/JsonLd";
@@ -105,11 +104,11 @@ export default function LearnPage() {
           description={learnIntro.description}
           className="max-w-3xl"
         />
-        <HistoricalNotice className="mt-6 max-w-3xl">
+        <p className="info-copy mt-6 max-w-3xl">
           Fruiticana was included in a Connecticut school snack tasting in
           2003–2005. This classroom page uses that chapter as a case study for
-          students — it is not a USDA, state, or district endorsement.
-        </HistoricalNotice>
+          students.
+        </p>
         <StatGrid
           className="mt-10"
           items={learnGlanceStats}
@@ -266,11 +265,11 @@ export default function LearnPage() {
         <div className="mt-10 grid gap-10 lg:grid-cols-[1.2fr_1fr] lg:gap-14">
           <div className="info-copy space-y-4">
             <p>{caseStudy.summary}</p>
-            <HistoricalNotice>
+            <p>
               These details come from Fruiticana&rsquo;s 2003–2011 business
               record, including a December 2004 Connecticut State Department of
               Education letter describing a grant-funded pilot.
-            </HistoricalNotice>
+            </p>
             <p>
               After the grant window, Fruiticana also ran a localized 2005–2006
               Connecticut pilot that included distribution to local schools. Read
@@ -389,13 +388,13 @@ export default function LearnPage() {
             </li>
           ))}
         </ul>
-        <div className="mt-8 space-y-3">
+        <ul className="mt-8 space-y-3">
           {classroomGuidelines.map((rule) => (
-            <HistoricalNotice key={rule} label="Classroom note">
+            <li key={rule} className="info-copy">
               {rule}
-            </HistoricalNotice>
+            </li>
           ))}
-        </div>
+        </ul>
       </Section>
 
       <CTASection

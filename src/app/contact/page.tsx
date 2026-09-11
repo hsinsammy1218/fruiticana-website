@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Section } from "@/components/layout/Section";
 import { SectionHeading } from "@/components/ui/SectionHeading";
-import { HistoricalNotice } from "@/components/ui/HistoricalNotice";
 import { ContactForm } from "@/components/contact/ContactForm";
 import { site } from "@/data/site";
 import { resolveInterestType } from "@/data/inquiry";
@@ -61,10 +60,6 @@ export default async function ContactPage({
                   Fruiticana for follow-up on availability and documentation.
                 </li>
               </ol>
-              <HistoricalNotice label="Note" className="mt-5">
-                Direct email, phone, and mailing details are not published yet.
-                Until then, this form is the place to record a school inquiry.
-              </HistoricalNotice>
             </div>
 
             <div className="rounded-xl2 border border-line bg-white p-6">

@@ -1,7 +1,6 @@
 import { Section } from "@/components/layout/Section";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { FeatureCard } from "@/components/ui/FeatureCard";
-import { HistoricalNotice } from "@/components/ui/HistoricalNotice";
 import { Button } from "@/components/ui/Button";
 import { healthierBenefits } from "@/data/facts";
 
@@ -32,12 +31,7 @@ export function HealthierChoice() {
           </li>
         ))}
       </ul>
-      <HistoricalNotice className="mt-8 max-w-3xl">
-        Nutrition figures come from an independent 2008 nutrition analysis
-        (report #20080318F). Confirm them against the current Fruiticana
-        formulation before relying on them.
-      </HistoricalNotice>
-      <div className="mt-6">
+      <div className="mt-8">
         <Button href="/product#nutrition" variant="secondary">
           See the Nutrition Information
         </Button>

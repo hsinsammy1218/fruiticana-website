@@ -4,7 +4,6 @@ import { FlavorImage } from "@/components/flavors/FlavorImage";
 import { NutritionPanel } from "@/components/nutrition/NutritionPanel";
 import { ArrowRightIcon } from "@/components/ui/icons";
 import { Button } from "@/components/ui/Button";
-import { HistoricalNotice } from "@/components/ui/HistoricalNotice";
 import type { Flavor } from "@/data/flavors";
 
 export function FlavorHero({ flavor }: { flavor: Flavor }) {
@@ -72,17 +71,10 @@ export function FlavorHero({ flavor }: { flavor: Flavor }) {
             </div>
           </div>
 
-          <div className="flex flex-col gap-4 lg:col-start-2">
-            <div>
-              <Button href={`/product?flavor=${flavor.slug}#nutrition`}>
-                Compare all flavor panels
-              </Button>
-            </div>
-            <HistoricalNotice>
-              Values come from an independent 2008 analysis (report
-              #20080318F). Confirm them against your current formulation
-              before menu planning.
-            </HistoricalNotice>
+          <div className="lg:col-start-2">
+            <Button href={`/product?flavor=${flavor.slug}#nutrition`}>
+              Compare all flavor panels
+            </Button>
           </div>
         </div>
       </Container>

@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Section } from "@/components/layout/Section";
 import { SectionHeading } from "@/components/ui/SectionHeading";
-import { HistoricalNotice } from "@/components/ui/HistoricalNotice";
 import { Prose } from "@/components/ui/Prose";
 
 export const metadata: Metadata = {
@@ -17,11 +16,6 @@ export default function TermsPage() {
   return (
     <Section>
       <SectionHeading as="h1" eyebrow="Legal" title="Terms of Use" />
-      <HistoricalNotice label="Draft" className="mt-6 max-w-3xl">
-        These are preliminary terms for a pre-launch, informational website. They
-        will be replaced with complete terms, naming the responsible legal
-        entity, before any commerce features go live.
-      </HistoricalNotice>
       <Prose className="mt-8">
         <h2>Informational use</h2>
         <p>

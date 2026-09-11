@@ -40,9 +40,8 @@ test.describe("home @cross-browser", () => {
     await expect(
       page.getByRole("heading", { name: "Healthy Snack pilot" }),
     ).toBeVisible();
-    // The health beat stays qualified by the 2008 nutrition source.
     await expect(
-      page.getByText(/2008 nutrition analysis/i).first(),
+      page.getByText(/2008 Nutrition Facts panel/i).first(),
     ).toBeVisible();
     await expect(
       page.getByRole("link", { name: "See the Nutrition Information" }),

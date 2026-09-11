@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Section } from "@/components/layout/Section";
 import { SectionHeading } from "@/components/ui/SectionHeading";
-import { HistoricalNotice } from "@/components/ui/HistoricalNotice";
 import { Prose } from "@/components/ui/Prose";
 
 export const metadata: Metadata = {
@@ -17,11 +16,6 @@ export default function PrivacyPage() {
   return (
     <Section>
       <SectionHeading as="h1" eyebrow="Legal" title="Privacy Policy" />
-      <HistoricalNotice label="Draft" className="mt-6 max-w-3xl">
-        This is a preliminary policy for a pre-launch, informational website. It
-        will be replaced with a complete policy - including the responsible legal
-        entity - before any personal data is collected.
-      </HistoricalNotice>
       <Prose className="mt-8">
         <h2>What we collect</h2>
         <p>

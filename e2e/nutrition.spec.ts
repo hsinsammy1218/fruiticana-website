@@ -1,7 +1,7 @@
 import { test, expect } from "@playwright/test";
 
 test.describe("nutrition", () => {
-  test("keeps the nutrition note visible on product", async ({ page }) => {
+  test("shows flavors, servings, and nutrition facts on product", async ({ page }) => {
     await page.goto("/product");
 
     await expect(
@@ -10,7 +10,6 @@ test.describe("nutrition", () => {
         name: /flavors, servings, and nutrition/i,
       }),
     ).toBeVisible();
-    await expect(page.getByText(/confirm these figures against your current/i).first()).toBeVisible();
     await expect(page.getByText(/nutrition analysis \(2008\)/i)).toBeVisible();
     await expect(
       page.getByRole("heading", { name: /institutional serving information/i }),

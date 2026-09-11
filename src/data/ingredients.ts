@@ -49,14 +49,8 @@ export const recipeIntro =
 export const recipeIngredientsSource =
   "Ingredient lineup from Fruiticana product pages on myfruiticana.com (Wayback Machine, March 2007).";
 
-export const recipeIngredientsNotice =
-  "Confirm this recipe against your current Fruiticana formulation and allergen policy before school service. Wheat protein appears on the list, so treat gluten carefully until your kitchen verifies the current mix.";
-
 /** @deprecated Prefer recipeIngredientsSource */
 export const historicalIngredientsSource = recipeIngredientsSource;
-
-/** @deprecated Prefer recipeIngredientsNotice */
-export const historicalIngredientsNotice = recipeIngredientsNotice;
 
 export const wheatProteinFlag =
   "Wheat protein is on the recipe list. Confirm gluten status with your current Fruiticana formulation before serving students.";

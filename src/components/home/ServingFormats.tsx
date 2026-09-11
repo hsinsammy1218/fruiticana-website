@@ -2,8 +2,7 @@ import Image from "next/image";
 import { Section } from "@/components/layout/Section";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { ProductFormatCard } from "@/components/ui/ProductFormatCard";
-import { HistoricalNotice } from "@/components/ui/HistoricalNotice";
-import { formats, formatsNote } from "@/data/formats";
+import { formats } from "@/data/formats";
 
 export function ServingFormats() {
   return (
@@ -46,9 +45,6 @@ export function ServingFormats() {
                 </li>
               ))}
             </ul>
-            <HistoricalNotice className="border-white/70 bg-white/92 backdrop-blur-sm">
-              {formatsNote}
-            </HistoricalNotice>
           </div>
         </div>
       </div>

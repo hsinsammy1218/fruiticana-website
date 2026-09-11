@@ -108,9 +108,6 @@ export const schoolFitPoints = [
   },
 ] as const;
 
-export const schoolAvailabilityNote =
-  "Fruiticana is for schools and their students. Connecticut program experience is shared so school teams can evaluate fit. Confirm product availability and nutrition details through a school inquiry.";
-
 /**
  * The student side of the school decision. Language stays defensible — how the
  * product is designed and what it is — never "students love it / approved /

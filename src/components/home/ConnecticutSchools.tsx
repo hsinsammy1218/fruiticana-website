@@ -1,6 +1,5 @@
 import { Section } from "@/components/layout/Section";
 import { Button } from "@/components/ui/Button";
-import { HistoricalNotice } from "@/components/ui/HistoricalNotice";
 import { HistoricalBadge } from "@/components/ui/HistoricalBadge";
 import { StatGrid } from "@/components/ui/StatGrid";
 import { connecticutProgramStats } from "@/data/facts";
@@ -30,12 +29,6 @@ export function ConnecticutSchools() {
             fruit-based frozen dessert designed for cafeteria and snack-program
             use.
           </p>
-          <div className="mt-6 max-w-3xl">
-            <HistoricalNotice label="Note" className="border-cream/20 bg-cream/10 text-cream/90 [&_span]:text-cream">
-              Figures and program dates come from Fruiticana’s 2003–2006
-              Connecticut record.
-            </HistoricalNotice>
-          </div>
           <div className="mt-7">
             <Button
               href="/about"

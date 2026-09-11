@@ -25,6 +25,3 @@ export const formats: ProductFormat[] = [
     institutional: true,
   },
 ];
-
-export const formatsNote =
-  "Confirm institutional pack sizes and availability with Fruiticana before menu planning.";

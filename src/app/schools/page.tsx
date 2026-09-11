@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Section } from "@/components/layout/Section";
 import { SectionHeading } from "@/components/ui/SectionHeading";
-import { HistoricalNotice } from "@/components/ui/HistoricalNotice";
 import { FeatureCard } from "@/components/ui/FeatureCard";
 import { Vision } from "@/components/home/Vision";
 import { CTASection } from "@/components/ui/CTASection";
@@ -11,7 +10,6 @@ import { navCta } from "@/data/navigation";
 import { site } from "@/data/site";
 import {
   schoolAudiences,
-  schoolAvailabilityNote,
   schoolFitPoints,
   schoolUses,
   schoolsIntro,
@@ -72,9 +70,6 @@ export default function SchoolsPage() {
             </li>
           ))}
         </ul>
-        <HistoricalNotice className="mt-8 max-w-3xl">
-          {schoolAvailabilityNote}
-        </HistoricalNotice>
       </Section>
 
       <Section tone="cream-100">

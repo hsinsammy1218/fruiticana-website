@@ -6,7 +6,6 @@ import { Section } from "@/components/layout/Section";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Button } from "@/components/ui/Button";
 import { HistoricalBadge } from "@/components/ui/HistoricalBadge";
-import { HistoricalNotice } from "@/components/ui/HistoricalNotice";
 import { CTASection } from "@/components/ui/CTASection";
 import { JsonLd } from "@/components/seo/JsonLd";
 import {
@@ -150,9 +149,7 @@ export default async function DocumentPage({
           ) : null}
 
           <div className="space-y-5">
-            <HistoricalNotice label="Context">
-              {document.clarification}
-            </HistoricalNotice>
+            <p className="info-copy">{document.clarification}</p>
             <p className="info-copy">
               This document is part of Fruiticana&rsquo;s business record and is
               provided for school review. Confirm current details through a

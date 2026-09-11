@@ -85,7 +85,7 @@ export const documents: HistoricalDocument[] = [
     summary:
       "Independent Nutrition Facts panels for all 12 flavors (report #20080318F).",
     clarification:
-      "These nutrition results are shown on the Flavors & Nutrition page. Confirm them against your current formulation before using them as a product label.",
+      "These nutrition results are shown on the Flavors & Nutrition page.",
     category: "nutrition",
     image: "/images/documents/doc-laboratory-nutritional-analysis.webp",
     imageAlt:

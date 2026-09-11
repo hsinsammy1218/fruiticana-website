@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Section } from "@/components/layout/Section";
 import { SectionHeading } from "@/components/ui/SectionHeading";
-import { HistoricalNotice } from "@/components/ui/HistoricalNotice";
 import { HistoricalTimeline } from "@/components/story/HistoricalTimeline";
 import { TimelineForeground } from "@/components/story/TimelineForeground";
 import { TrustDocumentCard } from "@/components/story/TrustDocumentCard";
@@ -91,11 +90,6 @@ export default function AboutPage() {
               also ran a localized parlor pilot (cups, cones, smoothies, and
               to-go pints) alongside school distribution.
             </p>
-            <HistoricalNotice>
-              These figures and programs describe Fruiticana’s 2003–2006
-              Connecticut record and how the school vision was first put in front
-              of students.
-            </HistoricalNotice>
             <p>
               Teachers can use this chapter as a primary-source case study —
               grant dates, taste tests vs. purchases, and what a 2004 letter does

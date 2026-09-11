@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Section } from "@/components/layout/Section";
 import { SectionHeading } from "@/components/ui/SectionHeading";
-import { HistoricalNotice } from "@/components/ui/HistoricalNotice";
 import { NutritionSelector } from "@/components/nutrition/NutritionSelector";
 import { FlavorGrid } from "@/components/flavors/FlavorGrid";
 import { ProductFormatCard } from "@/components/ui/ProductFormatCard";
@@ -9,10 +8,9 @@ import { CTASection } from "@/components/ui/CTASection";
 import { Button } from "@/components/ui/Button";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { flavors, getFlavor } from "@/data/flavors";
-import { formats, formatsNote } from "@/data/formats";
+import { formats } from "@/data/formats";
 import { IngredientRecipe } from "@/components/nutrition/IngredientRecipe";
 import {
-  recipeIngredientsNotice,
   recipeIngredientsSource,
   wheatProteinFlag,
 } from "@/data/ingredients";
@@ -83,7 +81,6 @@ export default async function ProductPage({
             </li>
           ))}
         </ul>
-        <HistoricalNotice className="mt-8">{formatsNote}</HistoricalNotice>
       </Section>
 
       <Section id="nutrition" className="scroll-mt-24">
@@ -91,12 +88,6 @@ export default async function ProductPage({
           title="Nutrition Facts panels"
           description="Select a flavor to view its transcribed 2008 Nutrition Facts panel. Banana calories stay blank because the source scan was illegible."
         />
-        <HistoricalNotice className="mt-6 max-w-3xl">
-          Nutrition values come from an independent 2008 analysis
-          (report #20080318F). Confirm these
-          figures against your current Fruiticana formulation before menu
-          planning.
-        </HistoricalNotice>
         <StatGrid
           className="mt-10"
           items={glance}
@@ -139,9 +130,6 @@ export default async function ProductPage({
         </div>
         <p className="info-copy mt-6 max-w-3xl">{wheatProteinFlag}</p>
         <p className="mt-3 text-sm text-muted">{recipeIngredientsSource}</p>
-        <HistoricalNotice className="mt-6 max-w-3xl">
-          {recipeIngredientsNotice}
-        </HistoricalNotice>
         <div className="mt-6">
           <Button href="/contact?interest=Nutrition%20Information">
             Ask about school kitchen setup
