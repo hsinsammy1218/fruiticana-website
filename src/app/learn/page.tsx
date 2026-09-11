@@ -106,8 +106,7 @@ export default function LearnPage() {
         />
         <p className="info-copy mt-6 max-w-3xl">
           Fruiticana was included in a Connecticut school snack tasting in
-          2003–2005. This classroom page uses that chapter as a case study for
-          students.
+          2003–2005. This classroom page uses that chapter as a case study.
         </p>
         <StatGrid
           className="mt-10"
