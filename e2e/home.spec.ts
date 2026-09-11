@@ -35,7 +35,7 @@ test.describe("home @cross-browser", () => {
 
     await expect(schoolHighlights).toBeVisible();
     await expect(page.getByRole("heading", { name: "Student portions" })).toBeVisible();
-    await expect(page.getByRole("heading", { name: "Fruit flavors" })).toBeVisible();
+    await expect(page.getByRole("heading", { name: "Fruit flavors", exact: true })).toBeVisible();
     await expect(page.getByRole("heading", { name: "School chapter" })).toBeVisible();
     await expect(page.getByRole("heading", { name: "Snack pilot" })).toBeVisible();
     await expect(
