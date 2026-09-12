@@ -14,7 +14,6 @@ test.describe("home @cross-browser", () => {
       page.getByText(/the frozen treat students want/i).first(),
     ).toBeVisible();
     await expect(page.getByText(/cream-less ice crème/i).first()).toBeVisible();
-    await expect(page.getByText(/cafeteria & snack programs/i).first()).toBeVisible();
     await expect(
       page.getByRole("link", { name: "Explore the Flavors" }).first(),
     ).toBeVisible();

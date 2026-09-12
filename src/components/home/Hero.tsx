@@ -28,11 +28,7 @@ export function Hero() {
 
       <Container className="relative grid min-h-[min(88vh,52rem)] items-center gap-10 py-14 sm:py-18 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,0.95fr)] lg:gap-12 lg:py-20 xl:gap-16">
         <div className="hero-rise max-w-2xl lg:max-w-none">
-          <p className="inline-flex items-center gap-2 rounded-pill bg-white/70 px-3 py-1 text-sm font-semibold text-green-deep ring-1 ring-green-deep/10">
-            <span className="h-2 w-2 rounded-full bg-green" aria-hidden="true" />
-            Cafeteria & snack programs
-          </p>
-          <p className="mt-5 font-display text-sm font-bold uppercase tracking-[0.22em] text-green-600">
+          <p className="font-display text-sm font-bold uppercase tracking-[0.22em] text-green-600">
             {site.productLine}
           </p>
           <h1 className="mt-4 font-display text-4xl font-bold uppercase tracking-[0.04em] text-berry sm:text-5xl lg:text-[3.75rem] lg:leading-[1.06] xl:text-[4.25rem]">
