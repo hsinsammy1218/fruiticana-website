@@ -39,7 +39,7 @@ export function Hero() {
             The New Way{" "}
             <span className="block">to Eat Fruit</span>
           </h1>
-          <p className="mt-5 max-w-xl font-display text-xl font-semibold leading-snug text-green-deep sm:text-2xl">
+          <p className="mt-5 max-w-xl text-xl font-semibold leading-snug text-green-deep sm:text-2xl">
             The frozen treat students want — a better cafeteria option.
           </p>
           <p className="mt-4 max-w-xl text-lg leading-[1.75] text-muted sm:text-xl">
