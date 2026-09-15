@@ -1,10 +1,10 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { cn } from "@/lib/cn";
-import { desktopNav, navCta } from "@/data/navigation";
+import { desktopNav, isNavItemActive, navCta } from "@/data/navigation";
 import { Container } from "@/components/layout/Container";
 import { Logo } from "@/components/ui/Logo";
 import { Button } from "@/components/ui/Button";
@@ -15,11 +15,21 @@ export function Navbar() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const openButtonRef = useRef<HTMLButtonElement>(null);
+  const restoreFocusRef = useRef(false);
 
   // Close the mobile drawer whenever the route changes.
   useEffect(() => {
+    restoreFocusRef.current = false;
     setOpen(false);
   }, [pathname]);
+
+  // Return keyboard focus to the hamburger after dismiss (Escape / close / backdrop).
+  useEffect(() => {
+    if (open || !restoreFocusRef.current) return;
+    restoreFocusRef.current = false;
+    openButtonRef.current?.focus();
+  }, [open]);
 
   // Subtle elevation once the page is scrolled.
   useEffect(() => {
@@ -45,7 +55,7 @@ export function Navbar() {
         <nav aria-label="Primary" className="hidden lg:block">
           <ul className="flex items-center gap-0.5">
             {desktopNav.map((item) => {
-              const isActive = pathname.startsWith(item.href);
+              const isActive = isNavItemActive(pathname, item.href);
               return (
                 <li key={item.href}>
                   <Link
@@ -78,6 +88,7 @@ export function Navbar() {
           </Button>
 
           <button
+            ref={openButtonRef}
             type="button"
             onClick={() => setOpen(true)}
             className="inline-flex h-11 w-11 items-center justify-center rounded-full text-green-deep hover:bg-green-deep/5 lg:hidden"
@@ -99,7 +110,11 @@ export function Navbar() {
 
       <MobileNavigation
         open={open}
-        onClose={() => setOpen(false)}
+        onClose={() => {
+          restoreFocusRef.current = true;
+          setOpen(false);
+        }}
+        onNavigate={() => setOpen(false)}
         activeHref={pathname}
       />
     </header>

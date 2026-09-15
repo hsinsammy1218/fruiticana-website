@@ -33,3 +33,18 @@ export const navCta = {
   href: "/contact",
   label: "Request School Information",
 } as const;
+
+/**
+ * Current-page matching for primary nav.
+ * Home must be exact (`/` prefixes every path). Flavor sheets belong with
+ * Flavors & Nutrition even though they live under `/flavors/[slug]`.
+ */
+export function isNavItemActive(pathname: string, href: string): boolean {
+  if (href === "/") {
+    return pathname === "/";
+  }
+  if (href === "/product") {
+    return pathname === "/product" || pathname.startsWith("/flavors/");
+  }
+  return pathname === href || pathname.startsWith(`${href}/`);
+}

@@ -18,6 +18,7 @@ test.describe("mobile menu @mobile", () => {
     await page.keyboard.press("Escape");
     await expect(dialog).toBeHidden();
     await expect(open).toHaveAttribute("aria-expanded", "false");
+    await expect(open).toBeFocused();
   });
 
   test("navigates from a menu link and closes the drawer", async ({ page }) => {
@@ -37,10 +38,12 @@ test.describe("mobile menu @mobile", () => {
     await page.getByRole("button", { name: "Open menu" }).click();
     await page.getByRole("button", { name: "Close menu" }).click();
     await expect(page.getByRole("dialog", { name: "Site menu" })).toBeHidden();
+    await expect(page.getByRole("button", { name: "Open menu" })).toBeFocused();
 
     await page.getByRole("button", { name: "Open menu" }).click();
     await expect(page.getByRole("dialog", { name: "Site menu" })).toBeVisible();
     await page.mouse.click(12, 400);
     await expect(page.getByRole("dialog", { name: "Site menu" })).toBeHidden();
+    await expect(page.getByRole("button", { name: "Open menu" })).toBeFocused();
   });
 });

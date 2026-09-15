@@ -63,5 +63,6 @@ test.describe("user flows", () => {
     await expect(skip).toBeFocused();
     await skip.press("Enter");
     await expect(page).toHaveURL(/#main/);
+    await expect(page.locator("#main")).toBeFocused();
   });
 });

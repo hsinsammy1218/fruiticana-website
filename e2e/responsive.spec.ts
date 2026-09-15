@@ -86,4 +86,27 @@ test.describe("responsive layout @mobile", () => {
     await page.goto("/");
     await expectNoBrokenImages(page);
   });
+
+  test("hero title stays a two-line lockup on a 320px phone", async ({ page }) => {
+    await page.setViewportSize(viewports.phone320);
+    await page.goto("/");
+    await expect(
+      page.getByRole("heading", { level: 1, name: /the new way\s+to eat fruit/i }),
+    ).toBeVisible();
+
+    const metrics = await page.locator("h1").evaluate((el) => {
+      const range = document.createRange();
+      range.selectNodeContents(el);
+      const lines = range.getClientRects();
+      return {
+        visualLines: lines.length,
+        scrollWidth: el.scrollWidth,
+        clientWidth: el.clientWidth,
+      };
+    });
+
+    expect(metrics.visualLines, JSON.stringify(metrics)).toBeLessThanOrEqual(2);
+    expect(metrics.scrollWidth).toBeLessThanOrEqual(metrics.clientWidth + 1);
+    await expectNoHorizontalOverflow(page);
+  });
 });

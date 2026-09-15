@@ -38,6 +38,41 @@ test.describe("navigation @cross-browser", () => {
     await expect(page).toHaveURL(/\/contact$/);
   });
 
+  test("desktop nav marks only the current section", async ({ page }) => {
+    await page.setViewportSize({ width: 1440, height: 900 });
+    const primary = page.getByRole("navigation", { name: "Primary" });
+
+    await page.goto("/");
+    await expect(primary.getByRole("link", { name: "Home" })).toHaveAttribute(
+      "aria-current",
+      "page",
+    );
+    await expect(primary.getByRole("link", { name: "About Fruiticana" })).not.toHaveAttribute(
+      "aria-current",
+    );
+
+    await page.goto("/about");
+    await expect(primary.getByRole("link", { name: "About Fruiticana" })).toHaveAttribute(
+      "aria-current",
+      "page",
+    );
+    await expect(primary.getByRole("link", { name: "Home" })).not.toHaveAttribute(
+      "aria-current",
+    );
+
+    await page.goto("/flavors/mango");
+    await expect(primary.getByRole("link", { name: "Flavors & Nutrition" })).toHaveAttribute(
+      "aria-current",
+      "page",
+    );
+    await expect(primary.getByRole("link", { name: "Home" })).not.toHaveAttribute(
+      "aria-current",
+    );
+
+    await page.goto("/learn");
+    await expect(primary.locator("[aria-current=page]")).toHaveCount(0);
+  });
+
   test("footer explore, resources, and legal links work", async ({ page }) => {
     await page.goto("/");
     const footer = page.getByRole("contentinfo");
