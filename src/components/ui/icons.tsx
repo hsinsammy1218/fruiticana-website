@@ -152,6 +152,18 @@ export function SchoolIcon(props: IconProps) {
   );
 }
 
+export function MachineIcon(props: IconProps) {
+  return (
+    <svg {...base} {...props}>
+      <rect x="6" y="3" width="12" height="16" rx="1.5" />
+      <path d="M9 8h6" />
+      <path d="M9 12h6" />
+      <path d="M10 19v2" />
+      <path d="M14 19v2" />
+    </svg>
+  );
+}
+
 export function HeartIcon(props: IconProps) {
   return (
     <svg {...base} {...props}>
@@ -186,4 +198,5 @@ export const valueIcons = {
   cup: CupIcon,
   school: SchoolIcon,
   heart: HeartIcon,
+  machine: MachineIcon,
 } as const;

@@ -1,6 +1,7 @@
 /**
- * School implementation: documented facts vs. details that still need
- * current confirmation. Do not invent equipment, pricing, or logistics.
+ * School implementation: proposed-model facts vs. details that still need
+ * current confirmation. Do not invent equipment specs, pricing splits,
+ * staffing, or logistics.
  */
 
 export type OperationStatus = "known" | "to-confirm";
@@ -16,82 +17,86 @@ export const knownOperations: {
   body: string;
 }[] = [
   {
-    title: "Prepared in the school kitchen",
-    body: "The documented model is in-house preparation, so a school is not bringing in a specialty outside frozen dessert.",
+    title: "Fruiticana provides the machines",
+    body: "Under the proposed model, Fruiticana supplies the serving equipment. The school does not purchase the machines.",
   },
   {
-    title: "4 oz single-serve cups",
-    body: "The school serving on record is a moderate 4 oz (½ cup) cup, matching the Nutrition Facts serving.",
+    title: "Two machines, two flavors each",
+    body: "The proposed standard setup is two Fruiticana machines per school, with two flavors in each machine — four fruit flavor choices for students.",
   },
   {
-    title: "Offered to students at meals or snack",
-    body: "Students would receive Fruiticana as an individual cup on a cafeteria tray or snack line — not a parlor scoop.",
+    title: "Fruiticana maintains the equipment",
+    body: "Fruiticana remains involved after installation: maintaining and servicing the machinery so the program can keep functioning.",
   },
   {
-    title: "Meant to avoid an extra outside-dessert cost",
-    body: "The idea is that kitchens make Fruiticana themselves, rather than paying a specialty dessert vendor. What a current program would cost a school is not published here.",
+    title: "Fruiticana stays involved in serving",
+    body: "This is a hands-on partnership. Fruiticana does not simply drop off equipment and leave cafeteria staff responsible for everything.",
+  },
+  {
+    title: "The school receives 1/3 of sales",
+    body: "The participating school receives one-third (1/3) of Fruiticana sales generated through its Fruiticana program.",
   },
 ];
 
 export const schoolOperations: SchoolOperation[] = [
   {
-    question: "How does Fruiticana get to the school?",
-    status: "to-confirm",
-    answer:
-      "The documented idea is in-house preparation. How a current recipe or mix would reach a kitchen still needs to be confirmed.",
-  },
-  {
-    question: "How is it stored?",
-    status: "to-confirm",
-    answer:
-      "Storage, freezer type, and hold times for a current program have not been published.",
-  },
-  {
-    question: "How is it served?",
+    question: "Who provides the machines?",
     status: "known",
     answer:
-      "The record describes individual 4 oz (½ cup) single-serve cups for cafeteria or snack service.",
+      "Fruiticana provides the machinery under the proposed model. The school does not purchase the Fruiticana machines.",
   },
   {
-    question: "Who prepares it?",
-    status: "to-confirm",
-    answer:
-      "In-house kitchen preparation is the documented model. Which staff would do the work in a current program still needs to be confirmed.",
-  },
-  {
-    question: "What equipment is required?",
-    status: "to-confirm",
-    answer:
-      "An equipment list for blending, freezing, or holding has not been published.",
-  },
-  {
-    question: "Who provides the equipment?",
-    status: "to-confirm",
-    answer:
-      "Whether a school already has what it needs, or whether Fruiticana would supply equipment, still needs to be confirmed.",
-  },
-  {
-    question: "What do cafeteria staff need to do?",
-    status: "to-confirm",
-    answer:
-      "Day-to-day kitchen steps for a current program have not been written as a school SOP yet.",
-  },
-  {
-    question: "How do students receive it?",
+    question: "How many machines and flavors?",
     status: "known",
     answer:
-      "Students receive an individual cup at meal or snack service, rather than a scooped parlor portion.",
+      "The proposed standard setup is two machines per school, with two flavors in each machine. Which four flavors a school would offer still needs to be confirmed.",
   },
   {
-    question: "How does payment work?",
-    status: "to-confirm",
+    question: "Who maintains the machines?",
+    status: "known",
     answer:
-      "Meal-account, à la carte, snack-program, and billing details for a current program have not been published.",
+      "Fruiticana maintains and services the machinery and intends to remain involved after installation.",
   },
   {
-    question: "What does it cost the school?",
+    question: "Who operates the program?",
+    status: "known",
+    answer:
+      "Fruiticana remains actively involved in operation, maintenance, and serving rather than leaving the machines with the school. Exact day-to-day staffing still needs to be documented.",
+  },
+  {
+    question: "What does the school receive?",
+    status: "known",
+    answer:
+      "Under the proposed model, the participating school receives one-third (1/3) of Fruiticana sales generated through its program. How the remaining portion is allocated has not been published.",
+  },
+  {
+    question: "What does participation cost the school?",
     status: "to-confirm",
     answer:
-      "Pricing is not listed on this site. The documented idea is avoiding a specialty outside-dessert vendor cost through in-house preparation — not a promise of no cost.",
+      "Fruiticana provides the equipment under the proposed model. This site does not publish a participation fee, product cost to the school, or a promise of a no-cost program. Other costs, if any, still need to be documented.",
+  },
+  {
+    question: "How do students receive Fruiticana?",
+    status: "to-confirm",
+    answer:
+      "Whether students purchase Fruiticana, receive it through a meal or snack program, or both still needs to be confirmed.",
+  },
+  {
+    question: "What are the school’s obligations?",
+    status: "to-confirm",
+    answer:
+      "The exact obligations of a participating school — space, access, staffing support, or other responsibilities — have not been published.",
+  },
+  {
+    question: "What about installation, power, storage, and payment?",
+    status: "to-confirm",
+    answer:
+      "Installation requirements, electricity, storage, restocking, cleaning, serving schedule, and payment processing have not been published.",
+  },
+  {
+    question: "Does the historical 4 oz cup still apply?",
+    status: "to-confirm",
+    answer:
+      "A 4 oz (½ cup) cup is the laboratory and historical institutional serving on record. Whether that format applies to the proposed machine program still needs to be confirmed.",
   },
 ];

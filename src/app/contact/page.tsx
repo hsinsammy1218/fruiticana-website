@@ -6,9 +6,9 @@ import { site } from "@/data/site";
 import { resolveInterestType } from "@/data/inquiry";
 
 export const metadata: Metadata = {
-  title: "Bring Fruiticana to Your School",
+  title: "Let's Bring Fruiticana to Your Students",
   description:
-    "Request Fruiticana school information: product availability, institutional servings, nutrition documentation, and how the fruit-based dessert could fit a cafeteria or snack program.",
+    "Request Fruiticana school information: the proposed school program, nutrition documentation, and how Fruiticana could reach the students you serve.",
   alternates: { canonical: "/contact" },
 };
 
@@ -34,7 +34,7 @@ export default async function ContactPage({
         <SectionHeading
           as="h1"
           eyebrow="School inquiry"
-          title="Bring Fruiticana to Your School"
+          title="Let's Bring Fruiticana to Your Students."
           description="Tell us about your school and the students you serve. Principals, food-service directors, nutrition staff, teachers, and other teams can share program details."
         />
 
@@ -50,14 +50,14 @@ export default async function ContactPage({
             <div className="rounded-xl2 border border-line bg-white p-6">
               <h2 className="text-lg font-bold text-green-deep">What happens next</h2>
               <ol className="info-copy mt-4 list-decimal space-y-2 pl-5">
-                <li>Share your school, role, and program interest.</li>
+                <li>Share your name, school, district, role, and a note about your students.</li>
                 <li>
-                  Include enrollment and any nutrition or serving-size questions
-                  your team needs answered.
+                  Include enrollment and any nutrition or program questions your team
+                  needs answered.
                 </li>
                 <li>
                   Once a verified inbox is connected, inquiries will be routed to
-                  Fruiticana for follow-up on availability and documentation.
+                  Fruiticana for follow-up on the proposed school program.
                 </li>
               </ol>
             </div>

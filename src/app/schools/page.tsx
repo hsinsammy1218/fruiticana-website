@@ -2,32 +2,29 @@ import type { Metadata } from "next";
 import { Section } from "@/components/layout/Section";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { FeatureCard } from "@/components/ui/FeatureCard";
-import { Vision } from "@/components/home/Vision";
 import { CTASection } from "@/components/ui/CTASection";
-import { Button } from "@/components/ui/Button";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { navCta } from "@/data/navigation";
 import { site } from "@/data/site";
 import {
   schoolAudiences,
-  schoolFitPoints,
-  schoolUses,
   schoolsIntro,
-  studentAppeal,
-  studentAppealIntro,
   whySchoolsPageCopy,
 } from "@/data/schools";
-import { schoolGlanceStats } from "@/data/facts";
-import { StatGrid } from "@/components/ui/StatGrid";
-import { formats } from "@/data/formats";
-import { featuredFlavors } from "@/data/flavors";
-import { ProductFormatCard } from "@/components/ui/ProductFormatCard";
-import { FlavorGrid } from "@/components/flavors/FlavorGrid";
+import { startYoungCopy } from "@/data/home";
+import { faqItems } from "@/data/faq";
+import { schoolOperations } from "@/data/operations";
+import { equipmentCopy, partnershipCopy, revenueShareCopy } from "@/data/program";
+import { ProgramNumbers } from "@/components/home/ProgramNumbers";
+import { ProgramHowItWorks } from "@/components/home/ProgramHowItWorks";
+import { ValueExchange } from "@/components/home/ValueExchange";
+import { FaqSection } from "@/components/home/FaqSection";
+import { Button } from "@/components/ui/Button";
 
 export const metadata: Metadata = {
   title: "For Schools",
   description:
-    "Fruiticana wants to work with schools because that is where students eat meals and snacks — and where they can be introduced to another way to enjoy fruit.",
+    "Fruiticana wants to give students an exciting new way to eat fruit. Under the proposed school model, Fruiticana provides two machines, stays involved, and the school receives 1/3 of Fruiticana sales generated through its program.",
   alternates: { canonical: "/schools" },
 };
 
@@ -46,19 +43,28 @@ export default function SchoolsPage() {
     ],
   };
 
+  const faqLd = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqItems.map((item) => ({
+      "@type": "Question",
+      name: item.question,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: item.answer,
+      },
+    })),
+  };
+
   return (
     <>
       <JsonLd data={breadcrumbLd} />
+      <JsonLd data={faqLd} />
       <Section>
         <SectionHeading
           as="h1"
           title={schoolsIntro.title}
           description={schoolsIntro.description}
-        />
-        <StatGrid
-          className="mt-10"
-          items={schoolGlanceStats}
-          aria-label="School program figures"
         />
         <ul className="mt-8 flex flex-wrap gap-2">
           {schoolAudiences.map((audience) => (
@@ -74,127 +80,89 @@ export default function SchoolsPage() {
 
       <Section tone="cream-100">
         <SectionHeading
-          title={studentAppealIntro.title}
-          description={studentAppealIntro.description}
+          title={startYoungCopy.title}
+          description={startYoungCopy.description}
         />
-        <ul className="mt-8 grid grid-cols-1 items-stretch gap-4 sm:grid-cols-2 xl:grid-cols-4">
-          {studentAppeal.map((point) => (
-            <li key={point.title} className="reveal">
-              <FeatureCard
-                icon={point.icon}
-                figure={point.figure}
-                title={point.title}
-                description={point.description}
-              />
-            </li>
-          ))}
-        </ul>
-        <div className="mt-8">
-          <Button href="/product#flavors" variant="secondary">
-            Explore the Flavors
-          </Button>
-        </div>
+        <blockquote className="reveal mt-8 max-w-3xl rounded-xl2 border border-line bg-white px-6 py-6 sm:px-8">
+          <p className="text-xl font-semibold leading-snug text-green-deep">
+            {startYoungCopy.hope}
+          </p>
+        </blockquote>
+        <h2 className="mt-10 text-2xl font-extrabold text-green-deep">
+          {whySchoolsPageCopy.title}
+        </h2>
+        <p className="info-copy mt-3 max-w-3xl">{whySchoolsPageCopy.description}</p>
       </Section>
 
-      <Vision showHeading />
+      <ProgramNumbers />
+
+      <Section>
+        <SectionHeading title={equipmentCopy.title} description={equipmentCopy.body} />
+        <p className="info-copy mt-6 max-w-3xl">{partnershipCopy.body}</p>
+      </Section>
+
+      <ProgramHowItWorks variant="home" showNumbers={false} />
+
+      <ValueExchange />
 
       <Section tone="cream-100">
         <SectionHeading
-          title="Where Fruiticana could fit"
-          description="Use cases a principal or food-service director typically evaluates."
+          title={revenueShareCopy.title}
+          description={revenueShareCopy.lead}
         />
-        <ul className="mt-10 grid gap-4 sm:grid-cols-2">
-          {schoolUses.map((use) => (
-            <li
-              key={use.slug}
-              id={use.slug}
-              className="reveal rounded-xl2 border border-line bg-white p-6"
-            >
-              <p className="font-sans text-3xl font-extrabold tabular-nums tracking-tight text-green-deep">
-                {use.figure}
-              </p>
-              <p className="mt-1 text-xs font-semibold uppercase tracking-wide text-green-600">
-                {use.figureLabel}
-              </p>
-              <h2 className="mt-3 text-lg font-bold text-green-deep">{use.title}</h2>
-              <p className="info-copy mt-2">{use.description}</p>
-            </li>
-          ))}
+        <p className="mt-6 max-w-3xl text-lg font-semibold leading-relaxed text-green-deep">
+          {revenueShareCopy.body}
+        </p>
+        <p className="info-copy mt-3 max-w-3xl">{revenueShareCopy.remainder}</p>
+      </Section>
+
+      <FaqSection />
+
+      <Section>
+        <SectionHeading
+          title="Questions still being documented"
+          description="Fruiticana will not invent operational details. These answers are still being written for a current school launch."
+        />
+        <ul className="mt-8 grid gap-4 md:grid-cols-2">
+          {schoolOperations
+            .filter((item) => item.status === "to-confirm")
+            .map((item) => (
+              <li
+                key={item.question}
+                className="rounded-xl2 border border-line bg-white p-5"
+              >
+                <p className="flex flex-wrap items-center gap-2">
+                  <span className="font-semibold text-green-deep">{item.question}</span>
+                  <span className="rounded-pill bg-cream-200 px-2.5 py-0.5 text-xs font-semibold text-green-deep">
+                    Still being documented
+                  </span>
+                </p>
+                <p className="mt-2 text-sm leading-relaxed text-muted">{item.answer}</p>
+              </li>
+            ))}
         </ul>
       </Section>
 
       <Section tone="white">
-        <SectionHeading
-          title={whySchoolsPageCopy.title}
-          description={whySchoolsPageCopy.description}
-        />
-        <ul className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-2">
-          {schoolFitPoints.map((point) => (
-            <li key={point.title} className="reveal">
-              <div className="h-full rounded-xl2 border border-line bg-cream-100 p-6">
-                <p className="font-sans text-3xl font-extrabold tabular-nums tracking-tight text-green-deep">
-                  {point.figure}
-                </p>
-                <h3 className="mt-3 text-lg font-bold text-green-deep">{point.title}</h3>
-                <p className="info-copy mt-2">{point.body}</p>
-              </div>
-            </li>
-          ))}
-        </ul>
-      </Section>
-
-      <Section tone="cream-100">
-        <SectionHeading
-          title="How Fruiticana can work in a school"
-          description="The documented format is a 4 oz (1/2 cup) single-serve cup, prepared in-house so a school is not carrying specialty outside-dessert cost. Equipment, storage, staffing, payment, and current school cost are still being documented."
-        />
-        <ul className="mt-10 grid gap-5 sm:grid-cols-1 lg:max-w-md">
-          {formats.map((format) => (
-            <li key={format.slug}>
-              <ProductFormatCard format={format} />
-            </li>
-          ))}
-        </ul>
-        <div className="mt-8">
-          <Button href="/#how-it-works" variant="secondary">
-            See questions a school team will want to confirm
-          </Button>
-        </div>
-      </Section>
-
-      <Section>
-        <SectionHeading
-          title="Flavor options"
-          description="Six of the original twelve documented flavors. Each one starts with fruit. Current availability for a school program still needs to be confirmed."
-        />
-        <FlavorGrid className="mt-10" flavors={featuredFlavors} />
-        <div className="mt-8">
-          <Button href="/product#flavors" variant="secondary">
-            View all 12 flavors
-          </Button>
-        </div>
-      </Section>
-
-      <Section>
         <div className="grid gap-8 lg:grid-cols-3">
           <FeatureCard
             icon="school"
             figure="2003–05"
             title="Connecticut school chapter"
-            description="Team Nutrition Healthy Snack pilot (2003–2005) and later distribution to local Connecticut schools after consumer testing."
+            description="Team Nutrition Healthy Snack pilot (2003–2005) and later distribution to local Connecticut schools after consumer testing. Historical participation, not a current endorsement."
           />
           <div className="rounded-xl2 border border-line bg-white p-6">
             <h2 className="text-lg font-bold text-green-deep">
               Nutrition & documentation
             </h2>
             <p className="info-copy mt-2">
-              Nutrition panels, serving sizes, ingredients, and
-              supporting letters are on Flavors & Nutrition and Resources.
+              Nutrition panels, serving sizes, ingredients, and supporting
+              letters are on Product & Nutrition and Documentation.
             </p>
             <div className="mt-5 flex flex-col gap-3 sm:flex-row">
-              <Button href="/product">Flavors & Nutrition</Button>
+              <Button href="/product">Product & Nutrition</Button>
               <Button href="/resources" variant="secondary">
-                View resources
+                View documentation
               </Button>
             </div>
           </div>
@@ -217,12 +185,12 @@ export default function SchoolsPage() {
       </Section>
 
       <CTASection
-        title="Let's Give Students a New Way to Enjoy Fruit."
+        title="Let's Bring Fruiticana to Your Students."
         description="Share your school details, program interest, and any nutrition questions. Inquiry delivery is not connected yet; the form is ready for when a verified inbox is in place."
         primary={{ label: navCta.label, href: navCta.href }}
         secondary={{
-          label: "View nutrition details",
-          href: "/product#nutrition",
+          label: "Learn everything about Fruiticana",
+          href: "/#learn-everything",
         }}
       />
     </>

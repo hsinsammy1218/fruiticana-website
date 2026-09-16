@@ -26,9 +26,9 @@ export function IngredientRecipe({
       )}
     >
       <div className="border-b border-line bg-white px-6 py-5 sm:px-8">
-        <p className="text-xs font-semibold uppercase tracking-[0.18em] text-green-600">
-          School kitchen recipe
-        </p>
+          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-green-600">
+            Historical recipe
+          </p>
         <h3 className="mt-2 text-2xl font-extrabold text-green-deep">
           Fruiticana Creamless Ice Cream
         </h3>
@@ -71,30 +71,29 @@ export function IngredientRecipe({
 
         <div className="border-t border-line bg-white px-6 py-6 sm:px-8 lg:border-l lg:border-t-0">
           <p className="text-sm font-bold uppercase tracking-[0.14em] text-green-600">
-            How to use it
+            For school review
           </p>
           <ol className="mt-4 space-y-3 text-sm leading-relaxed text-muted sm:text-base">
             <li className="flex gap-3">
               <span className="font-bold text-green-deep">1.</span>
-              <span>Start with fresh fruit as the base of the mix.</span>
+              <span>This list is from 2007 Fruiticana product pages.</span>
             </li>
             <li className="flex gap-3">
               <span className="font-bold text-green-deep">2.</span>
               <span>
-                Blend with the remaining recipe ingredients until smooth.
+                It is shared so a school team can see what was in the original fruit-first recipe.
               </span>
             </li>
             <li className="flex gap-3">
               <span className="font-bold text-green-deep">3.</span>
               <span>
-                Freeze and portion into student single-serve cups (4 oz).
+                2008 Nutrition Facts panels used a 4 oz (½ cup) laboratory serving.
               </span>
             </li>
             <li className="flex gap-3">
               <span className="font-bold text-green-deep">4.</span>
               <span>
-                Serve in the cafeteria or snack program — made in-house, without
-                specialty outside-dessert cost.
+                Confirm today’s formula, allergens, and serving format before any school service.
               </span>
             </li>
           </ol>

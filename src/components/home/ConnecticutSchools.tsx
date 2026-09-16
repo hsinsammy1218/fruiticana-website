@@ -7,7 +7,7 @@ import { historyCopy } from "@/data/home";
 
 export function ConnecticutSchools() {
   return (
-    <Section tone="deep">
+    <Section id="history" tone="deep">
       <div className="reveal">
         <HistoricalBadge
           label={historyCopy.badge}

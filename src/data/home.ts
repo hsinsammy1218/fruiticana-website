@@ -7,7 +7,7 @@ export const heroCopy = {
   line1: "An Exciting New Way",
   line2: "to Eat Fruit",
   subhead:
-    "A fruit-based frozen treat created so students can get excited about eating fruit.",
+    "Fruiticana brings a fruit-based frozen experience directly to schools — giving students something they can enjoy while giving schools a hands-on program designed around their students.",
   originalNote:
     "Originally introduced as Fruiticana Creamless Ice Cream — smooth like ice cream, built from real fruit.",
   primaryCta: {
@@ -21,12 +21,12 @@ export const heroCopy = {
 } as const;
 
 export const whyCopy = {
-  eyebrow: "Our why",
-  title: "Healthy Choices Should Still Be Exciting",
+  eyebrow: "Why we care",
+  title: "Fruit Should Be Something Students Look Forward To",
   description:
-    "Fruiticana exists because children should have food choices that can be both enjoyable and health-conscious. Fruit is nutritious — but simply telling students to eat more of it does not make them look forward to it.",
+    "Fruiticana exists for kids — for health, for fruit, and for enjoyment. We want to introduce positive food experiences while children are young, so fruit can become something students actually look forward to.",
   question: "What if fruit could become something students actually look forward to?",
-  body: "That question is why Fruiticana was created: to give students another way to enjoy fruit.",
+  body: "That question is why Fruiticana was created: to give students an exciting new way to eat fruit. This is our vision, not a scientific promise.",
 } as const;
 
 export type FruitJourneyStep = {
@@ -77,6 +77,18 @@ export const productCopy = {
   title: "A fruit-based frozen treat for students",
   description:
     "Fruiticana takes the cold, smooth experience students already enjoy and builds it around fruit — not dairy ice cream with fruit mixed in.",
+  cta: { label: "See flavors and nutrition", href: "/product" },
+} as const;
+
+export const startYoungCopy = {
+  eyebrow: "Why start young",
+  title: "Give Students an Enjoyable Experience With Fruit Today",
+  description:
+    "Many people continue enjoying foods they first became familiar with as children. Fruiticana wants to create a positive relationship with fruit early.",
+  hope: "Give students an enjoyable experience with fruit today, with the hope that their appreciation for fruit continues tomorrow.",
+  whySchoolsTitle: "Why bring Fruiticana into schools?",
+  whySchools:
+    "Children spend a significant part of their day at school. Instead of waiting for families to discover Fruiticana somewhere else, the vision is to introduce the experience directly within schools — a place where students can discover another way to enjoy fruit. Schools are not merely a distribution channel. They are where students already are.",
 } as const;
 
 export const flavorsCopy = {
@@ -114,7 +126,7 @@ export const historyCopy = {
   distinction:
     "This is historical participation. It is not a current state, USDA, or school-district endorsement.",
   today:
-    "Today the original idea is being brought back with a renewed focus on students and health-conscious food experiences.",
+    "Today the original idea is being brought back so students can have an exciting new way to eat fruit — through a proposed school partnership built around equipment Fruiticana provides and stays involved with.",
   cta: { label: "Read Our Story", href: "/about" },
   steps: [
     {
@@ -140,7 +152,7 @@ export const historyCopy = {
     {
       period: "Today",
       title: "The original idea, renewed",
-      body: "A renewed focus on students and enjoyable fruit.",
+      body: "A renewed focus on students, enjoyable fruit, and a proposed school partnership.",
     },
   ],
 } as const;
@@ -150,8 +162,8 @@ export const howCopy = {
   eyebrow: "How it works",
   title: "Bringing Fruiticana to Your School",
   description:
-    "After the why, here is the how — as far as the record currently shows. Some serving details for a present-day program are still being documented.",
-  knownTitle: "What the record already shows",
+    "Under the proposed model, Fruiticana provides the machines, stays involved, and the school shares in sales.",
+  knownTitle: "What the proposed model already states",
   pendingTitle: "What a school team will want to confirm",
   pendingIntro:
     "These questions still need current answers before a school launch. Request school information and we will walk through them with you rather than guess.",
@@ -171,6 +183,6 @@ export const trustCopy = {
 export const closingCta = {
   title: "Let's Give Students a New Way to Enjoy Fruit.",
   description:
-    "Request school information to talk through the idea, the original flavors, nutrition documentation, and how a conversation with your school could start.",
+    "Request school information to talk through the idea, the proposed school program, nutrition documentation, and how a conversation with your school could start.",
   secondary: { label: "See How It Works", href: "#how-it-works" },
 } as const;

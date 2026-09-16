@@ -41,10 +41,10 @@ export const recipeIngredients: RecipeIngredient[] = [
 export const historicalIngredients = recipeIngredients;
 
 export const recipeYield =
-  "Makes creamless frozen dessert for school single-serve cups (4 oz).";
+  "Historical recipe lineup associated with Fruiticana Creamless Ice Cream, including a 4 oz laboratory serving on 2008 Nutrition Facts panels.";
 
 export const recipeIntro =
-  "A simple in-house recipe: fruit-first ingredients your kitchen can work with — without specialty outside-dessert cost.";
+  "A fruit-first ingredient list from 2007 product pages, shared for school review. It is not a current kitchen SOP for the proposed machine program.";
 
 export const recipeIngredientsSource =
   "Ingredient lineup from Fruiticana product pages on myfruiticana.com (Wayback Machine, March 2007).";
@@ -59,4 +59,4 @@ export const currentVerificationNotice =
   "The Nutrition Facts on this site are from a 2008 laboratory analysis. The ingredient list is from 2007 product pages. Fruiticana needs current testing before launch for calories, fat, fiber, total sugar, added sugar, dairy and lactose status, and allergens. Wheat protein appears on the 2007 list. Added sugar was not reported as a separate line on those panels.";
 
 export const ingredientsSectionIntro =
-  "A fruit-first recipe kitchens can make in-house. Confirm the mix and allergens against a current Fruiticana formulation before service.";
+  "A fruit-first 2007 ingredient list for school review. Confirm the mix and allergens against a current Fruiticana formulation before any service.";

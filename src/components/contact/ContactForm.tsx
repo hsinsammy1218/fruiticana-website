@@ -13,7 +13,8 @@ import {
 
 type Fields = {
   name: string;
-  organization: string;
+  school: string;
+  district: string;
   schoolType: string;
   city: string;
   state: string;
@@ -31,7 +32,8 @@ type Errors = Partial<Record<keyof Fields, string>>;
 
 const emptyFields: Fields = {
   name: "",
-  organization: "",
+  school: "",
+  district: "",
   schoolType: "",
   city: "",
   state: "",
@@ -65,8 +67,8 @@ export function ContactForm({ defaultInterest }: { defaultInterest?: string }) {
   function validate(values: Fields): Errors {
     const next: Errors = {};
     if (!values.name.trim()) next.name = "Please enter your name.";
-    if (!values.organization.trim()) {
-      next.organization = "Please enter your school or district.";
+    if (!values.school.trim()) {
+      next.school = "Please enter your school.";
     }
     if (!values.email.trim()) {
       next.email = "Please enter your email.";
@@ -148,13 +150,19 @@ export function ContactForm({ defaultInterest }: { defaultInterest?: string }) {
           autoComplete="name"
         />
         <Field
-          id="organization"
-          label="School or district"
+          id="school"
+          label="School"
           required
-          error={errors.organization}
-          value={fields.organization}
-          onChange={(value) => update("organization", value)}
+          error={errors.school}
+          value={fields.school}
+          onChange={(value) => update("school", value)}
           autoComplete="organization"
+        />
+        <Field
+          id="district"
+          label="School district"
+          value={fields.district}
+          onChange={(value) => update("district", value)}
         />
         <SelectField
           id="schoolType"
@@ -166,7 +174,7 @@ export function ContactForm({ defaultInterest }: { defaultInterest?: string }) {
         />
         <SelectField
           id="role"
-          label="Role"
+          label="Position / title"
           value={fields.role}
           onChange={(value) => update("role", value)}
           options={roles}
@@ -266,7 +274,7 @@ export function ContactForm({ defaultInterest }: { defaultInterest?: string }) {
           type="submit"
           className="inline-flex min-h-11 items-center justify-center rounded-pill bg-green-deep px-6 text-sm font-semibold text-cream transition-colors hover:bg-green-deep-80"
         >
-          Request Information
+          Request School Information
         </button>
         <p className="text-xs text-muted">
           <span className="text-strawberry">*</span> Required

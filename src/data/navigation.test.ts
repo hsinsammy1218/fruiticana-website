@@ -17,7 +17,7 @@ describe("isNavItemActive", () => {
     expect(isNavItemActive("/about", "/resources")).toBe(false);
   });
 
-  it("treats flavor sheets as Flavors & Nutrition", () => {
+  it("treats flavor sheets as Product & Nutrition", () => {
     expect(isNavItemActive("/product", "/product")).toBe(true);
     expect(isNavItemActive("/flavors/mango", "/product")).toBe(true);
     expect(isNavItemActive("/about", "/product")).toBe(false);

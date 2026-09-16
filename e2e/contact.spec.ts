@@ -4,12 +4,10 @@ import { fillSchoolInquiry } from "./helpers";
 test.describe("contact form", () => {
   test("validates empty required fields", async ({ page }) => {
     await page.goto("/contact");
-    await page.getByRole("button", { name: "Request Information" }).click();
+    await page.getByRole("button", { name: "Request School Information" }).click();
 
     await expect(page.getByText("Please enter your name.")).toBeVisible();
-    await expect(
-      page.getByText("Please enter your school or district."),
-    ).toBeVisible();
+    await expect(page.getByText("Please enter your school.")).toBeVisible();
     await expect(page.getByText("Please enter your email.")).toBeVisible();
     await expect(page.getByText("Please enter a message.")).toBeVisible();
     await expect(page.getByLabel(/^name/i)).toBeFocused();
@@ -18,17 +16,17 @@ test.describe("contact form", () => {
   test("rejects an invalid email and a short message", async ({ page }) => {
     await page.goto("/contact");
     await page.getByLabel(/^name/i).fill("Sam");
-    await page.getByLabel(/school or district/i).fill("Lincoln Elementary");
+    await page.getByRole("textbox", { name: /^school \*/i }).fill("Lincoln Elementary");
     await page.getByLabel(/email/i).fill("not-an-email");
     await page.getByLabel(/message/i).fill("Hi there");
-    await page.getByRole("button", { name: "Request Information" }).click();
+    await page.getByRole("button", { name: "Request School Information" }).click();
 
     await expect(
       page.getByText("Please enter a valid email address."),
     ).toBeVisible();
 
     await page.getByLabel(/email/i).fill("sam@example.com");
-    await page.getByRole("button", { name: "Request Information" }).click();
+    await page.getByRole("button", { name: "Request School Information" }).click();
     await expect(page.getByText(/at least 10 characters/i)).toBeVisible();
   });
 
@@ -37,7 +35,7 @@ test.describe("contact form", () => {
   }) => {
     await page.goto("/contact");
     await fillSchoolInquiry(page, { interest: "Cafeteria" });
-    await page.getByRole("button", { name: "Request Information" }).click();
+    await page.getByRole("button", { name: "Request School Information" }).click();
 
     const status = page.getByRole("status").filter({ hasText: /thanks, sam/i });
     await expect(status).toBeVisible();
@@ -56,7 +54,7 @@ test.describe("contact form", () => {
   }) => {
     await page.goto("/contact");
     await page.locator("#website").fill("https://spam.example", { force: true });
-    await page.getByRole("button", { name: "Request Information" }).click();
+    await page.getByRole("button", { name: "Request School Information" }).click();
     await expect(page.getByRole("status")).toBeVisible();
     await expect(page.getByText("Please enter your name.")).toHaveCount(0);
   });

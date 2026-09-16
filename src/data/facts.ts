@@ -11,7 +11,10 @@ export type FactStat = {
   note?: string;
 };
 
-/** Homepage “at a glance” strip — mix of product and Connecticut program facts. */
+/**
+ * Homepage hero no longer uses a historical lab strip. Keep this export
+ * only for tests and any remaining historical glance uses.
+ */
 export const homeGlanceStats: FactStat[] = [
   {
     value: "12",
@@ -20,8 +23,8 @@ export const homeGlanceStats: FactStat[] = [
   },
   {
     value: "4 oz",
-    label: "Single-serve cup",
-    note: "School serving size",
+    label: "Historical laboratory serving",
+    note: "Documented 2008 Nutrition Facts serving",
   },
   {
     value: "0g",
@@ -85,19 +88,19 @@ export const storyPilotStats: FactStat[] = [
 
 export const schoolGlanceStats: FactStat[] = [
   {
-    value: "2003–05",
-    label: "Team Nutrition pilot",
-    note: "Healthy Snack program in Connecticut",
+    value: "2",
+    label: "Machines per school",
+    note: "Proposed standard setup",
   },
   {
-    value: "4 oz",
-    label: "Single-serve cup",
-    note: "½ cup (90 g) on 2008 Nutrition Facts",
+    value: "4",
+    label: "Flavor options",
+    note: "Two flavors in each machine",
   },
   {
-    value: "12",
-    label: "Original flavors",
-    note: "Shareable product sheets for each",
+    value: "1/3",
+    label: "Of Fruiticana sales to the school",
+    note: "From sales generated through its program",
   },
 ];
 
@@ -125,7 +128,7 @@ export const learnGlanceStats: FactStat[] = [
 ];
 
 export const productConceptBenefits: {
-  icon: "fruit" | "scoop" | "leaf" | "cup";
+  icon: "fruit" | "scoop" | "leaf" | "cup" | "heart";
   figure?: string;
   title: string;
   description: string;
@@ -149,10 +152,10 @@ export const productConceptBenefits: {
     description: "Designed for people avoiding lactose. Current recipe still to confirm.",
   },
   {
-    icon: "cup",
-    figure: "4 oz",
-    title: "Single-serve cups",
-    description: "Individual portions sized for a cafeteria or snack line.",
+    icon: "heart",
+    figure: "Kids",
+    title: "Made for students",
+    description: "Created so students can get excited about eating fruit.",
   },
 ];
 
@@ -220,9 +223,9 @@ export const schoolHomeBenefits: {
   },
   {
     icon: "cup",
-    figure: "4 oz",
+    figure: "Treat",
     title: "A familiar treat feel",
-    description: "Cold, smooth cups students recognize as a treat at meal or snack time.",
+    description: "A cold, smooth frozen experience students already understand as a treat.",
   },
   {
     icon: "leaf",

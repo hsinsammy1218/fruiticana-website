@@ -53,7 +53,7 @@ export default async function FlavorPage({
       {
         "@type": "ListItem",
         position: 2,
-        name: "Flavors & Nutrition",
+        name: "Product & Nutrition",
         item: `${site.url}/product`,
       },
       {

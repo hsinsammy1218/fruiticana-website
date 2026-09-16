@@ -12,9 +12,9 @@ test.describe("nutrition", () => {
     ).toBeVisible();
     await expect(page.getByText(/nutrition analysis \(2008\)/i)).toBeVisible();
     await expect(
-      page.getByRole("heading", { name: /institutional serving information/i }),
+      page.getByRole("heading", { name: /historical serving information/i }),
     ).toBeVisible();
-    await expect(page.getByText(/single-serve cup \(4 oz\)/i)).toBeVisible();
+    await expect(page.getByText(/historical laboratory serving \(4 oz\)/i)).toBeVisible();
     await expect(page.getByText("Calories per 4 oz")).toBeVisible();
     await expect(page.getByText("0g").first()).toBeVisible();
     await expect(page.getByText("100–150").first()).toBeVisible();
@@ -24,7 +24,7 @@ test.describe("nutrition", () => {
     await expect(
       page.locator("#ingredients li").filter({ hasText: "Mar/az" }),
     ).toBeVisible();
-    await expect(page.getByText(/school kitchen recipe/i)).toBeVisible();
+    await expect(page.getByText("Historical recipe", { exact: true })).toBeVisible();
     await expect(
       page.getByRole("heading", { name: /fruiticana creamless ice cream/i }),
     ).toBeVisible();

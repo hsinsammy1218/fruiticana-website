@@ -19,18 +19,19 @@ describe("vision data", () => {
       ...visionPillars.map((pillar) => `${pillar.title} ${pillar.body}`),
     ].join(" ");
     expect(copy).toMatch(/students/i);
-    expect(copy).toMatch(/cafeteria/i);
+    expect(copy).toMatch(/school/i);
     expect(copy).not.toMatch(/for schools/i);
     expect(copy).not.toMatch(/this website is for/i);
     expect(visionIntro.description).not.toMatch(/only for/i);
   });
 
-  it("keeps the how pillar on in-house school prep without specialty cost", () => {
+  it("keeps the how pillar on the proposed machine partnership", () => {
     const how = visionPillars.find((pillar) => pillar.key === "how");
-    expect(how?.figure).toBe("In-house");
-    expect(how?.title).toMatch(/in-house/i);
-    expect(how?.body).toMatch(/in-house/i);
-    expect(how?.body).toMatch(/cost/i);
-    expect(how?.body).toMatch(/4 oz/);
+    expect(how?.figure).toBe("2");
+    expect(how?.title).toMatch(/school/i);
+    expect(how?.body).toMatch(/proposed/i);
+    expect(how?.body).toMatch(/machines/i);
+    expect(how?.body).toMatch(/1\/3/);
+    expect(how?.body).not.toMatch(/in-house/i);
   });
 });

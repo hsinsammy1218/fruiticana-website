@@ -1,30 +1,34 @@
 import { test, expect } from "@playwright/test";
 
 test.describe("for schools", () => {
-  test("explains program fit for schools", async ({ page }) => {
+  test("explains the proposed school program", async ({ page }) => {
     await page.goto("/schools");
 
     await expect(
       page.getByRole("heading", {
         level: 1,
-        name: /a new way for students to enjoy fruit/i,
+        name: /bring fruiticana to your school/i,
       }),
     ).toBeVisible();
     await expect(
-      page.getByText(/principals, food-service directors, nutrition staff, and administrators/i).first(),
+      page.getByText(/principals and school administrators/i).first(),
     ).toBeVisible();
-    await expect(page.getByRole("heading", { name: "School cafeteria" })).toBeVisible();
-    await expect(page.getByRole("heading", { name: "Healthy snack program" })).toBeVisible();
-    await expect(page.getByRole("heading", { name: "Private school" })).toBeVisible();
     await expect(
-      page.getByRole("heading", { name: "A fruit-based creamless frozen dessert" }),
+      page.getByRole("heading", { name: "We Bring the Program. You Bring the Students." }),
+    ).toBeVisible();
+    await expect(page.getByText("1/3").first()).toBeVisible();
+    await expect(
+      page.getByRole("heading", { name: "We Provide the Machines" }),
+    ).toBeVisible();
+    await expect(
+      page.getByRole("heading", { name: "What each partner receives" }),
+    ).toBeVisible();
+    await expect(
+      page.getByRole("heading", { name: "FAQ for school teams" }),
     ).toBeVisible();
     await expect(
       page.getByRole("heading", { name: "Food-service distribution" }),
     ).toHaveCount(0);
-    await expect(page.getByText("Single-serve cup", { exact: true }).first()).toBeVisible();
-    await expect(page.getByText("4 oz").first()).toBeVisible();
-    await expect(page.getByText("2003–05").first()).toBeVisible();
   });
 
   test("links documentation and inquiry without fake PDF downloads", async ({
@@ -34,7 +38,7 @@ test.describe("for schools", () => {
 
     await expect(page.getByRole("link", { name: /download pdf/i })).toHaveCount(0);
     await expect(
-      page.getByRole("main").getByRole("link", { name: "Flavors & Nutrition" }),
+      page.getByRole("main").getByRole("link", { name: "Product & Nutrition" }),
     ).toHaveAttribute("href", "/product");
     await page.getByRole("link", { name: "Request School Information" }).last().click();
     await expect(page).toHaveURL(/\/contact$/);

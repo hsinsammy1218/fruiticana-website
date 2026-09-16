@@ -43,13 +43,13 @@ describe("snapshot facts", () => {
       "Fruit based",
       "Ice-cream feel",
       "Lactose-free concept",
-      "Single-serve cups",
+      "Made for students",
     ]);
     expect(schoolDesignBenefits.map((benefit) => benefit.figure)).toEqual([
       "12",
       "Smooth",
       "2003",
-      "4 oz",
+      "Kids",
     ]);
     expect(schoolDesignBenefits.every((benefit) => (benefit.figure ?? "").length > 0)).toBe(true);
     expect(

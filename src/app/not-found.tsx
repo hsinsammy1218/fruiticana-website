@@ -20,7 +20,7 @@ export default function NotFound() {
             Back home
           </Button>
           <Button href="/product" size="lg" variant="secondary">
-            Flavors & Nutrition
+            Product & Nutrition
           </Button>
         </div>
       </div>

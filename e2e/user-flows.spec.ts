@@ -4,7 +4,7 @@ import { fillSchoolInquiry } from "./helpers";
 test.describe("user flows", () => {
   test("home to product nutrition to flavor sheet", async ({ page }) => {
     await page.goto("/");
-    await page.getByRole("link", { name: "View All Flavors" }).click();
+    await page.getByRole("link", { name: "See flavors and nutrition" }).click();
     await expect(page).toHaveURL(/\/product/);
 
     await page.locator('a[href="/flavors/mango#nutrition"]').click();
@@ -33,7 +33,7 @@ test.describe("user flows", () => {
     await expect(page).toHaveURL(/\/contact$/);
 
     await fillSchoolInquiry(page, { name: "Jordan", interest: "Cafeteria" });
-    await page.getByRole("button", { name: "Request Information" }).click();
+    await page.getByRole("button", { name: "Request School Information" }).click();
     await expect(page.getByRole("status").filter({ hasText: /thanks, jordan/i })).toBeVisible();
   });
 

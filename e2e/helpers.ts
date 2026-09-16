@@ -14,13 +14,13 @@ export const primaryRoutes = [
   },
   {
     path: "/schools",
-    heading: /a new way for students to enjoy fruit/i,
+    heading: /bring fruiticana to your school/i,
     title: /For Schools/,
   },
   {
     path: "/product",
     heading: /flavors, servings, and nutrition/i,
-    title: /Flavors & Nutrition/,
+    title: /Product & Nutrition/,
   },
   {
     path: "/resources",
@@ -29,8 +29,8 @@ export const primaryRoutes = [
   },
   {
     path: "/contact",
-    heading: /bring fruiticana to your school/i,
-    title: /Bring Fruiticana to Your School/,
+    heading: /let'?s bring fruiticana to your students/i,
+    title: /Let's Bring Fruiticana to Your Students/,
   },
 ] as const;
 
@@ -80,7 +80,7 @@ export async function fillSchoolInquiry(
 ) {
   const name = options?.name ?? "Sam";
   await page.getByLabel(/^name/i).fill(name);
-  await page.getByLabel(/school or district/i).fill("Lincoln Elementary");
+  await page.getByRole("textbox", { name: /^school \*/i }).fill("Lincoln Elementary");
   await page.getByLabel(/email/i).fill("sam@example.com");
   if (options?.interest) {
     await page.getByLabel(/interest type/i).selectOption(options.interest);

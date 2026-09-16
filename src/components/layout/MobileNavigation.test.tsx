@@ -31,7 +31,7 @@ describe("MobileNavigation", () => {
     expect(screen.getByRole("link", { name: "Home" })).not.toHaveAttribute(
       "aria-current",
     );
-    expect(screen.getByRole("link", { name: "Flavors & Nutrition" })).toHaveAttribute(
+    expect(screen.getByRole("link", { name: "Product & Nutrition" })).toHaveAttribute(
       "href",
       "/product",
     );
@@ -39,23 +39,20 @@ describe("MobileNavigation", () => {
       "href",
       "/about",
     );
-    expect(screen.getByRole("link", { name: "Resources" })).toHaveAttribute(
-      "href",
-      "/resources",
-    );
+    expect(screen.queryByRole("link", { name: "Resources" })).not.toBeInTheDocument();
     expect(
       screen.getByRole("link", { name: /request school information/i }),
     ).toHaveAttribute("href", "/contact");
     expect(screen.queryByRole("link", { name: "Learn" })).not.toBeInTheDocument();
   });
 
-  it("treats flavor sheets as the Flavors & Nutrition section", () => {
+  it("treats flavor sheets as the Product & Nutrition section", () => {
     render(
       <MobileNavigation open onClose={() => undefined} activeHref="/flavors/mango" />,
     );
 
     expect(
-      screen.getByRole("link", { name: "Flavors & Nutrition" }),
+      screen.getByRole("link", { name: "Product & Nutrition" }),
     ).toHaveAttribute("aria-current", "page");
     expect(screen.getByRole("link", { name: "Home" })).not.toHaveAttribute(
       "aria-current",

@@ -3,7 +3,7 @@ import { Container } from "@/components/layout/Container";
 import { Logo } from "@/components/ui/Logo";
 import { Button } from "@/components/ui/Button";
 import { BrandBar } from "@/components/brand/OriginalBrandMotif";
-import { mainNav, legalNav, resourceNav, navCta } from "@/data/navigation";
+import { legalNav, resourceNav, navCta, footerExploreNav } from "@/data/navigation";
 import { site } from "@/data/site";
 
 export function Footer() {
@@ -37,7 +37,7 @@ export function Footer() {
               Explore
             </h2>
             <ul className="mt-4 space-y-2.5 text-sm">
-              {mainNav.map((item) => (
+              {footerExploreNav.map((item) => (
                 <li key={item.href}>
                   <Link
                     href={item.href}

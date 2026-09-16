@@ -178,7 +178,7 @@ export default async function DocumentPage({
         title="Need this for a school evaluation?"
         description="Request school information and tell us which documents, flavors, or serving formats your team needs to review."
         primary={{ label: navCta.label, href: navCta.href }}
-        secondary={{ label: "Flavors & Nutrition", href: "/product" }}
+        secondary={{ label: "Product & Nutrition", href: "/product" }}
       />
     </>
   );
