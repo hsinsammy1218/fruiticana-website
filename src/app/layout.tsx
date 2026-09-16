@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Fraunces, Nunito_Sans, Great_Vibes } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 import { site } from "@/data/site";
 import { SkipLink } from "@/components/layout/SkipLink";
@@ -107,6 +108,7 @@ export default function RootLayout({
         <ScrollReveal />
         <JsonLd data={orgLd} />
         <JsonLd data={websiteLd} />
+        <Analytics />
       </body>
     </html>
   );
