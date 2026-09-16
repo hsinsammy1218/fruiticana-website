@@ -28,8 +28,8 @@ export function Hero() {
 
       <Container className="relative grid min-h-[min(88vh,52rem)] items-center gap-10 py-14 sm:py-18 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,0.95fr)] lg:gap-12 lg:py-20 xl:gap-16">
         <div className="hero-rise max-w-2xl lg:max-w-none">
-          <h1 className="font-display text-[clamp(1.45rem,7.1vw,2.35rem)] font-bold tracking-[-0.02em] text-berry sm:text-5xl lg:text-[3.5rem] lg:leading-[1.08] xl:text-[4rem]">
-            <span className="block whitespace-nowrap">{heroCopy.line1}</span>
+          <h1 className="font-display text-[clamp(1.2rem,5.1vw,2.2rem)] font-bold tracking-[-0.02em] text-berry sm:text-5xl lg:text-[3.5rem] lg:leading-[1.08] xl:text-[4rem]">
+            <span className="block whitespace-nowrap">{heroCopy.line1} </span>
             <span className="block">{heroCopy.line2}</span>
           </h1>
           <p className="mt-5 max-w-xl text-xl font-semibold leading-snug text-green-deep sm:text-2xl">
