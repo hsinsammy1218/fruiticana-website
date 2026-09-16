@@ -28,6 +28,9 @@ describe("MobileNavigation", () => {
       "aria-current",
       "page",
     );
+    expect(screen.getByRole("link", { name: "Home" })).not.toHaveAttribute(
+      "aria-current",
+    );
     expect(screen.getByRole("link", { name: "Flavors & Nutrition" })).toHaveAttribute(
       "href",
       "/product",
@@ -44,6 +47,19 @@ describe("MobileNavigation", () => {
       screen.getByRole("link", { name: /request school information/i }),
     ).toHaveAttribute("href", "/contact");
     expect(screen.queryByRole("link", { name: "Learn" })).not.toBeInTheDocument();
+  });
+
+  it("treats flavor sheets as the Flavors & Nutrition section", () => {
+    render(
+      <MobileNavigation open onClose={() => undefined} activeHref="/flavors/mango" />,
+    );
+
+    expect(
+      screen.getByRole("link", { name: "Flavors & Nutrition" }),
+    ).toHaveAttribute("aria-current", "page");
+    expect(screen.getByRole("link", { name: "Home" })).not.toHaveAttribute(
+      "aria-current",
+    );
   });
 
   it("closes on Escape", async () => {

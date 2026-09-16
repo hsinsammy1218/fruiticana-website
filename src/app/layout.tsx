@@ -100,7 +100,9 @@ export default function RootLayout({
       <body>
         <SkipLink />
         <Navbar />
-        <main id="main">{children}</main>
+        <main id="main" tabIndex={-1} className="outline-none">
+          {children}
+        </main>
         <Footer />
         <ScrollReveal />
         <JsonLd data={orgLd} />

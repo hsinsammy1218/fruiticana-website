@@ -200,6 +200,7 @@
       opacity: 1;
       transform: none;
       transition: none;
+      pointer-events: auto;
     }
   }
 }

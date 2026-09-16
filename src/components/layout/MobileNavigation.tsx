@@ -3,16 +3,24 @@
 import { useEffect, useRef } from "react";
 import Link from "next/link";
 import { cn } from "@/lib/cn";
-import { mainNav, navCta } from "@/data/navigation";
+import { isNavItemActive, mainNav, navCta } from "@/data/navigation";
 import { Button } from "@/components/ui/Button";
 
 type MobileNavigationProps = {
   open: boolean;
   onClose: () => void;
+  /** Close without restoring focus — used when a menu link starts navigation. */
+  onNavigate?: () => void;
   activeHref: string;
 };
 
-export function MobileNavigation({ open, onClose, activeHref }: MobileNavigationProps) {
+export function MobileNavigation({
+  open,
+  onClose,
+  onNavigate,
+  activeHref,
+}: MobileNavigationProps) {
+  const handleNavigate = onNavigate ?? onClose;
   const panelRef = useRef<HTMLDivElement>(null);
   const closeButtonRef = useRef<HTMLButtonElement>(null);
 
@@ -110,15 +118,12 @@ export function MobileNavigation({ open, onClose, activeHref }: MobileNavigation
         <nav className="flex-1 overflow-y-auto px-2 py-4" aria-label="Primary">
           <ul className="flex flex-col gap-1">
             {mainNav.map((item) => {
-              const isActive =
-                item.href === "/"
-                  ? activeHref === "/"
-                  : activeHref.startsWith(item.href);
+              const isActive = isNavItemActive(activeHref, item.href);
               return (
                 <li key={item.href}>
                   <Link
                     href={item.href}
-                    onClick={onClose}
+                    onClick={handleNavigate}
                     aria-current={isActive ? "page" : undefined}
                     className={cn(
                       "block rounded-xl px-4 py-3 text-lg font-semibold",
@@ -136,7 +141,7 @@ export function MobileNavigation({ open, onClose, activeHref }: MobileNavigation
         </nav>
 
         <div className="border-t border-line p-4">
-          <Button href={navCta.href} size="lg" className="w-full" onClick={onClose}>
+          <Button href={navCta.href} size="lg" className="w-full" onClick={handleNavigate}>
             {navCta.label}
           </Button>
         </div>

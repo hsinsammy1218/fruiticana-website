@@ -31,8 +31,8 @@ export function Hero() {
           <p className="font-display text-sm font-bold uppercase tracking-[0.22em] text-green-600">
             {site.productLine}
           </p>
-          <h1 className="mt-4 font-display text-4xl font-bold uppercase tracking-[0.04em] text-berry sm:text-5xl lg:text-[3.75rem] lg:leading-[1.06] xl:text-[4.25rem]">
-            The New Way{" "}
+          <h1 className="mt-4 font-display text-[clamp(1.7rem,8.4vw,2.25rem)] font-bold uppercase tracking-[0.03em] text-berry sm:text-5xl sm:tracking-[0.04em] lg:text-[3.75rem] lg:leading-[1.06] xl:text-[4.25rem]">
+            <span className="block whitespace-nowrap">The New Way </span>
             <span className="block">to Eat Fruit</span>
           </h1>
           <p className="mt-5 max-w-xl text-xl font-semibold leading-snug text-green-deep sm:text-2xl">
