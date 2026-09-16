@@ -94,19 +94,19 @@ test.describe("responsive layout @mobile", () => {
       page.getByRole("heading", { level: 1, name: /the new way\s+to eat fruit/i }),
     ).toBeVisible();
 
-    const metrics = await page.locator("h1").evaluate((el) => {
-      const range = document.createRange();
-      range.selectNodeContents(el);
-      const lines = range.getClientRects();
-      return {
-        visualLines: lines.length,
-        scrollWidth: el.scrollWidth,
-        clientWidth: el.clientWidth,
-      };
-    });
+    const lineBoxes = await page.locator("h1 span").evaluateAll((spans) =>
+      spans.map((span) => ({
+        text: (span.textContent ?? "").trim(),
+        lines: span.getClientRects().length,
+        overflow: span.scrollWidth - span.clientWidth,
+      })),
+    );
 
-    expect(metrics.visualLines, JSON.stringify(metrics)).toBeLessThanOrEqual(2);
-    expect(metrics.scrollWidth).toBeLessThanOrEqual(metrics.clientWidth + 1);
+    expect(lineBoxes.map(({ text, lines }) => ({ text, lines }))).toEqual([
+      { text: "The New Way", lines: 1 },
+      { text: "to Eat Fruit", lines: 1 },
+    ]);
+    expect(lineBoxes.every((box) => box.overflow <= 1)).toBe(true);
     await expectNoHorizontalOverflow(page);
   });
 });
