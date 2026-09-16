@@ -57,12 +57,12 @@ describe("snapshot facts", () => {
     ).toBe(true);
   });
 
-  it("keeps the healthier core benefit defensible and scannable", () => {
+  it("keeps the fruit-at-the-center points defensible and scannable", () => {
     expect(healthierBenefits.map((benefit) => benefit.title)).toEqual([
       "Fruit, not dairy",
       "0 g fat on 2008 panels",
       "Healthy Snack pilot",
-      "Lactose-free concept",
+      "Recipe to confirm",
     ]);
     // Each point is structural (fruit vs. dairy), historical (the Healthy Snack
     // pilot), or a 2008 laboratory figure — never a bald present-tense claim.

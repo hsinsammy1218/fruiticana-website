@@ -2,7 +2,7 @@
 
 Next.js 16 informational website for **schools and their students**. The 2003–2011 business PDF and the 2007 myfruiticana.com materials are source material for dates and documentation. There is no consumer shop, cart, or “buy now” path. **For now, this site is only for schools and the students they serve.**
 
-**Core goal:** Recreate the recognizable Fruiticana identity from the original website, modernized for 2026, so a school team can understand the Fruiticana vision — the what, why, and how — and request information for students.
+**Core goal:** Recreate the recognizable Fruiticana identity from the original website, modernized for 2026, so a school team can understand why Fruiticana exists for students — an exciting new way to eat fruit — then request information.
 
 **Primary conversion:** School inquiry — **Request School Information** / **Bring Fruiticana to Your School**.
 
@@ -12,7 +12,7 @@ Next.js 16 informational website for **schools and their students**. The 2003–
 
 **What it is:** Fruiticana is a fruit-based frozen dessert originally developed as a refreshing alternative to traditional dairy ice cream. Original line name: **Fruiticana Creamless Ice Cream**. Original tagline (homepage hero): **“An exciting new way to eat fruit.”**
 
-**Why it exists:** So students have a new way to eat fruit — a frozen dessert built from fruit flavors that can belong in a cafeteria or snack program, including for students avoiding lactose (original design intent).
+**Why it exists:** So students have a new way to eat fruit — a frozen dessert built from fruit flavors that can belong in a cafeteria or snack program, including for students avoiding lactose (original design intent). Schools are the setting because that is where students eat, not because schools are a market.
 
 **How it works for schools:** Designed to be made **in-house**, so schools are not carrying specialty outside-dessert cost. Schools serve individual single-serve cups (4 oz / ½ cup laboratory serving), with 12 original flavors, nutrition documentation for school review, and a documented Connecticut Team Nutrition chapter.
 
@@ -67,16 +67,21 @@ Redirects: `/flavors` and `/nutrition` → `/product`; `/story` → `/about`.
 
 ## 4. Homepage order
 
-1. Hero — Fruiticana + tagline, the frozen-treat / better-for-schools dual message, and the school inquiry CTA
-2. What Is Fruiticana? (product concept — taste-forward)
-3. Featured flavors (6)
-4. Why Fruiticana was made for schools
-5. How it can be served in school (4 oz single-serve)
-6. Built for schools, taste-tested with students (Connecticut record)
-7. Credibility & documentation band (high-level; links to Resources and Flavors & Nutrition)
-8. Closing school CTA
+1. Hero — **An Exciting New Way to Eat Fruit**, student-first support, **Bring Fruiticana to Your School** / **See How It Works**
+2. Our why — Healthy choices should still be exciting
+3. The idea — visual fruit → Fruiticana → frozen experience → student excitement
+4. What's Fruiticana? (product concept)
+5. Made for kids to enjoy
+6. Original fruit flavors (6 featured; original documented lineup)
+7. Fruit at the center (health + enjoyment; dated 2008/2007 facts)
+8. Why schools — schools are where students eat
+9. We've been in Connecticut schools before (historical timeline)
+10. How it works — known in-house / 4 oz facts plus questions still being documented
+11. Supporting documents band
+12. FAQ
+13. Closing CTA — **Let's Give Students a New Way to Enjoy Fruit.**
 
-The standalone What / Why / How vision block now lives on About and For Schools; the homepage keeps the same what/why/how narrative through the section eyebrows. Detailed nutrition panels and regulatory/document cards live on Flavors & Nutrition and Resources — not the homepage.
+The standalone What / Why / How idea block lives on About and For Schools. Detailed nutrition panels and regulatory/document cards live on Flavors & Nutrition and Resources — not the homepage.
 
 ---
 

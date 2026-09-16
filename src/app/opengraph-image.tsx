@@ -30,16 +30,15 @@ export default function OpengraphImage() {
           style={{
             display: "flex",
             marginTop: 40,
-            fontSize: 64,
+            fontSize: 52,
             fontWeight: 800,
-            lineHeight: 1.05,
+            lineHeight: 1.1,
             color: "#d62828",
-            textTransform: "uppercase",
-            letterSpacing: "0.04em",
-            maxWidth: 920,
+            letterSpacing: "-0.02em",
+            maxWidth: 980,
           }}
         >
-          The New Way to Eat Fruit
+          An Exciting New Way to Eat Fruit
         </div>
         <div
           style={{

@@ -7,7 +7,7 @@ test.describe("for schools", () => {
     await expect(
       page.getByRole("heading", {
         level: 1,
-        name: /the fruiticana vision/i,
+        name: /a new way for students to enjoy fruit/i,
       }),
     ).toBeVisible();
     await expect(

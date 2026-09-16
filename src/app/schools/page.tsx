@@ -15,6 +15,7 @@ import {
   schoolsIntro,
   studentAppeal,
   studentAppealIntro,
+  whySchoolsPageCopy,
 } from "@/data/schools";
 import { schoolGlanceStats } from "@/data/facts";
 import { StatGrid } from "@/components/ui/StatGrid";
@@ -26,7 +27,7 @@ import { FlavorGrid } from "@/components/flavors/FlavorGrid";
 export const metadata: Metadata = {
   title: "For Schools",
   description:
-    "The Fruiticana vision — what it is, why it exists, and how a fruit-based frozen dessert can fit cafeterias, snack programs, and school events.",
+    "Fruiticana wants to work with schools because that is where students eat meals and snacks — and where they can be introduced to another way to enjoy fruit.",
   alternates: { canonical: "/schools" },
 };
 
@@ -124,8 +125,8 @@ export default function SchoolsPage() {
 
       <Section tone="white">
         <SectionHeading
-          title="Why schools choose Fruiticana"
-          description="The Connecticut record emphasizes fruit-based composition, moderate portions, and snack-program nutrition standards — the same ideas behind the Fruiticana vision."
+          title={whySchoolsPageCopy.title}
+          description={whySchoolsPageCopy.description}
         />
         <ul className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-2">
           {schoolFitPoints.map((point) => (
@@ -144,8 +145,8 @@ export default function SchoolsPage() {
 
       <Section tone="cream-100">
         <SectionHeading
-          title="Serving formats for school review"
-          description="Single-serve cups — a 4 oz (1/2 cup) size matching the Nutrition Facts panels. Fruiticana is designed for in-house preparation, without specialty outside-dessert cost."
+          title="How Fruiticana can work in a school"
+          description="The documented format is a 4 oz (1/2 cup) single-serve cup, prepared in-house so a school is not carrying specialty outside-dessert cost. Equipment, storage, staffing, payment, and current school cost are still being documented."
         />
         <ul className="mt-10 grid gap-5 sm:grid-cols-1 lg:max-w-md">
           {formats.map((format) => (
@@ -154,12 +155,17 @@ export default function SchoolsPage() {
             </li>
           ))}
         </ul>
+        <div className="mt-8">
+          <Button href="/#how-it-works" variant="secondary">
+            See questions a school team will want to confirm
+          </Button>
+        </div>
       </Section>
 
       <Section>
         <SectionHeading
           title="Flavor options"
-          description="Six of the original twelve flavors. Every flavor has a shareable product sheet and the full 2008 Nutrition Facts panel."
+          description="Six of the original twelve documented flavors. Each one starts with fruit. Current availability for a school program still needs to be confirmed."
         />
         <FlavorGrid className="mt-10" flavors={featuredFlavors} />
         <div className="mt-8">
@@ -211,7 +217,7 @@ export default function SchoolsPage() {
       </Section>
 
       <CTASection
-        title="Bring Fruiticana to Your School"
+        title="Let's Give Students a New Way to Enjoy Fruit."
         description="Share your school details, program interest, and any nutrition questions. Inquiry delivery is not connected yet; the form is ready for when a verified inbox is in place."
         primary={{ label: navCta.label, href: navCta.href }}
         secondary={{

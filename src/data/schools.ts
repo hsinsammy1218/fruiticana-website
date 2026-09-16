@@ -3,9 +3,9 @@
  */
 
 export const schoolsIntro = {
-  title: "The Fruiticana vision",
+  title: "A new way for students to enjoy fruit",
   description:
-    "Principals, food-service directors, nutrition staff, and administrators can review what Fruiticana is, why it exists, and how it can work in a cafeteria or snack program.",
+    "Principals, food-service directors, nutrition staff, and administrators can review why Fruiticana exists, what it is, and how it can work in a cafeteria or snack program — always with students in mind.",
 } as const;
 
 export const schoolAudiences = [
@@ -101,9 +101,15 @@ export const schoolFitPoints = [
   {
     figure: "In-house",
     title: "Built for school kitchens",
-    body: "The vision is an easy in-house preparation path, so schools can offer a fruit-based frozen dessert without carrying specialty outside-dessert cost.",
+    body: "The idea is an easy in-house preparation path, so students can have a fruit-based frozen treat without the school carrying specialty outside-dessert cost.",
   },
 ] as const;
+
+export const whySchoolsPageCopy = {
+  title: "Why Fruiticana works with schools",
+  description:
+    "Schools are where children spend much of the day and where many students already eat meals and snacks. That is the opportunity: reaching students with another way to enjoy fruit — not treating schools as a sales market.",
+} as const;
 
 /**
  * The student side of the school decision. Language stays defensible — how the
@@ -111,9 +117,9 @@ export const schoolFitPoints = [
  * prefer it."
  */
 export const studentAppealIntro = {
-  title: "A treat they'll want",
+  title: "Made for Kids to Enjoy",
   description:
-    "Fruiticana is made to look and taste like a treat — a fruit-based option people are glad to eat.",
+    "Fruiticana is not simply another item for a cafeteria line. The goal is a treat students recognize — and another way to enjoy fruit.",
 } as const;
 
 export const studentAppeal: {
@@ -124,28 +130,28 @@ export const studentAppeal: {
 }[] = [
   {
     icon: "scoop",
-    title: "Smooth and creamy",
+    title: "Smooth like a treat",
     description:
       "A creamless frozen dessert with the smooth, scoopable feel students know from ice cream.",
   },
   {
     icon: "fruit",
     figure: "12",
-    title: "Real fruit flavors",
+    title: "Flavors that start with fruit",
     description:
-      "Twelve fruit flavors across tropical, berry, citrus, orchard, and melon — built from fruit, not a dairy base.",
+      "Twelve original fruit flavors across tropical, berry, citrus, orchard, and melon — built from fruit, not a dairy base.",
   },
   {
     icon: "cup",
     figure: "4 oz",
-    title: "Fun single-serve cups",
+    title: "A cup they can hold",
     description:
-      "Individual 4 oz cups that drop straight onto a cafeteria tray or snack line.",
+      "Individual 4 oz cups that can sit on a cafeteria tray or snack line.",
   },
   {
     icon: "heart",
-    title: "A treat to look forward to",
+    title: "Made with students in mind",
     description:
-      "Designed with students in mind — a frozen treat they can get excited about at lunch or snack time.",
+      "A frozen treat students can get excited about at lunch or snack time — and another way to eat fruit.",
   },
 ];

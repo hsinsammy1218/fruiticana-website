@@ -42,9 +42,9 @@ export const timeline: TimelineEntry[] = [
   },
   {
     period: "Today",
-    title: "A fruit-based frozen dessert",
+    title: "A renewed focus on students",
     description:
-      "A school team can review what Fruiticana is, why it was created, and how it can be made in-house.",
+      "The original idea is being brought back so students have another way to enjoy fruit — a fruit-based frozen treat a school team can review, including how it can be made in-house.",
   },
 ];
 

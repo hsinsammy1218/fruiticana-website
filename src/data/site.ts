@@ -2,8 +2,9 @@
  * Global site configuration and brand-safe copy.
  *
  * Brand voice is rooted in the historical myfruiticana.com consumer site
- * (Fruiticana Cream-Less Ice Crème / “The New Way to Eat Fruit”), rewritten
- * so the vision is easy to follow: what, why, and how.
+ * (Fruiticana Cream-Less Ice Crème / “An exciting new way to eat fruit”),
+ * rewritten so school decision-makers understand why Fruiticana exists
+ * for students — then what it is, and how a school conversation can start.
  *
  * IMPORTANT (see PLAN.md content audit): current business contact details are
  * NOT known. Do not invent an email, phone number, address, or social account.
@@ -23,19 +24,19 @@ export const site = {
   /** Product-line styling as shown on the original site (“Cream-Less Ice Crème”). */
   productLine: "Cream-Less Ice Crème",
   /**
-   * Primary brand tagline from the original myfruiticana.com banner
-   * (“THE NEW WAY TO EAT FRUIT”), kept in sentence case for the modern site.
+   * Primary brand line from the business PDF and original consumer phrasing.
+   * The homepage hero uses this as the H1.
    */
-  tagline: "The new way to eat fruit.",
-  /** Alternate consumer phrasing from the business PDF — used on About. */
-  legacyTagline: "An exciting new way to eat fruit.",
+  tagline: "An exciting new way to eat fruit.",
+  /** Alternate original banner phrasing from myfruiticana.com. */
+  legacyTagline: "The new way to eat fruit.",
   heroSupport:
-    "A fruit-based frozen treat, built to be a healthier way to enjoy fruit — with the taste and feel of a frozen dessert, made for the cafeteria and snack line.",
+    "Fruiticana takes fruit students already know and turns it into a cold, smooth frozen treat — so a health-conscious choice can still feel exciting.",
   /** Short brand promise used in closing sections. */
   promise:
-    "Fruit-based frozen dessert — what it is, why it exists, and how it can be made in-house.",
+    "A fruit-based frozen treat for students — another way to enjoy fruit, made with schools in mind.",
   shortDescription:
-    "Fruiticana is a fruit-based creamless frozen dessert — the new way to eat fruit. This site explains the Fruiticana vision (what, why, and how), nutrition documentation, and how it fits cafeteria and snack programs.",
+    "Fruiticana gives students an exciting new way to enjoy fruit by turning fruit into a smooth frozen treat. This site explains why Fruiticana exists, what it is, and how schools can request information for their students.",
   url: siteUrl,
 
   /**

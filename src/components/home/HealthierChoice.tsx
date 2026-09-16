@@ -2,23 +2,25 @@ import { Section } from "@/components/layout/Section";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { FeatureCard } from "@/components/ui/FeatureCard";
 import { Button } from "@/components/ui/Button";
+import { HistoricalNotice } from "@/components/ui/HistoricalNotice";
 import { healthierBenefits } from "@/data/facts";
+import { healthCopy } from "@/data/home";
 
 /**
- * Priority #2 — the "healthier" core benefit. Framing stays defensible:
- * fruit-first (not dairy), the documented Team Nutrition Healthy Snack pilot,
- * and 2008 Nutrition Facts panels that carry their own historical qualification.
- * No new nutrient/medical claim is introduced; the caveat routes school staff
- * to the full nutrition documentation.
+ * Health and enjoyment together. Dated 2008/2007 facts only; no new
+ * nutrient or medical claim.
  */
 export function HealthierChoice() {
   return (
-    <Section tone="white">
+    <Section tone="cream-100">
       <SectionHeading
-        eyebrow="Healthier"
-        title="A healthier way to eat fruit"
-        description="The first idea behind Fruiticana is health — a way to help students eat more fruit. It is built from fruit instead of a dairy base, and it was shaped for school snack programs with nutrition standards in mind."
+        eyebrow={healthCopy.eyebrow}
+        title={healthCopy.title}
+        description={healthCopy.description}
       />
+      <HistoricalNotice className="mt-8 max-w-3xl" label="Needs current testing">
+        {healthCopy.notice}
+      </HistoricalNotice>
       <ul className="mt-8 grid grid-cols-1 items-stretch gap-4 sm:grid-cols-2 xl:grid-cols-4">
         {healthierBenefits.map((benefit) => (
           <li key={benefit.title} className="reveal">
@@ -31,9 +33,12 @@ export function HealthierChoice() {
           </li>
         ))}
       </ul>
-      <div className="mt-8">
-        <Button href="/product#nutrition" variant="secondary">
-          See the Nutrition Information
+      <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+        <Button href={healthCopy.nutritionCta.href} variant="secondary">
+          {healthCopy.nutritionCta.label}
+        </Button>
+        <Button href={healthCopy.ingredientsCta.href} variant="ghost">
+          {healthCopy.ingredientsCta.label}
         </Button>
       </div>
     </Section>

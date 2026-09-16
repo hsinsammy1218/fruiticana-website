@@ -4,7 +4,7 @@ import { expect, type Page } from "@playwright/test";
 export const primaryRoutes = [
   {
     path: "/",
-    heading: /the new way\s+to eat fruit/i,
+    heading: /an exciting new way\s+to eat fruit/i,
     title: /Fruiticana/,
   },
   {
@@ -14,7 +14,7 @@ export const primaryRoutes = [
   },
   {
     path: "/schools",
-    heading: /the fruiticana vision/i,
+    heading: /a new way for students to enjoy fruit/i,
     title: /For Schools/,
   },
   {

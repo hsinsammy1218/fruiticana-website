@@ -3,14 +3,15 @@ import { SectionHeading } from "@/components/ui/SectionHeading";
 import { FeatureCard } from "@/components/ui/FeatureCard";
 import { Button } from "@/components/ui/Button";
 import { schoolHomeBenefits } from "@/data/facts";
+import { whySchoolsCopy } from "@/data/home";
 
 export function DesignedForSchools() {
   return (
     <Section>
       <SectionHeading
-        eyebrow="Why"
-        title="Why Fruiticana belongs in the cafeteria"
-        description="A fruit-based frozen dessert that belongs in a cafeteria or snack program — a new way to eat fruit."
+        eyebrow={whySchoolsCopy.eyebrow}
+        title={whySchoolsCopy.title}
+        description={whySchoolsCopy.description}
       />
       <ul className="mt-8 grid grid-cols-1 items-stretch gap-4 sm:grid-cols-2 xl:grid-cols-4">
         {schoolHomeBenefits.map((benefit) => (
@@ -25,8 +26,8 @@ export function DesignedForSchools() {
         ))}
       </ul>
       <div className="mt-8">
-        <Button href="/schools" size="lg">
-          See the Fruiticana vision
+        <Button href={whySchoolsCopy.cta.href} size="lg">
+          {whySchoolsCopy.cta.label}
         </Button>
       </div>
     </Section>

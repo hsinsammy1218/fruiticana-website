@@ -134,19 +134,19 @@ export const productConceptBenefits: {
     icon: "fruit",
     figure: "12",
     title: "Fruit based",
-    description: "Original fruit flavors — built from fruit, not dairy ice cream with fruit mixed in.",
+    description: "Original flavors built from fruit, not a dairy ice-cream base.",
   },
   {
     icon: "scoop",
     figure: "Smooth",
     title: "Ice-cream feel",
-    description: "A creamless frozen dessert with a smooth scoop students recognize.",
+    description: "A creamless frozen treat with a scoop students recognize.",
   },
   {
     icon: "leaf",
     figure: "2003",
     title: "Lactose-free concept",
-    description: "Designed for people avoiding lactose. Current formulation still to be confirmed.",
+    description: "Designed for people avoiding lactose. Current recipe still to confirm.",
   },
   {
     icon: "cup",
@@ -160,7 +160,7 @@ export const productConceptBenefits: {
 export const schoolDesignBenefits = productConceptBenefits;
 
 /**
- * Homepage priority #2 — the "healthier" core benefit, kept defensible.
+ * Homepage "Fruit at the Center" points, kept defensible.
  * Every point is either structural (fruit-based, not dairy), historical
  * (the Team Nutrition Healthy Snack pilot), or a 2008 laboratory figure that
  * carries its own qualification. No new nutrient/medical claim is made.
@@ -175,59 +175,59 @@ export const healthierBenefits: {
     icon: "fruit",
     figure: "12",
     title: "Fruit, not dairy",
-    description: "Built from 12 fruit flavors instead of a dairy ice-cream base.",
+    description: "Built from fruit flavors instead of a dairy ice-cream base.",
   },
   {
     icon: "leaf",
     figure: "0g",
     title: "0 g fat on 2008 panels",
     description:
-      "Every flavor's 2008 Nutrition Facts panel logged 0 g fat and 0 mg cholesterol per 4 oz serving.",
+      "Every flavor's 2008 panel logged 0 g fat and 0 mg cholesterol.",
   },
   {
     icon: "heart",
     figure: "2003–05",
     title: "Healthy Snack pilot",
     description:
-      "Chosen for Connecticut's Team Nutrition Healthy Snack pilot, which held products to nutrition standards.",
+      "Included in Connecticut's Team Nutrition Healthy Snack pilot.",
   },
   {
     icon: "cup",
-    figure: "2003",
-    title: "Lactose-free concept",
+    figure: "2007",
+    title: "Recipe to confirm",
     description:
-      "Originally created with lactose-avoiding eaters in mind; confirm the current recipe and allergens.",
+      "Wheat protein is on the 2007 list; confirm today's recipe.",
   },
 ];
 
 export const schoolHomeBenefits: {
-  icon: "cup" | "flavors" | "school" | "leaf";
+  icon: "cup" | "flavors" | "school" | "leaf" | "fruit";
   figure: string;
   title: string;
   description: string;
 }[] = [
   {
+    icon: "school",
+    figure: "Day",
+    title: "Where students eat",
+    description: "Meals and snacks happen at school — that is where Fruiticana can reach students.",
+  },
+  {
+    icon: "fruit",
+    figure: "Fruit",
+    title: "Another way to enjoy fruit",
+    description: "A frozen fruit treat on a lunch or snack line, not a parlor dessert.",
+  },
+  {
     icon: "cup",
     figure: "4 oz",
-    title: "Student portions",
-    description: "Individual cups for meal or snack service — not a parlor scoop.",
-  },
-  {
-    icon: "flavors",
-    figure: "12",
-    title: "Fruit flavors",
-    description: "Tropical, berry, citrus, orchard, and melon options without a dairy base.",
-  },
-  {
-    icon: "school",
-    figure: "2005–06",
-    title: "School chapter",
-    description: "Produced for local Connecticut schools after consumer testing.",
+    title: "A familiar treat feel",
+    description: "Cold, smooth cups students recognize as a treat at meal or snack time.",
   },
   {
     icon: "leaf",
     figure: "2003–05",
-    title: "Snack pilot",
-    description: "Included in Connecticut’s Team Nutrition Healthy Snack pilot.",
+    title: "A documented school chapter",
+    description: "Once included in Connecticut’s Team Nutrition Healthy Snack pilot.",
   },
 ];
