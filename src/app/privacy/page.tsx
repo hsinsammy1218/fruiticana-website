@@ -26,14 +26,23 @@ export default function PrivacyPage() {
         </p>
         <h2>Cookies & analytics</h2>
         <p>
-          No analytics, advertising, or tracking cookies are configured on this
-          site.
+          This site uses{" "}
+          <a
+            href="https://vercel.com/docs/analytics/privacy-policy"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            Vercel Web Analytics
+          </a>
+          , which collects anonymized page-view and performance data. It does
+          not use cookies or advertising trackers, and it does not collect
+          personal information that can identify you.
         </p>
         <h2>When this changes</h2>
         <p>
-          Before enabling contact-form delivery, analytics,
-          or any data collection, this policy will be updated to explain what is
-          collected, why, how it is stored, and your choices.
+          Before enabling contact-form delivery or any additional data
+          collection, this policy will be updated to explain what is collected,
+          why, how it is stored, and your choices.
         </p>
         <h2>Contact</h2>
         <p>
