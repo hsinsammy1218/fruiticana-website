@@ -1,6 +1,15 @@
 import { describe, expect, it } from "vitest";
 import { faqItems } from "@/data/faq";
-import { closingCta, healthCopy, heroCopy, historyCopy, howCopy, whyCopy, whySchoolsCopy } from "@/data/home";
+import {
+  closingCta,
+  healthCopy,
+  heroCopy,
+  historyCopy,
+  howCopy,
+  ideaCopy,
+  whyCopy,
+  whySchoolsCopy,
+} from "@/data/home";
 import { knownOperations, schoolOperations } from "@/data/operations";
 import { site } from "@/data/site";
 
@@ -47,6 +56,16 @@ describe("student-mission copy", () => {
     expect(schoolOperations).toHaveLength(10);
     expect(schoolOperations.filter((item) => item.status === "to-confirm").length).toBeGreaterThanOrEqual(6);
     expect(schoolOperations.every((item) => item.answer.length > 20)).toBe(true);
+  });
+
+  it("gives each fruit-journey card a dedicated photo", () => {
+    expect(ideaCopy.steps.map((step) => step.image)).toEqual([
+      "/images/journey/real-fruit.webp",
+      "/images/journey/fruiticana.webp",
+      "/images/journey/frozen.webp",
+      "/images/journey/students.webp",
+    ]);
+    expect(ideaCopy.steps.every((step) => step.imageAlt.length > 20)).toBe(true);
   });
 
   it("answers principal FAQ with fruit, schools, and a next step", () => {
