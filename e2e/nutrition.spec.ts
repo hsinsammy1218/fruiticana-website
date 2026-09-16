@@ -24,7 +24,7 @@ test.describe("nutrition", () => {
     await expect(
       page.locator("#ingredients li").filter({ hasText: "Mar/az" }),
     ).toBeVisible();
-    await expect(page.getByText(/historical recipe/i)).toBeVisible();
+    await expect(page.getByText("Historical recipe", { exact: true })).toBeVisible();
     await expect(
       page.getByRole("heading", { name: /fruiticana creamless ice cream/i }),
     ).toBeVisible();
