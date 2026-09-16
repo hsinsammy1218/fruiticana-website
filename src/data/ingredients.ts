@@ -54,3 +54,9 @@ export const historicalIngredientsSource = recipeIngredientsSource;
 
 export const wheatProteinFlag =
   "Wheat protein is on the recipe list. Confirm gluten status with your current Fruiticana formulation before serving students.";
+
+export const currentVerificationNotice =
+  "The Nutrition Facts on this site are from a 2008 laboratory analysis. The ingredient list is from 2007 product pages. Fruiticana needs current testing before launch for calories, fat, fiber, total sugar, added sugar, dairy and lactose status, and allergens. Wheat protein appears on the 2007 list. Added sugar was not reported as a separate line on those panels.";
+
+export const ingredientsSectionIntro =
+  "A fruit-first recipe kitchens can make in-house. Confirm the mix and allergens against a current Fruiticana formulation before service.";

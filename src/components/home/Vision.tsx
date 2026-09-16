@@ -17,7 +17,7 @@ export function Vision({ showHeading = true, cta }: VisionProps) {
       tone="white"
       className="scroll-mt-24"
       aria-labelledby={showHeading ? "vision-heading" : undefined}
-      aria-label={showHeading ? undefined : "The Fruiticana vision"}
+      aria-label={showHeading ? undefined : "The Fruiticana idea"}
     >
       {showHeading ? (
         <SectionHeading

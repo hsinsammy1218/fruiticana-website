@@ -5,13 +5,13 @@ An informational site for **Fruiticana**, a fruit-based frozen dessert.
 (App Router), TypeScript, and Tailwind CSS.
 
 > **Important — voice of this site.** This is not a consumer shop. The main
-> conversion is a **school inquiry**. Schools and the students they serve should
-> leave understanding the Fruiticana **vision**: what it is, why it exists, and
-> how it can be made in-house for students. The original Fruiticana identity
-> (Creamless Ice Cream, fruit-forward greens and yellows, “An exciting new way
-> to eat fruit.”) is preserved. The site speaks in **present-day school**
-> language for schools and their students. Timeline dates, testimonials,
-> documentation, and nutrition panels are shared for school review.
+> conversion is a **school inquiry**. After the homepage, a school principal
+> should be able to say: Fruiticana gives students an exciting new way to
+> enjoy fruit by turning fruit into a smooth frozen treat. The original
+> Fruiticana identity (Creamless Ice Cream, fruit-forward greens and yellows,
+> “An exciting new way to eat fruit.”) is preserved. Timeline dates,
+> testimonials, documentation, and nutrition panels are shared for school
+> review and labeled as historical where they are.
 
 ## Tech stack
 
@@ -159,7 +159,7 @@ Confirm before switching any content to present-tense school-program marketing:
 - [ ] Whether "Creamless Ice Cream" is still the product name
 - [ ] Product photography of the actual frozen dessert (a 4 oz cup) — owner-provided asset needed. The school-kitchens section uses an illustrative stock gelato photo (`public/images/sections/serving-foreground.webp`); replace with a current Fruiticana cup photo when available.
 - [ ] Heart-health language — the legacy "A Gift For Your Heart" hero slogan was replaced with the tagline "An exciting new way to eat fruit" to avoid implying a cardiovascular benefit. Restore only with owner sign-off and substantiation.
-- [ ] "Healthier" positioning — the homepage leads its core-benefit section with "A healthier way to eat fruit" and the hero calls Fruiticana "a healthier way for students to enjoy fruit." These are framed against a dairy ice-cream base and grounded in the documented Team Nutrition **Healthy Snack** pilot and the 2008 laboratory panels; no absolute nutrient/medical claim is made. "Healthy/healthier" is still a regulated comparative term — confirm substantiation and current formulation before treating it as a product label claim.
+- [ ] "Health-conscious" positioning — the homepage leads with student enjoyment of fruit and says health and enjoyment belong together. Dated 2008 panels and the Team Nutrition **Healthy Snack** pilot remain labeled as history. "Healthy/healthier" is still a regulated comparative term — confirm substantiation and current formulation before treating it as a product label claim.
 
 ## Accessibility & performance
 

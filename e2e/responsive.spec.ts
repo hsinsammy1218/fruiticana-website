@@ -91,7 +91,7 @@ test.describe("responsive layout @mobile", () => {
     await page.setViewportSize(viewports.phone320);
     await page.goto("/");
     await expect(
-      page.getByRole("heading", { level: 1, name: /the new way\s+to eat fruit/i }),
+      page.getByRole("heading", { level: 1, name: /an exciting new way\s+to eat fruit/i }),
     ).toBeVisible();
 
     const lineBoxes = await page.locator("h1 span").evaluateAll((spans) =>
@@ -103,7 +103,7 @@ test.describe("responsive layout @mobile", () => {
     );
 
     expect(lineBoxes.map(({ text, lines }) => ({ text, lines }))).toEqual([
-      { text: "The New Way", lines: 1 },
+      { text: "An Exciting New Way", lines: 1 },
       { text: "to Eat Fruit", lines: 1 },
     ]);
     expect(lineBoxes.every((box) => box.overflow <= 1)).toBe(true);

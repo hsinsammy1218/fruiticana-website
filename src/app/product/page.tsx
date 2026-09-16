@@ -7,10 +7,13 @@ import { ProductFormatCard } from "@/components/ui/ProductFormatCard";
 import { CTASection } from "@/components/ui/CTASection";
 import { Button } from "@/components/ui/Button";
 import { JsonLd } from "@/components/seo/JsonLd";
+import { HistoricalNotice } from "@/components/ui/HistoricalNotice";
 import { flavors, getFlavor } from "@/data/flavors";
 import { formats } from "@/data/formats";
 import { IngredientRecipe } from "@/components/nutrition/IngredientRecipe";
 import {
+  currentVerificationNotice,
+  ingredientsSectionIntro,
   recipeIngredientsSource,
   wheatProteinFlag,
 } from "@/data/ingredients";
@@ -22,7 +25,7 @@ import { StatGrid } from "@/components/ui/StatGrid";
 export const metadata: Metadata = {
   title: "Flavors & Nutrition",
   description:
-    "Fruiticana flavors, institutional serving sizes, Nutrition Facts panels, and honest ingredient notes for school review.",
+    "Original Fruiticana flavors, 4 oz servings, 2008 Nutrition Facts panels, and a 2007 ingredient list for school review — with current testing still needed before launch.",
   alternates: { canonical: "/product" },
 };
 
@@ -57,12 +60,12 @@ export default async function ProductPage({
           as="h1"
           eyebrow={site.productLine}
           title="Flavors, servings, and nutrition"
-          description={`${site.tagline} Start with the original 12 fruit flavors, then explore the 4 oz single-serve format and the Nutrition Facts panels — all written for school review.`}
+          description={`${site.tagline} These are the original documented flavors, the 4 oz single-serve format, and Nutrition Facts panels for school review. Current availability and a current formula still need to be confirmed.`}
         />
         <div className="mt-10 sm:mt-12">
           <SectionHeading
             title="Twelve original fruit flavors"
-            description="The same Cream-Less Ice Crème lineup from the original Fruiticana store: Apple, Apricot, Banana, Blueberry, Cantaloupe, Grapefruit, Lemonade, Mango, Orange, Pineapple, Raisin, and Strawberry. Open a flavor for its product sheet and the full 2008 Nutrition Facts panel."
+            description="The original documented Cream-Less Ice Crème lineup: Apple, Apricot, Banana, Blueberry, Cantaloupe, Grapefruit, Lemonade, Mango, Orange, Pineapple, Raisin, and Strawberry. Each flavor starts with fruit. Open a flavor for its product sheet and the full 2008 Nutrition Facts panel. Which flavors a school can offer today still needs to be confirmed."
           />
           <FlavorGrid className="mt-8 sm:mt-10" flavors={flavors} />
         </div>
@@ -71,7 +74,7 @@ export default async function ProductPage({
       <Section id="servings" tone="cream-100" className="scroll-mt-24">
         <SectionHeading
           title="Institutional serving information"
-          description="The school program emphasizes moderate single-serving portions. The record lists a 4 oz (1/2 cup) cup matching the Nutrition Facts panels."
+          description="The record emphasizes moderate single-serving portions. A 4 oz (1/2 cup) cup matches the Nutrition Facts panels."
         />
         <ul className="mt-10 grid gap-5 sm:grid-cols-1 lg:max-w-md">
           {formats.map((format) => (
@@ -85,8 +88,11 @@ export default async function ProductPage({
       <Section id="nutrition" className="scroll-mt-24">
         <SectionHeading
           title="Nutrition Facts panels"
-          description="Select a flavor to view its transcribed 2008 Nutrition Facts panel. Banana calories stay blank because the source scan was illegible."
+          description="Select a flavor to view its transcribed 2008 Nutrition Facts panel. Banana calories stay blank because the source scan was illegible. Current testing is needed before launch."
         />
+        <HistoricalNotice className="mt-8 max-w-3xl" label="Needs current testing">
+          {currentVerificationNotice}
+        </HistoricalNotice>
         <StatGrid
           className="mt-10"
           items={glance}
@@ -121,9 +127,12 @@ export default async function ProductPage({
       <Section id="ingredients" tone="white" className="scroll-mt-24">
         <SectionHeading
           eyebrow="Ingredients & allergens"
-          title="What's inside"
-          description="A fruit-first recipe kitchens can make in-house. Confirm the mix and allergens against your current Fruiticana formulation before service."
+          title="What's Actually in Fruiticana?"
+          description={ingredientsSectionIntro}
         />
+        <HistoricalNotice className="mt-8 max-w-3xl" label="2007 recipe / 2008 panels">
+          {currentVerificationNotice}
+        </HistoricalNotice>
         <div className="mt-8">
           <IngredientRecipe />
         </div>

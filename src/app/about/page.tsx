@@ -20,7 +20,7 @@ import { JsonLd } from "@/components/seo/JsonLd";
 export const metadata: Metadata = {
   title: "About Fruiticana",
   description:
-    "The Fruiticana vision — what it is, why it exists, and how it was developed — plus its 2003–2005 Connecticut Team Nutrition Healthy Snack pilot, founding team, and school documentation.",
+    "Fruiticana exists to give students an exciting new way to enjoy fruit — plus the 2003–2005 Connecticut Team Nutrition Healthy Snack pilot, founding team, and school documentation.",
   alternates: { canonical: "/about" },
 };
 
@@ -47,7 +47,7 @@ export default function AboutPage() {
           as="h1"
           eyebrow="About Fruiticana"
           title="A new way to eat fruit"
-          description="Fruiticana began in 2003 as a fruit-based frozen dessert — a refreshing alternative to traditional dairy ice cream. The vision is the what, why, and how: fruit-first, so students have a treat they want to eat, served in school programs."
+          description="Fruiticana began so students could have another way to enjoy fruit — a fruit-based frozen treat with the feel of ice cream. The idea is simple: health-conscious choices should still be exciting."
         />
         <div className="mt-6 max-w-2xl space-y-4 text-base leading-[1.7] text-muted">
           <p>
@@ -58,8 +58,8 @@ export default function AboutPage() {
             , the concept was developed by a multidisciplinary team — a chemist
             and several physicians — drawn together by a shared interest in
             fruit, nutrition, and flavor. The original myfruiticana.com banner
-            proclaimed “{site.tagline}” — also remembered as “
-            {site.legacyTagline}”
+            proclaimed “{site.legacyTagline}” — also remembered as “
+            {site.tagline}”
           </p>
         </div>
       </Section>
@@ -190,8 +190,8 @@ export default function AboutPage() {
       </Section>
 
       <CTASection
-        title="Interested in Fruiticana for Your School?"
-        description="Request school information to discuss the Fruiticana vision, availability, institutional servings, and nutrition documentation for your school."
+        title="Let's Give Students a New Way to Enjoy Fruit."
+        description="Request school information to discuss the idea, availability, institutional servings, and nutrition documentation for your school."
         primary={{ label: navCta.label, href: navCta.href }}
         secondary={{ label: "Flavors & Nutrition", href: "/product" }}
       />

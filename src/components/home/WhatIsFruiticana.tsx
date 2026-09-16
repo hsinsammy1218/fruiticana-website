@@ -2,15 +2,15 @@ import { Section } from "@/components/layout/Section";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { FeatureCard } from "@/components/ui/FeatureCard";
 import { productConceptBenefits } from "@/data/facts";
-import { site } from "@/data/site";
+import { productCopy } from "@/data/home";
 
 export function WhatIsFruiticana() {
   return (
-    <Section tone="cream-100">
+    <Section>
       <SectionHeading
-        eyebrow="What"
-        title="A different kind of frozen dessert"
-        description={`${site.tagline} A creamless frozen dessert with the delight of ice cream — made so students can eat fruit in a form they enjoy.`}
+        eyebrow={productCopy.eyebrow}
+        title={productCopy.title}
+        description={productCopy.description}
       />
       <ul className="mt-8 grid grid-cols-1 items-stretch gap-4 sm:grid-cols-2 xl:grid-cols-4">
         {productConceptBenefits.map((benefit) => (

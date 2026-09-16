@@ -2,13 +2,13 @@ import { Container } from "@/components/layout/Container";
 import { Button } from "@/components/ui/Button";
 import { HeroVisual } from "@/components/home/HeroVisual";
 import { StatGrid } from "@/components/ui/StatGrid";
-import { navCta } from "@/data/navigation";
 import { site } from "@/data/site";
+import { heroCopy } from "@/data/home";
 import { homeGlanceStats } from "@/data/facts";
 
 /**
- * Brand-first hero recreating the myfruiticana.com promise:
- * Cream-Less Ice Crème + “The New Way to Eat Fruit”, written for schools.
+ * Student-first hero: an exciting new way to eat fruit, written for the
+ * adults who make school food decisions.
  */
 export function Hero() {
   return (
@@ -28,34 +28,30 @@ export function Hero() {
 
       <Container className="relative grid min-h-[min(88vh,52rem)] items-center gap-10 py-14 sm:py-18 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,0.95fr)] lg:gap-12 lg:py-20 xl:gap-16">
         <div className="hero-rise max-w-2xl lg:max-w-none">
-          <p className="font-display text-sm font-bold uppercase tracking-[0.22em] text-green-600">
-            {site.productLine}
-          </p>
-          <h1 className="mt-4 font-display text-[clamp(1.7rem,8.4vw,2.25rem)] font-bold uppercase tracking-[0.03em] text-berry sm:text-5xl sm:tracking-[0.04em] lg:text-[3.75rem] lg:leading-[1.06] xl:text-[4.25rem]">
-            <span className="block whitespace-nowrap">The New Way </span>
-            <span className="block">to Eat Fruit</span>
+          <h1 className="font-display text-[clamp(1.2rem,5.1vw,2.2rem)] font-bold tracking-[-0.02em] text-berry sm:text-5xl lg:text-[3.5rem] lg:leading-[1.08] xl:text-[4rem]">
+            <span className="block whitespace-nowrap">{heroCopy.line1} </span>
+            <span className="block">{heroCopy.line2}</span>
           </h1>
           <p className="mt-5 max-w-xl text-xl font-semibold leading-snug text-green-deep sm:text-2xl">
-            The frozen treat students want — a better cafeteria option.
+            {heroCopy.subhead}
           </p>
           <p className="mt-4 max-w-xl text-lg leading-[1.75] text-muted sm:text-xl">
             {site.heroSupport}
           </p>
           <p className="mt-3 max-w-xl text-base leading-[1.7] text-muted">
-            Originally introduced as {site.legacyProductName} — smooth like ice
-            cream, built from real fruit.
+            {heroCopy.originalNote}
           </p>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-            <Button href={navCta.href} size="lg" className="w-full sm:w-auto">
-              {navCta.label}
+            <Button href={heroCopy.primaryCta.href} size="lg" className="w-full sm:w-auto">
+              {heroCopy.primaryCta.label}
             </Button>
             <Button
-              href="/product#flavors"
+              href={heroCopy.secondaryCta.href}
               size="lg"
               variant="secondary"
               className="w-full sm:w-auto"
             >
-              Explore the Flavors
+              {heroCopy.secondaryCta.label}
             </Button>
           </div>
         </div>

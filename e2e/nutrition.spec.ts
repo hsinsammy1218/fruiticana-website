@@ -28,7 +28,10 @@ test.describe("nutrition", () => {
     await expect(
       page.getByRole("heading", { name: /fruiticana creamless ice cream/i }),
     ).toBeVisible();
-    await expect(page.getByText(/confirm gluten status/i)).toBeVisible();
+    await expect(
+      page.getByRole("heading", { name: /what's actually in fruiticana/i }),
+    ).toBeVisible();
+    await expect(page.getByText(/needs current testing/i).first()).toBeVisible();
   });
 
   test("switching flavors updates the panel and shareable URL", async ({
