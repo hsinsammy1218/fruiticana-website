@@ -7,6 +7,7 @@ import {
   historyCopy,
   howCopy,
   ideaCopy,
+  startYoungCopy,
   whyCopy,
   whySchoolsCopy,
 } from "@/data/home";
@@ -23,6 +24,8 @@ const homepageCopy = [
   whyCopy.description,
   whyCopy.question,
   whyCopy.body,
+  startYoungCopy.hope,
+  startYoungCopy.whySchools,
   healthCopy.description,
   healthCopy.notice,
   whySchoolsCopy.description,
@@ -52,10 +55,11 @@ describe("student-mission copy", () => {
     expect(historyCopy.distinction).toMatch(/not a current/i);
   });
 
-  it("covers the ten school-implementation questions without inventing answers", () => {
-    expect(schoolOperations).toHaveLength(10);
-    expect(schoolOperations.filter((item) => item.status === "to-confirm").length).toBeGreaterThanOrEqual(6);
+  it("covers school-implementation questions without inventing answers", () => {
+    expect(schoolOperations.length).toBeGreaterThanOrEqual(8);
+    expect(schoolOperations.filter((item) => item.status === "to-confirm").length).toBeGreaterThanOrEqual(4);
     expect(schoolOperations.every((item) => item.answer.length > 20)).toBe(true);
+    expect(knownOperations.some((item) => /machines/i.test(item.title))).toBe(true);
   });
 
   it("gives each fruit-journey card a dedicated photo", () => {
@@ -71,8 +75,9 @@ describe("student-mission copy", () => {
   it("answers principal FAQ with fruit, schools, and a next step", () => {
     const questions = faqItems.map((item) => item.question).join(" ");
     expect(questions).toMatch(/what is fruiticana/i);
-    expect(questions).toMatch(/why does fruiticana exist/i);
+    expect(questions).toMatch(/students/i);
     expect(questions).toMatch(/schools/i);
+    expect(questions).toMatch(/1\/3|school receive/i);
     expect(faqItems.some((item) => item.href?.url === "/contact")).toBe(true);
   });
 });

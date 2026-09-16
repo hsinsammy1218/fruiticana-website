@@ -85,7 +85,7 @@ export const documents: HistoricalDocument[] = [
     summary:
       "Independent Nutrition Facts panels for all 12 flavors (report #20080318F).",
     clarification:
-      "These nutrition results are shown on the Flavors & Nutrition page.",
+      "These nutrition results are shown on the Product & Nutrition page.",
     category: "nutrition",
     image: "/images/documents/doc-laboratory-nutritional-analysis.webp",
     imageAlt:
@@ -102,7 +102,7 @@ export const documents: HistoricalDocument[] = [
     summary:
       "A summary of what Fruiticana is, the original flavor lineup, and how it is described as a fruit-based frozen dessert.",
     clarification:
-      "An on-site briefing for school review — open Flavors & Nutrition for the live flavor and serving details.",
+      "An on-site briefing for school review — open Product & Nutrition for the live flavor and serving details.",
     category: "product-information",
     image: "/images/documents/doc-product-information.webp",
     imageAlt:

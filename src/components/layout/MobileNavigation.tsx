@@ -3,7 +3,7 @@
 import { useEffect, useRef } from "react";
 import Link from "next/link";
 import { cn } from "@/lib/cn";
-import { isNavItemActive, mainNav, navCta } from "@/data/navigation";
+import { isNavItemActive, mobileNav, navCta } from "@/data/navigation";
 import { Button } from "@/components/ui/Button";
 
 type MobileNavigationProps = {
@@ -117,7 +117,7 @@ export function MobileNavigation({
 
         <nav className="flex-1 overflow-y-auto px-2 py-4" aria-label="Primary">
           <ul className="flex flex-col gap-1">
-            {mainNav.map((item) => {
+            {mobileNav.map((item) => {
               const isActive = isNavItemActive(activeHref, item.href);
               return (
                 <li key={item.href}>

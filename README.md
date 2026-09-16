@@ -5,11 +5,11 @@ An informational site for **Fruiticana**, a fruit-based frozen dessert.
 (App Router), TypeScript, and Tailwind CSS.
 
 > **Important — voice of this site.** This is not a consumer shop. The main
-> conversion is a **school inquiry**. After the homepage, a school principal
-> should be able to say: Fruiticana gives students an exciting new way to
-> enjoy fruit by turning fruit into a smooth frozen treat. The original
-> Fruiticana identity (Creamless Ice Cream, fruit-forward greens and yellows,
-> “An exciting new way to eat fruit.”) is preserved. Timeline dates,
+> conversion is a **school inquiry**. After about two minutes, a school principal
+> should be able to say: Fruiticana gives students an exciting new way to eat
+> fruit; Fruiticana wants to introduce that experience in schools while students
+> are young; under the proposed model Fruiticana provides two machines, stays
+> involved, and the school receives 1/3 of program sales. Timeline dates,
 > testimonials, documentation, and nutrition panels are shared for school
 > review and labeled as historical where they are.
 
@@ -70,7 +70,7 @@ public/images/flavors/  Replaceable flavor artwork (SVG placeholders)
 Content lives in typed modules under `src/data/` so copy changes don't require
 touching JSX.
 
-**Primary pages.** Home, About Fruiticana (`/about`), For Schools (`/schools`), Flavors & Nutrition (`/product`), Resources (`/resources`), School Inquiry (`/contact`).
+**Primary pages.** Home, About Fruiticana (`/about`), For Schools (`/schools`), Product & Nutrition (`/product`), School Inquiry (`/contact`). Documentation lives at `/resources` (footer and trust hub, not primary nav).
 
 **Classroom resource.** `/learn` is a free teaching resource (fruit science,
 Nutrition Facts literacy, Connecticut snack-pilot case study). It is not in
@@ -143,7 +143,7 @@ Confirm before switching any content to present-tense school-program marketing:
 - [ ] Current production/sale status and whether Fruiticana is available to schools
 - [ ] Current formulation claims (lactose-free, fat-free, cholesterol-free, dairy-free, vegan, "100% fruit", added sugar, additives)
 - [ ] Current nutrition panels vs. the 2008 lab values
-- [ ] Current institutional serving sizes vs. historical 3 oz / 4 oz cups
+- [ ] Proposed school program details still being documented: staffing, serving schedule, restocking, cleaning, payment, installation/power/storage, student purchase vs meal service, school obligations, remaining 2/3 of sales, which four flavors, and whether the 4 oz cup still applies to machine service.
 - [ ] Shelf life
 - [ ] Which flavors/formats exist now
 - [ ] FDA registration vs. "certification"; AHA status and logo rights

@@ -8,7 +8,7 @@ async function fillRequired(
   extras?: { message?: string; email?: string },
 ) {
   await user.type(screen.getByLabelText(/^name/i), "Sam");
-  await user.type(screen.getByLabelText(/school or district/i), "Lincoln Elementary");
+  await user.type(screen.getByRole("textbox", { name: /^school \*/i }), "Lincoln Elementary");
   await user.type(
     screen.getByLabelText(/email/i),
     extras?.email ?? "sam@example.com",
@@ -24,12 +24,10 @@ describe("ContactForm", () => {
     const user = userEvent.setup();
     render(<ContactForm />);
 
-    await user.click(screen.getByRole("button", { name: /request information/i }));
+    await user.click(screen.getByRole("button", { name: /request school information/i }));
 
     expect(screen.getByText("Please enter your name.")).toBeInTheDocument();
-    expect(
-      screen.getByText("Please enter your school or district."),
-    ).toBeInTheDocument();
+    expect(screen.getByText("Please enter your school.")).toBeInTheDocument();
     expect(screen.getByText("Please enter your email.")).toBeInTheDocument();
     expect(screen.getByText("Please enter a message.")).toBeInTheDocument();
     expect(screen.getByLabelText(/^name/i)).toHaveAttribute("aria-invalid", "true");
@@ -40,7 +38,7 @@ describe("ContactForm", () => {
     render(<ContactForm />);
 
     await fillRequired(user, { email: "not-an-email" });
-    await user.click(screen.getByRole("button", { name: /request information/i }));
+    await user.click(screen.getByRole("button", { name: /request school information/i }));
 
     expect(
       screen.getByText("Please enter a valid email address."),
@@ -52,7 +50,7 @@ describe("ContactForm", () => {
     render(<ContactForm />);
 
     await fillRequired(user, { message: "Hi there" });
-    await user.click(screen.getByRole("button", { name: /request information/i }));
+    await user.click(screen.getByRole("button", { name: /request school information/i }));
 
     expect(
       screen.getByText(/at least 10 characters/i),
@@ -87,7 +85,7 @@ describe("ContactForm", () => {
     render(<ContactForm />);
 
     await fillRequired(user);
-    await user.click(screen.getByRole("button", { name: /request information/i }));
+    await user.click(screen.getByRole("button", { name: /request school information/i }));
 
     const status = screen.getByRole("status");
     expect(status).toHaveTextContent(/thanks, sam/i);
@@ -99,12 +97,12 @@ describe("ContactForm", () => {
     render(<ContactForm />);
 
     await fillRequired(user);
-    await user.click(screen.getByRole("button", { name: /request information/i }));
+    await user.click(screen.getByRole("button", { name: /request school information/i }));
     await user.click(screen.getByRole("button", { name: /submit another inquiry/i }));
 
     expect(screen.getByLabelText(/^name/i)).toHaveValue("");
     expect(
-      screen.getByRole("button", { name: /request information/i }),
+      screen.getByRole("button", { name: /request school information/i }),
     ).toBeInTheDocument();
   });
 
@@ -115,7 +113,7 @@ describe("ContactForm", () => {
     const honeypot = document.getElementById("website");
     expect(honeypot).toBeTruthy();
     await user.type(honeypot as HTMLInputElement, "https://spam.example");
-    await user.click(screen.getByRole("button", { name: /request information/i }));
+    await user.click(screen.getByRole("button", { name: /request school information/i }));
 
     expect(screen.getByRole("status")).toHaveTextContent(/thanks/i);
   });

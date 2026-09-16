@@ -7,16 +7,14 @@ test.describe("navigation @cross-browser", () => {
     await page.goto("/");
 
     const primary = page.getByRole("navigation", { name: "Primary" });
-    await expect(primary.getByRole("link", { name: "Home" })).toBeVisible();
+    await expect(primary.getByRole("link", { name: "About Fruiticana" })).toBeVisible();
     await expect(primary.getByRole("link", { name: "For Schools" })).toBeVisible();
     await expect(page.getByRole("button", { name: "Open menu" })).toBeHidden();
 
     for (const item of [
-      { name: "Home", url: /\/$/ },
       { name: "About Fruiticana", url: /\/about$/ },
       { name: "For Schools", url: /\/schools$/ },
-      { name: "Flavors & Nutrition", url: /\/product$/ },
-      { name: "Resources", url: /\/resources$/ },
+      { name: "Product & Nutrition", url: /\/product$/ },
       { name: "Contact", url: /\/contact$/ },
     ]) {
       await page.goto("/");
@@ -43,30 +41,18 @@ test.describe("navigation @cross-browser", () => {
     const primary = page.getByRole("navigation", { name: "Primary" });
 
     await page.goto("/");
-    await expect(primary.getByRole("link", { name: "Home" })).toHaveAttribute(
-      "aria-current",
-      "page",
-    );
-    await expect(primary.getByRole("link", { name: "About Fruiticana" })).not.toHaveAttribute(
-      "aria-current",
-    );
+    await expect(primary.locator("[aria-current=page]")).toHaveCount(0);
 
     await page.goto("/about");
     await expect(primary.getByRole("link", { name: "About Fruiticana" })).toHaveAttribute(
       "aria-current",
       "page",
     );
-    await expect(primary.getByRole("link", { name: "Home" })).not.toHaveAttribute(
-      "aria-current",
-    );
 
     await page.goto("/flavors/mango");
-    await expect(primary.getByRole("link", { name: "Flavors & Nutrition" })).toHaveAttribute(
+    await expect(primary.getByRole("link", { name: "Product & Nutrition" })).toHaveAttribute(
       "aria-current",
       "page",
-    );
-    await expect(primary.getByRole("link", { name: "Home" })).not.toHaveAttribute(
-      "aria-current",
     );
 
     await page.goto("/learn");
@@ -77,7 +63,7 @@ test.describe("navigation @cross-browser", () => {
     await page.goto("/");
     const footer = page.getByRole("contentinfo");
 
-    await footer.getByRole("link", { name: "Flavors & Nutrition" }).click();
+    await footer.getByRole("link", { name: "Product & Nutrition" }).click();
     await expect(page).toHaveURL(/\/product$/);
 
     await page.goto("/");
@@ -126,18 +112,11 @@ test.describe("navigation @cross-browser", () => {
     await page.keyboard.press("Tab");
     await expect(
       page.getByRole("navigation", { name: "Primary" }).getByRole("link", {
-        name: "Home",
-      }),
-    ).toBeFocused();
-
-    await page.keyboard.press("Tab");
-    await expect(
-      page.getByRole("navigation", { name: "Primary" }).getByRole("link", {
         name: "About Fruiticana",
       }),
     ).toBeFocused();
 
-    for (let i = 0; i < 5; i += 1) {
+    for (let i = 0; i < 4; i += 1) {
       await page.keyboard.press("Tab");
     }
     await expect(

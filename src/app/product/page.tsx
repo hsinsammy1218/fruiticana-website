@@ -23,9 +23,9 @@ import { getNutritionGlanceStats, getNutritionSnapshot } from "@/lib/nutrition";
 import { StatGrid } from "@/components/ui/StatGrid";
 
 export const metadata: Metadata = {
-  title: "Flavors & Nutrition",
+  title: "Product & Nutrition",
   description:
-    "Original Fruiticana flavors, 4 oz servings, 2008 Nutrition Facts panels, and a 2007 ingredient list for school review — with current testing still needed before launch.",
+    "Original Fruiticana flavors, historical 4 oz laboratory servings, 2008 Nutrition Facts panels, and a 2007 ingredient list for school review — with current testing still needed before launch.",
   alternates: { canonical: "/product" },
 };
 
@@ -46,7 +46,7 @@ export default async function ProductPage({
       {
         "@type": "ListItem",
         position: 2,
-        name: "Flavors & Nutrition",
+        name: "Product & Nutrition",
         item: `${site.url}/product`,
       },
     ],
@@ -60,12 +60,12 @@ export default async function ProductPage({
           as="h1"
           eyebrow={site.productLine}
           title="Flavors, servings, and nutrition"
-          description={`${site.tagline} These are the original documented flavors, the 4 oz single-serve format, and Nutrition Facts panels for school review. Current availability and a current formula still need to be confirmed.`}
+          description={`${site.tagline} These are the original documented flavors, the historical 4 oz laboratory serving, and Nutrition Facts panels for school review. Under the proposed school setup, a participating school would offer four flavors at a time — two per machine. Which four, current availability, and a current formula still need to be confirmed.`}
         />
         <div className="mt-10 sm:mt-12">
           <SectionHeading
             title="Twelve original fruit flavors"
-            description="The original documented Cream-Less Ice Crème lineup: Apple, Apricot, Banana, Blueberry, Cantaloupe, Grapefruit, Lemonade, Mango, Orange, Pineapple, Raisin, and Strawberry. Each flavor starts with fruit. Open a flavor for its product sheet and the full 2008 Nutrition Facts panel. Which flavors a school can offer today still needs to be confirmed."
+            description="The original documented Cream-Less Ice Crème lineup: Apple, Apricot, Banana, Blueberry, Cantaloupe, Grapefruit, Lemonade, Mango, Orange, Pineapple, Raisin, and Strawberry. Each flavor starts with fruit. Open a flavor for its product sheet and the full 2008 Nutrition Facts panel. A participating school under the proposed two-machine setup would offer four flavors at a time. Which four still needs to be confirmed."
           />
           <FlavorGrid className="mt-8 sm:mt-10" flavors={flavors} />
         </div>
@@ -73,8 +73,8 @@ export default async function ProductPage({
 
       <Section id="servings" tone="cream-100" className="scroll-mt-24">
         <SectionHeading
-          title="Institutional serving information"
-          description="The record emphasizes moderate single-serving portions. A 4 oz (1/2 cup) cup matches the Nutrition Facts panels."
+          title="Historical serving information"
+          description="The record emphasizes moderate single-serving portions. A 4 oz (1/2 cup) cup matches the 2008 Nutrition Facts panels. Whether that format applies to the proposed machine program still needs to be confirmed."
         />
         <ul className="mt-10 grid gap-5 sm:grid-cols-1 lg:max-w-md">
           {formats.map((format) => (
@@ -140,7 +140,7 @@ export default async function ProductPage({
         <p className="mt-3 text-sm text-muted">{recipeIngredientsSource}</p>
         <div className="mt-6">
           <Button href="/contact?interest=Nutrition%20Information">
-            Ask about school kitchen setup
+            Ask about school nutrition review
           </Button>
         </div>
       </Section>

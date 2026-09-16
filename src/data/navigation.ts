@@ -3,18 +3,28 @@ export type NavItem = {
   label: string;
 };
 
-/** Primary navigation for desktop and mobile menus. */
+/** Primary navigation for desktop. Logo is Home. */
 export const mainNav: NavItem[] = [
-  { href: "/", label: "Home" },
   { href: "/about", label: "About Fruiticana" },
   { href: "/schools", label: "For Schools" },
-  { href: "/product", label: "Flavors & Nutrition" },
-  { href: "/resources", label: "Resources" },
+  { href: "/product", label: "Product & Nutrition" },
   { href: "/contact", label: "Contact" },
 ];
 
-/** Desktop header uses the same primary links, including an explicit Home button. */
+/** Desktop header uses the same primary links. Logo returns Home. */
 export const desktopNav: NavItem[] = mainNav;
+
+/** Mobile drawer includes Home because the logo is not visible inside the panel. */
+export const mobileNav: NavItem[] = [
+  { href: "/", label: "Home" },
+  ...mainNav,
+];
+
+/** Footer Explore column includes Home plus the primary pages. */
+export const footerExploreNav: NavItem[] = [
+  { href: "/", label: "Home" },
+  ...mainNav,
+];
 
 /** Secondary resources kept out of the primary conversion path. */
 export const resourceNav: NavItem[] = [
@@ -37,7 +47,7 @@ export const navCta = {
 /**
  * Current-page matching for primary nav.
  * Home must be exact (`/` prefixes every path). Flavor sheets belong with
- * Flavors & Nutrition even though they live under `/flavors/[slug]`.
+ * Product & Nutrition even though they live under `/flavors/[slug]`.
  */
 export function isNavItemActive(pathname: string, href: string): boolean {
   if (href === "/") {

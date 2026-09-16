@@ -1,10 +1,7 @@
 import { Container } from "@/components/layout/Container";
 import { Button } from "@/components/ui/Button";
 import { HeroVisual } from "@/components/home/HeroVisual";
-import { StatGrid } from "@/components/ui/StatGrid";
-import { site } from "@/data/site";
 import { heroCopy } from "@/data/home";
-import { homeGlanceStats } from "@/data/facts";
 
 /**
  * Student-first hero: an exciting new way to eat fruit, written for the
@@ -35,10 +32,7 @@ export function Hero() {
           <p className="mt-5 max-w-xl text-xl font-semibold leading-snug text-green-deep sm:text-2xl">
             {heroCopy.subhead}
           </p>
-          <p className="mt-4 max-w-xl text-lg leading-[1.75] text-muted sm:text-xl">
-            {site.heroSupport}
-          </p>
-          <p className="mt-3 max-w-xl text-base leading-[1.7] text-muted">
+          <p className="mt-4 max-w-xl text-base leading-[1.7] text-muted sm:text-lg">
             {heroCopy.originalNote}
           </p>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
@@ -61,13 +55,6 @@ export function Hero() {
             <HeroVisual />
           </div>
         </div>
-      </Container>
-
-      <Container className="pb-12 sm:pb-16">
-        <StatGrid
-          items={homeGlanceStats}
-          aria-label="Fruiticana figures at a glance"
-        />
       </Container>
     </section>
   );

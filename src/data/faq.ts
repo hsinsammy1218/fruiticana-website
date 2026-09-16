@@ -1,7 +1,7 @@
 /**
  * School-administrator FAQ. Answers stay claim-safe: historical facts
- * are dated, and current certifications, pricing, and availability are
- * not invented.
+ * are dated, proposed-program facts are labeled as proposed, and current
+ * certifications, pricing splits, and availability are not invented.
  */
 
 export type FaqItem = {
@@ -14,24 +14,50 @@ export const faqIntro = {
   eyebrow: "Questions schools ask",
   title: "FAQ for school teams",
   description:
-    "Plain answers for principals, food-service directors, nutrition staff, and parents who are helping a school decide.",
+    "Plain answers for principals, superintendents, food-service directors, and administrators who are reviewing Fruiticana.",
 } as const;
 
 export const faqItems: FaqItem[] = [
   {
     question: "What is Fruiticana?",
     answer:
-      "Fruiticana is a fruit-based frozen treat with the smooth feel of ice cream. It was created so students have another way to enjoy fruit — a cold, familiar treat experience built around fruit rather than a dairy ice-cream base.",
+      "Fruiticana is a fruit-based frozen product designed to provide an exciting new way to eat fruit. It has the smooth feel of ice cream, built around fruit rather than a dairy ice-cream base.",
   },
   {
-    question: "Is Fruiticana ice cream?",
+    question: "Why was this created with students in mind?",
     answer:
-      "It is a creamless frozen dessert originally introduced as Fruiticana Creamless Ice Cream. The idea is the taste and feel of a frozen dessert, made from fruit flavors instead of traditional dairy ice cream with fruit mixed in.",
+      "Fruiticana wants to introduce positive experiences with fruit while students are young. Fruit is nutritious, but telling children to eat more fruit does not necessarily make them look forward to it. The goal is an enjoyable fruit experience today, with the hope that appreciation for fruit continues tomorrow. That is a vision, not a guaranteed health or behavior claim.",
   },
   {
-    question: "Why does Fruiticana exist?",
+    question: "Why does Fruiticana want to work with schools?",
     answer:
-      "Fruiticana exists because healthy eating should not have to feel boring or forced. Fruit is nutritious, but telling children to eat more fruit does not necessarily make them excited about it. The goal is to make fruit something students can look forward to eating.",
+      "Fruiticana’s vision is to reach students directly through the school environment — where children already spend a significant part of their day. Schools are not merely a distribution channel. They are where students can discover another way to enjoy fruit.",
+  },
+  {
+    question: "What equipment does Fruiticana provide?",
+    answer:
+      "Under the proposed standard model, Fruiticana provides two machines per participating school, with two flavors in each machine. Fruiticana supplies the serving equipment. The school does not purchase the machines.",
+    href: { label: "See how the program works", url: "/schools#how-it-works" },
+  },
+  {
+    question: "Who maintains the machines?",
+    answer:
+      "Fruiticana maintains the machinery. We’re not simply dropping off equipment and leaving.",
+  },
+  {
+    question: "Who operates the program?",
+    answer:
+      "Fruiticana remains actively involved in operation, maintenance, and serving rather than leaving the machines with the school. Exact staffing, serving hours, restocking, and cleaning responsibilities still need to be documented.",
+  },
+  {
+    question: "What does the school receive?",
+    answer:
+      "Under the proposed model, the participating school receives one-third (1/3) of Fruiticana sales generated through its program. How the remaining portion of sales is allocated has not been published.",
+  },
+  {
+    question: "What does participation cost the school?",
+    answer:
+      "Fruiticana provides the equipment under the proposed model. This site does not publish a participation fee or a promise of a no-cost program. Other costs, if any, still need to be confirmed.",
   },
   {
     question: "Is Fruiticana in schools now?",
@@ -54,19 +80,13 @@ export const faqItems: FaqItem[] = [
   {
     question: "Which flavors are available?",
     answer:
-      "The original documented lineup is Apricot, Mango, Pineapple, Banana, Raisin, Strawberry, Lemonade, Blueberry, Grapefruit, Apple, Orange, and Cantaloupe. Those names are shown so schools can see that the idea starts with fruit. Which flavors would be offered in a current school program still needs to be confirmed.",
+      "The original documented lineup is Apricot, Mango, Pineapple, Banana, Raisin, Strawberry, Lemonade, Blueberry, Grapefruit, Apple, Orange, and Cantaloupe. Under the proposed school setup, a participating school would offer four flavors at a time — two per machine. Which four still needs to be confirmed.",
     href: { label: "See the original flavors", url: "/product#flavors" },
   },
   {
-    question: "How would a school serve it?",
+    question: "How is Fruiticana served?",
     answer:
-      "The documented school format is a 4 oz (½ cup) single-serve cup, prepared in-house for a cafeteria or snack line. Equipment, storage, staffing, and day-to-day kitchen steps for a current program are still being documented.",
-    href: { label: "See how it works", url: "/#how-it-works" },
-  },
-  {
-    question: "What does it cost a school?",
-    answer:
-      "This site does not publish a price. Fruiticana is not offered here as a no-cost program. The documented idea is in-house preparation so a school is not paying a specialty outside-dessert vendor. What a current program would cost still needs to be confirmed.",
+      "Fruiticana intends to remain involved in how the product is served and operated. The historical school format on record is a 4 oz (½ cup) single-serve cup. Serving vessel, schedule, restocking, cleaning, payment, installation, electricity, and storage for the proposed machine program are still being documented.",
   },
   {
     question: "Does Fruiticana have a current FDA or American Heart Association endorsement?",
@@ -75,9 +95,15 @@ export const faqItems: FaqItem[] = [
     href: { label: "Review the documents", url: "/resources" },
   },
   {
+    question: "Where can our team research Fruiticana?",
+    answer:
+      "This website is the information center: Fruiticana’s story, product and nutrition information, school program details, Connecticut history, documentation, and FAQs are published here so a school can understand the basics before contacting us.",
+    href: { label: "Learn everything about Fruiticana", url: "/#learn-everything" },
+  },
+  {
     question: "How can our school get started?",
     answer:
-      "Request school information. Share your school, role, and whether you are looking at cafeteria service, a snack program, or nutrition review. Inquiry delivery is not connected yet; the form is ready for when a verified inbox is in place.",
+      "Request school information. Share your name, school, district, role, and a note about your students. Inquiry delivery is not connected yet; the form is ready for when a verified inbox is in place.",
     href: { label: "Request School Information", url: "/contact" },
   },
 ];

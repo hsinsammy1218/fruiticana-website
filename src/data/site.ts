@@ -31,12 +31,12 @@ export const site = {
   /** Alternate original banner phrasing from myfruiticana.com. */
   legacyTagline: "The new way to eat fruit.",
   heroSupport:
-    "Fruiticana takes fruit students already know and turns it into a cold, smooth frozen treat — so a health-conscious choice can still feel exciting.",
+    "Fruiticana brings a fruit-based frozen experience directly to schools — giving students something they can enjoy while giving schools a hands-on program designed around their students.",
   /** Short brand promise used in closing sections. */
   promise:
-    "A fruit-based frozen treat for students — another way to enjoy fruit, made with schools in mind.",
+    "An exciting new way to eat fruit — brought to schools with machines Fruiticana provides, maintains, and stays involved with.",
   shortDescription:
-    "Fruiticana gives students an exciting new way to enjoy fruit by turning fruit into a smooth frozen treat. This site explains why Fruiticana exists, what it is, and how schools can request information for their students.",
+    "Fruiticana gives students an exciting new way to eat fruit. This site explains why Fruiticana exists for students, how the proposed school program works, and how a school can request information.",
   url: siteUrl,
 
   /**

@@ -17,10 +17,10 @@ export type ProductFormat = {
 export const formats: ProductFormat[] = [
   {
     slug: "cup",
-    name: "Single-serve cup (4 oz)",
+    name: "Historical laboratory serving (4 oz)",
     amount: "4 oz",
     description:
-      "A 4 oz (1/2 cup) cup matching the Nutrition Facts serving size — a simple single-serve format students can receive at meal or snack time.",
+      "A 4 oz (1/2 cup) cup matching the 2008 Nutrition Facts serving size. This is the historical institutional serving on record. Whether it applies to the proposed machine program still needs to be confirmed.",
     icon: "cup",
     institutional: true,
   },

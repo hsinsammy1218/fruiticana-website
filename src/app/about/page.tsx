@@ -15,6 +15,7 @@ import { testimonials, testimonialsIntro } from "@/data/testimonials";
 import { documents } from "@/data/documents";
 import { navCta } from "@/data/navigation";
 import { site } from "@/data/site";
+import { startYoungCopy } from "@/data/home";
 import { JsonLd } from "@/components/seo/JsonLd";
 
 export const metadata: Metadata = {
@@ -65,6 +66,20 @@ export default function AboutPage() {
       </Section>
 
       <Vision showHeading={false} />
+
+      <Section>
+        <SectionHeading
+          eyebrow={startYoungCopy.eyebrow}
+          title="Why children matter"
+          description={startYoungCopy.description}
+        />
+        <blockquote className="reveal mt-8 max-w-3xl rounded-xl2 border border-line bg-cream-100 px-6 py-6 sm:px-8">
+          <p className="text-xl font-semibold leading-snug text-green-deep">
+            {startYoungCopy.hope}
+          </p>
+        </blockquote>
+        <p className="info-copy mt-6 max-w-3xl">{startYoungCopy.whySchools}</p>
+      </Section>
 
       <Section tone="cream-100">
         <p className="text-xs font-semibold uppercase tracking-[0.18em] text-green-600">
@@ -193,7 +208,7 @@ export default function AboutPage() {
         title="Let's Give Students a New Way to Enjoy Fruit."
         description="Request school information to discuss the idea, availability, institutional servings, and nutrition documentation for your school."
         primary={{ label: navCta.label, href: navCta.href }}
-        secondary={{ label: "Flavors & Nutrition", href: "/product" }}
+        secondary={{ label: "For Schools", href: "/schools" }}
       />
     </>
   );

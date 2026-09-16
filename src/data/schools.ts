@@ -3,16 +3,16 @@
  */
 
 export const schoolsIntro = {
-  title: "A new way for students to enjoy fruit",
+  title: "Bring Fruiticana to Your School",
   description:
-    "Principals, food-service directors, nutrition staff, and administrators can review why Fruiticana exists, what it is, and how it can work in a cafeteria or snack program — always with students in mind.",
+    "Fruiticana wants to give students an exciting new way to eat fruit — and is willing to put resources behind that vision. Under the proposed model, Fruiticana provides the machines, maintains them, stays involved, and the participating school receives 1/3 of Fruiticana sales generated through its program.",
 } as const;
 
 export const schoolAudiences = [
   "Principals and school administrators",
   "Food-service directors and cafeteria managers",
   "Nutrition coordinators and wellness staff",
-  "Teachers and classroom programs",
+  "Superintendents and district leaders",
 ] as const;
 
 export type SchoolUse = {
@@ -27,10 +27,10 @@ export const schoolUses: SchoolUse[] = [
   {
     slug: "cafeteria",
     title: "School cafeteria",
-    figure: "4 oz",
-    figureLabel: "Single-serve cup",
+    figure: "Students",
+    figureLabel: "Where they already eat",
     description:
-      "A fruit-based frozen dessert option for meal service or à la carte, offered in individual 4 oz single-serve cups rather than a dairy ice-cream scoop.",
+      "A fruit-based frozen experience offered where students already have meals and snacks — not a parlor dessert brought in from outside.",
   },
   {
     slug: "snack",
@@ -46,31 +46,31 @@ export const schoolUses: SchoolUse[] = [
     figure: "12",
     figureLabel: "Original flavors",
     description:
-      "Independent and private schools evaluating a fruit-forward dessert for dining halls, snack windows, or special events can review the same 12 flavor sheets and nutrition documentation.",
+      "Independent and private schools evaluating a fruit-forward dessert can review the original 12 flavor sheets and nutrition documentation. Which four flavors a proposed two-machine setup would offer still needs to be confirmed.",
   },
   {
     slug: "district",
     title: "District-level evaluation",
-    figure: "2008",
-    figureLabel: "Nutrition panels on file",
+    figure: "1/3",
+    figureLabel: "School share of sales",
     description:
-      "Nutrition, procurement, and leadership teams can share product sheets, 2008 Nutrition Facts panels, and Connecticut program records internally before a tasting or program conversation.",
+      "Nutrition, procurement, and leadership teams can review the proposed partnership — equipment provided, Fruiticana involvement, and 1/3 of program sales — before a tasting or program conversation.",
   },
   {
     slug: "events",
     title: "School events",
-    figure: "4 oz",
-    figureLabel: "Single-serve cup",
+    figure: "Fruit",
+    figureLabel: "A new way to enjoy it",
     description:
-      "Serve 4 oz cups at fairs, family nights, or limited-time service — confirm availability for your school calendar.",
+      "Fruiticana is meant to give students something they can look forward to. Event or limited-time service details still need to be confirmed.",
   },
   {
     slug: "summer",
     title: "Summer and after-school programs",
-    figure: "4 oz",
-    figureLabel: "Single-serve idea",
+    figure: "Kids",
+    figureLabel: "Meet them where they are",
     description:
-      "Possible applications include summer feeding and after-school snacks. Reach out to discuss how Fruiticana can fit your program.",
+      "Possible applications include summer feeding and after-school snacks. Reach out to discuss how the proposed program could fit.",
   },
   {
     slug: "campus",
@@ -78,30 +78,30 @@ export const schoolUses: SchoolUse[] = [
     figure: "12",
     figureLabel: "Flavor options",
     description:
-      "Private-school dining halls and student meal programs can review the same flavor sheets, portions, and nutrition documentation used by K–12 evaluators.",
+      "Private-school dining halls and student meal programs can review the same flavor sheets, nutrition documentation, and proposed school partnership used by K–12 evaluators.",
   },
 ];
 
 export const schoolFitPoints = [
   {
-    figure: "12",
-    title: "Fruit-based",
-    body: "Built around fruit rather than a traditional dairy ice-cream base, with 12 original flavors spanning five fruit families.",
+    figure: "2",
+    title: "Machines provided",
+    body: "Fruiticana supplies two serving machines per participating school under the proposed standard setup. The school does not purchase them.",
   },
   {
-    figure: "4 oz",
-    title: "Individual portions",
-    body: "Schools use single-serving cups, including a recorded 4 oz (½ cup) serving — a simple format for in-house school service.",
+    figure: "4",
+    title: "Fruit flavor choices",
+    body: "Two flavors per machine gives students four fruit flavor options. Which four flavors would be offered still needs to be confirmed.",
   },
   {
-    figure: "2003–05",
-    title: "Documented school chapter",
-    body: "Connecticut Team Nutrition participation (2003–2005) and later service in local Connecticut schools after consumer testing in 2005–2006.",
+    figure: "1/3",
+    title: "School share of sales",
+    body: "The participating school receives one-third of Fruiticana sales generated through its program. This is an advantage — not the Fruiticana mission.",
   },
   {
-    figure: "In-house",
-    title: "Built for school kitchens",
-    body: "The idea is an easy in-house preparation path, so students can have a fruit-based frozen treat without the school carrying specialty outside-dessert cost.",
+    figure: "Hands-on",
+    title: "We stay involved",
+    body: "Fruiticana maintains the equipment and remains involved in operation and serving rather than dropping machines off and leaving.",
   },
 ] as const;
 
@@ -142,16 +142,15 @@ export const studentAppeal: {
       "Twelve original fruit flavors across tropical, berry, citrus, orchard, and melon — built from fruit, not a dairy base.",
   },
   {
-    icon: "cup",
-    figure: "4 oz",
-    title: "A cup they can hold",
+    icon: "heart",
+    title: "A new way to eat fruit",
     description:
-      "Individual 4 oz cups that can sit on a cafeteria tray or snack line.",
+      "The idea is an exciting fruit experience students can look forward to — not a lecture about eating more fruit.",
   },
   {
-    icon: "heart",
+    icon: "cup",
     title: "Made with students in mind",
     description:
-      "A frozen treat students can get excited about at lunch or snack time — and another way to eat fruit.",
+      "Created so students can enjoy fruit while they are young, with the hope that appreciation continues as they grow.",
   },
 ];

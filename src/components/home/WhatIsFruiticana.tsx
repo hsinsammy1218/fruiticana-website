@@ -1,6 +1,7 @@
 import { Section } from "@/components/layout/Section";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { FeatureCard } from "@/components/ui/FeatureCard";
+import { Button } from "@/components/ui/Button";
 import { productConceptBenefits } from "@/data/facts";
 import { productCopy } from "@/data/home";
 
@@ -24,6 +25,11 @@ export function WhatIsFruiticana() {
           </li>
         ))}
       </ul>
+      <div className="mt-8">
+        <Button href={productCopy.cta.href} variant="secondary">
+          {productCopy.cta.label}
+        </Button>
+      </div>
     </Section>
   );
 }
