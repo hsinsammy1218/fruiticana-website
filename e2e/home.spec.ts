@@ -38,6 +38,28 @@ test.describe("home @cross-browser", () => {
     await expect(
       page.getByRole("heading", { name: "Real Fruit", exact: true }),
     ).toBeVisible();
+    const ideaSection = idea.locator("xpath=ancestor::section[1]");
+    await expect(ideaSection.locator("img")).toHaveCount(4);
+    await expect(
+      page.getByRole("img", {
+        name: /cut mango, strawberries, orange, pineapple, apple, and blueberries/i,
+      }),
+    ).toBeVisible();
+    await expect(
+      page.getByRole("img", {
+        name: /pink and yellow frozen scoops in a cup/i,
+      }),
+    ).toBeVisible();
+    await expect(
+      page.getByRole("img", {
+        name: /spoon lifting a smooth strawberry-mango frozen scoop/i,
+      }),
+    ).toBeVisible();
+    await expect(
+      page.getByRole("img", {
+        name: /students smiling in a school cafeteria/i,
+      }),
+    ).toBeVisible();
     await expect(
       page.getByRole("heading", { name: "Made for Kids to Enjoy" }),
     ).toBeVisible();

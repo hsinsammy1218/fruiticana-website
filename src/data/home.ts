@@ -32,8 +32,8 @@ export const whyCopy = {
 export type FruitJourneyStep = {
   title: string;
   body: string;
-  image?: string;
-  imageAlt?: string;
+  image: string;
+  imageAlt: string;
 };
 
 export const ideaCopy = {
@@ -45,24 +45,29 @@ export const ideaCopy = {
     {
       title: "Real Fruit",
       body: "Flavors begin with fruit students already know.",
-      image: "/images/flavors/strawberry.webp",
-      imageAlt: "Fresh strawberries",
+      image: "/images/journey/real-fruit.webp",
+      imageAlt:
+        "Cut mango, strawberries, orange, pineapple, apple, and blueberries on a table",
     },
     {
       title: "Fruiticana",
       body: "Fruit becomes a creamless frozen treat.",
+      image: "/images/journey/fruiticana.webp",
+      imageAlt:
+        "Pink and yellow frozen scoops in a cup beside fresh strawberry and mango",
     },
     {
       title: "Cold, Smooth, Frozen Experience",
       body: "The feel of a frozen dessert, built around fruit.",
-      image: "/images/flavors/blueberry.webp",
-      imageAlt: "Fresh blueberries",
+      image: "/images/journey/frozen.webp",
+      imageAlt: "A spoon lifting a smooth strawberry-mango frozen scoop from a cup",
     },
     {
       title: "Something Students Can Get Excited About",
       body: "Another way to enjoy fruit — one that feels like a treat.",
-      image: "/images/flavors/mango.webp",
-      imageAlt: "Ripe mango",
+      image: "/images/journey/students.webp",
+      imageAlt:
+        "Students smiling in a school cafeteria while holding cups of frozen fruit treat",
     },
   ] satisfies FruitJourneyStep[],
 } as const;
