@@ -29,7 +29,7 @@ test.describe("navigation @cross-browser", () => {
     await page.setViewportSize({ width: 1440, height: 900 });
     await page.goto("/about");
 
-    await page.getByRole("banner").getByRole("link", { name: /fruiticana - home/i }).click();
+    await page.getByRole("banner").getByRole("link", { name: /fruiticana.*home/i }).click();
     await expect(page).toHaveURL("/");
 
     await page.getByRole("banner").getByRole("link", { name: "Request School Information" }).click();
@@ -106,7 +106,7 @@ test.describe("navigation @cross-browser", () => {
 
     await page.keyboard.press("Tab");
     await expect(
-      page.getByRole("banner").getByRole("link", { name: /fruiticana - home/i }),
+      page.getByRole("banner").getByRole("link", { name: /fruiticana.*home/i }),
     ).toBeFocused();
 
     await page.keyboard.press("Tab");

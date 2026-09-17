@@ -8,6 +8,7 @@ test.describe("error states", () => {
     await expect(
       page.getByRole("heading", { name: /page not found/i }),
     ).toBeVisible();
+    await expect(page).toHaveTitle(/page not found/i);
     await page.getByRole("link", { name: "Back home" }).click();
     await expect(page).toHaveURL("/");
   });

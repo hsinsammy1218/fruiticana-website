@@ -34,7 +34,8 @@ npm run build          # production build
 npm run start          # serve the production build
 npm run typecheck
 npm test               # Vitest unit + component tests
-npm run test:e2e       # Playwright end-to-end (Chromium)
+npm run test:e2e       # Playwright end-to-end (Chromium; local next dev)
+npm run test:e2e:prod  # production build + Playwright against next start
 npm run test:a11y      # axe-core accessibility sweep
 npm run test:lighthouse  # Lighthouse CI (Home, For Schools, Product, About, Resources, Contact)
 npm run test:all         # unit + Playwright Chromium
@@ -54,7 +55,9 @@ npx playwright install
 | ---------------------- | ---------------------------------------------------- |
 | `NEXT_PUBLIC_SITE_URL` | Absolute site URL for canonical/OG tags and sitemap. |
 
-If unset, it falls back to a placeholder (`https://fruiticana.example.com`).
+Copy `.env.example` to `.env.local` for local overrides. If unset, the app
+falls back to a placeholder (`https://fruiticana.example.com`). Set the real
+production domain in Vercel before launch.
 
 ## Project structure
 
@@ -177,4 +180,5 @@ statically generated with minimal client JavaScript.
 | **React Testing Library** | Component behavior: school inquiry validation, flavor filters, nutrition selector, mobile menu, buttons. |
 | **axe-core** (`@axe-core/playwright`) | WCAG 2 A/AA checks on primary, flavor-detail, and legal routes (`e2e/a11y.spec.ts`). |
 | **Lighthouse CI** | Performance (warn &lt; 90), accessibility / best-practices / SEO (fail &lt; 95) on Home and the other primary pages. Requires a production build and a local Chrome. |
+| **Production-readiness report** | Latest QA gate: [`docs/PRODUCTION_READINESS_REPORT.md`](docs/PRODUCTION_READINESS_REPORT.md). |
 | **BrowserStack** (optional) | Real Safari-on-iPhone, Chrome-on-Android, Edge, and desktop browsers before launch. Set `BROWSERSTACK_USERNAME`, `BROWSERSTACK_ACCESS_KEY`, and `PLAYWRIGHT_BASE_URL` (a public preview URL), then `npm run test:browserstack`. |

@@ -46,6 +46,33 @@ const emptyFields: Fields = {
   website: "",
 };
 
+const fieldMaxLength: Partial<Record<keyof Fields, number>> = {
+  name: 120,
+  school: 200,
+  district: 200,
+  city: 100,
+  state: 80,
+  email: 254,
+  phone: 40,
+  message: 4000,
+  website: 200,
+};
+
+function trimFields(values: Fields): Fields {
+  return {
+    ...values,
+    name: values.name.trim(),
+    school: values.school.trim(),
+    district: values.district.trim(),
+    city: values.city.trim(),
+    state: values.state.trim(),
+    email: values.email.trim(),
+    phone: values.phone.trim(),
+    message: values.message.trim(),
+    website: values.website.trim(),
+  };
+}
+
 const fieldClasses =
   "mt-1.5 min-h-11 w-full rounded-xl border border-line bg-white px-3.5 py-2.5 text-sm text-ink placeholder:text-muted/60 focus-visible:border-green-deep";
 
@@ -57,6 +84,7 @@ export function ContactForm({ defaultInterest }: { defaultInterest?: string }) {
   });
   const [errors, setErrors] = useState<Errors>({});
   const [submitted, setSubmitted] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
   const formRef = useRef<HTMLFormElement>(null);
 
   function update<K extends keyof Fields>(key: K, value: Fields[K]) {
@@ -88,15 +116,21 @@ export function ContactForm({ defaultInterest }: { defaultInterest?: string }) {
 
   function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
+    if (submitting) return;
+    setSubmitting(true);
 
-    if (fields.website) {
+    const values = trimFields(fields);
+    setFields(values);
+
+    if (values.website) {
       setSubmitted(true);
       return;
     }
 
-    const nextErrors = validate(fields);
+    const nextErrors = validate(values);
     if (Object.keys(nextErrors).length > 0) {
       setErrors(nextErrors);
+      setSubmitting(false);
       const firstKey = Object.keys(nextErrors)[0];
       formRef.current
         ?.querySelector<HTMLElement>(`[name="${firstKey}"]`)
@@ -127,6 +161,7 @@ export function ContactForm({ defaultInterest }: { defaultInterest?: string }) {
           type="button"
           onClick={() => {
             setFields({ ...emptyFields, interest: initialInterest });
+            setSubmitting(false);
             setSubmitted(false);
           }}
           className="mt-4 inline-flex min-h-11 items-center rounded-pill border border-green-deep/25 bg-white px-5 text-sm font-semibold text-green-deep hover:border-green-deep/50"
@@ -148,6 +183,7 @@ export function ContactForm({ defaultInterest }: { defaultInterest?: string }) {
           value={fields.name}
           onChange={(value) => update("name", value)}
           autoComplete="name"
+          maxLength={fieldMaxLength.name}
         />
         <Field
           id="school"
@@ -157,12 +193,14 @@ export function ContactForm({ defaultInterest }: { defaultInterest?: string }) {
           value={fields.school}
           onChange={(value) => update("school", value)}
           autoComplete="organization"
+          maxLength={fieldMaxLength.school}
         />
         <Field
           id="district"
           label="School district"
           value={fields.district}
           onChange={(value) => update("district", value)}
+          maxLength={fieldMaxLength.district}
         />
         <SelectField
           id="schoolType"
@@ -186,6 +224,7 @@ export function ContactForm({ defaultInterest }: { defaultInterest?: string }) {
           value={fields.city}
           onChange={(value) => update("city", value)}
           autoComplete="address-level2"
+          maxLength={fieldMaxLength.city}
         />
         <Field
           id="state"
@@ -193,6 +232,7 @@ export function ContactForm({ defaultInterest }: { defaultInterest?: string }) {
           value={fields.state}
           onChange={(value) => update("state", value)}
           autoComplete="address-level1"
+          maxLength={fieldMaxLength.state}
         />
         <Field
           id="email"
@@ -203,6 +243,7 @@ export function ContactForm({ defaultInterest }: { defaultInterest?: string }) {
           value={fields.email}
           onChange={(value) => update("email", value)}
           autoComplete="email"
+          maxLength={fieldMaxLength.email}
         />
         <Field
           id="phone"
@@ -211,6 +252,7 @@ export function ContactForm({ defaultInterest }: { defaultInterest?: string }) {
           value={fields.phone}
           onChange={(value) => update("phone", value)}
           autoComplete="tel"
+          maxLength={fieldMaxLength.phone}
         />
       </div>
 
@@ -247,6 +289,7 @@ export function ContactForm({ defaultInterest }: { defaultInterest?: string }) {
           aria-required="true"
           aria-invalid={errors.message ? true : undefined}
           aria-describedby={errors.message ? "message-error" : undefined}
+          maxLength={fieldMaxLength.message}
           className={cn(fieldClasses, "resize-y", errors.message && "border-strawberry")}
         />
         {errors.message ? (
@@ -266,13 +309,16 @@ export function ContactForm({ defaultInterest }: { defaultInterest?: string }) {
           autoComplete="off"
           value={fields.website}
           onChange={(e) => update("website", e.target.value)}
+          maxLength={fieldMaxLength.website}
         />
       </div>
 
       <div className="flex items-center gap-4">
         <button
           type="submit"
-          className="inline-flex min-h-11 items-center justify-center rounded-pill bg-green-deep px-6 text-sm font-semibold text-cream transition-colors hover:bg-green-deep-80"
+          disabled={submitting}
+          aria-busy={submitting || undefined}
+          className="inline-flex min-h-11 items-center justify-center rounded-pill bg-green-deep px-6 text-sm font-semibold text-cream transition-colors hover:bg-green-deep-80 disabled:cursor-not-allowed disabled:opacity-60"
         >
           Request School Information
         </button>
@@ -293,6 +339,7 @@ function Field({
   error,
   type = "text",
   autoComplete,
+  maxLength,
 }: {
   id: keyof Fields;
   label: string;
@@ -302,6 +349,7 @@ function Field({
   error?: string;
   type?: string;
   autoComplete?: string;
+  maxLength?: number;
 }) {
   return (
     <div>
@@ -323,6 +371,7 @@ function Field({
         aria-required={required ? true : undefined}
         aria-invalid={error ? true : undefined}
         aria-describedby={error ? `${id}-error` : undefined}
+        maxLength={maxLength}
         className={cn(fieldClasses, error && "border-strawberry")}
       />
       {error ? (

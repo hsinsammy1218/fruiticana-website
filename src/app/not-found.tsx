@@ -1,5 +1,12 @@
+import type { Metadata } from "next";
 import { Section } from "@/components/layout/Section";
 import { Button } from "@/components/ui/Button";
+
+export const metadata: Metadata = {
+  title: "Page not found",
+  description: "This Fruiticana page could not be found.",
+  robots: { index: false, follow: true },
+};
 
 export default function NotFound() {
   return (

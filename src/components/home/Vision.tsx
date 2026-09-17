@@ -35,6 +35,7 @@ export function Vision({ showHeading = true, cta }: VisionProps) {
       <ol className="mt-10 grid gap-5 lg:grid-cols-3">
         {visionPillars.map((pillar) => {
           const Icon = valueIcons[pillar.icon];
+          const PillarHeading = showHeading ? "h3" : "h2";
           return (
             <li
               key={pillar.key}
@@ -54,9 +55,9 @@ export function Vision({ showHeading = true, cta }: VisionProps) {
                   {pillar.step}
                 </span>
               </div>
-              <h3 className="mt-5 text-xl font-bold text-green-deep sm:text-[1.35rem]">
+              <PillarHeading className="mt-5 text-xl font-bold text-green-deep sm:text-[1.35rem]">
                 {pillar.title}
-              </h3>
+              </PillarHeading>
               <p className="info-copy mt-3 flex-1">{pillar.body}</p>
               <p className="mt-6 border-t border-line pt-5">
                 <span className="block font-sans text-3xl font-extrabold tabular-nums tracking-tight text-green-deep">

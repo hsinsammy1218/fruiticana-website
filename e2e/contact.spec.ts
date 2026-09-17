@@ -76,4 +76,51 @@ test.describe("contact form", () => {
       page.getByRole("heading", { name: /availability information is coming soon/i }),
     ).toHaveCount(0);
   });
+
+  test("trims leading and trailing spaces on a valid inquiry", async ({ page }) => {
+    await page.goto("/contact");
+    await page.getByLabel(/^name/i).fill("  Sam  ");
+    await page.getByRole("textbox", { name: /^school \*/i }).fill("  Lincoln Elementary  ");
+    await page.getByLabel(/email/i).fill("  sam@example.com  ");
+    await page.getByLabel(/message/i).fill(
+      "  We would like nutrition sheets for a cafeteria review.  ",
+    );
+    await page.getByRole("button", { name: "Request School Information" }).click();
+    await expect(page.getByRole("status").filter({ hasText: /thanks, sam/i })).toBeVisible();
+  });
+
+  test("accepts special characters and a long but valid message", async ({ page }) => {
+    await page.goto("/contact");
+    await page.getByLabel(/^name/i).fill("Sam O'Brien-王");
+    await page.getByRole("textbox", { name: /^school \*/i }).fill('Lincoln & Washington #1');
+    await page.getByLabel(/email/i).fill("sam+food@example.com");
+    await page.getByLabel(/message/i).fill(
+      `Please send 2008 panels, the 4 oz serving notes, and the "Creamless Ice Cream" story.\n${"Fruit flavor review. ".repeat(40)}`,
+    );
+    await page.getByRole("button", { name: "Request School Information" }).click();
+    await expect(
+      page.getByRole("status").filter({ hasText: /thanks, sam o'brien-王/i }),
+    ).toBeVisible();
+  });
+
+  test("submits from the keyboard without a mouse", async ({ page }) => {
+    await page.goto("/contact");
+    await fillSchoolInquiry(page);
+    await page.getByRole("button", { name: "Request School Information" }).press("Enter");
+    await expect(page.getByRole("status").filter({ hasText: /thanks, sam/i })).toBeVisible();
+  });
+
+  test("ignores a second submit click after the first succeeds", async ({ page }) => {
+    await page.goto("/contact");
+    await fillSchoolInquiry(page);
+    await page.getByRole("button", { name: "Request School Information" }).evaluate((button) => {
+      (button as HTMLButtonElement).click();
+      (button as HTMLButtonElement).click();
+    });
+    await expect(page.getByRole("status")).toHaveCount(1);
+    await expect(page.getByRole("status")).toContainText(/doesn.?t deliver messages/i);
+    await expect(
+      page.getByRole("button", { name: "Request School Information" }),
+    ).toHaveCount(0);
+  });
 });
