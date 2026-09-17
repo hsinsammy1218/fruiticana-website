@@ -126,7 +126,13 @@ export function collectPageFailures(page: Page) {
     const text = message.text();
     if (ignoredFailurePattern.test(text)) return;
     if (/net::ERR_ABORTED|NS_BINDING_ABORTED/i.test(text)) return;
-    consoleErrors.push(text);
+    // Chromium logs 404s here without a URL. Network listeners below
+    // record the actual request URL and are the source of truth.
+    if (/Failed to load resource: the server responded with a status of \d+/i.test(text)) {
+      return;
+    }
+    const location = message.location().url;
+    consoleErrors.push(location ? `${text} (${location})` : text);
   });
 
   page.on("response", (response) => {

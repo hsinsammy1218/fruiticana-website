@@ -159,6 +159,11 @@ test.describe("production readiness", () => {
     }
   });
 
+  test("favicon.ico is served", async ({ request }) => {
+    const response = await request.get("/favicon.ico");
+    expect(response.status()).toBe(200);
+  });
+
   test("legacy redirects still land on the live pages", async ({ page }) => {
     await page.goto("/flavors");
     await expect(page).toHaveURL(/\/product$/);

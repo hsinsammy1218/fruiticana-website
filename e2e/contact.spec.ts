@@ -113,9 +113,14 @@ test.describe("contact form", () => {
   test("ignores a second submit click after the first succeeds", async ({ page }) => {
     await page.goto("/contact");
     await fillSchoolInquiry(page);
-    const submit = page.getByRole("button", { name: "Request School Information" });
-    await Promise.all([submit.click(), submit.click()]);
+    await page.getByRole("button", { name: "Request School Information" }).evaluate((button) => {
+      (button as HTMLButtonElement).click();
+      (button as HTMLButtonElement).click();
+    });
     await expect(page.getByRole("status")).toHaveCount(1);
     await expect(page.getByRole("status")).toContainText(/doesn.?t deliver messages/i);
+    await expect(
+      page.getByRole("button", { name: "Request School Information" }),
+    ).toHaveCount(0);
   });
 });

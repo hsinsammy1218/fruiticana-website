@@ -87,12 +87,11 @@ export function Logo({
   if (!asLink) return mark;
 
   return (
-    <Link
-      href="/"
-      aria-label={`${site.name} - home`}
-      className="inline-flex items-center rounded-md"
-    >
-      {mark}
+    <Link href="/" className="inline-flex items-center rounded-md">
+      <span aria-hidden="true">{mark}</span>
+      <span className="sr-only">
+        {site.name} {site.productLine} - home
+      </span>
     </Link>
   );
 }

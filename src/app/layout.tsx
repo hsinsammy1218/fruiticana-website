@@ -52,6 +52,10 @@ export const metadata: Metadata = {
     description: site.shortDescription,
   },
   robots: { index: true, follow: true },
+  icons: {
+    icon: [{ url: "/icon.svg", type: "image/svg+xml" }],
+    shortcut: "/favicon.ico",
+  },
   keywords: [
     "Fruiticana",
     "Fruiticana Creamless Ice Cream",
