@@ -63,16 +63,100 @@ export const flavorSlugs = [
   "cantaloupe",
 ] as const;
 
+export const documentSlugs = [
+  "fda-facility-registration",
+  "aha-food-certification-letter",
+  "ct-team-nutrition-letter",
+  "nutritional-analysis",
+  "product-information",
+  "flavor-list",
+  "institutional-serving",
+  "historical-ingredients",
+] as const;
+
+export const downloadablePdfs = [
+  "/documents/fda-facility-registration.pdf",
+  "/documents/aha-food-certification-letter.pdf",
+  "/documents/ct-team-nutrition-letter.pdf",
+] as const;
+
+export const publicHtmlRoutes = [
+  ...primaryRoutes.map((route) => route.path),
+  ...secondaryRoutes.map((route) => route.path),
+  ...legalRoutes.map((route) => route.path),
+  ...flavorSlugs.map((slug) => `/flavors/${slug}`),
+  ...documentSlugs.map((slug) => `/resources/${slug}`),
+] as const;
+
 export const viewports = {
   phone320: { width: 320, height: 568 },
-  phone375: { width: 375, height: 812 },
+  phone360: { width: 360, height: 800 },
+  phone375: { width: 375, height: 667 },
   phone390: { width: 390, height: 844 },
+  phone393: { width: 393, height: 852 },
+  phone412: { width: 412, height: 915 },
   phone430: { width: 430, height: 932 },
   tablet768: { width: 768, height: 1024 },
+  tablet820: { width: 820, height: 1180 },
+  tablet1024: { width: 1024, height: 1366 },
   laptop1024: { width: 1024, height: 768 },
+  laptop1280: { width: 1280, height: 720 },
+  laptop1366: { width: 1366, height: 768 },
   desktop1280: { width: 1280, height: 800 },
   desktop1440: { width: 1440, height: 900 },
+  desktop1536: { width: 1536, height: 864 },
+  desktop1920: { width: 1920, height: 1080 },
 } as const;
+
+/** Expected third-party noise on a local production server (Vercel Analytics). */
+const ignoredFailurePattern =
+  /va\.vercel-scripts|vercel-insights|vitals\.vercel|_vercel\/insights|\/_vercel\//;
+
+export function collectPageFailures(page: Page) {
+  const pageErrors: string[] = [];
+  const consoleErrors: string[] = [];
+  const failedRequests: string[] = [];
+
+  page.on("pageerror", (error) => {
+    pageErrors.push(error.message);
+  });
+
+  page.on("console", (message) => {
+    if (message.type() !== "error") return;
+    const text = message.text();
+    if (ignoredFailurePattern.test(text)) return;
+    if (/net::ERR_ABORTED|NS_BINDING_ABORTED/i.test(text)) return;
+    consoleErrors.push(text);
+  });
+
+  page.on("response", (response) => {
+    const url = response.url();
+    const status = response.status();
+    if (status < 400) return;
+    if (ignoredFailurePattern.test(url)) return;
+    if (status === 404 && /\/favicon\.ico(?:\?|$)/.test(url)) return;
+    failedRequests.push(`${status} ${url}`);
+  });
+
+  page.on("requestfailed", (request) => {
+    const url = request.url();
+    if (ignoredFailurePattern.test(url)) return;
+    const error = request.failure()?.errorText ?? "failed";
+    if (/ERR_ABORTED|NS_BINDING_ABORTED/i.test(error)) return;
+    failedRequests.push(`${error} ${url}`);
+  });
+
+  return {
+    pageErrors,
+    consoleErrors,
+    failedRequests,
+    expectClean() {
+      expect(pageErrors, pageErrors.join("\n")).toEqual([]);
+      expect(consoleErrors, consoleErrors.join("\n")).toEqual([]);
+      expect(failedRequests, failedRequests.join("\n")).toEqual([]);
+    },
+  };
+}
 
 export async function fillSchoolInquiry(
   page: Page,

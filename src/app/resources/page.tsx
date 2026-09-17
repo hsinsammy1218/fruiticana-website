@@ -11,7 +11,7 @@ import { site } from "@/data/site";
 export const metadata: Metadata = {
   title: "Resources",
   description:
-    "Fruiticana documentation for school administrators: product information, nutrition analyses, Connecticut Team Nutrition records, and credentials.",
+    "Fruiticana documentation for school administrators: product information, nutrition analyses, Connecticut Team Nutrition records, and historical facility and program records.",
   alternates: { canonical: "/resources" },
 };
 

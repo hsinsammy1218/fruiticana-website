@@ -4,9 +4,16 @@ import {
   documentSlugs,
   documents,
   getDocument,
+  resourceCategoryMeta,
 } from "@/data/documents";
 
 describe("documents data", () => {
+  it("labels FDA and AHA files as historical records rather than current credentials", () => {
+    const group = resourceCategoryMeta.find((item) => item.id === "credentials");
+    expect(group?.title).toMatch(/historical/i);
+    expect(group?.description).toMatch(/not current certifications/i);
+  });
+
   it("gives every document an on-site image", () => {
     expect(documents.length).toBeGreaterThanOrEqual(8);
     expect(documents.every((document) => Boolean(document.image))).toBe(true);

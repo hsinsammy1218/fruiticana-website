@@ -189,9 +189,9 @@ export const resourceCategoryMeta: {
   },
   {
     id: "credentials",
-    title: "Credentials",
+    title: "Historical records",
     description:
-      "Background records such as FDA facility registration materials and AHA program correspondence.",
+      "Background records such as FDA facility registration materials and AHA program correspondence — not current certifications.",
   },
 ];
 

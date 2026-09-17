@@ -117,4 +117,33 @@ describe("ContactForm", () => {
 
     expect(screen.getByRole("status")).toHaveTextContent(/thanks/i);
   });
+
+  it("trims name and email before the success state", async () => {
+    const user = userEvent.setup();
+    render(<ContactForm />);
+
+    await user.type(screen.getByLabelText(/^name/i), "  Sam  ");
+    await user.type(screen.getByRole("textbox", { name: /^school \*/i }), "  Lincoln  ");
+    await user.type(screen.getByLabelText(/email/i), "  sam@example.com  ");
+    await user.type(
+      screen.getByLabelText(/message/i),
+      "  We would like nutrition sheets for review.  ",
+    );
+    await user.click(screen.getByRole("button", { name: /request school information/i }));
+
+    expect(screen.getByRole("status")).toHaveTextContent(/thanks, sam/i);
+  });
+
+  it("disables submit while the inquiry is being accepted", async () => {
+    const user = userEvent.setup();
+    render(<ContactForm />);
+
+    await fillRequired(user);
+    const submit = screen.getByRole("button", { name: /request school information/i });
+    await user.click(submit);
+    expect(screen.getByRole("status")).toBeInTheDocument();
+    expect(
+      screen.queryByRole("button", { name: /request school information/i }),
+    ).not.toBeInTheDocument();
+  });
 });
