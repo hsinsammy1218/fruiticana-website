@@ -79,19 +79,26 @@ export default function SchoolsPage() {
       </Section>
 
       <Section tone="cream-100">
-        <SectionHeading
-          title={startYoungCopy.title}
-          description={startYoungCopy.description}
-        />
-        <blockquote className="reveal mt-8 max-w-3xl rounded-xl2 border border-line bg-white px-6 py-6 sm:px-8">
-          <p className="text-xl font-semibold leading-snug text-green-deep">
-            {startYoungCopy.hope}
-          </p>
-        </blockquote>
-        <h2 className="mt-10 text-2xl font-extrabold text-green-deep">
-          {whySchoolsPageCopy.title}
-        </h2>
-        <p className="info-copy mt-3 max-w-3xl">{whySchoolsPageCopy.description}</p>
+        <div className="grid gap-10 lg:grid-cols-[minmax(0,1.15fr)_minmax(0,0.95fr)] lg:items-stretch lg:gap-12 xl:gap-16">
+          <div>
+            <SectionHeading
+              className="max-w-none [&_p:last-child]:max-w-none"
+              title={startYoungCopy.title}
+              description={startYoungCopy.description}
+            />
+            <blockquote className="reveal mt-8 rounded-xl2 border border-line bg-white px-6 py-6 sm:mt-10 sm:px-8 sm:py-8">
+              <p className="text-xl font-semibold leading-snug text-green-deep sm:text-2xl">
+                {startYoungCopy.hope}
+              </p>
+            </blockquote>
+          </div>
+          <div className="reveal flex flex-col justify-center gap-4 lg:border-l lg:border-line lg:pl-10 xl:pl-12">
+            <h2 className="text-2xl font-extrabold text-green-deep sm:text-3xl">
+              {whySchoolsPageCopy.title}
+            </h2>
+            <p className="info-copy">{whySchoolsPageCopy.description}</p>
+          </div>
+        </div>
       </Section>
 
       <ProgramNumbers />
