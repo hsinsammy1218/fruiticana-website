@@ -5,7 +5,7 @@
 export const schoolsIntro = {
   title: "Bring Fruiticana to Your School",
   description:
-    "Fruiticana wants to give students an exciting new way to eat fruit — and is willing to put resources behind that vision. Under the proposed model, Fruiticana provides the machines, maintains them, stays involved, and the participating school receives 1/3 of Fruiticana sales generated through its program.",
+    "Fruiticana wants to give students an exciting new way to eat fruit — and is willing to put resources behind that vision. Under the proposed model, Fruiticana provides the machines, maintains them, and stays involved with the school.",
 } as const;
 
 export const schoolAudiences = [
@@ -51,10 +51,10 @@ export const schoolUses: SchoolUse[] = [
   {
     slug: "district",
     title: "District-level evaluation",
-    figure: "1/3",
-    figureLabel: "School share of sales",
+    figure: "Hands-on",
+    figureLabel: "Proposed partnership",
     description:
-      "Nutrition, procurement, and leadership teams can review the proposed partnership — equipment provided, Fruiticana involvement, and 1/3 of program sales — before a tasting or program conversation.",
+      "Nutrition, procurement, and leadership teams can review the proposed partnership — equipment provided and Fruiticana involvement — before a tasting or program conversation.",
   },
   {
     slug: "events",
@@ -92,11 +92,6 @@ export const schoolFitPoints = [
     figure: "4",
     title: "Fruit flavor choices",
     body: "Two flavors per machine gives students four fruit flavor options. Which four flavors would be offered still needs to be confirmed.",
-  },
-  {
-    figure: "1/3",
-    title: "School share of sales",
-    body: "The participating school receives one-third of Fruiticana sales generated through its program. This is an advantage — not the Fruiticana mission.",
   },
   {
     figure: "Hands-on",

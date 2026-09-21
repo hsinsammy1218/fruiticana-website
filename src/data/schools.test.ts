@@ -33,7 +33,6 @@ describe("schools data", () => {
     expect(schoolFitPoints.map((point) => point.figure)).toEqual([
       "2",
       "4",
-      "1/3",
       "Hands-on",
     ]);
     expect(schoolFitPoints.some((point) => /machines/i.test(point.body))).toBe(true);

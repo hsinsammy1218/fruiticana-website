@@ -56,11 +56,11 @@ test.describe("production readiness", () => {
     await expect(
       page.getByRole("heading", { name: "How Fruiticana Works at Your School" }),
     ).toBeVisible();
-    await expect(page.getByText("1/3").first()).toBeVisible();
     await expect(page.getByText(/two flavors in each machine/i).first()).toBeVisible();
     await expect(
       page.getByText(/provides and maintains the equipment/i).first(),
     ).toBeVisible();
+    await expect(page.getByText("1/3")).toHaveCount(0);
 
     await page.getByRole("navigation", { name: "Primary" }).getByRole("link", {
       name: "About Fruiticana",

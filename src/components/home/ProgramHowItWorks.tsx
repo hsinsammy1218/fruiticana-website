@@ -40,13 +40,13 @@ export function ProgramHowItWorks({
           <StatGrid
             className="mt-6"
             items={programNumbers}
-            columns={3}
+            columns={2}
             aria-label="Proposed school program figures"
           />
         </>
       ) : null}
 
-      <ol className="mt-10 grid gap-4 sm:grid-cols-2 xl:grid-cols-5">
+      <ol className="mt-10 grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
         {programSteps.map((step, index) => {
           const Icon = valueIcons[step.icon];
           return (

@@ -162,7 +162,7 @@ export const howCopy = {
   eyebrow: "How it works",
   title: "Bringing Fruiticana to Your School",
   description:
-    "Under the proposed model, Fruiticana provides the machines, stays involved, and the school shares in sales.",
+    "Under the proposed model, Fruiticana provides the machines and stays involved with the school.",
   knownTitle: "What the proposed model already states",
   pendingTitle: "What a school team will want to confirm",
   pendingIntro:

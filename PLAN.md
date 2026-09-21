@@ -16,7 +16,7 @@ Next.js 16 informational website for **schools and their students**. The 2003–
 
 **Why schools:** Children spend a significant part of their day at school. Fruiticana wants to introduce the experience there — not because schools are merely a distribution channel.
 
-**How the proposed school program works:** Fruiticana provides **two machines** per participating school, with **two flavors per machine**. Fruiticana provides and maintains the equipment and remains involved in operation and serving. Students get access to Fruiticana. The participating school receives **one-third (1/3) of Fruiticana sales** generated through its program.
+**How the proposed school program works:** Fruiticana provides **two machines** per participating school, with **two flavors per machine**. Fruiticana provides and maintains the equipment and remains involved in operation and serving. Students get access to Fruiticana. Do not publish a school sales-share percentage.
 
 Always present this as the **proposed standard setup**. Do not claim Fruiticana is on school menus today.
 
@@ -35,7 +35,7 @@ The site speaks in **present-day school** language for schools and their student
 - Concept: fruit-based, smooth/creamy ice-cream-like texture; lactose-free **concept** (original design intent).
 - 12 flavor names from the original lineup.
 - That a Connecticut school / Team Nutrition chapter happened.
-- The **proposed** school model: two machines, two flavors each, Fruiticana provides and maintains equipment, Fruiticana remains involved, school receives 1/3 of program sales.
+- The **proposed** school model: two machines, two flavors each, Fruiticana provides and maintains equipment, Fruiticana remains involved.
 
 ### Historical, usable with clear qualification
 
@@ -50,7 +50,7 @@ The site speaks in **present-day school** language for schools and their student
 
 - Present-tense FDA/AHA/USDA certification; medical or disease language; 100% fruit / no additives as current claims; 2007 prices or Waterbury phone/address; fake PDF downloads.
 - Guaranteed health or behavior claims (“once kids eat Fruiticana they will never stop”).
-- Invented operational details (staffing, payment, electricity, remaining 2/3 of sales, school obligations, which four flavors).
+- Invented operational details (staffing, payment, electricity, school obligations, which four flavors) or a school sales-share percentage.
 - In-house kitchen prep presented as the current proposed program.
 
 2007 website nutrition numbers are **not** shown (they disagree with the 2008 laboratory panels).
@@ -80,7 +80,7 @@ Redirects: `/flavors` and `/nutrition` → `/product`; `/story` → `/about`.
 2. Why we care — students, fruit, enjoyment, starting young
 3. What's Fruiticana? (product concept)
 4. Why start young — childhood familiarity as hope, then why schools
-5. How it works in schools — 2 machines / 4 flavors / 1/3 share; Fruiticana provides, maintains, stays involved
+5. How it works in schools — 2 machines / 4 flavors; Fruiticana provides, maintains, stays involved
 6. We've been in Connecticut schools before (historical timeline)
 7. Learn everything about Fruiticana (trust hub)
 8. Closing CTA — **Let's Give Students a New Way to Enjoy Fruit.**

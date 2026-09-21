@@ -136,8 +136,8 @@ Form network/API failure: **N/A**. There is no inquiry API. Failure is communica
 | --- | --- |
 | Mission clarity | **PASS** — “An exciting new way to eat fruit”; student-first why. |
 | Student message | **PASS** — enjoyment of fruit while students are young; vision, not a behavior guarantee. |
-| School-program clarity | **PASS** — proposed model is labeled proposed; not on menus today. |
-| 1/3 sales-share consistency | **PASS** — home, schools, FAQ, value exchange, footer promise. Remainder of sales unpublished (honest). |
+| School-program clarity | **PASS** — proposed model is labeled proposed; not on menus today. Sales-share percentage removed from public copy. |
+| 1/3 sales-share consistency | **N/A** — school sales-share claim removed sitewide (owner request). |
 | Machine/program information consistency | **PASS** — two machines, two flavors each (four choices); Fruiticana provides, maintains, stays involved. |
 | Historical-vs-current claims | **PASS** — FDA registration, AHA letter, CT Team Nutrition, 2008 panels, 2007 ingredients are dated and disclaimed. Resources group for FDA/AHA is titled “Historical records”, not current credentials. |
 | School inquiry journey | **PASS** — administrator can understand the program and complete the form. Delivery is not connected; the UI says so. |
@@ -155,7 +155,7 @@ Form network/API failure: **N/A**. There is no inquiry API. Failure is communica
 9. How involved is Fruiticana? **Answered** — remains involved; not drop-off-and-leave.
 10. How many machines? **Answered** — two (proposed standard).
 11. How many flavors? **Answered** — two per machine / four at a time; which four unconfirmed.
-12. What does the school receive? **Answered** — 1/3 of Fruiticana program sales.
+12. What does the school receive? **Answered without a sales-share percentage** — machines without purchase, product, maintenance, operational involvement; financial terms still undocumented.
 13. What does participation require from the school? **Not fully answered** — obligations, fees, staffing, power, storage, serving method are explicitly “still being documented”.
 14. Nutrition / product information? **Answered** as historical 2008 panels and 2007 ingredients, with current-testing notices.
 15. History? **Answered** — 2003 founding; 2003–2005 CT Team Nutrition; 2005–2006 localized chapter.
@@ -228,7 +228,7 @@ These are not software bugs. Do not invent answers on the site.
 - Social accounts, if any.
 - What participation costs the school (if anything); payment flow.
 - Day-to-day staffing, serving hours, restocking, cleaning, installation, electricity, storage.
-- How the remaining 2/3 of sales is allocated.
+- Exact school financial terms / any revenue arrangement (sales-share percentage intentionally kept off the site).
 - Which four flavors a two-machine school would offer.
 - Whether the historical 4 oz cup applies to the proposed machine program.
 - Current formulation: added sugar, dairy/lactose, allergens, gluten/wheat protein, calories, fiber.
@@ -252,7 +252,7 @@ Do not treat the following as current product, medical, or government claims. Th
 - About-only historical sampling figures (~30,000 samples; ~$1M pilot sales).
 - Named founding team credentials as documented in the business record.
 - 2007 Waterbury taste comments (About only, dated).
-- Proposed school model (2 machines / 2 flavors each / Fruiticana provides and maintains / 1/3 share) as a **proposal**, not a live contracted program.
+- Proposed school model (2 machines / 2 flavors each / Fruiticana provides and maintains) as a **proposal**, not a live contracted program.
 
 No present-tense “healthiest”, “100% natural”, “no added sugar”, obesity/diabetes/cardiovascular prevention, or current FDA/AHA/USDA certification language was found on public pages.
 

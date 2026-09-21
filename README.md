@@ -8,8 +8,8 @@ An informational site for **Fruiticana**, a fruit-based frozen dessert.
 > conversion is a **school inquiry**. After about two minutes, a school principal
 > should be able to say: Fruiticana gives students an exciting new way to eat
 > fruit; Fruiticana wants to introduce that experience in schools while students
-> are young; under the proposed model Fruiticana provides two machines, stays
-> involved, and the school receives 1/3 of program sales. Timeline dates,
+> are young; under the proposed model Fruiticana provides two machines and stays
+> involved. Timeline dates,
 > testimonials, documentation, and nutrition panels are shared for school
 > review and labeled as historical where they are.
 
@@ -146,7 +146,7 @@ Confirm before switching any content to present-tense school-program marketing:
 - [ ] Current production/sale status and whether Fruiticana is available to schools
 - [ ] Current formulation claims (lactose-free, fat-free, cholesterol-free, dairy-free, vegan, "100% fruit", added sugar, additives)
 - [ ] Current nutrition panels vs. the 2008 lab values
-- [ ] Proposed school program details still being documented: staffing, serving schedule, restocking, cleaning, payment, installation/power/storage, student purchase vs meal service, school obligations, remaining 2/3 of sales, which four flavors, and whether the 4 oz cup still applies to machine service.
+- [ ] Proposed school program details still being documented: staffing, serving schedule, restocking, cleaning, payment, installation/power/storage, student purchase vs meal service, school obligations, which four flavors, and whether the 4 oz cup still applies to machine service.
 - [ ] Shelf life
 - [ ] Which flavors/formats exist now
 - [ ] FDA registration vs. "certification"; AHA status and logo rights

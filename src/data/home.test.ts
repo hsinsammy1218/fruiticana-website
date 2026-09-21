@@ -77,7 +77,7 @@ describe("student-mission copy", () => {
     expect(questions).toMatch(/what is fruiticana/i);
     expect(questions).toMatch(/students/i);
     expect(questions).toMatch(/schools/i);
-    expect(questions).toMatch(/1\/3|school receive/i);
+    expect(questions).toMatch(/school receive/i);
     expect(faqItems.some((item) => item.href?.url === "/contact")).toBe(true);
   });
 });

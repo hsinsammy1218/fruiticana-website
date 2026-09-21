@@ -32,10 +32,6 @@ export const knownOperations: {
     title: "Fruiticana stays involved in serving",
     body: "This is a hands-on partnership. Fruiticana does not simply drop off equipment and leave cafeteria staff responsible for everything.",
   },
-  {
-    title: "The school receives 1/3 of sales",
-    body: "The participating school receives one-third (1/3) of Fruiticana sales generated through its Fruiticana program.",
-  },
 ];
 
 export const schoolOperations: SchoolOperation[] = [
@@ -67,7 +63,7 @@ export const schoolOperations: SchoolOperation[] = [
     question: "What does the school receive?",
     status: "known",
     answer:
-      "Under the proposed model, the participating school receives one-third (1/3) of Fruiticana sales generated through its program. How the remaining portion is allocated has not been published.",
+      "Under the proposed model, Fruiticana provides the machines, product, and maintenance, and stays involved in operation and serving. Students get access to Fruiticana. Exact school obligations and any financial terms still need to be documented.",
   },
   {
     question: "What does participation cost the school?",
