@@ -9,14 +9,19 @@ test.describe("contact form", () => {
     await expect(page.getByText("Please enter your name.")).toBeVisible();
     await expect(page.getByText("Please enter your school.")).toBeVisible();
     await expect(page.getByText("Please enter your email.")).toBeVisible();
-    await expect(page.getByText("Please enter a message.")).toBeVisible();
+    await expect(page.getByText("Please choose your role.")).toBeVisible();
+    await expect(page.getByText("Please enter a city.")).toBeVisible();
+    await expect(page.getByText("Please enter a state.")).toBeVisible();
     await expect(page.getByLabel(/^name/i)).toBeFocused();
   });
 
   test("rejects an invalid email and a short message", async ({ page }) => {
     await page.goto("/contact");
     await page.getByLabel(/^name/i).fill("Sam");
-    await page.getByRole("textbox", { name: /^school \*/i }).fill("Lincoln Elementary");
+    await page.getByRole("textbox", { name: /^school \/ organization/i }).fill("Lincoln Elementary");
+    await page.getByLabel(/^role/i).selectOption("Principal");
+    await page.getByLabel(/^city/i).fill("Waterbury");
+    await page.getByLabel(/^state/i).fill("CT");
     await page.getByLabel(/email/i).fill("not-an-email");
     await page.getByLabel(/message/i).fill("Hi there");
     await page.getByRole("button", { name: "Request School Information" }).click();
@@ -45,7 +50,7 @@ test.describe("contact form", () => {
 
   test("defaults interest to School Food Service", async ({ page }) => {
     await page.goto("/contact");
-    await expect(page.getByLabel(/interest type/i)).toHaveValue(
+    await expect(page.getByLabel(/reason for inquiry/i)).toHaveValue(
       "School Food Service",
     );
   });
@@ -62,7 +67,7 @@ test.describe("contact form", () => {
 
   test("preselects interest from the query string", async ({ page }) => {
     await page.goto("/contact?interest=Healthy%20Snack%20Program");
-    await expect(page.getByLabel(/interest type/i)).toHaveValue(
+    await expect(page.getByLabel(/reason for inquiry/i)).toHaveValue(
       "Healthy Snack Program",
     );
   });

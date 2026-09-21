@@ -5,9 +5,9 @@ export type NavItem = {
 
 /** Primary navigation for desktop. Logo is Home. */
 export const mainNav: NavItem[] = [
-  { href: "/about", label: "About Fruiticana" },
+  { href: "/about", label: "Our Story" },
+  { href: "/product", label: "Fruiticana" },
   { href: "/schools", label: "For Schools" },
-  { href: "/product", label: "Product & Nutrition" },
   { href: "/contact", label: "Contact" },
 ];
 
@@ -47,7 +47,7 @@ export const navCta = {
 /**
  * Current-page matching for primary nav.
  * Home must be exact (`/` prefixes every path). Flavor sheets belong with
- * Product & Nutrition even though they live under `/flavors/[slug]`.
+ * the Fruiticana product section even though they live under `/flavors/[slug]`.
  */
 export function isNavItemActive(pathname: string, href: string): boolean {
   if (href === "/") {

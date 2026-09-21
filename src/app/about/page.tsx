@@ -19,7 +19,7 @@ import { startYoungCopy } from "@/data/home";
 import { JsonLd } from "@/components/seo/JsonLd";
 
 export const metadata: Metadata = {
-  title: "About Fruiticana",
+  title: "Our Story",
   description:
     "Fruiticana exists to give students an exciting new way to enjoy fruit — plus the 2003–2005 Connecticut Team Nutrition Healthy Snack pilot, founding team, and school documentation.",
   alternates: { canonical: "/about" },
@@ -34,7 +34,7 @@ export default function AboutPage() {
       {
         "@type": "ListItem",
         position: 2,
-        name: "About Fruiticana",
+        name: "Our Story",
         item: `${site.url}/about`,
       },
     ],
@@ -46,8 +46,8 @@ export default function AboutPage() {
       <Section>
         <SectionHeading
           as="h1"
-          eyebrow="About Fruiticana"
-          title="A new way to eat fruit"
+          eyebrow="Our Story"
+          title="Why Fruiticana exists"
           description="Fruiticana began so students could have another way to enjoy fruit — a fruit-based frozen treat with the feel of ice cream. The idea is simple: health-conscious choices should still be exciting."
         />
         <div className="mt-6 max-w-2xl space-y-4 text-base leading-[1.7] text-muted">
@@ -95,8 +95,8 @@ export default function AboutPage() {
         <p className="text-xs font-semibold uppercase tracking-[0.18em] text-green-600">
           Connecticut school programs
         </p>
-        <h2 className="mt-2 text-3xl font-extrabold sm:text-4xl">
-          Fruiticana in Connecticut Schools
+        <h2 className="mt-2 font-display text-3xl sm:text-4xl">
+          Connecticut roots
         </h2>
         <div className="mt-5 grid gap-8 lg:grid-cols-[1.3fr_1fr] lg:items-start lg:gap-12">
           <div className="max-w-2xl space-y-4 text-base leading-[1.7] text-muted">
@@ -139,7 +139,7 @@ export default function AboutPage() {
       <Section tone="white">
         <SectionHeading
           eyebrow="How it started"
-          title="Product development timeline"
+          title="How it started"
           description="The milestones below are drawn from Fruiticana's business record. Nothing is invented for years the document does not cover."
         />
         <div className="mt-10 grid items-start gap-10 lg:grid-cols-[minmax(0,1.15fr)_minmax(17rem,0.85fr)] lg:gap-14">
@@ -214,8 +214,32 @@ export default function AboutPage() {
         </ul>
       </Section>
 
+      <Section>
+        <SectionHeading
+          eyebrow="The product"
+          title="A frozen fruit experience"
+          description="Fruiticana takes fruit students already know and turns it into a cold, smooth treat. Open the product page for flavors, the historical ingredient list, and 2008 nutrition panels."
+        />
+        <div className="mt-6">
+          <Link
+            href="/product"
+            className="inline-flex min-h-11 items-center text-sm font-bold text-green-deep underline-offset-4 hover:underline"
+          >
+            Explore Fruiticana
+          </Link>
+        </div>
+      </Section>
+
+      <Section tone="white">
+        <SectionHeading
+          eyebrow="Where we're going"
+          title="The school vision"
+          description={startYoungCopy.whySchools}
+        />
+      </Section>
+
       <CTASection
-        title="Let's Give Students a New Way to Enjoy Fruit."
+        title="Let's Bring Fruiticana to Your Students."
         description="Request school information to discuss the idea, availability, institutional servings, and nutrition documentation for your school."
         primary={{ label: navCta.label, href: navCta.href }}
         secondary={{ label: "For Schools", href: "/schools" }}

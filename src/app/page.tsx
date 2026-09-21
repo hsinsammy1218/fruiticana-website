@@ -1,10 +1,12 @@
 import { Hero } from "@/components/home/Hero";
+import { FruitJourney } from "@/components/home/FruitJourney";
+import { FlavorShowcase } from "@/components/home/FlavorShowcase";
 import { OurWhy } from "@/components/home/OurWhy";
-import { WhatIsFruiticana } from "@/components/home/WhatIsFruiticana";
 import { WhyStartYoung } from "@/components/home/WhyStartYoung";
+import { MadeForSchools } from "@/components/home/MadeForSchools";
 import { ProgramHowItWorks } from "@/components/home/ProgramHowItWorks";
+import { CupPathways } from "@/components/home/CupPathways";
 import { ConnecticutSchools } from "@/components/home/ConnecticutSchools";
-import { TrustHub } from "@/components/home/TrustHub";
 import { CTASection } from "@/components/ui/CTASection";
 import { navCta } from "@/data/navigation";
 import { closingCta } from "@/data/home";
@@ -13,12 +15,14 @@ export default function Home() {
   return (
     <>
       <Hero />
+      <FruitJourney />
+      <FlavorShowcase />
       <OurWhy />
-      <WhatIsFruiticana />
       <WhyStartYoung />
-      <ProgramHowItWorks />
+      <MadeForSchools />
+      <ProgramHowItWorks showNumbers={false} />
+      <CupPathways />
       <ConnecticutSchools />
-      <TrustHub />
       <CTASection
         title={closingCta.title}
         description={closingCta.description}

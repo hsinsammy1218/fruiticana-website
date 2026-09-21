@@ -28,7 +28,7 @@ export const programNumbers: FactStat[] = [
 export const programHowCopy = {
   id: "how-it-works",
   eyebrow: "How it works",
-  homeTitle: "How Fruiticana Works at Your School",
+  homeTitle: "How it works",
   schoolsTitle: "We Bring the Program. You Bring the Students.",
   description:
     "Fruiticana provides the machines, stays involved, and gives students an exciting new way to eat fruit.",

@@ -108,7 +108,7 @@ export default function SchoolsPage() {
         <p className="info-copy mt-6 max-w-3xl">{partnershipCopy.body}</p>
       </Section>
 
-      <ProgramHowItWorks variant="home" showNumbers={false} />
+      <ProgramHowItWorks variant="schools" showNumbers={false} />
 
       <ValueExchange />
 
@@ -153,10 +153,10 @@ export default function SchoolsPage() {
             </h2>
             <p className="info-copy mt-2">
               Nutrition panels, serving sizes, ingredients, and supporting
-              letters are on Product & Nutrition and Documentation.
+              letters are on the Fruiticana product page and Documentation.
             </p>
             <div className="mt-5 flex flex-col gap-3 sm:flex-row">
-              <Button href="/product">Product & Nutrition</Button>
+              <Button href="/product">Fruiticana</Button>
               <Button href="/resources" variant="secondary">
                 View documentation
               </Button>

@@ -51,10 +51,10 @@ test.describe("production readiness", () => {
     ).toBeVisible();
     await expect(page.getByText(/cream-less ice crème/i).first()).toBeVisible();
 
-    await page.getByRole("link", { name: "See How It Works" }).first().click();
+    await page.getByRole("link", { name: "See how it works" }).first().click();
     await expect(page).toHaveURL(/#how-it-works/);
     await expect(
-      page.getByRole("heading", { name: "How Fruiticana Works at Your School" }),
+      page.getByRole("heading", { name: "How it works" }),
     ).toBeVisible();
     await expect(page.getByText(/two flavors in each machine/i).first()).toBeVisible();
     await expect(
@@ -63,13 +63,14 @@ test.describe("production readiness", () => {
     await expect(page.getByText("1/3")).toHaveCount(0);
 
     await page.getByRole("navigation", { name: "Primary" }).getByRole("link", {
-      name: "About Fruiticana",
+      name: "Our Story",
     }).click();
     await expect(page).toHaveURL(/\/about$/);
     await expect(page.getByText("Fruiticana Creamless Ice Cream").first()).toBeVisible();
 
     await page.getByRole("navigation", { name: "Primary" }).getByRole("link", {
-      name: "Product & Nutrition",
+      name: "Fruiticana",
+      exact: true,
     }).click();
     await expect(page).toHaveURL(/\/product$/);
     await expect(page.getByText(/nutrition analysis \(2008\)/i)).toBeVisible();

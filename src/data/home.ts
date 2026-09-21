@@ -7,26 +7,26 @@ export const heroCopy = {
   line1: "An Exciting New Way",
   line2: "to Eat Fruit",
   subhead:
-    "Fruiticana brings a fruit-based frozen experience directly to schools — giving students something they can enjoy while giving schools a hands-on program designed around their students.",
+    "A fruit-based frozen experience for students, brought to schools.",
   originalNote:
     "Originally introduced as Fruiticana Creamless Ice Cream — smooth like ice cream, built from real fruit.",
   primaryCta: {
-    label: "Bring Fruiticana to Your School",
-    href: "/contact",
+    label: "Explore Fruiticana",
+    href: "/product",
   },
   secondaryCta: {
-    label: "See How It Works",
-    href: "#how-it-works",
+    label: "Bring Fruiticana to Your School",
+    href: "/contact",
   },
 } as const;
 
 export const whyCopy = {
-  eyebrow: "Why we care",
-  title: "Fruit Should Be Something Students Look Forward To",
+  eyebrow: "Why Fruiticana",
+  title: "What if kids wanted the fruit?",
   description:
-    "Fruiticana exists for kids — for health, for fruit, and for enjoyment. We want to introduce positive food experiences while children are young, so fruit can become something students actually look forward to.",
-  question: "What if fruit could become something students actually look forward to?",
-  body: "That question is why Fruiticana was created: to give students an exciting new way to eat fruit. This is our vision, not a scientific promise.",
+    "Instead of only telling children they should eat fruit, Fruiticana asks how the experience can be exciting enough that they may actually want it.",
+  question: "What if fruit could become something students look forward to?",
+  body: "That question is why Fruiticana was created. This is our vision, not a guaranteed change in what students choose.",
 } as const;
 
 export type FruitJourneyStep = {
@@ -38,9 +38,9 @@ export type FruitJourneyStep = {
 
 export const ideaCopy = {
   eyebrow: "The idea",
-  title: "Fruit They Know. A New Way to Enjoy It.",
+  title: "Fruit. Reimagined.",
   description:
-    "Fruiticana starts with fruit, then creates a cold, smooth frozen experience students already understand as a treat.",
+    "Fruiticana starts with fruit, then creates a cold, smooth frozen experience students already understand as a treat. It was originally introduced as Cream-Less Ice Crème.",
   steps: [
     {
       title: "Real Fruit",
@@ -81,10 +81,10 @@ export const productCopy = {
 } as const;
 
 export const startYoungCopy = {
-  eyebrow: "Why start young",
-  title: "Give Students an Enjoyable Experience With Fruit Today",
+  eyebrow: "Start young",
+  title: "Foods we meet young can stay with us.",
   description:
-    "Many people continue enjoying foods they first became familiar with as children. Fruiticana wants to create a positive relationship with fruit early.",
+    "Some foods stay with us because we first learned to enjoy them as children. Fruiticana’s vision is to introduce a positive experience with fruit during childhood that may continue as students grow.",
   hope: "Give students an enjoyable experience with fruit today, with the hope that their appreciation for fruit continues tomorrow.",
   whySchoolsTitle: "Why bring Fruiticana into schools?",
   whySchools:
@@ -92,11 +92,50 @@ export const startYoungCopy = {
 } as const;
 
 export const flavorsCopy = {
-  eyebrow: "It starts with fruit",
-  title: "Original fruit flavors",
+  eyebrow: "Flavors",
+  title: "Find your fruit.",
   description:
-    "These are the original documented Fruiticana flavors. Each one starts with fruit. Which flavors a school can offer today still needs to be confirmed.",
-  cta: { label: "View All Flavors", href: "/product#flavors" },
+    "These are original documented Fruiticana flavors, not a confirmed menu for today. A participating school would offer four at a time. Which four still needs to be confirmed.",
+  cta: { label: "See all twelve flavors", href: "/product#flavors" },
+} as const;
+
+/** Homepage flavor bands, in visual order. */
+export const homepageFlavorSlugs = [
+  "strawberry",
+  "mango",
+  "blueberry",
+  "orange",
+  "pineapple",
+  "cantaloupe",
+] as const;
+
+export const cupCopy = {
+  eyebrow: "Product transparency",
+  title: "Know what's in the cup.",
+  description:
+    "Schools can review ingredients, nutrition, servings, and flavors. The panels and ingredient list are historical records and still need current testing.",
+  links: [
+    {
+      label: "Ingredients",
+      href: "/product#ingredients",
+      description: "The 2007 documented ingredient list.",
+    },
+    {
+      label: "Nutrition",
+      href: "/product#nutrition",
+      description: "2008 Nutrition Facts panels for school review.",
+    },
+    {
+      label: "Servings",
+      href: "/product#servings",
+      description: "The historical 4 oz laboratory serving.",
+    },
+    {
+      label: "Flavors",
+      href: "/product#flavors",
+      description: "The original twelve fruit flavors.",
+    },
+  ],
 } as const;
 
 export const healthCopy = {
@@ -181,8 +220,8 @@ export const trustCopy = {
 } as const;
 
 export const closingCta = {
-  title: "Let's Give Students a New Way to Enjoy Fruit.",
+  title: "Let's Bring Fruiticana to Your Students.",
   description:
-    "Request school information to talk through the idea, the proposed school program, nutrition documentation, and how a conversation with your school could start.",
-  secondary: { label: "See How It Works", href: "#how-it-works" },
+    "Give students an exciting new way to experience fruit, and learn how the proposed Fruiticana school program could work at your school.",
+  secondary: { label: "See how it works", href: "#how-it-works" },
 } as const;

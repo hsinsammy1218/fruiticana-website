@@ -8,7 +8,10 @@ async function fillRequired(
   extras?: { message?: string; email?: string },
 ) {
   await user.type(screen.getByLabelText(/^name/i), "Sam");
-  await user.type(screen.getByRole("textbox", { name: /^school \*/i }), "Lincoln Elementary");
+  await user.type(screen.getByRole("textbox", { name: /^school \/ organization/i }), "Lincoln Elementary");
+  await user.selectOptions(screen.getByLabelText(/^role/i), "Principal");
+  await user.type(screen.getByLabelText(/^city/i), "Waterbury");
+  await user.type(screen.getByLabelText(/^state/i), "CT");
   await user.type(
     screen.getByLabelText(/email/i),
     extras?.email ?? "sam@example.com",
@@ -29,7 +32,9 @@ describe("ContactForm", () => {
     expect(screen.getByText("Please enter your name.")).toBeInTheDocument();
     expect(screen.getByText("Please enter your school.")).toBeInTheDocument();
     expect(screen.getByText("Please enter your email.")).toBeInTheDocument();
-    expect(screen.getByText("Please enter a message.")).toBeInTheDocument();
+    expect(screen.getByText("Please choose your role.")).toBeInTheDocument();
+    expect(screen.getByText("Please enter a city.")).toBeInTheDocument();
+    expect(screen.getByText("Please enter a state.")).toBeInTheDocument();
     expect(screen.getByLabelText(/^name/i)).toHaveAttribute("aria-invalid", "true");
   });
 
@@ -59,7 +64,7 @@ describe("ContactForm", () => {
 
   it("defaults interest to School Food Service", () => {
     render(<ContactForm />);
-    expect(screen.getByLabelText(/interest type/i)).toHaveValue(
+    expect(screen.getByLabelText(/reason for inquiry/i)).toHaveValue(
       "School Food Service",
     );
   });
@@ -68,14 +73,14 @@ describe("ContactForm", () => {
     const user = userEvent.setup();
     render(<ContactForm />);
 
-    const select = screen.getByLabelText(/interest type/i);
+    const select = screen.getByLabelText(/reason for inquiry/i);
     await user.selectOptions(select, "Cafeteria");
     expect(select).toHaveValue("Cafeteria");
   });
 
   it("preselects an interest when provided", () => {
     render(<ContactForm defaultInterest="Healthy Snack Program" />);
-    expect(screen.getByLabelText(/interest type/i)).toHaveValue(
+    expect(screen.getByLabelText(/reason for inquiry/i)).toHaveValue(
       "Healthy Snack Program",
     );
   });
@@ -125,7 +130,10 @@ describe("ContactForm", () => {
     render(<ContactForm />);
 
     await user.type(screen.getByLabelText(/^name/i), "  Sam  ");
-    await user.type(screen.getByRole("textbox", { name: /^school \*/i }), "  Lincoln  ");
+    await user.type(screen.getByRole("textbox", { name: /^school \/ organization/i }), "  Lincoln  ");
+    await user.selectOptions(screen.getByLabelText(/^role/i), "Principal");
+    await user.type(screen.getByLabelText(/^city/i), "Waterbury");
+    await user.type(screen.getByLabelText(/^state/i), "CT");
     await user.type(screen.getByLabelText(/email/i), "  sam@example.com  ");
     await user.type(
       screen.getByLabelText(/message/i),

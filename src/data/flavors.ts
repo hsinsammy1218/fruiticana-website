@@ -12,7 +12,19 @@
  *
  * Images are high-quality fruit photography in WebP
  * (`/images/flavors/<slug>.webp`) representing each flavor.
+ *
+ * Photography still needed before this can show the real product:
+ * Fruiticana in a cup for each featured flavor, a texture close-up,
+ * the two school machines, and a rights-cleared school serving photo.
+ * Do not use archived JPEGs or document scans as hero art.
  */
+
+export const photographyNeeds = [
+  "Fruiticana in a cup for each featured flavor",
+  "Texture close-up of the frozen product",
+  "The two machines used in the proposed school setup",
+  "A rights-cleared photo of students being served at school",
+] as const;
 
 export type FlavorCategory =
   | "Tropical"

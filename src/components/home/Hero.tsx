@@ -1,11 +1,10 @@
+import Image from "next/image";
 import { Container } from "@/components/layout/Container";
 import { Button } from "@/components/ui/Button";
-import { HeroVisual } from "@/components/home/HeroVisual";
 import { heroCopy } from "@/data/home";
 
 /**
- * Student-first hero: an exciting new way to eat fruit, written for the
- * adults who make school food decisions.
+ * Brand-first hero. The line is the idea; fruit photography does the rest.
  */
 export function Hero() {
   return (
@@ -15,25 +14,20 @@ export function Hero() {
         className="absolute inset-0 -z-20"
         style={{
           background: `
-            radial-gradient(70% 60% at 82% 28%, rgba(233,88,88,0.16), transparent 55%),
-            radial-gradient(55% 50% at 8% 18%, rgba(101,168,68,0.28), transparent 60%),
-            radial-gradient(50% 45% at 48% 92%, rgba(246,214,74,0.22), transparent 55%),
-            linear-gradient(165deg, #fffbef 0%, #fdf6e3 42%, #e8f5df 100%)
+            radial-gradient(70% 60% at 82% 28%, rgba(233,88,88,0.18), transparent 55%),
+            radial-gradient(55% 50% at 8% 18%, rgba(101,168,68,0.22), transparent 60%),
+            linear-gradient(165deg, #fffbef 0%, #fdf6e3 55%, #fff7ea 100%)
           `,
         }}
       />
 
-      <Container className="relative grid min-h-[min(88vh,52rem)] items-center gap-10 py-14 sm:py-18 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,0.95fr)] lg:gap-12 lg:py-20 xl:gap-16">
-        <div className="hero-rise max-w-2xl lg:max-w-none">
-          <h1 className="font-display text-[clamp(1.2rem,5.1vw,2.2rem)] font-bold tracking-[-0.02em] text-berry sm:text-5xl lg:text-[3.5rem] lg:leading-[1.08] xl:text-[4rem]">
-            <span className="block whitespace-nowrap">{heroCopy.line1} </span>
-            <span className="block">{heroCopy.line2}</span>
+      <Container className="relative grid items-center gap-8 py-12 sm:py-16 lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] lg:gap-10 lg:py-20">
+        <div className="hero-rise max-w-xl">
+          <h1 className="font-display text-[clamp(2.6rem,7vw,5.25rem)] font-semibold leading-[0.95] tracking-[-0.03em] text-green-deep">
+            {heroCopy.line1} {heroCopy.line2}
           </h1>
-          <p className="mt-5 max-w-xl text-xl font-semibold leading-snug text-green-deep sm:text-2xl">
+          <p className="mt-5 max-w-md text-lg leading-snug text-ink sm:text-xl">
             {heroCopy.subhead}
-          </p>
-          <p className="mt-4 max-w-xl text-base leading-[1.7] text-muted sm:text-lg">
-            {heroCopy.originalNote}
           </p>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
             <Button href={heroCopy.primaryCta.href} size="lg" className="w-full sm:w-auto">
@@ -50,9 +44,34 @@ export function Hero() {
           </div>
         </div>
 
-        <div className="flex justify-center lg:justify-end">
-          <div className="w-full max-w-xl xl:max-w-2xl">
-            <HeroVisual />
+        <div className="grid grid-cols-2 gap-3 sm:gap-4">
+          <div className="relative col-span-2 aspect-[16/10] overflow-hidden rounded-xl2">
+            <Image
+              src="/images/journey/real-fruit.webp"
+              alt="Cut mango, strawberries, orange, pineapple, apple, and blueberries"
+              fill
+              priority
+              sizes="(max-width: 1024px) 100vw, 46vw"
+              className="object-cover"
+            />
+          </div>
+          <div className="relative aspect-square overflow-hidden rounded-xl2">
+            <Image
+              src="/images/flavors/strawberry.webp"
+              alt=""
+              fill
+              sizes="(max-width: 1024px) 46vw, 22vw"
+              className="object-cover"
+            />
+          </div>
+          <div className="relative aspect-square overflow-hidden rounded-xl2">
+            <Image
+              src="/images/journey/fruiticana.webp"
+              alt="Pink and yellow frozen scoops in a cup beside strawberry and mango"
+              fill
+              sizes="(max-width: 1024px) 46vw, 22vw"
+              className="object-cover"
+            />
           </div>
         </div>
       </Container>
