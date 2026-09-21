@@ -79,10 +79,10 @@ export default function SchoolsPage() {
       </Section>
 
       <Section tone="cream-100">
-        <div className="grid gap-10 lg:grid-cols-[minmax(0,1.2fr)_minmax(0,0.9fr)] lg:items-start lg:gap-14 xl:gap-16">
+        <div className="grid gap-10 lg:grid-cols-[minmax(0,1.15fr)_minmax(0,0.95fr)] lg:items-stretch lg:gap-12 xl:gap-16">
           <div>
             <SectionHeading
-              className="max-w-none"
+              className="max-w-none [&_p:last-child]:max-w-none"
               title={startYoungCopy.title}
               description={startYoungCopy.description}
             />
@@ -92,11 +92,11 @@ export default function SchoolsPage() {
               </p>
             </blockquote>
           </div>
-          <div className="reveal flex flex-col justify-center lg:min-h-full lg:border-l lg:border-line lg:pl-10 xl:pl-12">
-            <h2 className="text-2xl font-extrabold text-green-deep">
+          <div className="reveal flex flex-col justify-center gap-4 lg:border-l lg:border-line lg:pl-10 xl:pl-12">
+            <h2 className="text-2xl font-extrabold text-green-deep sm:text-3xl">
               {whySchoolsPageCopy.title}
             </h2>
-            <p className="info-copy mt-4">{whySchoolsPageCopy.description}</p>
+            <p className="info-copy">{whySchoolsPageCopy.description}</p>
           </div>
         </div>
       </Section>
