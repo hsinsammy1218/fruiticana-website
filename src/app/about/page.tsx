@@ -68,17 +68,27 @@ export default function AboutPage() {
       <Vision showHeading={false} />
 
       <Section>
-        <SectionHeading
-          eyebrow={startYoungCopy.eyebrow}
-          title="Why children matter"
-          description={startYoungCopy.description}
-        />
-        <blockquote className="reveal mt-8 max-w-3xl rounded-xl2 border border-line bg-cream-100 px-6 py-6 sm:px-8">
-          <p className="text-xl font-semibold leading-snug text-green-deep">
-            {startYoungCopy.hope}
-          </p>
-        </blockquote>
-        <p className="info-copy mt-6 max-w-3xl">{startYoungCopy.whySchools}</p>
+        <div className="grid gap-10 lg:grid-cols-[minmax(0,1.2fr)_minmax(0,0.9fr)] lg:items-start lg:gap-14 xl:gap-16">
+          <div>
+            <SectionHeading
+              className="max-w-none"
+              eyebrow={startYoungCopy.eyebrow}
+              title="Why children matter"
+              description={startYoungCopy.description}
+            />
+            <blockquote className="reveal mt-8 rounded-xl2 border border-line bg-cream-100 px-6 py-6 sm:mt-10 sm:px-8 sm:py-8">
+              <p className="text-xl font-semibold leading-snug text-green-deep sm:text-2xl">
+                {startYoungCopy.hope}
+              </p>
+            </blockquote>
+          </div>
+          <div className="reveal flex flex-col justify-center lg:min-h-full lg:border-l lg:border-line lg:pl-10 xl:pl-12">
+            <h3 className="text-2xl font-extrabold text-green-deep">
+              {startYoungCopy.whySchoolsTitle}
+            </h3>
+            <p className="info-copy mt-4">{startYoungCopy.whySchools}</p>
+          </div>
+        </div>
       </Section>
 
       <Section tone="cream-100">
