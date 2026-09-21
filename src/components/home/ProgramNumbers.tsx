@@ -21,7 +21,7 @@ export function ProgramNumbers({
       <StatGrid
         className="mt-10"
         items={programNumbers}
-        columns={3}
+        columns={2}
         aria-label="Proposed school program figures"
       />
     </Section>

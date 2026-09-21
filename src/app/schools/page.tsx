@@ -14,7 +14,7 @@ import {
 import { startYoungCopy } from "@/data/home";
 import { faqItems } from "@/data/faq";
 import { schoolOperations } from "@/data/operations";
-import { equipmentCopy, partnershipCopy, revenueShareCopy } from "@/data/program";
+import { equipmentCopy, partnershipCopy } from "@/data/program";
 import { ProgramNumbers } from "@/components/home/ProgramNumbers";
 import { ProgramHowItWorks } from "@/components/home/ProgramHowItWorks";
 import { ValueExchange } from "@/components/home/ValueExchange";
@@ -24,7 +24,7 @@ import { Button } from "@/components/ui/Button";
 export const metadata: Metadata = {
   title: "For Schools",
   description:
-    "Fruiticana wants to give students an exciting new way to eat fruit. Under the proposed school model, Fruiticana provides two machines, stays involved, and the school receives 1/3 of Fruiticana sales generated through its program.",
+    "Fruiticana wants to give students an exciting new way to eat fruit. Under the proposed school model, Fruiticana provides two machines, maintains them, and stays involved with the school.",
   alternates: { canonical: "/schools" },
 };
 
@@ -104,17 +104,6 @@ export default function SchoolsPage() {
       <ProgramHowItWorks variant="home" showNumbers={false} />
 
       <ValueExchange />
-
-      <Section tone="cream-100">
-        <SectionHeading
-          title={revenueShareCopy.title}
-          description={revenueShareCopy.lead}
-        />
-        <p className="mt-6 max-w-3xl text-lg font-semibold leading-relaxed text-green-deep">
-          {revenueShareCopy.body}
-        </p>
-        <p className="info-copy mt-3 max-w-3xl">{revenueShareCopy.remainder}</p>
-      </Section>
 
       <FaqSection />
 

@@ -97,11 +97,6 @@ export const schoolGlanceStats: FactStat[] = [
     label: "Flavor options",
     note: "Two flavors in each machine",
   },
-  {
-    value: "1/3",
-    label: "Of Fruiticana sales to the school",
-    note: "From sales generated through its program",
-  },
 ];
 
 export const learnGlanceStats: FactStat[] = [

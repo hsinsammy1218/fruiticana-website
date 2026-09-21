@@ -52,7 +52,7 @@ export const faqItems: FaqItem[] = [
   {
     question: "What does the school receive?",
     answer:
-      "Under the proposed model, the participating school receives one-third (1/3) of Fruiticana sales generated through its program. How the remaining portion of sales is allocated has not been published.",
+      "Under the proposed model, Fruiticana provides the machines, product, and maintenance, and stays involved in operation and serving. Students get access to Fruiticana. Exact school obligations and any financial terms still need to be documented.",
   },
   {
     question: "What does participation cost the school?",

@@ -44,7 +44,7 @@ export const timeline: TimelineEntry[] = [
     period: "Today",
     title: "A renewed focus on students",
     description:
-      "The original idea is being brought back so students have an exciting new way to eat fruit — through a proposed school partnership in which Fruiticana provides the machines, stays involved, and the school shares in sales.",
+      "The original idea is being brought back so students have an exciting new way to eat fruit — through a proposed school partnership in which Fruiticana provides the machines and stays involved.",
   },
 ];
 

@@ -16,7 +16,10 @@ test.describe("for schools", () => {
     await expect(
       page.getByRole("heading", { name: "We Bring the Program. You Bring the Students." }),
     ).toBeVisible();
-    await expect(page.getByText("1/3").first()).toBeVisible();
+    await expect(page.getByText("1/3")).toHaveCount(0);
+    await expect(
+      page.getByRole("heading", { name: "Fruiticana Gives Back to the School" }),
+    ).toHaveCount(0);
     await expect(
       page.getByRole("heading", { name: "We Provide the Machines" }),
     ).toBeVisible();

@@ -47,7 +47,7 @@ export const visionPillars: VisionPillar[] = [
     step: "03",
     label: "How",
     title: "We bring Fruiticana to school",
-    body: "Under the proposed model, Fruiticana provides two machines per school, stays involved in maintenance and serving, and the participating school receives 1/3 of Fruiticana sales generated through its program.",
+    body: "Under the proposed model, Fruiticana provides two machines per school and stays involved in maintenance and serving so students can enjoy Fruiticana at school.",
     figure: "2",
     figureLabel: "Machines provided",
     icon: "school",

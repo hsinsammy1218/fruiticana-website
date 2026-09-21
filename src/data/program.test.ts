@@ -3,7 +3,6 @@ import {
   programNumbers,
   programSteps,
   proposedModelNotice,
-  revenueShareCopy,
   valueExchange,
 } from "@/data/program";
 import { faqItems } from "@/data/faq";
@@ -22,10 +21,6 @@ const publicProgramCopy = [
   proposedModelNotice,
   ...programNumbers.map((item) => `${item.value} ${item.label} ${item.note}`),
   ...programSteps.map((step) => `${step.title} ${step.body}`),
-  revenueShareCopy.title,
-  revenueShareCopy.lead,
-  revenueShareCopy.body,
-  revenueShareCopy.remainder,
   ...valueExchange.columns.flatMap((column) => column.items),
   valueExchange.schoolObligations,
   ...knownOperations.map((item) => `${item.title} ${item.body}`),
@@ -44,20 +39,20 @@ const publicProgramCopy = [
 ].join(" ");
 
 describe("proposed school program", () => {
-  it("states machines provided, maintenance, involvement, and 1/3 share as proposed", () => {
+  it("states machines provided, maintenance, and involvement as proposed", () => {
     expect(publicProgramCopy).toMatch(/proposed/i);
     expect(publicProgramCopy).toMatch(/two machines/i);
     expect(publicProgramCopy).toMatch(/two flavors/i);
     expect(publicProgramCopy).toMatch(/provides the (machinery|machines|equipment)/i);
     expect(publicProgramCopy).toMatch(/maintain/i);
     expect(publicProgramCopy).toMatch(/not simply dropping off equipment/i);
-    expect(publicProgramCopy).toMatch(/1\/3/);
   });
 
-  it("does not invent where the remaining 2/3 of sales goes", () => {
-    expect(publicProgramCopy).not.toMatch(/remaining two-thirds/i);
-    expect(publicProgramCopy).not.toMatch(/remaining 2\/3 goes to/i);
-    expect(revenueShareCopy.remainder).toMatch(/has not been published/i);
+  it("does not claim a school sales-share percentage", () => {
+    expect(publicProgramCopy).not.toMatch(/1\/3/);
+    expect(publicProgramCopy).not.toMatch(/one-third/i);
+    expect(publicProgramCopy).not.toMatch(/shares in (the program.?s )?sales/i);
+    expect(publicProgramCopy).not.toMatch(/of Fruiticana sales/i);
   });
 
   it("does not promise that children will always choose fruit", () => {
@@ -76,14 +71,13 @@ describe("proposed school program", () => {
     expect(currentProgram).toMatch(/proposed/i);
   });
 
-  it("keeps five scannable program steps in mission-then-share order", () => {
+  it("keeps four scannable program steps focused on machines, flavors, involvement, and students", () => {
     expect(programSteps.map((step) => step.title)).toEqual([
       "We Provide the Machines",
       "We Bring the Flavors",
       "We Stay Involved",
       "Students Enjoy Fruiticana",
-      "Your School Shares in Sales",
     ]);
-    expect(programNumbers.map((item) => item.value)).toEqual(["2", "4", "1/3"]);
+    expect(programNumbers.map((item) => item.value)).toEqual(["2", "4"]);
   });
 });

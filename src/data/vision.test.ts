@@ -31,7 +31,8 @@ describe("vision data", () => {
     expect(how?.title).toMatch(/school/i);
     expect(how?.body).toMatch(/proposed/i);
     expect(how?.body).toMatch(/machines/i);
-    expect(how?.body).toMatch(/1\/3/);
+    expect(how?.body).toMatch(/stays involved/i);
+    expect(how?.body).not.toMatch(/1\/3/);
     expect(how?.body).not.toMatch(/in-house/i);
   });
 });

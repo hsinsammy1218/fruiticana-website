@@ -3,7 +3,8 @@
  *
  * These facts may be stated as the proposed standard setup. They are not a
  * claim that Fruiticana is on school menus today. Do not invent unverified
- * logistics (staffing, payment, remaining 2/3, school obligations, flavors).
+ * logistics (staffing, payment, school obligations, flavors) or a sales-share
+ * percentage.
  */
 
 import type { FactStat } from "@/data/facts";
@@ -22,11 +23,6 @@ export const programNumbers: FactStat[] = [
     label: "Fruiticana flavor options",
     note: "Two flavors in each machine",
   },
-  {
-    value: "1/3",
-    label: "Of Fruiticana sales to the school",
-    note: "From sales generated through its program",
-  },
 ];
 
 export const programHowCopy = {
@@ -35,7 +31,7 @@ export const programHowCopy = {
   homeTitle: "How Fruiticana Works at Your School",
   schoolsTitle: "We Bring the Program. You Bring the Students.",
   description:
-    "Fruiticana provides the machines, stays involved, and gives students an exciting new way to eat fruit. The participating school shares in the program’s sales.",
+    "Fruiticana provides the machines, stays involved, and gives students an exciting new way to eat fruit.",
   numbersIntro:
     "Fruiticana provides and maintains the equipment and stays involved in operating the program.",
 } as const;
@@ -72,12 +68,6 @@ export const programSteps: ProgramStep[] = [
     body: "Students have access to an exciting new way to eat fruit — a frozen fruit experience they can look forward to.",
     icon: "fruit",
   },
-  {
-    step: "05",
-    title: "Your School Shares in Sales",
-    body: "The participating school receives one-third (1/3) of Fruiticana sales generated through its school program.",
-    icon: "school",
-  },
 ];
 
 export const equipmentCopy = {
@@ -91,14 +81,6 @@ export const partnershipCopy = {
   body: "Fruiticana provides the product and equipment and remains involved in the operation, maintenance, and serving process.",
 } as const;
 
-export const revenueShareCopy = {
-  title: "Fruiticana Gives Back to the School",
-  lead: "Students enjoy Fruiticana. The school shares in the program’s success.",
-  body: "Under the proposed model, the participating school receives one-third (1/3) of Fruiticana sales generated through its program.",
-  remainder:
-    "How the remaining portion of sales is allocated has not been published.",
-} as const;
-
 export type ValueExchangeColumn = {
   key: "fruiticana" | "students" | "school";
   label: string;
@@ -110,7 +92,7 @@ export const valueExchange = {
   eyebrow: "The value exchange",
   title: "What each partner receives",
   description:
-    "The administrator’s view of the proposed model: Fruiticana brings the program, students get the experience, and the school shares in sales.",
+    "The administrator’s view of the proposed model: Fruiticana brings the program, students get the experience, and the school hosts a hands-on partnership.",
   columns: [
     {
       key: "fruiticana",
@@ -138,7 +120,11 @@ export const valueExchange = {
       key: "school",
       label: "School",
       title: "Receives",
-      items: ["1/3 of Fruiticana sales"],
+      items: [
+        "Machines without purchase",
+        "Hands-on Fruiticana partnership",
+        "Documentation for school review",
+      ],
     },
   ] satisfies ValueExchangeColumn[],
   schoolObligations:
