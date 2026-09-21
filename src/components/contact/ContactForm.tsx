@@ -2,6 +2,7 @@
 
 import { useRef, useState } from "react";
 import { cn } from "@/lib/cn";
+import { site } from "@/data/site";
 import {
   interestTypes,
   resolveInterestType,
@@ -152,10 +153,22 @@ export function ContactForm({ defaultInterest }: { defaultInterest?: string }) {
           Thanks{fields.name ? `, ${fields.name.trim()}` : ""}!
         </h3>
         <p className="mt-2 leading-relaxed text-muted">
-          Your school inquiry is complete. Please note that Fruiticana&rsquo;s
-          contact inbox isn&rsquo;t connected yet, so this form doesn&rsquo;t
-          deliver messages at the moment. Message delivery will be enabled once
-          a verified business inbox is in place.
+          Your school inquiry is complete on this page. This form does not send
+          messages yet, so please email{" "}
+          <a
+            href={`mailto:${site.contact.email}`}
+            className="font-semibold text-green-deep underline-offset-2 hover:underline"
+          >
+            {site.contact.email}
+          </a>{" "}
+          or call{" "}
+          <a
+            href={`tel:+1${site.contact.phone?.replace(/\D/g, "") ?? ""}`}
+            className="font-semibold text-green-deep underline-offset-2 hover:underline"
+          >
+            {site.contact.phone}
+          </a>{" "}
+          to reach Fruiticana directly.
         </p>
         <button
           type="button"

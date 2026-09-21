@@ -6,11 +6,9 @@
  * rewritten so school decision-makers understand why Fruiticana exists
  * for students — then what it is, and how a school conversation can start.
  *
- * IMPORTANT (see PLAN.md content audit): current business contact details are
- * NOT known. Do not invent an email, phone number, address, or social account.
- * These fields intentionally stay `null` until the business provides verified,
- * current information. UI renders honest "coming soon"/placeholder states when
- * a value is `null`.
+ * Contact fields: only publish email, phone, or address values the business
+ * has verified as current. Leave any unknown field `null` so the UI can show
+ * an honest "coming soon" state. Do not invent social accounts.
  */
 
 const siteUrl =
@@ -40,14 +38,13 @@ export const site = {
   url: siteUrl,
 
   /**
-   * Contact + presence: all null until verified. Never fabricate.
-   * Historical documents list past Connecticut addresses (Waterbury / Wolcott),
-   * but those are ~2004-2008 and must not be presented as current.
+   * Contact + presence. Email, phone, and address below were provided by the
+   * business for school outreach. Social accounts stay null until verified.
    */
   contact: {
-    email: null as string | null,
-    phone: null as string | null,
-    address: null as string | null,
+    email: "fruiticana1@hotmail.com" as string | null,
+    phone: "203-709-0992" as string | null,
+    address: "16 Pleasant St, Waterbury, CT 06706" as string | null,
   },
   social: {
     instagram: null as string | null,

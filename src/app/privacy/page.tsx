@@ -46,9 +46,9 @@ export default function PrivacyPage() {
         </p>
         <h2>Contact</h2>
         <p>
-          Questions about privacy can be recorded through our{" "}
-          <Link href="/contact">contact page</Link>. Direct contact details will
-          be added once available.
+          Questions about privacy can be sent through our{" "}
+          <Link href="/contact">contact page</Link> or emailed to{" "}
+          <a href="mailto:fruiticana1@hotmail.com">fruiticana1@hotmail.com</a>.
         </p>
       </Prose>
     </Section>

@@ -12,10 +12,29 @@ export const metadata: Metadata = {
   alternates: { canonical: "/contact" },
 };
 
-const contactRows: { label: string; value: string | null }[] = [
-  { label: "Email", value: site.contact.email },
-  { label: "Phone", value: site.contact.phone },
-  { label: "Address", value: site.contact.address },
+type ContactRow = {
+  label: string;
+  value: string | null;
+  href?: string;
+};
+
+const contactRows: ContactRow[] = [
+  {
+    label: "Email",
+    value: site.contact.email,
+    href: site.contact.email ? `mailto:${site.contact.email}` : undefined,
+  },
+  {
+    label: "Phone",
+    value: site.contact.phone,
+    href: site.contact.phone
+      ? `tel:+1${site.contact.phone.replace(/\D/g, "")}`
+      : undefined,
+  },
+  {
+    label: "Address",
+    value: site.contact.address,
+  },
 ];
 
 type Search = { interest?: string };
@@ -56,8 +75,10 @@ export default async function ContactPage({
                   needs answered.
                 </li>
                 <li>
-                  Once a verified inbox is connected, inquiries will be routed to
-                  Fruiticana for follow-up on the proposed school program.
+                  You can also email or call Fruiticana directly using the contact
+                  details on this page. The form on this site does not send messages
+                  yet; use email or phone for follow-up until form delivery is
+                  connected.
                 </li>
               </ol>
             </div>
@@ -71,7 +92,16 @@ export default async function ContactPage({
                       {row.label}
                     </dt>
                     <dd className="text-right text-sm text-muted">
-                      {row.value ?? "Coming soon"}
+                      {row.value && row.href ? (
+                        <a
+                          href={row.href}
+                          className="font-medium text-green-deep underline-offset-2 hover:underline"
+                        >
+                          {row.value}
+                        </a>
+                      ) : (
+                        (row.value ?? "Coming soon")
+                      )}
                     </dd>
                   </div>
                 ))}
@@ -81,10 +111,9 @@ export default async function ContactPage({
             <div className="rounded-xl2 border border-line bg-cream-100 p-6">
               <h2 className="text-lg font-bold text-green-deep">Response times</h2>
               <p className="info-copy mt-2">
-                Message delivery isn&rsquo;t active yet, so we can&rsquo;t promise
-                a reply at the moment. Once a verified business inbox is
-                connected, school inquiries submitted here will be routed to the
-                right team.
+                Prefer email or phone for the fastest reply. The school inquiry
+                form on this page does not deliver messages yet, so submissions
+                here are not routed automatically.
               </p>
             </div>
           </aside>
