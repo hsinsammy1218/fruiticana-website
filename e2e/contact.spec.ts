@@ -39,7 +39,8 @@ test.describe("contact form", () => {
 
     const status = page.getByRole("status").filter({ hasText: /thanks, sam/i });
     await expect(status).toBeVisible();
-    await expect(status).toContainText(/doesn.?t deliver messages/i);
+    await expect(status).toContainText(/does not send messages yet/i);
+    await expect(status).toContainText(/fruiticana1@hotmail\.com/i);
   });
 
   test("defaults interest to School Food Service", async ({ page }) => {
@@ -66,12 +67,21 @@ test.describe("contact form", () => {
     );
   });
 
-  test("shows coming-soon contact details without a store locator", async ({
+  test("shows published contact details without a store locator", async ({
     page,
   }) => {
     await page.goto("/contact");
     await expect(page.getByRole("heading", { name: "What happens next" })).toBeVisible();
-    await expect(page.getByText("Coming soon").first()).toBeVisible();
+    await expect(page.getByRole("heading", { name: "Ways to reach us" })).toBeVisible();
+    await expect(
+      page.getByRole("link", { name: "fruiticana1@hotmail.com" }),
+    ).toHaveAttribute("href", "mailto:fruiticana1@hotmail.com");
+    await expect(page.getByRole("link", { name: "203-709-0992" })).toHaveAttribute(
+      "href",
+      "tel:+12037090992",
+    );
+    await expect(page.getByText("16 Pleasant St, Waterbury, CT 06706")).toBeVisible();
+    await expect(page.getByText("Coming soon")).toHaveCount(0);
     await expect(
       page.getByRole("heading", { name: /availability information is coming soon/i }),
     ).toHaveCount(0);
@@ -118,7 +128,8 @@ test.describe("contact form", () => {
       (button as HTMLButtonElement).click();
     });
     await expect(page.getByRole("status")).toHaveCount(1);
-    await expect(page.getByRole("status")).toContainText(/doesn.?t deliver messages/i);
+    await expect(page.getByRole("status")).toContainText(/does not send messages yet/i);
+    await expect(page.getByRole("status")).toContainText(/fruiticana1@hotmail\.com/i);
     await expect(
       page.getByRole("button", { name: "Request School Information" }),
     ).toHaveCount(0);

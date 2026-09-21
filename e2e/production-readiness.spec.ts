@@ -89,7 +89,8 @@ test.describe("production readiness", () => {
     await expect(
       page.getByRole("status").filter({ hasText: /thanks, jordan/i }),
     ).toBeVisible();
-    await expect(page.getByRole("status")).toContainText(/doesn.?t deliver messages/i);
+    await expect(page.getByRole("status")).toContainText(/does not send messages yet/i);
+    await expect(page.getByRole("status")).toContainText(/fruiticana1@hotmail\.com/i);
 
     failures.expectClean();
   });

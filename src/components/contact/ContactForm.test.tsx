@@ -89,7 +89,9 @@ describe("ContactForm", () => {
 
     const status = screen.getByRole("status");
     expect(status).toHaveTextContent(/thanks, sam/i);
-    expect(status).toHaveTextContent(/doesn.?t deliver messages/i);
+    expect(status).toHaveTextContent(/does not send messages yet/i);
+    expect(status).toHaveTextContent(/fruiticana1@hotmail\.com/i);
+    expect(status).toHaveTextContent(/203-709-0992/);
   });
 
   it("resets after submitting another inquiry", async () => {

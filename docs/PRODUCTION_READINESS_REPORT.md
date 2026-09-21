@@ -223,9 +223,8 @@ No remaining **P0** or **P1** defects that break load, navigation, the inquiry U
 
 These are not software bugs. Do not invent answers on the site.
 
-- Verified business inbox (and optional CRM) so school inquiries actually deliver.
+- Verified form-delivery backend (or CRM) so school inquiry form submissions are routed automatically. Direct email and phone are published; the on-site form still does not transmit messages.
 - Production domain for `NEXT_PUBLIC_SITE_URL`.
-- Current email, phone, and mailing address (sidebar currently “Coming soon”).
 - Social accounts, if any.
 - What participation costs the school (if anything); payment flow.
 - Day-to-day staffing, serving hours, restocking, cleaning, installation, electricity, storage.

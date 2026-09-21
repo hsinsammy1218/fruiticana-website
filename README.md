@@ -93,8 +93,8 @@ as `?flavor=` is preserved). `/story` redirects to `/about`. Individual
   vector file from the owner can still replace it.
 - **2007 reference JPEGs** are stored in `docs/archive-reference/` as visual
   reference only. They are not served on the live site.
-- **Contact details / social** are `null` in `src/data/site.ts` and render as
-  "coming soon". Fill them in only with verified, current information.
+- **Contact details** (email, phone, address) live in `src/data/site.ts`.
+  Social accounts remain `null` until verified.
 - **Document images** are shown on Resources and documentation cards for school
   review. Original PDF downloads stay unpublished until rights-cleared source
   files exist.
@@ -157,7 +157,8 @@ Confirm before switching any content to present-tense school-program marketing:
 - [ ] Founder names/credentials spelling and permission to list publicly
 - [ ] Testimonial permission / keep clearly historical
 - [ ] Pricing (kept off the site until a current menu exists)
-- [ ] Contact, domain, social, locations
+- [ ] Contact social accounts (email, phone, and Waterbury address are published)
+- [ ] Domain / production `NEXT_PUBLIC_SITE_URL`
 - [ ] Logo file and trademark presentation
 - [ ] Whether "Creamless Ice Cream" is still the product name
 - [ ] Product photography of the actual frozen dessert (a 4 oz cup) — owner-provided asset needed. The school-kitchens section uses an illustrative stock gelato photo (`public/images/sections/serving-foreground.webp`); replace with a current Fruiticana cup photo when available.
