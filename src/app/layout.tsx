@@ -87,6 +87,18 @@ export default function RootLayout({
     description: site.shortDescription,
     logo: `${site.url}/icon.svg`,
     slogan: site.tagline,
+    email: site.contact.email ?? undefined,
+    telephone: site.contact.phone ?? undefined,
+    address: site.contact.address
+      ? {
+          "@type": "PostalAddress",
+          streetAddress: "16 Pleasant St",
+          addressLocality: "Waterbury",
+          addressRegion: "CT",
+          postalCode: "06706",
+          addressCountry: "US",
+        }
+      : undefined,
   };
 
   const websiteLd = {
