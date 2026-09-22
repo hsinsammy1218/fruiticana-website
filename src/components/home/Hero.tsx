@@ -23,8 +23,9 @@ export function Hero() {
 
       <Container className="relative grid items-center gap-8 py-12 sm:py-16 lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] lg:gap-10 lg:py-20">
         <div className="hero-rise max-w-xl">
-          <h1 className="font-display text-[clamp(2.6rem,7vw,5.25rem)] font-semibold leading-[0.95] tracking-[-0.03em] text-green-deep">
-            {heroCopy.line1} {heroCopy.line2}
+          <h1 className="font-display text-[clamp(1.7rem,8.2vw,5.25rem)] font-semibold leading-[0.95] tracking-[-0.03em] text-green-deep">
+            <span className="block">{heroCopy.line1}</span>
+            <span className="block">{heroCopy.line2}</span>
           </h1>
           <p className="mt-5 max-w-md text-lg leading-snug text-ink sm:text-xl">
             {heroCopy.subhead}
@@ -51,6 +52,7 @@ export function Hero() {
               alt="Cut mango, strawberries, orange, pineapple, apple, and blueberries"
               fill
               priority
+              loading="eager"
               sizes="(max-width: 1024px) 100vw, 46vw"
               className="object-cover"
             />

@@ -35,6 +35,7 @@ test.describe("home @cross-browser", () => {
     });
     const schools = page.getByRole("heading", {
       name: "Bring Fruiticana to your students.",
+      exact: true,
     });
     const how = page.getByRole("heading", { name: "How it works" });
 

@@ -95,7 +95,10 @@ test.describe("contact form", () => {
   test("trims leading and trailing spaces on a valid inquiry", async ({ page }) => {
     await page.goto("/contact");
     await page.getByLabel(/^name/i).fill("  Sam  ");
-    await page.getByRole("textbox", { name: /^school \*/i }).fill("  Lincoln Elementary  ");
+    await page.getByRole("textbox", { name: /^school \/ organization/i }).fill("  Lincoln Elementary  ");
+    await page.getByLabel(/^role/i).selectOption("Principal");
+    await page.getByLabel(/^city/i).fill("Waterbury");
+    await page.getByLabel(/^state/i).fill("CT");
     await page.getByLabel(/email/i).fill("  sam@example.com  ");
     await page.getByLabel(/message/i).fill(
       "  We would like nutrition sheets for a cafeteria review.  ",
@@ -107,7 +110,10 @@ test.describe("contact form", () => {
   test("accepts special characters and a long but valid message", async ({ page }) => {
     await page.goto("/contact");
     await page.getByLabel(/^name/i).fill("Sam O'Brien-王");
-    await page.getByRole("textbox", { name: /^school \*/i }).fill('Lincoln & Washington #1');
+    await page.getByRole("textbox", { name: /^school \/ organization/i }).fill('Lincoln & Washington #1');
+    await page.getByLabel(/^role/i).selectOption("Principal");
+    await page.getByLabel(/^city/i).fill("Waterbury");
+    await page.getByLabel(/^state/i).fill("CT");
     await page.getByLabel(/email/i).fill("sam+food@example.com");
     await page.getByLabel(/message/i).fill(
       `Please send 2008 panels, the 4 oz serving notes, and the "Creamless Ice Cream" story.\n${"Fruit flavor review. ".repeat(40)}`,

@@ -101,7 +101,10 @@ export default function SchoolsPage() {
         </div>
       </Section>
 
-      <ProgramNumbers />
+      <ProgramNumbers
+        heading="Two machines. Four flavors."
+        description="Fruiticana provides and maintains the equipment and stays involved. The school does not purchase the machines."
+      />
 
       <Section>
         <SectionHeading title={equipmentCopy.title} description={equipmentCopy.body} />
