@@ -46,32 +46,26 @@ export function FlavorHero({ flavor }: { flavor: Flavor }) {
           {flavor.detail}
         </p>
 
-        <div className="mt-8 grid grid-cols-1 gap-8 lg:grid-cols-2 lg:items-stretch lg:gap-x-10 lg:gap-y-4">
-          <div
-            className="reveal relative min-h-0 aspect-[4/3] overflow-hidden rounded-xl2 border border-line bg-white shadow-soft lg:aspect-auto lg:h-full lg:min-h-full"
-            data-revealed="true"
-          >
-            <FlavorImage
-              flavor={flavor}
-              priority
-              fill
-              className="object-center"
-            />
+        <div className="mt-8 grid grid-cols-1 gap-8 lg:grid-cols-2 lg:items-center">
+          <div className="relative aspect-[4/3] overflow-hidden rounded-xl2 border border-line bg-white shadow-soft">
+            <FlavorImage flavor={flavor} priority fill className="object-center" />
           </div>
+          <p className="max-w-xl text-lg leading-relaxed text-muted">
+            {flavor.name} is part of the original documented lineup. The fruit
+            photo stands in until a rights-cleared product photo is available.
+            Nutrition below is the 2008 laboratory panel, not a current label.
+          </p>
+        </div>
 
-          <div id="nutrition" className="scroll-mt-24">
-            <h2 className="text-2xl font-extrabold text-green-deep sm:text-3xl">
-              Nutrition Facts
-            </h2>
-            <p className="mt-2 text-sm text-muted">
-              Full 2008 Nutrition Facts panel for {flavor.name}.
-            </p>
-            <div className="mt-4">
-              <NutritionPanel flavor={flavor} />
-            </div>
+        <div id="nutrition" className="mt-12 scroll-mt-24 max-w-xl">
+          <h2 className="font-display text-3xl text-green-deep">Nutrition Facts</h2>
+          <p className="mt-2 text-sm text-muted">
+            Full 2008 Nutrition Facts panel for {flavor.name}.
+          </p>
+          <div className="mt-4">
+            <NutritionPanel flavor={flavor} />
           </div>
-
-          <div className="lg:col-start-2">
+          <div className="mt-6">
             <Button href={`/product?flavor=${flavor.slug}#nutrition`}>
               Compare all flavor panels
             </Button>

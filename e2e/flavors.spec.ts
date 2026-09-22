@@ -14,7 +14,7 @@ test.describe("flavors", () => {
 
     for (const slug of flavorSlugs) {
       await expect(
-        page.locator(`a[href="/flavors/${slug}#nutrition"]`),
+        page.locator(`a[href="/flavors/${slug}"]`),
       ).toBeVisible();
     }
   });

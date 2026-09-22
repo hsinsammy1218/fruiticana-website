@@ -7,14 +7,14 @@ test.describe("navigation @cross-browser", () => {
     await page.goto("/");
 
     const primary = page.getByRole("navigation", { name: "Primary" });
-    await expect(primary.getByRole("link", { name: "About Fruiticana" })).toBeVisible();
+    await expect(primary.getByRole("link", { name: "Our Story" })).toBeVisible();
     await expect(primary.getByRole("link", { name: "For Schools" })).toBeVisible();
     await expect(page.getByRole("button", { name: "Open menu" })).toBeHidden();
 
     for (const item of [
-      { name: "About Fruiticana", url: /\/about$/ },
+      { name: "Our Story", url: /\/about$/ },
       { name: "For Schools", url: /\/schools$/ },
-      { name: "Product & Nutrition", url: /\/product$/ },
+      { name: "Fruiticana", url: /\/product$/ },
       { name: "Contact", url: /\/contact$/ },
     ]) {
       await page.goto("/");
@@ -44,13 +44,13 @@ test.describe("navigation @cross-browser", () => {
     await expect(primary.locator("[aria-current=page]")).toHaveCount(0);
 
     await page.goto("/about");
-    await expect(primary.getByRole("link", { name: "About Fruiticana" })).toHaveAttribute(
+    await expect(primary.getByRole("link", { name: "Our Story" })).toHaveAttribute(
       "aria-current",
       "page",
     );
 
     await page.goto("/flavors/mango");
-    await expect(primary.getByRole("link", { name: "Product & Nutrition" })).toHaveAttribute(
+    await expect(primary.getByRole("link", { name: "Fruiticana" })).toHaveAttribute(
       "aria-current",
       "page",
     );
@@ -63,7 +63,7 @@ test.describe("navigation @cross-browser", () => {
     await page.goto("/");
     const footer = page.getByRole("contentinfo");
 
-    await footer.getByRole("link", { name: "Product & Nutrition" }).click();
+    await footer.getByRole("link", { name: "Fruiticana", exact: true }).click();
     await expect(page).toHaveURL(/\/product$/);
 
     await page.goto("/");
@@ -112,7 +112,7 @@ test.describe("navigation @cross-browser", () => {
     await page.keyboard.press("Tab");
     await expect(
       page.getByRole("navigation", { name: "Primary" }).getByRole("link", {
-        name: "About Fruiticana",
+        name: "Our Story",
       }),
     ).toBeFocused();
 

@@ -7,7 +7,7 @@ test.describe("user flows", () => {
     await page.getByRole("link", { name: "See flavors and nutrition" }).click();
     await expect(page).toHaveURL(/\/product/);
 
-    await page.locator('a[href="/flavors/mango#nutrition"]').click();
+    await page.locator('a[href="/flavors/mango"]').first().click();
     await expect(page).toHaveURL(/\/flavors\/mango/);
     await expect(page.getByRole("heading", { level: 1, name: "Mango" })).toBeVisible();
     await expect(page.getByText("Calories", { exact: true })).toBeVisible();
@@ -51,7 +51,7 @@ test.describe("user flows", () => {
       .getByRole("main")
       .getByRole("link", { name: "Request School Information" })
       .click();
-    await expect(page.getByLabel(/interest type/i)).toHaveValue(
+    await expect(page.getByLabel(/reason for inquiry/i)).toHaveValue(
       "Healthy Snack Program",
     );
   });

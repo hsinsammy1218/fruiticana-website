@@ -9,8 +9,8 @@ export const primaryRoutes = [
   },
   {
     path: "/about",
-    heading: /a new way to eat fruit/i,
-    title: /About Fruiticana/,
+    heading: /why fruiticana exists/i,
+    title: /Our Story/,
   },
   {
     path: "/schools",
@@ -19,8 +19,8 @@ export const primaryRoutes = [
   },
   {
     path: "/product",
-    heading: /flavors, servings, and nutrition/i,
-    title: /Product & Nutrition/,
+    heading: /what is fruiticana/i,
+    title: /The product/,
   },
   {
     path: "/resources",
@@ -170,10 +170,13 @@ export async function fillSchoolInquiry(
 ) {
   const name = options?.name ?? "Sam";
   await page.getByLabel(/^name/i).fill(name);
-  await page.getByRole("textbox", { name: /^school \*/i }).fill("Lincoln Elementary");
+  await page.getByRole("textbox", { name: /^school \/ organization/i }).fill("Lincoln Elementary");
+  await page.getByLabel(/^role/i).selectOption("Principal");
+  await page.getByLabel(/^city/i).fill("Waterbury");
+  await page.getByLabel(/^state/i).fill("CT");
   await page.getByLabel(/email/i).fill("sam@example.com");
   if (options?.interest) {
-    await page.getByLabel(/interest type/i).selectOption(options.interest);
+    await page.getByLabel(/reason for inquiry/i).selectOption(options.interest);
   }
   await page.getByLabel(/message/i).fill(
     "We would like nutrition sheets for a cafeteria review at our school.",

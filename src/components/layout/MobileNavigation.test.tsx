@@ -31,11 +31,11 @@ describe("MobileNavigation", () => {
     expect(screen.getByRole("link", { name: "Home" })).not.toHaveAttribute(
       "aria-current",
     );
-    expect(screen.getByRole("link", { name: "Product & Nutrition" })).toHaveAttribute(
+    expect(screen.getByRole("link", { name: /^Fruiticana$/ })).toHaveAttribute(
       "href",
       "/product",
     );
-    expect(screen.getByRole("link", { name: "About Fruiticana" })).toHaveAttribute(
+    expect(screen.getByRole("link", { name: "Our Story" })).toHaveAttribute(
       "href",
       "/about",
     );
@@ -52,7 +52,7 @@ describe("MobileNavigation", () => {
     );
 
     expect(
-      screen.getByRole("link", { name: "Product & Nutrition" }),
+      screen.getByRole("link", { name: /^Fruiticana$/ }),
     ).toHaveAttribute("aria-current", "page");
     expect(screen.getByRole("link", { name: "Home" })).not.toHaveAttribute(
       "aria-current",

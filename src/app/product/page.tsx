@@ -23,9 +23,9 @@ import { getNutritionGlanceStats, getNutritionSnapshot } from "@/lib/nutrition";
 import { StatGrid } from "@/components/ui/StatGrid";
 
 export const metadata: Metadata = {
-  title: "Product & Nutrition",
+  title: "The product",
   description:
-    "Original Fruiticana flavors, historical 4 oz laboratory servings, 2008 Nutrition Facts panels, and a 2007 ingredient list for school review — with current testing still needed before launch.",
+    "What Fruiticana is, the original fruit flavors, historical ingredients, and 2008 Nutrition Facts panels for school review.",
   alternates: { canonical: "/product" },
 };
 
@@ -46,7 +46,7 @@ export default async function ProductPage({
       {
         "@type": "ListItem",
         position: 2,
-        name: "Product & Nutrition",
+        name: "Fruiticana",
         item: `${site.url}/product`,
       },
     ],
@@ -55,20 +55,37 @@ export default async function ProductPage({
   return (
     <>
       <JsonLd data={breadcrumbLd} />
-      <Section id="flavors" className="scroll-mt-24">
+      <Section>
         <SectionHeading
           as="h1"
           eyebrow={site.productLine}
-          title="Flavors, servings, and nutrition"
-          description={`${site.tagline} These are the original documented flavors, the historical 4 oz laboratory serving, and Nutrition Facts panels for school review. Under the proposed school setup, a participating school would offer four flavors at a time — two per machine. Which four, current availability, and a current formula still need to be confirmed.`}
+          title="What is Fruiticana?"
+          description="A fruit-based frozen treat. The cold, smooth experience students already know, built around fruit. Details below move from the product to flavors, then to ingredients and nutrition."
         />
-        <div className="mt-10 sm:mt-12">
-          <SectionHeading
-            title="Twelve original fruit flavors"
-            description="The original documented Cream-Less Ice Crème lineup: Apple, Apricot, Banana, Blueberry, Cantaloupe, Grapefruit, Lemonade, Mango, Orange, Pineapple, Raisin, and Strawberry. Each flavor starts with fruit. Open a flavor for its product sheet and the full 2008 Nutrition Facts panel. A participating school under the proposed two-machine setup would offer four flavors at a time. Which four still needs to be confirmed."
-          />
-          <FlavorGrid className="mt-8 sm:mt-10" flavors={flavors} />
+      </Section>
+
+      <Section id="flavors" tone="white" className="scroll-mt-24">
+        <SectionHeading
+          title="Twelve original fruit flavors"
+          description="The original documented Cream-Less Ice Crème lineup: Apple, Apricot, Banana, Blueberry, Cantaloupe, Grapefruit, Lemonade, Mango, Orange, Pineapple, Raisin, and Strawberry. Each flavor starts with fruit. These are not a confirmed current menu. A participating school would offer four flavors at a time. Which four still needs to be confirmed."
+        />
+        <FlavorGrid className="mt-8 sm:mt-10" flavors={flavors} />
+      </Section>
+
+      <Section id="ingredients" className="scroll-mt-24">
+        <SectionHeading
+          eyebrow="What's inside"
+          title="What's actually in Fruiticana?"
+          description={ingredientsSectionIntro}
+        />
+        <HistoricalNotice className="mt-8 max-w-3xl" label="2007 recipe / 2008 panels">
+          {currentVerificationNotice}
+        </HistoricalNotice>
+        <div className="mt-8">
+          <IngredientRecipe />
         </div>
+        <p className="info-copy mt-6 max-w-3xl">{wheatProteinFlag}</p>
+        <p className="mt-3 text-sm text-muted">{recipeIngredientsSource}</p>
       </Section>
 
       <Section id="servings" tone="cream-100" className="scroll-mt-24">
@@ -124,23 +141,14 @@ export default async function ProductPage({
         </div>
       </Section>
 
-      <Section id="ingredients" tone="white" className="scroll-mt-24">
+      <Section id="documentation" tone="white" className="scroll-mt-24">
         <SectionHeading
-          eyebrow="Ingredients & allergens"
-          title="What's Actually in Fruiticana?"
-          description={ingredientsSectionIntro}
+          title="Detailed documentation"
+          description="Letters and records from the Connecticut chapter are shared for school review. They are historical, not current certifications."
         />
-        <HistoricalNotice className="mt-8 max-w-3xl" label="2007 recipe / 2008 panels">
-          {currentVerificationNotice}
-        </HistoricalNotice>
-        <div className="mt-8">
-          <IngredientRecipe />
-        </div>
-        <p className="info-copy mt-6 max-w-3xl">{wheatProteinFlag}</p>
-        <p className="mt-3 text-sm text-muted">{recipeIngredientsSource}</p>
         <div className="mt-6">
-          <Button href="/contact?interest=Nutrition%20Information">
-            Ask about school nutrition review
+          <Button href="/resources" variant="secondary">
+            View documentation
           </Button>
         </div>
       </Section>

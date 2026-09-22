@@ -41,7 +41,7 @@ test.describe("for schools", () => {
 
     await expect(page.getByRole("link", { name: /download pdf/i })).toHaveCount(0);
     await expect(
-      page.getByRole("main").getByRole("link", { name: "Product & Nutrition" }),
+      page.getByRole("main").getByRole("link", { name: "Fruiticana", exact: true }),
     ).toHaveAttribute("href", "/product");
     await page.getByRole("link", { name: "Request School Information" }).last().click();
     await expect(page).toHaveURL(/\/contact$/);

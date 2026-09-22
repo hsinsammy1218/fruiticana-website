@@ -104,12 +104,13 @@ export function ContactForm({ defaultInterest }: { defaultInterest?: string }) {
     } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(values.email.trim())) {
       next.email = "Please enter a valid email address.";
     }
+    if (!values.role) next.role = "Please choose your role.";
+    if (!values.city.trim()) next.city = "Please enter a city.";
+    if (!values.state.trim()) next.state = "Please enter a state.";
     if (!interestTypes.includes(values.interest as InterestType)) {
-      next.interest = "Please choose an interest type.";
+      next.interest = "Please choose a reason for inquiry.";
     }
-    if (!values.message.trim()) {
-      next.message = "Please enter a message.";
-    } else if (values.message.trim().length < 10) {
+    if (values.message.trim() && values.message.trim().length < 10) {
       next.message = "Please add a little more detail (at least 10 characters).";
     }
     return next;
@@ -186,7 +187,15 @@ export function ContactForm({ defaultInterest }: { defaultInterest?: string }) {
   }
 
   return (
-    <form ref={formRef} onSubmit={handleSubmit} noValidate className="grid gap-4">
+    <form
+      ref={formRef}
+      onSubmit={handleSubmit}
+      noValidate
+      className="grid gap-5 rounded-xl2 border border-line bg-white p-5 sm:p-8"
+    >
+      <p className="text-base leading-relaxed text-muted">
+        Start a conversation about your school. A short note is enough.
+      </p>
       <div className="grid gap-4 sm:grid-cols-2">
         <Field
           id="name"
@@ -200,7 +209,7 @@ export function ContactForm({ defaultInterest }: { defaultInterest?: string }) {
         />
         <Field
           id="school"
-          label="School"
+          label="School / Organization"
           required
           error={errors.school}
           value={fields.school}
@@ -225,7 +234,9 @@ export function ContactForm({ defaultInterest }: { defaultInterest?: string }) {
         />
         <SelectField
           id="role"
-          label="Position / title"
+          label="Role"
+          required
+          error={errors.role}
           value={fields.role}
           onChange={(value) => update("role", value)}
           options={roles}
@@ -234,6 +245,8 @@ export function ContactForm({ defaultInterest }: { defaultInterest?: string }) {
         <Field
           id="city"
           label="City"
+          required
+          error={errors.city}
           value={fields.city}
           onChange={(value) => update("city", value)}
           autoComplete="address-level2"
@@ -242,6 +255,8 @@ export function ContactForm({ defaultInterest }: { defaultInterest?: string }) {
         <Field
           id="state"
           label="State"
+          required
+          error={errors.state}
           value={fields.state}
           onChange={(value) => update("state", value)}
           autoComplete="address-level1"
@@ -272,7 +287,7 @@ export function ContactForm({ defaultInterest }: { defaultInterest?: string }) {
       <div className="grid gap-4 sm:grid-cols-2">
         <SelectField
           id="studentCount"
-          label="Estimated number of students"
+          label="Approximate number of students"
           value={fields.studentCount}
           onChange={(value) => update("studentCount", value)}
           options={studentRanges}
@@ -280,7 +295,7 @@ export function ContactForm({ defaultInterest }: { defaultInterest?: string }) {
         />
         <SelectField
           id="interest"
-          label="Interest type"
+          label="Reason for inquiry"
           required
           error={errors.interest}
           value={fields.interest}
@@ -291,7 +306,7 @@ export function ContactForm({ defaultInterest }: { defaultInterest?: string }) {
 
       <div>
         <label htmlFor="message" className="text-sm font-semibold text-green-deep">
-          Message <span className="text-strawberry">*</span>
+          Message / Questions
         </label>
         <textarea
           id="message"
@@ -299,7 +314,6 @@ export function ContactForm({ defaultInterest }: { defaultInterest?: string }) {
           rows={5}
           value={fields.message}
           onChange={(e) => update("message", e.target.value)}
-          aria-required="true"
           aria-invalid={errors.message ? true : undefined}
           aria-describedby={errors.message ? "message-error" : undefined}
           maxLength={fieldMaxLength.message}
