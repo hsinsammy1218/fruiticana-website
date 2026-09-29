@@ -46,29 +46,32 @@ export function FlavorHero({ flavor }: { flavor: Flavor }) {
           {flavor.detail}
         </p>
 
-        <div className="mt-8 grid grid-cols-1 gap-8 lg:grid-cols-2 lg:items-center">
-          <div className="relative aspect-[4/3] overflow-hidden rounded-xl2 border border-line bg-white shadow-soft">
-            <FlavorImage flavor={flavor} priority fill className="object-center" />
+        <div className="mt-8 grid grid-cols-1 gap-8 lg:grid-cols-2 lg:items-start lg:gap-10">
+          <div className="min-w-0">
+            <div className="relative aspect-[4/3] overflow-hidden rounded-xl2 border border-line bg-white shadow-soft">
+              <FlavorImage flavor={flavor} priority fill className="object-center" />
+            </div>
+            <p className="mt-4 max-w-xl text-base leading-relaxed text-muted">
+              {flavor.name} is part of the original documented lineup. The fruit
+              photo stands in until a rights-cleared product photo is available.
+              The nutrition panel is the 2008 laboratory record, not a current
+              label.
+            </p>
           </div>
-          <p className="max-w-xl text-lg leading-relaxed text-muted">
-            {flavor.name} is part of the original documented lineup. The fruit
-            photo stands in until a rights-cleared product photo is available.
-            Nutrition below is the 2008 laboratory panel, not a current label.
-          </p>
-        </div>
 
-        <div id="nutrition" className="mt-12 scroll-mt-24 max-w-xl">
-          <h2 className="font-display text-3xl text-green-deep">Nutrition Facts</h2>
-          <p className="mt-2 text-sm text-muted">
-            Full 2008 Nutrition Facts panel for {flavor.name}.
-          </p>
-          <div className="mt-4">
-            <NutritionPanel flavor={flavor} />
-          </div>
-          <div className="mt-6">
-            <Button href={`/product?flavor=${flavor.slug}#nutrition`}>
-              Compare all flavor panels
-            </Button>
+          <div id="nutrition" className="min-w-0 scroll-mt-24">
+            <h2 className="font-display text-3xl text-green-deep">Nutrition Facts</h2>
+            <p className="mt-2 text-sm text-muted">
+              Full 2008 Nutrition Facts panel for {flavor.name}.
+            </p>
+            <div className="mt-4">
+              <NutritionPanel flavor={flavor} />
+            </div>
+            <div className="mt-6">
+              <Button href={`/product?flavor=${flavor.slug}#nutrition`}>
+                Compare all flavor panels
+              </Button>
+            </div>
           </div>
         </div>
       </Container>
