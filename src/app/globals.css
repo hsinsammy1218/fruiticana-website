@@ -157,6 +157,18 @@
     animation: hero-rise 0.9s ease-out both;
   }
 
+  .hero-rise-delay-1 {
+    animation-delay: 0.12s;
+  }
+
+  .hero-rise-delay-2 {
+    animation-delay: 0.24s;
+  }
+
+  .hero-media {
+    animation: hero-media-in 1.35s ease-out both;
+  }
+
   @keyframes hero-float {
     0%,
     100% {
@@ -178,6 +190,17 @@
     }
   }
 
+  @keyframes hero-media-in {
+    from {
+      opacity: 0.55;
+      transform: scale(1.07);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
   .js-reveal .reveal {
     opacity: 0;
     transform: translateY(16px);
@@ -193,7 +216,8 @@
 
   @media (prefers-reduced-motion: reduce) {
     .hero-float,
-    .hero-rise {
+    .hero-rise,
+    .hero-media {
       animation: none;
     }
     .js-reveal .reveal {

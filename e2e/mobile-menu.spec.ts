@@ -29,7 +29,7 @@ test.describe("mobile menu @mobile", () => {
     await expect(page).toHaveURL(/\/about$/);
     await expect(page.getByRole("dialog", { name: "Site menu" })).toBeHidden();
     await expect(
-      page.getByRole("heading", { level: 1, name: /a new way to eat fruit/i }),
+      page.getByRole("heading", { level: 1, name: /why fruiticana exists/i }),
     ).toBeVisible();
   });
 

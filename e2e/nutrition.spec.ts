@@ -7,7 +7,7 @@ test.describe("nutrition", () => {
     await expect(
       page.getByRole("heading", {
         level: 1,
-        name: /flavors, servings, and nutrition/i,
+        name: /what is fruiticana/i,
       }),
     ).toBeVisible();
     await expect(page.getByText(/nutrition analysis \(2008\)/i)).toBeVisible();

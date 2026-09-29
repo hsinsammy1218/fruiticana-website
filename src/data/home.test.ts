@@ -72,6 +72,18 @@ describe("student-mission copy", () => {
     expect(ideaCopy.steps.every((step) => step.imageAlt.length > 20)).toBe(true);
   });
 
+  it("puts the school inquiry first in the hero CTA pair", () => {
+    expect(heroCopy.primaryCta).toEqual({
+      label: "Bring Fruiticana to Your School",
+      href: "/contact",
+    });
+    expect(heroCopy.secondaryCta).toEqual({
+      label: "See How It Works",
+      href: "#how-it-works",
+    });
+    expect(heroCopy.image.src).toBe("/images/journey/fruiticana.webp");
+  });
+
   it("answers principal FAQ with fruit, schools, and a next step", () => {
     const questions = faqItems.map((item) => item.question).join(" ");
     expect(questions).toMatch(/what is fruiticana/i);

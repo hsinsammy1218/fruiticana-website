@@ -5,6 +5,9 @@ test.describe("home @cross-browser", () => {
     await page.goto("/");
 
     await expect(
+      page.getByRole("main").getByText("Fruiticana", { exact: true }).first(),
+    ).toBeVisible();
+    await expect(
       page.getByRole("heading", {
         level: 1,
         name: /an exciting new way\s+to eat fruit/i,
@@ -15,10 +18,16 @@ test.describe("home @cross-browser", () => {
     ).toBeVisible();
     await expect(page.getByText(/cream-less ice crème/i).first()).toBeVisible();
     await expect(
-      page.getByRole("link", { name: "Explore Fruiticana" }).first(),
+      page
+        .getByRole("main")
+        .getByRole("link", { name: "Bring Fruiticana to Your School" })
+        .first(),
     ).toBeVisible();
     await expect(
-      page.getByRole("link", { name: "Bring Fruiticana to Your School" }).first(),
+      page
+        .getByRole("main")
+        .getByRole("link", { name: "See How It Works" })
+        .first(),
     ).toBeVisible();
   });
 
@@ -58,18 +67,24 @@ test.describe("home @cross-browser", () => {
     expect(whyTop).toBeLessThan(howTop);
   });
 
-  test("hero CTAs open the product and the school inquiry", async ({ page }) => {
+  test("hero CTAs open the school inquiry and how-it-works", async ({ page }) => {
     await page.goto("/");
 
-    await page.getByRole("link", { name: "Explore Fruiticana" }).first().click();
-    await expect(page).toHaveURL(/\/product$/);
+    await page
+      .getByRole("main")
+      .getByRole("link", { name: "Bring Fruiticana to Your School" })
+      .first()
+      .click();
+    await expect(page).toHaveURL(/\/contact$/);
 
     await page.goto("/");
     await page
       .getByRole("main")
-      .getByRole("link", { name: "Bring Fruiticana to Your School" })
+      .getByRole("link", { name: "See How It Works" })
+      .first()
       .click();
-    await expect(page).toHaveURL(/\/contact$/);
+    await expect(page).toHaveURL(/#how-it-works/);
+    await expect(page.getByRole("heading", { name: "How it works" })).toBeVisible();
   });
 
   test("establishes flavors, school program, history, transparency, and closing inquiry", async ({

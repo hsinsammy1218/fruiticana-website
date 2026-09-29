@@ -10,13 +10,18 @@ export const heroCopy = {
     "A fruit-based frozen experience for students, brought to schools.",
   originalNote:
     "Originally introduced as Fruiticana Creamless Ice Cream — smooth like ice cream, built from real fruit.",
-  primaryCta: {
-    label: "Explore Fruiticana",
-    href: "/product",
+  /** Full-bleed hero media — one dominant product image, not a collage. */
+  image: {
+    src: "/images/journey/fruiticana.webp",
+    alt: "Pink and yellow Fruiticana frozen scoops in a cup beside strawberry and mango",
   },
-  secondaryCta: {
+  primaryCta: {
     label: "Bring Fruiticana to Your School",
     href: "/contact",
+  },
+  secondaryCta: {
+    label: "See How It Works",
+    href: "#how-it-works",
   },
 } as const;
 
