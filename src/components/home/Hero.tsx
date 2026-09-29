@@ -33,18 +33,18 @@ export function Hero() {
             linear-gradient(
               115deg,
               rgba(255, 251, 239, 0.98) 0%,
-              rgba(255, 251, 239, 0.95) 34%,
-              rgba(255, 251, 239, 0.78) 48%,
-              rgba(255, 251, 239, 0.32) 66%,
-              rgba(255, 251, 239, 0.08) 82%,
+              rgba(255, 251, 239, 0.96) 38%,
+              rgba(255, 251, 239, 0.82) 52%,
+              rgba(255, 251, 239, 0.38) 70%,
+              rgba(255, 251, 239, 0.1) 84%,
               transparent 100%
             ),
             linear-gradient(
               180deg,
-              rgba(255, 251, 239, 0.55) 0%,
-              transparent 28%,
-              rgba(255, 251, 239, 0.2) 72%,
-              rgba(255, 251, 239, 0.55) 100%
+              rgba(255, 251, 239, 0.62) 0%,
+              transparent 30%,
+              rgba(255, 251, 239, 0.22) 72%,
+              rgba(255, 251, 239, 0.58) 100%
             )
           `,
         }}
@@ -55,7 +55,7 @@ export function Hero() {
           <p className="hero-rise font-sans text-[clamp(2.85rem,11vw,6rem)] font-extrabold leading-[0.88] tracking-[-0.045em] text-green-deep">
             {site.name}
           </p>
-          <p className="hero-rise hero-rise-delay-1 mt-2.5 text-xs font-semibold uppercase tracking-[0.2em] text-green-600 sm:text-sm">
+          <p className="hero-rise hero-rise-delay-1 mt-2.5 text-sm font-semibold uppercase tracking-[0.18em] text-green-600 sm:text-base">
             {site.productLine}
           </p>
           <h1 className="hero-rise hero-rise-delay-1 mt-6 font-display text-[clamp(1.55rem,5.4vw,3.15rem)] font-semibold leading-[1.04] tracking-[-0.03em] text-green-deep">

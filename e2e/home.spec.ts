@@ -20,10 +20,14 @@ test.describe("home @cross-browser", () => {
     await expect(
       page
         .getByRole("main")
-        .getByRole("link", { name: "Bring Fruiticana to Your School" }),
+        .getByRole("link", { name: "Bring Fruiticana to Your School" })
+        .first(),
     ).toBeVisible();
     await expect(
-      page.getByRole("main").getByRole("link", { name: "See How It Works" }),
+      page
+        .getByRole("main")
+        .getByRole("link", { name: "See How It Works" })
+        .first(),
     ).toBeVisible();
   });
 
@@ -69,6 +73,7 @@ test.describe("home @cross-browser", () => {
     await page
       .getByRole("main")
       .getByRole("link", { name: "Bring Fruiticana to Your School" })
+      .first()
       .click();
     await expect(page).toHaveURL(/\/contact$/);
 
@@ -76,6 +81,7 @@ test.describe("home @cross-browser", () => {
     await page
       .getByRole("main")
       .getByRole("link", { name: "See How It Works" })
+      .first()
       .click();
     await expect(page).toHaveURL(/#how-it-works/);
     await expect(page.getByRole("heading", { name: "How it works" })).toBeVisible();
