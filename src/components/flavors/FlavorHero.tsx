@@ -46,12 +46,12 @@ export function FlavorHero({ flavor }: { flavor: Flavor }) {
           {flavor.detail}
         </p>
 
-        <div className="mt-8 grid grid-cols-1 gap-8 lg:grid-cols-2 lg:items-start lg:gap-10">
+        <div className="mt-6 grid grid-cols-1 items-start gap-5 md:grid-cols-2 md:gap-6 lg:gap-8">
           <div className="min-w-0">
             <div className="relative aspect-[4/3] overflow-hidden rounded-xl2 border border-line bg-white shadow-soft">
               <FlavorImage flavor={flavor} priority fill className="object-center" />
             </div>
-            <p className="mt-4 max-w-xl text-base leading-relaxed text-muted">
+            <p className="mt-3 max-w-xl text-sm leading-relaxed text-muted sm:text-base">
               {flavor.name} is part of the original documented lineup. The fruit
               photo stands in until a rights-cleared product photo is available.
               The nutrition panel is the 2008 laboratory record, not a current
@@ -60,14 +60,16 @@ export function FlavorHero({ flavor }: { flavor: Flavor }) {
           </div>
 
           <div id="nutrition" className="min-w-0 scroll-mt-24">
-            <h2 className="font-display text-3xl text-green-deep">Nutrition Facts</h2>
-            <p className="mt-2 text-sm text-muted">
+            <h2 className="font-display text-2xl text-green-deep sm:text-3xl">
+              Nutrition Facts
+            </h2>
+            <p className="mt-1.5 text-sm text-muted">
               Full 2008 Nutrition Facts panel for {flavor.name}.
             </p>
-            <div className="mt-4">
+            <div className="mt-3">
               <NutritionPanel flavor={flavor} />
             </div>
-            <div className="mt-6">
+            <div className="mt-4">
               <Button href={`/product?flavor=${flavor.slug}#nutrition`}>
                 Compare all flavor panels
               </Button>
