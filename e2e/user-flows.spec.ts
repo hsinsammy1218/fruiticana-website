@@ -4,8 +4,11 @@ import { fillSchoolInquiry } from "./helpers";
 test.describe("user flows", () => {
   test("home to product nutrition to flavor sheet", async ({ page }) => {
     await page.goto("/");
-    await page.getByRole("link", { name: "See flavors and nutrition" }).click();
-    await expect(page).toHaveURL(/\/product/);
+    await page
+      .getByRole("navigation", { name: "Primary" })
+      .getByRole("link", { name: "Fruiticana", exact: true })
+      .click();
+    await expect(page).toHaveURL(/\/product$/);
 
     await page.locator('a[href="/flavors/mango"]').first().click();
     await expect(page).toHaveURL(/\/flavors\/mango/);
@@ -26,7 +29,7 @@ test.describe("user flows", () => {
     await page.goto("/about");
     await expect(page.getByText("Fruiticana Creamless Ice Cream", { exact: true })).toBeVisible();
     await expect(
-      page.getByRole("heading", { name: "Fruiticana in Connecticut Schools" }),
+      page.getByRole("heading", { name: "Connecticut roots" }),
     ).toBeVisible();
 
     await page.getByRole("navigation", { name: "Primary" }).getByRole("link", { name: "Contact" }).click();
