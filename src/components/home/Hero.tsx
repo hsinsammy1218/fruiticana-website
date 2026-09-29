@@ -60,6 +60,8 @@ export function Hero() {
           </p>
           <h1 className="hero-rise hero-rise-delay-1 mt-6 font-display text-[clamp(1.55rem,5.4vw,3.15rem)] font-semibold leading-[1.04] tracking-[-0.03em] text-green-deep">
             <span className="block">{heroCopy.line1}</span>
+            {/* Keep a text node between block spans so the accessible name has a space. */}
+            {" "}
             <span className="block">{heroCopy.line2}</span>
           </h1>
           <p className="hero-rise hero-rise-delay-2 mt-5 max-w-md text-lg leading-snug text-ink sm:text-xl">
