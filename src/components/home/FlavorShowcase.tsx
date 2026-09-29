@@ -29,8 +29,10 @@ export function FlavorShowcase() {
                 className="grid overflow-hidden rounded-xl2 border border-line bg-cream lg:grid-cols-2 lg:items-stretch"
                 style={{ ["--accent" as string]: flavor.accent }}
               >
-                <div
-                  className={`relative min-h-64 aspect-[4/3] lg:aspect-auto lg:min-h-[22rem] ${
+                <Link
+                  href={`/flavors/${flavor.slug}`}
+                  aria-label={`Explore ${flavor.name}`}
+                  className={`relative block min-h-64 aspect-[4/3] overflow-hidden lg:aspect-auto lg:min-h-[22rem] ${
                     imageFirst ? "" : "lg:order-2"
                   }`}
                 >
@@ -41,7 +43,7 @@ export function FlavorShowcase() {
                     sizes="(max-width: 1024px) 100vw, 40vw"
                     className="transition-transform duration-500 hover:scale-[1.03]"
                   />
-                </div>
+                </Link>
                 <div
                   className="flex flex-col justify-center px-6 py-8 sm:px-10 sm:py-12"
                   style={{
