@@ -7,14 +7,17 @@ import { ArrowRightIcon } from "@/components/ui/icons";
 export function FruitLessonCard({ lesson }: { lesson: FruitLesson }) {
   const flavor = getFlavor(lesson.slug);
 
-  return (
-    <article className="flex h-full flex-col overflow-hidden rounded-xl2 border border-line bg-white">
+  const body = (
+    <>
       {flavor ? (
         <div
           className="relative aspect-[3/2] overflow-hidden"
           style={{ backgroundColor: `${flavor.accent}22` }}
         >
-          <FlavorImage flavor={flavor} />
+          <FlavorImage
+            flavor={flavor}
+            className="transition-transform duration-500 group-hover:scale-105 group-focus-visible:scale-105"
+          />
         </div>
       ) : null}
       <div className="flex flex-1 flex-col p-5">
@@ -41,15 +44,29 @@ export function FruitLessonCard({ lesson }: { lesson: FruitLesson }) {
           </div>
         </dl>
         {flavor ? (
-          <Link
-            href={`/flavors/${flavor.slug}`}
-            className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-green-600 hover:text-green-700"
-          >
+          <span className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-green-600 group-hover:text-green-700">
             See the {flavor.name} flavor
             <ArrowRightIcon width={16} height={16} />
-          </Link>
+          </span>
         ) : null}
       </div>
-    </article>
+    </>
+  );
+
+  if (!flavor) {
+    return (
+      <article className="flex h-full flex-col overflow-hidden rounded-xl2 border border-line bg-white">
+        {body}
+      </article>
+    );
+  }
+
+  return (
+    <Link
+      href={`/flavors/${flavor.slug}`}
+      className="group flex h-full flex-col overflow-hidden rounded-xl2 border border-line bg-white transition-shadow duration-300 hover:shadow-hover focus-visible:shadow-hover"
+    >
+      {body}
+    </Link>
   );
 }

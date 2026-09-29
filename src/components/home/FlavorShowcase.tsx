@@ -25,14 +25,14 @@ export function FlavorShowcase() {
           const imageFirst = index % 2 === 0;
           return (
             <li key={flavor.slug}>
-              <article
-                className="grid overflow-hidden rounded-xl2 border border-line bg-cream lg:grid-cols-2 lg:items-stretch"
+              <Link
+                href={`/flavors/${flavor.slug}`}
+                aria-label={`Explore ${flavor.name}`}
+                className="group grid overflow-hidden rounded-xl2 border border-line bg-cream transition-shadow duration-300 hover:shadow-hover focus-visible:shadow-hover lg:grid-cols-2 lg:items-stretch"
                 style={{ ["--accent" as string]: flavor.accent }}
               >
-                <Link
-                  href={`/flavors/${flavor.slug}`}
-                  aria-label={`Explore ${flavor.name}`}
-                  className={`relative block min-h-64 aspect-[4/3] overflow-hidden lg:aspect-auto lg:min-h-[22rem] ${
+                <div
+                  className={`relative min-h-64 aspect-[4/3] overflow-hidden lg:aspect-auto lg:min-h-[22rem] ${
                     imageFirst ? "" : "lg:order-2"
                   }`}
                 >
@@ -41,9 +41,9 @@ export function FlavorShowcase() {
                     fill
                     priority={index < 2}
                     sizes="(max-width: 1024px) 100vw, 40vw"
-                    className="transition-transform duration-500 hover:scale-[1.03]"
+                    className="transition-transform duration-500 group-hover:scale-[1.03] group-focus-visible:scale-[1.03]"
                   />
-                </Link>
+                </div>
                 <div
                   className="flex flex-col justify-center px-6 py-8 sm:px-10 sm:py-12"
                   style={{
@@ -58,14 +58,11 @@ export function FlavorShowcase() {
                   <p className="mt-3 max-w-md text-lg leading-snug text-ink">
                     {flavor.description}
                   </p>
-                  <Link
-                    href={`/flavors/${flavor.slug}`}
-                    className="mt-6 inline-flex min-h-11 w-fit items-center text-sm font-bold uppercase tracking-[0.14em] text-green-deep underline-offset-4 hover:underline"
-                  >
+                  <span className="mt-6 inline-flex min-h-11 w-fit items-center text-sm font-bold uppercase tracking-[0.14em] text-green-deep underline-offset-4 group-hover:underline group-focus-visible:underline">
                     Explore {flavor.name}
-                  </Link>
+                  </span>
                 </div>
-              </article>
+              </Link>
             </li>
           );
         })}
