@@ -101,7 +101,7 @@ const flavorCatalog: Omit<Flavor, "nutritionStatus">[] = [
     slug: "apricot",
     name: "Apricot",
     category: "Orchard",
-    accent: "#FF9A3D",
+    accent: "#FF8A20",
     tagline: "Soft, sun-warmed orchard fruit.",
     description: "Mellow, honeyed apricot with a gentle tang.",
     detail:
@@ -139,7 +139,7 @@ const flavorCatalog: Omit<Flavor, "nutritionStatus">[] = [
     slug: "mango",
     name: "Mango",
     category: "Tropical",
-    accent: "#FFB020",
+    accent: "#FFA000",
     tagline: "Golden and tropical.",
     description: "Ripe, juicy mango with a velvety finish.",
     detail:
@@ -177,7 +177,7 @@ const flavorCatalog: Omit<Flavor, "nutritionStatus">[] = [
     slug: "pineapple",
     name: "Pineapple",
     category: "Tropical",
-    accent: "#FFC01A",
+    accent: "#FFB400",
     tagline: "Bright, tangy, tropical.",
     description: "Sun-ripe pineapple with a lively snap.",
     detail:
@@ -215,7 +215,7 @@ const flavorCatalog: Omit<Flavor, "nutritionStatus">[] = [
     slug: "banana",
     name: "Banana",
     category: "Tropical",
-    accent: "#F5C420",
+    accent: "#F0C000",
     tagline: "Smooth and mellow.",
     description: "Creamy banana, naturally sweet.",
     detail:
@@ -254,7 +254,7 @@ const flavorCatalog: Omit<Flavor, "nutritionStatus">[] = [
     slug: "raisin",
     name: "Raisin",
     category: "Orchard",
-    accent: "#7A3D4A",
+    accent: "#8A2E48",
     tagline: "Deep and naturally sweet.",
     description: "Rich, mellow sweetness from the vine.",
     detail:
@@ -292,7 +292,7 @@ const flavorCatalog: Omit<Flavor, "nutritionStatus">[] = [
     slug: "strawberry",
     name: "Strawberry",
     category: "Berry",
-    accent: "#F23636",
+    accent: "#FF2A2A",
     tagline: "Ripe, red, and classic.",
     description: "Bright, ripe strawberry - a timeless favorite.",
     detail:
@@ -330,7 +330,7 @@ const flavorCatalog: Omit<Flavor, "nutritionStatus">[] = [
     slug: "lemonade",
     name: "Lemonade",
     category: "Citrus",
-    accent: "#F5D01A",
+    accent: "#FFE014",
     tagline: "Cool and zesty.",
     description: "Zesty lemonade with a refreshing bite.",
     detail:
@@ -368,7 +368,7 @@ const flavorCatalog: Omit<Flavor, "nutritionStatus">[] = [
     slug: "blueberry",
     name: "Blueberry",
     category: "Berry",
-    accent: "#3A5BB5",
+    accent: "#2F52B8",
     tagline: "Deep berry, gently sweet.",
     description: "Plump blueberries, cool and mellow.",
     detail:
@@ -406,7 +406,7 @@ const flavorCatalog: Omit<Flavor, "nutritionStatus">[] = [
     slug: "grapefruit",
     name: "Grapefruit",
     category: "Citrus",
-    accent: "#FF6B45",
+    accent: "#FF5A30",
     tagline: "Crisp and refreshing.",
     description: "Bittersweet grapefruit, bright and clean.",
     detail:
@@ -444,7 +444,7 @@ const flavorCatalog: Omit<Flavor, "nutritionStatus">[] = [
     slug: "apple",
     name: "Apple",
     category: "Orchard",
-    accent: "#E01830",
+    accent: "#D40A28",
     tagline: "Crisp and orchard-fresh.",
     description: "Cool, crisp apple - clean and simple.",
     detail:
@@ -482,7 +482,7 @@ const flavorCatalog: Omit<Flavor, "nutritionStatus">[] = [
     slug: "orange",
     name: "Orange",
     category: "Citrus",
-    accent: "#FF7C12",
+    accent: "#FF6E00",
     tagline: "Sweet and citrus-bright.",
     description: "Juicy orange, sweet and sunny.",
     detail:
@@ -520,7 +520,7 @@ const flavorCatalog: Omit<Flavor, "nutritionStatus">[] = [
     slug: "cantaloupe",
     name: "Cantaloupe",
     category: "Melon",
-    accent: "#FF8D42",
+    accent: "#FF7A28",
     tagline: "Cool melon, softly sweet.",
     description: "Ripe cantaloupe, mellow and juicy.",
     detail:
