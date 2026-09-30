@@ -38,7 +38,7 @@ export default function ContactPage() {
   return (
     <Section>
       <div className="mx-auto max-w-md">
-        <div className="rounded-xl2 border border-line bg-white p-6 sm:p-8">
+        <div className="rounded-xl2 border border-line bg-card p-6 sm:p-8">
           <h1 className="text-lg font-bold text-green-deep sm:text-xl">
             Ways to reach us
           </h1>

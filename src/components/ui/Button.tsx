@@ -8,10 +8,10 @@ const base =
   "inline-flex min-h-11 items-center justify-center gap-2 rounded-pill font-semibold transition-colors duration-200 disabled:cursor-not-allowed disabled:opacity-60";
 
 const variants: Record<Variant, string> = {
-  primary: "bg-green-deep text-cream hover:bg-green-deep-80",
+  primary: "bg-berry text-cream hover:bg-berry-deep",
   secondary:
-    "border border-green-deep/25 bg-cream text-green-deep hover:border-orange/60 hover:bg-yellow/25",
-  ghost: "text-green-deep hover:bg-lime/20",
+    "border border-green-deep/30 bg-lime/90 text-green-deep hover:border-orange/70 hover:bg-yellow/50",
+  ghost: "text-green-deep hover:bg-lime/35",
 };
 
 const sizes: Record<Size, string> = {

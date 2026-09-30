@@ -22,7 +22,7 @@ export function CTASection({ title, description, primary, secondary }: CTASectio
           <Button
             href={primary.href}
             size="lg"
-            className="w-full bg-cream text-green-deep hover:bg-cream-100 sm:w-auto"
+            className="w-full bg-berry text-cream hover:bg-berry-deep sm:w-auto"
           >
             {primary.label}
           </Button>

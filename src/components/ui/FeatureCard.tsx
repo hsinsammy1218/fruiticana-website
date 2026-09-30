@@ -25,7 +25,7 @@ export function FeatureCard({
   return (
     <div
       className={cn(
-        "flex h-full flex-col rounded-xl2 border border-line bg-white p-5",
+        "flex h-full flex-col rounded-xl2 border border-line bg-card p-5",
         className,
       )}
     >

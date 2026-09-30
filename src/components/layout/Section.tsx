@@ -1,12 +1,16 @@
 import { cn } from "@/lib/cn";
 import { Container } from "@/components/layout/Container";
 
-type Tone = "cream" | "cream-100" | "white" | "deep";
+/** Section bands: lime page (cream), lemon, grove, deep orchard. */
+type Tone = "cream" | "cream-100" | "white" | "grove" | "blush" | "deep";
 
 const toneClasses: Record<Tone, string> = {
   cream: "",
   "cream-100": "bg-cream-100",
-  white: "bg-white",
+  /** @deprecated Prefer grove — kept as alias for call sites. */
+  white: "bg-grove",
+  grove: "bg-grove",
+  blush: "bg-blush",
   deep: "bg-green-deep text-cream",
 };
 

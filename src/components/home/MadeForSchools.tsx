@@ -31,7 +31,7 @@ export function MadeForSchools() {
           .map((item) => (
             <li
               key={item.title}
-              className="rounded-xl2 border border-line bg-white p-5"
+              className="rounded-xl2 border border-line bg-card p-5"
             >
               <h3 className="font-display text-xl text-green-deep">{item.title}</h3>
               <p className="mt-2 text-sm leading-snug text-muted">{item.body}</p>

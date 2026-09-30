@@ -14,7 +14,7 @@ export function ValueExchange() {
         {valueExchange.columns.map((column, index) => (
           <li
             key={column.key}
-            className="reveal relative flex h-full flex-col rounded-xl2 border border-line bg-white p-6"
+            className="reveal relative flex h-full flex-col rounded-xl2 border border-line bg-card p-6"
           >
             {index < valueExchange.columns.length - 1 ? (
               <span

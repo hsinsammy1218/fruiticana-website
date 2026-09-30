@@ -15,7 +15,7 @@ export function FaqSection() {
         {faqItems.map((item) => (
           <details
             key={item.question}
-            className="group rounded-xl2 border border-line bg-white px-5 py-2 open:bg-cream-100 sm:px-6"
+            className="group rounded-xl2 border border-line bg-card px-5 py-2 open:bg-cream-100 sm:px-6"
           >
             <summary className="cursor-pointer list-none py-3 font-semibold text-green-deep marker:hidden [&::-webkit-details-marker]:hidden">
               <span className="flex items-start justify-between gap-4">

@@ -16,7 +16,7 @@ export function FlavorCard({ flavor, priority, className }: FlavorCardProps) {
     <Link
       href={`/flavors/${flavor.slug}`}
       className={cn(
-        "group flex flex-col overflow-hidden rounded-xl2 border border-line bg-white transition-all duration-300 hover:-translate-y-1 hover:shadow-hover focus-visible:-translate-y-1 focus-visible:shadow-hover",
+        "group flex flex-col overflow-hidden rounded-xl2 border border-line bg-card transition-all duration-300 hover:-translate-y-1 hover:shadow-hover focus-visible:-translate-y-1 focus-visible:shadow-hover",
         className,
       )}
       style={{ ["--accent" as string]: flavor.accent }}
@@ -28,13 +28,13 @@ export function FlavorCard({ flavor, priority, className }: FlavorCardProps) {
           className="transition-transform duration-500 group-hover:scale-105 group-focus-visible:scale-105"
         />
         <span
-          className="absolute left-3 top-3 rounded-pill bg-white/85 px-2.5 py-1 text-xs font-semibold text-green-deep backdrop-blur"
+          className="absolute left-3 top-3 rounded-pill bg-card/85 px-2.5 py-1 text-xs font-semibold text-green-deep backdrop-blur"
         >
           {flavor.category}
         </span>
         <HistoricalBadge
           label="Nutrition analysis"
-          className="absolute bottom-3 left-3 bg-white/90"
+          className="absolute bottom-3 left-3 bg-card/90"
         />
       </div>
 

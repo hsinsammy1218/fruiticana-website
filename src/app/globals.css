@@ -2,42 +2,54 @@
 
 /* ------------------------------------------------------------------ */
 /* Fruiticana design system                                            */
-/* Fruit-forward orchard greens, citrus, berry, and mango accents on a */
-/* bright ice-crème base. High chroma, WCAG AA text pairs — no purple. */
+/* Packaging-label palette (Hemman cup): yellow → lime/pear → moss.    */
+/* No dairy cream / white panels. Pale-lime cards, berry CTAs, orange  */
+/* headline energy. WCAG AA text pairs on fruit surfaces.              */
 /* ------------------------------------------------------------------ */
 @theme {
   --font-display: var(--font-fraunces), ui-serif, Georgia, serif;
   --font-sans: var(--font-nunito), ui-sans-serif, system-ui, sans-serif;
   --font-brand: var(--font-brand-script), cursive;
 
-  /* Ice-crème — brighter so fruit accents read louder */
-  --color-cream: #fffef8;
-  --color-cream-100: #fff1b8;
-  --color-cream-200: #efd78a;
-  /* Orchard greens — ripe apple / lime chroma */
-  --color-green: #28d012;
-  /* Mid greens: high chroma + dark enough for AA on cream / cream-100 */
-  --color-green-600: #0c7b0a;
-  --color-green-700: #0a6410;
-  --color-green-deep: #0f3f16;
-  /* Deep hover surface: cream/70–75 body text stays AA */
-  --color-green-deep-80: #1a5c20;
-  /* Citrus, gold, slogan berry */
-  --color-lime: #b4f200;
-  --color-yellow: #ffe014;
-  --color-berry: #d40a28;
-  --color-berry-deep: #9a0a1c;
-  --color-gold: #ffc400;
-  --color-ink: #102218;
-  --color-muted: #2a5a3c;
-  --color-line: #ebd89a;
+  /* Label yellow — page base + light text on moss/berry (token name kept) */
+  --color-cream: #fce98d;
+  /* Lime / pear green section band */
+  --color-cream-100: #c6e84a;
+  /* Bright orange chip (flavor / badge energy) */
+  --color-cream-200: #ff8c00;
+  /* Pale lime card — Fruiticana script highlight (replaces white) */
+  --color-card: #eaf86c;
+  /* Pear / grove section (replaces former white section tone) */
+  --color-grove: #9ed63f;
+  /* Soft strawberry wash */
+  --color-blush: #ffb4ae;
+  /* Leaf green accent */
+  --color-green: #7ec42a;
+  /* Mid greens: AA on yellow / lime / card / grove */
+  --color-green-600: #2d7016;
+  --color-green-700: #245c12;
+  /* Deeper moss (label gradient end) */
+  --color-green-deep: #1b4a1a;
+  --color-green-deep-80: #276328;
+  /* Pale lime brand highlight */
+  --color-lime: #d9f56e;
+  --color-yellow: #fce14a;
+  /* Strong packaging red (“VITAMIN” / slogan) */
+  --color-berry: #c10018;
+  --color-berry-deep: #8f0012;
+  --color-gold: #f0b400;
+  --color-ink: #143018;
+  --color-muted: #2a5528;
+  --color-line: #6aa828;
 
-  /* Flavor accents — mango, berry, citrus punch */
-  --color-mango: #ffa000;
-  --color-strawberry: #ff2a2a;
+  /* Flavor accents — strawberry, mango, citrus */
+  --color-mango: #ff9a14;
+  --color-strawberry: #e02028;
   --color-blueberry: #2f52b8;
-  --color-orange: #ff6e00;
-  --color-cantaloupe: #ff7a28;
+  --color-orange: #ff8c00;
+  /* AA text orange on yellow / lime / card surfaces */
+  --color-orange-deep: #9a4200;
+  --color-cantaloupe: #ff9a3a;
 
   --radius-card: 1rem;
   --radius-xl2: 1.5rem;
@@ -65,7 +77,16 @@
   }
 
   body {
+    /* Label wash: yellow → lime/pear (stays light for dark AA text) */
     background-color: var(--color-cream);
+    background-image: linear-gradient(
+      165deg,
+      #fceb96 0%,
+      #fce98d 28%,
+      #eaf86c 62%,
+      #c6e84a 100%
+    );
+    background-attachment: fixed;
     color: var(--color-ink);
     font-family: var(--font-sans);
     font-size: 1rem;
@@ -149,11 +170,11 @@
     height: 0.45rem;
     background: linear-gradient(
       90deg,
-      var(--color-green) 0%,
+      var(--color-yellow) 0%,
       var(--color-lime) 22%,
-      var(--color-yellow) 44%,
-      var(--color-orange) 68%,
-      var(--color-strawberry) 86%,
+      var(--color-green) 48%,
+      var(--color-green-deep) 72%,
+      var(--color-orange) 88%,
       var(--color-berry) 100%
     );
   }

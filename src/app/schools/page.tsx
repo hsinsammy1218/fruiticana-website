@@ -70,7 +70,7 @@ export default function SchoolsPage() {
           {schoolAudiences.map((audience) => (
             <li
               key={audience}
-              className="rounded-pill border border-line bg-white px-3 py-1.5 text-sm text-green-deep"
+              className="rounded-pill border border-line bg-card px-3 py-1.5 text-sm text-green-deep"
             >
               {audience}
             </li>
@@ -86,7 +86,7 @@ export default function SchoolsPage() {
               title={startYoungCopy.title}
               description={startYoungCopy.description}
             />
-            <blockquote className="reveal mt-8 rounded-xl2 border border-line bg-white px-6 py-6 sm:mt-10 sm:px-8 sm:py-8">
+            <blockquote className="reveal mt-8 rounded-xl2 border border-line bg-card px-6 py-6 sm:mt-10 sm:px-8 sm:py-8">
               <p className="text-xl font-semibold leading-snug text-green-deep sm:text-2xl">
                 {startYoungCopy.hope}
               </p>
@@ -128,11 +128,11 @@ export default function SchoolsPage() {
             .map((item) => (
               <li
                 key={item.question}
-                className="rounded-xl2 border border-line bg-white p-5"
+                className="rounded-xl2 border border-line bg-card p-5"
               >
                 <p className="flex flex-wrap items-center gap-2">
                   <span className="font-semibold text-green-deep">{item.question}</span>
-                  <span className="rounded-pill bg-cream-200 px-2.5 py-0.5 text-xs font-semibold text-green-deep">
+                  <span className="rounded-pill bg-orange px-2.5 py-0.5 text-xs font-semibold text-ink">
                     Still being documented
                   </span>
                 </p>
@@ -150,7 +150,7 @@ export default function SchoolsPage() {
             title="Connecticut school chapter"
             description="Team Nutrition Healthy Snack pilot (2003–2005) and later distribution to local Connecticut schools after consumer testing. Historical participation, not a current endorsement."
           />
-          <div className="rounded-xl2 border border-line bg-white p-6">
+          <div className="rounded-xl2 border border-line bg-card p-6">
             <h2 className="text-lg font-bold text-green-deep">
               Nutrition & documentation
             </h2>
@@ -165,7 +165,7 @@ export default function SchoolsPage() {
               </Button>
             </div>
           </div>
-          <div className="rounded-xl2 border border-line bg-white p-6">
+          <div className="rounded-xl2 border border-line bg-card p-6">
             <h2 className="text-lg font-bold text-green-deep">
               Classroom resource
             </h2>

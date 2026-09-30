@@ -132,7 +132,7 @@ export default function LearnPage() {
           {learnAudience.map((item) => (
             <li
               key={item.title}
-              className="reveal rounded-xl2 border border-line bg-white p-6"
+              className="reveal rounded-xl2 border border-line bg-card p-6"
             >
               <h3 className="text-lg font-bold text-green-deep">{item.title}</h3>
               <p className="info-copy mt-2">{item.body}</p>
@@ -156,7 +156,7 @@ export default function LearnPage() {
                 <li key={module.id} className="reveal">
                   <a
                     href={`#${module.id}`}
-                    className="flex h-full flex-col rounded-xl2 border border-line bg-white p-5 transition-shadow hover:shadow-soft"
+                    className="flex h-full flex-col rounded-xl2 border border-line bg-card p-5 transition-shadow hover:shadow-soft"
                   >
                     <span className="inline-flex h-11 w-11 items-center justify-center rounded-full bg-green/12 text-green-600">
                       <Icon width={22} height={22} />
@@ -205,7 +205,7 @@ export default function LearnPage() {
           {scienceCards.map((card) => (
             <li
               key={card.title}
-              className="reveal rounded-xl2 border border-line bg-white p-6"
+              className="reveal rounded-xl2 border border-line bg-card p-6"
             >
               <h3 className="text-lg font-bold text-green-deep">{card.title}</h3>
               <p className="info-copy mt-2">{card.body}</p>
@@ -226,7 +226,7 @@ export default function LearnPage() {
             {labelTerms.map((item) => (
               <div
                 key={item.term}
-                className="rounded-xl2 border border-line bg-white p-5"
+                className="rounded-xl2 border border-line bg-card p-5"
               >
                 <dt className="font-bold text-green-deep">{item.term}</dt>
                 <dd className="info-copy mt-1.5">
@@ -287,7 +287,7 @@ export default function LearnPage() {
               {caseStudy.whatStudentsShouldNotice.map((item) => (
                 <li
                   key={item}
-                  className="info-copy rounded-xl2 border border-line bg-white p-4"
+                  className="info-copy rounded-xl2 border border-line bg-card p-4"
                 >
                   {item}
                 </li>
@@ -295,7 +295,7 @@ export default function LearnPage() {
             </ul>
           </div>
         </div>
-        <div className="mt-10 rounded-xl2 border border-line bg-white p-6">
+        <div className="mt-10 rounded-xl2 border border-line bg-card p-6">
           <h3 className="text-lg font-bold text-green-deep">
             Source questions for the 2004 letter
           </h3>
@@ -319,7 +319,7 @@ export default function LearnPage() {
           {discussionPrompts.map((prompt) => (
             <article
               key={prompt.band}
-              className="reveal flex h-full flex-col rounded-xl2 border border-line bg-white p-6"
+              className="reveal flex h-full flex-col rounded-xl2 border border-line bg-card p-6"
             >
               <p className="text-xs font-semibold uppercase tracking-wide text-green-600">
                 {prompt.label}

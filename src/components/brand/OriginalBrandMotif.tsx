@@ -13,7 +13,7 @@ export function OriginalBrandMotif({ className }: OriginalBrandMotifProps) {
     <div className={cn("relative mx-auto aspect-square w-full max-w-md", className)}>
       <div
         aria-hidden="true"
-        className="absolute inset-0 rounded-[2rem] bg-gradient-to-br from-white via-cream-100 to-yellow/40 ring-1 ring-green-deep/8"
+        className="absolute inset-0 rounded-[2rem] bg-gradient-to-br from-cream via-lime to-grove ring-1 ring-green-deep/8"
       />
       <svg
         viewBox="0 0 500 500"

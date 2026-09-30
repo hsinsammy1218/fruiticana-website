@@ -17,7 +17,7 @@ export function CupPathways() {
           <li key={link.href}>
             <Link
               href={link.href}
-              className="flex h-full flex-col rounded-xl2 border border-line bg-white p-6 transition-colors hover:border-green/40"
+              className="flex h-full flex-col rounded-xl2 border border-line bg-card p-6 transition-colors hover:border-green/40"
             >
               <HistoricalBadge label="Historical record" />
               <h3 className="mt-4 font-display text-2xl text-green-deep">

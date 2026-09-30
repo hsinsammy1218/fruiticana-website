@@ -17,7 +17,7 @@ export function TrustHub() {
           <li key={link.href + link.label} className="reveal">
             <Link
               href={link.href}
-              className="flex h-full flex-col rounded-xl2 border border-line bg-white p-5 transition-colors hover:border-green/40 hover:bg-cream-100"
+              className="flex h-full flex-col rounded-xl2 border border-line bg-card p-5 transition-colors hover:border-green/40 hover:bg-cream-100"
             >
               <h3 className="text-base font-bold text-green-deep">{link.label}</h3>
               <p className="mt-1.5 text-sm leading-snug text-muted">{link.description}</p>

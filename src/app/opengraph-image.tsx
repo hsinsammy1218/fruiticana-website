@@ -17,7 +17,7 @@ export default function OpengraphImage() {
           justifyContent: "center",
           padding: "72px",
           background:
-            "radial-gradient(circle at 82% 28%, rgba(212,10,40,0.22), transparent 44%), radial-gradient(circle at 18% 18%, rgba(40,208,18,0.34), transparent 48%), radial-gradient(circle at 55% 78%, rgba(255,110,0,0.18), transparent 50%), linear-gradient(145deg, #fffef8 0%, #fff1b8 48%, #c8f86a 100%)",
+            "radial-gradient(circle at 82% 28%, rgba(193,0,24,0.22), transparent 44%), radial-gradient(circle at 18% 18%, rgba(126,196,42,0.34), transparent 48%), radial-gradient(circle at 55% 78%, rgba(255,140,0,0.2), transparent 50%), linear-gradient(145deg, #fce98d 0%, #c6e84a 48%, #1b4a1a 100%)",
         }}
       >
         <div style={{ display: "flex", fontSize: 44, fontWeight: 800, color: "#0F3F16" }}>

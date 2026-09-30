@@ -55,7 +55,7 @@ export function FruitLessonCard({ lesson }: { lesson: FruitLesson }) {
 
   if (!flavor) {
     return (
-      <article className="flex h-full flex-col overflow-hidden rounded-xl2 border border-line bg-white">
+      <article className="flex h-full flex-col overflow-hidden rounded-xl2 border border-line bg-card">
         {body}
       </article>
     );
@@ -64,7 +64,7 @@ export function FruitLessonCard({ lesson }: { lesson: FruitLesson }) {
   return (
     <Link
       href={`/flavors/${flavor.slug}`}
-      className="group flex h-full flex-col overflow-hidden rounded-xl2 border border-line bg-white transition-shadow duration-300 hover:shadow-hover focus-visible:shadow-hover"
+      className="group flex h-full flex-col overflow-hidden rounded-xl2 border border-line bg-card transition-shadow duration-300 hover:shadow-hover focus-visible:shadow-hover"
     >
       {body}
     </Link>

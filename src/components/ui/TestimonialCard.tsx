@@ -10,7 +10,7 @@ export function TestimonialCard({ testimonial, className }: TestimonialCardProps
   return (
     <figure
       className={cn(
-        "flex h-full flex-col rounded-xl2 border border-line bg-white p-6",
+        "flex h-full flex-col rounded-xl2 border border-line bg-card p-6",
         className,
       )}
     >

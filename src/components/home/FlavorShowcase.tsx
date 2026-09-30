@@ -28,7 +28,7 @@ export function FlavorShowcase() {
               <Link
                 href={`/flavors/${flavor.slug}`}
                 aria-label={`Explore ${flavor.name}`}
-                className="group grid overflow-hidden rounded-xl2 border border-line bg-cream transition-shadow duration-300 hover:shadow-hover focus-visible:shadow-hover lg:grid-cols-2 lg:items-stretch"
+                className="group grid overflow-hidden rounded-xl2 border border-line bg-card transition-shadow duration-300 hover:shadow-hover focus-visible:shadow-hover lg:grid-cols-2 lg:items-stretch"
                 style={{ ["--accent" as string]: flavor.accent }}
               >
                 <div
@@ -48,11 +48,11 @@ export function FlavorShowcase() {
                   className="flex flex-col justify-center px-6 py-8 sm:px-10 sm:py-12"
                   style={{
                     backgroundColor:
-                      "color-mix(in srgb, var(--accent) 16%, var(--color-cream))",
+                      "color-mix(in srgb, var(--accent) 22%, var(--color-card))",
                   }}
                 >
                   <HistoricalBadge label="Original flavor" />
-                  <h3 className="mt-4 font-display text-4xl font-semibold tracking-tight text-green-deep sm:text-5xl">
+                  <h3 className="mt-4 font-display text-4xl font-semibold tracking-tight text-orange-deep sm:text-5xl">
                     {flavor.name}
                   </h3>
                   <p className="mt-3 max-w-md text-lg leading-snug text-ink">
