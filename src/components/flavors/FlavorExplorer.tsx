@@ -34,7 +34,7 @@ export function FlavorExplorer() {
               className={cn(
                 "min-h-11 rounded-pill border px-4 text-sm font-semibold transition-colors",
                 active
-                  ? "border-green-deep bg-green-deep text-cream"
+                  ? "border-green-deep bg-green-deep text-on-deep"
                   : "border-line bg-card text-green-deep hover:border-green-deep/40",
               )}
             >

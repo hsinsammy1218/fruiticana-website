@@ -11,18 +11,18 @@ export function ConnecticutSchools() {
       <div className="reveal">
         <HistoricalBadge
           label={historyCopy.badge}
-          className="bg-cream/15 text-cream"
+          className="bg-on-deep/15 text-on-deep"
         />
-        <h2 className="mt-3 text-3xl font-extrabold text-cream sm:text-4xl lg:text-5xl">
+        <h2 className="mt-3 text-3xl font-extrabold text-on-deep sm:text-4xl lg:text-5xl">
           {historyCopy.title}
         </h2>
-        <p className="mt-4 max-w-3xl text-lg leading-[1.7] text-cream/90">
+        <p className="mt-4 max-w-3xl text-lg leading-[1.7] text-on-deep/95">
           {historyCopy.body}
         </p>
-        <p className="mt-3 max-w-3xl text-base leading-[1.7] text-cream/80">
+        <p className="mt-3 max-w-3xl text-base leading-[1.7] text-on-deep/90">
           {historyCopy.distinction}
         </p>
-        <p className="mt-3 max-w-3xl leading-[1.7] text-cream/85">
+        <p className="mt-3 max-w-3xl leading-[1.7] text-on-deep/90">
           {historyCopy.today}
         </p>
       </div>
@@ -36,8 +36,8 @@ export function ConnecticutSchools() {
             <p className="text-xs font-semibold uppercase tracking-[0.16em] text-yellow">
               {index + 1}. {step.period}
             </p>
-            <h3 className="mt-3 text-base font-bold text-cream">{step.title}</h3>
-            <p className="mt-2 text-sm leading-snug text-cream/90">{step.body}</p>
+            <h3 className="mt-3 text-base font-bold text-on-deep">{step.title}</h3>
+            <p className="mt-2 text-sm leading-snug text-on-deep/95">{step.body}</p>
           </li>
         ))}
       </ol>
@@ -56,7 +56,7 @@ export function ConnecticutSchools() {
           href={historyCopy.cta.href}
           size="lg"
           variant="secondary"
-          className="border-cream/30 bg-transparent text-cream hover:border-cream/60 hover:bg-cream/10"
+          className="border-on-deep/35 bg-transparent text-on-deep hover:border-on-deep/70 hover:bg-on-deep/10"
         >
           {historyCopy.cta.label}
         </Button>

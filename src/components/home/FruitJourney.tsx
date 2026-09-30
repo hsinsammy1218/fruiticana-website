@@ -17,7 +17,7 @@ export function FruitJourney() {
             key={step.title}
             className="reveal relative flex h-full flex-col overflow-hidden rounded-xl2 border border-line bg-card"
           >
-            <p className="absolute left-4 top-4 z-10 inline-flex h-8 w-8 items-center justify-center rounded-full bg-green-deep font-sans text-sm font-bold text-cream">
+            <p className="absolute left-4 top-4 z-10 inline-flex h-8 w-8 items-center justify-center rounded-full bg-green-deep font-sans text-sm font-bold text-on-deep">
               {index + 1}
             </p>
             <div className="relative aspect-[4/3] bg-cream-100">

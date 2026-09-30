@@ -48,7 +48,7 @@ export function StatGrid({
           <dt
             className={cn(
               "order-2 mt-1 text-sm font-semibold leading-snug",
-              deep ? "text-cream/85" : "text-ink",
+              deep ? "text-on-deep/90" : "text-ink",
             )}
           >
             {item.label}
@@ -56,7 +56,7 @@ export function StatGrid({
           <dd
             className={cn(
               "order-1 font-sans text-3xl font-extrabold tabular-nums tracking-tight sm:text-4xl",
-              deep ? "text-cream" : "text-green-deep",
+              deep ? "text-on-deep" : "text-green-deep",
             )}
           >
             {item.value}
@@ -65,7 +65,7 @@ export function StatGrid({
             <dd
               className={cn(
                 "order-3 mt-1.5 text-sm leading-snug",
-                deep ? "text-cream/90" : "text-muted",
+                deep ? "text-on-deep/95" : "text-muted",
               )}
             >
               {item.note}

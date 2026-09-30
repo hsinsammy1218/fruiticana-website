@@ -10,16 +10,16 @@ export function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="mt-20 bg-green-deep text-cream">
+    <footer className="mt-20 bg-green-deep text-on-deep">
       <BrandBar />
       <Container className="py-14">
         <div className="grid gap-10 md:grid-cols-[1.4fr_1fr_1fr] lg:gap-16">
           <div>
-            <Logo className="text-cream" />
+            <Logo className="text-on-deep" />
             <p className="mt-3 font-display text-sm font-bold uppercase tracking-[0.14em] text-yellow">
               {site.tagline.replace(/\.$/, "")}
             </p>
-            <p className="mt-4 max-w-sm text-base leading-[1.75] text-cream/85">
+            <p className="mt-4 max-w-sm text-base leading-[1.75] text-on-deep/90">
               {site.promise}
             </p>
             <div className="mt-6">
@@ -33,7 +33,7 @@ export function Footer() {
           </div>
 
           <nav aria-label="Footer">
-            <h2 className="text-sm font-semibold uppercase tracking-wider text-cream/80">
+            <h2 className="text-sm font-semibold uppercase tracking-wider text-on-deep/85">
               Explore
             </h2>
             <ul className="mt-4 space-y-2.5 text-sm">
@@ -41,7 +41,7 @@ export function Footer() {
                 <li key={item.href}>
                   <Link
                     href={item.href}
-                    className="text-cream/85 transition-colors hover:text-cream"
+                    className="text-on-deep/90 transition-colors hover:text-on-deep"
                   >
                     {item.label}
                   </Link>
@@ -51,7 +51,7 @@ export function Footer() {
           </nav>
 
           <nav aria-label="Resources">
-            <h2 className="text-sm font-semibold uppercase tracking-wider text-cream/80">
+            <h2 className="text-sm font-semibold uppercase tracking-wider text-on-deep/85">
               Resources
             </h2>
             <ul className="mt-4 space-y-2.5 text-sm">
@@ -59,7 +59,7 @@ export function Footer() {
                 <li key={item.href}>
                   <Link
                     href={item.href}
-                    className="text-cream/85 transition-colors hover:text-cream"
+                    className="text-on-deep/90 transition-colors hover:text-on-deep"
                   >
                     {item.label}
                   </Link>
@@ -69,7 +69,7 @@ export function Footer() {
           </nav>
         </div>
 
-        <div className="mt-12 flex flex-col gap-4 border-t border-cream/15 pt-6 text-sm text-cream/80 sm:flex-row sm:items-center sm:justify-between">
+        <div className="mt-12 flex flex-col gap-4 border-t border-on-deep/20 pt-6 text-sm text-on-deep/85 sm:flex-row sm:items-center sm:justify-between">
           <p>
             &copy; {year} {site.name}. All rights reserved.
           </p>
@@ -78,7 +78,7 @@ export function Footer() {
               <li key={item.href}>
                 <Link
                   href={item.href}
-                  className="transition-colors hover:text-cream"
+                  className="transition-colors hover:text-on-deep"
                 >
                   {item.label}
                 </Link>

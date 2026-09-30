@@ -14,15 +14,15 @@ export function CTASection({ title, description, primary, secondary }: CTASectio
   return (
     <Section tone="deep" className="text-center">
       <div className="reveal mx-auto max-w-4xl">
-        <h2 className="text-3xl font-extrabold text-cream sm:text-4xl lg:text-5xl">{title}</h2>
+        <h2 className="text-3xl font-extrabold text-on-deep sm:text-4xl lg:text-5xl">{title}</h2>
         {description ? (
-          <p className="mx-auto mt-4 max-w-3xl text-lg leading-[1.75] text-cream/90">{description}</p>
+          <p className="mx-auto mt-4 max-w-3xl text-lg leading-[1.75] text-on-deep/95">{description}</p>
         ) : null}
         <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
           <Button
             href={primary.href}
             size="lg"
-            className="w-full bg-berry text-cream hover:bg-berry-deep sm:w-auto"
+            className="w-full bg-berry text-on-deep hover:bg-berry-deep sm:w-auto"
           >
             {primary.label}
           </Button>
@@ -31,7 +31,7 @@ export function CTASection({ title, description, primary, secondary }: CTASectio
               href={secondary.href}
               size="lg"
               variant="secondary"
-              className="w-full border-cream/30 bg-transparent text-cream hover:border-cream/60 hover:bg-cream/10 sm:w-auto"
+              className="w-full border-on-deep/35 bg-transparent text-on-deep hover:border-on-deep/70 hover:bg-on-deep/10 sm:w-auto"
             >
               {secondary.label}
             </Button>

@@ -15,7 +15,7 @@ export function HistoricalBadge({
   return (
     <span
       className={cn(
-        "inline-flex items-center gap-1.5 rounded-pill bg-berry px-3 py-1 text-xs font-semibold text-cream",
+        "inline-flex items-center gap-1.5 rounded-pill bg-berry px-3 py-1 text-xs font-semibold text-on-deep",
         className,
       )}
     >

@@ -39,7 +39,7 @@ export function FlavorHero({ flavor }: { flavor: Flavor }) {
           </span>
         </div>
         <h1 className="mt-3 text-4xl font-extrabold sm:text-5xl">{flavor.name}</h1>
-        <p className="mt-2 text-xl font-medium text-green-deep-80">
+        <p className="mt-2 text-xl font-medium text-muted">
           {flavor.tagline}
         </p>
         <p className="mt-3 max-w-3xl text-lg leading-[1.75] text-muted">

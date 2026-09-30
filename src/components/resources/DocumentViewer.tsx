@@ -23,7 +23,7 @@ export function DocumentViewer({ document }: { document: HistoricalDocument }) {
             sizes="(max-width: 1024px) 100vw, 40vw"
             className="mx-auto h-auto max-h-[28rem] w-full object-contain object-top transition duration-300 group-hover:opacity-95"
           />
-          <span className="pointer-events-none absolute inset-x-0 bottom-0 bg-gradient-to-t from-green-deep/55 to-transparent px-4 pb-3 pt-10 text-center text-xs font-semibold text-cream opacity-0 transition group-hover:opacity-100">
+          <span className="pointer-events-none absolute inset-x-0 bottom-0 bg-gradient-to-t from-green-deep/55 to-transparent px-4 pb-3 pt-10 text-center text-xs font-semibold text-on-deep opacity-0 transition group-hover:opacity-100">
             Read the document
           </span>
         </Link>

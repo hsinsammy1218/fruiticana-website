@@ -4,14 +4,14 @@
 /* Fruiticana design system                                            */
 /* Packaging-label palette (Hemman cup): yellow → lime/pear → moss.    */
 /* No dairy cream / white panels. Pale-lime cards, berry CTAs, orange  */
-/* headline energy. WCAG AA text pairs on fruit surfaces.              */
+/* headline energy. Dark ink/muted + bright on-deep for AA readability. */
 /* ------------------------------------------------------------------ */
 @theme {
   --font-display: var(--font-fraunces), ui-serif, Georgia, serif;
   --font-sans: var(--font-nunito), ui-sans-serif, system-ui, sans-serif;
   --font-brand: var(--font-brand-script), cursive;
 
-  /* Label yellow — page base + light text on moss/berry (token name kept) */
+  /* Label yellow — page / light surfaces only (not body text on moss) */
   --color-cream: #fce98d;
   /* Lime / pear green section band */
   --color-cream-100: #c6e84a;
@@ -25,30 +25,33 @@
   --color-blush: #ffb4ae;
   /* Leaf green accent */
   --color-green: #7ec42a;
-  /* Mid greens: AA on yellow / lime / card / grove */
-  --color-green-600: #1f5510;
-  --color-green-700: #1a4d0e;
-  /* Deeper moss (label gradient end) */
-  --color-green-deep: #1b4a1a;
-  --color-green-deep-80: #276328;
+  /* Mid greens: strong AA on yellow / lime / card / grove */
+  --color-green-600: #144011;
+  --color-green-700: #0e2f0c;
+  /* Deeper moss (label gradient end + heading ink) */
+  --color-green-deep: #0f2f12;
+  --color-green-deep-80: #1a4a1c;
   /* Pale lime brand highlight */
   --color-lime: #d9f56e;
   --color-yellow: #fce14a;
   /* Strong packaging red (“VITAMIN” / slogan) */
   --color-berry: #c10018;
-  --color-berry-deep: #8f0012;
+  --color-berry-deep: #6b000d;
   --color-gold: #f0b400;
-  --color-ink: #143018;
-  --color-muted: #2a5528;
+  /* Body / muted copy — darkened for AA on grove & blush */
+  --color-ink: #0c1f0e;
+  --color-muted: #183a1b;
   --color-line: #6aa828;
+  /* Bright yellow-white text on moss / berry (not a page background) */
+  --color-on-deep: #fff9d0;
 
   /* Flavor accents — strawberry, mango, citrus */
   --color-mango: #ff9a14;
   --color-strawberry: #e02028;
   --color-blueberry: #2f52b8;
   --color-orange: #ff8c00;
-  /* AA text orange on yellow / lime / card surfaces */
-  --color-orange-deep: #9a4200;
+  /* AA text orange on yellow / lime / card / grove surfaces */
+  --color-orange-deep: #753200;
   --color-cantaloupe: #ff9a3a;
 
   --radius-card: 1rem;

@@ -8,7 +8,7 @@ const base =
   "inline-flex min-h-11 items-center justify-center gap-2 rounded-pill font-semibold transition-colors duration-200 disabled:cursor-not-allowed disabled:opacity-60";
 
 const variants: Record<Variant, string> = {
-  primary: "bg-berry text-cream hover:bg-berry-deep",
+  primary: "bg-berry text-on-deep hover:bg-berry-deep",
   secondary:
     "border border-green-deep/30 bg-lime/90 text-green-deep hover:border-orange/70 hover:bg-yellow/50",
   ghost: "text-green-deep hover:bg-lime/35",
