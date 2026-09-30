@@ -23,32 +23,32 @@ export function OriginalBrandMotif({ className }: OriginalBrandMotifProps) {
       >
         <defs>
           <linearGradient id="motifGlow" x1="0" y1="0" x2="1" y2="1">
-            <stop offset="0" stopColor="#98C93C" stopOpacity="0.35" />
-            <stop offset="1" stopColor="#F6D64A" stopOpacity="0.45" />
+            <stop offset="0" stopColor="#A3E025" stopOpacity="0.4" />
+            <stop offset="1" stopColor="#FFD01F" stopOpacity="0.5" />
           </linearGradient>
           <radialGradient id="scoopStraw" cx="0.38" cy="0.32" r="0.8">
-            <stop offset="0" stopColor="#ff8a8a" />
-            <stop offset="1" stopColor="#E95858" />
+            <stop offset="0" stopColor="#ff7a7a" />
+            <stop offset="1" stopColor="#F23636" />
           </radialGradient>
           <radialGradient id="scoopMango" cx="0.38" cy="0.32" r="0.8">
-            <stop offset="0" stopColor="#ffd27a" />
-            <stop offset="1" stopColor="#F3A62A" />
+            <stop offset="0" stopColor="#ffc85a" />
+            <stop offset="1" stopColor="#FF9808" />
           </radialGradient>
           <radialGradient id="scoopLime" cx="0.38" cy="0.32" r="0.8">
-            <stop offset="0" stopColor="#c6e86a" />
-            <stop offset="1" stopColor="#65A844" />
+            <stop offset="0" stopColor="#b8f04a" />
+            <stop offset="1" stopColor="#3EC02E" />
           </radialGradient>
           <radialGradient id="scoopBlue" cx="0.38" cy="0.32" r="0.8">
-            <stop offset="0" stopColor="#8b97d4" />
-            <stop offset="1" stopColor="#5966A8" />
+            <stop offset="0" stopColor="#6b85d9" />
+            <stop offset="1" stopColor="#3A5BB5" />
           </radialGradient>
           <radialGradient id="scoopOrange" cx="0.38" cy="0.32" r="0.8">
-            <stop offset="0" stopColor="#ffc08a" />
-            <stop offset="1" stopColor="#F28C35" />
+            <stop offset="0" stopColor="#ffb06a" />
+            <stop offset="1" stopColor="#FF7C12" />
           </radialGradient>
         </defs>
 
-        <ellipse cx="250" cy="430" rx="150" ry="22" fill="#244B2A" opacity="0.08" />
+        <ellipse cx="250" cy="430" rx="150" ry="22" fill="#14501F" opacity="0.08" />
         <circle cx="250" cy="250" r="210" fill="url(#motifGlow)" />
 
         {/* stacked fruit scoops — successor to the 2007 left-column photo */}
@@ -63,17 +63,17 @@ export function OriginalBrandMotif({ className }: OriginalBrandMotifProps) {
         <ellipse cx="236" cy="160" rx="14" ry="9" fill="#ffffff" opacity="0.4" />
 
         {/* strawberry leaf */}
-        <path d="M252 132c8-20 28-28 44-22-2 20-16 34-44 22z" fill="#3d7a28" />
+        <path d="M252 132c8-20 28-28 44-22-2 20-16 34-44 22z" fill="#176F14" />
 
         {/* whole fruit accents */}
-        <circle cx="86" cy="156" r="28" fill="#5966A8" />
+        <circle cx="86" cy="156" r="28" fill="#3A5BB5" />
         <circle cx="80" cy="148" r="6" fill="#ffffff" opacity="0.5" />
-        <circle cx="414" cy="188" r="32" fill="#F28C35" />
+        <circle cx="414" cy="188" r="32" fill="#FF7C12" />
         <circle cx="406" cy="178" r="7" fill="#ffffff" opacity="0.5" />
-        <circle cx="92" cy="372" r="22" fill="#E95858" />
-        <path d="M92 352c5-8 14-6 16-1-4 4-12 5-16 1z" fill="#65A844" />
-        <circle cx="408" cy="368" r="24" fill="#F6D64A" />
-        <path d="M408 348c6-9 16-7 18-1-5 4-13 6-18 1z" fill="#65A844" />
+        <circle cx="92" cy="372" r="22" fill="#F23636" />
+        <path d="M92 352c5-8 14-6 16-1-4 4-12 5-16 1z" fill="#3EC02E" />
+        <circle cx="408" cy="368" r="24" fill="#FFD01F" />
+        <path d="M408 348c6-9 16-7 18-1-5 4-13 6-18 1z" fill="#3EC02E" />
       </svg>
     </div>
   );

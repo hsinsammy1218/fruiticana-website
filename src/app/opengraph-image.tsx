@@ -17,13 +17,13 @@ export default function OpengraphImage() {
           justifyContent: "center",
           padding: "72px",
           background:
-            "radial-gradient(circle at 80% 30%, rgba(214,40,40,0.16), transparent 45%), radial-gradient(circle at 15% 20%, rgba(101,168,68,0.28), transparent 50%), linear-gradient(145deg, #fffbef 0%, #fdf6e3 50%, #e8f5df 100%)",
+            "radial-gradient(circle at 80% 30%, rgba(224,18,44,0.2), transparent 45%), radial-gradient(circle at 15% 20%, rgba(62,192,46,0.32), transparent 50%), linear-gradient(145deg, #fffdf6 0%, #fff4d4 50%, #dff8c8 100%)",
         }}
       >
-        <div style={{ display: "flex", fontSize: 44, fontWeight: 800, color: "#244B2A" }}>
+        <div style={{ display: "flex", fontSize: 44, fontWeight: 800, color: "#14501F" }}>
           {site.name}
         </div>
-        <div style={{ display: "flex", marginTop: 12, fontSize: 24, color: "#3d7a28" }}>
+        <div style={{ display: "flex", marginTop: 12, fontSize: 24, color: "#176F14" }}>
           {site.productLine}
         </div>
         <div
@@ -33,7 +33,7 @@ export default function OpengraphImage() {
             fontSize: 52,
             fontWeight: 800,
             lineHeight: 1.1,
-            color: "#d62828",
+            color: "#E0122C",
             letterSpacing: "-0.02em",
             maxWidth: 980,
           }}
@@ -45,7 +45,7 @@ export default function OpengraphImage() {
             display: "flex",
             marginTop: 28,
             fontSize: 28,
-            color: "#3f4d45",
+            color: "#375643",
             maxWidth: 820,
           }}
         >
