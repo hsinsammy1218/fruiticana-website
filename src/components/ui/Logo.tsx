@@ -20,11 +20,11 @@ function StrawberryDot({ className }: { className?: string }) {
     >
       <path
         d="M4.5 10.2C2.1 10.2.7 8.2.9 6.1 1 4.4 2.5 3.3 4.5 2.9c2 .4 3.5 1.5 3.6 3.2.2 2.1-1.2 4.1-3.6 4.1Z"
-        fill="#E95858"
+        fill="#F23636"
       />
       <path
         d="M4.5 3.1c.7-1 1.9-1.5 2.6-.7-.6.7-1.5 1-2.6.7Z"
-        fill="#65A844"
+        fill="#3EC02E"
       />
     </svg>
   );
@@ -39,12 +39,12 @@ function FruitMark() {
       aria-hidden="true"
       className="shrink-0"
     >
-      <circle cx="26" cy="36" r="16" fill="#65A844" />
-      <circle cx="26" cy="36" r="6" fill="#FFFBEF" />
-      <circle cx="44" cy="24" r="11" fill="#E95858" />
-      <path d="M44 14c4-2 8 0 9 3-3 1-7 1-9-3z" fill="#65A844" />
-      <circle cx="46" cy="46" r="8" fill="#F3A62A" />
-      <circle cx="18" cy="20" r="7" fill="#F6D64A" />
+      <circle cx="26" cy="36" r="16" fill="#3EC02E" />
+      <circle cx="26" cy="36" r="6" fill="#FFFDF6" />
+      <circle cx="44" cy="24" r="11" fill="#F23636" />
+      <path d="M44 14c4-2 8 0 9 3-3 1-7 1-9-3z" fill="#3EC02E" />
+      <circle cx="46" cy="46" r="8" fill="#FF9808" />
+      <circle cx="18" cy="20" r="7" fill="#FFD01F" />
     </svg>
   );
 }

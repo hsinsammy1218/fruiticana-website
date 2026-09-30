@@ -15,10 +15,10 @@ export function TimelineForeground() {
         className="absolute inset-0 -z-10 rounded-[1.75rem]"
         style={{
           background: `
-            radial-gradient(70% 55% at 82% 22%, rgba(233,88,88,0.2), transparent 55%),
-            radial-gradient(55% 50% at 10% 78%, rgba(101,168,68,0.26), transparent 58%),
-            radial-gradient(45% 40% at 48% 48%, rgba(246,214,74,0.18), transparent 55%),
-            linear-gradient(165deg, #fffbef 0%, #fdf6e3 42%, #e8f5df 100%)
+            radial-gradient(70% 55% at 82% 22%, rgba(242,54,54,0.24), transparent 55%),
+            radial-gradient(55% 50% at 10% 78%, rgba(62,192,46,0.3), transparent 58%),
+            radial-gradient(45% 40% at 48% 48%, rgba(255,208,31,0.22), transparent 55%),
+            linear-gradient(165deg, #fffdf6 0%, #fff4d4 42%, #dff8c8 100%)
           `,
         }}
       />

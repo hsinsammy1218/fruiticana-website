@@ -2,43 +2,47 @@
 
 /* ------------------------------------------------------------------ */
 /* Fruiticana design system                                            */
-/* Modern recreation of myfruiticana.com: original greens/yellows plus  */
-/* berry slogan accent. Fruit accents stay contextual.                 */
+/* Vivid orchard greens, citrus, and berry accents on a clean          */
+/* ice-crème base. Fruit accents stay contextual — never purple SaaS.  */
 /* ------------------------------------------------------------------ */
 @theme {
   --font-display: var(--font-fraunces), ui-serif, Georgia, serif;
   --font-sans: var(--font-nunito), ui-sans-serif, system-ui, sans-serif;
   --font-brand: var(--font-brand-script), cursive;
 
-  --color-cream: #fffbef;
-  --color-cream-100: #fdf6e3;
-  --color-cream-200: #f4ead0;
-  --color-green: #65a844;
-  --color-green-600: #3d7a28;
-  --color-green-700: #2f6a22;
-  --color-green-deep: #244b2a;
-  --color-green-deep-80: #2f5c36;
-  --color-lime: #98c93c;
-  --color-yellow: #f6d64a;
-  --color-berry: #d62828;
-  --color-berry-deep: #9b1c1c;
-  --color-gold: #f0c94a;
-  --color-ink: #263128;
-  --color-muted: #3f4d45;
-  --color-line: #e4dccb;
+  /* Ice-crème base — cleaner / less muddy so fruit tones pop */
+  --color-cream: #fffdf6;
+  --color-cream-100: #fff4d4;
+  --color-cream-200: #f0e2b8;
+  /* Orchard greens — juicier, higher chroma */
+  --color-green: #3ec02e;
+  --color-green-600: #1f8618;
+  --color-green-700: #1a7a16;
+  --color-green-deep: #14501f;
+  --color-green-deep-80: #1c6a2a;
+  /* Citrus & slogan berry */
+  --color-lime: #a3e025;
+  --color-yellow: #ffd01f;
+  --color-berry: #e0122c;
+  --color-berry-deep: #b00c22;
+  --color-gold: #f5bf12;
+  --color-ink: #15261a;
+  --color-muted: #375643;
+  --color-line: #e6d9b0;
 
-  --color-mango: #f3a62a;
-  --color-strawberry: #e95858;
-  --color-blueberry: #5966a8;
-  --color-orange: #f28c35;
-  --color-cantaloupe: #f4a36c;
+  /* Flavor accents */
+  --color-mango: #ff9808;
+  --color-strawberry: #f23636;
+  --color-blueberry: #3a5bb5;
+  --color-orange: #ff7c12;
+  --color-cantaloupe: #ff8d42;
 
   --radius-card: 1rem;
   --radius-xl2: 1.5rem;
   --radius-pill: 9999px;
 
-  --shadow-soft: 0 1px 2px rgba(36, 75, 42, 0.04), 0 8px 24px rgba(36, 75, 42, 0.06);
-  --shadow-hover: 0 6px 16px rgba(36, 75, 42, 0.1), 0 18px 40px rgba(36, 75, 42, 0.12);
+  --shadow-soft: 0 1px 2px rgba(20, 80, 31, 0.06), 0 8px 24px rgba(20, 80, 31, 0.09);
+  --shadow-hover: 0 6px 16px rgba(20, 80, 31, 0.12), 0 18px 40px rgba(20, 80, 31, 0.16);
 
   --container-page: 80rem;
 }
@@ -144,8 +148,9 @@
     background: linear-gradient(
       90deg,
       var(--color-green) 0%,
-      var(--color-lime) 42%,
-      var(--color-yellow) 100%
+      var(--color-lime) 32%,
+      var(--color-yellow) 62%,
+      var(--color-orange) 100%
     );
   }
 
