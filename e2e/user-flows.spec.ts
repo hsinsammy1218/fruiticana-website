@@ -1,5 +1,4 @@
 import { test, expect } from "@playwright/test";
-import { fillSchoolInquiry } from "./helpers";
 
 test.describe("user flows", () => {
   test("home to product nutrition to flavor sheet", async ({ page }) => {
@@ -24,7 +23,7 @@ test.describe("user flows", () => {
     ).toHaveAttribute("aria-current", "true");
   });
 
-  test("about to school inquiry", async ({ page }) => {
+  test("about to contact details", async ({ page }) => {
     await page.setViewportSize({ width: 1280, height: 800 });
     await page.goto("/about");
     await expect(page.getByText("Fruiticana Creamless Ice Cream", { exact: true })).toBeVisible();
@@ -34,15 +33,15 @@ test.describe("user flows", () => {
 
     await page.getByRole("navigation", { name: "Primary" }).getByRole("link", { name: "Contact" }).click();
     await expect(page).toHaveURL(/\/contact$/);
-
-    await fillSchoolInquiry(page, { name: "Jordan", interest: "Cafeteria" });
-    await page.getByRole("button", { name: "Request School Information" }).click();
-    await expect(page.getByRole("status").filter({ hasText: /thanks, jordan/i })).toBeVisible();
+    await expect(
+      page.getByRole("heading", { level: 1, name: "Ways to reach us" }),
+    ).toBeVisible();
+    await expect(
+      page.getByRole("link", { name: "fruiticana1@hotmail.com" }),
+    ).toBeVisible();
   });
 
-  test("for schools to classroom resource to snack-program inquiry", async ({
-    page,
-  }) => {
+  test("for schools to classroom resource to contact", async ({ page }) => {
     await page.goto("/schools");
     await page.getByRole("link", { name: "Open the classroom resource" }).click();
     await expect(page).toHaveURL(/\/learn$/);
@@ -54,9 +53,10 @@ test.describe("user flows", () => {
       .getByRole("main")
       .getByRole("link", { name: "Request School Information" })
       .click();
-    await expect(page.getByLabel(/reason for inquiry/i)).toHaveValue(
-      "Healthy Snack Program",
-    );
+    await expect(page).toHaveURL(/\/contact/);
+    await expect(
+      page.getByRole("heading", { level: 1, name: "Ways to reach us" }),
+    ).toBeVisible();
   });
 
   test("skip link jumps to main content", async ({ page }) => {

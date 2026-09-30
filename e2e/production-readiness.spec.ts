@@ -3,7 +3,6 @@ import {
   collectPageFailures,
   downloadablePdfs,
   expectNoHorizontalOverflow,
-  fillSchoolInquiry,
   gotoForLayout,
   legalRoutes,
   primaryRoutes,
@@ -36,7 +35,7 @@ test.describe("production readiness", () => {
     failures.expectClean();
   });
 
-  test("TEST 12: school administrator journey from home to inquiry", async ({
+  test("TEST 12: school administrator journey from home to contact", async ({
     page,
   }) => {
     await page.setViewportSize(viewports.desktop1280);
@@ -85,13 +84,17 @@ test.describe("production readiness", () => {
 
     await page.getByRole("link", { name: "Request School Information" }).last().click();
     await expect(page).toHaveURL(/\/contact$/);
-    await fillSchoolInquiry(page, { name: "Jordan", interest: "Cafeteria" });
-    await page.getByRole("button", { name: "Request School Information" }).click();
     await expect(
-      page.getByRole("status").filter({ hasText: /thanks, jordan/i }),
+      page.getByRole("heading", { level: 1, name: "Ways to reach us" }),
     ).toBeVisible();
-    await expect(page.getByRole("status")).toContainText(/does not send messages yet/i);
-    await expect(page.getByRole("status")).toContainText(/fruiticana1@hotmail\.com/i);
+    await expect(
+      page.getByRole("link", { name: "fruiticana1@hotmail.com" }),
+    ).toHaveAttribute("href", "mailto:fruiticana1@hotmail.com");
+    await expect(page.getByRole("link", { name: "203-709-0992" })).toHaveAttribute(
+      "href",
+      "tel:+12037090992",
+    );
+    await expect(page.getByText("16 Pleasant St, Waterbury, CT 06706")).toBeVisible();
 
     failures.expectClean();
   });
