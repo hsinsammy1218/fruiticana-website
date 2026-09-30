@@ -103,7 +103,7 @@ export const faqItems: FaqItem[] = [
   {
     question: "How can our school get started?",
     answer:
-      "Request school information through the contact form, or email fruiticana1@hotmail.com / call 203-709-0992. Share your name, school, district, role, and a note about your students. The on-site form does not send messages yet, so use email or phone for follow-up.",
-    href: { label: "Request School Information", url: "/contact" },
+      "Email fruiticana1@hotmail.com or call 203-709-0992. Share your name, school, district, role, and a note about your students so the team can follow up.",
+    href: { label: "Contact Fruiticana", url: "/contact" },
   },
 ];

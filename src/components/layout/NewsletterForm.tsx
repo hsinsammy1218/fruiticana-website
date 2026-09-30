@@ -5,7 +5,7 @@ import { useState } from "react";
 /**
  * "Stay Fresh" newsletter UI. Intentionally does NOT submit anywhere yet
  * (no email provider is connected). Mirrors the honest placeholder pattern
- * used by the contact form. Swap the handler for a real provider later.
+ * used for lightweight client validation. Swap the handler for a real provider later.
  */
 export function NewsletterForm() {
   const [email, setEmail] = useState("");

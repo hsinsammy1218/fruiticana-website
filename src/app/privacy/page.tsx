@@ -19,10 +19,10 @@ export default function PrivacyPage() {
       <Prose className="mt-8">
         <h2>What we collect</h2>
         <p>
-          The Fruiticana website is currently informational. The contact form
-          validates input in your browser only and does{" "}
-          <strong>not</strong> transmit or store your information anywhere,
-          because no message-delivery backend is connected yet.
+          The Fruiticana website is currently informational. Contact details
+          are published for direct email and phone outreach. This site does{" "}
+          <strong>not</strong> collect or store personal information through
+          an on-site contact form.
         </p>
         <h2>Cookies & analytics</h2>
         <p>
@@ -40,7 +40,7 @@ export default function PrivacyPage() {
         </p>
         <h2>When this changes</h2>
         <p>
-          Before enabling contact-form delivery or any additional data
+          Before enabling any contact-form delivery or additional data
           collection, this policy will be updated to explain what is collected,
           why, how it is stored, and your choices.
         </p>

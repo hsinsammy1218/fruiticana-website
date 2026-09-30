@@ -29,7 +29,7 @@ test.describe("learn", () => {
     await expect(page.getByText("12").first()).toBeVisible();
   });
 
-  test("module jump links and school inquiry stay on-site", async ({ page }) => {
+  test("module jump links and contact CTA stay on-site", async ({ page }) => {
     await page.goto("/learn");
 
     await page.getByRole("link", { name: "Start with the twelve fruits" }).click();
@@ -40,9 +40,9 @@ test.describe("learn", () => {
 
     await page.goto("/learn");
     await page.getByRole("main").getByRole("link", { name: "Request School Information" }).click();
-    await expect(page).toHaveURL(/\/contact\?interest=/);
-    await expect(page.getByLabel(/reason for inquiry/i)).toHaveValue(
-      "Healthy Snack Program",
-    );
+    await expect(page).toHaveURL(/\/contact/);
+    await expect(
+      page.getByRole("heading", { level: 1, name: "Ways to reach us" }),
+    ).toBeVisible();
   });
 });
