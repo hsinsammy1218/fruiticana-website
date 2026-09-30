@@ -29,7 +29,7 @@ export function NutritionSelector({ selectedSlug }: { selectedSlug?: string }) {
                     "inline-flex min-h-11 w-full cursor-pointer items-center gap-2 rounded-pill border px-4 text-sm font-semibold transition-colors lg:rounded-xl2",
                     active
                       ? "border-green-deep bg-green-deep text-cream"
-                      : "border-line bg-white text-green-deep hover:border-green-deep/40",
+                      : "border-line bg-card text-green-deep hover:border-green-deep/40",
                   )}
                 >
                   <span

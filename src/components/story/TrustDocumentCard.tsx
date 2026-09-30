@@ -37,7 +37,7 @@ export function TrustDocumentCard({
   return (
     <article
       className={cn(
-        "flex h-full flex-col overflow-hidden rounded-xl2 border border-line bg-white",
+        "flex h-full flex-col overflow-hidden rounded-xl2 border border-line bg-card",
         className,
       )}
     >

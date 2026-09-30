@@ -25,7 +25,7 @@ export function IngredientRecipe({
         className,
       )}
     >
-      <div className="border-b border-line bg-white px-6 py-5 sm:px-8">
+      <div className="border-b border-line bg-card px-6 py-5 sm:px-8">
           <p className="text-xs font-semibold uppercase tracking-[0.18em] text-green-600">
             Historical recipe
           </p>
@@ -69,7 +69,7 @@ export function IngredientRecipe({
           </ul>
         </div>
 
-        <div className="border-t border-line bg-white px-6 py-6 sm:px-8 lg:border-l lg:border-t-0">
+        <div className="border-t border-line bg-card px-6 py-6 sm:px-8 lg:border-l lg:border-t-0">
           <p className="text-sm font-bold uppercase tracking-[0.14em] text-green-600">
             For school review
           </p>

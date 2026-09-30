@@ -104,7 +104,7 @@ export default async function DocumentPage({
         <div className="grid items-start gap-8 lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] lg:gap-12">
           {document.image ? (
             <figure className="reveal">
-              <div className="overflow-hidden rounded-xl2 border border-line bg-white shadow-[0_18px_40px_rgba(22,61,42,0.10)]">
+              <div className="overflow-hidden rounded-xl2 border border-line bg-card shadow-[0_18px_40px_rgba(22,61,42,0.10)]">
                 <Image
                   src={document.image}
                   alt={document.imageAlt}

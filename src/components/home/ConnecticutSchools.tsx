@@ -37,7 +37,7 @@ export function ConnecticutSchools() {
               {index + 1}. {step.period}
             </p>
             <h3 className="mt-3 text-base font-bold text-cream">{step.title}</h3>
-            <p className="mt-2 text-sm leading-snug text-cream/75">{step.body}</p>
+            <p className="mt-2 text-sm leading-snug text-cream/90">{step.body}</p>
           </li>
         ))}
       </ol>

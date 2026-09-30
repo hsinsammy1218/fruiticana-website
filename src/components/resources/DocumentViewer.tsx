@@ -8,7 +8,7 @@ export function DocumentViewer({ document }: { document: HistoricalDocument }) {
   const readHref = documentPath(document.slug);
 
   return (
-    <article className="flex h-full flex-col overflow-hidden rounded-xl2 border border-line bg-white">
+    <article className="flex h-full flex-col overflow-hidden rounded-xl2 border border-line bg-card">
       {document.image ? (
         <Link
           href={readHref}

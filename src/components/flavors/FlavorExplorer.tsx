@@ -35,7 +35,7 @@ export function FlavorExplorer() {
                 "min-h-11 rounded-pill border px-4 text-sm font-semibold transition-colors",
                 active
                   ? "border-green-deep bg-green-deep text-cream"
-                  : "border-line bg-white text-green-deep hover:border-green-deep/40",
+                  : "border-line bg-card text-green-deep hover:border-green-deep/40",
               )}
             >
               {option}

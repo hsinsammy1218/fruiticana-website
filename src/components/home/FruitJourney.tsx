@@ -15,7 +15,7 @@ export function FruitJourney() {
         {ideaCopy.steps.map((step, index) => (
           <li
             key={step.title}
-            className="reveal relative flex h-full flex-col overflow-hidden rounded-xl2 border border-line bg-white"
+            className="reveal relative flex h-full flex-col overflow-hidden rounded-xl2 border border-line bg-card"
           >
             <p className="absolute left-4 top-4 z-10 inline-flex h-8 w-8 items-center justify-center rounded-full bg-green-deep font-sans text-sm font-bold text-cream">
               {index + 1}

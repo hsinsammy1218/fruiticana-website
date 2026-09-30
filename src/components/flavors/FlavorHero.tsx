@@ -29,7 +29,7 @@ export function FlavorHero({ flavor }: { flavor: Flavor }) {
         <div className="mt-6 flex flex-wrap items-center gap-3">
           <span
             className="inline-flex items-center gap-2 rounded-pill px-3 py-1 text-xs font-semibold text-green-deep"
-            style={{ backgroundColor: "color-mix(in srgb, var(--accent) 22%, white)" }}
+            style={{ backgroundColor: "color-mix(in srgb, var(--accent) 22%, var(--color-card))" }}
           >
             <span
               className="h-2 w-2 rounded-full"
@@ -48,7 +48,7 @@ export function FlavorHero({ flavor }: { flavor: Flavor }) {
 
         <div className="mt-6 grid grid-cols-1 items-start gap-5 md:grid-cols-2 md:gap-6 lg:gap-8">
           <div className="min-w-0">
-            <div className="relative aspect-[4/3] overflow-hidden rounded-xl2 border border-line bg-white shadow-soft">
+            <div className="relative aspect-[4/3] overflow-hidden rounded-xl2 border border-line bg-card shadow-soft">
               <FlavorImage flavor={flavor} priority fill className="object-center" />
             </div>
             <p className="mt-3 max-w-xl text-sm leading-relaxed text-muted sm:text-base">

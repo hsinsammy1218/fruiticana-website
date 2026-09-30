@@ -42,7 +42,7 @@ export function StatGrid({
             "flex h-full flex-col rounded-xl2 p-5",
             deep
               ? "bg-green-deep-80"
-              : "border border-line bg-white shadow-[0_1px_0_rgba(22,61,42,0.03)]",
+              : "border border-line bg-card shadow-[0_1px_0_rgba(22,61,42,0.03)]",
           )}
         >
           <dt
@@ -65,7 +65,7 @@ export function StatGrid({
             <dd
               className={cn(
                 "order-3 mt-1.5 text-sm leading-snug",
-                deep ? "text-cream/70" : "text-muted",
+                deep ? "text-cream/90" : "text-muted",
               )}
             >
               {item.note}

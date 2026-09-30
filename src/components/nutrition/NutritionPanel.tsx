@@ -35,7 +35,7 @@ function Row({
 export function NutritionPanel({ flavor }: { flavor: Flavor }) {
   const n = flavor.nutrition;
   return (
-    <div className="rounded-xl2 border border-line bg-white p-6 shadow-soft">
+    <div className="rounded-xl2 border border-line bg-card p-6 shadow-soft">
       <div className="flex items-center justify-between gap-3">
         <div className="flex items-center gap-2">
           <span

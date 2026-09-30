@@ -35,19 +35,19 @@ export function Hero() {
           background: `
             linear-gradient(
               115deg,
-              rgba(255, 254, 248, 0.98) 0%,
-              rgba(255, 254, 248, 0.96) 34%,
-              rgba(255, 241, 184, 0.78) 48%,
-              rgba(200, 248, 106, 0.28) 64%,
-              rgba(255, 110, 0, 0.1) 78%,
+              rgba(252, 233, 141, 0.98) 0%,
+              rgba(252, 233, 141, 0.95) 32%,
+              rgba(234, 248, 108, 0.82) 48%,
+              rgba(158, 214, 63, 0.42) 64%,
+              rgba(27, 74, 26, 0.18) 82%,
               transparent 100%
             ),
             linear-gradient(
               180deg,
-              rgba(255, 254, 248, 0.62) 0%,
-              transparent 30%,
-              rgba(255, 241, 184, 0.18) 72%,
-              rgba(255, 254, 248, 0.58) 100%
+              rgba(252, 233, 141, 0.7) 0%,
+              transparent 32%,
+              rgba(198, 232, 74, 0.22) 72%,
+              rgba(252, 233, 141, 0.55) 100%
             )
           `,
         }}
@@ -62,7 +62,7 @@ export function Hero() {
             <span className="block">{heroCopy.line1}</span>
             {/* Keep a text node between block spans so the accessible name has a space. */}
             {" "}
-            <span className="block">{heroCopy.line2}</span>
+            <span className="block text-berry-deep">{heroCopy.line2}</span>
           </h1>
           <p className="hero-rise hero-rise-delay-2 mt-5 max-w-md text-lg leading-snug text-ink sm:text-xl">
             {heroCopy.subhead}
@@ -79,7 +79,7 @@ export function Hero() {
               href={heroCopy.secondaryCta.href}
               size="lg"
               variant="secondary"
-              className="w-full border-green-deep/30 bg-cream/90 backdrop-blur-sm sm:w-auto"
+              className="w-full border-green-deep/30 bg-lime/90 backdrop-blur-sm sm:w-auto"
             >
               {heroCopy.secondaryCta.label}
             </Button>
@@ -91,7 +91,7 @@ export function Hero() {
           aria-hidden="true"
         >
           <div
-            className="pointer-events-none absolute inset-[10%] -z-10 rounded-full bg-[radial-gradient(circle,rgba(255,254,248,0.78),transparent_72%)]"
+            className="pointer-events-none absolute inset-[10%] -z-10 rounded-full bg-[radial-gradient(circle,rgba(234,248,108,0.78),transparent_72%)]"
           />
           <Image
             src={FRUIT_HEART_LOGO_SRC}

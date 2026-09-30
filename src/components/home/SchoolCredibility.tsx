@@ -6,7 +6,7 @@ import { trustCopy } from "@/data/home";
 export function SchoolCredibility() {
   return (
     <Section tone="cream-100">
-      <div className="reveal grid items-center gap-8 rounded-xl2 border border-line bg-white p-8 sm:p-10 lg:grid-cols-[1.4fr_1fr] lg:gap-12">
+      <div className="reveal grid items-center gap-8 rounded-xl2 border border-line bg-card p-8 sm:p-10 lg:grid-cols-[1.4fr_1fr] lg:gap-12">
         <SectionHeading
           eyebrow={trustCopy.eyebrow}
           title={trustCopy.title}

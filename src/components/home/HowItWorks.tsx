@@ -26,7 +26,7 @@ export function HowItWorks() {
         />
         <div
           aria-hidden="true"
-          className="absolute inset-0 bg-gradient-to-br from-white/94 via-white/78 to-white/52"
+          className="absolute inset-0 bg-gradient-to-br from-grove/95 via-cream/80 to-cream-100/55"
         />
         <div className="relative flex h-full min-h-[min(28rem,55vh)] flex-col justify-between gap-8 px-6 py-8 sm:px-8 sm:py-10 lg:flex-row lg:items-stretch lg:gap-12 lg:px-10 lg:py-12">
           <div className="flex max-w-2xl flex-col justify-center">
@@ -53,7 +53,7 @@ export function HowItWorks() {
                 <li key={format.slug} className="reveal">
                   <ProductFormatCard
                     format={format}
-                    className="border-white/80 bg-white/95 shadow-[0_16px_36px_rgba(22,61,42,0.12)] backdrop-blur-sm"
+                    className="border-green-deep/15 bg-card/95 shadow-[0_16px_36px_rgba(22,61,42,0.12)] backdrop-blur-sm"
                   />
                 </li>
               ))}
@@ -79,7 +79,7 @@ export function HowItWorks() {
                   className={
                     item.status === "known"
                       ? "rounded-pill bg-green/15 px-2.5 py-0.5 text-xs font-semibold text-green-700"
-                      : "rounded-pill bg-cream-200 px-2.5 py-0.5 text-xs font-semibold text-green-deep"
+                      : "rounded-pill bg-orange px-2.5 py-0.5 text-xs font-semibold text-ink"
                   }
                 >
                   {item.status === "known" ? "From the record" : "Still being documented"}

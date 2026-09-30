@@ -12,7 +12,7 @@ export function ProductFormatCard({ format, className }: ProductFormatCardProps)
   return (
     <div
       className={cn(
-        "flex h-full flex-col items-center rounded-xl2 border border-line bg-white p-5 text-center transition-transform duration-300 hover:-translate-y-1",
+        "flex h-full flex-col items-center rounded-xl2 border border-line bg-card p-5 text-center transition-transform duration-300 hover:-translate-y-1",
         className,
       )}
     >
