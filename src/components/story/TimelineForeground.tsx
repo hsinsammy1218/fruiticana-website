@@ -19,7 +19,7 @@ export function TimelineForeground() {
             radial-gradient(55% 50% at 10% 78%, rgba(40,208,18,0.34), transparent 58%),
             radial-gradient(45% 40% at 48% 48%, rgba(255,224,20,0.28), transparent 55%),
             radial-gradient(40% 35% at 88% 72%, rgba(255,110,0,0.2), transparent 55%),
-            linear-gradient(165deg, #fce98d 0%, #c6e84a 42%, #1b4a1a 100%)
+            linear-gradient(165deg, #fce98d 0%, #c6e84a 42%, #0f2f12 100%)
           `,
         }}
       />

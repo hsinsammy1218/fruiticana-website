@@ -11,7 +11,7 @@ const toneClasses: Record<Tone, string> = {
   white: "bg-grove",
   grove: "bg-grove",
   blush: "bg-blush",
-  deep: "bg-green-deep text-cream",
+  deep: "bg-green-deep text-on-deep",
 };
 
 type SectionProps = {

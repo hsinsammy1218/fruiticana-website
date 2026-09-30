@@ -19,10 +19,10 @@ export function NewsletterForm() {
 
   return (
     <form onSubmit={handleSubmit} noValidate className="mt-3">
-      <label htmlFor="newsletter-email" className="text-sm font-semibold text-cream">
+      <label htmlFor="newsletter-email" className="text-sm font-semibold text-on-deep">
         Stay Fresh
       </label>
-      <p className="mt-1 text-sm text-cream/70">
+      <p className="mt-1 text-sm text-on-deep/90">
         Fruiticana news, flavors, and availability.
       </p>
       <div className="mt-3 flex flex-col gap-2 sm:flex-row">
@@ -37,7 +37,7 @@ export function NewsletterForm() {
             setEmail(e.target.value);
             if (status !== "idle") setStatus("idle");
           }}
-          className="min-h-11 w-full rounded-pill border border-cream/25 bg-green-deep-80 px-4 text-sm text-cream placeholder:text-cream/50 focus-visible:outline-cream"
+          className="min-h-11 w-full rounded-pill border border-on-deep/30 bg-green-deep-80 px-4 text-sm text-on-deep placeholder:text-on-deep/65 focus-visible:outline-on-deep"
         />
         <button
           type="submit"
@@ -46,7 +46,7 @@ export function NewsletterForm() {
           Notify me
         </button>
       </div>
-      <p role="status" aria-live="polite" className="mt-2 min-h-5 text-sm text-cream/80">
+      <p role="status" aria-live="polite" className="mt-2 min-h-5 text-sm text-on-deep/90">
         {status === "done"
           ? "Thanks! Sign-ups aren't live yet - we'll add this soon."
           : status === "error"
