@@ -4,11 +4,14 @@ import { Button } from "@/components/ui/Button";
 import { Logo } from "@/components/ui/Logo";
 import { heroCopy } from "@/data/home";
 
+/** Fruit-heart mark (cones in a pink heart) — transparent foreground for the hero. */
+export const FRUIT_HEART_LOGO_SRC = "/images/brand/fruit-heart-logo.webp";
+
 /**
  * Brand-first full-bleed hero.
- * One composition: the original Fruiticana brand logo asset as the display
- * signal, the tagline as support, one school-mission sentence, school-primary
- * CTAs, and a single edge-to-edge product image — no inset collage or cards.
+ * One composition: script brand lockup + headline/CTAs on the left, the
+ * fruit-heart logo as a dominant foreground on the right overlapping the
+ * product scene, and a single edge-to-edge product image behind — no cards.
  */
 export function Hero() {
   return (
@@ -50,8 +53,8 @@ export function Hero() {
         }}
       />
 
-      <Container className="relative flex min-h-[min(92svh,54rem)] items-center py-16 sm:py-20 lg:py-24">
-        <div className="max-w-xl">
+      <Container className="relative grid min-h-[min(92svh,54rem)] items-center gap-8 py-16 sm:py-20 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,0.95fr)] lg:gap-4 lg:py-24 xl:gap-8">
+        <div className="relative z-10 max-w-xl">
           <div className="hero-rise text-green-deep">
             <Logo asLink={false} size="hero" className="text-green-deep" />
           </div>
@@ -81,6 +84,24 @@ export function Hero() {
               {heroCopy.secondaryCta.label}
             </Button>
           </div>
+        </div>
+
+        <div
+          className="hero-float relative mx-auto w-full max-w-[20rem] sm:max-w-[24rem] lg:max-w-none lg:justify-self-end lg:pr-2 xl:pr-0"
+          aria-hidden="true"
+        >
+          <div
+            className="pointer-events-none absolute inset-[10%] -z-10 rounded-full bg-[radial-gradient(circle,rgba(255,251,239,0.72),transparent_72%)]"
+          />
+          <Image
+            src={FRUIT_HEART_LOGO_SRC}
+            alt=""
+            width={1100}
+            height={1069}
+            priority
+            sizes="(max-width: 1024px) 70vw, 42vw"
+            className="relative mx-auto h-auto w-[min(100%,26rem)] drop-shadow-[0_28px_50px_rgba(22,61,42,0.2)] lg:w-[min(100%,32rem)] xl:w-[min(100%,36rem)]"
+          />
         </div>
       </Container>
     </section>

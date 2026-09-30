@@ -18,7 +18,7 @@ Brand bars and fruit motifs still come from CSS in
 | `top_row_bak.jpg` | Yellow–green header strip | CSS gradient brand bar |
 | `bottom_row_bak.jpg` | Yellow–green footer strip | CSS gradient brand bar |
 | `greenline_footer.jpg` | Green footer rule | Footer/nav accent |
-| `heart.jpg` | Heart graphic with fruit cones / “A Gift For Your Heart” | Recreated at high resolution as `public/images/brand/heart.webp` for the homepage hero. The live ribbon now reads “An exciting new way to eat fruit” (the legacy heart slogan was dropped to avoid a cardiovascular implication) |
+| `heart.jpg` | Heart graphic with fruit cones / “A Gift For Your Heart” | Source for `public/images/brand/heart.webp` (timeline / legacy hero visual) and transparent `fruit-heart-logo.webp` as the homepage hero foreground. Legacy heart slogan dropped to avoid a cardiovascular implication. |
 
 ## Missing from the archive (do not invent)
 
