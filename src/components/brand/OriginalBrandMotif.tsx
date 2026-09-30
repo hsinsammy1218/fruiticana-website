@@ -13,7 +13,7 @@ export function OriginalBrandMotif({ className }: OriginalBrandMotifProps) {
     <div className={cn("relative mx-auto aspect-square w-full max-w-md", className)}>
       <div
         aria-hidden="true"
-        className="absolute inset-0 rounded-[2rem] bg-gradient-to-br from-white via-cream-100 to-yellow/30 ring-1 ring-green-deep/8"
+        className="absolute inset-0 rounded-[2rem] bg-gradient-to-br from-white via-cream-100 to-yellow/40 ring-1 ring-green-deep/8"
       />
       <svg
         viewBox="0 0 500 500"
@@ -23,32 +23,32 @@ export function OriginalBrandMotif({ className }: OriginalBrandMotifProps) {
       >
         <defs>
           <linearGradient id="motifGlow" x1="0" y1="0" x2="1" y2="1">
-            <stop offset="0" stopColor="#A3E025" stopOpacity="0.4" />
-            <stop offset="1" stopColor="#FFD01F" stopOpacity="0.5" />
+            <stop offset="0" stopColor="#B4F200" stopOpacity="0.45" />
+            <stop offset="1" stopColor="#FFE014" stopOpacity="0.55" />
           </linearGradient>
           <radialGradient id="scoopStraw" cx="0.38" cy="0.32" r="0.8">
             <stop offset="0" stopColor="#ff7a7a" />
-            <stop offset="1" stopColor="#F23636" />
+            <stop offset="1" stopColor="#FF2A2A" />
           </radialGradient>
           <radialGradient id="scoopMango" cx="0.38" cy="0.32" r="0.8">
             <stop offset="0" stopColor="#ffc85a" />
-            <stop offset="1" stopColor="#FF9808" />
+            <stop offset="1" stopColor="#FFA000" />
           </radialGradient>
           <radialGradient id="scoopLime" cx="0.38" cy="0.32" r="0.8">
-            <stop offset="0" stopColor="#b8f04a" />
-            <stop offset="1" stopColor="#3EC02E" />
+            <stop offset="0" stopColor="#c4ff4a" />
+            <stop offset="1" stopColor="#28D012" />
           </radialGradient>
           <radialGradient id="scoopBlue" cx="0.38" cy="0.32" r="0.8">
             <stop offset="0" stopColor="#6b85d9" />
-            <stop offset="1" stopColor="#3A5BB5" />
+            <stop offset="1" stopColor="#2F52B8" />
           </radialGradient>
           <radialGradient id="scoopOrange" cx="0.38" cy="0.32" r="0.8">
             <stop offset="0" stopColor="#ffb06a" />
-            <stop offset="1" stopColor="#FF7C12" />
+            <stop offset="1" stopColor="#FF6E00" />
           </radialGradient>
         </defs>
 
-        <ellipse cx="250" cy="430" rx="150" ry="22" fill="#14501F" opacity="0.08" />
+        <ellipse cx="250" cy="430" rx="150" ry="22" fill="#0F3F16" opacity="0.08" />
         <circle cx="250" cy="250" r="210" fill="url(#motifGlow)" />
 
         {/* stacked fruit scoops — successor to the 2007 left-column photo */}
@@ -63,22 +63,18 @@ export function OriginalBrandMotif({ className }: OriginalBrandMotifProps) {
         <ellipse cx="236" cy="160" rx="14" ry="9" fill="#ffffff" opacity="0.4" />
 
         {/* strawberry leaf */}
-        <path d="M252 132c8-20 28-28 44-22-2 20-16 34-44 22z" fill="#176F14" />
+        <path d="M252 132c8-20 28-28 44-22-2 20-16 34-44 22z" fill="#0C7B0A" />
 
         {/* whole fruit accents */}
-        <circle cx="86" cy="156" r="28" fill="#3A5BB5" />
+        <circle cx="86" cy="156" r="28" fill="#2F52B8" />
         <circle cx="80" cy="148" r="6" fill="#ffffff" opacity="0.5" />
-        <circle cx="414" cy="188" r="32" fill="#FF7C12" />
+        <circle cx="414" cy="188" r="32" fill="#FF6E00" />
         <circle cx="406" cy="178" r="7" fill="#ffffff" opacity="0.5" />
-        <circle cx="92" cy="372" r="22" fill="#F23636" />
-        <path d="M92 352c5-8 14-6 16-1-4 4-12 5-16 1z" fill="#3EC02E" />
-        <circle cx="408" cy="368" r="24" fill="#FFD01F" />
-        <path d="M408 348c6-9 16-7 18-1-5 4-13 6-18 1z" fill="#3EC02E" />
+        <circle cx="92" cy="372" r="22" fill="#FF2A2A" />
+        <path d="M92 352c5-8 14-6 16-1-4 4-12 5-16 1z" fill="#28D012" />
+        <circle cx="408" cy="368" r="24" fill="#FFE014" />
+        <path d="M408 348c6-9 16-7 18-1-5 4-13 6-18 1z" fill="#28D012" />
       </svg>
     </div>
   );
-}
-
-export function BrandBar({ className }: { className?: string }) {
-  return <div className={cn("brand-bar", className)} aria-hidden="true" />;
 }

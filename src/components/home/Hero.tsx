@@ -35,19 +35,19 @@ export function Hero() {
           background: `
             linear-gradient(
               115deg,
-              rgba(255, 251, 239, 0.98) 0%,
-              rgba(255, 251, 239, 0.96) 38%,
-              rgba(255, 251, 239, 0.82) 52%,
-              rgba(255, 251, 239, 0.38) 70%,
-              rgba(255, 251, 239, 0.1) 84%,
+              rgba(255, 254, 248, 0.98) 0%,
+              rgba(255, 254, 248, 0.96) 34%,
+              rgba(255, 241, 184, 0.78) 48%,
+              rgba(200, 248, 106, 0.28) 64%,
+              rgba(255, 110, 0, 0.1) 78%,
               transparent 100%
             ),
             linear-gradient(
               180deg,
-              rgba(255, 251, 239, 0.62) 0%,
+              rgba(255, 254, 248, 0.62) 0%,
               transparent 30%,
-              rgba(255, 251, 239, 0.22) 72%,
-              rgba(255, 251, 239, 0.58) 100%
+              rgba(255, 241, 184, 0.18) 72%,
+              rgba(255, 254, 248, 0.58) 100%
             )
           `,
         }}
@@ -91,7 +91,7 @@ export function Hero() {
           aria-hidden="true"
         >
           <div
-            className="pointer-events-none absolute inset-[10%] -z-10 rounded-full bg-[radial-gradient(circle,rgba(255,251,239,0.72),transparent_72%)]"
+            className="pointer-events-none absolute inset-[10%] -z-10 rounded-full bg-[radial-gradient(circle,rgba(255,254,248,0.78),transparent_72%)]"
           />
           <Image
             src={FRUIT_HEART_LOGO_SRC}

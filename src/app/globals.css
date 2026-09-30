@@ -2,49 +2,49 @@
 
 /* ------------------------------------------------------------------ */
 /* Fruiticana design system                                            */
-/* Vivid orchard greens, citrus, and berry accents on a clean          */
-/* ice-crème base. Fruit accents stay contextual — never purple SaaS.  */
+/* Fruit-forward orchard greens, citrus, berry, and mango accents on a */
+/* bright ice-crème base. High chroma, WCAG AA text pairs — no purple. */
 /* ------------------------------------------------------------------ */
 @theme {
   --font-display: var(--font-fraunces), ui-serif, Georgia, serif;
   --font-sans: var(--font-nunito), ui-sans-serif, system-ui, sans-serif;
   --font-brand: var(--font-brand-script), cursive;
 
-  /* Ice-crème base — cleaner / less muddy so fruit tones pop */
-  --color-cream: #fffdf6;
-  --color-cream-100: #fff4d4;
-  --color-cream-200: #f0e2b8;
-  /* Orchard greens — juicier, higher chroma */
-  --color-green: #3ec02e;
-  /* Mid greens kept vivid but darkened for WCAG AA on cream / cream-100 */
-  --color-green-600: #176f14;
-  --color-green-700: #125c10;
-  --color-green-deep: #14501f;
-  /* Deep hover surface: dark enough for cream/70–75 body text AA */
-  --color-green-deep-80: #155420;
-  /* Citrus & slogan berry */
-  --color-lime: #a3e025;
-  --color-yellow: #ffd01f;
-  --color-berry: #e0122c;
-  --color-berry-deep: #b00c22;
-  --color-gold: #f5bf12;
-  --color-ink: #15261a;
-  --color-muted: #375643;
-  --color-line: #e6d9b0;
+  /* Ice-crème — brighter so fruit accents read louder */
+  --color-cream: #fffef8;
+  --color-cream-100: #fff1b8;
+  --color-cream-200: #efd78a;
+  /* Orchard greens — ripe apple / lime chroma */
+  --color-green: #28d012;
+  /* Mid greens: high chroma + dark enough for AA on cream / cream-100 */
+  --color-green-600: #0c7b0a;
+  --color-green-700: #0a6410;
+  --color-green-deep: #0f3f16;
+  /* Deep hover surface: cream/70–75 body text stays AA */
+  --color-green-deep-80: #1a5c20;
+  /* Citrus, gold, slogan berry */
+  --color-lime: #b4f200;
+  --color-yellow: #ffe014;
+  --color-berry: #d40a28;
+  --color-berry-deep: #9a0a1c;
+  --color-gold: #ffc400;
+  --color-ink: #102218;
+  --color-muted: #2a5a3c;
+  --color-line: #ebd89a;
 
-  /* Flavor accents */
-  --color-mango: #ff9808;
-  --color-strawberry: #f23636;
-  --color-blueberry: #3a5bb5;
-  --color-orange: #ff7c12;
-  --color-cantaloupe: #ff8d42;
+  /* Flavor accents — mango, berry, citrus punch */
+  --color-mango: #ffa000;
+  --color-strawberry: #ff2a2a;
+  --color-blueberry: #2f52b8;
+  --color-orange: #ff6e00;
+  --color-cantaloupe: #ff7a28;
 
   --radius-card: 1rem;
   --radius-xl2: 1.5rem;
   --radius-pill: 9999px;
 
-  --shadow-soft: 0 1px 2px rgba(20, 80, 31, 0.06), 0 8px 24px rgba(20, 80, 31, 0.09);
-  --shadow-hover: 0 6px 16px rgba(20, 80, 31, 0.12), 0 18px 40px rgba(20, 80, 31, 0.16);
+  --shadow-soft: 0 1px 2px rgba(15, 63, 22, 0.07), 0 8px 24px rgba(15, 63, 22, 0.11);
+  --shadow-hover: 0 6px 16px rgba(15, 63, 22, 0.14), 0 18px 40px rgba(15, 63, 22, 0.18);
 
   --container-page: 80rem;
 }
@@ -106,7 +106,7 @@
   }
 
   ::selection {
-    background-color: color-mix(in srgb, var(--color-green) 28%, transparent);
+    background-color: color-mix(in srgb, var(--color-lime) 42%, transparent);
     color: var(--color-green-deep);
   }
 
@@ -146,13 +146,15 @@
   }
 
   .brand-bar {
-    height: 0.4rem;
+    height: 0.45rem;
     background: linear-gradient(
       90deg,
       var(--color-green) 0%,
-      var(--color-lime) 32%,
-      var(--color-yellow) 62%,
-      var(--color-orange) 100%
+      var(--color-lime) 22%,
+      var(--color-yellow) 44%,
+      var(--color-orange) 68%,
+      var(--color-strawberry) 86%,
+      var(--color-berry) 100%
     );
   }
 
