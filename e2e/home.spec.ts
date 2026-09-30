@@ -5,7 +5,7 @@ test.describe("home @cross-browser", () => {
     await page.goto("/");
 
     await expect(
-      page.getByRole("main").getByText("Fruiticana", { exact: true }).first(),
+      page.getByRole("main").getByText(/Fruiticana Cream-Less Ice Crème/i).first(),
     ).toBeVisible();
     await expect(
       page.getByRole("heading", {

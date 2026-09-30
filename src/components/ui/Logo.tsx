@@ -7,14 +7,23 @@ type LogoProps = {
   /** Whether to link to the homepage (default true). */
   asLink?: boolean;
   showSubtitle?: boolean;
+  /** Larger lockup for hero / marketing moments. */
+  size?: "nav" | "hero";
 };
 
-function StrawberryDot({ className }: { className?: string }) {
+function StrawberryDot({
+  className,
+  size = "nav",
+}: {
+  className?: string;
+  size?: "nav" | "hero";
+}) {
+  const isHero = size === "hero";
   return (
     <svg
       className={className}
-      width="9"
-      height="11"
+      width={isHero ? 18 : 9}
+      height={isHero ? 22 : 11}
       viewBox="0 0 9 11"
       aria-hidden="true"
     >
@@ -30,11 +39,12 @@ function StrawberryDot({ className }: { className?: string }) {
   );
 }
 
-function FruitMark() {
+function FruitMark({ size = "nav" }: { size?: "nav" | "hero" }) {
+  const isHero = size === "hero";
   return (
     <svg
-      width="36"
-      height="36"
+      width={isHero ? 72 : 36}
+      height={isHero ? 72 : 36}
       viewBox="0 0 64 64"
       aria-hidden="true"
       className="shrink-0"
@@ -57,26 +67,61 @@ export function Logo({
   className,
   asLink = true,
   showSubtitle = true,
+  size = "nav",
 }: LogoProps) {
+  const isHero = size === "hero";
+
   const mark = (
-    <span className={cn("inline-flex items-center gap-2", className)}>
-      <FruitMark />
+    <span
+      className={cn(
+        "inline-flex items-center",
+        isHero ? "gap-3 sm:gap-4" : "gap-2",
+        className,
+      )}
+    >
+      <FruitMark size={size} />
       <span className="flex flex-col leading-none">
-        <span className="font-sans text-[1.35rem] font-extrabold tracking-tight">
+        <span
+          className={cn(
+            "font-sans font-extrabold tracking-tight",
+            isHero
+              ? "text-[clamp(2.35rem,8.5vw,4.75rem)] leading-[0.9] tracking-[-0.04em]"
+              : "text-[1.35rem]",
+          )}
+        >
           Fru
           <span className="relative inline-block">
             ı
-            <StrawberryDot className="absolute left-1/2 top-0 -translate-x-1/2 -translate-y-[42%]" />
+            <StrawberryDot
+              size={size}
+              className={cn(
+                "absolute left-1/2 top-0 -translate-x-1/2",
+                isHero ? "-translate-y-[38%]" : "-translate-y-[42%]",
+              )}
+            />
           </span>
           t
           <span className="relative inline-block">
             ı
-            <StrawberryDot className="absolute left-1/2 top-0 -translate-x-1/2 -translate-y-[42%]" />
+            <StrawberryDot
+              size={size}
+              className={cn(
+                "absolute left-1/2 top-0 -translate-x-1/2",
+                isHero ? "-translate-y-[38%]" : "-translate-y-[42%]",
+              )}
+            />
           </span>
           cana
         </span>
         {showSubtitle ? (
-          <span className="mt-1 text-[0.62rem] font-semibold uppercase tracking-[0.16em] text-current/80">
+          <span
+            className={cn(
+              "font-semibold uppercase text-current/80",
+              isHero
+                ? "mt-2.5 text-sm tracking-[0.18em] sm:text-base"
+                : "mt-1 text-[0.62rem] tracking-[0.16em]",
+            )}
+          >
             {site.productLine}
           </span>
         ) : null}
@@ -84,14 +129,23 @@ export function Logo({
     </span>
   );
 
-  if (!asLink) return mark;
+  const accessibleName = showSubtitle
+    ? `${site.name} ${site.productLine}`
+    : site.name;
+
+  if (!asLink) {
+    return (
+      <span className="inline-flex items-center">
+        <span aria-hidden="true">{mark}</span>
+        <span className="sr-only">{accessibleName}</span>
+      </span>
+    );
+  }
 
   return (
     <Link href="/" className="inline-flex items-center rounded-md">
       <span aria-hidden="true">{mark}</span>
-      <span className="sr-only">
-        {site.name} {site.productLine} - home
-      </span>
+      <span className="sr-only">{accessibleName} - home</span>
     </Link>
   );
 }
