@@ -29,8 +29,8 @@ export const primaryRoutes = [
   },
   {
     path: "/contact",
-    heading: /let'?s bring fruiticana to your students/i,
-    title: /Let's Bring Fruiticana to Your Students/,
+    heading: /ways to reach us/i,
+    title: /Contact/,
   },
 ] as const;
 
