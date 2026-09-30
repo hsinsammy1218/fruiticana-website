@@ -1,18 +1,19 @@
 # Archived myfruiticana.com visual reference (2007)
 
 These JPEGs were downloaded from the Internet Archive capture of
-http://www.myfruiticana.com/ (March 2007). They are **design-reference
-only**. They are not served on the live site.
+http://www.myfruiticana.com/ (March 2007). Most remain design-reference
+only. The script wordmark and Cream-Less subtitle are also prepared as
+transparent PNGs under `public/images/brand/` for the live `Logo`
+component.
 
-The production brand is recreated as SVG/CSS in `src/components/ui/Logo.tsx`
-and `src/components/brand/OriginalBrandMotif.tsx`. Do not embed these
-screenshots or low-resolution JPEGs as the logo or hero.
+Brand bars and fruit motifs still come from CSS in
+`src/components/brand/OriginalBrandMotif.tsx`.
 
 | File | Original role | How it is used now |
 | --- | --- | --- |
-| `fruiti_logo.jpg` | Script wordmark (green fill, yellow outline, strawberry i-dots) | Traced as SVG/HTML lockup with strawberry tittles |
+| `fruiti_logo.jpg` | Script wordmark (green fill, yellow outline, strawberry i-dots) | Served as `public/images/brand/fruiti-logo.png` via `Logo` |
 | `slogan.jpg` | “THE NEW WAY TO EAT FRUIT” (red serif) | Modernized as “An exciting new way to eat fruit.” in type |
-| `creamless.jpg` | “Cream-Less Ice Crème” script | Subtitle on the logo: Creamless Ice Cream |
+| `creamless.jpg` | “Cream-Less Ice Crème” script | Served as `public/images/brand/creamless.png` under the logo |
 | `left_column_bak.jpg` | Vertical fruit-scoop photo column | Inspiration for `OriginalBrandMotif` fruit cluster |
 | `top_row_bak.jpg` | Yellow–green header strip | CSS gradient brand bar |
 | `bottom_row_bak.jpg` | Yellow–green footer strip | CSS gradient brand bar |
