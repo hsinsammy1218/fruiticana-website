@@ -78,3 +78,7 @@ export function OriginalBrandMotif({ className }: OriginalBrandMotifProps) {
     </div>
   );
 }
+
+export function BrandBar({ className }: { className?: string }) {
+  return <div className={cn("brand-bar", className)} aria-hidden="true" />;
+}
