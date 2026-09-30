@@ -157,7 +157,9 @@
   }
 
   .hero-float {
-    animation: hero-rise 0.9s ease-out both;
+    animation:
+      hero-rise 0.9s ease-out both,
+      hero-float 5.2s ease-in-out 1s infinite;
   }
 
   .hero-rise {
