@@ -398,10 +398,10 @@ export default function LearnPage() {
 
       <CTASection
         title="Using this with a class or a school food program?"
-        description="Teachers can keep using this classroom resource. Food-service and administrative questions belong on the school inquiry form."
+        description="Teachers can keep using this classroom resource. Food-service and administrative questions belong on the contact page."
         primary={{
           label: "Request School Information",
-          href: "/contact?interest=Healthy%20Snack%20Program",
+          href: "/contact",
         }}
         secondary={{ label: "Read Our Story", href: "/about" }}
       />

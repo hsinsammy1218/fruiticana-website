@@ -164,25 +164,6 @@ export function collectPageFailures(page: Page) {
   };
 }
 
-export async function fillSchoolInquiry(
-  page: Page,
-  options?: { interest?: string; name?: string },
-) {
-  const name = options?.name ?? "Sam";
-  await page.getByLabel(/^name/i).fill(name);
-  await page.getByRole("textbox", { name: /^school \/ organization/i }).fill("Lincoln Elementary");
-  await page.getByLabel(/^role/i).selectOption("Principal");
-  await page.getByLabel(/^city/i).fill("Waterbury");
-  await page.getByLabel(/^state/i).fill("CT");
-  await page.getByLabel(/email/i).fill("sam@example.com");
-  if (options?.interest) {
-    await page.getByLabel(/reason for inquiry/i).selectOption(options.interest);
-  }
-  await page.getByLabel(/message/i).fill(
-    "We would like nutrition sheets for a cafeteria review at our school.",
-  );
-}
-
 export async function expectNoAxeViolations(page: Page) {
   await page.emulateMedia({ reducedMotion: "reduce" });
   await page.addStyleTag({
