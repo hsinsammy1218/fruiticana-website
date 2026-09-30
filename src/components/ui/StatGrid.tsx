@@ -65,7 +65,7 @@ export function StatGrid({
             <dd
               className={cn(
                 "order-3 mt-1.5 text-sm leading-snug",
-                deep ? "text-cream/70" : "text-muted",
+                deep ? "text-cream/90" : "text-muted",
               )}
             >
               {item.note}

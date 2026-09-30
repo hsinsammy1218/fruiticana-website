@@ -62,7 +62,7 @@ export function Hero() {
             <span className="block">{heroCopy.line1}</span>
             {/* Keep a text node between block spans so the accessible name has a space. */}
             {" "}
-            <span className="block text-berry">{heroCopy.line2}</span>
+            <span className="block text-berry-deep">{heroCopy.line2}</span>
           </h1>
           <p className="hero-rise hero-rise-delay-2 mt-5 max-w-md text-lg leading-snug text-ink sm:text-xl">
             {heroCopy.subhead}

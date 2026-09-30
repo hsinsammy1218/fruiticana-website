@@ -29,7 +29,7 @@ export function TimelineForeground() {
       />
 
       <div className="px-5 pb-8 pt-8 sm:px-7 sm:pb-10 sm:pt-10">
-        <p className="text-xs font-semibold uppercase tracking-[0.18em] text-berry">
+        <p className="text-xs font-semibold uppercase tracking-[0.18em] text-berry-deep">
           Fruiticana from the start
         </p>
         <p className="mt-2 max-w-[15rem] font-sans text-2xl font-extrabold leading-tight text-green-deep">
