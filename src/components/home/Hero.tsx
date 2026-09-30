@@ -6,9 +6,9 @@ import { heroCopy } from "@/data/home";
 
 /**
  * Brand-first full-bleed hero.
- * One composition: the Fruiticana logo lockup as the display signal, the
- * tagline as support, one school-mission sentence, school-primary CTAs, and a
- * single edge-to-edge product image — no inset collage or cards.
+ * One composition: the original Fruiticana brand logo asset as the display
+ * signal, the tagline as support, one school-mission sentence, school-primary
+ * CTAs, and a single edge-to-edge product image — no inset collage or cards.
  */
 export function Hero() {
   return (
