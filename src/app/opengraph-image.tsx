@@ -23,7 +23,7 @@ export default function OpengraphImage() {
         <div style={{ display: "flex", fontSize: 44, fontWeight: 800, color: "#14501F" }}>
           {site.name}
         </div>
-        <div style={{ display: "flex", marginTop: 12, fontSize: 24, color: "#1F8618" }}>
+        <div style={{ display: "flex", marginTop: 12, fontSize: 24, color: "#176F14" }}>
           {site.productLine}
         </div>
         <div

@@ -16,10 +16,12 @@
   --color-cream-200: #f0e2b8;
   /* Orchard greens — juicier, higher chroma */
   --color-green: #3ec02e;
-  --color-green-600: #1f8618;
-  --color-green-700: #1a7a16;
+  /* Mid greens kept vivid but darkened for WCAG AA on cream / cream-100 */
+  --color-green-600: #176f14;
+  --color-green-700: #125c10;
   --color-green-deep: #14501f;
-  --color-green-deep-80: #1c6a2a;
+  /* Deep hover surface: dark enough for cream/70–75 body text AA */
+  --color-green-deep-80: #155420;
   /* Citrus & slogan berry */
   --color-lime: #a3e025;
   --color-yellow: #ffd01f;

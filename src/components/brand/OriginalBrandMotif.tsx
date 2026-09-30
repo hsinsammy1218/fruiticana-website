@@ -63,7 +63,7 @@ export function OriginalBrandMotif({ className }: OriginalBrandMotifProps) {
         <ellipse cx="236" cy="160" rx="14" ry="9" fill="#ffffff" opacity="0.4" />
 
         {/* strawberry leaf */}
-        <path d="M252 132c8-20 28-28 44-22-2 20-16 34-44 22z" fill="#1F8618" />
+        <path d="M252 132c8-20 28-28 44-22-2 20-16 34-44 22z" fill="#176F14" />
 
         {/* whole fruit accents */}
         <circle cx="86" cy="156" r="28" fill="#3A5BB5" />
