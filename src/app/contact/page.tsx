@@ -130,30 +130,30 @@ export default function ContactPage() {
         }}
       />
 
-      <Container className="relative grid min-h-[min(88svh,46rem)] items-center gap-10 py-14 sm:gap-12 sm:py-16 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)] lg:gap-8 lg:py-20 xl:gap-12">
-        <div className="relative z-10 max-w-xl">
+      <Container className="relative grid min-h-[min(84svh,44rem)] items-center gap-8 py-12 sm:gap-10 sm:py-14 lg:grid-cols-[minmax(0,1.15fr)_minmax(0,0.95fr)] lg:gap-4 lg:py-16 xl:gap-6">
+        <div className="relative z-10 max-w-2xl">
           <div className="hero-rise text-green-deep">
             <Logo asLink={false} size="hero" className="text-green-deep" />
           </div>
 
           <h1
             id="contact-heading"
-            className="hero-rise hero-rise-delay-1 mt-7 font-display text-[clamp(2rem,5.2vw,3.4rem)] font-extrabold leading-[1.05] tracking-[-0.03em] text-green-deep"
+            className="hero-rise hero-rise-delay-1 mt-6 font-display text-[clamp(2rem,5.2vw,3.4rem)] font-extrabold leading-[1.05] tracking-[-0.03em] text-green-deep"
           >
             Ways to reach us
           </h1>
 
-          <p className="hero-rise hero-rise-delay-2 mt-4 max-w-md text-lg leading-snug text-ink sm:text-xl">
+          <p className="hero-rise hero-rise-delay-2 mt-4 max-w-lg text-lg leading-snug text-ink sm:text-xl">
             Email, call, or write — school questions go straight to Fruiticana in
             Waterbury, Connecticut.
           </p>
 
-          <dl className="mt-9 space-y-3 sm:mt-10 sm:space-y-3.5">
+          <dl className="mt-8 space-y-3 sm:mt-9 sm:space-y-3.5">
             {contactRows.map((row, index) => {
               const Icon = icons[row.icon];
               const value = row.value ?? "Coming soon";
               const shellClass = cn(
-                "reveal flex w-full items-center gap-4 rounded-xl2 border border-green-deep/15 bg-lime/75 px-4 py-4 shadow-soft backdrop-blur-[2px] transition duration-300 sm:gap-5 sm:px-5 sm:py-5",
+                "reveal flex w-full items-center gap-4 rounded-xl2 border border-green-deep/15 bg-lime/80 px-4 py-4 shadow-soft backdrop-blur-[2px] transition duration-300 sm:gap-5 sm:px-5 sm:py-5",
                 row.href &&
                   "hover:-translate-y-0.5 hover:border-berry/40 hover:bg-card hover:shadow-hover",
               );
@@ -198,7 +198,7 @@ export default function ContactPage() {
         </div>
 
         <div
-          className="hero-float relative mx-auto w-full max-w-[18rem] sm:max-w-[22rem] lg:max-w-none lg:justify-self-end"
+          className="hero-float relative mx-auto w-full max-w-[19rem] sm:max-w-[23rem] lg:-ml-4 lg:max-w-[26rem] lg:justify-self-end xl:max-w-[28rem]"
           aria-hidden="true"
         >
           <div className="pointer-events-none absolute inset-[8%] -z-10 rounded-full bg-[radial-gradient(circle,rgba(255,140,0,0.35),rgba(234,248,108,0.55)_42%,transparent_72%)]" />
@@ -210,7 +210,7 @@ export default function ContactPage() {
             width={1100}
             height={1069}
             priority
-            sizes="(max-width: 1024px) 70vw, 420px"
+            sizes="(max-width: 1024px) 70vw, 448px"
             className="relative mx-auto h-auto w-full drop-shadow-[0_18px_40px_rgba(15,47,18,0.22)]"
           />
         </div>
