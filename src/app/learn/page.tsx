@@ -400,7 +400,7 @@ export default function LearnPage() {
         title="Using this with a class or a school food program?"
         description="Teachers can keep using this classroom resource. Food-service and administrative questions belong on the contact page."
         primary={{
-          label: "Request School Information",
+          label: "Contact Us",
           href: "/contact",
         }}
         secondary={{ label: "Read Our Story", href: "/about" }}

@@ -51,7 +51,7 @@ test.describe("user flows", () => {
 
     await page
       .getByRole("main")
-      .getByRole("link", { name: "Request School Information" })
+      .getByRole("link", { name: "Contact Us" })
       .click();
     await expect(page).toHaveURL(/\/contact/);
     await expect(

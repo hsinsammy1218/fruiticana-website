@@ -19,6 +19,9 @@ test.describe("contact page", () => {
     await expect(page.getByText("16 Pleasant St, Waterbury, CT 06706")).toBeVisible();
 
     await expect(
+      page.getByRole("button", { name: "Contact Us" }),
+    ).toHaveCount(0);
+    await expect(
       page.getByRole("button", { name: "Request School Information" }),
     ).toHaveCount(0);
     await expect(page.getByLabel(/^name/i)).toHaveCount(0);

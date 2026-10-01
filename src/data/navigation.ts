@@ -41,7 +41,7 @@ export const legalNav: NavItem[] = [
 
 export const navCta = {
   href: "/contact",
-  label: "Request School Information",
+  label: "Contact Us",
 } as const;
 
 /**

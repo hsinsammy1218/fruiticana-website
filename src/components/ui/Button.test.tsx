@@ -13,9 +13,9 @@ describe("Button", () => {
   });
 
   it("renders a link when given an href", () => {
-    render(<Button href="/contact">Request School Information</Button>);
+    render(<Button href="/contact">Contact Us</Button>);
     expect(
-      screen.getByRole("link", { name: "Request School Information" }),
+      screen.getByRole("link", { name: "Contact Us" }),
     ).toHaveAttribute("href", "/contact");
   });
 });

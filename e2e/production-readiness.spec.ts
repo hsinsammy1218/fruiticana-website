@@ -82,7 +82,7 @@ test.describe("production readiness", () => {
       page.getByRole("heading", { name: "We Provide the Machines" }),
     ).toBeVisible();
 
-    await page.getByRole("link", { name: "Request School Information" }).last().click();
+    await page.getByRole("link", { name: "Contact Us" }).last().click();
     await expect(page).toHaveURL(/\/contact$/);
     await expect(
       page.getByRole("heading", { level: 1, name: "Ways to reach us" }),

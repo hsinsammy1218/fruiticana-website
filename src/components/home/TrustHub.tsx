@@ -27,7 +27,7 @@ export function TrustHub() {
       </ul>
       <div className="mt-8">
         <Button href="/contact" size="lg">
-          Request School Information
+          Contact Us
         </Button>
       </div>
     </Section>

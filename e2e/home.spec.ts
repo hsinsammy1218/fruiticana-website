@@ -111,7 +111,7 @@ test.describe("home @cross-browser", () => {
     await expect(page).toHaveURL(/\/about$/);
 
     await page.goto("/");
-    await page.getByRole("link", { name: "Request School Information" }).last().click();
+    await page.getByRole("link", { name: "Contact Us" }).last().click();
     await expect(page).toHaveURL(/\/contact$/);
   });
 });
