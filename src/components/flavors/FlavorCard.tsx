@@ -34,7 +34,8 @@ export function FlavorCard({ flavor, priority, className }: FlavorCardProps) {
         </span>
         <HistoricalBadge
           label="Nutrition analysis"
-          className="absolute bottom-3 left-3 bg-card/90"
+          tone="surface"
+          className="absolute bottom-3 left-3"
         />
       </div>
 
