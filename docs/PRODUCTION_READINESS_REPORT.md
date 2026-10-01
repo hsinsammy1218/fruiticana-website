@@ -4,6 +4,8 @@ Evidence from a clean `npm ci`, TypeScript, Vitest, `next build`, `next start`, 
 
 Tested build: Next.js 16.3.3 App Router, React 19, TypeScript 5.7, Tailwind CSS v4, npm (`package-lock.json`). Host target: Vercel.
 
+**Product note (post #46 / #55):** `/contact` is reach-us info only (email, phone, address). There is no on-site school inquiry form. Primary CTAs use **Contact Us** / **Bring Fruiticana to Your School** → `/contact`. Sections below that previously described form validation were updated to match.
+
 ---
 
 ## BUILD
@@ -40,8 +42,8 @@ Includes existing coverage plus production-readiness specs:
 | 4 Primary CTA | `e2e/home.spec.ts`, `e2e/production-readiness.spec.ts` TEST 12 |
 | 5 For Schools | `e2e/schools.spec.ts` |
 | 6 Product / nutrition | `e2e/nutrition.spec.ts`, `e2e/flavors.spec.ts` |
-| 7 Contact validation | `e2e/contact.spec.ts` |
-| 8 Valid inquiry (safe, non-delivering success) | `e2e/contact.spec.ts`, TEST 12 |
+| 7 Contact page (reach-us, no form) | `e2e/contact.spec.ts` |
+| 8 Contact details published | `e2e/contact.spec.ts`, TEST 12 |
 | 9 404 | `e2e/error-states.spec.ts` (`/this-page-does-not-exist`) |
 | 10 Mobile overflow | `e2e/responsive.spec.ts` plus extra viewports in `e2e/production-readiness.spec.ts` |
 | 11 Console / network on critical pages | `e2e/production-readiness.spec.ts` TEST 11 |
@@ -108,12 +110,12 @@ No horizontal overflow on primary pages at the extra sizes in TEST 10. Full-page
 | --- | --- |
 | Navigation | **PASS** |
 | Mobile Navigation | **PASS** — open, close, Escape, backdrop, focus trap, link closes drawer |
-| CTAs | **PASS** — Bring Fruiticana to Your School, Request School Information, See How It Works, Product/Schools/Learn/Resources links |
-| Forms | **PASS** — required fields, invalid email, short message, trim, special characters, long message, keyboard submit, double-submit, honeypot. Success copy does **not** claim delivery. |
+| CTAs | **PASS** — Bring Fruiticana to Your School, Contact Us, See How It Works, Product/Schools/Learn/Resources links |
+| Forms | **N/A** — no on-site inquiry form. `/contact` publishes email, phone, and address only (`e2e/contact.spec.ts`). |
 | 404 | **PASS** — HTTP 404, “Page not found” heading and title, Back home |
 | Direct Routes | **PASS** — paste URL + refresh; back/forward restore For Schools |
 
-Form network/API failure: **N/A**. There is no inquiry API. Failure is communicated in the success/honest-incomplete UI rather than a network error state.
+Form network/API failure: **N/A**. There is no inquiry API or contact form submission path.
 
 ---
 
@@ -123,7 +125,7 @@ Form network/API failure: **N/A**. There is no inquiry API. Failure is communica
 | --- | --- |
 | Console | **PASS** — no React/page exceptions on public routes. Local `/_vercel/insights/script.js` 404 is Vercel Analytics off-platform. |
 | Network | **PASS** — no application 4xx/5xx on required page assets. Published PDFs return 200 `application/pdf`. |
-| Accessibility | **PASS** — axe WCAG 2 A/AA clean on swept routes; skip link; labeled fields; visible focus; mobile menu keyboard. Logo accessible name now includes the visible product line and uses an `sr-only` name so the strawberry i-dots do not fail WCAG 2.5.3. About vision pillars use `h2` when the section heading is omitted. |
+| Accessibility | **PASS** — axe WCAG 2 A/AA clean on swept routes; skip link; visible focus; mobile menu keyboard. Logo accessible name now includes the visible product line and uses an `sr-only` name so the strawberry i-dots do not fail WCAG 2.5.3. About vision pillars use `h2` when the section heading is omitted. |
 | Images | **PASS** — flavor, journey, document, and hero images load. Flavor artwork is fruit photography, not a current 4 oz cup (see Business Information). |
 | Performance | **PASS** — Lighthouse performance 100 on the six CI URLs. Downloadable historical PDFs are 2.1–4.6 MB (see remaining P2). |
 | Metadata | **PASS** *when `NEXT_PUBLIC_SITE_URL` is set in Vercel*. Unique titles and descriptions; OG tags; favicon; `robots.txt`; sitemap (28 URLs); privacy/terms `noindex` and omitted from sitemap. Unset env falls back to `https://fruiticana.example.com` (deploy requirement, not a code crash). 404 is `noindex` with title “Page not found \| Fruiticana”. |
@@ -140,7 +142,7 @@ Form network/API failure: **N/A**. There is no inquiry API. Failure is communica
 | 1/3 sales-share consistency | **N/A** — school sales-share claim removed sitewide (owner request). |
 | Machine/program information consistency | **PASS** — two machines, two flavors each (four choices); Fruiticana provides, maintains, stays involved. |
 | Historical-vs-current claims | **PASS** — FDA registration, AHA letter, CT Team Nutrition, 2008 panels, 2007 ingredients are dated and disclaimed. Resources group for FDA/AHA is titled “Historical records”, not current credentials. |
-| School inquiry journey | **PASS** — administrator can understand the program and complete the form. Delivery is not connected; the UI says so. |
+| School contact journey | **PASS** — administrator can understand the program and reach Fruiticana via published email, phone, or address on `/contact`. No on-site form. |
 
 ### Message quiz (school administrator)
 
@@ -159,13 +161,13 @@ Form network/API failure: **N/A**. There is no inquiry API. Failure is communica
 13. What does participation require from the school? **Not fully answered** — obligations, fees, staffing, power, storage, serving method are explicitly “still being documented”.
 14. Nutrition / product information? **Answered** as historical 2008 panels and 2007 ingredients, with current-testing notices.
 15. History? **Answered** — 2003 founding; 2003–2005 CT Team Nutrition; 2005–2006 localized chapter.
-16. How to request information? **Answered** — Request School Information / contact form. Inbox not connected yet.
+16. How to request information? **Answered** — Contact Us / Bring Fruiticana to Your School → `/contact` (email, phone, address).
 
 ---
 
 ## BUGS
 
-No remaining **P0** or **P1** defects that break load, navigation, the inquiry UI, or mobile layout.
+No remaining **P0** or **P1** defects that break load, navigation, contact reach-us details, or mobile layout.
 
 ### Remaining P2
 
@@ -194,12 +196,6 @@ No remaining **P0** or **P1** defects that break load, navigation, the inquiry U
 ### Remaining P3
 
 **Priority:** P3
-**Page:** `/contact`
-**Component:** Inquiry form grid
-**Problem:** Phone sits alone on the last row of the first field grid (nine fields).
-**Status:** Open — cosmetic; not fixed (no redesign).
-
-**Priority:** P3
 **Page:** Product / Home
 **Component:** Flavor and section photography
 **Problem:** Images are fruit stills / illustrative frozen dessert, not a rights-cleared Fruiticana 4 oz cup.
@@ -223,7 +219,6 @@ No remaining **P0** or **P1** defects that break load, navigation, the inquiry U
 
 These are not software bugs. Do not invent answers on the site.
 
-- Verified form-delivery backend (or CRM) so school inquiry form submissions are routed automatically. Direct email and phone are published; the on-site form still does not transmit messages.
 - Production domain for `NEXT_PUBLIC_SITE_URL`.
 - Social accounts, if any.
 - What participation costs the school (if anything); payment flow.
@@ -236,6 +231,8 @@ These are not software bugs. Do not invent answers on the site.
 - Rights-cleared product photography of the actual frozen dessert.
 - Rights-cleared logo vector if the lockup should be replaced.
 - Founder name/credential permission and testimonial permission (historical quotes are already dated).
+
+Contact is info-only: email, phone, and Waterbury address are published on `/contact`. There is no on-site form to wire to a backend.
 
 ---
 
@@ -270,10 +267,10 @@ Gate checklist:
 - No P0 bugs
 - No unresolved P1 bugs affecting core flows
 - Critical Playwright tests pass (72/72 Chromium)
-- Primary school inquiry journey works (understand program → complete form; delivery honestly unavailable)
+- School contact journey works (understand program → `/contact` reach-us details)
 - Mobile experience works
 - Navigation works
-- Forms work (validation, success, no fake delivery)
+- No on-site inquiry form (info-only contact page)
 - No unexplained critical console errors in the application
 - No critical application network failures
 - No obvious exposed secrets
@@ -283,10 +280,10 @@ Gate checklist:
 
 - Compress or replace multi-MB PDF scans when the owner approves.
 - Set `NEXT_PUBLIC_SITE_URL` on Vercel before treating metadata as production-final.
-- Optional polish: contact field grid, product photography, unused components, local Analytics 404.
+- Optional polish: product photography, unused components, local Analytics 404.
 
 ### Launch operators must still
 
 1. Set `NEXT_PUBLIC_SITE_URL` to the real domain.
-2. Connect a verified inbox before implying Fruiticana can reply.
+2. Monitor the published email/phone channels used on `/contact`.
 3. Keep historical certifications and nutrition labeled as history until current documents exist.

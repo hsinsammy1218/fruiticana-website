@@ -5,13 +5,13 @@ An informational site for **Fruiticana**, a fruit-based frozen dessert.
 (App Router), TypeScript, and Tailwind CSS.
 
 > **Important — voice of this site.** This is not a consumer shop. The main
-> conversion is a **school inquiry**. After about two minutes, a school principal
-> should be able to say: Fruiticana gives students an exciting new way to eat
-> fruit; Fruiticana wants to introduce that experience in schools while students
-> are young; under the proposed model Fruiticana provides two machines and stays
-> involved. Timeline dates,
-> testimonials, documentation, and nutrition panels are shared for school
-> review and labeled as historical where they are.
+> conversion is **Contact Us** → `/contact` (published email, phone, and address —
+> no on-site inquiry form). After about two minutes, a school principal should be
+> able to say: Fruiticana gives students an exciting new way to eat fruit;
+> Fruiticana wants to introduce that experience in schools while students are
+> young; under the proposed model Fruiticana provides two machines and stays
+> involved. Timeline dates, testimonials, documentation, and nutrition panels are
+> shared for school review and labeled as historical where they are.
 
 ## Tech stack
 
@@ -64,8 +64,8 @@ production domain in Vercel before launch.
 ```
 src/
   app/            Routes (home, about, schools, product, resources, contact, learn, flavor sheets, legal) + SEO files
-  components/     Reusable UI (layout, ui, home, flavors, learn, nutrition, story, contact, seo)
-  data/           Typed content: flavors, schools, inquiry, learn, testimonials, timeline, formats, documents, navigation, site
+  components/     Reusable UI (layout, ui, home, flavors, learn, nutrition, story, seo)
+  data/           Typed content: flavors, schools, learn, testimonials, timeline, formats, documents, navigation, site
   lib/            Small helpers (cn, nutrition formatting)
 public/images/flavors/  Replaceable flavor artwork (SVG placeholders)
 ```
@@ -73,7 +73,7 @@ public/images/flavors/  Replaceable flavor artwork (SVG placeholders)
 Content lives in typed modules under `src/data/` so copy changes don't require
 touching JSX.
 
-**Primary pages.** Home, About Fruiticana (`/about`), For Schools (`/schools`), Product & Nutrition (`/product`), School Inquiry (`/contact`). Documentation lives at `/resources` (footer and trust hub, not primary nav).
+**Primary pages.** Home, About Fruiticana (`/about`), For Schools (`/schools`), Product & Nutrition (`/product`), Contact (`/contact` — reach-us info only). Documentation lives at `/resources` (footer and trust hub, not primary nav).
 
 **Classroom resource.** `/learn` is a free teaching resource (fruit science,
 Nutrition Facts literacy, Connecticut snack-pilot case study). It is not in
@@ -168,17 +168,17 @@ Confirm before switching any content to present-tense school-program marketing:
 ## Accessibility & performance
 
 Semantic landmarks, keyboard-operable navigation (including a focus-trapped
-mobile menu), visible focus states, labeled form fields, reduced-motion support,
-and a cream/green palette chosen for readable contrast. Marketing pages are
-statically generated with minimal client JavaScript.
+mobile menu), visible focus states, reduced-motion support, and a cream/green
+palette chosen for readable contrast. Marketing pages are statically generated
+with minimal client JavaScript.
 
 ## Testing
 
 | Tool | What it covers |
 | --- | --- |
-| **Playwright** | Navigation, school inquiry form, documentation, nutrition tables, redirects, mobile menu, links, responsive layout, error states (`e2e/`). Default run is Chromium; `npm run test:e2e:browsers` also runs tagged smoke tests in Firefox, WebKit, Pixel 7, and iPhone 13. |
+| **Playwright** | Navigation, contact page (reach-us details, no form), documentation, nutrition tables, redirects, mobile menu, links, responsive layout, error states (`e2e/`). Default run is Chromium; `npm run test:e2e:browsers` also runs tagged smoke tests in Firefox, WebKit, Pixel 7, and iPhone 13. |
 | **Vitest** | Unit tests for helpers and content data (`src/**/*.test.ts`). |
-| **React Testing Library** | Component behavior: school inquiry validation, flavor filters, nutrition selector, mobile menu, buttons. |
+| **React Testing Library** | Component behavior: flavor filters, nutrition selector, mobile menu, buttons. |
 | **axe-core** (`@axe-core/playwright`) | WCAG 2 A/AA checks on primary, flavor-detail, and legal routes (`e2e/a11y.spec.ts`). |
 | **Lighthouse CI** | Performance (warn &lt; 90), accessibility / best-practices / SEO (fail &lt; 95) on Home and the other primary pages. Requires a production build and a local Chrome. |
 | **Production-readiness report** | Latest QA gate: [`docs/PRODUCTION_READINESS_REPORT.md`](docs/PRODUCTION_READINESS_REPORT.md). |
