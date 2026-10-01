@@ -210,7 +210,7 @@ export const howCopy = {
   knownTitle: "What the proposed model already states",
   pendingTitle: "What a school team will want to confirm",
   pendingIntro:
-    "These questions still need current answers before a school launch. Request school information and we will walk through them with you rather than guess.",
+    "These questions still need current answers before a school launch. Contact us and we will walk through them with you rather than guess.",
   photoCaption:
     "Illustrative photo — a frozen treat portioned for school kitchens in a 4 oz single-serve cup.",
 } as const;

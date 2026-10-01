@@ -41,7 +41,7 @@ describe("MobileNavigation", () => {
     );
     expect(screen.queryByRole("link", { name: "Resources" })).not.toBeInTheDocument();
     expect(
-      screen.getByRole("link", { name: /request school information/i }),
+      screen.getByRole("link", { name: /contact us/i }),
     ).toHaveAttribute("href", "/contact");
     expect(screen.queryByRole("link", { name: "Learn" })).not.toBeInTheDocument();
   });

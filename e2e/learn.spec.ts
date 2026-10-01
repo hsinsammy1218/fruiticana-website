@@ -39,7 +39,7 @@ test.describe("learn", () => {
     await expect(page).toHaveURL(/\/product#nutrition/);
 
     await page.goto("/learn");
-    await page.getByRole("main").getByRole("link", { name: "Request School Information" }).click();
+    await page.getByRole("main").getByRole("link", { name: "Contact Us" }).click();
     await expect(page).toHaveURL(/\/contact/);
     await expect(
       page.getByRole("heading", { level: 1, name: "Ways to reach us" }),

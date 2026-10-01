@@ -4,7 +4,7 @@ Next.js 16 informational website for **schools and their students**. The 2003–
 
 **Core goal:** A principal who has never heard of Fruiticana should understand the student mission and the proposed school program within about two minutes, then request information.
 
-**Primary conversion:** School inquiry — **Request School Information** / **Bring Fruiticana to Your School**.
+**Primary conversion:** Contact — **Contact Us** / **Bring Fruiticana to Your School**.
 
 ---
 
@@ -66,7 +66,7 @@ Primary nav (logo = Home):
 - `/product` Product & Nutrition
 - `/contact` Contact
 
-Navbar CTA: **Request School Information** → `/contact`.
+Navbar CTA: **Contact Us** → `/contact`.
 
 Secondary: `/learn`, `/resources`, `/flavors/[slug]`, `/privacy`, `/terms`, `/accessibility`.
 

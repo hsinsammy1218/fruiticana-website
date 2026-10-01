@@ -185,7 +185,7 @@ export default function SchoolsPage() {
 
       <CTASection
         title="Let's Bring Fruiticana to Your Students."
-        description="Share your school details, program interest, and any nutrition questions. Prefer email or phone for follow-up — the on-site form does not send messages yet."
+        description="Reach out with your school details, program interest, and any nutrition questions. Email or call us using the contact details on the next page."
         primary={{ label: navCta.label, href: navCta.href }}
         secondary={{
           label: "Learn everything about Fruiticana",

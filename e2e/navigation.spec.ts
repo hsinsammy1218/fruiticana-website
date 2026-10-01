@@ -32,7 +32,7 @@ test.describe("navigation @cross-browser", () => {
     await page.getByRole("banner").getByRole("link", { name: /fruiticana.*home/i }).click();
     await expect(page).toHaveURL("/");
 
-    await page.getByRole("banner").getByRole("link", { name: "Request School Information" }).click();
+    await page.getByRole("banner").getByRole("link", { name: "Contact Us" }).click();
     await expect(page).toHaveURL(/\/contact$/);
   });
 
@@ -121,7 +121,7 @@ test.describe("navigation @cross-browser", () => {
     }
     await expect(
       page.getByRole("banner").getByRole("link", {
-        name: "Request School Information",
+        name: "Contact Us",
       }),
     ).toBeFocused();
   });

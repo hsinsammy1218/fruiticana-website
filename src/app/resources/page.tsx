@@ -60,7 +60,7 @@ export default function ResourcesPage() {
 
       <CTASection
         title="Need these materials for a school evaluation?"
-        description="Request school information and tell us which documents, flavors, or serving formats your team needs to review."
+        description="Contact us and tell us which documents, flavors, or serving formats your team needs to review."
         primary={{ label: navCta.label, href: navCta.href }}
         secondary={{ label: "Product & Nutrition", href: "/product" }}
       />

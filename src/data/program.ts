@@ -128,7 +128,7 @@ export const valueExchange = {
     },
   ] satisfies ValueExchangeColumn[],
   schoolObligations:
-    "The exact obligations of the school still need to be documented. Request school information and we will walk through them rather than guess.",
+    "The exact obligations of the school still need to be documented. Contact us and we will walk through them rather than guess.",
 } as const;
 
 export type TrustHubLink = {
@@ -186,7 +186,7 @@ export const trustHub = {
     {
       label: "Contact Information",
       href: "/contact",
-      description: "Request school information to start a conversation.",
+      description: "Reach out to start a conversation.",
     },
   ] satisfies TrustHubLink[],
 } as const;

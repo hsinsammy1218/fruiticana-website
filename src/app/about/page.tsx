@@ -240,7 +240,7 @@ export default function AboutPage() {
 
       <CTASection
         title="Let's Bring Fruiticana to Your Students."
-        description="Request school information to discuss the idea, availability, institutional servings, and nutrition documentation for your school."
+        description="Contact us to discuss the idea, availability, institutional servings, and nutrition documentation for your school."
         primary={{ label: navCta.label, href: navCta.href }}
         secondary={{ label: "For Schools", href: "/schools" }}
       />

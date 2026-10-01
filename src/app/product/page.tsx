@@ -155,7 +155,7 @@ export default async function ProductPage({
 
       <CTASection
         title="Need this information for a school program?"
-        description="Request school information and include your role, estimated enrollment, and whether you are evaluating cafeteria or snack-program use."
+        description="Contact us with your role, estimated enrollment, and whether you are evaluating cafeteria or snack-program use."
         primary={{ label: navCta.label, href: navCta.href }}
         secondary={{ label: "For Schools", href: "/schools" }}
       />
