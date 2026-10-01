@@ -148,7 +148,7 @@ export default function ContactPage() {
             Waterbury, Connecticut.
           </p>
 
-          <dl className="mt-8 space-y-3 sm:mt-9 sm:space-y-3.5">
+          <ul className="mt-8 list-none space-y-3 p-0 sm:mt-9 sm:space-y-3.5">
             {contactRows.map((row, index) => {
               const Icon = icons[row.icon];
               const value = row.value ?? "Coming soon";
@@ -159,12 +159,13 @@ export default function ContactPage() {
               );
 
               return (
-                <div
+                <li
                   key={row.label}
                   className={shellClass}
                   style={{ transitionDelay: `${index * 70}ms` }}
                 >
                   <span
+                    aria-hidden="true"
                     className={cn(
                       "flex h-11 w-11 shrink-0 items-center justify-center rounded-full",
                       row.icon === "email" && "bg-berry text-on-deep",
@@ -175,10 +176,10 @@ export default function ContactPage() {
                     <Icon className="h-5 w-5" />
                   </span>
                   <div className="min-w-0 flex-1">
-                    <dt className="text-xs font-bold uppercase tracking-[0.16em] text-green-600">
+                    <p className="text-xs font-bold uppercase tracking-[0.16em] text-green-600">
                       {row.label}
-                    </dt>
-                    <dd className="mt-1 break-words font-display text-lg font-semibold leading-snug text-green-deep sm:text-xl">
+                    </p>
+                    <p className="mt-1 break-words font-display text-lg font-semibold leading-snug text-green-deep sm:text-xl">
                       {row.href ? (
                         <a
                           href={row.href}
@@ -189,12 +190,12 @@ export default function ContactPage() {
                       ) : (
                         value
                       )}
-                    </dd>
+                    </p>
                   </div>
-                </div>
+                </li>
               );
             })}
-          </dl>
+          </ul>
         </div>
 
         <div
