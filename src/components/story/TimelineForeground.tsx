@@ -54,7 +54,7 @@ export function TimelineForeground() {
           />
         </div>
 
-        <p className="mx-auto mt-2 max-w-xs text-center text-base font-semibold leading-snug text-green-deep">
+        <p className="mx-auto mt-2 max-w-xs text-center text-base font-semibold leading-snug text-on-deep">
           The same fruit-forward dessert concept Connecticut schools first
           sampled — still the story schools can review today.
         </p>
