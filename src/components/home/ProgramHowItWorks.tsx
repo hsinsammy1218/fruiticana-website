@@ -53,25 +53,25 @@ export function ProgramHowItWorks({
       <div className="relative mt-10 overflow-hidden rounded-[2rem] bg-gradient-to-br from-yellow via-card to-grove px-4 py-10 ring-1 ring-green-deep/10 sm:px-8 sm:py-12 lg:px-10">
         <HowItWorksFruitMotif
           src="/images/flavors/strawberry.webp"
-          className="-left-4 top-6 opacity-80 sm:left-2 sm:top-8"
-          size={72}
+          className="-left-6 top-4 opacity-90 sm:left-1 sm:top-6"
+          size={96}
         />
         <HowItWorksFruitMotif
           src="/images/flavors/pineapple.webp"
-          className="right-2 top-4 opacity-75 sm:right-8 sm:top-6"
+          className="right-1 top-2 opacity-90 sm:right-6 sm:top-4"
           floatClassName="how-fruit-float-delay"
-          size={64}
+          size={84}
         />
         <HowItWorksFruitMotif
           src="/images/flavors/blueberry.webp"
-          className="bottom-8 left-1/2 hidden -translate-x-1/2 opacity-70 md:block"
+          className="bottom-6 left-[12%] hidden opacity-85 md:block"
           floatClassName="how-fruit-float-delay-2"
-          size={56}
+          size={72}
         />
         <HowItWorksFruitMotif
           src="/images/flavors/mango.webp"
-          className="-bottom-3 right-6 opacity-80 sm:bottom-4 sm:right-10"
-          size={68}
+          className="-bottom-2 right-4 opacity-90 sm:bottom-3 sm:right-8"
+          size={90}
         />
 
         <div

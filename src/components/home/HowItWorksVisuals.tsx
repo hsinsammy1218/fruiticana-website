@@ -180,21 +180,21 @@ export function HowItWorksStepVisual({ icon, step, className }: StepVisualProps)
   const Illustration = illustrations[icon];
 
   return (
-    <div className={cn("relative mx-auto w-[7.5rem] sm:w-32", className)}>
+    <div className={cn("relative mx-auto w-32 sm:w-36", className)}>
       <div
         className={cn(
-          "how-step-float relative aspect-square overflow-hidden rounded-full bg-gradient-to-br p-3 ring-4",
+          "how-step-float relative aspect-square overflow-hidden rounded-full bg-gradient-to-br p-2.5 ring-4 sm:p-3",
           accent.wash,
           accent.ring,
         )}
       >
         <Illustration />
-        <div className="pointer-events-none absolute -bottom-1 -right-1 h-12 w-12 overflow-hidden rounded-full opacity-90 ring-2 ring-card/80 sm:h-14 sm:w-14">
+        <div className="pointer-events-none absolute -bottom-0.5 -right-0.5 h-14 w-14 overflow-hidden rounded-full opacity-95 ring-2 ring-card/90 sm:h-16 sm:w-16">
           <Image
             src={accent.fruit}
             alt=""
             fill
-            sizes="56px"
+            sizes="64px"
             className="object-cover"
             aria-hidden
           />
