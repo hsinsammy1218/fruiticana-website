@@ -249,10 +249,41 @@
     pointer-events: auto;
   }
 
+  .how-step-float {
+    animation: how-step-float 4.8s ease-in-out infinite;
+  }
+
+  .how-path-draw path {
+    stroke-dashoffset: 0;
+    animation: how-path-pulse 3.6s ease-in-out infinite;
+  }
+
+  @keyframes how-step-float {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-6px);
+    }
+  }
+
+  @keyframes how-path-pulse {
+    0%,
+    100% {
+      stroke-opacity: 0.22;
+    }
+    50% {
+      stroke-opacity: 0.42;
+    }
+  }
+
   @media (prefers-reduced-motion: reduce) {
     .hero-float,
     .hero-rise,
-    .hero-media {
+    .hero-media,
+    .how-step-float,
+    .how-path-draw path {
       animation: none;
     }
     .js-reveal .reveal {
