@@ -1,7 +1,11 @@
 import { Section } from "@/components/layout/Section";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { StatGrid } from "@/components/ui/StatGrid";
-import { valueIcons } from "@/components/ui/icons";
+import {
+  HowItWorksFruitMotif,
+  HowItWorksPath,
+  HowItWorksStepVisual,
+} from "@/components/home/HowItWorksVisuals";
 import {
   programHowCopy,
   programNumbers,
@@ -23,7 +27,7 @@ export function ProgramHowItWorks({
     variant === "schools" ? programHowCopy.schoolsTitle : programHowCopy.homeTitle;
 
   return (
-    <Section id={programHowCopy.id} tone="white" className="scroll-mt-24">
+    <Section id={programHowCopy.id} tone="cream-100" className="scroll-mt-24">
       <SectionHeading
         eyebrow={programHowCopy.eyebrow}
         title={title}
@@ -46,35 +50,63 @@ export function ProgramHowItWorks({
         </>
       ) : null}
 
-      <ol className="mt-10 grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
-        {programSteps.map((step, index) => {
-          const Icon = valueIcons[step.icon];
-          return (
-            <li key={step.step} className="reveal relative flex h-full flex-col">
+      <div className="relative mt-10 overflow-hidden rounded-[2rem] bg-gradient-to-br from-yellow via-card to-grove px-4 py-10 ring-1 ring-green-deep/10 sm:px-8 sm:py-12 lg:px-10">
+        <HowItWorksFruitMotif
+          src="/images/flavors/strawberry.webp"
+          className="-left-4 top-6 opacity-80 sm:left-2 sm:top-8"
+          size={72}
+        />
+        <HowItWorksFruitMotif
+          src="/images/flavors/pineapple.webp"
+          className="right-2 top-4 opacity-75 sm:right-8 sm:top-6"
+          floatClassName="how-fruit-float-delay"
+          size={64}
+        />
+        <HowItWorksFruitMotif
+          src="/images/flavors/blueberry.webp"
+          className="bottom-8 left-1/2 hidden -translate-x-1/2 opacity-70 md:block"
+          floatClassName="how-fruit-float-delay-2"
+          size={56}
+        />
+        <HowItWorksFruitMotif
+          src="/images/flavors/mango.webp"
+          className="-bottom-3 right-6 opacity-80 sm:bottom-4 sm:right-10"
+          size={68}
+        />
+
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(255,140,0,0.18),transparent_42%),radial-gradient(circle_at_80%_15%,rgba(193,0,24,0.14),transparent_40%),radial-gradient(circle_at_70%_80%,rgba(47,82,184,0.12),transparent_45%)]"
+        />
+
+        <HowItWorksPath />
+
+        <ol className="relative grid gap-10 sm:grid-cols-2 xl:grid-cols-4 xl:gap-6">
+          {programSteps.map((step, index) => (
+            <li
+              key={step.step}
+              className="reveal relative flex h-full flex-col items-center text-center"
+              style={{ transitionDelay: `${index * 90}ms` }}
+            >
+              <HowItWorksStepVisual icon={step.icon} step={step.step} />
+              <h3 className="mt-5 max-w-[16rem] text-lg font-bold text-green-deep sm:text-xl">
+                {step.title}
+              </h3>
+              <p className="info-copy mt-3 max-w-[17rem] text-pretty sm:max-w-none">
+                {step.body}
+              </p>
               {index < programSteps.length - 1 ? (
                 <span
                   aria-hidden="true"
-                  className="absolute -right-2 top-10 hidden text-lg font-bold text-green/50 xl:block"
+                  className="mt-6 inline-flex h-8 w-8 items-center justify-center rounded-full bg-berry/15 text-berry xl:hidden"
                 >
-                  →
+                  ↓
                 </span>
               ) : null}
-              <div className="flex h-full flex-col rounded-xl2 border border-line bg-cream-100 p-5 sm:p-6">
-                <div className="flex items-center justify-between gap-3">
-                  <span className="inline-flex h-9 w-9 items-center justify-center rounded-full bg-green/12 text-green-600">
-                    <Icon width={18} height={18} />
-                  </span>
-                  <span className="font-sans text-2xl font-extrabold tabular-nums leading-none text-green-600">
-                    {step.step}
-                  </span>
-                </div>
-                <h3 className="mt-5 text-lg font-bold text-green-deep">{step.title}</h3>
-                <p className="info-copy mt-3 flex-1">{step.body}</p>
-              </div>
             </li>
-          );
-        })}
-      </ol>
+          ))}
+        </ol>
+      </div>
     </Section>
   );
 }

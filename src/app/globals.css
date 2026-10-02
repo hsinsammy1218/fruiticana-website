@@ -249,10 +249,66 @@
     pointer-events: auto;
   }
 
+  .how-fruit-float {
+    animation: how-fruit-float 5.8s ease-in-out infinite;
+  }
+
+  .how-fruit-float-delay {
+    animation: how-fruit-float 6.4s ease-in-out 0.4s infinite;
+  }
+
+  .how-fruit-float-delay-2 {
+    animation: how-fruit-float 7s ease-in-out 0.9s infinite;
+  }
+
+  .how-step-float {
+    animation: how-step-float 4.8s ease-in-out infinite;
+  }
+
+  .how-path-draw path {
+    stroke-dashoffset: 0;
+    animation: how-path-pulse 3.6s ease-in-out infinite;
+  }
+
+  @keyframes how-fruit-float {
+    0%,
+    100% {
+      transform: translateY(0) rotate(-2deg);
+    }
+    50% {
+      transform: translateY(-12px) rotate(3deg);
+    }
+  }
+
+  @keyframes how-step-float {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-6px);
+    }
+  }
+
+  @keyframes how-path-pulse {
+    0%,
+    100% {
+      stroke-opacity: 0.22;
+    }
+    50% {
+      stroke-opacity: 0.42;
+    }
+  }
+
   @media (prefers-reduced-motion: reduce) {
     .hero-float,
     .hero-rise,
-    .hero-media {
+    .hero-media,
+    .how-fruit-float,
+    .how-fruit-float-delay,
+    .how-fruit-float-delay-2,
+    .how-step-float,
+    .how-path-draw path {
       animation: none;
     }
     .js-reveal .reveal {
