@@ -44,7 +44,7 @@ export const site = {
   contact: {
     email: "fruiticana1@hotmail.com" as string | null,
     phone: "203-709-0992" as string | null,
-    address: "16 Pleasant St, Waterbury, CT 06706" as string | null,
+    address: "300 Wolcott Rd, Wolcott, CT 06716" as string | null,
   },
   social: {
     instagram: null as string | null,

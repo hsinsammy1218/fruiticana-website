@@ -9,7 +9,7 @@ import { cn } from "@/lib/cn";
 export const metadata: Metadata = {
   title: "Contact",
   description:
-    "Reach Fruiticana by email, phone, or mail: fruiticana1@hotmail.com, 203-709-0992, 16 Pleasant St, Waterbury, CT 06706.",
+    "Reach Fruiticana by email, phone, or mail: fruiticana1@hotmail.com, 203-709-0992, 300 Wolcott Rd, Wolcott, CT 06716.",
   alternates: { canonical: "/contact" },
 };
 
@@ -145,7 +145,7 @@ export default function ContactPage() {
 
           <p className="hero-rise hero-rise-delay-2 mt-4 max-w-lg text-lg leading-snug text-ink sm:text-xl">
             Email, call, or write — school questions go straight to Fruiticana in
-            Waterbury, Connecticut.
+            Wolcott, Connecticut.
           </p>
 
           <ul className="mt-8 list-none space-y-3 p-0 sm:mt-9 sm:space-y-3.5">

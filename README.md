@@ -157,7 +157,7 @@ Confirm before switching any content to present-tense school-program marketing:
 - [ ] Founder names/credentials spelling and permission to list publicly
 - [ ] Testimonial permission / keep clearly historical
 - [ ] Pricing (kept off the site until a current menu exists)
-- [ ] Contact social accounts (email, phone, and Waterbury address are published)
+- [ ] Contact social accounts (email, phone, and Wolcott address are published)
 - [ ] Domain / production `NEXT_PUBLIC_SITE_URL`
 - [ ] Logo file and trademark presentation
 - [ ] Whether "Creamless Ice Cream" is still the product name

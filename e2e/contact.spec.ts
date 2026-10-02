@@ -16,7 +16,7 @@ test.describe("contact page", () => {
       "href",
       "tel:+12037090992",
     );
-    await expect(page.getByText("16 Pleasant St, Waterbury, CT 06706")).toBeVisible();
+    await expect(page.getByText("300 Wolcott Rd, Wolcott, CT 06716")).toBeVisible();
 
     await expect(
       page.getByRole("button", { name: "Contact Us" }),
