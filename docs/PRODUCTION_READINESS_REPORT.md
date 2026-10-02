@@ -232,7 +232,7 @@ These are not software bugs. Do not invent answers on the site.
 - Rights-cleared logo vector if the lockup should be replaced.
 - Founder name/credential permission and testimonial permission (historical quotes are already dated).
 
-Contact is info-only: email, phone, and Waterbury address are published on `/contact`. There is no on-site form to wire to a backend.
+Contact is info-only: email, phone, and Wolcott address are published on `/contact`. There is no on-site form to wire to a backend.
 
 ---
 

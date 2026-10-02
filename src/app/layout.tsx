@@ -92,10 +92,10 @@ export default function RootLayout({
     address: site.contact.address
       ? {
           "@type": "PostalAddress",
-          streetAddress: "16 Pleasant St",
-          addressLocality: "Waterbury",
+          streetAddress: "300 Wolcott Rd",
+          addressLocality: "Wolcott",
           addressRegion: "CT",
-          postalCode: "06706",
+          postalCode: "06716",
           addressCountry: "US",
         }
       : undefined,
