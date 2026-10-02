@@ -1,43 +1,30 @@
 import type { ReactNode } from "react";
-import Image from "next/image";
 import type { ProgramStep } from "@/data/program";
 import { cn } from "@/lib/cn";
 
-const accentByIcon: Record<
-  ProgramStep["icon"],
-  { ring: string; wash: string; fruit: string; alt: string }
-> = {
-  machine: {
-    ring: "ring-orange/40",
-    wash: "from-yellow/90 via-card to-grove/80",
-    fruit: "/images/flavors/orange.webp",
-    alt: "",
-  },
-  flavors: {
-    ring: "ring-berry/35",
-    wash: "from-blush/80 via-card to-yellow/85",
-    fruit: "/images/flavors/strawberry.webp",
-    alt: "",
-  },
-  heart: {
-    ring: "ring-green/45",
-    wash: "from-lime/90 via-card to-grove/75",
-    fruit: "/images/flavors/apple.webp",
-    alt: "",
-  },
-  fruit: {
-    ring: "ring-orange/45",
-    wash: "from-orange/30 via-card to-yellow/90",
-    fruit: "/images/flavors/cantaloupe.webp",
-    alt: "",
-  },
-  school: {
-    ring: "ring-green/40",
-    wash: "from-lime/85 via-card to-grove/70",
-    fruit: "/images/flavors/apple.webp",
-    alt: "",
-  },
-};
+const accentByIcon: Record<ProgramStep["icon"], { ring: string; wash: string }> =
+  {
+    machine: {
+      ring: "ring-orange/40",
+      wash: "from-yellow/90 via-card to-grove/80",
+    },
+    flavors: {
+      ring: "ring-berry/35",
+      wash: "from-blush/80 via-card to-yellow/85",
+    },
+    heart: {
+      ring: "ring-green/45",
+      wash: "from-lime/90 via-card to-grove/75",
+    },
+    fruit: {
+      ring: "ring-orange/45",
+      wash: "from-orange/30 via-card to-yellow/90",
+    },
+    school: {
+      ring: "ring-green/40",
+      wash: "from-lime/85 via-card to-grove/70",
+    },
+  };
 
 function MachineIllustration() {
   return (
@@ -189,51 +176,10 @@ export function HowItWorksStepVisual({ icon, step, className }: StepVisualProps)
         )}
       >
         <Illustration />
-        <div className="pointer-events-none absolute -bottom-0.5 -right-0.5 h-14 w-14 overflow-hidden rounded-full opacity-95 ring-2 ring-card/90 sm:h-16 sm:w-16">
-          <Image
-            src={accent.fruit}
-            alt=""
-            fill
-            sizes="64px"
-            className="object-cover"
-            aria-hidden
-          />
-        </div>
       </div>
       <span className="absolute -left-1 -top-1 inline-flex h-9 w-9 items-center justify-center rounded-full bg-green-deep font-sans text-sm font-extrabold tabular-nums text-on-deep shadow-[0_8px_18px_rgba(15,47,18,0.22)] sm:h-10 sm:w-10 sm:text-base">
         {step}
       </span>
-    </div>
-  );
-}
-
-type FruitMotifProps = {
-  src: string;
-  className?: string;
-  floatClassName?: string;
-  size?: number;
-};
-
-export function HowItWorksFruitMotif({
-  src,
-  className,
-  floatClassName = "how-fruit-float",
-  size = 88,
-}: FruitMotifProps) {
-  return (
-    <div
-      aria-hidden="true"
-      className={cn("pointer-events-none absolute", className)}
-      style={{ width: size, height: size }}
-    >
-      <div
-        className={cn(
-          "relative h-full w-full overflow-hidden rounded-full ring-2 ring-card/70",
-          floatClassName,
-        )}
-      >
-        <Image src={src} alt="" fill sizes={`${size}px`} className="object-cover" />
-      </div>
     </div>
   );
 }
@@ -243,7 +189,10 @@ export function HowItWorksPath({ className }: { className?: string }) {
     <svg
       aria-hidden="true"
       viewBox="0 0 1000 80"
-      className={cn("how-path-draw pointer-events-none absolute inset-x-8 top-[4.75rem] hidden h-16 w-[calc(100%-4rem)] xl:block", className)}
+      className={cn(
+        "how-path-draw pointer-events-none absolute inset-x-8 top-[4.75rem] hidden h-16 w-[calc(100%-4rem)] xl:block",
+        className,
+      )}
       preserveAspectRatio="none"
     >
       <path

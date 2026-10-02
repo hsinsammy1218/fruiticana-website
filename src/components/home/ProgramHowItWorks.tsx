@@ -2,7 +2,6 @@ import { Section } from "@/components/layout/Section";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { StatGrid } from "@/components/ui/StatGrid";
 import {
-  HowItWorksFruitMotif,
   HowItWorksPath,
   HowItWorksStepVisual,
 } from "@/components/home/HowItWorksVisuals";
@@ -51,24 +50,6 @@ export function ProgramHowItWorks({
       ) : null}
 
       <div className="relative mt-10 overflow-hidden rounded-[2rem] bg-gradient-to-br from-yellow via-card to-grove px-4 py-10 ring-1 ring-green-deep/10 sm:px-8 sm:py-12 lg:px-10">
-        <HowItWorksFruitMotif
-          src="/images/flavors/strawberry.webp"
-          className="-left-6 top-4 opacity-90 sm:left-1 sm:top-6"
-          size={96}
-        />
-        <HowItWorksFruitMotif
-          src="/images/flavors/pineapple.webp"
-          className="right-1 top-2 opacity-90 sm:right-6 sm:top-4"
-          floatClassName="how-fruit-float-delay"
-          size={84}
-        />
-        <HowItWorksFruitMotif
-          src="/images/flavors/banana.webp"
-          className="-bottom-3 -right-3 opacity-90 sm:bottom-2 sm:right-2"
-          floatClassName="how-fruit-float-delay-2"
-          size={80}
-        />
-
         <div
           aria-hidden="true"
           className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(255,140,0,0.18),transparent_42%),radial-gradient(circle_at_80%_15%,rgba(193,0,24,0.14),transparent_40%),radial-gradient(circle_at_70%_80%,rgba(47,82,184,0.12),transparent_45%)]"
