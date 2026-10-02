@@ -1,5 +1,8 @@
 import Image from "next/image";
 
+/** Transparent fruit-heart mark — same asset as hero and contact. */
+const FRUIT_HEART_LOGO_SRC = "/images/brand/fruit-heart-logo.webp";
+
 /**
  * Visual foreground for the About timeline — fills the open right column
  * so the history section is not text-only. Brand heart art is the main plane.
@@ -32,7 +35,7 @@ export function TimelineForeground() {
         <p className="text-xs font-semibold uppercase tracking-[0.18em] text-berry-deep">
           Fruiticana from the start
         </p>
-        <p className="mt-2 max-w-[15rem] font-sans text-2xl font-extrabold leading-tight text-green-deep">
+        <p className="mt-2 max-w-[16rem] font-display text-2xl font-extrabold leading-[1.1] tracking-[-0.03em] text-green-deep sm:text-[1.65rem]">
           A fruit-first frozen dessert.
         </p>
 
@@ -42,16 +45,16 @@ export function TimelineForeground() {
             className="absolute inset-4 rounded-full bg-[radial-gradient(circle,rgba(228,249,184,0.75),transparent_72%)]"
           />
           <Image
-            src="/images/brand/heart.webp"
+            src={FRUIT_HEART_LOGO_SRC}
             alt=""
-            width={960}
-            height={960}
+            width={1100}
+            height={1069}
             sizes="(max-width: 1024px) 85vw, 30vw"
             className="relative mx-auto h-auto w-[94%] drop-shadow-[0_24px_44px_rgba(22,61,42,0.16)]"
           />
         </div>
 
-        <p className="mx-auto mt-1 max-w-xs text-center text-sm leading-relaxed text-muted">
+        <p className="mx-auto mt-2 max-w-xs text-center text-base font-semibold leading-snug text-on-deep">
           The same fruit-forward dessert concept Connecticut schools first
           sampled — still the story schools can review today.
         </p>
