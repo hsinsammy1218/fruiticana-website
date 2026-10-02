@@ -32,7 +32,7 @@ export function FlavorShowcase() {
                 style={{ ["--accent" as string]: flavor.accent }}
               >
                 <div
-                  className={`relative min-h-64 aspect-[4/3] overflow-hidden lg:aspect-auto lg:min-h-[22rem] ${
+                  className={`relative min-h-64 aspect-[4/3] overflow-hidden bg-card lg:aspect-auto lg:min-h-[22rem] ${
                     imageFirst ? "" : "lg:order-2"
                   }`}
                 >
@@ -44,13 +44,7 @@ export function FlavorShowcase() {
                     className="transition-transform duration-500 group-hover:scale-[1.03] group-focus-visible:scale-[1.03]"
                   />
                 </div>
-                <div
-                  className="flex flex-col justify-center px-6 py-8 sm:px-10 sm:py-12"
-                  style={{
-                    backgroundColor:
-                      "color-mix(in srgb, var(--accent) 22%, var(--color-card))",
-                  }}
-                >
+                <div className="flex flex-col justify-center bg-card px-6 py-8 sm:px-10 sm:py-12">
                   <HistoricalBadge label="Original flavor" />
                   <h3 className="mt-4 font-display text-4xl font-semibold tracking-tight text-orange-deep sm:text-5xl">
                     {flavor.name}

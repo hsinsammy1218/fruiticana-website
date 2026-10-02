@@ -11,7 +11,8 @@
  * against the current formulation before being published as a product label.
  *
  * Images are real fruit photographs in WebP
- * (`/images/flavors/<slug>.webp`) representing each flavor.
+ * (`/images/flavors/<slug>.webp`) representing each flavor, composited
+ * onto a uniform packaging pale-lime plate (`#EAF86C` / `--color-card`).
  * Sources and licenses: `public/images/flavors/ATTRIBUTION.md`
  * (Wikimedia Commons — public domain / CC0 / CC BY / CC BY-SA).
  *
@@ -300,7 +301,7 @@ const flavorCatalog: Omit<Flavor, "nutritionStatus">[] = [
     detail:
       "Ripe strawberries make a bright, fragrant scoop that tastes like the best of summer.",
     image: "/images/flavors/strawberry.webp",
-    imageAlt: "Fresh ripe strawberries",
+    imageAlt: "Fresh ripe strawberry",
     featured: true,
     status: "original",
     nutrition: {

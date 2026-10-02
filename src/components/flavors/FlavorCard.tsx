@@ -21,7 +21,7 @@ export function FlavorCard({ flavor, priority, className }: FlavorCardProps) {
       )}
       style={{ ["--accent" as string]: flavor.accent }}
     >
-      <div className="relative aspect-[3/2] overflow-hidden">
+      <div className="relative aspect-[3/2] overflow-hidden bg-card">
         <FlavorImage
           flavor={flavor}
           priority={priority}
