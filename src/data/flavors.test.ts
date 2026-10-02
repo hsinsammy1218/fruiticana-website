@@ -76,4 +76,12 @@ describe("flavor catalog", () => {
   it("returns an empty list for an unknown slug", () => {
     expect(getRelatedFlavors("nope")).toEqual([]);
   });
+
+  it("points every flavor card at a real fruit WebP under /images/flavors/", () => {
+    for (const flavor of flavors) {
+      expect(flavor.image).toBe(`/images/flavors/${flavor.slug}.webp`);
+      expect(flavor.imageAlt.length).toBeGreaterThan(8);
+      expect(flavor.imageAlt.toLowerCase()).not.toMatch(/illustration|icon|svg|placeholder/);
+    }
+  });
 });

@@ -67,7 +67,7 @@ src/
   components/     Reusable UI (layout, ui, home, flavors, learn, nutrition, story, seo)
   data/           Typed content: flavors, schools, learn, testimonials, timeline, formats, documents, navigation, site
   lib/            Small helpers (cn, nutrition formatting)
-public/images/flavors/  Replaceable flavor artwork (SVG placeholders)
+public/images/flavors/  Real fruit photography (WebP) + ATTRIBUTION.md
 ```
 
 Content lives in typed modules under `src/data/` so copy changes don't require
@@ -85,9 +85,10 @@ as `?flavor=` is preserved). `/story` redirects to `/about`. Individual
 
 ## Replacing placeholders
 
-- **Flavor images** (`public/images/flavors/*.webp`) are fruit photography
-  representing each flavor. Replace with rights-cleared product photography
-  when available and keep `image` / `imageAlt` in `src/data/flavors.ts` in sync.
+- **Flavor images** (`public/images/flavors/*.webp`) are real fruit photographs
+  from Wikimedia Commons (see `public/images/flavors/ATTRIBUTION.md`). Replace
+  with rights-cleared Fruiticana product photography when available and keep
+  `image` / `imageAlt` in `src/data/flavors.ts` in sync.
 - **Logo** is a Fruiticana lockup with strawberry i-dots inspired by the 2007
   myfruiticana.com wordmark (`src/components/ui/Logo.tsx`). A rights-cleared
   vector file from the owner can still replace it.

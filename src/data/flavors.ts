@@ -10,8 +10,10 @@
  * They are labeled HISTORICAL everywhere in the UI and MUST be re-verified
  * against the current formulation before being published as a product label.
  *
- * Images are high-quality fruit photography in WebP
+ * Images are real fruit photographs in WebP
  * (`/images/flavors/<slug>.webp`) representing each flavor.
+ * Sources and licenses: `public/images/flavors/ATTRIBUTION.md`
+ * (Wikimedia Commons — public domain / CC0 / CC BY / CC BY-SA).
  *
  * Photography still needed before this can show the real product:
  * Fruiticana in a cup for each featured flavor, a texture close-up,
@@ -450,7 +452,7 @@ const flavorCatalog: Omit<Flavor, "nutritionStatus">[] = [
     detail:
       "Crisp orchard apple in a clean, refreshing scoop - simple and satisfying.",
     image: "/images/flavors/apple.webp",
-    imageAlt: "Fresh red apples",
+    imageAlt: "Fresh red apple",
     featured: false,
     status: "original",
     nutrition: {
