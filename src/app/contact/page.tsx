@@ -40,6 +40,9 @@ const contactRows: ContactRow[] = [
   {
     label: "Address",
     value: site.contact.address,
+    href: site.contact.address
+      ? `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(site.contact.address)}`
+      : undefined,
     icon: "address",
   },
 ];
@@ -155,15 +158,10 @@ export default function ContactPage() {
               const shellClass = cn(
                 "reveal flex w-full items-center gap-4 rounded-xl2 border border-green-deep/15 bg-lime/80 px-4 py-4 shadow-soft backdrop-blur-[2px] transition duration-300 sm:gap-5 sm:px-5 sm:py-5",
                 row.href &&
-                  "hover:-translate-y-0.5 hover:border-berry/40 hover:bg-card hover:shadow-hover",
+                  "text-inherit no-underline hover:-translate-y-0.5 hover:border-berry/40 hover:bg-card hover:shadow-hover focus-visible:outline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-green-deep",
               );
-
-              return (
-                <li
-                  key={row.label}
-                  className={shellClass}
-                  style={{ transitionDelay: `${index * 70}ms` }}
-                >
+              const rowBody = (
+                <>
                   <span
                     aria-hidden="true"
                     className={cn(
@@ -179,19 +177,35 @@ export default function ContactPage() {
                     <p className="text-xs font-bold uppercase tracking-[0.16em] text-green-600">
                       {row.label}
                     </p>
-                    <p className="mt-1 break-words font-display text-lg font-semibold leading-snug text-green-deep sm:text-xl">
-                      {row.href ? (
-                        <a
-                          href={row.href}
-                          className="rounded-sm underline-offset-4 transition hover:underline focus-visible:outline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-green-deep"
-                        >
-                          {value}
-                        </a>
-                      ) : (
-                        value
-                      )}
+                    <p className="mt-1 break-words font-display text-lg font-semibold leading-snug text-green-deep underline-offset-4 sm:text-xl">
+                      <span className={row.href ? "decoration-green-deep/40 group-hover:underline" : undefined}>
+                        {value}
+                      </span>
                     </p>
                   </div>
+                </>
+              );
+
+              return (
+                <li
+                  key={row.label}
+                  style={{ transitionDelay: `${index * 70}ms` }}
+                >
+                  {row.href ? (
+                    <a
+                      href={row.href}
+                      className={cn("group", shellClass)}
+                      aria-label={
+                        row.icon === "address"
+                          ? `${value} (opens in Google Maps)`
+                          : undefined
+                      }
+                    >
+                      {rowBody}
+                    </a>
+                  ) : (
+                    <div className={shellClass}>{rowBody}</div>
+                  )}
                 </li>
               );
             })}

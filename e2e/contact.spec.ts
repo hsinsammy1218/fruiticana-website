@@ -16,7 +16,12 @@ test.describe("contact page", () => {
       "href",
       "tel:+12037090992",
     );
-    await expect(page.getByText("300 Wolcott Rd, Wolcott, CT 06716")).toBeVisible();
+    await expect(
+      page.getByRole("link", { name: "300 Wolcott Rd, Wolcott, CT 06716" }),
+    ).toHaveAttribute(
+      "href",
+      "https://www.google.com/maps/search/?api=1&query=300%20Wolcott%20Rd%2C%20Wolcott%2C%20CT%2006716",
+    );
 
     await expect(
       page.getByRole("button", { name: "Contact Us" }),
