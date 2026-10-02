@@ -22,13 +22,13 @@ const accentByIcon: Record<
   heart: {
     ring: "ring-green/45",
     wash: "from-lime/90 via-card to-grove/75",
-    fruit: "/images/flavors/blueberry.webp",
+    fruit: "/images/flavors/apple.webp",
     alt: "",
   },
   fruit: {
-    ring: "ring-mango/45",
-    wash: "from-mango/35 via-card to-yellow/90",
-    fruit: "/images/flavors/mango.webp",
+    ring: "ring-orange/45",
+    wash: "from-orange/30 via-card to-yellow/90",
+    fruit: "/images/flavors/cantaloupe.webp",
     alt: "",
   },
   school: {

@@ -63,15 +63,10 @@ export function ProgramHowItWorks({
           size={84}
         />
         <HowItWorksFruitMotif
-          src="/images/flavors/blueberry.webp"
-          className="bottom-6 left-[12%] hidden opacity-85 md:block"
+          src="/images/flavors/banana.webp"
+          className="-bottom-3 -right-3 opacity-90 sm:bottom-2 sm:right-2"
           floatClassName="how-fruit-float-delay-2"
-          size={72}
-        />
-        <HowItWorksFruitMotif
-          src="/images/flavors/mango.webp"
-          className="-bottom-2 right-4 opacity-90 sm:bottom-3 sm:right-8"
-          size={90}
+          size={80}
         />
 
         <div
