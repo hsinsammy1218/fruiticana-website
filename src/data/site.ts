@@ -1,3 +1,5 @@
+import { resolveSiteUrl } from "@/lib/site-url";
+
 /**
  * Global site configuration and brand-safe copy.
  *
@@ -11,9 +13,7 @@
  * an honest "coming soon" state. Do not invent social accounts.
  */
 
-const siteUrl =
-  process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "") ??
-  "https://fruiticana.example.com"; // TODO: replace with the real production domain
+const siteUrl = resolveSiteUrl();
 
 export const site = {
   name: "Fruiticana",

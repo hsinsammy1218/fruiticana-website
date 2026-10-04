@@ -13,16 +13,13 @@ import { MobileNavigation } from "@/components/layout/MobileNavigation";
 
 export function Navbar() {
   const pathname = usePathname();
-  const [open, setOpen] = useState(false);
+  // Derive open from the path that opened the drawer so route changes close it
+  // without a setState-in-effect (react-hooks/set-state-in-effect).
+  const [menuPath, setMenuPath] = useState<string | null>(null);
+  const open = menuPath === pathname;
   const [scrolled, setScrolled] = useState(false);
   const openButtonRef = useRef<HTMLButtonElement>(null);
   const restoreFocusRef = useRef(false);
-
-  // Close the mobile drawer whenever the route changes.
-  useEffect(() => {
-    restoreFocusRef.current = false;
-    setOpen(false);
-  }, [pathname]);
 
   // Return keyboard focus to the hamburger after dismiss (Escape / close / backdrop).
   useEffect(() => {
@@ -90,7 +87,7 @@ export function Navbar() {
           <button
             ref={openButtonRef}
             type="button"
-            onClick={() => setOpen(true)}
+            onClick={() => setMenuPath(pathname)}
             className="inline-flex h-11 w-11 items-center justify-center rounded-full text-green-deep hover:bg-green-deep/5 lg:hidden"
             aria-label="Open menu"
             aria-expanded={open}
@@ -112,9 +109,9 @@ export function Navbar() {
         open={open}
         onClose={() => {
           restoreFocusRef.current = true;
-          setOpen(false);
+          setMenuPath(null);
         }}
-        onNavigate={() => setOpen(false)}
+        onNavigate={() => setMenuPath(null)}
         activeHref={pathname}
       />
     </header>

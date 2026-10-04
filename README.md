@@ -32,13 +32,15 @@ Other scripts:
 ```bash
 npm run build          # production build
 npm run start          # serve the production build
+npm run lint           # ESLint (eslint-config-next)
 npm run typecheck
 npm test               # Vitest unit + component tests
 npm run test:e2e       # Playwright end-to-end (Chromium; local next dev)
 npm run test:e2e:prod  # production build + Playwright against next start
-npm run test:a11y      # axe-core accessibility sweep
+npm run test:a11y      # axe-core accessibility sweep (also an explicit CI step)
 npm run test:lighthouse  # Lighthouse CI (Home, For Schools, Product, About, Resources, Contact)
-npm run test:all         # unit + Playwright Chromium
+npm run test:e2e:scheduled-browsers  # Firefox + WebKit (@cross-browser); weekly CI
+npm run test:all         # lint + unit + Playwright Chromium
 ```
 
 First time only, install Playwright browsers:
@@ -49,15 +51,20 @@ npx playwright install chromium
 npx playwright install
 ```
 
+**CI:** PR/push runs lint, typecheck, Vitest, Playwright **Chromium**, explicit **Accessibility** (`test:a11y`), and Lighthouse. Firefox + WebKit smoke runs on a **weekly schedule** (see `.github/workflows/e2e-browsers-scheduled.yml`), not on every PR.
+
 ### Environment variables
 
 | Variable               | Purpose                                              |
 | ---------------------- | ---------------------------------------------------- |
-| `NEXT_PUBLIC_SITE_URL` | Absolute site URL for canonical/OG tags and sitemap. |
+| `NEXT_PUBLIC_SITE_URL` | Absolute site origin for canonical/OG tags and sitemap. |
 
-Copy `.env.example` to `.env.local` for local overrides. If unset, the app
-falls back to a placeholder (`https://fruiticana.example.com`). Set the real
-production domain in Vercel before launch.
+Copy `.env.example` to `.env.local` for local overrides. If unset outside
+Vercel production, the app uses `http://localhost:3000`. On Vercel
+**Production** (`VERCEL_ENV=production`), the variable is **required**: it must
+be an absolute `https` origin and must not be a placeholder or loopback host.
+Validation lives in `src/lib/site-url.ts`. Do not hardcode a brand domain in
+source — set the real origin in the Vercel project env.
 
 ## Project structure
 
@@ -66,8 +73,8 @@ src/
   app/            Routes (home, about, schools, product, resources, contact, learn, flavor sheets, legal) + SEO files
   components/     Reusable UI (layout, ui, home, flavors, learn, nutrition, story, seo)
   data/           Typed content: flavors, schools, learn, testimonials, timeline, formats, documents, navigation, site
-  lib/            Small helpers (cn, nutrition formatting)
-public/images/flavors/  Replaceable flavor artwork (SVG placeholders)
+  lib/            Small helpers (cn, site-url, nutrition formatting)
+public/images/flavors/  Replaceable flavor artwork (WebP fruit photography)
 ```
 
 Content lives in typed modules under `src/data/` so copy changes don't require
@@ -118,9 +125,9 @@ special adapter is required.
 1. Open [vercel.com/new](https://vercel.com/new) and import
    `hsinsammy1218/fruiticana-website`.
 2. Framework preset: **Next.js** (auto-detected).
-3. Set the production environment variable:
-   - `NEXT_PUBLIC_SITE_URL` → your Vercel domain (e.g. `https://fruiticana-website.vercel.app`) or custom domain.
-4. Deploy. After the first deploy, push to `main` for production and open PRs for preview URLs.
+3. Set the **Production** environment variable (required — the app rejects missing/placeholder values when `VERCEL_ENV=production`):
+   - `NEXT_PUBLIC_SITE_URL` → your Vercel production origin (e.g. `https://fruiticana-website.vercel.app`) or custom https domain. Origin only; no path.
+4. Optionally set the same variable on Preview deployments to the preview URL. Deploy. After the first deploy, push to `main` for production and open PRs for preview URLs.
 
 ### CLI (optional)
 
@@ -161,7 +168,7 @@ Confirm before switching any content to present-tense school-program marketing:
 - [ ] Domain / production `NEXT_PUBLIC_SITE_URL`
 - [ ] Logo file and trademark presentation
 - [ ] Whether "Creamless Ice Cream" is still the product name
-- [ ] Product photography of the actual frozen dessert (a 4 oz cup) — owner-provided asset needed. The school-kitchens section uses an illustrative stock gelato photo (`public/images/sections/serving-foreground.webp`); replace with a current Fruiticana cup photo when available.
+- [ ] Product photography of the actual frozen dessert (a 4 oz cup) — owner-provided asset needed. Flavor and journey images currently use fruit stills / illustrative dessert photography.
 - [ ] Heart-health language — the legacy "A Gift For Your Heart" hero slogan was replaced with the tagline "An exciting new way to eat fruit" to avoid implying a cardiovascular benefit. Restore only with owner sign-off and substantiation.
 - [ ] "Health-conscious" positioning — the homepage leads with student enjoyment of fruit and says health and enjoyment belong together. Dated 2008 panels and the Team Nutrition **Healthy Snack** pilot remain labeled as history. "Healthy/healthier" is still a regulated comparative term — confirm substantiation and current formulation before treating it as a product label claim.
 
@@ -176,10 +183,11 @@ with minimal client JavaScript.
 
 | Tool | What it covers |
 | --- | --- |
-| **Playwright** | Navigation, contact page (reach-us details, no form), documentation, nutrition tables, redirects, mobile menu, links, responsive layout, error states (`e2e/`). Default run is Chromium; `npm run test:e2e:browsers` also runs tagged smoke tests in Firefox, WebKit, Pixel 7, and iPhone 13. |
-| **Vitest** | Unit tests for helpers and content data (`src/**/*.test.ts`). |
+| **ESLint** | `npm run lint` with `eslint-config-next` (flat config). Runs in CI before typecheck. |
+| **Playwright** | Navigation, contact page (reach-us details, no form), documentation, nutrition tables, redirects, mobile menu, links, responsive layout, error states, security headers (`e2e/`). Default/PR run is Chromium; weekly scheduled job runs Firefox + WebKit `@cross-browser` smoke. |
+| **Vitest** | Unit tests for helpers and content data (`src/**/*.test.ts`), including `resolveSiteUrl`. |
 | **React Testing Library** | Component behavior: flavor filters, nutrition selector, mobile menu, buttons. |
-| **axe-core** (`@axe-core/playwright`) | WCAG 2 A/AA checks on primary, flavor-detail, and legal routes (`e2e/a11y.spec.ts`). |
+| **axe-core** (`@axe-core/playwright`) | WCAG 2 A/AA checks on primary, flavor-detail, and legal routes (`e2e/a11y.spec.ts`). Explicit CI step. |
 | **Lighthouse CI** | Performance (warn &lt; 90), accessibility / best-practices / SEO (fail &lt; 95) on Home and the other primary pages. Requires a production build and a local Chrome. |
 | **Production-readiness report** | Latest QA gate: [`docs/PRODUCTION_READINESS_REPORT.md`](docs/PRODUCTION_READINESS_REPORT.md). |
 | **BrowserStack** (optional) | Real Safari-on-iPhone, Chrome-on-Android, Edge, and desktop browsers before launch. Set `BROWSERSTACK_USERNAME`, `BROWSERSTACK_ACCESS_KEY`, and `PLAYWRIGHT_BASE_URL` (a public preview URL), then `npm run test:browserstack`. |

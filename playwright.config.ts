@@ -29,6 +29,11 @@ export default defineConfig({
         url: baseURL,
         reuseExistingServer: !isCI,
         timeout: 180_000,
+        env: {
+          ...process.env,
+          NEXT_PUBLIC_SITE_URL:
+            process.env.NEXT_PUBLIC_SITE_URL ?? `http://localhost:${PORT}`,
+        },
       },
   projects: [
     {

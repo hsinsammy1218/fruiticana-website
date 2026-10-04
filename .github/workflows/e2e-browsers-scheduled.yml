@@ -1,0 +1,32 @@
+name: Playwright browsers (scheduled)
+
+# Firefox + WebKit smoke (@cross-browser tags). Chromium remains the PR gate in test.yml.
+on:
+  schedule:
+    - cron: "0 9 * * 1"
+  workflow_dispatch:
+
+env:
+  NEXT_PUBLIC_SITE_URL: http://localhost:3000
+  CI: true
+
+jobs:
+  browsers:
+    name: Firefox & WebKit
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npx playwright install --with-deps firefox webkit
+      - run: npm run build
+      - run: npm run test:e2e:scheduled-browsers
+      - uses: actions/upload-artifact@v4
+        if: failure()
+        with:
+          name: playwright-browsers-report
+          path: playwright-report
+          retention-days: 7
