@@ -1,17 +1,19 @@
 import { test, expect } from "@playwright/test";
 import { flavorSlugs, legalRoutes, primaryRoutes } from "./helpers";
 
+const siteOrigin = (
+  process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000"
+).replace(/\/$/, "");
+
 test.describe("links and seo", () => {
   test("primary pages expose title, canonical, and JSON-LD", async ({ page }) => {
     for (const route of primaryRoutes) {
       await page.goto(route.path);
       await expect(page).toHaveTitle(route.title);
       const canonical = page.locator('link[rel="canonical"]');
-      const hrefPattern =
-        route.path === "/"
-          ? /fruiticana\.example\.com\/?$/
-          : new RegExp(`${route.path.replace("/", "\\/")}$`);
-      await expect(canonical).toHaveAttribute("href", hrefPattern);
+      const expectedCanonical =
+        route.path === "/" ? siteOrigin : `${siteOrigin}${route.path}`;
+      await expect(canonical).toHaveAttribute("href", expectedCanonical);
       await expect(page.locator('script[type="application/ld+json"]').first()).toHaveCount(1);
     }
   });
