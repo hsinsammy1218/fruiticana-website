@@ -125,9 +125,9 @@ special adapter is required.
 1. Open [vercel.com/new](https://vercel.com/new) and import
    `hsinsammy1218/fruiticana-website`.
 2. Framework preset: **Next.js** (auto-detected).
-3. Set the production environment variable:
-   - `NEXT_PUBLIC_SITE_URL` → your Vercel domain (e.g. `https://fruiticana-website.vercel.app`) or custom domain.
-4. Deploy. After the first deploy, push to `main` for production and open PRs for preview URLs.
+3. Set the **Production** environment variable (required — the app rejects missing/placeholder values when `VERCEL_ENV=production`):
+   - `NEXT_PUBLIC_SITE_URL` → your Vercel production origin (e.g. `https://fruiticana-website.vercel.app`) or custom https domain. Origin only; no path.
+4. Optionally set the same variable on Preview deployments to the preview URL. Deploy. After the first deploy, push to `main` for production and open PRs for preview URLs.
 
 ### CLI (optional)
 
